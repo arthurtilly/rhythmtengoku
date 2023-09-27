@@ -1,7 +1,6 @@
 #include "engines/wizards_waltz.h"
 
 #include "src/code_08001360.h"
-#include "src/code_08003980.h"
 #include "src/code_08007468.h"
 #include "src/affine_sprite.h"
 
@@ -81,7 +80,7 @@ void wizards_waltz_engine_start(u32 version) {
     gWizardsWaltz->girl.sprite = create_affine_sprite(anim_wizards_waltz_girl_idle, 0, 120, 80, 0x4040, INT_TO_FIXED(0.5), 0, 1, 0, 0, 1);
 
     // Create sparkles.
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < WIZARDS_WALTZ_SPARKLE_AMOUNT; i++) {
         struct AffineSprite *sprite;
         gWizardsWaltz->sparkle[i].state = SPARKLE_STATE_HIDDEN;
         sprite = create_affine_sprite(anim_wizard_sparkle, 0, 0, 0, 0, INT_TO_FIXED(0.5), 0, 1, 0, 0, 0);
@@ -92,14 +91,14 @@ void wizards_waltz_engine_start(u32 version) {
     // Set default state.
     gameplay_set_input_buttons(A_BUTTON, 0);
     gWizardsWaltz->isTutorial = FALSE;
-    gWizardsWaltz->cycleInterval = beats_to_ticks(0x90);
+    gWizardsWaltz->cycleInterval = ticks_to_frames(0x90);
 }
 
 
 // Engine Event 0x00 (Set Rotation Interval)
 void wizards_waltz_set_cycle_duration(u32 time) {
     gWizardsWaltz->cyclePosition = 0;
-    gWizardsWaltz->cycleInterval = beats_to_ticks(time);
+    gWizardsWaltz->cycleInterval = ticks_to_frames(time);
 }
 
 
@@ -161,13 +160,13 @@ void wizards_waltz_engine_update(void) {
     if ((gWizardsWaltz->cyclePosition & 7) == 0) {
         gWizardsWaltz->sparkle[gWizardsWaltz->currentSparkle].state = SPARKLE_STATE_QUEUED;
         gWizardsWaltz->currentSparkle++;
-        if (gWizardsWaltz->currentSparkle > 9) {
+        if (gWizardsWaltz->currentSparkle > (WIZARDS_WALTZ_SPARKLE_AMOUNT - 1)) {
             gWizardsWaltz->currentSparkle = 0;
         }
     }
 
     // Update sparkles (continued).
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < WIZARDS_WALTZ_SPARKLE_AMOUNT; i++) {
         if (gWizardsWaltz->sparkle[i].state != SPARKLE_STATE_HIDDEN) {
             if (gWizardsWaltz->sparkle[i].state == SPARKLE_STATE_QUEUED) {
                 gWizardsWaltz->sparkle[i].rotation = gWizardsWaltz->wizard.rotation - 0x200;
@@ -227,7 +226,7 @@ void wizards_waltz_cue_spawn(struct Cue *cue, struct WizardsWaltzCue *info, u32 
         doubleSize = FALSE;
     }
 
-    z = func_08003ab8(0x400 - (angle & 0x7ff)) >> 3;
+    z = func_08003ab8(0x400 - (angle & 0x7ff)) / 8u;
     info->position = z;
     z += 0x4002;
 
@@ -248,7 +247,7 @@ void wizards_waltz_cue_spawn(struct Cue *cue, struct WizardsWaltzCue *info, u32 
 
 // Cue - Update
 u32 wizards_waltz_cue_update(struct Cue *cue, struct WizardsWaltzCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > (gWizardsWaltz->cycleInterval + beats_to_ticks(0x30))) {
+    if (runningTime > (gWizardsWaltz->cycleInterval + ticks_to_frames(0x30))) {
         return TRUE;
     } else {
         return FALSE;

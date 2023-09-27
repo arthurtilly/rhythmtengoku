@@ -21,7 +21,7 @@ thumb_func_start func_08022f4c \n\
 /* 08022f6e */ ADDS R0, 0xB4 @ Add 0xB4 to R0 \n\
 /* 08022f70 */ STR R2, [R0] \n\
 /* 08022f72 */ MOVS R0, 0x16 @ Set R0 to 0x16 \n\
-/* 08022f74 */ BL beats_to_ticks \n\
+/* 08022f74 */ BL ticks_to_frames \n\
 /* 08022f78 */ LDR R1, [R4] \n\
 /* 08022f7a */ ADDS R1, 0xB8 @ Add 0xB8 to R1 \n\
 /* 08022f7c */ STR R0, [R1] \n\

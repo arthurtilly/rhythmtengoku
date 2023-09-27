@@ -1,0 +1,43 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Script
+script script_scene_reading
+    set_tempo 140
+    pause_scene
+
+    run reading_scene_play_bgm
+    rest 12
+    run func_08007324 TRUE
+    fade_screen_in 12, BLACK
+    rest 12
+    scene_set_int INT8, 4, TRUE
+    pause_scene
+
+    scene_set_int INT8, 4, FALSE
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 12
+    rest 24
+    stop
+
+
+@ Local Scene
+struct sub_scene_reading
+    /* Start  */ .word reading_scene_start,  0
+    /* Paused */ .word NULL,                 0
+    /* Active */ .word reading_scene_update, 0
+    /* Stop   */ .word reading_scene_stop,   0
+    /* Script */ .word script_scene_reading
+endstruct
+
+@ RIQ Rhythm Data Room Reading Scene
+struct scene_reading
+    /* Start  */ .word func_0801d86c, sub_scene_reading
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0x11C
+endstruct
+
+.end

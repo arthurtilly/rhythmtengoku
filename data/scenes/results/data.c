@@ -4,18 +4,18 @@
 #include "src/scenes/results.h"
 #include "graphics/results/results_graphics.h"
 
-extern u8 D_03001338[];
+extern struct ScoreHandler sScoreHandler;
 
 
   /* RESULTS - MISC. DATA */
 
 
 // [D_089d7980] Main Score Handler
-struct ScoreHandler *D_089d7980 = (struct ScoreHandler *)D_03001338;
+struct ScoreHandler *score_handler = &sScoreHandler;
 
 
 // [D_089d7984] Letter Ranks
-const char *D_089d7984[] = {
+const char *results_letter_ranks[] = {
     ":1.1" "Ｄ",
     ":1.5" "Ｃ",
     ":1.4" "Ｂ",
@@ -24,8 +24,8 @@ const char *D_089d7984[] = {
 };
 
 
-// [D_089d7998] ?
-const char *D_089d7998[] = {
+// [D_089d7998] DEBUG Skill Comments - Accuracy
+const char *results_skill_text_accuracy[] = {
     "プロから　みた　ピッタシさ",
     "リズムかん　バッチシさ",
     "なっとくの　せいかくさ",
@@ -33,11 +33,11 @@ const char *D_089d7998[] = {
 };
 
 
-// [D_089d79a8] ?
+// [D_089d79a8] DEBUG Skill Comments - Barelies (Tracker 2)
     // Technique Level
     // Adaptability
     // Reflexes
-const char *D_089d79a8[] = {
+const char *results_skill_text_barely_trk2[] = {
     "テクニック　レベル",
     "てきおう　のうりょく",
     "あたまの　かいてん　スピード",
@@ -45,11 +45,11 @@ const char *D_089d79a8[] = {
 };
 
 
-// [D_089d79b8] ?
+// [D_089d79b8] DEBUG Skill Comments - Barelies (Tracker 1)
     // Responsibility
     //
     // Steadiness
-const char *D_089d79b8[] = {
+const char *results_skill_text_barely_trk1[] = {
     "せきにんかん",
     "ここ　イッパツ",
     "てがたい　かんじ",
@@ -57,8 +57,8 @@ const char *D_089d79b8[] = {
 };
 
 
-// [D_089d79c8] ?
-const char *D_089d79c8[] = {
+// [D_089d79c8] DEBUG Skill Comments - Hits
+const char *results_skill_text_hit_avg[] = {
     "シロートめの　ピッタシさ",
     "いっぱんてき　バッチシど",
     "ほどほどの　せいかくさ",
@@ -66,8 +66,8 @@ const char *D_089d79c8[] = {
 };
 
 
-// [D_089d79d8] ?
-const char *D_089d79d8[] = {
+// [D_089d79d8] DEBUG Skill Comments - Irrelevant Inputs
+const char *results_skill_text_irrelevant_inputs[] = {
     "せつやく　のうりょく",
     "ごうりてき　さいのう",
     "おちつき",
@@ -75,8 +75,8 @@ const char *D_089d79d8[] = {
 };
 
 
-// [D_089d79e8] ?
-const char *D_089d79e8[] = {
+// [D_089d79e8] DEBUG Skill Comments - Accuracy (Lenient)
+const char *results_skill_text_accuracy_lenient[] = {
     "あんていの　ほど",
     "リズムの　しん",
     "いっかんせい　みたいなもの",
@@ -84,8 +84,8 @@ const char *D_089d79e8[] = {
 };
 
 
-// [D_089d79f8] ?
-const char *D_089d79f8[] = {
+// [D_089d79f8] DEBUG Skill Comments - Misses
+const char *results_skill_text_miss[] = {
     "やるき",
     "どうたい　しりょく",
     "まえむきな　しせい",
@@ -93,8 +93,8 @@ const char *D_089d79f8[] = {
 };
 
 
-// [D_089d7a08] ?
-const char *D_089d7a08[] = {
+// [D_089d7a08] DEBUG Skill Comments - Misses (Tracker 2)
+const char *results_skill_text_miss_trk2[] = {
     "りんきおうへん",
     "じゅうなんせい",
     "ちゅういぶかさ",
@@ -102,8 +102,8 @@ const char *D_089d7a08[] = {
 };
 
 
-// [D_089d7a18] ?
-const char *D_089d7a18[] = {
+// [D_089d7a18] DEBUG Skill Comments - Random
+const char *results_skill_text_random[] = {
     "らいねんの　れんあい　うん",
     "ことしの　きんせん　うん",
     "あしたの　てんき",
@@ -115,109 +115,109 @@ const char *D_089d7a18[] = {
 };
 
 
-// [D_089d7a38]
-struct ResultsTextEvent D_089d7a38[] = {
+// [D_089d7a38] DEBUG Results Skills - High Level
+struct ResultsSkillData results_skill_data_high[] = {
     /* 0x00 */ {
-        /* ? */ 8,
-        /* ? */ D_089d7998,
-        /* ? */ func_08019698
+        /* Weight */ 8,
+        /* Desc.  */ results_skill_text_accuracy,
+        /* Calc.  */ results_measure_skill_accuracy
     },
     /* 0x01 */ {
-        /* ? */ 5,
-        /* ? */ D_089d79c8,
-        /* ? */ func_080197a4
+        /* Weight */ 5,
+        /* Desc.  */ results_skill_text_hit_avg,
+        /* Calc.  */ results_measure_skill_hit_avg
     },
     /* 0x02 */ {
-        /* ? */ 10,
-        /* ? */ D_089d79a8,
-        /* ? */ func_080196fc
+        /* Weight */ 10,
+        /* Desc.  */ results_skill_text_barely_trk2,
+        /* Calc.  */ results_measure_skill_barely_trk2
     },
     /* 0x03 */ {
-        /* ? */ 7,
-        /* ? */ D_089d79b8,
-        /* ? */ func_08019750
+        /* Weight */ 7,
+        /* Desc.  */ results_skill_text_barely_trk1,
+        /* Calc.  */ results_measure_skill_barely_trk1
     },
     /* 0x04 */ {
-        /* ? */ 0,
-        /* ? */ D_089d79d8,
-        /* ? */ func_080197ec
+        /* Weight */ 0,
+        /* Desc.  */ results_skill_text_irrelevant_inputs,
+        /* Calc.  */ results_measure_skill_irrelevant_inputs
     },
     /* 0x05 */ {
-        /* ? */ 0,
-        /* ? */ D_089d7a18,
-        /* ? */ func_080198e8
+        /* Weight */ 0,
+        /* Desc.  */ results_skill_text_random,
+        /* Calc.  */ results_measure_skill_random
     },
-    END_OF_RESULTS_TEXT_EVENT_LIST
+    END_OF_RESULTS_SKILL_LIST
 };
 
 
-// [D_089d7a8c]
-struct ResultsTextEvent D_089d7a8c[] = {
+// [D_089d7a8c] DEBUG Results Skills - OK Level
+struct ResultsSkillData results_skill_data_mid[] = {
     /* 0x00 */ {
-        /* ? */ 8,
-        /* ? */ D_089d79c8,
-        /* ? */ func_080197a4
+        /* Weight */ 8,
+        /* Desc.  */ results_skill_text_hit_avg,
+        /* Calc.  */ results_measure_skill_hit_avg
     },
     /* 0x01 */ {
-        /* ? */ 9,
-        /* ? */ D_089d79e8,
-        /* ? */ func_08019820
+        /* Weight */ 9,
+        /* Desc.  */ results_skill_text_accuracy_lenient,
+        /* Calc.  */ results_measure_skill_accuracy_lenient
     },
     /* 0x02 */ {
-        /* ? */ 7,
-        /* ? */ D_089d79a8,
-        /* ? */ func_080196fc
+        /* Weight */ 7,
+        /* Desc.  */ results_skill_text_barely_trk2,
+        /* Calc.  */ results_measure_skill_barely_trk2
     },
     /* 0x03 */ {
-        /* ? */ 6,
-        /* ? */ D_089d79b8,
-        /* ? */ func_08019750
+        /* Weight */ 6,
+        /* Desc.  */ results_skill_text_barely_trk1,
+        /* Calc.  */ results_measure_skill_barely_trk1
     },
     /* 0x04 */ {
-        /* ? */ 0,
-        /* ? */ D_089d79d8,
-        /* ? */ func_080197ec
+        /* Weight */ 0,
+        /* Desc.  */ results_skill_text_irrelevant_inputs,
+        /* Calc.  */ results_measure_skill_irrelevant_inputs
     },
     /* 0x05 */ {
-        /* ? */ 0,
-        /* ? */ D_089d7a18,
-        /* ? */ func_080198e8
+        /* Weight */ 0,
+        /* Desc.  */ results_skill_text_random,
+        /* Calc.  */ results_measure_skill_random
     },
-    END_OF_RESULTS_TEXT_EVENT_LIST
+    END_OF_RESULTS_SKILL_LIST
 };
 
 
-// [D_089d7ae0]
-struct ResultsTextEvent D_089d7ae0[] = {
+// [D_089d7ae0] DEBUG Results Skills - Low Level
+struct ResultsSkillData results_skill_data_low[] = {
     /* 0x00 */ {
-        /* ? */ 9,
-        /* ? */ D_089d79f8,
-        /* ? */ func_08019878
+        /* Weight */ 9,
+        /* Desc.  */ results_skill_text_miss,
+        /* Calc.  */ results_measure_skill_miss
     },
     /* 0x01 */ {
-        /* ? */ 6,
-        /* ? */ D_089d79e8,
-        /* ? */ func_08019820
+        /* Weight */ 6,
+        /* Desc.  */ results_skill_text_accuracy_lenient,
+        /* Calc.  */ results_measure_skill_accuracy_lenient
     },
     /* 0x02 */ {
-        /* ? */ 9,
-        /* ? */ D_089d7a08,
-        /* ? */ func_080198b0
+        /* Weight */ 9,
+        /* Desc.  */ results_skill_text_miss_trk2,
+        /* Calc.  */ results_measure_skill_miss_trk2
     },
     /* 0x03 */ {
-        /* ? */ 6,
-        /* ? */ D_089d79b8,
-        /* ? */ func_08019750
+        /* Weight */ 6,
+        /* Desc.  */ results_skill_text_barely_trk1,
+        /* Calc.  */ results_measure_skill_barely_trk1
     },
     /* 0x04 */ {
-        /* ? */ 0,
-        /* ? */ D_089d79d8,
-        /* ? */ func_080197ec
+        /* Weight */ 0,
+        /* Desc.  */ results_skill_text_irrelevant_inputs,
+        /* Calc.  */ results_measure_skill_irrelevant_inputs
     },
     /* 0x05 */ {
-        /* ? */ 0,
-        /* ? */ D_089d7a18,
-        /* ? */ func_080198e8
+        /* Weight */ 0,
+        /* Desc.  */ results_skill_text_random,
+        /* Calc.  */ results_measure_skill_random
     },
-    END_OF_RESULTS_TEXT_EVENT_LIST
+    END_OF_RESULTS_SKILL_LIST
 };

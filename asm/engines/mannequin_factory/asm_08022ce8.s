@@ -106,7 +106,7 @@ branch_08022daa: \n\
 /* 08022dbe */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08022dc0 */ BL gameplay_set_input_buttons \n\
 /* 08022dc4 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 08022dc6 */ BL beats_to_ticks \n\
+/* 08022dc6 */ BL ticks_to_frames \n\
 /* 08022dca */ LDR R1, [R5] \n\
 /* 08022dcc */ ADDS R1, 0xC @ Add 0xC to R1 \n\
 /* 08022dce */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\

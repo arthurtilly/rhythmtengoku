@@ -51,7 +51,7 @@ branch_0803d874: \n\
 /* 0803d890 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803d892 */ BL func_0804d8f8 \n\
 /* 0803d896 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d898 */ BL beats_to_ticks \n\
+/* 0803d898 */ BL ticks_to_frames \n\
 /* 0803d89c */ LDR R1, [R6] \n\
 /* 0803d89e */ STRH R0, [R1, 0x14] \n\
 /* 0803d8a0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
@@ -63,7 +63,7 @@ branch_0803d874: \n\
 /* 0803d8b0 */ LSRS R4, R4, 0x10 \n\
 /* 0803d8b2 */ LDR R5, =func_0803d82c \n\
 /* 0803d8b4 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d8b6 */ BL beats_to_ticks \n\
+/* 0803d8b6 */ BL ticks_to_frames \n\
 /* 0803d8ba */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0803d8bc */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803d8be */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
@@ -85,7 +85,7 @@ branch_0803d874: \n\
 /* 0803d8e2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d8e4 */ BL play_sound_w_pitch_volume \n\
 /* 0803d8e8 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 0803d8ea */ BL beats_to_ticks \n\
+/* 0803d8ea */ BL ticks_to_frames \n\
 /* 0803d8ee */ LDR R1, [R6] \n\
 /* 0803d8f0 */ STRH R0, [R1, 0x36] \n\
  \n\

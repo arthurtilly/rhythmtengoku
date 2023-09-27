@@ -181,7 +181,7 @@ branch_0803eb86: \n\
 /* 0803ec0e */ LDR R4, =0x366 \n\
 /* 0803ec10 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 0803ec12 */ STRH R0, [R1] \n\
-/* 0803ec14 */ BL func_0800c42c \n\
+/* 0803ec14 */ BL scene_affine_group_alloc \n\
 /* 0803ec18 */ LDR R1, [R6] \n\
 /* 0803ec1a */ MOVS R5, 0xDA @ Set R5 to 0xDA \n\
 /* 0803ec1c */ LSLS R5, R5, 0x2 \n\

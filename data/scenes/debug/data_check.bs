@@ -1,0 +1,38 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Script
+script script_scene_data_check
+    set_tempo 120
+    pause_scene
+
+    run func_08007324, TRUE
+    scene_set_int INT8, 8, TRUE
+    pause_scene
+
+    scene_set_int INT8, 8, FALSE
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 12
+    stop
+
+
+@ Local Scene
+struct sub_scene_data_check
+    /* Start  */ .word data_check_scene_start,  0
+    /* Paused */ .word data_check_scene_paused, 0
+    /* Active */ .word data_check_scene_update, 0
+    /* Stop   */ .word data_check_scene_stop,   0
+    /* Script */ .word script_scene_data_check
+endstruct
+
+@ RIQ Data Check Scene
+struct scene_data_check
+    /* Start  */ .word func_0801d86c, sub_scene_data_check
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0x24
+endstruct
+
+.end

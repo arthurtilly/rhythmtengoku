@@ -2,19 +2,11 @@
 #include "main_menu.h"
 #include "graphics/main_menu/main_menu_graphics.h"
 
-#include "src/main.h"
-#include "src/code_08001360.h"
-#include "src/bitmap_font.h"
-#include "src/memory_heap.h"
-#include "src/code_080068f8.h"
-#include "src/code_08007468.h"
-#include "src/code_0800b3c8.h"
-#include "src/code_0800b778.h"
-#include "gameplay.h"
-#include "src/lib_0804ca80.h"
+#include "src/scenes/gameplay.h"
 
-// For readability.
-#define gMainMenu ((struct MainMenuSceneData *)gCurrentSceneData)
+
+/* MAIN MENU SCENE */
+
 
 enum MainMenuButtonsEnum {
     /* 00 */ GAME_SELECT,
@@ -24,24 +16,12 @@ enum MainMenuButtonsEnum {
     /* 04 */ OPTIONS_MENU
 };
 
+
 extern s8 sMainMenuButton;
-
-extern const struct BitmapFontData bitmap_font_warioware_body;
-extern struct Scene scene_debug_menu;
-extern struct Scene scene_game_select;
-extern struct Scene scene_results_ver_score;
-extern struct Scene scene_main_menu;
-extern struct Scene scene_rhythm_test;
-extern struct Scene scene_data_room;
-extern struct Scene scene_studio;
-extern struct Scene scene_options_menu;
-
-
-/* MAIN MENU */
 
 
 // Init. Static Variables
-void main_menu_init_static_var(void) {
+void main_menu_scene_init_memory(void) {
     sMainMenuButton = GAME_SELECT;
 }
 
@@ -75,20 +55,20 @@ void main_menu_scene_init_gfx1(void) {
 
 
 // Scene Start
-void main_menu_scene_start(void *sceneVar, s32 dataArg) {
-    struct Scene *tempScene;
+void main_menu_scene_start(void *sVar, s32 dArg) {
+    s32 enteredFromOptionsMenu;
     u32 i;
 
-    tempScene = func_0800061c();
+    enteredFromOptionsMenu = get_current_scene_trans_var();
     func_08007324(FALSE);
     func_080073f0();
-    gMainMenu->bmpFontBG = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
-    gMainMenu->bmpFontOBJ = func_0800c660(0x300, 4);
-    import_all_scene_objects(D_03005380, gMainMenu->bmpFontOBJ, main_menu_scene_objects, D_0300558c);
+    gMainMenu->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
+    gMainMenu->objFont = scene_create_obj_font_printer(0x300, 4);
+    import_all_scene_objects(D_03005380, gMainMenu->objFont, main_menu_scene_objects, D_0300558c);
     main_menu_scene_init_gfx1();
     func_0804d160(D_03005380, anim_main_menu_blank1, 0, 120, 64, 0x6E, 1, 0, 0);
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < TOTAL_MAIN_MENU_BUTTONS; i++) {
         if (i == sMainMenuButton) {
             gMainMenu->buttons[i] = func_0804d160(D_03005380, main_menu_button_on_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
         } else {
@@ -96,30 +76,30 @@ void main_menu_scene_start(void *sceneVar, s32 dataArg) {
         }
     }
 
-    gMainMenu->scriptIsReady = FALSE;
+    gMainMenu->inputsEnabled = FALSE;
     gMainMenu->bgY = 0;
     gMainMenu->bgX = 0;
-    gMainMenu->unk1A = (tempScene != NULL);
-    gMainMenu->loadingOptionsMenu = FALSE;
-    func_08000584(&scene_debug_menu);
+    gMainMenu->enteredFromOptionsMenu = (enteredFromOptionsMenu != FALSE);
+    gMainMenu->exitingToOptionsMenu = FALSE;
+    set_next_scene(&scene_debug_menu);
     flush_save_buffer_to_sram();
 }
 
 
 // Scene Update (Paused)
-void main_menu_scene_paused(void *sceneVar, s32 dataArg) {
+void main_menu_scene_paused(void *sVar, s32 dArg) {
 }
 
 
 // Scene Update (Active)
-void main_menu_scene_update(void *sceneVar, s32 dataArg) {
+void main_menu_scene_update(void *sVar, s32 dArg) {
     s32 prevButton;
 
     gMainMenu->bgX += 1;
     gMainMenu->bgY -= 1;
     scene_set_bg_layer_pos(BG_LAYER_1, gMainMenu->bgX >> 2, gMainMenu->bgY >> 2);
 
-    if (main_menu_scene_script_ready()) {
+    if (main_menu_scene_inputs_enabled()) {
         prevButton = sMainMenuButton;
         if (D_030053b8 & DPAD_UP) {
             sMainMenuButton -= 1;
@@ -138,39 +118,39 @@ void main_menu_scene_update(void *sceneVar, s32 dataArg) {
         else if (D_03004afc & (START_BUTTON | A_BUTTON)) {
             switch (prevButton) {
                 case GAME_SELECT:
-                    func_08000584(&scene_game_select);
+                    set_next_scene(&scene_game_select);
                     break;
                 case RHYTHM_TEST:
-                    func_080006b0(&scene_results_ver_score, &scene_main_menu);
-                    func_08000584(&scene_rhythm_test);
+                    set_scene_trans_target(&scene_results_ver_score, &scene_main_menu);
+                    set_next_scene(&scene_rhythm_test);
                     gameplay_pause_menu_set_quit_destination(&scene_main_menu);
                     break;
                 case RHYTHM_DATA_ROOM:
-                    func_08000584(&scene_data_room);
-                    func_080006b0(&scene_data_room, &scene_main_menu);
+                    set_next_scene(&scene_data_room);
+                    set_scene_trans_target(&scene_data_room, &scene_main_menu);
                     break;
                 case STUDIO:
-                    func_08000584(&scene_studio);
-                    func_080006b0(&scene_studio, &scene_main_menu);
-                    func_080006d0(&scene_studio, NULL);
+                    set_next_scene(&scene_studio);
+                    set_scene_trans_target(&scene_studio, &scene_main_menu);
+                    set_scene_trans_var(&scene_studio, 0);
                     break;
                 case OPTIONS_MENU:
-                    func_08000584(&scene_options_menu);
-                    func_080006b0(&scene_options_menu, &scene_main_menu);
-                    gMainMenu->loadingOptionsMenu = TRUE;
+                    set_next_scene(&scene_options_menu);
+                    set_scene_trans_target(&scene_options_menu, &scene_main_menu);
+                    gMainMenu->exitingToOptionsMenu = TRUE;
                     break;
             }
             set_pause_beatscript_scene(FALSE);
-            gMainMenu->scriptIsReady = FALSE;
+            gMainMenu->inputsEnabled = FALSE;
             play_sound(&s_menu_kettei1_seqData);
         }
     }
 }
 
 
-// Communicate with Script
-u32 main_menu_scene_script_ready(void) {
-    if (gMainMenu->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 main_menu_scene_inputs_enabled(void) {
+    if (gMainMenu->inputsEnabled) {
         return TRUE;
     } else {
         return FALSE;
@@ -179,7 +159,7 @@ u32 main_menu_scene_script_ready(void) {
 
 
 // Scene Stop
-void main_menu_scene_stop(void *sceneVar, s32 dataArg) {
+void main_menu_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
 }

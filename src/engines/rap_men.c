@@ -54,7 +54,7 @@ void rap_men_engine_start(u32 version) {
     rap_men_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
-    gRapMen->unk4 = func_0800c660(0x340, 2);
+    gRapMen->unk4 = scene_create_obj_font_printer(0x340, 2);
     textAnim = bmp_font_obj_print_l(gRapMen->unk4, D_0805a8b0, 1, 14);
     gRapMen->textSprite = func_0804d160(D_03005380, textAnim->frames, 0, 120, 148, 0, 0, 0, 0);
     gRapMen->rapperSprite = func_0804d160(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_RAPPER), 0, 70, 130, 0x4800, 1, 0x7f, 0);
@@ -75,7 +75,7 @@ void rap_men_engine_event_stub(void) {
 // Engine Event 00 (Set Rapper Animation)
 void rap_men_set_rapper_anim(u32 anim) {
     func_0804d8f8(D_03005380, gRapMen->rapperSprite, rap_men_get_anim(rapping_anim_map[anim]), 0, 1, 0x7f, 0);
-    gRapMen->rapperAnimTimer = beats_to_ticks(rapping_anim_durations[anim]);
+    gRapMen->rapperAnimTimer = ticks_to_frames(rapping_anim_durations[anim]);
 }
 
 
@@ -107,15 +107,15 @@ void rap_men_engine_stop(void) {
 // Cue - Spawn
 void rap_men_cue_spawn(struct Cue *cue, struct RapMenCue *info, u32 sound) {
     func_0804d8f8(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PREPARE), 0, 1, 0x7f, 0);
-    gRapMen->playerAnimTimer = beats_to_ticks(0x24);
-    gRapMen->unusedAnimTimer = beats_to_ticks(0x24);
+    gRapMen->playerAnimTimer = ticks_to_frames(0x24);
+    gRapMen->unusedAnimTimer = ticks_to_frames(0x24);
     info->sound = sound;
 }
 
 
 // Cue - Update
 u32 rap_men_cue_update(struct Cue *cue, struct RapMenCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x30)) {
+    if (runningTime > ticks_to_frames(0x30)) {
         return TRUE;
     } else {
         return FALSE;
@@ -131,7 +131,7 @@ void rap_men_cue_despawn(struct Cue *cue, struct RapMenCue *info) {
 // Cue - Hit
 void rap_men_cue_hit(struct Cue *cue, struct RapMenCue *info, u32 pressed, u32 released) {
     func_0804d8f8(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_HIT), 0, 1, 0x7f, 0);
-    gRapMen->playerAnimTimer = beats_to_ticks(0x24);
+    gRapMen->playerAnimTimer = ticks_to_frames(0x24);
     func_0804d160(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_SMOKE), 0, 160, 130, 0x47f6, 1, 0, 3);
     rap_men_set_rapper_anim(RAP_MEN_ANIM_PREPARE);
     play_sound(rap_men_cue_hit_sfx[gRapMen->version][info->sound]);
@@ -143,7 +143,7 @@ void rap_men_cue_hit(struct Cue *cue, struct RapMenCue *info, u32 pressed, u32 r
 // Cue - Barely
 void rap_men_cue_barely(struct Cue *cue, struct RapMenCue *info, u32 pressed, u32 released) {
     func_0804d8f8(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_BARELY), 0, 1, 0x7f, 0);
-    gRapMen->playerAnimTimer = beats_to_ticks(0x24);
+    gRapMen->playerAnimTimer = ticks_to_frames(0x24);
     play_sound(rap_men_cue_hit_sfx[gRapMen->version][RAP_CUE_SFX_SHORT]);
     play_sound(&s_tom_M_seqData);
 }
@@ -153,7 +153,7 @@ void rap_men_cue_barely(struct Cue *cue, struct RapMenCue *info, u32 pressed, u3
 void rap_men_cue_miss(struct Cue *cue, struct RapMenCue *info) {
     if (!gRapMen->isTutorial) {
         func_0804d8f8(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_MISS), 0, 1, 0x7f, 0);
-        gRapMen->playerAnimTimer = beats_to_ticks(0x3C);
+        gRapMen->playerAnimTimer = ticks_to_frames(0x3C);
         play_sound(&s_RC_seqData);
     }
     beatscript_enable_loops();
@@ -163,7 +163,7 @@ void rap_men_cue_miss(struct Cue *cue, struct RapMenCue *info) {
 // Input Event
 void rap_men_input_event(u32 pressed, u32 released) {
     func_0804d8f8(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 1, 0x7f, 0);
-    gRapMen->playerAnimTimer = beats_to_ticks(0x24);
+    gRapMen->playerAnimTimer = ticks_to_frames(0x24);
     play_sound(rap_men_cue_miss_sfx[gRapMen->version]);
     beatscript_enable_loops();
 }

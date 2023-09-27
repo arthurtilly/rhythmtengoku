@@ -49,7 +49,7 @@ void showtime_engine_start(u32 version) {
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, BG_PRIORITY_LOW);
     scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, BG_PRIORITY_HIGHEST);
     func_0802d96c();
-    gShowtime->unk0 = func_0800c660(0x340, 2);
+    gShowtime->unk0 = scene_create_obj_font_printer(0x340, 2);
     textAnim = bmp_font_obj_print_c(gShowtime->unk0, D_0805a3cc, 0, 0);
     gShowtime->unk4 = func_0804d160(D_03005380, textAnim->frames, 0, 120, 56, 0, 0, 0, 0);
     gameplay_set_input_buttons(A_BUTTON, 0);
@@ -88,7 +88,7 @@ void showtime_cue_spawn_gray(struct Cue *cue, struct ShowtimeCue *info, u32 unus
 
 
 u32 showtime_cue_update_gray(struct Cue *cue, struct ShowtimeCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x78)) {
+    if (runningTime > ticks_to_frames(0x78)) {
         return TRUE;
     } else {
         return FALSE;
@@ -104,7 +104,7 @@ void showtime_cue_despawn_gray(struct Cue *cue, struct ShowtimeCue *info) {
 
 
 u32 showtime_cue_update_black(struct Cue *cue, struct ShowtimeCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x90)) {
+    if (runningTime > ticks_to_frames(0x90)) {
         return TRUE;
     } else {
         return FALSE;
@@ -130,7 +130,7 @@ void showtime_cue_despawn_white_fast(struct Cue *cue, struct ShowtimeCue *info) 
 
 
 u32 showtime_cue_update_white_fast_swing(struct Cue *cue, struct ShowtimeCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x78)) {
+    if (runningTime > ticks_to_frames(0x78)) {
         return TRUE;
     } else {
         return FALSE;
@@ -149,7 +149,7 @@ void showtime_cue_spawn_white(struct Cue *cue, struct ShowtimeCue *info, u32 unu
 
 
 u32 showtime_cue_update_white(struct Cue *cue, struct ShowtimeCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x78)){
+    if (runningTime > ticks_to_frames(0x78)){
         return TRUE;
     } else {
         return FALSE;
@@ -165,7 +165,7 @@ void showtime_cue_hit(struct Cue *cue, struct ShowtimeCue *info, u32 pressed, u3
     func_0802cf8c(info->unk4);
     func_0802d81c(info->unk4);
     func_0802d2bc();
-    gShowtime->unk3C0 = beats_to_ticks(0x14);
+    gShowtime->unk3C0 = ticks_to_frames(0x14);
 }
 
 
@@ -178,7 +178,7 @@ void showtime_input_event(u32 pressed, u32 released) {
     if (gShowtime->unk3C0 == 0) {
         func_0802d918(-1);
         func_0802d2bc();
-        gShowtime->unk3C0 = beats_to_ticks(0x1E);
+        gShowtime->unk3C0 = ticks_to_frames(0x1E);
         play_sound(&s_block_hit_seqData);
     }
 }
@@ -206,7 +206,7 @@ void func_0802c1f0(u32 unused, s16 sprite, u32 arg2) {
 void func_0802c23c() {
     s32 i;
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < SHOWTIME_SUB_AMOUNT; i++) {
         gShowtime->unk8[i].unk4 = 0;
 
         if (gShowtime->version != SHOWTIME_VER_REMIX_3) {
@@ -230,7 +230,7 @@ void func_0802c23c() {
 void func_0802c334() {
     s32 i;
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < SHOWTIME_SUB_AMOUNT; i++) {
         if (gShowtime->unk8[i].unk4 == 0) {
             continue;
         }
@@ -341,7 +341,7 @@ void func_0802d38c(void) {
 void func_0802d8bc(u32 arg) {
     s32 i;
 
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i < SHOWTIME_SUB2_AMOUNT; i++) {
         if (gShowtime->unk174[i].unk4 == 0) {
             gShowtime->unk174[i].unk4 = 4;
             gShowtime->unk174[i].unkC = arg;

@@ -50,7 +50,7 @@ thumb_func_start marching_engine_start \n\
 /* 0803420e */ MOVS R0, 0xD0 @ Set R0 to 0xD0 \n\
 /* 08034210 */ LSLS R0, R0, 0x2 \n\
 /* 08034212 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
-/* 08034214 */ BL func_0800c660 \n\
+/* 08034214 */ BL scene_create_obj_font_printer \n\
 /* 08034218 */ LDR R1, [R6] \n\
 /* 0803421a */ STR R0, [R1, 0x4] \n\
 /* 0803421c */ LDR R1, =D_0805a670 \n\

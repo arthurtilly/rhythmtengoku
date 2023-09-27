@@ -19,7 +19,7 @@ thumb_func_start func_0803e10c \n\
 /* 0803e126 */ STR R2, [SP, 0x4] \n\
 /* 0803e128 */ MOVS R2, 0xB0 @ Set R2 to 0xB0 \n\
 /* 0803e12a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803e12c */ BL func_0800e25c \n\
+/* 0803e12c */ BL scene_set_sprite_motion_decelerate \n\
 /* 0803e130 */ B branch_0803e154 \n\
 \n\
 .ltorg \n\
@@ -37,7 +37,7 @@ branch_0803e138: \n\
 /* 0803e14a */ STR R1, [SP, 0x4] \n\
 /* 0803e14c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803e14e */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
-/* 0803e150 */ BL func_0800e25c \n\
+/* 0803e150 */ BL scene_set_sprite_motion_decelerate \n\
  \n\
 branch_0803e154: \n\
 /* 0803e154 */ ADD SP, 0x8 \n\

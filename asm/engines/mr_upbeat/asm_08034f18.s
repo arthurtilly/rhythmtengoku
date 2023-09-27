@@ -18,7 +18,7 @@ thumb_func_start func_08034f18 \n\
 /* 08034f30 */ BL play_sound \n\
 /* 08034f34 */ STR R5, [R4, 0x14] \n\
 /* 08034f36 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 08034f38 */ BL beats_to_ticks \n\
+/* 08034f38 */ BL ticks_to_frames \n\
 /* 08034f3c */ STR R0, [R4, 0x18] \n\
 /* 08034f3e */ LSRS R0, R0, 0x1 \n\
 /* 08034f40 */ STR R0, [R4, 0x1C] \n\

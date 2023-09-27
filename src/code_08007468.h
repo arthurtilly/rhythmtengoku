@@ -15,27 +15,27 @@ struct unk_struct_08008b00 {
     s32 unkC;
 };
 
-extern s32 (*D_03004ae4)(s32);
+extern s32 (*math_sqrt)(s32);
 
 /* GRAPHICS UTIL */
 extern void get_sprite_xy(s16 sprite, s16 *xReq, s16 *yReq);
 extern void assign_sprite_affine_param(s16 sprite, s8 affineParam);
 extern void set_affine_scale_rotation(s8 affineParam, s16 scale, s16 rotation);
 extern void set_affine_stretch_rotation(s8 affineParam, s16 xScale, s16 yScale, s16 rotation);
-extern struct unk_struct_080074ec *func_080074ec(struct unk_struct_080074ec_init *inputs);
-extern u32 func_08007544(struct unk_struct_080074ec *task);
-extern struct unk_struct_0800757c *func_0800757c(struct unk_struct_0800757c_init *inputs);
-extern u32 func_080075e4(struct unk_struct_0800757c *task);
-extern struct unk_struct_0800765c *func_0800765c(struct unk_struct_0800765c_init *inputs);
-extern u32 func_080076ec(struct unk_struct_0800765c *task);
-extern struct unk_struct_08007788 *func_08007788(struct unk_struct_08007788_init *inputs);
-extern u32 func_080077e8(struct unk_struct_08007788 *task);
-extern u32 func_08007854(struct unk_struct_080078ec *task);
-extern struct unk_struct_080078ec *func_080078ec(struct unk_struct_080078ec_init *inputs);
-extern u32 func_0800793c(struct unk_struct_080079bc *task);
-extern struct unk_struct_080079bc *func_080079bc(struct unk_struct_080079bc_init *inputs);
-extern u32 func_08007a14(struct unk_struct_08007aa0 *task);
-extern struct unk_struct_08007aa0 *func_08007aa0(struct unk_struct_08007aa0_init *inputs);
+extern struct SpriteMover_Indefinite *start_sprite_motion_task_indefinite(struct SpriteMover_Indefinite_Inputs *inputs);
+extern u32 update_sprite_motion_task_indefinite(struct SpriteMover_Indefinite *task);
+extern struct SpriteMover_Decelerate *start_sprite_motion_task_decelerate(struct SpriteMover_Decelerate_Inputs *inputs);
+extern u32 update_sprite_motion_task_decelerate(struct SpriteMover_Decelerate *task);
+extern struct SpriteMover_Accelerate *start_sprite_motion_task_accelerate(struct SpriteMover_Accelerate_Inputs *inputs);
+extern u32 update_sprite_motion_task_accelerate(struct SpriteMover_Accelerate *task);
+extern struct SpriteMover_TimedLinear *start_sprite_motion_task_lerp(struct SpriteMover_TimedLinear_Inputs *inputs);
+extern u32 update_sprite_motion_task_lerp(struct SpriteMover_TimedLinear *task);
+extern u32 update_sprite_motion_task_sine_osc(struct SpriteMover_SineOsc *task);
+extern struct SpriteMover_SineOsc *start_sprite_motion_task_sine_osc(struct SpriteMover_SineOsc_Inputs *inputs);
+extern u32 update_sprite_motion_task_sine_vel(struct SpriteMover_SineVel *task);
+extern struct SpriteMover_SineVel *start_sprite_motion_task_sine_vel(struct SpriteMover_SineVel_Inputs *inputs);
+extern u32 update_sprite_motion_task_sine_wave(struct SpriteMover_SineWave *task);
+extern struct SpriteMover_SineWave *start_sprite_motion_task_sine_wave(struct SpriteMover_SineWave_Inputs *inputs);
 extern void delete_bmp_font_obj_text_anim(struct BitmapFontOBJ *bmpFontOBJ, s16 sprite);
 extern void delete_bmp_font_obj_text_sprite(struct BitmapFontOBJ *bmpFontOBJ, s16 sprite);
 
@@ -44,19 +44,21 @@ extern void init_fast_udivsi3(void);
 extern s32 fast_divsi3(s32 dividend, s32 divisor);
 
 /* INTERPOLATION */
-extern struct LinearDataInterpolator *func_08007bb8(struct LinearDataInterpolator *inputs);
-extern u32 func_08007c30(struct LinearDataInterpolator *task);
-extern struct unk_struct_08007ca8 *func_08007ca8(struct unk_struct_08007ca8_init *inputs);
-extern u32 func_08007d20(struct unk_struct_08007ca8 *task);
-extern struct unk_struct_08007d88 *func_08007d88(struct unk_struct_08007d88_init *inputs);
-extern u32 func_08007e00(struct unk_struct_08007d88 *task);
-// extern ? func_08007e68(?);
-extern struct unk_struct_08007e7c *func_08007e7c(struct unk_struct_08007e7c_init *inputs);
-extern u32 func_08007ef8(struct unk_struct_08007e7c *task);
-extern struct BlendControlsInterpolator *init_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *inputs);
-extern u32 update_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *task);
-extern s32 interpolate_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 flip);
-// extern ? func_08008090(?);
+extern struct NumberInterpolator *start_integer_interp_task(struct NumberInterpolator *inputs);
+extern u32 update_integer_interp_task(struct NumberInterpolator *task);
+extern struct NumberInterpolator *start_integer_alternator_task(struct NumberInterpolator *inputs);
+extern u32 update_integer_alternator_task(struct NumberInterpolator *task);
+extern struct NumberInterpolator *start_integer_incrementer_task(struct NumberInterpolator *inputs);
+extern u32 update_integer_incrementer_task(struct NumberInterpolator *task);
+extern void set_target_for_integer_task(s32 taskID, s32 newTarget);
+extern struct NumberSineInterpolator *start_integer_sine_interp_task(struct NumberSineInterpolator *inputs);
+extern u32 update_integer_sine_interp_task(struct NumberSineInterpolator *task);
+extern struct BlendControlsInterpolator *start_lcd_blend_mode_interp(struct BlendControlsInterpolator *inputs);
+extern u32 update_lcd_blend_mode_interp(struct BlendControlsInterpolator *task);
+extern s32 interp_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 flip);
+extern void interp_screen_window_size(u16 memID, u32 window, u32 duration,
+                                        s32 initialX1, s32 initialY1, s32 initialX2, s32 initialY2,
+                                        s32 targetX1, s32 targetY1, s32 targetX2, s32 targetY2);
 
 /* STRING */
 extern char *strncpy(char *s1, const char *s2, u32 len);

@@ -91,8 +91,9 @@ _8000b24:   .word D_03005390
 _8000b28:   .word 0
 glabel func_08000a00_end
 
-@ ? (Mathematics)
-arm_func_start func_08000b2c
+
+@ Square Root
+arm_func_start math_sqrt_rom
     mov     r12, r0
     mov     r0, #0
     mov     r1, #0
@@ -209,7 +210,8 @@ arm_func_start func_08000b2c
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     bx      lr
-glabel func_08000b2c_end
+glabel math_sqrt_rom_end
+
 
 @ Fast Unsigned Division
 arm_func_start fast_udivsi3_rom
@@ -345,6 +347,7 @@ arm_func_start fast_udivsi3_rom
     adc     r0, r0, r0
     bx      lr
 glabel fast_udivsi3_rom_end
+
 
 @ Huffman Decompression
 arm_func_start func_08000f08
@@ -498,6 +501,7 @@ branch_08001124:
     bx      lr
 glabel func_08000f08_end
 
+
 @ Memory Heap Allocation
 arm_func_start mem_heap_alloc_block_rom
     stmfd   sp!, {r4}
@@ -521,8 +525,9 @@ branch_08001164:
     bx      lr
 glabel mem_heap_alloc_block_rom_end
 
+
 @ Text Printer Glyph Writing
-arm_func_start func_0800116c
+arm_func_start text_print_glyph_to_vram_rom
     push    {r4, r5, r6, r7, r8, r9, r10, r11, r12, lr}
     ldr     r9, [r0]
     ldr     r10, [r0, #4]
@@ -578,16 +583,17 @@ branch_080011f4:
     orr     r8, r8, r4, lsr fp
     rsb     r11, r11, #0x20
     bx      lr
-glabel func_0800116c_end
+glabel text_print_glyph_to_vram_rom_end
 
-@ Palette Interpolation (Two Palettes)
-arm_func_start func_08001240
+
+@ Palette Interpolation (Array->Array)
+arm_func_start fast_blend_pal_to_pal
     push    {r4, r5, r6, r7, r8, r9, r10}
-    ldr     r3, [r0]
-    ldr     r4, [r0, #4]
-    ldr     r5, [r0, #8]
-    ldr     r6, [r0, #0xc]
-    ldr     r7, [r0, #0x10]
+    ldr     r3, [r0]        @ Palette A
+    ldr     r4, [r0, #4]    @ Palette B
+    ldr     r5, [r0, #8]    @ Destination
+    ldr     r6, [r0, #0xc]  @ Total Colors
+    ldr     r7, [r0, #0x10] @ Blend Alpha (0-256)
     mov     r10, #31
 branch_0800125c:
     ldrh    r8, [r3], #2
@@ -614,16 +620,17 @@ branch_0800125c:
     bne     branch_0800125c
     pop     {r4, r5, r6, r7, r8, r9, r10}
     bx      lr
-glabel func_08001240_end
+glabel fast_blend_pal_to_pal_end
 
-@ Palette Interpolation (Single-Colour Source)
-arm_func_start func_080012bc
+
+@ Palette Interpolation (Color->Array)
+arm_func_start fast_blend_col_to_pal
     push    {r4, r5, r6, r7, r8, r9, r10}
-    ldr     r2, [r0]
-    ldr     r4, [r0, #4]
-    ldr     r5, [r0, #8]
-    ldr     r6, [r0, #0xc]
-    ldr     r7, [r0, #0x10]
+    ldr     r2, [r0]        @ Color A
+    ldr     r4, [r0, #4]    @ Palette B
+    ldr     r5, [r0, #8]    @ Destination
+    ldr     r6, [r0, #0xc]  @ Total Colors
+    ldr     r7, [r0, #0x10] @ Blend Alpha (0-256)
     mov     r10, #31
     and     r3, r10, r2, lsr #5
     and     r8, r10, r2, lsr #10
@@ -649,7 +656,8 @@ branch_080012e4:
     bne     branch_080012e4
     pop     {r4, r5, r6, r7, r8, r9, r10}
     bx      lr
-glabel func_080012bc_end
+glabel fast_blend_col_to_pal_end
+
 
 @ SRAM Library
 @ Write 32-bit Integers to SRAM

@@ -1,19 +1,18 @@
 #pragma once
 
-#include "global.h"
-#include "graphics.h"
-#include "sound.h"
-#include "cues.h"
-#include "data/beatscript_scene_data.h"
-#include "src/text_printer.h"
-
 /*
     General "Game Engine" header file.
     Should probably contain all of the functions and/or headers that are referenced in the game engine C files,
     along with any other sort of common data.
 */
 
-#define END_OF_COMMON_EVENT_LIST (void *) -1
+#include "global.h"
+#include "lib_agb.h"
+#include "cues.h"
+#include "scenes.h"
+
+
+#define END_OF_COMMON_EVENT_LIST ((void *)-1)
 
 typedef void (*EngineEvent)();
 typedef void (*EngineInitFunc)(u32);

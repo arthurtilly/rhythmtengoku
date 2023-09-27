@@ -15,7 +15,7 @@ thumb_func_start tram_pauline_engine_update \n\
 /* 080409e0 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 080409e2 */ BGT branch_08040a08 \n\
 /* 080409e4 */ MOVS R0, 0xC0 @ Set R0 to 0xC0 \n\
-/* 080409e6 */ BL beats_to_ticks \n\
+/* 080409e6 */ BL ticks_to_frames \n\
 /* 080409ea */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080409ec */ LDR R4, [R4] \n\
 /* 080409ee */ MOVS R0, 0xA0 @ Set R0 to 0xA0 \n\

@@ -5,6 +5,15 @@
 
 #include "games/mechanical_horse/graphics/mechanical_horse_graphics.h"
 
+// Engine Macros/Enums:
+enum HorseLessonsEnum {
+    HORSE_LESSON_1_WALK,
+    HORSE_LESSON_2_TROT,
+    HORSE_LESSON_3_CANTER,
+    HORSE_LESSON_4_GALLOP
+};
+
+
 // Engine Types:
 struct MechanicalHorseEngineData {
     u8 pad[0x310];
@@ -17,15 +26,6 @@ struct MechanicalHorseCue {
 struct MechanicalHorseBG {
     Palette *palette;
     const struct GraphicsTable *gfxTable;
-};
-
-
-// Engine Macros/Enums:
-enum HorseLessonsEnum {
-    HORSE_LESSON_1_WALK,
-    HORSE_LESSON_2_TROT,
-    HORSE_LESSON_3_CANTER,
-    HORSE_LESSON_4_GALLOP
 };
 
 

@@ -6,7 +6,7 @@ thumb_func_start rhythm_toys_cue_update \n\
 /* 08044968 */ PUSH {R4, LR} \n\
 /* 0804496a */ ADDS R4, R2, 0x0 @ Set R4 to R2 + 0x0 \n\
 /* 0804496c */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
-/* 0804496e */ BL beats_to_ticks \n\
+/* 0804496e */ BL ticks_to_frames \n\
 /* 08044972 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 08044974 */ BHI branch_0804497a \n\
 /* 08044976 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

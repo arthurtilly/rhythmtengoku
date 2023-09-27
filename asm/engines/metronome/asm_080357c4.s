@@ -75,7 +75,7 @@ branch_0803582a: \n\
  \n\
 branch_0803585c: \n\
 /* 0803585c */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803585e */ BL beats_to_ticks \n\
+/* 0803585e */ BL ticks_to_frames \n\
 /* 08035862 */ LSLS R0, R0, 0x10 \n\
 /* 08035864 */ LSRS R0, R0, 0x10 \n\
 /* 08035866 */ LSLS R4, R4, 0x10 \n\
@@ -87,7 +87,7 @@ branch_0803585c: \n\
  \n\
 branch_08035874: \n\
 /* 08035874 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08035876 */ BL beats_to_ticks \n\
+/* 08035876 */ BL ticks_to_frames \n\
 /* 0803587a */ LSLS R0, R0, 0x10 \n\
 /* 0803587c */ LSRS R0, R0, 0x10 \n\
 /* 0803587e */ LSLS R4, R4, 0x10 \n\
@@ -104,7 +104,7 @@ branch_08035884: \n\
 /* 08035890 */ STR R0, [SP] \n\
 /* 08035892 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08035894 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 08035896 */ BL func_0800e62c \n\
+/* 08035896 */ BL scene_move_sprite_sine_vel \n\
 /* 0803589a */ LDR R0, [R6] \n\
 /* 0803589c */ ADDS R0, 0x20 @ Add 0x20 to R0 \n\
 /* 0803589e */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\

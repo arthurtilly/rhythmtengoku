@@ -5,6 +5,15 @@
 
 #include "games/tram_and_pauline/graphics/tram_pauline_graphics.h"
 
+// Engine Macros/Enums:
+enum TramPaulineVersionsEnum {
+    ENGINE_VER_TRAM_PAULINE_TUTORIAL,
+    ENGINE_VER_TRAM_PAULINE,
+    ENGINE_VER_TRAM_PAULINE_REMIX_3,
+    ENGINE_VER_TRAM_PAULINE_NO_CURTAIN
+};
+
+
 // Engine Types:
 struct TramPaulineEngineData {
     u8 pad[0x48];
@@ -12,15 +21,6 @@ struct TramPaulineEngineData {
 
 struct TramPaulineCue {
     /* add fields here */
-};
-
-
-// Engine Macros/Enums:
-enum TramPaulineVersionsEnum {
-    ENGINE_VER_TRAM_PAULINE_TUTORIAL,
-    ENGINE_VER_TRAM_PAULINE,
-    ENGINE_VER_TRAM_PAULINE_REMIX_3,
-    ENGINE_VER_TRAM_PAULINE_NO_CURTAIN
 };
 
 

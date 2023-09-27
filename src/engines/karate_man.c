@@ -4,7 +4,6 @@
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/text_printer.h"
-#include "src/code_0800b3c8.h"
 #include "src/code_0800b778.h"
 #include "src/scenes/gameplay.h"
 #include "src/lib_0804ca80.h"
@@ -93,7 +92,7 @@ void karate_engine_start(u32 ver) {
 void karate_set_bg_face(u32 bgFace, u32 duration) {
     func_08003eb8(karate_bg_face_textures[bgFace], VRAMBase + 0x8000);
     scene_show_bg_layer(0);
-    gKarateMan->bgFace = beats_to_ticks(duration + 1);
+    gKarateMan->bgFace = ticks_to_frames(duration + 1);
 }
 
 
@@ -240,10 +239,10 @@ void karate_cue_increment_z_for_existing_objects(struct Cue *currentCue) {
 // CUE - Spawn
 void karate_cue_spawn(struct Cue *cue, struct KarateManCue *data, u32 type) {
     data->isHit = FALSE;
-    data->unk8 = func_0800c42c();
+    data->unk8 = scene_affine_group_alloc();
     data->sprite = func_0804d160(D_03005380, anim_karate_object, 0, 156, 52, 0x4800, 0, 0, 0);
     assign_sprite_affine_param(data->sprite, data->unk8);
-    data->unk9 = func_0800c42c();
+    data->unk9 = scene_affine_group_alloc();
     data->shadow = func_0804d160(D_03005380, anim_karate_object_shadow, 0, 156, 133, 0x4a00, 0, 0, 0);
     assign_sprite_affine_param(data->shadow, data->unk9);
     data->unk1C = 0;
@@ -321,7 +320,7 @@ u32 karate_cue_update(struct Cue *cue, struct KarateManCue *data, u32 runningTim
     u16 temp;
     u32 zero;
 
-    if (runningTime > beats_to_ticks(0x78)) {
+    if (runningTime > ticks_to_frames(0x78)) {
         return TRUE; // Cue is over
     }
 
@@ -339,7 +338,7 @@ u32 karate_cue_update(struct Cue *cue, struct KarateManCue *data, u32 runningTim
             if (temp > 0x180) { // Object is out of player's range
                 if ((s16)data->miss <= 0) {
                     data->miss = TRUE;
-                    joe->miss = beats_to_ticks(0x24);
+                    joe->miss = ticks_to_frames(0x24);
                 }
             }
             karate_cue_update_launched_object(data);
@@ -384,7 +383,7 @@ void karate_start_serious_mode(void) {
     func_0804d770(D_03005380, gKarateMan->flowSprite, FALSE);
     gKarateMan->version = KARATE_VER_SERIOUS;
     scene_set_music_volume_env(0);
-    scene_interpolate_music_volume(0x100, beats_to_ticks(0x60));
+    scene_interpolate_music_volume(0x100, ticks_to_frames(0x60));
 }
 
 
@@ -426,7 +425,7 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
     }
     
     // Check if Flow is more than 2 or if Version is 2 ("Serious Mode")
-    if ((gKarateMan->flowLevel > 2)) {
+    if (gKarateMan->flowLevel > 2) {
         isHigh = TRUE;
     }
 
@@ -491,11 +490,11 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
         func_0804d160(D_03005380, anim_karate_hit_effect, 0, 0x9e, 0x36, 0x4f00, 1, 0, 3);
         switch (data->type) {
             case 1: // Rock
-                joe->smirk = beats_to_ticks(0x24);
+                joe->smirk = ticks_to_frames(0x24);
                 play_sound(&s_f_boxing_kansei_seqData);
                 break;
             case 3: // Bomb
-                joe->happy = beats_to_ticks(0x6c);
+                joe->happy = ticks_to_frames(0x6c);
                 break;
         }
         if (gKarateMan->version == KARATE_VER_SERIOUS) { // BG Flash ("Serious Mode" version)
@@ -534,7 +533,7 @@ void karate_cue_barely(struct Cue *cue, struct KarateManCue *data) {
     data->unk2D = 4;
     joe->isNotBeat = TRUE;
     func_0804d8f8(D_03005380, joe->sprite, anim_karate_joe_punch_high, 0, 1, 0x7f, 0);
-    joe->barely = beats_to_ticks(0x24);
+    joe->barely = ticks_to_frames(0x24);
     karate_decrement_flow(); // Decrement Flow
 
     // BG Face

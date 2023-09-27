@@ -40,7 +40,7 @@ branch_0803f5d8: \n\
 /* 0803f5e0 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803f5e2 */ STRB R0, [R1] \n\
 /* 0803f5e4 */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 0803f5e6 */ BL beats_to_ticks \n\
+/* 0803f5e6 */ BL ticks_to_frames \n\
 /* 0803f5ea */ LDR R1, [R4] \n\
 /* 0803f5ec */ MOVS R2, 0xD8 @ Set R2 to 0xD8 \n\
 /* 0803f5ee */ LSLS R2, R2, 0x2 \n\
@@ -84,7 +84,7 @@ branch_0803f622: \n\
 /* 0803f632 */ BL func_0803f9a0 \n\
 /* 0803f636 */ LDRB R4, [R7] \n\
 /* 0803f638 */ MOVS R0, 0x8 @ Set R0 to 0x8 \n\
-/* 0803f63a */ BL beats_to_ticks \n\
+/* 0803f63a */ BL ticks_to_frames \n\
 /* 0803f63e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f640 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803f642 */ BL func_0803ee58 \n\
@@ -175,7 +175,7 @@ branch_0803f6f8: \n\
 /* 0803f71a */ BL func_0804d770 \n\
 /* 0803f71e */ LDRB R4, [R7] \n\
 /* 0803f720 */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 0803f722 */ BL beats_to_ticks \n\
+/* 0803f722 */ BL ticks_to_frames \n\
 /* 0803f726 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f728 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803f72a */ BL func_0803ee58 \n\

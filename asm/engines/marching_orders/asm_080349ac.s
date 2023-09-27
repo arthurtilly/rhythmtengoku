@@ -10,7 +10,7 @@ thumb_func_start func_080349ac \n\
 /* 080349b4 */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\
 /* 080349b6 */ BL func_080343b8 \n\
 /* 080349ba */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 080349bc */ BL beats_to_ticks \n\
+/* 080349bc */ BL ticks_to_frames \n\
 /* 080349c0 */ LDR R1, [R4] \n\
 /* 080349c2 */ STRH R0, [R1, 0x3A] \n\
 /* 080349c4 */ POP {R4} \n\

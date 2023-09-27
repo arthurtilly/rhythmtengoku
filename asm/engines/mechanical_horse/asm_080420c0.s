@@ -150,7 +150,7 @@ branch_0804216c: \n\
 /* 080421cc */ ADDS R0, 0x20 @ Add 0x20 to R0 \n\
 /* 080421ce */ LDRB R4, [R0] \n\
 /* 080421d0 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 080421d2 */ BL beats_to_ticks \n\
+/* 080421d2 */ BL ticks_to_frames \n\
 /* 080421d6 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 080421d8 */ BLT branch_080421ea \n\
 /* 080421da */ LDR R0, [R5] \n\
@@ -186,7 +186,7 @@ branch_080421ea: \n\
 /* 08042216 */ ADDS R0, 0x20 @ Add 0x20 to R0 \n\
 /* 08042218 */ LDRB R4, [R0] \n\
 /* 0804221a */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 0804221c */ BL beats_to_ticks \n\
+/* 0804221c */ BL ticks_to_frames \n\
 /* 08042220 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 08042222 */ BLT branch_08042232 \n\
 /* 08042224 */ LDR R0, [R6] \n\
@@ -249,7 +249,7 @@ branch_08042278: \n\
 /* 080422a6 */ LDR R0, [R5] \n\
 /* 080422a8 */ LDRB R4, [R0, 0x8] \n\
 /* 080422aa */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 080422ac */ BL beats_to_ticks \n\
+/* 080422ac */ BL ticks_to_frames \n\
 /* 080422b0 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 080422b2 */ BLT branch_080422c2 \n\
 /* 080422b4 */ LDR R0, [R6] \n\
@@ -283,7 +283,7 @@ branch_080422c2: \n\
 /* 080422ec */ LDR R0, [R5] \n\
 /* 080422ee */ LDRB R4, [R0, 0x8] \n\
 /* 080422f0 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 080422f2 */ BL beats_to_ticks \n\
+/* 080422f2 */ BL ticks_to_frames \n\
 /* 080422f6 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 080422f8 */ BLT branch_08042308 \n\
 /* 080422fa */ LDR R0, [R6] \n\

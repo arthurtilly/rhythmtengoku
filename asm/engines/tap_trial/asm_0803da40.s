@@ -60,7 +60,7 @@ branch_0803da9e: \n\
 /* 0803daae */ LSRS R4, R4, 0x10 \n\
 /* 0803dab0 */ LDR R5, =tap_trial_play_girl_action \n\
 /* 0803dab2 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 0803dab4 */ BL beats_to_ticks \n\
+/* 0803dab4 */ BL ticks_to_frames \n\
 /* 0803dab8 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0803daba */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803dabc */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
@@ -87,7 +87,7 @@ branch_0803dacc: \n\
 /* 0803dae0 */ BL func_0804ddb0 \n\
 /* 0803dae4 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803dae6 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0803dae8 */ BL beats_to_ticks \n\
+/* 0803dae8 */ BL ticks_to_frames \n\
 /* 0803daec */ LSLS R0, R0, 0x10 \n\
 /* 0803daee */ LSRS R0, R0, 0x10 \n\
 /* 0803daf0 */ LSLS R4, R4, 0x10 \n\
@@ -97,11 +97,11 @@ branch_0803dacc: \n\
 /* 0803daf8 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803dafa */ MOVS R2, 0x73 @ Set R2 to 0x73 \n\
 /* 0803dafc */ MOVS R3, 0x28 @ Set R3 to 0x28 \n\
-/* 0803dafe */ BL func_0800e6ec \n\
+/* 0803dafe */ BL scene_move_sprite_sine_wave \n\
  \n\
 branch_0803db02: \n\
 /* 0803db02 */ LDRB R0, [R6, 0x8] \n\
-/* 0803db04 */ BL beats_to_ticks \n\
+/* 0803db04 */ BL ticks_to_frames \n\
 /* 0803db08 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 0803db0a */ LDR R1, [R2] \n\
 /* 0803db0c */ STRH R0, [R1, 0xA] \n\

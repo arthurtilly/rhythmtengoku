@@ -99,7 +99,7 @@ branch_080347aa: \n\
 /* 080347aa */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
  \n\
 branch_080347ac: \n\
-/* 080347ac */ BL beats_to_ticks \n\
+/* 080347ac */ BL ticks_to_frames \n\
 /* 080347b0 */ LDR R1, [R7] \n\
 /* 080347b2 */ STRH R0, [R1, 0x3E] \n\
  \n\

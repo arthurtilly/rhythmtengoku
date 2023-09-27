@@ -3,7 +3,7 @@
 OBJDUMP="$DEVKITARM/bin/arm-none-eabi-objdump -D -bbinary -marmv4t"
 
 if [ -z $NOTHUMB ]; then
-    OBJDUMP="$OBJDUMP -Mforcethumb"
+    OBJDUMP="$OBJDUMP -Mforce-thumb"
 fi
 
 if [ $(($1)) -ge $((0x8000000)) ]; then

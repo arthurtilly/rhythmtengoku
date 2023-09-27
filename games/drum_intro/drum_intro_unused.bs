@@ -235,7 +235,7 @@ script script_drum_intro_unused_main
     run gameplay_display_text_and_wait, 0
     dmi_event02 1
     rest 12
-    run func_08000584, scene_game_select
+    run set_next_scene, scene_game_select
 return
 
 .end

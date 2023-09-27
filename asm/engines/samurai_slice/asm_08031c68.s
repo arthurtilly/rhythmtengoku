@@ -6,7 +6,7 @@ thumb_func_start func_08031c68 \n\
 /* 08031c68 */ PUSH {R4, R5, LR} \n\
 /* 08031c6a */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
 /* 08031c6c */ LSLS R5, R0, 0x8 \n\
-/* 08031c6e */ BL beats_to_ticks \n\
+/* 08031c6e */ BL ticks_to_frames \n\
 /* 08031c72 */ LSLS R0, R0, 0x10 \n\
 /* 08031c74 */ LSRS R0, R0, 0x10 \n\
 /* 08031c76 */ LSLS R1, R4, 0x2 \n\

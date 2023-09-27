@@ -1,0 +1,40 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Script
+script script_scene_warning
+    set_tempo 120
+    pause_scene
+
+    rest 12
+    rest 48
+    run warning_scene_render_anim
+    scene_set_int INT8, 0, TRUE
+    pause_scene
+
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 12
+    rest 12
+    stop
+
+
+@ Local Scene
+struct sub_scene_warning
+    /* Start  */ .word warning_scene_start,  0
+    /* Paused */ .word NULL,                 0
+    /* Active */ .word warning_scene_update, 0
+    /* Stop   */ .word warning_scene_stop,   0
+    /* Script */ .word script_scene_warning
+endstruct
+
+@ RIQ Warning Scene
+struct scene_warning
+    /* Start  */ .word func_0801d86c, sub_scene_warning
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0x8
+endstruct
+
+.end

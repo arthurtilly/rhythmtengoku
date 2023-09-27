@@ -17,7 +17,7 @@ branch_08038cf0: \n\
 /* 08038cf2 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 08038cf4 */ BNE branch_08038d02 \n\
 /* 08038cf6 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 08038cf8 */ BL beats_to_ticks \n\
+/* 08038cf8 */ BL ticks_to_frames \n\
 /* 08038cfc */ LDRH R1, [R4, 0xC] \n\
 /* 08038cfe */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08038d00 */ STRH R1, [R4, 0xC] \n\

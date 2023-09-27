@@ -5,23 +5,24 @@
 
 extern struct TaskMethods D_08936b84;
 extern struct TaskMethods D_08936b94;
-extern struct TaskMethods D_08936ba4;
-extern struct TaskMethods D_08936bb4;
-extern struct TaskMethods D_08936bc4;
-extern struct TaskMethods D_08936bd4;
-extern struct TaskMethods D_08936be4;
-extern struct TaskMethods D_08936bf4;
-extern struct TaskMethods D_08936c04;
-extern struct TaskMethods D_08936c14;
-extern struct TaskMethods D_08936c24;
-extern struct TaskMethods D_08936c34;
-extern struct TaskMethods D_08936c44;
-extern struct TaskMethods D_08936c54;
+extern struct TaskMethods sprite_motion_task_indefinite;
+extern struct TaskMethods sprite_motion_task_decelerate;
+extern struct TaskMethods sprite_motion_task_accelerate;
+extern struct TaskMethods sprite_motion_task_lerp;
+extern struct TaskMethods sprite_motion_task_sine_osc;
+extern struct TaskMethods sprite_motion_task_sine_vel;
+extern struct TaskMethods sprite_motion_task_sine_wave;
+extern struct TaskMethods integer_interp_task;
+extern struct TaskMethods integer_alternator_task;
+extern struct TaskMethods integer_incrementer_task;
+extern struct TaskMethods integer_sine_interp_task;
+extern struct TaskMethods lcd_blend_mode_interp_task;
 extern char D_08936c64[];
 extern struct TaskMethods D_08936c7c;
 extern struct TaskMethods D_08936c8c;
 extern struct TaskMethods D_08936c9c;
 
+// ?
 struct unk_struct_08006bb4_init {
     u32 pad0;
     u32 pad4;
@@ -43,86 +44,87 @@ struct unk_struct_08006bb4 {
     s16 unkC;
 };
 
+// ?
 struct unk_struct_08006ca4_init;
 struct unk_struct_08006ca4;
 
-// Indefinite linear movement
-struct unk_struct_080074ec_init {
+// Sprite Motion - Indefinite Linear
+struct SpriteMover_Indefinite_Inputs {
     s16 sprite;
     s16 startX;
     s16 startY;
-    s8_8 xVel;
-    s8_8 yVel;
+    s8_8 velX;
+    s8_8 velY;
 };
-struct unk_struct_080074ec {
+struct SpriteMover_Indefinite {
     s16 sprite;
-    s8_8 xVel;
-    s8_8 yVel;
-    s24_8 xPos;
-    s24_8 yPos;
+    s8_8 velX;
+    s8_8 velY;
+    s24_8 posX;
+    s24_8 posY;
 };
 
-// Approach a point asymptotically
-struct unk_struct_0800757c_init {
-    s16 id;
+// Sprite Motion - Decelerate to Point
+struct SpriteMover_Decelerate_Inputs {
+    s16 sprite;
     s16 startX;
     s16 startY;
     s16 destX;
     s16 destY;
     s8_8 multiplier;
 };
-struct unk_struct_0800757c {
-    s16 id;
-    u16 destXPos;
-    u16 destYPos;
+struct SpriteMover_Decelerate {
+    s16 sprite;
+    s16 destX;
+    s16 destY;
     s8_8 multiplier;
-    s24_8 xOffset;
-    s24_8 yOffset;
+    s24_8 dx;
+    s24_8 dy;
 };
 
-// Accelerate towards a point
-struct unk_struct_0800765c_init {
-    s16 id;
+// Sprite Motion - Accelerate to Point
+struct SpriteMover_Accelerate_Inputs {
+    s16 sprite;
     s16 startX;
     s16 startY;
     s16 destX;
     s16 destY;
-    s16 vel;
-    s16 accel;
+    s8_8 velocity;
+    s8_8 acceleration;
 };
-struct unk_struct_0800765c {
-    s16 id;
-    u16 startXPos;
-    u16 startYPos;
+struct SpriteMover_Accelerate {
+    s16 sprite;
+    s16 startX;
+    s16 startY;
     s16 dx;
     s16 dy;
-    u32 distanceTravelled;
-    u32 totalDistance;
-    s32 vel;
-    s32 accel;
+    s24_8 distanceTravelled;
+    s24_8 totalDistance;
+    s24_8 velocity;
+    s24_8 acceleration;
 };
 
-// Travel linearly to a point over a specified number of frames
-struct unk_struct_08007788_init {
-    s16 id;
+// Sprite Motion - LERP to Point
+struct SpriteMover_TimedLinear_Inputs {
+    s16 sprite;
     s16 startX;
     s16 startY;
     s16 destX;
     s16 destY;
     u16 totalFrames;
 };
-struct unk_struct_08007788 {
-    s16 id;
-    u16 startXPos;
-    u16 startYPos;
+struct SpriteMover_TimedLinear {
+    s16 sprite;
+    s16 startX;
+    s16 startY;
     s16 dx;
     s16 dy;
     u16 totalFrames;
     u16 framesPassed;
 };
 
-// Sinusoidal
-struct unk_struct_080078ec_init {
+// Sprite Motion - Sinusoidal Oscillation
+struct SpriteMover_SineOsc_Inputs {
     s16 sprite;
     u8 angle;
     s16 baseX;
@@ -133,7 +135,7 @@ struct unk_struct_080078ec_init {
     s16 waveEnd;
     u16 totalFrames;
 };
-struct unk_struct_080078ec {
+struct SpriteMover_SineOsc {
     s16 sprite;
     u16 baseXPos;
     u16 baseYPos;
@@ -146,8 +148,8 @@ struct unk_struct_080078ec {
     u8 angle;
 };
 
-// Sinusoidal Velocity along a Line
-struct unk_struct_080079bc_init {
+// Sprite Motion - Sinusoidal Velocity to Point
+struct SpriteMover_SineVel_Inputs {
     s16 sprite;
     s16 startX;
     s16 startY;
@@ -157,7 +159,7 @@ struct unk_struct_080079bc_init {
     u16 unkC;
     u16 totalFrames;
 };
-struct unk_struct_080079bc {
+struct SpriteMover_SineVel {
     s16 sprite;
     u16 startXPos;
     u16 startYPos;
@@ -169,8 +171,9 @@ struct unk_struct_080079bc {
     u16 totalFrames;
 };
 
-struct unk_struct_08007aa0_init {
-    s16 id;
+// Sprite Motion - Move Along Sine Wave
+struct SpriteMover_SineWave_Inputs {
+    s16 sprite;
     s16 startX;
     s16 startY;
     s16 destX;
@@ -178,10 +181,10 @@ struct unk_struct_08007aa0_init {
     s16 amplitude;
     s16 totalFrames;
 };
-struct unk_struct_08007aa0 {
-    s16 id;
-    u16 startXPos;
-    u16 startYPos;
+struct SpriteMover_SineWave {
+    s16 sprite;
+    s16 startX;
+    s16 startY;
     s16 dx;
     s16 dy;
     s16 amplitude;
@@ -189,24 +192,24 @@ struct unk_struct_08007aa0 {
     u16 totalFrames;
 };
 
-// Timed Data Interpolation (Linear)
-struct LinearDataInterpolator {
-    u32 varSize:2;
+// Number Tasks
+struct NumberInterpolator {
+    u32 type:2;
     u32 duration:15;
     u32 runningTime:15;
-    void *variable;
+    void *source;
     s32 initial;
     s32 target;
 };
 
-struct unk_struct_08007ca8_init;
-struct unk_struct_08007ca8;
-
-struct unk_struct_08007d88_init;
-struct unk_struct_08007d88;
-
-struct unk_struct_08007e7c_init;
-struct unk_struct_08007e7c;
+// Number Sine Interpolator Task
+struct NumberSineInterpolator {
+    u32 type:2;
+    u32 angle:30;
+    s24_8 speed;
+    s32 value;
+    void *source;
+};
 
 // LCD Special Effect (Blend) Controls Interpolator
 struct BlendControlsInterpolator {

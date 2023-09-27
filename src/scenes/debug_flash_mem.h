@@ -3,29 +3,34 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
+
+// MACROS
+#define gFlashMemoryTest ((struct FlashMemoryTestSceneData *)gCurrentSceneData)
+
+
+// TYPES
 struct FlashMemoryTestSceneData {
-    /* add fields here */
+    struct BitmapFontBG *bgFont;
+    struct BitmapFontOBJ *objFont;
+    u32 inputsEnabled;
+    u32 unkC;
 };
 
 
-// Scene Macros/Enums:
-
-
-// Scene Data:
+// DATA
 extern union SceneObject flash_mem_test_scene_objects[];
 extern struct GraphicsTable flash_mem_test_gfx_table[];
 extern struct CompressedGraphics *flash_mem_test_buffered_textures[];
 
 
-// Functions:
-// extern ? func_0801e704(?); // Init. Static Variables
-// extern ? func_0801e708(?); // Graphics Init. 3
-// extern ? func_0801e734(?); // Graphics Init. 2
-// extern ? func_0801e764(?); // Graphics Init. 1
-// extern ? func_0801e780(?); // Scene Start
-// extern ? func_0801e80c(?); // Scene Update (Paused)
-// extern ? func_0801e810(?); // Scene Update (Active)
-// extern ? func_0801e90c(?); // Scene Can Update
-// extern ? func_0801e928(?); // ?
-// extern ? func_0801e940(?); // Scene Stop
+// FUNCTIONS
+extern void flash_test_scene_init_memory(void);
+extern void flash_test_scene_init_gfx3(void);
+extern void flash_test_scene_init_gfx2(void);
+extern void flash_test_scene_init_gfx1(void);
+extern void flash_test_scene_start(void *sVar, s32 dArg);
+extern void flash_test_scene_paused(void *sVar, s32 dArg);
+extern void flash_test_scene_update(void *sVar, s32 dArg);
+extern u32  flash_test_scene_inputs_enabled(void);
+extern void func_0801e928(u32 arg);
+extern void flash_test_scene_stop(void *sVar, s32 dArg);

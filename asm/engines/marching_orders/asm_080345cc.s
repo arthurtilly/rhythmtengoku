@@ -66,7 +66,7 @@ thumb_func_start func_080345cc \n\
 branch_08034654: \n\
 /* 08034654 */ LDRH R4, [R5, 0x6] \n\
 /* 08034656 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 08034658 */ BL beats_to_ticks \n\
+/* 08034658 */ BL ticks_to_frames \n\
 /* 0803465c */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 0803465e */ BLE branch_08034686 \n\
 /* 08034660 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

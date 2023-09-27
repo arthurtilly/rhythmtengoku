@@ -7,96 +7,6 @@
   /* STUDIO MENU - SCENE DATA */
 
 
-#include "songs.inc.c"
-#include "drums.inc.c"
-
-
-// [D_089d840c] Memory Warnings
-    /* -------------------------------- */
-        // You can't save any more data.
-        // Perform without saving?
-    /* -------------------------------- */
-        // You can only save 10 recitals.
-        // Perform without saving?
-    /* -------------------------------- */
-        // There's not much memory left.
-        // Perform anyway?
-    /* -------------------------------- */
-
-const char *studio_mem_warnings_text[] = {
-    /* NO WARNING NEEDED ------------------------------ */
-        NULL,
-    /* NO MEMORY -------------------------------------- */
-        "メモリがいっぱいです。\n"
-        "データは残らないけど演奏する？",
-    /* TOO MANY REPLAYS ------------------------------- */
-        "演奏データは10コしか残せません。\n"
-        "データは残らないけど演奏する？",
-    /* LOW MEMORY ------------------------------------- */
-        "メモリが少なくなってきてます。\n"
-        "このまま演奏する？"
-    /* ------------------------------------------------ */
-};
-
-
-// [D_089d841c] Options (no replay for this song)
-const char *studio_options_no_replay[] = {
-    /* LISTEN */ "リスニング",
-    /* DRUM   */ "ドラミング",
-    /* SORT   */ "ならびかえ",
-    /* MARK   */ "チェック"
-};
-
-
-// [D_089d842c] Options (replay exists for this song)
-const char *studio_options_has_replay[] = {
-    /* LISTEN */ "リスニング",
-    /* DELETE */ "データ消去",
-    /* SORT   */ "ならびかえ",
-    /* MARK   */ "チェック"
-};
-
-
-// [D_089d843c] Options Text
-const char **studio_options_text[] = {
-    studio_options_no_replay,
-    studio_options_has_replay
-};
-
-
-// Option Text Start
-const char text_studio_option_default[] = "";
-
-
-// Not even one song has
-// a check mark on it.
-const char text_studio_warning_no_checks1[] =
-    "チェックのついている曲が、\n"
-    "ひとつもありません。";
-
-
-// In listening mode, only the songs
-// with a check mark will be played.
-const char text_studio_warning_no_checks2[] =
-    "リスニングではチェックのある曲だけ再生します。　よろしいですか～？";
-
-
-// You'll erase this performance
-// data! Is that really OK?
-const char text_studio_warning_delete[] =
-    "この演奏データを削除するヨ！\n"
-    "ホントにOK？";
-
-
-// [D_089d8444] ?
-u8 D_089d8444[] = {
-    /* 0x00 */ 4,
-    /* 0x01 */ 4,
-    /* 0x02 */ 0,
-    /* 0x03 */ 0
-};
-
-
 // [D_089d8448] Graphics Table
 struct GraphicsTable studio_gfx_table[] = {
     /* BG Tileset */ {
@@ -139,17 +49,17 @@ struct CompressedGraphics *studio_buffered_textures[] = {
 };
 
 
-// [D_089d84a0] ?
-u16 D_089d84a0[] = {
-    /* 0x00 */ 0,
-    /* 0x01 */ 104,
-    /* 0x02 */ 240
+// [D_089d84a0] Menu X Offsets
+u16 studio_menu_x_ofs[] = {
+    /* SONG   */ 0,
+    /* OPTION */ 104,
+    /* DRUM   */ 240
 };
 
 
-// [D_089d84a6] ?
-u8 D_089d84a6[] = {
-    /* 0x00 */ 1,
-    /* 0x01 */ 2,
-    /* 0x02 */ 3
+// [D_089d84a6] Unused
+u8 studio_menu_unused_table[] = {
+    /* SONG   */ 1,
+    /* OPTION */ 2,
+    /* DRUM   */ 3
 };

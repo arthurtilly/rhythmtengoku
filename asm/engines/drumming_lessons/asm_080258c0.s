@@ -102,7 +102,7 @@ branch_0802596c: \n\
 /* 080259a4 */ LSLS R4, R4, 0x10 \n\
 /* 080259a6 */ LSRS R4, R4, 0x10 \n\
 /* 080259a8 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 080259aa */ BL beats_to_ticks \n\
+/* 080259aa */ BL ticks_to_frames \n\
 /* 080259ae */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080259b0 */ LSLS R1, R1, 0x18 \n\
 /* 080259b2 */ LSRS R1, R1, 0x18 \n\
@@ -123,7 +123,7 @@ branch_0802596c: \n\
 /* 080259d4 */ LSLS R4, R4, 0x10 \n\
 /* 080259d6 */ LSRS R4, R4, 0x10 \n\
 /* 080259d8 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 080259da */ BL beats_to_ticks \n\
+/* 080259da */ BL ticks_to_frames \n\
 /* 080259de */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080259e0 */ LSLS R1, R1, 0x18 \n\
 /* 080259e2 */ LSRS R1, R1, 0x18 \n\

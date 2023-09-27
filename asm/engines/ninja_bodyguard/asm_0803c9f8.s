@@ -34,7 +34,7 @@ thumb_func_start func_0803c9f8 \n\
 /* 0803ca36 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0803ca38 */ BEQ branch_0803ca6c \n\
 /* 0803ca3a */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 0803ca3c */ BL beats_to_ticks \n\
+/* 0803ca3c */ BL ticks_to_frames \n\
 /* 0803ca40 */ LSLS R0, R0, 0x10 \n\
 /* 0803ca42 */ LSRS R0, R0, 0x10 \n\
 /* 0803ca44 */ LDR R1, [R5] \n\
@@ -49,7 +49,7 @@ thumb_func_start func_0803c9f8 \n\
 /* 0803ca56 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 0803ca58 */ MOVS R2, 0x42 @ Set R2 to 0x42 \n\
 /* 0803ca5a */ MOVS R3, 0x8C @ Set R3 to 0x8C \n\
-/* 0803ca5c */ BL func_0800e3e4 \n\
+/* 0803ca5c */ BL scene_set_sprite_motion_lerp \n\
 /* 0803ca60 */ B branch_0803ca82 \n\
 \n\
 .ltorg \n\

@@ -12,7 +12,7 @@ thumb_func_start func_08033558 \n\
 /* 08033566 */ LSLS R4, R4, 0x10 \n\
 /* 08033568 */ LSRS R4, R4, 0x10 \n\
 /* 0803356a */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803356c */ BL beats_to_ticks \n\
+/* 0803356c */ BL ticks_to_frames \n\
 /* 08033570 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08033572 */ LSLS R1, R1, 0x18 \n\
 /* 08033574 */ LSRS R1, R1, 0x18 \n\
@@ -43,7 +43,7 @@ branch_08033594: \n\
 /* 080335ac */ LSLS R4, R4, 0x10 \n\
 /* 080335ae */ LSRS R4, R4, 0x10 \n\
 /* 080335b0 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 080335b2 */ BL beats_to_ticks \n\
+/* 080335b2 */ BL ticks_to_frames \n\
 /* 080335b6 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080335b8 */ LSLS R1, R1, 0x18 \n\
 /* 080335ba */ LSRS R1, R1, 0x18 \n\

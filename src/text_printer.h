@@ -54,6 +54,37 @@ struct TextPrinterData {
     u8 indentWidth;
 };
 
+struct Listbox {
+    u16 memID;
+    struct TextPrinter *printer;
+    u8 maxLines;
+    s16 x, y;
+    u16 z;
+    s16 lineSpacing;
+    u8 unk12;
+    u8 palette;
+    u8 colors;
+    s16 scrollIndex;
+    s16 listX;
+    s16 listY;
+    s16 textX, textY;
+    s16 velY;
+    s16 itemsX, itemsY;
+    s16 selItem;
+    s16 totalItems;
+    s16 selSprite;
+    s16 selMinLine;
+    s16 selMaxLine;
+    s16 selLine;
+    const char *(*getString)();
+    s16 (*getSprite)();
+    u8 unk3C;
+    void (*onScroll)();
+    s32 onScrollArg;
+    void (*onFinish)();
+    s32 onFinishArg;
+};
+
 enum TextPrinterModesEnum {
     TEXT_PRINTER_MODE_STANDARD,
     TEXT_PRINTER_MODE_STATIC_TABLE
@@ -94,7 +125,7 @@ extern struct Animation *func_08009de4(u32 memID, s32 tileBaseX, s32 tileBaseY, 
 extern struct Animation *text_printer_get_unformatted_line_anim(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, u32 anchor, s32 lineColors, s32 maxWidth);
 extern struct Animation *text_printer_get_formatted_line_anim(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char **string, u32 anchor, s32 lineColors, s32 maxWidth, s32 indentWidth, s32 shadowColors);
 extern s32 text_printer_get_current_line_width(void); // Get sCurrentLineWidth
-extern void text_printer_delete_anim(struct StaticAnimation *anim); // Delete Text Animation
+extern void text_printer_delete_anim(struct Animation *anim); // Delete Text Animation
 extern void text_printer_set_format_func(void *func); // Set sModifyPrinterSettings
 extern void text_printer_clear_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color); // Fill Allocated Space With Given Pixel
 extern void text_printer_fill_vram_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color); // Fill Allocated Space With Given Pixel
@@ -115,8 +146,8 @@ extern void text_printer_delete(struct TextPrinter *textPrinter); // Delete Text
 extern void text_printer_set_string(struct TextPrinter *textPrinter, const char *text); // Set Text
 extern const char *text_printer_get_text(struct TextPrinter *textPrinter); // Get Text
 extern void text_printer_resume(struct TextPrinter *textPrinter); // Reinsert Text ("Continue"?)
-// extern ? func_0800aac0(?);
-extern void func_0800abb0(void *printer, s32 line);
+extern void func_0800aac0(struct TextPrinter *textPrinter, s32 lineIndex, const char *string, s16 shadowSprite); // Set Text (Table Mode)
+extern void func_0800abb0(struct TextPrinter *textPrinter, s32 line); // Clear Text (Table Mode)
 extern s32 text_printer_is_busy(struct TextPrinter *textPrinter); // Get Active Printing Status
 extern void text_printer_set_x_y(struct TextPrinter *textPrinter, s16 x, s16 y); // Set X & Y
 extern void text_printer_set_x(struct TextPrinter *textPrinter, s16 x); // Set X
@@ -139,3 +170,29 @@ extern void text_printer_set_mode(struct TextPrinter *textPrinter, u32 mode); //
 extern s16 text_printer_get_line_sprite(struct TextPrinter *textPrinter, s32 line); // Get Line Sprite
 extern void text_printer_set_line_spacing(struct TextPrinter *textPrinter, u32 lineSpacing); // Set Line Spacing
 extern void text_printer_set_shadow_colors(struct TextPrinter *textPrinter, s32 shadowColors); // Set Shadow Colors
+
+extern s32 listbox_get_y(struct Listbox *listbox);
+extern void func_0800ae3c(struct Listbox *listbox, u32 palette);
+extern void func_0800ae88(struct Listbox *listbox);
+extern struct Listbox *create_new_listbox(u16 memID, u32 maxLines, u32 maxWidth, u32 arg3, u32 arg4, u32 palette,
+                                          u32 colors, s32 x, s32 y, u32 z, u32 lineSpacing, u32 selectionItem,
+                                          s32 totalItems, struct Animation *selectionAnim, u32 arg14, u32 selMaxLine,
+                                          u32 selectionLine, const char *getString(), s16 getSprite());
+extern void update_listbox(struct Listbox *listbox);
+extern void delete_listbox(struct Listbox *listbox);
+extern struct TextPrinter *listbox_get_text_printer(struct Listbox *listbox);
+extern s32 listbox_get_sel_item(struct Listbox *listbox);
+extern s32 listbox_get_sel_line(struct Listbox *listbox);
+extern void listbox_scroll_up(struct Listbox *listbox);
+extern void listbox_scroll_down(struct Listbox *listbox);
+extern void listbox_run_func_on_scroll(struct Listbox *listbox, void onScroll(), s32 onScrollArg);
+extern void listbox_run_func_on_finish(struct Listbox *listbox, void onFinish(), s32 onFinishArg);
+// extern ? func_0800b32c(?);
+extern s32 listbox_is_busy(struct Listbox *listbox);
+extern void listbox_offset_x_y(struct Listbox *listbox, s16 x, s16 y);
+extern void listbox_show_sel_sprite(struct Listbox *listbox);
+extern void listbox_hide_sel_sprite(struct Listbox *listbox);
+extern void listbox_link_sprite_x_y_to_line(struct Listbox *listbox, s16 sprite, s32);
+extern void func_0800b454(struct Listbox *listbox, s32);
+extern void listbox_set_sel_sprite(struct Listbox *listbox, struct Animation *selectionAnim);
+extern s16 listbox_get_sel_sprite(struct Listbox *listbox);

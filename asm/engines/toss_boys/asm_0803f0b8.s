@@ -29,7 +29,7 @@ thumb_func_start func_0803f0b8 \n\
 /* 0803f0e6 */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
 /* 0803f0e8 */ STRH R0, [R3, 0xE] \n\
 /* 0803f0ea */ MOVS R0, 0x10 @ Set R0 to 0x10 \n\
-/* 0803f0ec */ BL beats_to_ticks \n\
+/* 0803f0ec */ BL ticks_to_frames \n\
 /* 0803f0f0 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f0f2 */ LDR R2, [R4] \n\
 /* 0803f0f4 */ LDR R0, =0x39a \n\
@@ -38,7 +38,7 @@ thumb_func_start func_0803f0b8 \n\
 /* 0803f0fa */ STR R0, [SP] \n\
 /* 0803f0fc */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803f0fe */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803f100 */ BL func_0800c4b0 \n\
+/* 0803f100 */ BL scene_start_integer_interp \n\
 /* 0803f104 */ LDR R0, =s_ninja_wind_seqData \n\
 /* 0803f106 */ MOVS R1, 0xA0 @ Set R1 to 0xA0 \n\
 /* 0803f108 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

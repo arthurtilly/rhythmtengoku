@@ -7,11 +7,12 @@
 
 
 // [D_089d80ec] Graphics Table
-struct GraphicsTable D_089d80ec[] = {
+struct GraphicsTable read_error_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+
 // [D_089d80f8] Buffered Textures List
-struct CompressedGraphics *D_089d80f8[] = {
+struct CompressedGraphics *read_error_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

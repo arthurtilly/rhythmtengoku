@@ -3,24 +3,27 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
+
+// MACROS
+#define gWarning ((struct WarningSceneData *)gCurrentSceneData)
+
+
+// TYPES
 struct WarningSceneData {
-    /* add fields here */
+    u32 inputsEnabled;
+    u32 timer;
 };
 
 
-// Scene Macros/Enums:
-
-
-// Scene Data:
+// DATA
 extern struct GraphicsTable warning_gfx_table[];
 
 
-// Functions:
-// extern ? func_0801dfac(?); // ? (Script Function)
-// extern ? func_0801dfdc(?); // Scene Stop
-// extern ? func_0801dfe8(?); // Graphics Init. 3
-// extern ? func_0801e030(?); // Graphics Init. 2
-// extern ? func_0801e060(?); // Graphics Init. 1
-// extern ? func_0801e09c(?); // Scene Start
-// extern ? func_0801e0c8(?); // Scene Update (Active)
+// FUNCTIONS
+extern void warning_scene_render_anim(void);
+extern void warning_scene_stop(void *sVar, s32 dArg);
+extern void warning_scene_init_gfx3(void);
+extern void warning_scene_init_gfx2(void);
+extern void warning_scene_init_gfx1(void);
+extern void warning_scene_start(void *sVar, s32 dArg);
+extern void warning_scene_update(void *sVar, s32 dArg);

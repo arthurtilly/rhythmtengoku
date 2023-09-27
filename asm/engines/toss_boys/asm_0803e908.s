@@ -27,7 +27,7 @@ thumb_func_start func_0803e908 \n\
 /* 0803e932 */ STR R3, [SP, 0x8] \n\
 /* 0803e934 */ BL func_0804d8f8 \n\
 /* 0803e938 */ MOVS R0, 0x3C @ Set R0 to 0x3C \n\
-/* 0803e93a */ BL beats_to_ticks \n\
+/* 0803e93a */ BL ticks_to_frames \n\
 /* 0803e93e */ LDR R1, [R4] \n\
 /* 0803e940 */ LDR R2, =0x39e \n\
 /* 0803e942 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\

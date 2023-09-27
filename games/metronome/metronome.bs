@@ -89,8 +89,8 @@ endstruct
 
 
 script script_metronome_main
-    run func_0801911c, D_08a19a6c
-    run func_08019128, D_08a19a74
+    run score_results_set_grade_thresholds, D_08a19a6c
+    run score_results_set_grade_comments, D_08a19a74
     set_tempo 120
     set_music_volume 256
     rest 12

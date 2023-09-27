@@ -137,7 +137,7 @@ branch_080368fc: \n\
 /* 08036956 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 08036958 */ STR R0, [R6, 0x30] \n\
 /* 0803695a */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0803695c */ BL beats_to_ticks \n\
+/* 0803695c */ BL ticks_to_frames \n\
 /* 08036960 */ LDR R1, [R6, 0x34] \n\
 /* 08036962 */ SUBS R1, R1, R0 @ Set R1 to R1 - R0 \n\
 /* 08036964 */ LDR R0, [R6, 0x30] \n\

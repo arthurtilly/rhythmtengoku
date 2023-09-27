@@ -1,0 +1,136 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Script
+script script_scene_cafe
+    set_tempo 118
+    pause_scene
+    rest 24
+    play_music s_counseling_bgm_seqData
+    run func_08007324, TRUE
+    fade_screen_in 32, BLACK
+    rest 24
+    rest 24
+    rest 24
+    scene_set_int INT8, 0, TRUE
+
+    loop_start
+        run cafe_print_dialogue
+        switch FUNC, cafe_get_dialogue_hold_time
+            case 0
+                rest 12
+                run cafe_start_dialogue_inputs
+                break
+            case 8
+                rest 24
+            case 7
+                rest 24
+            case 6
+                rest 24
+            case 5
+                rest 24
+            case 4
+                rest 24
+            case 3
+                rest 24
+            case 2
+                rest 24
+            case 1
+                rest 24
+                break
+        end_switch
+
+        run cafe_clear_dialogue
+        switch FUNC, cafe_get_bg_event
+            case 1
+                play_sfx s_hakushu_solo_seqData
+                run cafe_load_bg_event_map, D_08cc15c4
+                rest 12
+                run cafe_load_bg_event_map, D_08cc1a30
+                rest 12
+                run cafe_load_bg_event_map, D_08cc15c4
+                rest 12
+                run cafe_load_bg_event_map, D_08cc1a30
+                rest 12
+                run cafe_load_bg_event_map, D_08cc15c4
+                rest 12
+                run cafe_load_bg_event_map, D_08cc1a30
+                rest 12
+                run cafe_load_bg_event_map, D_08cc15c4
+                rest 12
+                run cafe_load_bg_event_map, D_08cc1a30
+                rest 12
+                run cafe_load_bg_event_map, D_08cc1158
+                rest 12
+                rest 12
+                break
+            case 2
+                run cafe_load_bg_event_map, D_08cc2c18
+                rest 72
+                run cafe_load_bg_event_map, D_08cc2790
+                rest 24
+                play_sfx s_toss_red_red_seqData
+                run cafe_load_bg_event_map, D_08cc30a0
+                rest 24
+                run cafe_load_bg_event_map, D_08cc2c18
+                rest 72
+                break
+            case 3
+                play_sfx s_kansei_seqData
+                run cafe_load_bg_event_map, D_08cc1e9c
+                rest 12
+                run cafe_load_bg_event_map, D_08cc2308
+                rest 12
+                run cafe_load_bg_event_map, D_08cc1e9c
+                rest 12
+                run cafe_load_bg_event_map, D_08cc2308
+                rest 12
+                run cafe_load_bg_event_map, D_08cc1e9c
+                rest 12
+                run cafe_load_bg_event_map, D_08cc2308
+                rest 12
+                run cafe_load_bg_event_map, D_08cc1e9c
+                rest 12
+                run cafe_load_bg_event_map, D_08cc2308
+                rest 12
+                run cafe_load_bg_event_map, D_08cc1e9c
+                rest 12
+                run cafe_load_bg_event_map, D_08cc2308
+                rest 48
+                run cafe_load_bg_event_map, D_08cc1158
+                rest 12
+                rest 12
+                break
+            default
+                run cafe_load_bg_event_map, D_08cc1158
+                rest 12
+        end_switch
+    loop_end
+
+    scene_set_int INT8, 0, FALSE
+    run scene_hide_bg_layer, TRUE
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 48
+    stop
+
+
+@ Local Scene
+struct sub_scene_cafe
+    /* Start  */ .word cafe_scene_start,  0
+    /* Paused */ .word cafe_scene_paused, 0
+    /* Active */ .word cafe_scene_update, 0
+    /* Stop   */ .word cafe_scene_stop,   0
+    /* Script */ .word script_scene_cafe
+endstruct
+
+@ RIQ Cafe Scene
+struct scene_cafe
+    /* Start  */ .word func_0801d86c, sub_scene_cafe
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0x828
+endstruct
+
+.end

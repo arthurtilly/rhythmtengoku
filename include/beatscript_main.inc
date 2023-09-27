@@ -16,8 +16,8 @@
 
 @ Marking Criteria Flags
 .set CHECK_AVERAGE_MISSES, 0x100
-.set OVERRIDE_COMMENTS, 0x80
-.set CHECK_AVERAGE_HITS, 0x1
+.set OVERRIDE_COMMENTS,    0x80
+.set CHECK_AVERAGE_HITS,   0x1
 
 .set END_OF_CRITERIA, NULL
 
@@ -59,7 +59,7 @@
 .set BLACK, 0x0000
 .set WHITE, 0x7FFF
 
-@ Macros for making Beatscript look nicer
+@ Macros for making Beatscript look nicer.
 .macro script label
     glabel \label
 .endm
@@ -80,22 +80,21 @@
     .balign 4, 0
 .endm
 
-@ Beatscript Scene Definitions
-
+@ Beatscript Gameplay Scene Definitions
 .macro define_gameplay_scene name, entrypoint
 struct sub_\name
-    /* Init Func */   .word gameplay_start_scene,         NULL
+    /* Init Func   */ .word gameplay_start_scene,         NULL
     /* Paused Func */ .word gameplay_update_paused_scene, NULL
     /* Update Func */ .word gameplay_update_scene,        NULL
-    /* End Func */    .word gameplay_stop_scene,          NULL
-    /* Beatscript */  .word \entrypoint
+    /* End Func    */ .word gameplay_stop_scene,          NULL
+    /* Beatscript  */ .word \entrypoint
 endstruct
 
 struct \name
-    /* Init Func */   .word func_0801d86c, sub_\name
+    /* Init Func   */ .word func_0801d86c, sub_\name
     /* Update Func */ .word func_0801d8d8, NULL
-    /* End Func */    .word NULL,          NULL
-    /* Memory */      .hword 0x5bc
+    /* End Func    */ .word NULL,          NULL
+    /* Memory      */ .hword 0x5BC
 endstruct
 .endm
 
@@ -123,13 +122,13 @@ endstruct
 
 
 @ [0x02] (Scene) Run Function
-.macro scene_run function, arg
+.macro scene_run function, arg=0
     beatscript_cmd 0x02, 0, \function, \arg
 .endm
 
 
 @ [0x03] Run Function (1 Argument)
-.macro run function, arg
+.macro run function, arg=0
     beatscript_cmd 0x03, 0, \function, \arg
 .endm
 
@@ -312,7 +311,7 @@ endstruct
 
 
 @ [0x28] Play Music
-.macro play_music_in player, music
+.macro play_music_in player=DEFAULT_SOUND_PLAYER, music
     beatscript_cmd 0x28, 0, \player, \music
 .endm
 

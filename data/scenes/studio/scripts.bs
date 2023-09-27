@@ -1,0 +1,1714 @@
+.include "include/beatscript.inc"
+.include "games/drum_studio/macros.inc"
+
+.section .script
+
+load_drum_studio_labels
+
+@ Sneaky Spirits
+script script_studio_sneaky_spirits
+    set_tempo 120
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, MIDI_TRACK_6
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_aimu_bgm_seqData
+    rest (24 * 8)
+    dms_start_bg_monitor 2
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    mod_music_volume 0, (24 * 8)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Spaceball
+script script_studio_spaceball
+    set_tempo 105
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_8 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_shibafu1_bgm_seqData
+    rest (24 * 8)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 24)
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 24)
+    rest (24 * 4)
+    rest 24
+    rest 24
+    rest 12
+    run scene_stop_music
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Bon Dance
+script script_studio_bon_dance
+    set_tempo 121
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_7)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_bon_dance_bgm_seqData
+    rest (24 * 8)
+    dms_start_bg_monitor 1
+    rest (24 * 20)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 28)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 28)
+    rest (24 * 8)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Bon Odori
+script script_studio_bon_odori
+    set_tempo 121
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6 | MIDI_TRACK_11)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_bon_odori_bgm_seqData
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    dms_start_bg_monitor 1
+    rest (24 * 20)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 28)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 28)
+    rest (24 * 8)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Cosmic Dance
+script script_studio_cosmic_dance
+    set_tempo 135
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 8
+    rest 8
+    play_music s_trexnew_bgm1_seqData
+    rest 8
+    rest 8
+    rest 8
+    dms_start_bg_monitor 1
+    rest 8
+    rest (24 * 16)
+    rest (24 * 40)
+    rest (24 * 32)
+    rest (24 * 36)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 8
+    rest 8
+    play_music s_trexnew_bgm2_seqData
+    rest 8
+    rest 24
+    rest 24
+    rest 24
+    rest (24 * 28)
+    rest (24 * 16)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ RIQ Cafe
+script script_studio_cafe
+    set_tempo 116
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_7)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_counseling_bgm_seqData
+    rest (24 * 8)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 32)
+    rest (24 * 16)
+    mod_music_volume 0, (24 * 8)
+    rest (24 * 8)
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Staff Credit
+script script_studio_staff_credit
+    set_tempo 140
+    set_music_volume 0xBE
+    run mute_studio_mus_tracks, MIDI_TRACK_1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    play_music s_ending_bgm_seqData
+    dms_start_bg_monitor 2
+    rest (24 * 284)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ RIQ Rhythm Data Room
+script script_studio_data_room
+    set_tempo 130
+    set_music_volume 0x100
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_siryo_bgm_seqData
+    rest 24
+    rest 24
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 16)
+    mod_music_volume 0, (24 * 8)
+    rest (24 * 8)
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Showtime
+script script_studio_showtime
+    set_tempo 150
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_7 | MIDI_TRACK_8)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_naniwa_bgm_seqData
+    rest (24 * 4)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 32)
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 32)
+    rest (24 * 8)
+    mod_music_volume 0, (24 * 8)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Bouncy Road
+script script_studio_bouncy_road
+    set_tempo 160
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, MIDI_TRACK_5
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_emanikanto_bgm_seqData
+    rest (24 * 4)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 32)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Game Select 1
+script script_studio_game_select_1
+    set_tempo 152
+    set_music_volume 0x100
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_menu_bgm_seqData
+    run mute_studio_mus_tracks, (MIDI_TRACK_7 | MIDI_TRACK_8 | MIDI_TRACK_11)
+    rest (24 * 4)
+    dms_start_bg_monitor 2
+    rest 12
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    rest (24 * 28)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    rest (24 * 28)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_music_track_volume (~MIDI_TRACK_1), 0
+    rest 24
+    rest 24
+    rest 24
+    rest 23
+    run scene_stop_music
+    rest 1
+    rest 24
+    rest 24
+    set_music_track_volume 0, 0
+    rest 24
+    rest 24
+    return
+
+
+@ Game Select 2
+script script_studio_game_select_2
+    set_tempo 105
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6 | MIDI_TRACK_7)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 12
+    run play_studio_mus_count_in
+    rest 12
+    run play_studio_mus_count_in
+    rest 12
+    run play_studio_mus_count_in
+    rest 12
+    play_music s_shibafu2_bgm_seqData
+    rest (24 * 4)
+    dms_start_bg_monitor 2
+    rest (24 * 40)
+    rest (24 * 40)
+    mod_music_volume 0, (24 * 8)
+    rest (24 * 8)
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Rhythm Tweezers
+script script_studio_rhythm_tweezers
+    set_tempo 96
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, MIDI_TRACK_7
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_datumo_bgm_seqData
+    rest (24 * 8)
+    dms_start_bg_monitor 1
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 8)
+    rest (24 * 16)
+    rest (24 * 8)
+    rest (24 * 8)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+@ Fireworks
+script script_studio_fireworks
+    set_tempo 140
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_7 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_hanabi_bgm_seqData
+    rest (24 * 12)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 16)
+    mod_music_volume 0, (24 * 12)
+    rest (24 * 12)
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ The Clappy Trio
+script script_studio_clappy_trio
+    set_tempo 118
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_2 | MIDI_TRACK_3)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 12
+    play_music s_tebyoushi_bgm_seqData
+    rest 12
+    dms_start_bg_monitor 1
+    rest (24 * 8)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 4)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 15) + 22
+    run scene_stop_music
+    rest 2
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ The Snappy Trio
+script script_studio_snappy_trio
+    set_tempo 108
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_tebyoushi_dexy_bgm_seqData
+    dms_start_bg_monitor 1
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 36)
+    rest (24 * 32)
+    rest (24 * 8)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Honey Sweet Angel of Love
+script script_studio_honey_sweet_angel
+    set_tempo 137
+    set_music_volume 0xD2
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_12)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 12
+    play_music s_koihoney_bgm_seqData
+    rest 12
+    run play_studio_mus_count_in
+    rest 24
+    dms_start_bg_monitor 0
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 8)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 4)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 8)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Samurai Slice
+script script_studio_samurai_slice
+    set_tempo 120
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, MIDI_TRACK_6
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_iai_bgm_studio_seqData
+    dms_start_bg_monitor 2
+    rest (24 * 16)
+    rest (24 * 8)
+    rest (24 * 8)
+    set_tempo 140
+    rest (24 * 8)
+    set_tempo 160
+    rest (24 * 8)
+    set_tempo 160
+    rest (24 * 8)
+    set_tempo 180
+    rest (24 * 8)
+    set_tempo 200
+    rest (24 * 8)
+    set_tempo 220
+    rest (24 * 8)
+    set_tempo 80
+    rest (24 * 8)
+    rest (24 * 8)
+    set_tempo 120
+    rest (24 * 8)
+    rest (24 * 8)
+    rest (24 * 8)
+    set_tempo 140
+    rest (24 * 8)
+    set_tempo 160
+    rest (24 * 8)
+    set_tempo 180
+    rest (24 * 8)
+    set_tempo 180
+    rest (24 * 8)
+    set_tempo 200
+    rest (24 * 8)
+    set_tempo 210
+    rest (24 * 8)
+    set_tempo 220
+    rest (24 * 8)
+    set_tempo 70
+    rest (24 * 8)
+    rest (24 * 8)
+    mod_music_volume 0, (24 * 3)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_tempo 140
+    play_music s_iai_result_seqData
+    set_music_volume 0x100
+    rest (24 * 12)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Power Calligraphy
+script script_studio_power_calligraphy
+    set_tempo 127
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_7 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 12
+    rest 6
+    play_music s_shuji_bgm1_seqData
+    rest 6
+    rest (24 * 16)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 32)
+    rest (24 * 12)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    set_tempo 161
+    play_music s_shuji_bgm2_seqData
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 12)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    set_tempo 98
+    play_music s_shuji_bgm3_seqData
+    run mute_studio_mus_tracks, MIDI_TRACK_8
+    rest (24 * 16)
+    mod_music_volume 0, (24 * 7) + 21
+    rest (24 * 8)
+    set_music_volume 0x100
+    play_music s_shuji_bgm_end_seqData
+    run mute_studio_mus_tracks, 0
+    rest (24 * 16)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Karate Man
+script script_studio_karate_man
+    set_tempo 120
+    set_music_volume 0x96
+    run mute_studio_mus_tracks, MIDI_TRACK_4
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    dms_start_bg_monitor 2
+    play_music s_karate_bgm_seqData
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 8)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 8)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 8)
+    set_tempo 150
+    set_music_volume 0x64
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    mod_music_volume 0xF0, (24 * 5)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    rest 6
+    run gameplay_set_reverb, 40
+    rest 6
+    set_tempo 140
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run gameplay_set_reverb, 0
+    set_music_volume 0x96
+    play_music s_karate_fan_seqData
+    run mute_studio_mus_tracks, MIDI_TRACK_4
+    rest (24 * 4)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Marching Orders
+script script_studio_marching_orders
+    set_tempo 135
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, MIDI_TRACK_9
+    play_music s_guntai2_seqData
+    run play_studio_mus_count_in
+    rest 24
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 15) + 22
+    run scene_stop_music
+    rest 2
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ RIQ Main Menu
+script script_studio_main_menu
+    set_tempo 155
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_manza_bgm_seqData
+    rest (24 * 8)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    mod_music_volume 0, (24 * 12)
+    rest (24 * 12)
+    rest 24
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Night Walk
+script script_studio_night_walk
+    set_tempo 127
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, (MIDI_TRACK_3 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_4beat_bgm_seqData
+    dms_start_bg_monitor 1
+    rest (24 * 8)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 4)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 4)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 4)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Opening
+script script_studio_opening
+    set_tempo 118
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, MIDI_TRACK_6
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_dr_sam_bgm_seqData
+    dms_start_bg_monitor 2
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 32)
+    rest (24 * 16)
+    mod_music_volume 0, (24 * 8)
+    rest (24 * 8)
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ RIQ Perfect Certificate
+script script_studio_perfect
+    set_tempo 145
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_8 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 12
+    play_music s_perfect_fan_seqData
+    rest (24 * 8)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 16)
+    mod_music_volume 0, (24 * 8)
+    rest (24 * 8)
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Polyrhythm
+script script_studio_polyrhythm
+    set_tempo 130
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_8)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_poly_bgm_seqData
+    rest (24 * 8)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    set_tempo 150
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 3
+    set_tempo 30
+    rest 18
+    set_tempo 130
+    run scene_stop_music
+    rest 3
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Quiz Show
+script script_studio_quiz_show
+    set_tempo 125
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, MIDI_TRACK_7
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_quiz_bgm_seqData
+    dms_start_bg_monitor 2
+    rest (24 * 48)
+    rest (24 * 48)
+    mod_music_volume 0, (24 * 8)
+    rest (24 * 8)
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Bunny Hop
+script script_studio_bunny_hop
+    set_tempo 150
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    dms_start_bg_monitor 2
+    play_music s_rabbit_bgm_studio_seqData
+    rest (24 * 16)
+    rest (24 * 48)
+    rest (24 * 48)
+    rest (24 * 48)
+    rest (24 * 8)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Rat Race
+script script_studio_rat_race
+    set_tempo 150
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, MIDI_TRACK_11
+    play_music s_rat_bgm_studio_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Remix 7
+script script_studio_remix7
+    set_tempo 120
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9)
+    play_music Lesson1_seqData
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    dms_start_bg_monitor 2
+    play_music L1_pat03_seqData
+    rest (24 * 16)
+    rest (24 * 16)
+    play_music L1_pat05_seqData
+    rest (24 * 16)
+    rest (24 * 16)
+    set_tempo 133
+    run start_studio_mus_remix2
+    rest 24
+    rest 24
+    run scene_stop_music
+    rest 24
+    rest 24
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_8 | MIDI_TRACK_9)
+    play_music L2_pat01_seqData
+    rest (24 * 16)
+    play_music L2_pat09_seqData
+    rest (24 * 16)
+    play_music L2_pat11_seqData
+    rest (24 * 16)
+    play_music L2_pat12_seqData
+    rest (24 * 16)
+    play_music L2_pat01_seqData
+    rest (24 * 16)
+    rest (24 * 12)
+    set_music_track_volume MIDI_TRACK_5, 0
+    rest 24
+    run scene_stop_music
+    rest 24
+    set_music_track_volume 0, 0
+    set_tempo 131
+    play_music L3_intro_seqData
+    rest 24
+    rest 24
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6 | MIDI_TRACK_7)
+    play_music L3_C36_seqData
+    rest (24 * 32)
+    play_music L3_C38_seqData
+    rest (24 * 28)
+    run start_studio_mus_remix7_end
+    rest 24
+    rest 4
+    set_music_track_volume MIDI_TRACK_4, 0
+    rest 4
+    rest 8
+    rest 8
+    rest 4
+    run scene_stop_music
+    rest 4
+    rest 8
+    rest 8
+    set_tempo 120
+    run slow_studio_mus_remix7_end
+    rest 24
+    set_music_track_volume 0, 0
+    run stop_studio_mus_remix7_end
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9)
+    play_music L1_pat16_seqData
+    rest (24 * 40)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Remix 8
+script script_studio_remix8
+    set_tempo 109
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_8)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music L8_pat_intro_seqData
+    rest (24 * 4)
+    dms_start_bg_monitor 2
+    play_music L8_pat01_seqData
+    rest (24 * 24)
+    play_music L8_pat02_seqData
+    rest (24 * 24)
+    play_music L8_pat03_seqData
+    rest (24 * 24)
+    play_music L8_pat04_seqData
+    rest (24 * 24)
+    play_music L8_pat05_seqData
+    rest (24 * 16)
+    play_music L8_pat_honki_seqData
+    rest (24 * 8)
+    play_music L8_pat06_seqData
+    rest (24 * 16)
+    play_music L8_pat_honki_seqData
+    rest (24 * 8)
+    play_music L8_pat07_seqData
+    rest (24 * 24)
+    play_music L8_pat08_seqData
+    rest (24 * 24)
+    play_music L8_pat09_seqData
+    rest (24 * 24)
+    play_music L8_pat10_seqData
+    rest (24 * 24)
+    play_music L8_pat11_seqData
+    rest (24 * 24)
+    play_music L8_pat12_seqData
+    rest (24 * 24)
+    play_music L8_pat_end_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Remix 6
+script script_studio_remix6
+    set_tempo 140
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, (MIDI_TRACK_10 | MIDI_TRACK_11)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 12
+    play_music s_remix_all_bgm_seqData
+    rest 12
+    rest 24
+    dms_start_bg_monitor 2
+    rest (24 * 36)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 24)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 20)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 28)
+    rest (24 * 32)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ RIQ Results (Try Again)
+script script_studio_try_again
+    set_tempo 80
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, MIDI_TRACK_5
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 12
+    play_music s_kekka_bgm_bad_seqData
+    rest 12
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    mod_music_volume 0, (24 * 8)
+    rest (24 * 8)
+    run scene_stop_music
+    rest 24
+    rest 24
+    return
+
+
+@ RIQ Results (OK)
+script script_studio_ok
+    set_tempo 120
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, MIDI_TRACK_5
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_kekka_bgm_common_seqData
+    rest 24
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    mod_music_volume 0, (24 * 8)
+    rest (24 * 8)
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ RIQ Results (Superb)
+script script_studio_superb
+    set_tempo 133
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, MIDI_TRACK_1
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_kekka_bgm_good_seqData
+    rest 24
+    rest 24
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    mod_music_volume 0, (24 * 8)
+    rest (24 * 8)
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Silence
+script script_studio_silence_loop
+    rest 24
+    dms_event06 0
+    if_eq INT8, FUNCTION_RESULT, TRUE
+        return
+    end_if
+    goto script_studio_silence_loop
+
+@ Silence
+script script_studio_silence
+    set_tempo 140
+    set_music_volume 0x100
+    goto script_studio_silence_loop
+
+
+@ Space Dance
+script script_studio_space_dance
+    set_tempo 120
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_7)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 12
+    play_music s_trex_bgm_seqData
+    rest 12
+    rest 24
+    dms_start_bg_monitor 0
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 8)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 8)
+    rest (24 * 16)
+    rest (24 * 12)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Tap Trial 2
+script script_studio_tap_trial_2
+    set_tempo 165
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, (MIDI_TRACK_3 | MIDI_TRACK_4)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_tapdance_ska_bgm_seqData
+    rest (24 * 15)
+    dms_start_bg_monitor 1
+    rest 24
+    rest (24 * 32)
+    rest (24 * 8)
+    rest (24 * 28)
+    set_tempo 180
+    rest (24 * 4)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    rest (24 * 16)
+    rest (24 * 32)
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 20)
+    rest (24 * 16)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Tap Trial
+script script_studio_tap_trial
+    set_tempo 127
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    dms_start_bg_monitor 3
+    play_music s_tapdance_bgm_seqData
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 8)
+    rest (24 * 16)
+    rest (24 * 12)
+    set_tempo 139
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 4)
+    rest (24 * 16)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ RIQ Title Screen
+script script_studio_title
+    set_tempo 105
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_8 | MIDI_TRACK_12)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_title_bgm_seqData
+    rest (24 * 4)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 4)
+    rest 3
+    set_tempo 30
+    rest 18
+    set_tempo 105
+    run scene_stop_music
+    rest 3
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Toss Boys
+script script_studio_toss_boys
+    set_tempo 106
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_9 | MIDI_TRACK_11)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_toss_bgm_seqData
+    rest (24 * 4)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 8)
+    rest (24 * 32)
+    rest (24 * 8)
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Tram & Pauline
+script script_studio_tram_pauline
+    set_tempo 160
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_puipui_bgm_seqData
+    rest (24 * 8)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 36)
+    rest (24 * 32)
+    rest (24 * 16)
+    rest (24 * 32)
+    rest (24 * 36)
+    rest (24 * 32)
+    rest (24 * 12)
+    rest 3
+    set_tempo 30
+    rest 6
+    run scene_stop_music
+    set_tempo 160
+    rest 3
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Sick Beats
+script script_studio_sick_beats
+    set_tempo 125
+    set_music_volume 0x100
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_hitmegeton1_bgm_seqData
+    rest (24 * 4)
+    dms_start_bg_monitor 2
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 32)
+    rest (24 * 28)
+    rest 24
+    rest 24
+    rest 24
+    rest 22
+    run scene_stop_music
+    rest 2
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ WISH Can't Wait for You
+script script_studio_wish
+    set_tempo 204
+    set_music_volume 0x96
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    dms_start_bg_monitor 0
+    play_music s_wish_bgm_seqData
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 15) + 21
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6)
+    rest 3
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 4)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    rest (24 * 16)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    return
+
+
+@ Wizard's Waltz
+script script_studio_wizards_waltz
+    set_tempo 160
+    set_music_volume 0xC8
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_5)
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    run play_studio_mus_count_in
+    rest 24
+    play_music s_mitubati_seqData
+    dms_start_bg_monitor 1
+    rest (24 * 12)
+    rest (24 * 24)
+    rest (24 * 24)
+    rest (24 * 24)
+    rest (24 * 24)
+    rest (24 * 24)
+    rest (24 * 24)
+    rest (24 * 24)
+    mod_music_volume 0, (24 * 5) + 21
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run scene_stop_music
+    rest 24
+    rest 24
+    rest 24
+    return
+
+.end

@@ -13,7 +13,7 @@ thumb_func_start toss_boys_input_event \n\
 /* 0803fb76 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803fb78 */ BL func_0803f9a0 \n\
 /* 0803fb7c */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803fb7e */ BL beats_to_ticks \n\
+/* 0803fb7e */ BL ticks_to_frames \n\
 /* 0803fb82 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803fb84 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803fb86 */ BL func_0803ee58 \n\
@@ -27,7 +27,7 @@ branch_0803fb8a: \n\
 /* 0803fb94 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803fb96 */ BL func_0803f9a0 \n\
 /* 0803fb9a */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803fb9c */ BL beats_to_ticks \n\
+/* 0803fb9c */ BL ticks_to_frames \n\
 /* 0803fba0 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803fba2 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803fba4 */ BL func_0803ee58 \n\
@@ -41,7 +41,7 @@ branch_0803fba8: \n\
 /* 0803fbb2 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803fbb4 */ BL func_0803f9a0 \n\
 /* 0803fbb8 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803fbba */ BL beats_to_ticks \n\
+/* 0803fbba */ BL ticks_to_frames \n\
 /* 0803fbbe */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803fbc0 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803fbc2 */ BL func_0803ee58 \n\

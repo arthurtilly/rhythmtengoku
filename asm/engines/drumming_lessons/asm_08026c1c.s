@@ -6,7 +6,7 @@ thumb_func_start drum_live_cue_update \n\
 /* 08026c1c */ PUSH {R4, LR} \n\
 /* 08026c1e */ ADDS R4, R2, 0x0 @ Set R4 to R2 + 0x0 \n\
 /* 08026c20 */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 08026c22 */ BL beats_to_ticks \n\
+/* 08026c22 */ BL ticks_to_frames \n\
 /* 08026c26 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 08026c28 */ BHI branch_08026c2e \n\
 /* 08026c2a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

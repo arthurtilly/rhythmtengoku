@@ -6,6 +6,47 @@
 
 #include "games/karate_man/graphics/karate_man_graphics.h"
 
+// Engine Macros/Enums:
+#define KARATE_PALETTE_NORMAL 0
+#define KARATE_PALETTE_SERIOUS 1
+
+enum KarateVersionsEnum {
+    KARATE_VER_0,
+    KARATE_VER_FACES,
+    KARATE_VER_SERIOUS,
+    KARATE_VER_PURPLE
+};
+
+enum KarateJoeFacesEnum {
+    KARATE_JOE_EMOTE_0,
+    KARATE_JOE_EMOTE_1,
+    KARATE_JOE_EMOTE_2
+};
+
+enum KarateObjectsEnum {
+    KARATE_OBJECT_POT,
+    KARATE_OBJECT_ROCK,
+    KARATE_OBJECT_SOCCER_BALL,
+    KARATE_OBJECT_BOMB,
+    KARATE_OBJECT_LIGHT_BULB,
+};
+
+enum KarateCuesEnum {
+    KARATE_CUE_POT,
+    KARATE_CUE_SOCCER_BALL,
+    KARATE_CUE_POT_STRICT,
+    KARATE_CUE_03_NULL,
+    KARATE_CUE_ROCK,
+    KARATE_CUE_BOMB,
+    KARATE_CUE_06_NULL,
+    KARATE_CUE_07_NULL,
+    KARATE_CUE_LIGHT_BULB,
+    KARATE_CUE_09_NULL,
+    KARATE_CUE_0A_NULL,
+    KARATE_CUE_0B_NULL,
+};
+
+
 // Engine Types:
 struct KarateManEngineData {
     u8 version;     // 0 = Karate Man; 1 = Karate Man (BG Faces); 2 = Karate Man ("Serious Mode"); 3 = Karate Man 2
@@ -57,47 +98,6 @@ struct KarateManCue {
     s8 unk2C;      // Value:  Object Angle
     u8 unk2D;      // Value:  Object Rotation
     s16 unk2E;     // Value:  unk2E
-};
-
-
-// Engine Macros/Enums:
-#define KARATE_PALETTE_NORMAL 0
-#define KARATE_PALETTE_SERIOUS 1
-
-enum KarateVersionsEnum {
-    KARATE_VER_0,
-    KARATE_VER_FACES,
-    KARATE_VER_SERIOUS,
-    KARATE_VER_PURPLE
-};
-
-enum KarateJoeFacesEnum {
-    KARATE_JOE_EMOTE_0,
-    KARATE_JOE_EMOTE_1,
-    KARATE_JOE_EMOTE_2
-};
-
-enum KarateObjectsEnum {
-    KARATE_OBJECT_POT,
-    KARATE_OBJECT_ROCK,
-    KARATE_OBJECT_SOCCER_BALL,
-    KARATE_OBJECT_BOMB,
-    KARATE_OBJECT_LIGHT_BULB,
-};
-
-enum KarateCuesEnum {
-    KARATE_CUE_POT,
-    KARATE_CUE_SOCCER_BALL,
-    KARATE_CUE_POT_STRICT,
-    KARATE_CUE_03_NULL,
-    KARATE_CUE_ROCK,
-    KARATE_CUE_BOMB,
-    KARATE_CUE_06_NULL,
-    KARATE_CUE_07_NULL,
-    KARATE_CUE_LIGHT_BULB,
-    KARATE_CUE_09_NULL,
-    KARATE_CUE_0A_NULL,
-    KARATE_CUE_0B_NULL,
 };
 
 

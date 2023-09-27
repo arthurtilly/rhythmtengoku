@@ -1,40 +1,42 @@
 #include "main.h"
 #include "memory.h"
-#include "code_08003980.h"
+#include "code_08003b28.h"
 #include "bitmap_font.h"
 #include "memory_heap.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
 
 static struct Scene *gCurrentScene;
 static struct Scene *gNextScene;
-static struct SceneUnk03000008 D_03000008[10];
+static struct SceneTransition gSceneTrans[10];
 static u8 D_03000080;
 static struct Scene *D_03000084;
-static struct Scene *D_03000088;
+static s32 D_03000088;
 
-void func_080001f4_stub(void) {
-	
+
+// Default Interrupt Procedure (Do Nothing)
+void interrupt_default(void) {
 }
+
 
 // Initialise Scenes (Init. Static Variables)
 void init_scene_static_var(void) {
-	game_select_init_static_var();
-	score_results_scene_init_static_var();
-	main_menu_init_static_var();
+	game_select_scene_init_memory();
+	score_results_scene_init_memory();
+	main_menu_scene_init_memory();
 	gameplay_init_scene_static_var();
-	func_08010490(); // Rhythm Library
-	func_08011ec0(); // Rhythm Data Room
-	func_0801c1b8(); // Studio
-	func_0801d580(); // Medal Corner Menus
-	cafe_scene_init_static_var();
+	arrival_scene_init_memory();
+	dataroom_scene_init_memory();
+	studio_scene_init_memory();
+	medal_corner_scene_init_memory();
+	cafe_scene_init_memory();
 }
+
 
 void func_08000224(void) {
 	init_key_listener();
-	func_0800b564();
+	init_time_keeper();
 	init_fast_udivsi3();
-	func_08002f68();
+	init_math_sqrt();
 	mem_heap_init(get_memory_heap_start(), get_memory_heap_length());
 	task_pool_init();
 	func_08003e64();
@@ -53,7 +55,7 @@ void func_08000224(void) {
 	}
 	flush_save_buffer_to_sram_backup();
 	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
-	set_scene_object_current_text_id(func_0800c490());
+	set_scene_object_current_text_id(scene_get_default_text_id());
 	init_scene_static_var();
 	func_08001360();
 	func_08009150();
@@ -61,7 +63,6 @@ void func_08000224(void) {
 	D_03004498 = TRUE;
 }
 
-#define RESET_BUTTON_COMBO (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON)
 
 void agb_main(void) {
 	REG_WAITCNT = (WAITCNT_SRAM_8
@@ -69,82 +70,83 @@ void agb_main(void) {
 		| WAITCNT_WS1_N_3 | WAITCNT_WS1_S_1
 		| WAITCNT_WS2_N_3 | WAITCNT_WS2_S_1
 		| WAITCNT_PHI_OUT_NONE | WAITCNT_PREFETCH_ENABLE | WAITCNT_TYPE_GBA);
-	
+
     // Clear RAM
 	DmaFill32(3, 0, ExternWorkRAMBase, 0x40000);
 	DmaFill32(3, 0, InternWorkRAMBase, 0x7E00);
-	
+
     // Set up interrupt handler
 	DmaCopy32(3, &interrupt_handler_rom, &interrupt_handler, 0x200);
 	DmaCopy32(3, &interrupt_handler_jtbl_rom, &interrupt_handler_jtbl, 0x38);
 	REG_INTERRUPT = &interrupt_handler;
-	
+
     // Clear VRAM
 	DmaFill32(3, 0, VRAMBase, 0x18000);
 	*(u16 *)PaletteRAMBase = 0x7FFF;
-    
+
 	REG_DISPCNT = 0;
 	REG_IME = 0;
-	
+
 	D_03004498 = FALSE;
-	
+
 	init_ewram();
 	func_08000224();
-	func_0801e100(); // Init. Debug Menu Scene
+	debug_menu_scene_init_memory();
 	func_0804c778(); // Init. MIDI Sound Library
 	func_0804c340(35, 2, 2, 4); // Set Sound Reverb Levels
 	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
-	
+
 	REG_DISPSTAT = 8;
 	REG_IE = (INTERRUPT_CART | INTERRUPT_DMA2 | INTERRUPT_TIMER3 | INTERRUPT_VBLANK);
 	REG_IF = 0xFFFF;
 	REG_IME = 1;
-	
-	func_0801d860(0); // Init. Script Operator (Init. Static Variables)
-	func_0800046c(&scene_warning);
-	func_080006b0(&scene_warning, D_08935fac); // Title Screen
+
+	func_0801d860(FALSE); // Init. Script Operator (Init. Static Variables)
+	init_scenes(&scene_warning);
+	set_scene_trans_target(&scene_warning, D_08935fac); // Title Screen
 	update_key_listener();
-	
+
 	while (TRUE) {
 		func_080013a8();
 		get_agb_random_var();
 		update_key_listener();
 		D_030046a0 += 1;
 		process_scenes();
-		
+
 		if (D_03004498) {
 			u16 keysPressed = ~REG_KEY;
-			
+
 			if ((keysPressed & RESET_BUTTON_COMBO) == RESET_BUTTON_COMBO) {
 				key_rec_set_mode(0, 0x3ff, 0, 0);
-				func_08000568(&D_089dd97c);
+				set_current_scene(&scene_soft_reset);
 				func_08009548();
 				D_03004498 = FALSE;
 			}
 		}
-		
+
 		func_0804c170();
-		func_0800b590();
+		update_time_keeper();
 		func_08003ff0();
 	}
-	
 }
 
-void func_0800046c(struct Scene *next) {
+
+// Initialise Scene Handling
+void init_scenes(struct Scene *initial) {
 	gCurrentScene = NULL;
-	gNextScene = next;
+	gNextScene = initial;
 	gCurrentSceneData = NULL;
-	func_08000598();
+	clear_scene_trans();
 }
 
+
+// Update Scene Handling
 void process_scenes(void) {
-    union struct_030046a4 *temp;
-    
 	if (gCurrentScene != NULL) {
 		if (gCurrentScene->loopFunc != NULL) {
             // Update Scene
             u32 sceneEnded = gCurrentScene->loopFunc(gCurrentScene->loopParam);
-            
+
             if (sceneEnded) {
                 // Close Scene
                 if (gCurrentScene->endFunc != NULL) {
@@ -153,143 +155,185 @@ void process_scenes(void) {
                 if (gCurrentSceneData != NULL) {
                     mem_heap_dealloc(gCurrentSceneData);
                 }
-                
+
                 gCurrentSceneData = NULL;
-                gNextScene = func_080005e0(gCurrentScene);
-                
+                gNextScene = get_scene_trans_target(gCurrentScene);
+
                 if (D_03000080) {
-                    func_080006b0(gCurrentScene, D_03000084);
-                    func_080006d0(gCurrentScene, D_03000088);
+                    set_scene_trans_target(gCurrentScene, D_03000084);
+                    set_scene_trans_var(gCurrentScene, D_03000088);
                 } else {
-                    func_08000674(gCurrentScene);
+                    dealloc_scene_trans(gCurrentScene);
                 }
-                
+
                 gCurrentScene = NULL;
             }
         }
 	} else {
-        // Initialise next scene
+        // Initialise Next Scene
 		if (gNextScene == NULL) {
 			gNextScene = D_08935fb0;
 		}
-		
+
 		gCurrentScene = gNextScene;
 		gNextScene = NULL;
 		D_03000080 = FALSE;
-		
+
 		if (gCurrentScene->requiredMemory != 0) {
-			temp = mem_heap_alloc(gCurrentScene->requiredMemory);
-            gCurrentSceneData = temp;
+			gCurrentSceneData = mem_heap_alloc(gCurrentScene->requiredMemory);
 		}
-		
+
 		if (gCurrentScene->initFunc != NULL) {
 			gCurrentScene->initFunc(gCurrentScene->initParam);
 		}
 	}
 }
 
-void func_08000568(struct Scene *next) {
+
+// Set Scene
+void set_current_scene(struct Scene *initial) {
 	gCurrentScene = NULL;
-	gNextScene = next;
-	func_08000598();
+	gNextScene = initial;
+	clear_scene_trans();
 }
 
-void func_08000584(struct Scene *arg1) {
-	func_080006b0(gCurrentScene, arg1);
+
+// Set Next Scene (Transition on Script End)
+void set_next_scene(struct Scene *next) {
+	set_scene_trans_target(gCurrentScene, next);
 }
 
-void func_08000598(void) {
+
+// Clear Transitions
+void clear_scene_trans(void) {
 	u32 i;
-	for (i = 0; i < 10; i++) {
-		D_03000008[i].unk0 = NULL;
-		D_03000008[i].unk4 = NULL;
-		D_03000008[i].unk8 = NULL;
+
+	for (i = 0; i < ARRAY_COUNT(gSceneTrans); i++) {
+		gSceneTrans[i].initial = NULL;
+		gSceneTrans[i].target = NULL;
+		gSceneTrans[i].variable = 0;
 	}
 }
 
-struct SceneUnk03000008 *func_080005b8(struct Scene *arg1) {
+
+// Get Transition Data
+struct SceneTransition *get_scene_trans(struct Scene *scene) {
 	u32 i;
-	for (i = 0; i < 10; i++) {
-		if (D_03000008[i].unk0 == arg1) {
-			return &D_03000008[i];
+
+	for (i = 0; i < ARRAY_COUNT(gSceneTrans); i++) {
+		if (gSceneTrans[i].initial == scene) {
+			return &gSceneTrans[i];
 		}
 	}
+
 	return NULL;
 }
 
-struct Scene *func_080005e0(struct Scene *arg1) {
-	struct SceneUnk03000008 *temp = func_080005b8(arg1);
-	if (temp == NULL) {
+
+// Get Transition Next Scene
+struct Scene *get_scene_trans_target(struct Scene *scene) {
+	struct SceneTransition *transData = get_scene_trans(scene);
+
+	if (transData == NULL) {
 		return NULL;
 	}
-	return temp->unk4;
+
+	return transData->target;
 }
 
-struct Scene *func_080005f4(struct Scene *arg1) {
-	struct SceneUnk03000008 *temp = func_080005b8(arg1);
-	if (temp == NULL) {
-		return NULL;
+
+// Get Transition Variable
+s32 get_scene_trans_var(struct Scene *scene) {
+	struct SceneTransition *transData = get_scene_trans(scene);
+
+	if (transData == NULL) {
+		return 0;
 	}
-	return temp->unk8;
+
+	return transData->variable;
 }
 
-struct Scene *func_08000608(void) {
-	return func_080005e0(gCurrentScene);
+
+// Get Transition Next Scene for Current
+struct Scene *get_current_scene_trans_target(void) {
+	return get_scene_trans_target(gCurrentScene);
 }
 
-struct Scene *func_0800061c(void) {
-	return func_080005f4(gCurrentScene);
+
+// Get Transition Variable for Current
+s32 get_current_scene_trans_var(void) {
+	return get_scene_trans_var(gCurrentScene);
 }
 
-struct SceneUnk03000008 *func_08000630(struct Scene *arg1) {
+
+// Allocate Transition Data
+struct SceneTransition *alloc_scene_trans(struct Scene *scene) {
 	u32 i;
-	if (arg1 == NULL) {
+
+	if (scene == NULL) {
 		return NULL;
 	}
-	for (i = 0; i < 10; i++) {
-		if (D_03000008[i].unk0 == NULL) {
-			D_03000008[i].unk0 = arg1;
-			D_03000008[i].unk4 = NULL;
-			D_03000008[i].unk8 = NULL;
-			return &D_03000008[i];
+
+	for (i = 0; i < ARRAY_COUNT(gSceneTrans); i++) {
+		if (gSceneTrans[i].initial == NULL) {
+			gSceneTrans[i].initial = scene;
+			gSceneTrans[i].target = NULL;
+			gSceneTrans[i].variable = 0;
+			return &gSceneTrans[i];
 		}
 	}
+
 	return NULL;
 }
 
-void func_08000674(struct Scene *arg1) {
-	if (arg1 != NULL) {
-		u32 i;
-		for (i = 0; i < 10; i++) {
-			if (D_03000008[i].unk0 == arg1) {
-				D_03000008[i].unk0 = NULL;
-				D_03000008[i].unk4 = NULL;
-				D_03000008[i].unk8 = NULL;
-			}
-		}
+
+// Deallocate Transition Data
+void dealloc_scene_trans(struct Scene *scene) {
+    u32 i;
+
+	if (scene == NULL) {
+	    return;
+	}
+
+    for (i = 0; i < ARRAY_COUNT(gSceneTrans); i++) {
+        if (gSceneTrans[i].initial == scene) {
+            gSceneTrans[i].initial = NULL;
+            gSceneTrans[i].target = NULL;
+            gSceneTrans[i].variable = 0;
+        }
+    }
+}
+
+
+// Set Transition Next Scene
+void set_scene_trans_target(struct Scene *scene, struct Scene *target) {
+	struct SceneTransition *transData;
+
+	if (((transData = get_scene_trans(scene)) != NULL) || ((transData = alloc_scene_trans(scene)) != NULL)) {
+		transData->target = target;
 	}
 }
 
-void func_080006b0(struct Scene *arg1, struct Scene *arg2) {
-	struct SceneUnk03000008 *temp;
-	if (((temp = func_080005b8(arg1)) != NULL) || ((temp = func_08000630(arg1)) != NULL)) {
-		temp->unk4 = arg2;
+
+// Set Transition Variable
+void set_scene_trans_var(struct Scene *scene, s32 variable) {
+	struct SceneTransition *transData;
+
+	if (((transData = get_scene_trans(scene)) != NULL) || ((transData = alloc_scene_trans(scene)) != NULL)) {
+		transData->variable = variable;
 	}
 }
 
-void func_080006d0(struct Scene *arg1, struct Scene *arg2) {
-	struct SceneUnk03000008 *temp;
-	if (((temp = func_080005b8(arg1)) != NULL) || ((temp = func_08000630(arg1)) != NULL)) {
-		temp->unk8 = arg2;
-	}
-}
 
-void func_080006f0(struct Scene *arg1, struct Scene *arg2) {
+// Set ? Scene Transition
+void func_080006f0(struct Scene *target, s32 variable) {
 	D_03000080 = TRUE;
-	D_03000084 = arg1;
-	D_03000088 = arg2;
+	D_03000084 = target;
+	D_03000088 = variable;
 }
 
-struct Scene *func_0800070c(void) {
+
+// Get Current Scene
+struct Scene *get_current_scene(void) {
 	return gCurrentScene;
 }

@@ -5,22 +5,6 @@
 
 #include "games/power_calligraphy/graphics/power_calligraphy_graphics.h"
 
-// Engine Types:
-struct PowerCalligraphyEngineData {
-    u8 pad[0x218];
-};
-
-struct PowerCalligraphyCue {
-    /* add fields here */
-};
-
-struct PowerCalligraphyBrushMotion {
-    s8 x;
-    s8 y;
-    s8 playback;
-};
-
-
 // Engine Macros/Enums:
 enum PowerCalligraphyInputsEnum {
     POWER_CALLIGRAPHY_INPUT_ONORE1,
@@ -34,6 +18,22 @@ enum PowerCalligraphyInputsEnum {
     POWER_CALLIGRAPHY_INPUT_RE1,
     POWER_CALLIGRAPHY_INPUT_COMMA1,
     POWER_CALLIGRAPHY_INPUT_FACE1,
+};
+
+
+// Engine Types:
+struct PowerCalligraphyEngineData {
+    u8 pad[0x218];
+};
+
+struct PowerCalligraphyCue {
+    /* add fields here */
+};
+
+struct PowerCalligraphyBrushMotion {
+    s8 x;
+    s8 y;
+    s8 playback;
 };
 
 

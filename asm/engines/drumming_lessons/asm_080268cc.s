@@ -38,7 +38,7 @@ branch_080268e6: \n\
  \n\
 branch_0802690a: \n\
 /* 0802690a */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0802690c */ BL beats_to_ticks \n\
+/* 0802690c */ BL ticks_to_frames \n\
 /* 08026910 */ STRH R0, [R4, 0x10] \n\
 /* 08026912 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08026914 */ STRB R0, [R4, 0xF] \n\

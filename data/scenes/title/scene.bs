@@ -1,0 +1,130 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Exit
+script script_scene_title_exit
+    scene_set_int INT8, 0, FALSE
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    stop
+
+
+@ Simple Pattern Loop
+script script_scene_title_loop
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    rest 6
+    run title_logo_bounce_bubble, 0
+    rest 6
+    run title_logo_bounce_bubble, -1
+    rest 6
+    run title_logo_bounce_bubble, -1
+    rest 6
+    run title_logo_bounce_bubble, -1
+    rest 6
+    run title_logo_bounce_bubble, -1
+    rest 6
+    rest 6
+    rest 6
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    run title_logo_bounce_bubble, 2
+    rest 12
+    run title_logo_bounce_bubble, 1
+    run title_logo_bounce_bubble, 3
+    rest 12
+    run title_logo_bounce_bubble, 0
+    run title_logo_bounce_bubble, 4
+    rest 12
+    run title_scene_beat_anim
+    rest 12
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    return
+
+
+@ Script
+script script_scene_title_main
+    set_tempo 105
+    set_music_volume 0xB4
+    pause_scene
+
+    run func_08007324 TRUE
+    fade_screen_in 12, BLACK
+    rest 12
+    scene_set_int INT8, 0, TRUE
+    rest 24
+    play_music s_title_bgm_seqData
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_beat_anim
+    rest 24
+    run title_logo_appear
+    run title_scene_beat_anim
+    rest 24
+    run title_scene_complete_intro
+
+    loop_start
+        call script_scene_title_loop
+        call script_scene_title_loop
+        call script_scene_title_loop
+        call script_scene_title_loop
+        run title_scene_beat_anim
+        rest 24
+        run title_scene_beat_anim
+        rest 24
+        run title_scene_beat_anim
+        rest 24
+        run title_scene_beat_anim
+        rest 24
+        run title_logo_bounce_bubble, 3
+        rest 24
+        run title_logo_bounce_bubble, 0
+        rest 24
+        run title_logo_bounce_bubble, 2
+        rest 24
+        run title_logo_bounce_bubble, 4
+        rest 24
+    loop_end
+    stop
+
+
+@ Local Scene
+struct sub_scene_title
+    /* Start  */ .word title_scene_start,  0
+    /* Paused */ .word title_scene_paused, 0
+    /* Active */ .word title_scene_update, 0
+    /* Stop   */ .word title_scene_stop,   0
+    /* Script */ .word script_scene_title_main
+endstruct
+
+@ RIQ Title Scene
+struct scene_title
+    /* Start  */ .word func_0801d86c, sub_scene_title
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0xA4
+endstruct
+
+.end

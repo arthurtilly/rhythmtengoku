@@ -21,7 +21,7 @@ thumb_func_start bouncy_road_cue_spawn \n\
 /* 0802e5c0 */ LDRH R0, [R0] \n\
 /* 0802e5c2 */ STRH R0, [R7] \n\
 /* 0802e5c4 */ LDRH R0, [R6, 0xA] \n\
-/* 0802e5c6 */ BL beats_to_ticks \n\
+/* 0802e5c6 */ BL ticks_to_frames \n\
 /* 0802e5ca */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0802e5cc */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0802e5ce */ BL gameplay_set_cue_duration \n\

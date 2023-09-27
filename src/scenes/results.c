@@ -4,253 +4,24 @@
 
 #include "levels.h"
 #include "cues.h"
-#include "src/main.h"
-#include "src/memory.h"
-#include "src/code_08001360.h"
-#include "src/bitmap_font.h"
-#include "src/memory_heap.h"
-#include "src/code_08007468.h"
-#include "src/text_printer.h"
-#include "src/code_0800b778.h"
-#include "src/code_080102d0.h"
-#include "game_select.h"
-#include "src/lib_0804ca80.h"
-
-asm(".include \"include/gba.inc\"");//Temporary
-
-// For readability.
-#define gResults ((struct ResultsSceneData *)gCurrentSceneData)
-
-#define COMMENT_TILESET_BASE OBJ_TILESET_BASE(0x4000)
-#define COMMENT_PALETTE 4
-#define EXTRA_COMMENT_PALETTE 2
-#define RANK_COMMENT_LINE_SPACING 16
-#define RANK_EXTRA_COMMENT_MARGIN 8
-#define RANK_HEADER_PALETTE 4
-#define RANK_HEADER_Y 24
-#define RANK_HEADER_ICON_X 45
-#define RANK_HEADER_BOX_X 24
-#define RANK_RESULT_ICON_X 180
-#define RANK_RESULT_ICON_Y 140
-#define RANK_RESULT_ICON_BUT_X 88
-#define RANK_RESULT_ICON_BUT_Y 140
-#define MAX_POINTS_PER_INPUT 10
-#define POINTS_LOST_PER_MISS -20
-#define COMMENT_BASE_LINE 8
-#define COMMENT_TILE_Y(line) ((COMMENT_BASE_LINE * 2) + ((line) * 2))
-
-extern struct Scene scene_game_select;
-extern struct Scene D_089d6d74; // Staff Credit
-extern struct Scene scene_results_ver_rank;
-extern struct Scene scene_results_ver_score;
-extern struct Scene scene_epilogue;
-
-extern const struct BitmapFontData bitmap_font_warioware_body;
-
-static s32 D_0300132c; // unknown type, unknown if exists
-static s32 D_03001330; // unknown type
-static s32 D_03001334; // unknown type
-static u8 D_03001338[0x204]; // this is wrong though? this is the global score handler, which is 0x208 bytes, which is also equal to (0x1540 - 0x1338)
-static u8 D_03001540; // ?
+#include "src/scenes/game_select.h"
 
 
 /* RESULTS */
 
 
-#include "asm/results/asm_080188b4.s"
-
-#include "asm/results/asm_080188b8.s"
-
-#include "asm/results/asm_080188e4.s"
-
-#include "asm/results/asm_08018914.s"
-
-#include "asm/results/asm_08018934.s"
-
-#include "asm/results/asm_080189b0.s"
-
-#include "asm/results/asm_080189b4.s"
-
-#include "asm/results/asm_080189f4.s"
-
-#include "asm/results/asm_08018a10.s"
+#define COMMENT_PALETTE 4
+#define EXTRA_COMMENT_PALETTE 2
+#define RANK_COMMENT_LINE_SPACING 16
+#define RANK_EXTRA_COMMENT_MARGIN 8
+#define MAX_POINTS_PER_INPUT 10
+#define POINTS_LOST_PER_MISS -20
+#define COMMENT_BASE_LINE 8
+#define COMMENT_TILE_Y(line) ((COMMENT_BASE_LINE * 2) + ((line) * 2))
 
 
-// RANK Initialise Static Variables
-void rank_results_scene_init_static_var(void) {
-}
-
-
-// RANK Graphics Init. 3
-void rank_results_scene_init_gfx3(void) {
-    u32 data;
-
-    func_0800c604(0);
-    data = start_new_texture_loader(get_current_mem_id(), rank_results_buffered_textures);
-    run_func_after_task(data, set_pause_beatscript_scene, FALSE);
-}
-
-
-// RANK Graphics Init. 2
-void rank_results_scene_init_gfx2(void) {
-    u32 data;
-
-    func_0800c604(0);
-    data = func_08002ee0(get_current_mem_id(), rank_results_gfx_table, 0x3000);
-    run_func_after_task(data, rank_results_scene_init_gfx3, 0);
-}
-
-
-// RANK Graphics Init. 1
-void rank_results_scene_init_gfx1(void) {
-    schedule_function_call(get_current_mem_id(), rank_results_scene_init_gfx2, 0, 2);
-    scene_show_obj_layer();
-}
-
-
-// RANK Scene Start
-void rank_results_scene_start(void *sceneParam, s32 startParam) {
-    func_08007324(FALSE);
-    func_080073f0();
-    gResults->bgFont = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
-    gResults->objFont = func_0800c660(0x300, 4);
-    dma3_fill(0, COMMENT_TILESET_BASE, 0x4000, 0x20, 0x200);
-    gResults->currentLine = 0;
-
-    gResults->placeholderIcon = func_0804d160(D_03005380, anim_rank_results_header_placeholder, 0, RANK_HEADER_ICON_X, RANK_HEADER_Y, 0x800, 0, 0, 0x8000);
-    gResults->resultIcon = func_0804d160(D_03005380, anim_rank_results_icon, 0, RANK_RESULT_ICON_X, RANK_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
-    rank_results_scene_init_gfx1();
-    D_03005b3c = LFO_MODE_DISABLED;
-    gResults->awaitingInput = FALSE;
-    gResults->medalObtained = FALSE;
-    gResults->stillJustOK = FALSE;
-}
-
-
-// RANK Scene Update (Paused)
-void rank_results_scene_paused(void *sceneParam, s32 pausedParam) {
-}
-
-
-// RANK Scene Update (Active)
-void rank_results_scene_update(void *sceneParam, s32 updateParam) {
-    if (!results_scene_inputs_enabled()) {
-        return;
-    }
-
-    if (D_03004afc & A_BUTTON) {
-        set_pause_beatscript_scene(FALSE);
-        gResults->awaitingInput = FALSE;
-        play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
-    }
-}
-
-
-// RANK Scene Stop
-void rank_results_scene_stop(void *sceneParam, s32 stopParam) {
-    func_08008628();
-    func_08004058();
-}
-
-
-// RANK Display Header Text (Script Event)
-void rank_results_display_header(void) {
-    struct Animation *anim;
-    s32 sprite, width;
-
-    if (D_089d7980->headerText == NULL) {
-        func_0804d770(D_03005380, gResults->placeholderIcon, TRUE);
-        return;
-    }
-
-    anim = results_get_comment_anim(D_089d7980->headerText, TEXT_ANCHOR_BOTTOM_LEFT, 0);
-    sprite = func_0804d160(D_03005380, anim, 0, RANK_HEADER_BOX_X, RANK_HEADER_Y, 0x800, 0, 0, 0);
-    func_0804d8c4(D_03005380, sprite, RANK_HEADER_PALETTE);
-    width = func_0804ddb0(D_03005380, sprite, 24);
-    func_0804d160(D_03005380, anim_rank_results_header_box, 0, SCREEN_CENTER_X, RANK_HEADER_Y, 0x864, 0, 0, 0);
-    func_0804d160(D_03005380, anim_rank_results_header_box_mask, 0, SCREEN_CENTER_X + width, RANK_HEADER_Y, 0x850, 0, 0, 0);
-}
-
-
-// RANK Display Result Icon (Script Event)
-void rank_results_display_rank(void) {
-    func_0804d770(D_03005380, gResults->resultIcon, TRUE);
-
-    if (gResults->medalObtained) {
-        func_0804d160(D_03005380, anim_rank_results_medal_get, 0, 180, 140, 0x700, 1, 0, 0);
-    }
-
-    if (gResults->stillJustOK) {
-        func_0804d160(D_03005380, anim_rank_results_comment_append, 0, 180, 140, 0x700, 1, 0, 0);
-    }
-
-    play_sound_in_player(SFX_PLAYER_2, rank_results_sfx[gResults->finalResultLevel]);
-}
-
-
-// RANK Play Music (Script Event)
-void rank_results_play_bgm(void) {
-    struct SequenceData *music = rank_results_bgm[gResults->finalResultLevel];
-
-    scene_set_music(music);
-    set_beatscript_tempo(get_music_base_tempo(music));
-}
-
-
-// RANK Display Positive Reinforcement (Script Event)
-void rank_results_append_encouragement(void) {
-    u16 *commentSprites;
-    u32 totalNegativeComments, totalComments;
-    u32 i;
-
-    commentSprites = gResults->commentSprites;
-    totalNegativeComments = gResults->totalNegativeComments;
-    totalComments = gResults->totalNegativeComments + gResults->totalPositiveComments;
-
-    if ((gResults->finalResultLevel != RESULTS_RANK_TRY_AGAIN)
-      || (gResults->totalPositiveComments == 0)
-      || (gResults->singleCommentTryAgain)) {
-        return;
-    }
-
-    for (i = 0; i < totalComments; i++) {
-        s32 y = func_0804ddb0(D_03005380, commentSprites[i], 5);
-
-        func_0804d648(D_03005380, commentSprites[i], y - 10);
-    }
-
-    for (i = totalNegativeComments; i < totalComments; i++) {
-        func_0804d770(D_03005380, commentSprites[i], TRUE);
-    }
-
-    play_sound(&s_f_result_mes_add_seqData);
-    func_0804d160(D_03005380, anim_rank_results_supportive_bubble, 0, RANK_RESULT_ICON_BUT_X, RANK_RESULT_ICON_BUT_Y, 0, 0, 0, 0);
-}
-
-
-#include "asm/results/asm_08018e60.s"
-
-#include "asm/results/asm_08018e74.s"
-
-#include "asm/results/asm_08018e94.s"
-
-#include "asm/results/asm_08018ec0.s"
-
-#include "asm/results/asm_08018ef0.s"
-
-#include "asm/results/asm_08018f10.s"
-
-#include "asm/results/asm_0801911c.s"
-
-#include "asm/results/asm_08019128.s"
-
-#include "asm/results/asm_08019134.s"
-
-#include "asm/results/asm_08019138.s"
-
-#include "asm/results/asm_08019178.s"
-
-#include "asm/results/asm_08019188.s"
+static struct ScoreHandler sScoreHandler; // Global Score Handler
+static u8 D_03001540; // Update save data upon reaching leaving scene.
 
 
 // Set D_03001540
@@ -259,8 +30,8 @@ void results_set_enable_save(u32 updateSave) {
 }
 
 
-// Return TRUE
-u32 func_080191b8(void) {
+// Return TRUE (used in the Perfect Certificate scene, likely for development purposes)
+u32 results_campaign_is_enabled(void) {
     return TRUE;
 }
 
@@ -268,18 +39,21 @@ u32 func_080191b8(void) {
  // Save Result
 void results_save_to_cart(u32 levelState) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
-    s32 gameID;
+    s32 levelID;
 
-    if (!D_03001540) return;
+    if (!D_03001540) {
+        return;
+    }
 
     saveData->recentLevelState = levelState;
     saveData->recentLevelScore = results_calculate_final_score();
 
-    gameID = get_level_id_from_grid_xy(saveData->recentLevelX, saveData->recentLevelY);
-    func_080108a0(gameID);
+    levelID = get_level_id_from_grid_xy(saveData->recentLevelX, saveData->recentLevelY);
+    cafe_session_add_level(levelID);
 
-    if (gameID >= 0)
-        D_030046a8->data.unk190[gameID]++;
+    if (levelID >= 0) {
+        D_030046a8->data.levelTotalPlays[levelID]++;
+    }
 
     flush_save_buffer_to_sram();
 }
@@ -313,10 +87,10 @@ void results_init_tracker(struct InputScoreTracker *tracker) {
 void results_init_cue_tracking(void) {
     u32 i;
 
-    D_089d7980->markingData = NULL;
+    score_handler->markingData = NULL;
 
-    for (i = 0; i < 16; i++) {
-        results_init_tracker(&D_089d7980->cueInputTrackers[i]);
+    for (i = 0; i < ARRAY_COUNT(score_handler->cueInputTrackers); i++) {
+        results_init_tracker(&score_handler->cueInputTrackers[i]);
     }
 }
 
@@ -325,55 +99,57 @@ void results_init_cue_tracking(void) {
 void results_init_score_handler(void) {
     u32 i;
 
-    D_089d7980->unk0_b0 = FALSE;
-    D_089d7980->totalRecoveries = 0;
-    D_089d7980->prevInputLevel = -1;
-    D_089d7980->totalIrrelevantInputs = 0;
+    score_handler->unk0_b0 = FALSE;
+    score_handler->totalRecoveries = 0;
+    score_handler->prevInputLevel = -1;
+    score_handler->totalIrrelevantInputs = 0;
 
-    for (i = 0; i < 4; i++) {
-        results_init_tracker(&D_089d7980->anyInputTrackers[i]);
+    for (i = 0; i < ARRAY_COUNT(score_handler->anyInputTrackers); i++) {
+        results_init_tracker(&score_handler->anyInputTrackers[i]);
     }
 
     results_init_cue_tracking();
-    D_089d7980->headerText = NULL;
-    D_089d7980->totalPoints = 0;
-    D_089d7980->maximumPoints = 0;
+    score_handler->headerText = NULL;
+    score_handler->totalPoints = 0;
+    score_handler->maximumPoints = 0;
 }
 
 
 // Import Criteria (Script Event)
 void results_import_marking_criteria(const struct MarkingCriteria **markingData) {
-    D_089d7980->markingData = markingData;
+    score_handler->markingData = markingData;
 }
 
 
 // Set Header Text (Script Event)
 void results_set_header(char *headerText) {
-    D_089d7980->headerText = headerText;
+    score_handler->headerText = headerText;
 }
 
 
 // Assess Inputs (Script Event)
 void results_enable_input_tracking(u32 assess) {
-    D_089d7980->markingInputs = assess;
+    score_handler->markingInputs = assess;
 }
 
 
 // Check if Assessing Inputs
 u32 results_tracking_is_enabled(void) {
-    return D_089d7980->markingInputs;
+    return score_handler->markingInputs;
 }
 
 
 // Register Input
 void results_register_input(u32 criterion, u32 level, s32 offset) {
-    struct InputScoreTracker *tracker = &D_089d7980->anyInputTrackers[criterion];
+    struct InputScoreTracker *tracker = &score_handler->anyInputTrackers[criterion];
     s32 points;
 
-    if (!D_089d7980->markingInputs) return;
+    if (!score_handler->markingInputs) {
+        return;
+    }
 
     if (level == CUE_RESULT_NONE) {
-        D_089d7980->totalIrrelevantInputs++;
+        score_handler->totalIrrelevantInputs++;
         return;
     }
 
@@ -383,15 +159,15 @@ void results_register_input(u32 criterion, u32 level, s32 offset) {
     switch (level) {
         case CUE_RESULT_HIT:
             tracker->totalHits++;
-            if (D_089d7980->prevInputLevel == CUE_RESULT_MISS) {
-                D_089d7980->totalRecoveries++;
+            if (score_handler->prevInputLevel == CUE_RESULT_MISS) {
+                score_handler->totalRecoveries++;
             }
             points = MAX_POINTS_PER_INPUT - ABS(offset) + 1;
             break;
         case CUE_RESULT_BARELY:
             tracker->totalBarelies++;
-            if (D_089d7980->prevInputLevel == CUE_RESULT_MISS) {
-                D_089d7980->totalRecoveries++;
+            if (score_handler->prevInputLevel == CUE_RESULT_MISS) {
+                score_handler->totalRecoveries++;
             }
             points = MAX_POINTS_PER_INPUT - ABS(offset);
             break;
@@ -402,8 +178,8 @@ void results_register_input(u32 criterion, u32 level, s32 offset) {
     }
 
     if (points > MAX_POINTS_PER_INPUT) points = MAX_POINTS_PER_INPUT;
-    D_089d7980->totalPoints += points;
-    D_089d7980->maximumPoints += MAX_POINTS_PER_INPUT;
+    score_handler->totalPoints += points;
+    score_handler->maximumPoints += MAX_POINTS_PER_INPUT;
 
     if (offset < 0) {
         tracker->totalEarliness -= offset;
@@ -411,15 +187,17 @@ void results_register_input(u32 criterion, u32 level, s32 offset) {
         tracker->totalLateness += offset;
     }
 
-    D_089d7980->prevInputLevel = level;
+    score_handler->prevInputLevel = level;
 }
 
 
 // Register Input for Cue
 void results_register_cue_input(u32 criterion, u32 level, s32 offset) {
-    struct InputScoreTracker *tracker = &D_089d7980->cueInputTrackers[criterion];
+    struct InputScoreTracker *tracker = &score_handler->cueInputTrackers[criterion];
 
-    if (!D_089d7980->markingInputs) return;
+    if (!score_handler->markingInputs) {
+        return;
+    }
 
     tracker->totalInputs++;
 
@@ -460,37 +238,357 @@ void results_tracker_calculate_averages(struct InputScoreTracker *tracker) {
 }
 
 
-#include "asm/results/asm_080194e8.s"
+// DEBUG Calculate Skill Tracker Averages
+void results_tracker_calculate_skill_averages(void) {
+    struct InputScoreTracker *globalInputs = &score_handler->anyInputTrackers[3];
+    u32 i;
 
-#include "asm/results/asm_08019554.s"
+    for (i = 0; i < 3; i++) {
+        results_tracker_calculate_averages(&score_handler->anyInputTrackers[i]);
+        globalInputs->totalInputs += score_handler->anyInputTrackers[i].totalInputs;
+        globalInputs->totalHits += score_handler->anyInputTrackers[i].totalHits;
+        globalInputs->totalBarelies += score_handler->anyInputTrackers[i].totalBarelies;
+        globalInputs->totalEarliness += score_handler->anyInputTrackers[i].totalEarliness;
+        globalInputs->totalLateness += score_handler->anyInputTrackers[i].totalLateness;
+    }
 
-#include "asm/results/asm_08019698.s"
+    results_tracker_calculate_averages(&score_handler->anyInputTrackers[3]);
+}
 
-#include "asm/results/asm_080196fc.s"
 
-#include "asm/results/asm_08019750.s"
+// DEBUG Render Skill Assessment
+void results_render_skills(struct ResultsSkillData *data) {
+    u32 scoreSum, weightSum;
+    s32 y;
+    u32 i;
 
-#include "asm/results/asm_080197a4.s"
+    y = 40;
+    scoreSum = 0;
+    weightSum = 0;
 
-#include "asm/results/asm_080197ec.s"
+    for (i = 0; data[i].descPool != NULL; i++) {
+        struct PrintedTextAnim *textAnim;
+        u32 total, grade;
 
-#include "asm/results/asm_08019820.s"
+        total = 0;
+        while (data[i].descPool[total] != NULL) {
+            total++;
+        }
 
-#include "asm/results/asm_08019878.s"
+        textAnim = bmp_font_obj_print_r(gResults->objFont, data[i].descPool[agb_random(total)], 1, 7);
+        func_0804d160(D_03005380, textAnim->frames, 0, 176, y, 0x4800, 1, 0, 0);
 
-#include "asm/results/asm_080198b0.s"
+        grade = score_handler->skillScores[i] = clamp_int32(data[i].measure(), RESULTS_GRADE_D, RESULTS_GRADE_S);
+        scoreSum += data[i].weight * grade;
+        weightSum += data[i].weight;
 
-#include "asm/results/asm_080198e8.s"
+        textAnim = bmp_font_obj_print_l(gResults->objFont, results_letter_ranks[grade], 1, 7);
+        func_0804d160(D_03005380, textAnim->frames, 0, 192, y, 0x4800, 1, 0, 0);
 
-#include "asm/results/asm_080198f8.s"
+        y += 16;
+    }
 
-const char D_08054ec4[] = ":1" "––––" ":0" "@@‚³‚¢‚Ä‚ñ@@" ":1" "––––";
-const char D_08054eec[] = ".5:1" "‚q|‚h‚p@@" ".6:0";
+    score_handler->avgSkillScore = Div(INT_TO_FIXED(scoreSum), weightSum * RESULTS_GRADE_S);
+}
+
+
+// DEBUG Measure Skill - Accuracy
+u32 results_measure_skill_accuracy(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[3];
+    u32 accuracy;
+    u32 grade, hitGrade;
+
+    accuracy = inputs->avgEarliness + inputs->avgLateness;
+    grade = RESULTS_GRADE_D;
+
+    if (accuracy < INT_TO_FIXED(4 + 0.25)) {
+        grade = RESULTS_GRADE_C;
+    }
+
+    if (accuracy < INT_TO_FIXED(3 + 0.25)) {
+        grade = RESULTS_GRADE_B;
+    }
+
+    if (accuracy < INT_TO_FIXED(2 + 0.25)) {
+        grade = RESULTS_GRADE_A;
+    }
+
+    if (accuracy < INT_TO_FIXED(1 + 0.25)) {
+        grade = RESULTS_GRADE_S;
+    }
+
+    if (inputs->totalBarelies != 0 && grade == RESULTS_GRADE_S) {
+        grade = RESULTS_GRADE_A;
+    }
+
+    hitGrade = results_measure_skill_hit_avg();
+
+    if (grade > hitGrade) {
+        grade = hitGrade;
+    }
+
+    return grade;
+}
+
+
+// DEBUG Measure Skill - Barelies (Tracker 2)
+u32 results_measure_skill_barely_trk2(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[2];
+    struct InputScoreTracker *globalInputs = &score_handler->anyInputTrackers[3];
+    u32 grade;
+
+    if (globalInputs->avgMisses > INT_TO_FIXED(0.75)) {
+        return RESULTS_GRADE_D;
+    }
+
+    grade = RESULTS_GRADE_D;
+
+    if (inputs->totalBarelies < 8) {
+        grade = RESULTS_GRADE_C;
+    }
+
+    if (inputs->totalBarelies < 4) {
+        grade = RESULTS_GRADE_B;
+    }
+
+    if (globalInputs->totalMisses == 0 && inputs->totalBarelies == 0) {
+        grade = RESULTS_GRADE_A;
+
+        if (inputs->avgEarliness + inputs->avgLateness < INT_TO_FIXED(1.25)) {
+            grade = RESULTS_GRADE_S;
+        }
+    }
+
+    return grade;
+}
+
+
+// DEBUG Measure Skill - Barelies (Tracker 1)
+u32 results_measure_skill_barely_trk1(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[1];
+    struct InputScoreTracker *globalInputs = &score_handler->anyInputTrackers[3];
+    u32 grade;
+
+    if (globalInputs->avgMisses > INT_TO_FIXED(0.75)) {
+        return RESULTS_GRADE_D;
+    }
+
+    grade = RESULTS_GRADE_D;
+
+    if (inputs->totalBarelies < 8) {
+        grade = RESULTS_GRADE_C;
+    }
+
+    if (inputs->totalBarelies < 4) {
+        grade = RESULTS_GRADE_B;
+    }
+
+    if (globalInputs->totalMisses == 0 && inputs->totalBarelies == 0) {
+        grade = RESULTS_GRADE_A;
+
+        if (inputs->avgEarliness + inputs->avgLateness < INT_TO_FIXED(1.25)) {
+            grade = RESULTS_GRADE_S;
+        }
+    }
+
+    return grade;
+}
+
+
+// DEBUG Measure Skill - Hits
+u32 results_measure_skill_hit_avg(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[3];
+    u32 hits;
+
+    if (inputs->avgMisses > INT_TO_FIXED(0.75)) {
+        return RESULTS_GRADE_D;
+    }
+
+    hits = Div(INT_TO_FIXED(inputs->totalHits), inputs->totalInputs);
+
+    if (hits >= INT_TO_FIXED(1.000)) {
+        return RESULTS_GRADE_S;
+    }
+
+    if (hits >= INT_TO_FIXED(0.960)) {
+        return RESULTS_GRADE_A;
+    }
+
+    if (hits >= INT_TO_FIXED(0.900)) {
+        return RESULTS_GRADE_B;
+    }
+
+    if (hits >= INT_TO_FIXED(0.785)) {
+        return RESULTS_GRADE_C;
+    }
+
+    return RESULTS_GRADE_D;
+}
+
+
+// DEBUG Measure Skill - Irrelevant Inputs
+u32 results_measure_skill_irrelevant_inputs(void) {
+    switch (score_handler->totalIrrelevantInputs) {
+        case 0:
+            return RESULTS_GRADE_A;
+        case 1:
+            return RESULTS_GRADE_B;
+        case 2:
+            return RESULTS_GRADE_C;
+        default:
+            return RESULTS_GRADE_D;
+    }
+}
+
+
+// DEBUG Measure Skill - Accuracy (Lenient)
+u32 results_measure_skill_accuracy_lenient(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[3];
+    u32 accuracy;
+    u32 grade;
+
+    if (inputs->avgMisses > INT_TO_FIXED(0.75)) {
+        return RESULTS_GRADE_D;
+    }
+
+    accuracy = inputs->avgEarliness + inputs->avgLateness;
+    grade = RESULTS_GRADE_D;
+
+    if (accuracy < INT_TO_FIXED(7 + 0.25)) {
+        grade = RESULTS_GRADE_C;
+    }
+
+    if (accuracy < INT_TO_FIXED(5 + 0.25)) {
+        grade = RESULTS_GRADE_B;
+    }
+
+    if (accuracy < INT_TO_FIXED(3 + 0.25)) {
+        grade = RESULTS_GRADE_A;
+    }
+
+    if (accuracy < INT_TO_FIXED(1 + 0.25)) {
+        grade = RESULTS_GRADE_S;
+    }
+
+    return grade;
+}
+
+
+// DEBUG Measure Skill - Misses
+u32 results_measure_skill_miss(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[3];
+
+    if (inputs->avgMisses > INT_TO_FIXED(0.75)) {
+        return RESULTS_GRADE_D;
+    }
+
+    if (inputs->totalMisses < 4) {
+        return RESULTS_GRADE_A;
+    }
+
+    if (inputs->totalMisses < 6) {
+        return RESULTS_GRADE_B;
+    }
+
+    if (inputs->totalMisses < 8) {
+        return RESULTS_GRADE_C;
+    }
+
+    return RESULTS_GRADE_D;
+}
+
+
+// DEBUG Measure Skill - Misses (Tracker 2)
+u32 results_measure_skill_miss_trk2(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[2];
+    struct InputScoreTracker *globalInputs = &score_handler->anyInputTrackers[3];
+
+    if (globalInputs->avgMisses > INT_TO_FIXED(0.75)) {
+        return RESULTS_GRADE_D;
+    }
+
+    if (inputs->totalMisses < 1) {
+        return RESULTS_GRADE_A;
+    }
+
+    if (inputs->totalMisses < 3) {
+        return RESULTS_GRADE_B;
+    }
+
+    if (inputs->totalMisses < 5) {
+        return RESULTS_GRADE_C;
+    }
+
+    return RESULTS_GRADE_D;
+}
+
+
+// DEBUG Measure Skill - Random
+u32 results_measure_skill_random(void) {
+    return agb_random(5);
+}
+
+
+// DEBUG Load Results (Script Function)
+void results_render_skill_screen(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[3];
+    struct PrintedTextAnim *textAnim;
+    char scoreString[0x20];
+    char numString[0x20];
+    u32 badInputScore, score, level;
+
+    textAnim = bmp_font_obj_print_c(gResults->objFont, ":1" "––––" ":0" "@@‚³‚¢‚Ä‚ñ@@" ":1" "––––", 0, 7);
+    func_0804d160(D_03005380, textAnim->frames, 0, 120, 16, 0x4800, 1, 0, 0);
+
+    results_tracker_calculate_skill_averages();
+    badInputScore = (inputs->totalMisses * 10) + (inputs->totalBarelies * 3);
+
+    level = 2;
+    if (badInputScore >= 10) {
+        level = 1;
+    }
+    if (badInputScore >= 30) {
+        level = 0;
+    }
+
+    switch (level) {
+        case 0:
+            results_render_skills(results_skill_data_low);
+            break;
+        case 1:
+            results_render_skills(results_skill_data_mid);
+            break;
+        case 2:
+            results_render_skills(results_skill_data_high);
+            break;
+    }
+
+    score = FIXED_TO_INT(score_handler->avgSkillScore * 30);
+    score -= score_handler->totalIrrelevantInputs * 3;
+    score = 70 + clamp_int32(score, 0, 30);
+    score -= inputs->totalMisses * 10;
+    score = clamp_int32(score, 0, 100);
+
+    if (score == 0) {
+        if (inputs->totalHits != 0 || inputs->totalBarelies != 0) {
+            score = FIXED_TO_INT(inputs->avgHits * 10);
+            score += FIXED_TO_INT(inputs->avgBarelies * 3);
+            score = clamp_int32(score, 1, 10) + agb_random(3);
+        }
+    }
+
+    strintf(numString, score);
+    memcpy(scoreString, ".5:1" "‚q|‚h‚p@@" ".6:0", 21);
+    strcat(scoreString, numString);
+
+    textAnim = bmp_font_obj_print_r(gResults->objFont, scoreString, 0, 0);
+    func_0804d160(D_03005380, textAnim->frames, 0, 204, 144, 0x4800, 0, 0, 0);
+}
 
 
 // Prepare Negative Remarks (return total failed criteria)
 u32 results_get_negative_comments(void) {
-    const struct MarkingCriteria **criteriaTable = D_089d7980->markingData;
+    const struct MarkingCriteria **criteriaTable = score_handler->markingData;
     struct InputScoreTracker *tracker;
     const char *comments[3];
     char *commentsText;
@@ -498,7 +596,7 @@ u32 results_get_negative_comments(void) {
     u32 i;
     u16 *commentSprites;
 
-    tracker = D_089d7980->cueInputTrackers;
+    tracker = score_handler->cueInputTrackers;
     commentSprites = gResults->commentSprites;
     commentsText = gResults->negativeCommentsText;
     gResults->singleCommentTryAgain = FALSE;
@@ -578,7 +676,7 @@ const char *results_try_again_comment_pool[] = {
 
 // Prepare Positive Comments (return average succeeded criteria)
 s24_8 results_get_positive_comments(void) {
-    const struct MarkingCriteria **criteriaTable = D_089d7980->markingData;
+    const struct MarkingCriteria **criteriaTable = score_handler->markingData;
     struct InputScoreTracker *tracker;
     char *commentsText;
     u32 totalPassed = 0;
@@ -587,7 +685,7 @@ s24_8 results_get_positive_comments(void) {
     u16 *commentSprites;
     u32 imperfectionPenalty;
 
-    tracker = D_089d7980->cueInputTrackers;
+    tracker = score_handler->cueInputTrackers;
     commentSprites = &gResults->commentSprites[gResults->totalNegativeComments];
     imperfectionPenalty = 0;
     commentsText = mem_heap_alloc(0x100);
@@ -748,8 +846,8 @@ void results_render_comments(void) {
 
 // RANK Display Comments (Script Event)
 void results_publish_comments(void) {
-    struct InputScoreTracker *tracker = D_089d7980->cueInputTrackers;
-    const struct MarkingCriteria **criteriaTable = D_089d7980->markingData;
+    struct InputScoreTracker *tracker = score_handler->cueInputTrackers;
+    const struct MarkingCriteria **criteriaTable = score_handler->markingData;
     struct Scene *scene;
     struct Animation *textAnim;
     s16 textSprite;
@@ -778,9 +876,9 @@ void results_publish_comments(void) {
     }
 
     if (game_select_roll_credits_after_epilogue()) {
-        scene = func_080005e0(&scene_epilogue);
-        func_080006b0(&scene_epilogue, &D_089d6d74);
-        func_080006b0(&D_089d6d74, scene);
+        scene = get_scene_trans_target(&scene_epilogue);
+        set_scene_trans_target(&scene_epilogue, &D_089d6d74);
+        set_scene_trans_target(&D_089d6d74, scene);
         game_select_disable_credits_after_epilogue();
     }
 
@@ -819,12 +917,12 @@ u32 results_calculate_final_score(void) {
     s32 penalty, maxPenalty;
     u32 result, maxResult;
 
-    maxPoints = D_089d7980->maximumPoints;
-    points = clamp_int32(D_089d7980->totalPoints, 0, D_089d7980->maximumPoints);
+    maxPoints = score_handler->maximumPoints;
+    points = clamp_int32(score_handler->totalPoints, 0, score_handler->maximumPoints);
 
     if (points > 0) {
         maxPenalty = ((points * -15) << 1) / 100; // (awesome: they performed logical shift on a negative value)
-        penalty = D_089d7980->totalIrrelevantInputs * -10;
+        penalty = score_handler->totalIrrelevantInputs * -10;
         points += clamp_int32(penalty, maxPenalty, 0);
     }
     points = clamp_int32(points, 0, maxPoints);

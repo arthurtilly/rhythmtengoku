@@ -55,7 +55,7 @@ branch_0803d112: \n\
 /* 0803d118 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
  \n\
 branch_0803d11a: \n\
-/* 0803d11a */ BL func_0800c660 \n\
+/* 0803d11a */ BL scene_create_obj_font_printer \n\
 /* 0803d11e */ LDR R1, [R6] \n\
 /* 0803d120 */ STR R0, [R1] \n\
 /* 0803d122 */ LDR R1, =D_0805a8b8 \n\

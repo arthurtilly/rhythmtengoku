@@ -5,10 +5,10 @@
 /* MAIN */
 
 // [D_08935fac]
-struct Scene *D_08935fac = &scene_riq_title;
+struct Scene *D_08935fac = &scene_title;
 
 // [D_08935fb0]
-struct Scene *D_08935fb0 = &scene_riq_title;
+struct Scene *D_08935fb0 = &scene_title;
 
 /* MEMORY */
 

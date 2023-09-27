@@ -107,16 +107,16 @@ glabel interrupt_handler_jtbl_rom
 /* 0804f304 */ .word func_08001380 @ INTERRUPT_VBLANK
 /* 0804f308 */ .word func_080091a4 @ INTERRUPT_HBLANK
 /* 0804f30c */ .word func_08009268 @ INTERRUPT_VCOUNT
-/* 0804f310 */ .word func_080001f4_stub @ INTERRUPT_TIMER0
-/* 0804f314 */ .word func_080001f4_stub @ INTERRUPT_TIMER1
-/* 0804f318 */ .word func_080001f4_stub @ INTERRUPT_TIMER2
-/* 0804f31c */ .word func_080001f4_stub @ INTERRUPT_TIMER3
-/* 0804f320 */ .word func_080001f4_stub @ INTERRUPT_COMM
-/* 0804f324 */ .word func_080001f4_stub @ INTERRUPT_DMA0
-/* 0804f328 */ .word func_080001f4_stub @ INTERRUPT_DMA1
-/* 0804f32c */ .word func_080001f4_stub @ INTERRUPT_DMA3
-/* 0804f330 */ .word func_080001f4_stub @ INTERRUPT_BUTTON
-/* 0804f334 */ .word func_080001f4_stub
+/* 0804f310 */ .word interrupt_default @ INTERRUPT_TIMER0
+/* 0804f314 */ .word interrupt_default @ INTERRUPT_TIMER1
+/* 0804f318 */ .word interrupt_default @ INTERRUPT_TIMER2
+/* 0804f31c */ .word interrupt_default @ INTERRUPT_TIMER3
+/* 0804f320 */ .word interrupt_default @ INTERRUPT_COMM
+/* 0804f324 */ .word interrupt_default @ INTERRUPT_DMA0
+/* 0804f328 */ .word interrupt_default @ INTERRUPT_DMA1
+/* 0804f32c */ .word interrupt_default @ INTERRUPT_DMA3
+/* 0804f330 */ .word interrupt_default @ INTERRUPT_BUTTON
+/* 0804f334 */ .word interrupt_default
 @ above is dma'd
 
 .end

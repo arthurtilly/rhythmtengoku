@@ -40,7 +40,7 @@ void rhythm_tweezers_scroll_to_next_veg(u32 time) {
 
     vegetable->isScrolling = TRUE;
     vegetable->scrollTime = 0;
-    vegetable->scrollTarget = beats_to_ticks(time);
+    vegetable->scrollTarget = ticks_to_frames(time);
     func_0804d8f8(D_03005380, vegetable->spriteNext, rhythm_tweezers_veg_face_anim[vegetable->typeNext], 0, 0, 0, 0);
 
     side = vegetable->bgMapSide;
@@ -117,7 +117,7 @@ void rhythm_tweezers_init_falling_hairs(void) {
     struct RhythmTweezersFallingHair *hair;
     u32 i;
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT; i++) {
         hair = &gRhythmTweezers->fallingHairs[i];
         hair->sprite = create_affine_sprite(anim_rhythm_tweezers_falling_hair, 0, 120, 16, 0x4800, 0x100, -0x200, 0, 0, 0x8000, 0);
         affine_sprite_rotate_with_orbit(hair->sprite, TRUE);
@@ -134,7 +134,7 @@ void rhythm_tweezers_update_falling_hairs(void) {
     struct RhythmTweezersFallingHair *hair;
     u32 i = 0;
 
-    for (i; i <= 4; i++) {
+    for (i; i < RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT; i++) {
         hair = &gRhythmTweezers->fallingHairs[i];
         if (hair->fallDistance <= 0xc7ff) {
             hair->fallDistance += hair->fallSpeed += 0x20;
@@ -163,7 +163,7 @@ void rhythm_tweezers_spawn_falling_hair(u32 arg0) {
     hair->fallSpeed = 0;
     affine_sprite_set_anim_frame(hair->sprite, arg0);
 
-    if ((gRhythmTweezers->fallingHairsNext += 1) > 4) {
+    if (++gRhythmTweezers->fallingHairsNext > (RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT - 1)) {
         gRhythmTweezers->fallingHairsNext = 0;
     }
 }
@@ -191,7 +191,7 @@ void rhythm_tweezers_spawn_tweezers(void) {
 
     tweezers->isMoving = TRUE;
     tweezers->cycleTime = 0;
-    tweezers->cycleTarget = beats_to_ticks(0xa8);
+    tweezers->cycleTarget = ticks_to_frames(0xa8);
     tweezers->heldHair = TWEEZERS_HELD_HAIR_NONE;
 }
 
@@ -344,7 +344,7 @@ void rhythm_tweezers_engine_stop(void) {
 // [func_0802ee44] Engine Event 01 (Reset Hair Placement Cycle)
 void rhythm_tweezers_start_hair_cycle(void) {
     gRhythmTweezers->hairCycleTime = 0;
-    gRhythmTweezers->hairCycleTarget = beats_to_ticks(0x48);
+    gRhythmTweezers->hairCycleTarget = ticks_to_frames(0x48);
     gRhythmTweezers->existingHairs.full = 0;
     gRhythmTweezers->existingHairs.half = 0;
 }
@@ -446,7 +446,7 @@ void rhythm_tweezers_cue_hit_long(struct Cue *cue, struct RhythmTweezersCue *inf
     tweezers->isPulling = TRUE;
     info->finished = TRUE;
     info->pullTime = 0;
-    info->pullTarget = beats_to_ticks(0x0C) - gameplay_get_last_hit_offset();
+    info->pullTarget = ticks_to_frames(0x0C) - gameplay_get_last_hit_offset();
     gameplay_set_input_buttons(0, 0);
 
     stop_sound(&s_f_hair_nuki_long_seqData);

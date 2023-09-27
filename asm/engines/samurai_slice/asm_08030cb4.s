@@ -55,7 +55,7 @@ thumb_func_start samurai_slice_engine_start \n\
 /* 08030d20 */ MOVS R0, 0xD0 @ Set R0 to 0xD0 \n\
 /* 08030d22 */ LSLS R0, R0, 0x2 \n\
 /* 08030d24 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
-/* 08030d26 */ BL func_0800c660 \n\
+/* 08030d26 */ BL scene_create_obj_font_printer \n\
 /* 08030d2a */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08030d2c */ LDR R1, [R2] \n\
 /* 08030d2e */ STR R0, [R1] \n\

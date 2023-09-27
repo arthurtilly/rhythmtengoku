@@ -150,7 +150,7 @@ script script_clappy_trio_main
     clappy_trio_hide_textbox 0
     clappy_trio_crouch_smirk
     rest 24
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 12
     play_music s_tebyoushi_bgm_seqData
     set_music_volume 256
@@ -500,7 +500,7 @@ script script_clappy_trio_main
     beat_anim
     rest 12
     rest 12
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 12
     rest 24
     rest 24

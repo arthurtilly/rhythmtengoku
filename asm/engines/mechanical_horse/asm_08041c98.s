@@ -125,7 +125,7 @@ thumb_func_start func_08041c98 \n\
 /* 08041d90 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08041d92 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08041d94 */ LDR R0, [R1] \n\
-/* 08041d96 */ BL beats_to_ticks \n\
+/* 08041d96 */ BL ticks_to_frames \n\
 /* 08041d9a */ LDR R1, [R5] \n\
 /* 08041d9c */ LDR R2, =0x287 \n\
 /* 08041d9e */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\

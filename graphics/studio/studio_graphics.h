@@ -85,6 +85,10 @@ extern Palette studio_bg_monitor_44_pal[];
 extern struct Animation anim_studio_mem_chart_data[];
 extern struct Animation anim_studio_mem_chart_borders[];
 
+/* STUDIO MEMORY USAGE GRAPH - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08cc4bcc;
+
 /* STUDIO MEMORY USAGE GRAPH - PALETTES */
 
 extern Palette studio_mem_chart_pal[];

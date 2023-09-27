@@ -9,3 +9,4 @@ tools/agbcc/*
 *.sav
 *.dump
 .vscode/*
+ctx.c

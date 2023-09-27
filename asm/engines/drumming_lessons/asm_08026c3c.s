@@ -15,7 +15,7 @@ thumb_func_start func_08026c3c \n\
 /* 08026c4e */ BL gameplay_get_last_hit_offset \n\
 /* 08026c52 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08026c54 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08026c56 */ BL beats_to_ticks \n\
+/* 08026c56 */ BL ticks_to_frames \n\
 /* 08026c5a */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08026c5c */ BL get_beatscript_tempo \n\
 /* 08026c60 */ SUBS R4, R5, R4 @ Set R4 to R5 - R4 \n\

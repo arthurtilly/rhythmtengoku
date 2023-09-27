@@ -7,6 +7,26 @@
 
 #include "games/drum_studio/graphics/drum_studio_graphics.h"
 
+// Engine Macros/Enums:
+#define DRUM_STUDIO_ACCURACY_LIGHTS_AMOUNT 7
+
+enum DrumLessonsVersionsEnum {
+    ENGINE_VER_DRUM_STUDIO_0,
+    ENGINE_VER_DRUM_STUDIO_PLAY,
+    ENGINE_VER_DRUM_STUDIO_2,
+    ENGINE_VER_DRUM_STUDIO_LISTEN,
+    ENGINE_VER_DRUM_LESSONS
+};
+
+enum DrumLessonsRanksEnum {
+    DRUM_LESSON_RANK_0,
+    DRUM_LESSON_RANK_C,
+    DRUM_LESSON_RANK_B,
+    DRUM_LESSON_RANK_A,
+    DRUM_LESSON_RANK_S,
+};
+
+
 // Engine Types:
 struct StudioDrummer {
     s16 snareDrum;
@@ -47,7 +67,7 @@ struct DrumStudioEngineData {
     u8 unk3C1;
     u16 drummingButtons; // 0x3C2
     void *drumReplaySeq; // 0x3C4
-    struct DrumReplayData *replayData; // 0x3C8
+    struct StudioSongData *replayData; // 0x3C8
     u8 replayID; // 0x3CC
     u8 unk3CD; // 0x3CD
     u8 unk3CE; // 0x3CE
@@ -106,7 +126,7 @@ struct DrumStudioEngineData {
     u8 unk563;
     u16 unk564;
     u16 null566;
-    s16 accuracyLightSprites[7]; // 0x568
+    s16 accuracyLightSprites[DRUM_STUDIO_ACCURACY_LIGHTS_AMOUNT]; // 0x568
     u8 unk576;
     struct SoundPlayer *musicPlayer; // 0x578
     u32 unk57C;
@@ -142,24 +162,6 @@ struct DrumTeacherExpression {
     struct Animation *head;
     struct Animation *rightArm;
     struct Animation *leftArm;
-};
-
-
-// Engine Macros/Enums:
-enum DrumLessonsVersionsEnum {
-    ENGINE_VER_DRUM_STUDIO_0,
-    ENGINE_VER_DRUM_STUDIO_PLAY,
-    ENGINE_VER_DRUM_STUDIO_2,
-    ENGINE_VER_DRUM_STUDIO_LISTEN,
-    ENGINE_VER_DRUM_LESSONS
-};
-
-enum DrumLessonsRanksEnum {
-    DRUM_LESSON_RANK_0,
-    DRUM_LESSON_RANK_C,
-    DRUM_LESSON_RANK_B,
-    DRUM_LESSON_RANK_A,
-    DRUM_LESSON_RANK_S,
 };
 
 
@@ -290,7 +292,7 @@ extern void drum_studio_save_replay(void); // Save Replay
 extern void drum_studio_update_save_options(void); // Update (Save Replay Prompt State)
 // extern ? func_08029b8c(?); // DRUM LESSON - Engine Event 0x06 (?)
 extern void drum_studio_engine_update(void); // DRUM LESSON - Game Engine Update
-// extern ? func_08029cac(?);
+extern void func_08029cac(u32 drumKitID, u16 keys, u16 pressed, u16 released);
 // extern ? func_08029cec(u32); // DRUM LESSON - Engine Event 0x13 (?) [called at the end of each lesson pattern]
 extern void drum_studio_engine_stop(void); // DRUM LESSON - Game Engine Stop
 extern void drum_studio_cue_spawn(struct Cue *, struct DrumLessonsCue *, u32 drum); // DRUM LESSON - Cue - Spawn

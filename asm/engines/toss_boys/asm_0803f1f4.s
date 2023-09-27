@@ -87,7 +87,7 @@ branch_0803f28c: \n\
 /* 0803f292 */ LDR R4, =0x372 \n\
 /* 0803f294 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0803f296 */ LDRH R0, [R0] \n\
-/* 0803f298 */ BL beats_to_ticks \n\
+/* 0803f298 */ BL ticks_to_frames \n\
 /* 0803f29c */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0803f29e */ SUBS R1, 0x5 @ Subtract 0x5 from R1 \n\
 /* 0803f2a0 */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
@@ -118,7 +118,7 @@ branch_0803f28c: \n\
 /* 0803f2d2 */ LSRS R0, R0, 0x10 \n\
 /* 0803f2d4 */ STR R0, [SP, 0x8] \n\
 /* 0803f2d6 */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0803f2d8 */ BL func_0800e694 \n\
+/* 0803f2d8 */ BL scene_set_sprite_motion_sine_wave \n\
 /* 0803f2dc */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0803f2de */ LDR R2, [R7] \n\
 /* 0803f2e0 */ MOVS R3, 0xDE @ Set R3 to 0xDE \n\

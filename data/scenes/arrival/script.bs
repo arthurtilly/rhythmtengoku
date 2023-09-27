@@ -1,0 +1,42 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Script
+script script_scene_arrival
+    set_tempo 120
+    pause_scene
+
+    run func_08007324, TRUE
+    fade_screen_in 12, WHITE
+    play_sfx s_nyuka_fan_seqData
+    rest 72
+    run arrival_scene_show_options
+    scene_set_int INT8, 0, TRUE
+    pause_scene
+
+    scene_set_int INT8, 0, FALSE
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 12
+    stop
+
+
+@ Local Scene
+struct sub_scene_arrival
+    /* Start  */ .word arrival_scene_start,     0
+    /* Paused */ .word arrival_scene_paused,    0
+    /* Active */ .word arrival_scene_update,    0
+    /* Stop   */ .word arrival_scene_stop,      0
+    /* Script */ .word script_scene_arrival
+endstruct
+
+@ RIQ Library Scene
+struct scene_arrival
+    /* Start  */ .word func_0801d86c, sub_scene_arrival
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0x8
+endstruct
+
+.end

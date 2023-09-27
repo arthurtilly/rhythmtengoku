@@ -224,15 +224,14 @@ typedef struct InstrumentHeader *InstrumentBank[];
 union Instrument;
 
 struct SequenceData {
-    const u32 *romAddress;
-    u32 unk4f1:5;
+    const u8 *romAddress;
+    u32 soundPlayer:5;
     u32 soundBank:10;
     u32 volume:7;
-    u32 unk4f4:8;
-    u32 unk4f5:2;
+    u32 priority:10;
     u32 unk8;
-    char *seqName;
-    u32 iramChnlIndex;
+    char *title;
+    u32 songNum;
 };
 
 /* MIDI PLAYER DEVICES */
@@ -332,6 +331,48 @@ struct SoundPlayer {
     u32 unk34;      // ??: (is set to midiReader->deltaTime upon hitting a loop start marker) [default = 0]
 };
 
+// Sound Channel
+struct SoundChannel {
+    u32 active:1;
+    u32 key:7; // MIDI Key
+    u32 velocity:7; // MIDI Velocity
+    u32 frequency:17;
+    union {
+        struct InstrumentPCM *pcm;
+        struct InstrumentPSG *psg;
+    } instrument;
+    struct MidiBus *midiBus;
+    struct MidiChannel *midiChannel;
+    u16 unk10;
+    u16 unk12;
+    s16 unk14;
+    u16 priority:15;
+    u16 unk17_b7:1;
+    s16 panning;
+    struct BufferADSR {
+        u32 stage:8;
+        u32 envelope:24;
+    } adsr;
+};
+
+// DirectSound Sample Reader/Stream
+struct SampleStream {
+    u8 active:1;
+    u8 unk0_b1:1;
+    u8 unk0_b2:1;  // ?? ( = instPCM->unk1_b7)
+    u8 useEQ:1;    // Use Filter EQ
+    u8 volume;  // Volume: Main
+    s8 volumeL; // Volume: Left
+    s8 volumeR; // Volume: Right
+    const u32 *sample;  // Sample - Stream
+    u32 length;         // Sample - Length << 14
+    u32 position;       // Sample - Stream Position << 14
+    u32 loopStart;      // Sample - Loop Start << 14
+    u32 loopEnd;        // Sample - Loop End << 14
+    u32 frequency;  // Frequency Envelope
+    u32 unk1C;  // ?? (samplerate-related)
+};
+
 enum LfoModesEnum {
     LFO_MODE_DISABLED,
     LFO_MODE_KEYPRESS,
@@ -356,10 +397,33 @@ extern struct LFO D_03005b30;
 // [D_03005b3c] LFO - Mode { 0 = Disabled; 1 = Note Triggered; 2 = Constant }
 extern u8 D_03005b3c;
 
+// [D_08aa06f8] Song Table
+extern struct SoundTable {
+    struct SequenceData *sound;
+    u16 player;
+} D_08aa06f8[];
+
+// [D_08aa4324] SoundPlayer List
+extern struct SoundPlayer *D_08aa4324[];
+
+// [D_08aa4358] SoundPlayer Init. Table
+extern struct SoundPlayerInitTable {
+    u16 id:5;
+    u16 trackCount:5;
+    u16 playerType:6; // 0 for Music, 1 for SFX
+    struct MidiChannel *midiChannels;
+    struct MidiBus *midiBus;
+    struct MidiTrackStream *trackStreams;
+    struct SoundPlayer *soundPlayer;
+} D_08aa4358[];
+
+// [D_08aa445c] SoundPlayer Count
+extern u8 D_08aa445c;
+
 // [D_08aa4460] SoundPlayer Table
 extern struct SoundPlayerTable {
     struct SoundPlayer *soundPlayer;
     u32 null4; // unused
     u16 trackCount;
     u16 playerType;
-} const D_08aa4460[];
+} D_08aa4460[];

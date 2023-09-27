@@ -44,7 +44,7 @@ thumb_func_start bunny_hop_engine_start \n\
 /* 08038056 */ MOVS R0, 0xD0 @ Set R0 to 0xD0 \n\
 /* 08038058 */ LSLS R0, R0, 0x2 \n\
 /* 0803805a */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
-/* 0803805c */ BL func_0800c660 \n\
+/* 0803805c */ BL scene_create_obj_font_printer \n\
 /* 08038060 */ LDR R1, [R6] \n\
 /* 08038062 */ MOVS R2, 0xB8 @ Set R2 to 0xB8 \n\
 /* 08038064 */ LSLS R2, R2, 0x1 \n\

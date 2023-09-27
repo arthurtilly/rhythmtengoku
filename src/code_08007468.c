@@ -1,6 +1,6 @@
 #include "global.h"
 #include "src/code_08007468.h"
-#include "src/code_08003980.h"
+#include "src/code_08003b28.h"
 #include "src/bitmap_font.h"
 #include "src/memory_heap.h"
 #include "src/lib_0804ca80.h"
@@ -9,6 +9,8 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+
+/* GRAPHICS UTIL */
 
 
 // Get Sprite XY
@@ -36,123 +38,126 @@ void set_affine_stretch_rotation(s8 affineParam, s16 xScale, s16 yScale, s16 rot
 }
 
 
-// Indefinite linear movement
-// D_08936ba4 function 1
-struct unk_struct_080074ec *func_080074ec(struct unk_struct_080074ec_init *inputs) {
-    struct unk_struct_080074ec *task;
+// Sprite Motion - Indefinite Linear (Start)
+struct SpriteMover_Indefinite *start_sprite_motion_task_indefinite(struct SpriteMover_Indefinite_Inputs *inputs) {
+    struct SpriteMover_Indefinite *task;
 
     if (inputs->sprite < 0) {
         return TASK_FAILED_TO_START;
     }
 
-    task = mem_heap_alloc(sizeof(struct unk_struct_080074ec));
+    task = mem_heap_alloc(sizeof(struct SpriteMover_Indefinite));
     task->sprite = inputs->sprite;
-    task->xPos = INT_TO_FIXED(inputs->startX);
-    task->yPos = INT_TO_FIXED(inputs->startY);
-    task->xVel = inputs->xVel;
-    task->yVel = inputs->yVel;
+    task->posX = INT_TO_FIXED(inputs->startX);
+    task->posY = INT_TO_FIXED(inputs->startY);
+    task->velX = inputs->velX;
+    task->velY = inputs->velY;
 
     func_0804d5d4(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
     return task;
 }
 
-// D_08936ba4 function 2
-u32 func_08007544(struct unk_struct_080074ec *task) {
-    task->xPos += task->xVel;
-    task->yPos += task->yVel;
 
-    func_0804d5d4(D_03005380, task->sprite, FIXED_TO_INT(task->xPos), FIXED_TO_INT(task->yPos));
+// Sprite Motion - Indefinite Linear (Update)
+u32 update_sprite_motion_task_indefinite(struct SpriteMover_Indefinite *task) {
+    task->posX += task->velX;
+    task->posY += task->velY;
+
+    func_0804d5d4(D_03005380, task->sprite, FIXED_TO_INT(task->posX), FIXED_TO_INT(task->posY));
     return FALSE;
 }
 
-// Approach a point asymptotically (slow down)
-// D_08936bb4 function 1
-struct unk_struct_0800757c *func_0800757c(struct unk_struct_0800757c_init *arg0) {
-    struct unk_struct_0800757c *temp;
 
-    if (arg0->id < 0) {
+// Sprite Motion - Decelerate to Point (Start)
+struct SpriteMover_Decelerate *start_sprite_motion_task_decelerate(struct SpriteMover_Decelerate_Inputs *inputs) {
+    struct SpriteMover_Decelerate *task;
+
+    if (inputs->sprite < 0) {
         return TASK_FAILED_TO_START;
     }
 
-    temp = mem_heap_alloc(sizeof(struct unk_struct_0800757c));
-    temp->id = arg0->id;
-    temp->destXPos = arg0->destX;
-    temp->destYPos = arg0->destY;
-    temp->xOffset = INT_TO_FIXED(arg0->startX - arg0->destX);
-    temp->yOffset = INT_TO_FIXED(arg0->startY - arg0->destY);
-    temp->multiplier = arg0->multiplier;
+    task = mem_heap_alloc(sizeof(struct SpriteMover_Decelerate));
+    task->sprite = inputs->sprite;
+    task->destX = inputs->destX;
+    task->destY = inputs->destY;
+    task->dx = INT_TO_FIXED(inputs->startX - inputs->destX);
+    task->dy = INT_TO_FIXED(inputs->startY - inputs->destY);
+    task->multiplier = inputs->multiplier;
 
-    func_0804d5d4(D_03005380, arg0->id, arg0->startX, arg0->startY);
-    return temp;
+    func_0804d5d4(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
+    return task;
 }
 
-// D_08936bb4 function 2
-u32 func_080075e4(struct unk_struct_0800757c *arg0) {
-    s32 newXOffset = arg0->xOffset;
-    s32 newYOffset = arg0->yOffset;
 
-    newXOffset = ABS(newXOffset);
-    newYOffset = ABS(newYOffset);
-    
-    newXOffset = FIXED_POINT_MUL(newXOffset, arg0->multiplier);
-    newYOffset = FIXED_POINT_MUL(newYOffset, arg0->multiplier);
+// Sprite Motion - Decelerate to Point (Update)
+u32 update_sprite_motion_task_decelerate(struct SpriteMover_Decelerate *task) {
+    s32 dx = task->dx;
+    s32 dy = task->dy;
 
-    if (newXOffset < INT_TO_FIXED(1)) newXOffset = 0;
-    if (newYOffset < INT_TO_FIXED(1)) newYOffset = 0;
+    dx = ABS(dx);
+    dy = ABS(dy);
 
-    if (arg0->xOffset < 0) newXOffset = -newXOffset;
-    if (arg0->yOffset < 0) newYOffset = -newYOffset;
+    dx = FIXED_POINT_MUL(dx, task->multiplier);
+    dy = FIXED_POINT_MUL(dy, task->multiplier);
 
-    arg0->xOffset = newXOffset;
-    arg0->yOffset = newYOffset;
+    if (dx < INT_TO_FIXED(1.0)) dx = 0;
+    if (dy < INT_TO_FIXED(1.0)) dy = 0;
 
-    func_0804d5d4(D_03005380, arg0->id, FIXED_TO_INT(newXOffset) + arg0->destXPos, FIXED_TO_INT(newYOffset) + arg0->destYPos);
+    if (task->dx < 0) dx = -dx;
+    if (task->dy < 0) dy = -dy;
 
-    if ((newXOffset | newYOffset) == 0) {
-       return TRUE;
+    task->dx = dx;
+    task->dy = dy;
+
+    func_0804d5d4(D_03005380, task->sprite, FIXED_TO_INT(dx) + task->destX, FIXED_TO_INT(dy) + task->destY);
+
+    if ((dx | dy) == 0) {
+        return TRUE;
+    } else {
+        return FALSE;
     }
-    return FALSE;
 }
 
-// Accelerate towards a point
-// D_08936bc4 function 1
-struct unk_struct_0800765c *func_0800765c(struct unk_struct_0800765c_init *arg0) {
-    struct unk_struct_0800765c *temp;
 
-    if (arg0->id < 0) {
+// Sprite Motion - Accelerate to Point (Start)
+struct SpriteMover_Accelerate *start_sprite_motion_task_accelerate(struct SpriteMover_Accelerate_Inputs *inputs) {
+    struct SpriteMover_Accelerate *task;
+
+    if (inputs->sprite < 0) {
         return TASK_FAILED_TO_START;
     }
 
-    temp = mem_heap_alloc(sizeof(struct unk_struct_0800765c));
-    temp->id = arg0->id;
-    temp->startXPos = arg0->startX;
-    temp->startYPos = arg0->startY;
-    temp->dx = arg0->destX - arg0->startX;
-    temp->dy = arg0->destY - arg0->startY;
-    temp->distanceTravelled = 0;
-    temp->totalDistance = D_03004ae4(temp->dx * temp->dx + temp->dy * temp->dy) << 8;
-    temp->vel = arg0->vel;
-    temp->accel = arg0->accel;
+    task = mem_heap_alloc(sizeof(struct SpriteMover_Accelerate));
+    task->sprite = inputs->sprite;
+    task->startX = inputs->startX;
+    task->startY = inputs->startY;
+    task->dx = inputs->destX - inputs->startX;
+    task->dy = inputs->destY - inputs->startY;
+    task->distanceTravelled = 0;
+    task->totalDistance = INT_TO_FIXED(math_sqrt(task->dx * task->dx + task->dy * task->dy));
+    task->velocity = inputs->velocity;
+    task->acceleration = inputs->acceleration;
 
-    func_0804d5d4(D_03005380, arg0->id, arg0->startX, arg0->startY);
-    return temp;
+    func_0804d5d4(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
+    return task;
 }
 
-// D_08936bc4 function 2
-u32 func_080076ec(struct unk_struct_0800765c *arg0) {
+
+// Sprite Motion - Accelerate to Point (Update)
+u32 update_sprite_motion_task_accelerate(struct SpriteMover_Accelerate *task) {
+    s24_8 distTravelled, totalDist;
     u32 reachedEnd;
-    u16 xPos, yPos;
-    s32 distTravelled, totalDist;
+    s16 x, y;
 
-    arg0->distanceTravelled += arg0->vel;
-    arg0->vel += arg0->accel;
+    task->distanceTravelled += task->velocity;
+    task->velocity += task->acceleration;
 
-    if (arg0->vel < 0 && arg0->accel < 0) {
+    if (task->velocity < 0 && task->acceleration < 0) {
         return TRUE;
     }
 
-    distTravelled = arg0->distanceTravelled;
-    totalDist = arg0->totalDistance;
+    distTravelled = task->distanceTravelled;
+    totalDist = task->totalDistance;
     reachedEnd = FALSE;
 
     if (distTravelled >= totalDist) {
@@ -161,57 +166,55 @@ u32 func_080076ec(struct unk_struct_0800765c *arg0) {
     }
 
     if (reachedEnd) {
-        xPos = arg0->startXPos + arg0->dx;
-        yPos = arg0->startYPos + arg0->dy;
+        x = task->startX + task->dx;
+        y = task->startY + task->dy;
     } else {
-        xPos = arg0->startXPos + lerp(0, arg0->dx, distTravelled, totalDist);
-        yPos = arg0->startYPos + lerp(0, arg0->dy, distTravelled, totalDist);
+        x = task->startX + lerp(0, task->dx, distTravelled, totalDist);
+        y = task->startY + lerp(0, task->dy, distTravelled, totalDist);
     }
 
-    func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
+    func_0804d5d4(D_03005380, task->sprite, x, y);
     return reachedEnd;
 }
 
-// Travel linearly to a point over a specified number of frames
-// D_08936bd4 function 1
-struct unk_struct_08007788 *func_08007788(struct unk_struct_08007788_init *arg0) {
-    struct unk_struct_08007788 *temp;
 
-    if (arg0->id < 0) {
+// Sprite Motion - LERP to Point (Start)
+struct SpriteMover_TimedLinear *start_sprite_motion_task_lerp(struct SpriteMover_TimedLinear_Inputs *inputs) {
+    struct SpriteMover_TimedLinear *task;
+
+    if (inputs->sprite < 0) {
         return TASK_FAILED_TO_START;
     }
 
-    temp = mem_heap_alloc(sizeof(struct unk_struct_08007788));
-    temp->id = arg0->id;
-    temp->startXPos = arg0->startX;
-    temp->startYPos = arg0->startY;
-    temp->dx = arg0->destX - arg0->startX;
-    temp->dy = arg0->destY - arg0->startY;
-    temp->totalFrames = arg0->totalFrames;
-    temp->framesPassed = 0;
+    task = mem_heap_alloc(sizeof(struct SpriteMover_TimedLinear));
+    task->sprite = inputs->sprite;
+    task->startX = inputs->startX;
+    task->startY = inputs->startY;
+    task->dx = inputs->destX - inputs->startX;
+    task->dy = inputs->destY - inputs->startY;
+    task->totalFrames = inputs->totalFrames;
+    task->framesPassed = 0;
 
-    func_0804d5d4(D_03005380, arg0->id, arg0->startX, arg0->startY);
-    return temp;
+    func_0804d5d4(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
+    return task;
 }
 
-// D_08936bd4 function 2
-u32 func_080077e8(struct unk_struct_08007788 *arg0) {
-    s32 totalFrames = arg0->totalFrames;
-    
-    u32 reachedEnd = (++arg0->framesPassed >= totalFrames);
-    
-    s32 framesPassed = arg0->framesPassed;
-    
-    u16 xPos = arg0->startXPos + lerp(0, arg0->dx, framesPassed, totalFrames);
-    u16 yPos = arg0->startYPos + lerp(0, arg0->dy, framesPassed, totalFrames);
 
-    func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
+// Sprite Motion - LERP to Point (Update)
+u32 update_sprite_motion_task_lerp(struct SpriteMover_TimedLinear *task) {
+    s32 totalFrames = task->totalFrames;
+    u32 reachedEnd = (++task->framesPassed >= totalFrames);
+    s32 framesPassed = task->framesPassed;
+    s16 x = task->startX + lerp(0, task->dx, framesPassed, totalFrames);
+    s16 y = task->startY + lerp(0, task->dy, framesPassed, totalFrames);
+
+    func_0804d5d4(D_03005380, task->sprite, x, y);
     return reachedEnd;
 }
 
-// Sinusoidal movement
-// D_08936be4 function 2
-u32 func_08007854(struct unk_struct_080078ec *task) {
+
+// Sprite Motion - Sinusoidal Oscillation (Update)
+u32 update_sprite_motion_task_sine_osc(struct SpriteMover_SineOsc *task) {
     u8 wavePos = lerp(task->waveStart, task->waveEnd, task->framesPassed, task->totalFrames);
 
     s32 offset = task->baseOffset + FIXED_TO_INT(task->amplitude * sins2(wavePos));
@@ -224,15 +227,16 @@ u32 func_08007854(struct unk_struct_080078ec *task) {
     return (++task->framesPassed > task->totalFrames);
 }
 
-// D_08936be4 function 1
-struct unk_struct_080078ec *func_080078ec(struct unk_struct_080078ec_init *inputs) {
-    struct unk_struct_080078ec *task;
+
+// Sprite Motion - Sinusoidal Oscillation (Start)
+struct SpriteMover_SineOsc *start_sprite_motion_task_sine_osc(struct SpriteMover_SineOsc_Inputs *inputs) {
+    struct SpriteMover_SineOsc *task;
 
     if (inputs->sprite < 0) {
         return TASK_FAILED_TO_START;
     }
 
-    task = mem_heap_alloc(sizeof(struct unk_struct_080078ec));
+    task = mem_heap_alloc(sizeof(struct SpriteMover_SineOsc));
     task->sprite = inputs->sprite;
     task->baseXPos = inputs->baseX;
     task->baseYPos = inputs->baseY;
@@ -244,12 +248,13 @@ struct unk_struct_080078ec *func_080078ec(struct unk_struct_080078ec_init *input
     task->totalFrames = inputs->totalFrames;
     task->angle = inputs->angle;
 
-    func_08007854(task);
+    update_sprite_motion_task_sine_osc(task);
     return task;
 }
 
-// D_08936bf4 function 2
-u32 func_0800793c(struct unk_struct_080079bc *task) {
+
+// Sprite Motion - Sinusoidal Velocity to Point (Update)
+u32 update_sprite_motion_task_sine_vel(struct SpriteMover_SineVel *task) {
     s32 temp_r5 = lerp(task->unkA, task->unkC, task->framesPassed, task->totalFrames);
 
     u16 xPos = task->startXPos + FIXED_TO_INT(task->dx * func_080019a4(temp_r5));
@@ -260,15 +265,16 @@ u32 func_0800793c(struct unk_struct_080079bc *task) {
     return (++task->framesPassed > task->totalFrames);
 }
 
-// D_08936bf4 function 1
-struct unk_struct_080079bc *func_080079bc(struct unk_struct_080079bc_init *inputs) {
-    struct unk_struct_080079bc *task;
+
+// Sprite Motion - Sinusoidal Velocity to Point (Start)
+struct SpriteMover_SineVel *start_sprite_motion_task_sine_vel(struct SpriteMover_SineVel_Inputs *inputs) {
+    struct SpriteMover_SineVel *task;
 
     if (inputs->sprite < 0) {
         return TASK_FAILED_TO_START;
     }
 
-    task = mem_heap_alloc(sizeof(struct unk_struct_080079bc));
+    task = mem_heap_alloc(sizeof(struct SpriteMover_SineVel));
     task->sprite = inputs->sprite;
     task->startXPos = inputs->startX;
     task->startYPos = inputs->startY;
@@ -279,48 +285,47 @@ struct unk_struct_080079bc *func_080079bc(struct unk_struct_080079bc_init *input
     task->framesPassed = 0;
     task->totalFrames = inputs->totalFrames;
 
-    func_0800793c(task);
+    update_sprite_motion_task_sine_vel(task);
     return task;
 }
 
-// Linear movement with a vertical negative sine wave offset
-// D_08936c04 function 2
-u32 func_08007a14(struct unk_struct_08007aa0 *arg0) {
-    s32 totalFrames = arg0->totalFrames;
-    
-    u32 reachedEnd = (++arg0->framesPassed >= totalFrames);
-    
-    s32 framesPassed = arg0->framesPassed;
+
+// Sprite Motion - Move Along Sine Wave (Update)
+u32 update_sprite_motion_task_sine_wave(struct SpriteMover_SineWave *task) {
+    s32 totalFrames = task->totalFrames;
+    u32 reachedEnd = (++task->framesPassed >= totalFrames);
+    s32 framesPassed = task->framesPassed;
     // Lerp from 0 to pi in terms of sine angle
     s32 temp_r8 = lerp(0, 0x800, framesPassed, totalFrames);
-    
-    u16 xPos = arg0->startXPos + lerp(0, arg0->dx, framesPassed, totalFrames);
-    u16 yPos = arg0->startYPos + lerp(0, arg0->dy, framesPassed, totalFrames) - FIXED_TO_INT(func_080019a4(temp_r8) * arg0->amplitude);
 
-    func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
+    s16 x = task->startX + lerp(0, task->dx, framesPassed, totalFrames);
+    s16 y = task->startY + lerp(0, task->dy, framesPassed, totalFrames) - FIXED_TO_INT(func_080019a4(temp_r8) * task->amplitude);
+
+    func_0804d5d4(D_03005380, task->sprite, x, y);
     return reachedEnd;
 }
 
-// D_08936c04 function 1
-struct unk_struct_08007aa0 *func_08007aa0(struct unk_struct_08007aa0_init *arg0) {
-    struct unk_struct_08007aa0 *temp;
 
-    if (arg0->id < 0) {
+// Sprite Motion - Move Along Sine Wave (Start)
+struct SpriteMover_SineWave *start_sprite_motion_task_sine_wave(struct SpriteMover_SineWave_Inputs *inputs) {
+    struct SpriteMover_SineWave *task;
+
+    if (inputs->sprite < 0) {
         return TASK_FAILED_TO_START;
     }
 
-    temp = mem_heap_alloc(sizeof(struct unk_struct_08007aa0));
-    temp->id = arg0->id;
-    temp->startXPos = arg0->startX;
-    temp->startYPos = arg0->startY;
-    temp->dx = arg0->destX - arg0->startX;
-    temp->dy = arg0->destY - arg0->startY;
-    temp->amplitude = arg0->amplitude;
-    temp->framesPassed = 0;
-    temp->totalFrames = arg0->totalFrames;
+    task = mem_heap_alloc(sizeof(struct SpriteMover_SineWave));
+    task->sprite = inputs->sprite;
+    task->startX = inputs->startX;
+    task->startY = inputs->startY;
+    task->dx = inputs->destX - inputs->startX;
+    task->dy = inputs->destY - inputs->startY;
+    task->amplitude = inputs->amplitude;
+    task->framesPassed = 0;
+    task->totalFrames = inputs->totalFrames;
 
-    func_0804d5d4(D_03005380, temp->id, temp->startXPos, temp->startYPos);
-    return temp;
+    func_0804d5d4(D_03005380, task->sprite, task->startX, task->startY);
+    return task;
 }
 
 
@@ -339,6 +344,9 @@ void delete_bmp_font_obj_text_sprite(struct BitmapFontOBJ *bmpFontOBJ, s16 sprit
     delete_bmp_font_obj_text_anim(bmpFontOBJ, sprite);
     func_0804d504(D_03005380, sprite);
 }
+
+
+/* FAST DIVISION */
 
 
 #define FAST_UDIVSI3_SIZE ((u32)&fast_udivsi3_rom_end - (u32)fast_udivsi3_rom)
@@ -378,35 +386,232 @@ s32 fast_divsi3(s32 dividend, s32 divisor) {
 }
 
 
-// D_08936c14 function 1
-#include "asm/code_08007468/asm_08007bb8.s"
+/* INTERPOLATION */
 
-// D_08936c14 function 2
-#include "asm/code_08007468/asm_08007c30.s"
 
-// D_08936c24 function 1
-#include "asm/code_08007468/asm_08007ca8.s"
+// Initialise Number Linear Interpolator Task
+struct NumberInterpolator *start_integer_interp_task(struct NumberInterpolator *inputs) {
+    struct NumberInterpolator *task;
 
-// D_08936c24 function 2
-#include "asm/code_08007468/asm_08007d20.s"
+    task = mem_heap_alloc(sizeof(struct NumberInterpolator));
+    task->type = inputs->type;
+    task->duration = inputs->duration;
+    task->runningTime = 0;
+    task->source = inputs->source;
+    task->initial = inputs->initial;
+    task->target = inputs->target;
 
-// D_08936c34 function 1
-#include "asm/code_08007468/asm_08007d88.s"
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = task->initial;
+            break;
+        case 1:
+            *(u16 *)task->source = task->initial;
+            break;
+        case 2:
+            *(u32 *)task->source = task->initial;
+            break;
+    }
 
-// D_08936c34 function 2
-#include "asm/code_08007468/asm_08007e00.s"
+    return task;
+}
 
-#include "asm/code_08007468/asm_08007e68.s"
 
-// D_08936c44 function 1
-#include "asm/code_08007468/asm_08007e7c.s"
+// Update Number Linear Interpolator Task
+u32 update_integer_interp_task(struct NumberInterpolator *task) {
+    s32 current = task->initial + fast_divsi3((task->target - task->initial) * task->runningTime, task->duration);
 
-// D_08936c44 function 2
-#include "asm/code_08007468/asm_08007ef8.s"
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = current;
+            break;
+        case 1:
+            *(u16 *)task->source = current;
+            break;
+        case 2:
+            *(u32 *)task->source = current;
+            break;
+    }
+
+    return (++task->runningTime > task->duration);
+}
+
+
+// Initialise Number Alternator Task
+struct NumberInterpolator *start_integer_alternator_task(struct NumberInterpolator *inputs) {
+    struct NumberInterpolator *task;
+
+    task = mem_heap_alloc(sizeof(struct NumberInterpolator));
+    task->type = inputs->type;
+    task->duration = inputs->duration;
+    task->runningTime = 0;
+    task->source = inputs->source;
+    task->initial = inputs->initial;
+    task->target = inputs->target;
+
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = task->initial;
+            break;
+        case 1:
+            *(u16 *)task->source = task->initial;
+            break;
+        case 2:
+            *(u32 *)task->source = task->initial;
+            break;
+    }
+
+    return task;
+}
+
+
+// Update Number Alternator Task
+u32 update_integer_alternator_task(struct NumberInterpolator *task) {
+    s32 newInitial, newTarget;
+
+    if (++task->runningTime >= task->duration) {
+        task->runningTime = 0;
+        newInitial = task->target;
+        newTarget = task->initial;
+        task->target = newTarget;
+        task->initial = newInitial;
+
+        switch (task->type) {
+            case 0:
+                *(u8 *)task->source = newInitial;
+                break;
+            case 1:
+                *(u16 *)task->source = newInitial;
+                break;
+            case 2:
+                *(u32 *)task->source = newInitial;
+                break;
+        }
+    }
+
+    return FALSE;
+}
+
+
+// Initialise Number Incrementer Task
+struct NumberInterpolator *start_integer_incrementer_task(struct NumberInterpolator *inputs) {
+    struct NumberInterpolator *task;
+
+    task = mem_heap_alloc(sizeof(struct NumberInterpolator));
+    task->type = inputs->type;
+    task->duration = inputs->duration;
+    task->runningTime = 0;
+    task->source = inputs->source;
+    task->initial = inputs->initial;
+    task->target = inputs->target;
+
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = task->initial;
+            break;
+        case 1:
+            *(u16 *)task->source = task->initial;
+            break;
+        case 2:
+            *(u32 *)task->source = task->initial;
+            break;
+    }
+
+    return task;
+}
+
+
+// Update Number Incrementer Task
+u32 update_integer_incrementer_task(struct NumberInterpolator *task) {
+    s32 current;
+
+    if (++task->runningTime >= task->duration) {
+        task->runningTime = 0;
+        current = task->initial + task->target;
+        task->initial = current;
+
+        switch (task->type) {
+            case 0:
+                *(u8 *)task->source = current;
+                break;
+            case 1:
+                *(u16 *)task->source = current;
+                break;
+            case 2:
+                *(u32 *)task->source = current;
+                break;
+        }
+    }
+
+    return FALSE;
+}
+
+
+// Set Target Value for Number Task
+void set_target_for_integer_task(s32 taskID, s32 newTarget) {
+    struct NumberInterpolator *task = get_task_info(taskID);
+
+    if (task != NULL) {
+        task->target = newTarget;
+    }
+}
+
+
+// Initialise Number Sine Interpolator Task
+struct NumberSineInterpolator *start_integer_sine_interp_task(struct NumberSineInterpolator *inputs) {
+    struct NumberSineInterpolator *task;
+    s32 current;
+
+    task = mem_heap_alloc(sizeof(struct NumberSineInterpolator));
+    task->type = inputs->type;
+    task->angle = inputs->angle;
+    task->speed = inputs->speed;
+    task->value = inputs->value;
+    task->source = inputs->source;
+
+    current = FIXED_POINT_MUL(sins(FIXED_TO_INT(task->angle)), task->value);
+
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = current;
+            break;
+        case 1:
+            *(u16 *)task->source = current;
+            break;
+        case 2:
+            *(u32 *)task->source = current;
+            break;
+    }
+
+    return task;
+}
+
+
+// Update Number Sine Interpolator Task
+u32 update_integer_sine_interp_task(struct NumberSineInterpolator *task) {
+    s32 current;
+
+    task->angle += task->speed;
+    current = FIXED_POINT_MUL(sins(FIXED_TO_INT(task->angle)), task->value);
+
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = current;
+            break;
+        case 1:
+            *(u16 *)task->source = current;
+            break;
+        case 2:
+            *(u32 *)task->source = current;
+            break;
+    }
+
+    return FALSE;
+}
 
 
 // Initialise LCD Special Effects Interpolator
-struct BlendControlsInterpolator *init_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *inputs) {
+struct BlendControlsInterpolator *start_lcd_blend_mode_interp(struct BlendControlsInterpolator *inputs) {
     struct BlendControlsInterpolator *task;
     u32 tgtLevel, srcLevel;
 
@@ -436,7 +641,7 @@ struct BlendControlsInterpolator *init_lcd_blend_mode_interpolator(struct BlendC
 
 
 // Update LCD Special Effects Interpolator
-u32 update_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *task) {
+u32 update_lcd_blend_mode_interp(struct BlendControlsInterpolator *task) {
     u32 tgtLevel, srcLevel;
 
     task->runningTime++;
@@ -470,19 +675,60 @@ u32 update_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *task) {
 
 
 // Interpolate LCD Special Effects
-s32 interpolate_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 flip) {
+s32 interp_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 flip) {
     struct BlendControlsInterpolator inputs;
 
     inputs.blendControls = blendControls;
     inputs.duration = duration;
     inputs.flip = flip;
 
-    return start_new_task(memID, &D_08936c54, &inputs, NULL, 0);
+    return start_new_task(memID, &lcd_blend_mode_interp_task, &inputs, NULL, 0);
 }
 
 
-#include "asm/code_08007468/asm_08008090.s"
+// Interpolate Window Size
+void interp_screen_window_size(u16 memID, u32 window, u32 duration,
+                                s32 initialX1, s32 initialY1, s32 initialX2, s32 initialY2,
+                                s32 targetX1, s32 targetY1, s32 targetX2, s32 targetY2) {
+    struct NumberInterpolator inputs;
+    void *windowLeftEdge;
+    void *windowRightEdge;
+    void *windowTopEdge;
+    void *windowBottomEdge;
 
+    inputs.type = 0;
+    inputs.duration = duration;
+
+    windowRightEdge = (window != 0) ? &D_03004b10.WIN1H : &D_03004b10.WIN0H;
+    windowBottomEdge = (window != 0) ? &D_03004b10.WIN1V : &D_03004b10.WIN0V;
+    windowLeftEdge = windowRightEdge + 1;
+    windowTopEdge = windowBottomEdge + 1;
+
+    inputs.source = windowLeftEdge;
+    inputs.initial = initialX1;
+    inputs.target = targetX1;
+    start_new_task(memID, &integer_interp_task, &inputs, NULL, 0);
+
+    inputs.source = windowTopEdge;
+    inputs.initial = initialY1;
+    inputs.target = targetY1;
+    start_new_task(memID, &integer_interp_task, &inputs, NULL, 0);
+
+    inputs.source = windowRightEdge;
+    inputs.initial = initialX2;
+    inputs.target = targetX2;
+    start_new_task(memID, &integer_interp_task, &inputs, NULL, 0);
+
+    inputs.source = windowBottomEdge;
+    inputs.initial = initialY2;
+    inputs.target = targetY2;
+    start_new_task(memID, &integer_interp_task, &inputs, NULL, 0);
+
+    D_03004b10.DISPCNT |= DISPCNT_ENABLE_WINDOW(window);
+}
+
+
+/* STRING */
 
 
 extern char D_08936c64[]; // "‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚X"
@@ -628,6 +874,8 @@ void strnintf(char *s, u32 n, u32 len) {
 }
 
 
+/* ? */
+
 
 #include "asm/code_08007468/asm_08008370.s"
 
@@ -637,6 +885,10 @@ void strnintf(char *s, u32 n, u32 len) {
 // D_08936c7c function 2
 #include "asm/code_08007468/asm_08008464.s"
 
+
+/* SCHEDULED FUNCTION CALL */
+
+
 // D_08936c8c function 1
 #include "asm/code_08007468/asm_0800852c.s"
 
@@ -645,6 +897,8 @@ void strnintf(char *s, u32 n, u32 len) {
 
 #include "asm/code_08007468/asm_0800856c.s"
 
+
+/* BUFFERED TEXTURE */
 
 
 static s32 D_030010d0[9]; // unknown type
@@ -674,6 +928,9 @@ static s32 D_030010d0[9]; // unknown type
 #include "asm/code_08007468/asm_08008758.s"
 
 #include "asm/code_08007468/asm_080087b4.s"
+
+
+/* ? */
 
 
 // Clamp Signed Integer

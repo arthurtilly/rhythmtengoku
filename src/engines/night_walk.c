@@ -61,7 +61,7 @@ void night_walk_play_yan_jump(s32 jumpOverGap, s32 timingOffset) {
     playYan->state = PLAY_YAN_STATE_JUMPING;
     func_0804d8f8(D_03005380, playYan->sprite, anim_play_yan_jump, 0, 0, 0, 0);
     playYan->jumpTime = 0;
-    playYan->jumpDuration = beats_to_ticks(0x14) - timingOffset;
+    playYan->jumpDuration = ticks_to_frames(0x14) - timingOffset;
 }
 
 
@@ -120,7 +120,7 @@ void night_walk_play_yan_update_jump(struct PlayYan *playYan) {
             gameplay_add_cue_result(gNightWalk->markingCriteria, 2, 0);
             func_0804d8f8(D_03005380, playYan->sprite, anim_play_yan_violent_electrocution, 0, 1, 0, 0);
             func_0804d8f8(D_03005380, playYan->fishSprite, anim_night_walk_fish_zap, 0, 1, 0, 0);
-            playYan->zapTime = beats_to_ticks(0x48);
+            playYan->zapTime = ticks_to_frames(0x48);
             playYan->state = PLAY_YAN_STATE_ZAPPED;
             play_sound(&s_f_drumtech_damage_seqData);
         }
@@ -278,7 +278,7 @@ s32 night_walk_scroll_stars(void) {
     hOffset = INT_TO_FIXED(-0.5);
     vOffset = gNightWalk->starsVOffset;
 
-    for (i = 0; i < 32; i++) {
+    for (i = 0; i < NIGHT_WALK_STAR_AMOUNT; i++) {
         star = &gNightWalk->stars[i];
         star->x += hOffset;
         if (star->x < INT_TO_FIXED(-8.0)) {
@@ -318,7 +318,7 @@ void night_walk_expand_star(void) {
     func_0804daa8(D_03005380, star->sprite, night_walk_finish_star_expansion, (s32)night_walk_star_anim[gNightWalk->currentStarSize + 1]);
     star->size = gNightWalk->currentStarSize + 1;
     gNightWalk->nextStar++;
-    if (gNightWalk->nextStar >= 32) {
+    if (gNightWalk->nextStar >= NIGHT_WALK_STAR_AMOUNT) {
         gNightWalk->nextStar = 0;
         gNightWalk->currentStarSize++;
     }
@@ -349,7 +349,7 @@ void night_walk_shrink_star(void) {
         if (gNightWalk->currentStarSize == 0) {
             return;
         }
-        gNightWalk->nextStar = 32;
+        gNightWalk->nextStar = NIGHT_WALK_STAR_AMOUNT;
         gNightWalk->currentStarSize--;
     }
 
@@ -375,7 +375,7 @@ void night_walk_clear_all_stars(void) {
     struct NightWalkStar *star;
     u32 i;
 
-    for (i = 0; i < 32; i++) {
+    for (i = 0; i < NIGHT_WALK_STAR_AMOUNT; i++) {
         star = &gNightWalk->stars[i];
         func_0804d8f8(D_03005380, star->sprite, anim_night_walk_star_disappear, 0, 1, 0, 3);
     }
@@ -405,7 +405,7 @@ void func_0802a970(void) {
 void reset_drumtech_seq(void) {
     u32 i;
 
-    for (i = 0; i < 100; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03001568->drumSequence); i++) {
         D_03001568->drumSequence[i].deltaTime = 0;
     }
 }
@@ -418,7 +418,7 @@ void init_drumtech(struct DrumTechController *data) {
     D_03001568 = data;
     D_03001568->drumBank = drumtech_drum_bank;
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03001568->soundTimers); i++) {
         D_03001568->soundTimers[i] = 0;
     }
 
@@ -427,7 +427,7 @@ void init_drumtech(struct DrumTechController *data) {
     D_03001568->runNoteFunc = NULL;
     D_03001568->hiHatSprite = -1;
     D_03001568->unk33A = 9999;
-    D_03001568->unk33C = INT_TO_FIXED(beats_to_ticks(0x18));
+    D_03001568->unk33C = INT_TO_FIXED(ticks_to_frames(0x18));
     D_03001568->pedalHiHatDrumID = 37;
     D_03001568->rightLegSprite = -1;
     D_03001568->useKickPedalAnim = NULL;
@@ -439,7 +439,7 @@ void init_drumtech(struct DrumTechController *data) {
 void update_drumtech_timers(void) {
     u32 i;
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03001568->soundTimers); i++) {
         if (D_03001568->soundTimers[i] > 0) {
             if (--D_03001568->soundTimers[i] == 0) {
                 stop_soundplayer(D_08aa4460[i].soundPlayer);
@@ -454,7 +454,7 @@ void update_drumtech_seq(void) {
     struct DrumTechNote *note;
     u32 i;
 
-    for (i = 0; i < 100; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03001568->drumSequence); i++) {
         note = &D_03001568->drumSequence[i];
 
         if (note->deltaTime > 0) {
@@ -475,8 +475,8 @@ void play_drumtech_seq(const struct DrumTechNote *sequence, s32 timingOffset, s3
 
     reset_drumtech_seq();
 
-    while ((sequence->drumID != DRUMTECH_NOTE_END_SEQ) && (i < 100)) {
-        delay = beats_to_ticks(ticks) + timingOffset;
+    while ((sequence->drumID != DRUMTECH_NOTE_END_SEQ) && (i < ARRAY_COUNT(D_03001568->drumSequence))) {
+        delay = ticks_to_frames(ticks) + timingOffset;
         if (delay <= 0 || ticks == 0) {
             play_drumtech_note(sequence->drumID, sequence->volume, sequence->pitch);
         } else {
@@ -604,7 +604,7 @@ void update_drumtech_open_hihat(const struct DrumTechKit *drumKit, u16 inputs, u
 
     if (released & DPAD_UP) {
         while (*sounds != NULL) {
-            func_080027dc(*sounds++, 4);
+            fade_out_sound(*sounds++, 4);
         }
         if (hiHatSprite >= 0) {
             func_0804cebc(D_03005380, hiHatSprite, 3);
@@ -629,7 +629,7 @@ void update_drumtech_pedal_hihat(const struct DrumTechKit *drumKit, u16 inputs, 
     if (pressed & B_BUTTON) {
         D_03001568->unk33A = 0;
     }
-    openTicks = D_03001568->unk33A - beats_to_ticks(0x0C);
+    openTicks = D_03001568->unk33A - ticks_to_frames(0x0C);
     if (openTicks == -9) {
         if (D_03001568->rightLegSprite >= 0) {
             func_0804d8f8(D_03005380, D_03001568->rightLegSprite, D_03001568->useHiHatPedalAnim, 0, 1, 0x7f, 0);
@@ -719,7 +719,7 @@ void stop_drumtech(void) {
 
     reset_drumtech_seq();
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03001568->soundTimers); i++) {
         if (D_03001568->soundTimers[i] != 0) {
             stop_soundplayer(D_08aa4460[i].soundPlayer);
         }
@@ -859,9 +859,9 @@ void night_walk_cue_spawn(struct Cue *cue, struct NightWalkCue *info, u32 type) 
     info->type = type;
     info->hasOpened = FALSE;
     info->earlinessBeats = gNightWalk->cueEarlinessOffset;
-    info->earlinessTime = beats_to_ticks(gNightWalk->cueEarlinessOffset);
+    info->earlinessTime = ticks_to_frames(gNightWalk->cueEarlinessOffset);
     info->hasFish = -1;
-    gameplay_set_cue_duration(cue, beats_to_ticks(0xC0 - gNightWalk->cueEarlinessOffset)); // set cue duration
+    gameplay_set_cue_duration(cue, ticks_to_frames(0xC0 - gNightWalk->cueEarlinessOffset)); // set cue duration
     info->hasFish = FALSE;
 
     switch (gNightWalk->nextBridgeType) {
@@ -884,7 +884,7 @@ void night_walk_cue_spawn(struct Cue *cue, struct NightWalkCue *info, u32 type) 
     }
 
     info->runningTime = 0;
-    info->duration = beats_to_ticks(0xC0);
+    info->duration = ticks_to_frames(0xC0);
     x = night_walk_cue_get_x(info);
     y = unk3B8->unk4;
     info->endOfBridge = endOfBridge;
@@ -919,7 +919,7 @@ u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runnin
     noteBoxDelay = (gNightWalk->inSwing) ? 0x10 : 0x0C;
 
     if (!gNightWalk->stoppedScrolling && !info->endOfBridge && !info->hasOpened) {
-        if (runningTime > (beats_to_ticks(0xC0 + noteBoxDelay) - info->earlinessTime)) {
+        if (runningTime > (ticks_to_frames(0xC0 + noteBoxDelay) - info->earlinessTime)) {
             info->hasOpened = TRUE;
             func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_note_bridge, 1, 1, 4, 0);
 
@@ -931,7 +931,7 @@ u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runnin
         }
     }
 
-    if (runningTime > beats_to_ticks(0x120 - info->earlinessBeats)) {
+    if (runningTime > ticks_to_frames(0x120 - info->earlinessBeats)) {
         if (info->playYanFellHere) {
             night_walk_play_yan_fall();
         }
@@ -992,7 +992,7 @@ void night_walk_cue_despawn(struct Cue *cue, struct NightWalkCue *info) {
 void night_walk_cue_check_for_fish(struct NightWalkCue *info) {
     if (!info->hasFish) return;
 
-    gNightWalk->playYan.zapTime = beats_to_ticks(0x08);
+    gNightWalk->playYan.zapTime = ticks_to_frames(0x08);
     gNightWalk->playYan.fishSprite = info->fishSprite;
 }
 
@@ -1114,7 +1114,7 @@ void night_walk_cue_barely(struct Cue *cue, struct NightWalkCue *info, u32 press
         if (gNightWalk->nextStar != 0) {
             night_walk_shrink_stars(gNightWalk->nextStar);
         } else if (gNightWalk->currentStarSize > 3) {
-            night_walk_shrink_stars(32);
+            night_walk_shrink_stars(NIGHT_WALK_STAR_AMOUNT);
         }
     }
     night_walk_cue_check_for_fish(info);

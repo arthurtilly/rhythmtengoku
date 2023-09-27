@@ -6,7 +6,7 @@ thumb_func_start tap_trial_cue_update \n\
 /* 0803e510 */ PUSH {R4, LR} \n\
 /* 0803e512 */ ADDS R4, R2, 0x0 @ Set R4 to R2 + 0x0 \n\
 /* 0803e514 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
-/* 0803e516 */ BL beats_to_ticks \n\
+/* 0803e516 */ BL ticks_to_frames \n\
 /* 0803e51a */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 0803e51c */ BHI branch_0803e522 \n\
 /* 0803e51e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

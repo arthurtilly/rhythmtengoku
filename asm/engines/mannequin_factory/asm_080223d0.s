@@ -87,7 +87,7 @@ branch_0802246a: \n\
 /* 0802246c */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0802246e */ STRH R2, [R6, 0x4] \n\
 /* 08022470 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08022472 */ BL beats_to_ticks \n\
+/* 08022472 */ BL ticks_to_frames \n\
 /* 08022476 */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 08022478 */ SUBS R0, R0, R3 @ Set R0 to R0 - R3 \n\
 /* 0802247a */ LDR R2, =0x0000270f \n\

@@ -24,7 +24,7 @@ extern u32 func_08009024(void);
 extern s32 func_08009048(u32 arg0, u8 arg1[]);
 extern s32 func_08009090(u32 arg0, u8 arg1[], u32 arg2);
 extern void func_080090d0(void);
-extern void func_080090ec(u32 arg0, u8 *arg1, u32 arg2);
+extern void func_080090ec(u32 arg0, u8 *arr, u32 len);
 extern void func_08009150(void);
 extern void func_0800915c(void);
 extern void func_0800917c(void);

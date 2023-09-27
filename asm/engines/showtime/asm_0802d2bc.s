@@ -78,7 +78,7 @@ thumb_func_start func_0802d2bc \n\
 /* 0802d35c */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0802d35e */ BL func_0804dcb8 \n\
 /* 0802d362 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0802d364 */ BL beats_to_ticks \n\
+/* 0802d364 */ BL ticks_to_frames \n\
 /* 0802d368 */ LDR R1, [R6] \n\
 /* 0802d36a */ MOVS R2, 0xB8 @ Set R2 to 0xB8 \n\
 /* 0802d36c */ LSLS R2, R2, 0x1 \n\

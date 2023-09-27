@@ -12,7 +12,7 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 
 typedef void (PrintGlyphToVRAMFunc)(void *args);
-extern PrintGlyphToVRAMFunc func_0800116c;
+extern PrintGlyphToVRAMFunc text_print_glyph_to_vram_rom;
 
 #define GLYPH_BUFFER_SIZE 0x80
 static struct FormattedGlyph {
@@ -28,7 +28,7 @@ static struct FormattedGlyph {
 } *sGlyphBuffer; // Formatted Glyph Buffer
 
 static void (*sModifyPrinterSettings)(s32, s32); // Formatting Escape Char. '\1' Function
-static s32 sPrintGlyphToVRAM[54]; // ARM Function
+static s32 text_print_glyph_to_vram_code[54]; // ARM Function
 
 static s32 sCurrentLineWidth;   // Printer Line Width
 static s8 sPrinterAlignment;    // Printer Alignment
@@ -41,7 +41,7 @@ static s8 sPrinterShadowColors; // Printer Shadow Colors
 
 // Init. Static Variables
 void text_printer_init(void) {
-    dma3_set(func_0800116c, sPrintGlyphToVRAM, sizeof(sPrintGlyphToVRAM), 0x20, 0x100);
+    dma3_set(text_print_glyph_to_vram_rom, text_print_glyph_to_vram_code, sizeof(text_print_glyph_to_vram_code), 0x20, 0x100);
     sGlyphBuffer = mem_heap_alloc(GLYPH_BUFFER_SIZE * sizeof(struct FormattedGlyph));
     sModifyPrinterSettings = NULL;
 }
@@ -103,7 +103,7 @@ s32 text_font_calculate_string_width(s32 font, const char *string) {
 
 // Print Glyph to VRAM
 void text_printer_print_glyph(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID, s32 lineColors) {
-    PrintGlyphToVRAMFunc *printGlyphToVRAM = (PrintGlyphToVRAMFunc *)(&sPrintGlyphToVRAM);
+    PrintGlyphToVRAMFunc *printGlyphToVRAM = (PrintGlyphToVRAMFunc *)(&text_print_glyph_to_vram_code);
     u32 args[4];
 
     if (glyphID < 0) return;
@@ -387,7 +387,7 @@ s32 text_printer_get_current_line_width(void) {
 
 
 // Delete Text Animation
-void text_printer_delete_anim(struct StaticAnimation *anim) {
+void text_printer_delete_anim(struct Animation *anim) {
     if (anim == NULL) return;
 
     mem_heap_dealloc(anim->cel);
@@ -450,7 +450,7 @@ s32 func_0800a1d4(u32 totalLines, u32 id) {
         x += (totalLines * 2) / 3;
     }
 
-    return ((x + 0x1f) / 32) * 2; // surely this can be simplified..?
+    return ((x + 31) / 32) * 2; // surely this can be simplified..?
 }
 
 
@@ -865,38 +865,83 @@ void text_printer_resume(struct TextPrinter *textPrinter) {
 }
 
 
-// ? (https://decomp.me/scratch/477tU)
-#include "asm/code_080092cc/asm_0800aac0.s"
+// Set Text (Table Mode)
+void func_0800aac0(struct TextPrinter *textPrinter, s32 lineIndex, const char *string, s16 shadowSprite) {
+    struct TextPrinter *printer;
+    s16 lineSprite;
+    u32 line;
+
+    line = lineIndex;
+    printer = textPrinter;
+
+    if (printer == NULL) {
+        return;
+    }
+
+    if ((printer->mode == TEXT_PRINTER_MODE_STATIC_TABLE) && (line < printer->totalLines)) {
+        lineSprite = printer->lineSprites[line];
+        if (lineSprite >= 0) {
+            text_printer_delete_anim((void *)func_0804ddb0(D_03005380, lineSprite, 7));
+            func_0804d504(D_03005380, lineSprite);
+            printer->lineSprites[line] = -1;
+        }
+
+        if (printer->lineShadowSprites[line] >= 0) {
+            func_0804d504(D_03005380, printer->lineShadowSprites[line]);
+            printer->lineShadowSprites[line] = -1;
+        }
+
+        printer->lineShadowSprites[line] = shadowSprite;
+        func_0804d770(D_03005380, printer->lineShadowSprites[line], FALSE);
+
+        if (printer->lineStrings[line] != NULL) {
+            mem_heap_dealloc(printer->lineStrings[line]);
+        }
+
+        if (string != NULL) {
+            printer->lineStrings[line] = mem_heap_alloc_id(printer->memID, strlen(string) + 1);
+            strcpy(printer->lineStrings[line], string);
+        } else {
+            printer->lineStrings[line] = NULL;
+        }
+
+        if (string != NULL) {
+            printer->currentlyPrinting = TRUE;
+        }
+    }
+}
 
 
-// ?
-void func_0800abb0(void *printer, s32 line) {
-    struct TextPrinter *textPrinter = printer;
+// Clear Text (Table Mode)
+void func_0800abb0(struct TextPrinter *textPrinter, s32 line) {
+    struct TextPrinter *printer = textPrinter;
     s16 sprite;
     u32 i;
 
-    if (textPrinter == NULL) return;
+    if (printer == NULL) {
+        return;
+    }
 
-    if (textPrinter->mode == TEXT_PRINTER_MODE_STATIC_TABLE) {
-        line %= textPrinter->totalLines;
+    if (printer->mode == TEXT_PRINTER_MODE_STATIC_TABLE) {
+        line %= printer->totalLines;
         if (line < 0) {
-            line += textPrinter->totalLines;
+            line += printer->totalLines;
         }
-        textPrinter->unk54 = line;
+        printer->unk54 = line;
 
-        for (i = 0; i < textPrinter->totalLines; i++) {
-            sprite = textPrinter->lineSprites[line];
+        for (i = 0; i < printer->totalLines; i++) {
+            sprite = printer->lineSprites[line];
             if (sprite >= 0) {
-                func_0804d648(D_03005380, sprite, (textPrinter->lineSpacing * i) + textPrinter->y);
+                func_0804d648(D_03005380, sprite, (printer->lineSpacing * i) + printer->y);
             }
 
-            sprite = textPrinter->lineShadowSprites[line];
+            sprite = printer->lineShadowSprites[line];
             if (sprite >= 0) {
-                func_0804d648(D_03005380, sprite, (textPrinter->lineSpacing * i) + textPrinter->y);
+                func_0804d648(D_03005380, sprite, (printer->lineSpacing * i) + printer->y);
             }
 
             line++;
-            if (line >= textPrinter->totalLines) {
+            if (line >= printer->totalLines) {
                 line = 0;
             }
         }
@@ -1096,4 +1141,442 @@ void text_printer_set_shadow_colors(struct TextPrinter *textPrinter, s32 shadowC
     if (textPrinter == NULL) return;
 
     textPrinter->shadowColors = shadowColors;
+}
+
+
+
+/* LISTBOX PRINTER */
+
+
+
+// Get... something.
+s32 listbox_get_y(struct Listbox *listbox) {
+    return listbox->y + ((listbox->selLine + listbox->selMinLine) * listbox->lineSpacing);
+}
+
+
+// Set Palette for... some line.
+void func_0800ae3c(struct Listbox *listbox, u32 palette) {
+    s32 line, maxLines;
+    s16 sprite;
+
+    line = listbox->scrollIndex + listbox->selMinLine + listbox->selLine;
+    maxLines = listbox->maxLines;
+
+    line %= maxLines;
+    if (line < 0) {
+        line += maxLines;
+    }
+
+    sprite = text_printer_get_line_sprite(listbox->printer, line);
+    func_0804d8c4(D_03005380, sprite, palette);
+}
+
+
+// Listbox On-Finish Function
+void func_0800ae88(struct Listbox *listbox) {
+    func_0800ae3c(listbox, listbox->unk12);
+
+    if (listbox->unk3C) {
+        if (listbox->onFinish != NULL) {
+            listbox->onFinish(listbox->onFinishArg);
+        }
+        listbox->unk3C = FALSE;
+    }
+}
+
+
+// Create New Listbox
+struct Listbox *create_new_listbox(
+        u16 memID, u32 maxLines, u32 maxWidth, u32 arg3, u32 arg4, u32 palette,
+        u32 colors, s32 x, s32 y, u32 z, u32 lineSpacing, u32 selectionItem,
+        s32 totalItems, struct Animation *selectionAnim, u32 arg14, u32 selMaxLine,
+        u32 selectionLine, const char *getString(), s16 getSprite()
+    ) {
+
+    struct Listbox *listbox;
+    struct TextPrinter *printer;
+    const char *string;
+    s32 sprite;
+    s32 line;
+    u32 i;
+
+    listbox = mem_heap_alloc_id(memID, sizeof(struct Listbox));
+    listbox->memID = memID;
+    listbox->printer = text_printer_create_new(memID, maxLines, maxWidth, arg3);
+    text_printer_set_mode(listbox->printer, TEXT_PRINTER_MODE_STATIC_TABLE);
+    text_printer_set_x_y_controller(listbox->printer, &listbox->textX, &listbox->textY);
+    text_printer_set_x_y(listbox->printer, x, y);
+    text_printer_set_layer(listbox->printer, z);
+    text_printer_set_palette(listbox->printer, palette);
+    text_printer_set_colors(listbox->printer, colors);
+    text_printer_set_line_spacing(listbox->printer, lineSpacing);
+    text_printer_run_func_on_finish(listbox->printer, func_0800ae88, (s32)listbox);
+    listbox->maxLines = maxLines;
+    listbox->unk12 = arg4;
+    listbox->palette = palette;
+    listbox->colors = colors;
+    listbox->x = x;
+    listbox->y = y;
+    listbox->z = z;
+    listbox->lineSpacing = lineSpacing;
+    listbox->scrollIndex = 0;
+    listbox->listY = 0;
+    listbox->listX = 0;
+    listbox->velY = 0;
+    listbox->textX = 0;
+    listbox->textY = 0;
+    listbox->selItem = selectionItem;
+    listbox->totalItems = totalItems;
+    listbox->selMinLine = arg14;
+    listbox->selMaxLine = selMaxLine;
+    listbox->selLine = selectionLine;
+    listbox->getString = getString;
+    listbox->getSprite = getSprite;
+
+    if (selectionAnim != NULL) {
+        listbox->selSprite = func_0804d160(D_03005380, selectionAnim, 0, x, listbox_get_y(listbox), z, 1, 0, 0);
+    } else {
+        listbox->selSprite = -1;
+    }
+
+    func_0804db44(D_03005380, listbox->selSprite, &listbox->textX, &listbox->textY);
+    listbox->unk3C = TRUE;
+    listbox->onScroll = NULL;
+    listbox->onFinish = NULL;
+
+    line = selectionItem - selectionLine - arg14;
+
+    for (i = 0; i < maxLines; i++) {
+        if ((line >= 0) && (line < totalItems)) {
+            printer = listbox->printer;
+            string = getString(line);
+            sprite = (getSprite != NULL) ? getSprite(line) : -1;
+
+            func_0800aac0(printer, i, string, sprite);
+        }
+        line++;
+    }
+
+    return listbox;
+}
+
+
+// Update Listbox
+void update_listbox(struct Listbox *listbox) {
+    struct Listbox *list = listbox;
+    s32 velY, temp;
+
+    if (listbox == NULL) {
+        return;
+    }
+
+    // Investigate this: (https://decomp.me/scratch/GfMM8)
+    temp = ((u32)listbox->velY) >> 31;
+    velY = listbox->velY;
+    if (velY < 0) {
+        velY = -velY;
+    }
+
+    listbox->velY = (velY * 5) >> 3;
+
+    if (temp != 0) {
+        listbox->velY = -listbox->velY;
+    }
+
+    list->textX = list->listX;
+    list->textY = list->listY + list->velY;
+    list->itemsX = list->textX;
+    list->itemsY = ((list->selItem - list->selMinLine - list->selLine) * list->lineSpacing) + list->listY + list->velY;
+    text_printer_update(list->printer);
+}
+
+
+// Delete Listbox
+void delete_listbox(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    text_printer_delete(listbox->printer);
+
+    if (listbox->selSprite >= 0) {
+        func_0804d504(D_03005380, listbox->selSprite);
+    }
+
+    mem_heap_dealloc(listbox);
+}
+
+
+// Get Text Printer
+struct TextPrinter *listbox_get_text_printer(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return NULL;
+    }
+
+    return listbox->printer;
+}
+
+
+// Get Selection Item
+s32 listbox_get_sel_item(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return 0;
+    }
+
+    return listbox->selItem;
+}
+
+
+// Get Selection Line
+s32 listbox_get_sel_line(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return 0;
+    }
+
+    return listbox->selLine;
+}
+
+
+// Scroll Up
+void listbox_scroll_up(struct Listbox *listbox) {
+    struct TextPrinter *printer;
+    const char *string;
+    s32 sprite;
+    s32 next, line;
+
+    if ((listbox == NULL) || (listbox->selItem <= 0)) {
+        return;
+    }
+
+    func_0800ae3c(listbox, listbox->palette);
+
+    if (listbox->selLine <= 0) {
+        next = listbox->selItem - listbox->selLine - listbox->selMinLine;
+        line = listbox->scrollIndex % listbox->maxLines;
+
+        if (line < 0) {
+            line += listbox->maxLines;
+        }
+
+        printer = listbox->printer;
+        string = listbox->getString(next);
+
+        if (listbox->getSprite != NULL) {
+            sprite = listbox->getSprite(next);
+        } else {
+            sprite = -1;
+        }
+
+        func_0800aac0(printer, line, string, sprite);
+        listbox->scrollIndex--;
+        func_0800abb0(listbox->printer, listbox->scrollIndex);
+        listbox->velY = 16;
+    } else {
+        listbox->selLine--;
+        func_0804d648(D_03005380, listbox->selSprite, listbox_get_y(listbox));
+    }
+
+    listbox->selItem--;
+    func_0800ae3c(listbox, listbox->unk12);
+
+    if (listbox->onScroll != NULL) {
+        listbox->onScroll(listbox->onScrollArg, listbox->selItem, listbox->selItem + 1);
+    }
+}
+
+
+// Scroll Down
+void listbox_scroll_down(struct Listbox *listbox) {
+    struct TextPrinter *printer;
+    const char *string;
+    s32 sprite;
+    s32 next, line, max;
+
+    if ((listbox == NULL) || (listbox->selItem >= (listbox->totalItems - 1))) {
+        return;
+    }
+
+    func_0800ae3c(listbox, listbox->palette);
+
+    if (listbox->selLine < (listbox->selMaxLine - 1)) {
+        listbox->selLine++;
+        func_0804d648(D_03005380, listbox->selSprite, listbox_get_y(listbox));
+    } else {
+        next = listbox->selItem - listbox->selLine - listbox->selMinLine + listbox->maxLines - 1;
+        line = (listbox->scrollIndex - 1) % listbox->maxLines;
+
+        if (line < 0) {
+            line += listbox->maxLines;
+        }
+
+        printer = listbox->printer;
+        string = listbox->getString(next);
+
+        if (listbox->getSprite != NULL) {
+            sprite = listbox->getSprite(next);
+        } else {
+            sprite = -1;
+        }
+
+        func_0800aac0(printer, line, string, sprite);
+        listbox->scrollIndex++;
+        func_0800abb0(listbox->printer, listbox->scrollIndex);
+        listbox->velY = -16;
+    }
+
+    listbox->selItem++;
+    func_0800ae3c(listbox, listbox->unk12);
+
+    if (listbox->onScroll != NULL) {
+        listbox->onScroll(listbox->onScrollArg, listbox->selItem, listbox->selItem - 1);
+    }
+}
+
+
+// Set On-Scroll Function and Parameter
+void listbox_run_func_on_scroll(struct Listbox *listbox, void onScroll(), s32 onScrollArg) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    listbox->onScroll = onScroll;
+    listbox->onScrollArg = onScrollArg;
+}
+
+
+// Set On-Finish Function and Parameter
+void listbox_run_func_on_finish(struct Listbox *listbox, void onFinish(), s32 onFinishArg) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    listbox->onFinish = onFinish;
+    listbox->onFinishArg = onFinishArg;
+}
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b32c.s"
+
+
+// Check if Listbox is Busy
+s32 listbox_is_busy(struct Listbox *listbox) {
+    if (listbox != NULL) {
+        return (listbox != NULL) && (text_printer_is_busy(listbox->printer) != FALSE);
+    } else {
+        return FALSE;
+    }
+}
+
+
+// Offset Position
+void listbox_offset_x_y(struct Listbox *listbox, s16 x, s16 y) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    listbox->listX = x;
+    listbox->listY = y;
+    listbox->textX = x;
+    listbox->textY = y + listbox->velY;
+    listbox->itemsX = listbox->listX;
+    listbox->itemsY = ((listbox->selItem - listbox->selMinLine - listbox->selLine) * listbox->lineSpacing) + listbox->listY + listbox->velY;
+}
+
+
+// Show Selection Sprite
+void listbox_show_sel_sprite(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    func_0804d770(D_03005380, listbox->selSprite, TRUE);
+}
+
+
+// Hide Selection Sprite
+void listbox_hide_sel_sprite(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    func_0804d770(D_03005380, listbox->selSprite, FALSE);
+}
+
+
+// Link Sprite to Listbox
+void listbox_link_sprite_x_y_to_line(struct Listbox *listbox, s16 sprite, s32 line) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    func_0804db44(D_03005380, sprite, &listbox->itemsX, &listbox->itemsY);
+    func_0804d5d4(D_03005380, sprite, listbox->x, line * listbox->lineSpacing + listbox->y);
+}
+
+
+// ?
+void func_0800b454(struct Listbox *listbox, s32 arg1) {
+    struct TextPrinter *printer;
+    const char *string;
+    s32 sprite;
+    s32 line, maxLines;
+
+    if (listbox == NULL) {
+        return;
+    }
+
+    if ((arg1 >= 0) && (arg1 < listbox->totalItems)) {
+        line = arg1 - listbox->selItem + listbox->selMinLine + listbox->selLine;
+        if (line < 0) {
+            return;
+        }
+
+        maxLines = listbox->maxLines;
+        if (line >= maxLines) {
+            return;
+        }
+
+        line += listbox->scrollIndex;
+        line %= maxLines;
+        if (line < 0) {
+            line += maxLines;
+        }
+
+        printer = listbox->printer;
+        string = listbox->getString(arg1);
+        sprite = (listbox->getSprite != NULL) ? listbox->getSprite(arg1) : -1;
+
+        func_0800aac0(printer, line, string, sprite);
+    }
+}
+
+
+// Set Selection Sprite
+void listbox_set_sel_sprite(struct Listbox *listbox, struct Animation *selectionAnim) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    if (listbox->selSprite >= 0) {
+        func_0804d504(D_03005380, listbox->selSprite);
+    }
+
+    listbox->selSprite = -1;
+
+    if (selectionAnim != NULL) {
+        listbox->selSprite = func_0804d160(D_03005380, selectionAnim, 0, listbox->x, listbox_get_y(listbox), listbox->z, 1, 0, 0);
+        func_0804db44(D_03005380, listbox->selSprite, &listbox->textX, &listbox->textY);
+    }
+}
+
+
+// Get Selection Sprite
+s16 listbox_get_sel_sprite(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return -1;
+    }
+
+    return listbox->selSprite;
 }

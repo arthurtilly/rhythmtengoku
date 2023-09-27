@@ -36,7 +36,7 @@ thumb_func_start tap_trial_cue_miss \n\
 /* 0803e5c0 */ MOVS R0, 0xE @ Set R0 to 0xE \n\
 /* 0803e5c2 */ STRB R0, [R1, 0x10] \n\
 /* 0803e5c4 */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 0803e5c6 */ BL beats_to_ticks \n\
+/* 0803e5c6 */ BL ticks_to_frames \n\
 /* 0803e5ca */ LDR R1, [R5] \n\
 /* 0803e5cc */ STRH R0, [R1, 0xA] \n\
 /* 0803e5ce */ LDR R0, =s_f_tap_miss1_seqData \n\
@@ -64,7 +64,7 @@ branch_0803e5e4: \n\
 /* 0803e606 */ LDR R0, [R5] \n\
 /* 0803e608 */ STRB R4, [R0, 0x10] \n\
 /* 0803e60a */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 0803e60c */ BL beats_to_ticks \n\
+/* 0803e60c */ BL ticks_to_frames \n\
 /* 0803e610 */ LDR R1, [R5] \n\
 /* 0803e612 */ STRH R0, [R1, 0xA] \n\
 /* 0803e614 */ LDR R0, =s_f_tap_miss2_seqData \n\
@@ -73,7 +73,7 @@ branch_0803e5e4: \n\
 branch_0803e61a: \n\
 /* 0803e61a */ BL func_0803e208 \n\
 /* 0803e61e */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 0803e620 */ BL beats_to_ticks \n\
+/* 0803e620 */ BL ticks_to_frames \n\
 /* 0803e624 */ LDR R1, =gCurrentEngineData \n\
 /* 0803e626 */ LDR R1, [R1] \n\
 /* 0803e628 */ STRH R0, [R1, 0x1C] \n\

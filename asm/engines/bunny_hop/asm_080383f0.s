@@ -10,7 +10,7 @@ thumb_func_start func_080383f0 \n\
 /* 080383f8 */ LSRS R4, R0, 0x4 \n\
 /* 080383fa */ ANDS R4, R1 @ Set R4 to R4 & R1 \n\
 /* 080383fc */ LSRS R0, R0, 0x8 \n\
-/* 080383fe */ BL beats_to_ticks \n\
+/* 080383fe */ BL ticks_to_frames \n\
 /* 08038402 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08038404 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08038406 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\

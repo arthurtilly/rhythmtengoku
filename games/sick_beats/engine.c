@@ -292,13 +292,13 @@ EngineEvent sick_beats_common_events[] = {
 
 // [D_089e9310] Engine Events
 EngineEvent sick_beats_engine_events[] = {
-    /* 0x00 */ func_08042ea8,
-    /* 0x01 */ func_08042ecc,
-    /* 0x02 */ func_08042f44,
-    /* 0x03 */ func_08042f58,
-    /* 0x04 */ func_08043634,
-    /* 0x05 */ func_08043648,
-    /* 0x06 */ func_08042b58,
+    /* 0x00 */ sick_beats_set_virus,
+    /* 0x01 */ sick_beats_spawn_virus,
+    /* 0x02 */ sick_beats_set_virus_hits,
+    /* 0x03 */ sick_beats_set_virus_palette,
+    /* 0x04 */ sick_beats_set_game_over_beatscript,
+    /* 0x05 */ sick_beats_endless_play_game_over,
+    /* 0x06 */ sick_beats_increment_particle_pitch,
     /* 0x07 */ sick_beats_engine_event_stub
 };
 

@@ -1,6 +1,6 @@
 #include "affine_sprite.h"
 #include "code_08001360.h"
-#include "code_08003980.h"
+#include "code_08003b28.h"
 #include "memory_heap.h"
 #include "code_08007468.h"
 #include "code_0800b778.h"
@@ -86,7 +86,7 @@ struct AffineSprite *create_affine_sprite(struct Animation *anim, s8 arg1, s16 x
     if (sprite < 0) return NULL;
 
     // Generate offset from D_03000368 in words. (?)
-    index = func_0800c42c();
+    index = scene_affine_group_alloc();
     if (index < 0) return NULL;
 
     // Allocate memory for the affineData sprite.
@@ -164,7 +164,7 @@ void affine_sprite_set_param_id(struct AffineSprite *affineData, u32 setIndex) {
     if (affineData == NULL) return;
 
     if (setIndex && (affineData->index < 0)) {
-        affineData->index = func_0800c42c();
+        affineData->index = scene_affine_group_alloc();
         if (affineData->index >= 0) {
             func_0804dc8c(D_03005380, affineData->sprite, (affineData->doubleSize ? 3 : 1));
             assign_sprite_affine_param(affineData->sprite, affineData->index);

@@ -71,7 +71,7 @@ branch_0803db9e: \n\
 /* 0803dbb0 */ LSRS R4, R4, 0x10 \n\
 /* 0803dbb2 */ LDR R5, =tap_trial_play_monkey_action \n\
 /* 0803dbb4 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 0803dbb6 */ BL beats_to_ticks \n\
+/* 0803dbb6 */ BL ticks_to_frames \n\
 /* 0803dbba */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0803dbbc */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803dbbe */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
@@ -111,7 +111,7 @@ branch_0803dbe4: \n\
 /* 0803dbf8 */ BL func_0804ddb0 \n\
 /* 0803dbfc */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803dbfe */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0803dc00 */ BL beats_to_ticks \n\
+/* 0803dc00 */ BL ticks_to_frames \n\
 /* 0803dc04 */ LSLS R0, R0, 0x10 \n\
 /* 0803dc06 */ LSRS R0, R0, 0x10 \n\
 /* 0803dc08 */ MOV R3, R8 @ Set R3 to R8 \n\
@@ -127,14 +127,14 @@ branch_0803dbe4: \n\
 /* 0803dc1c */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803dc1e */ MOVS R2, 0x73 @ Set R2 to 0x73 \n\
 /* 0803dc20 */ MOVS R3, 0x28 @ Set R3 to 0x28 \n\
-/* 0803dc22 */ BL func_0800e6ec \n\
+/* 0803dc22 */ BL scene_move_sprite_sine_wave \n\
 /* 0803dc26 */ ADDS R7, 0x1 @ Add 0x1 to R7 \n\
 /* 0803dc28 */ CMP R7, 0x1 @ Compare R7 and 0x1 \n\
 /* 0803dc2a */ BLS branch_0803dbe4 \n\
  \n\
 branch_0803dc2c: \n\
 /* 0803dc2c */ LDRB R0, [R6, 0x8] \n\
-/* 0803dc2e */ BL beats_to_ticks \n\
+/* 0803dc2e */ BL ticks_to_frames \n\
 /* 0803dc32 */ LDR R1, =gCurrentEngineData \n\
 /* 0803dc34 */ LDR R1, [R1] \n\
 /* 0803dc36 */ STRH R0, [R1, 0x16] \n\

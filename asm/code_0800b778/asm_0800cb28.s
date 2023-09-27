@@ -464,7 +464,7 @@ branch_0800cfbe: \n\
 branch_0800cfc6: \n\
 /* 0800cfc6 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0800cfc8 */ LDR R0, [R1, 0x8] \n\
-/* 0800cfca */ BL func_0800c6e4 \n\
+/* 0800cfca */ BL beatscript_stream_jump_cond_if \n\
 /* 0800cfce */ B branch_0800d1a6 \n\
 \n\
 jump_0800cfd0: \n\
@@ -478,7 +478,7 @@ jump_0800cfd0: \n\
 branch_0800cfde: \n\
 /* 0800cfde */ MOV R4, R9 @ Set R4 to R9 \n\
 /* 0800cfe0 */ LDR R0, [R4, 0x8] \n\
-/* 0800cfe2 */ BL func_0800c6e4 \n\
+/* 0800cfe2 */ BL beatscript_stream_jump_cond_if \n\
 /* 0800cfe6 */ STR R0, [R4, 0x8] \n\
 /* 0800cfe8 */ BL branch_0800df9e \n\
 \n\
@@ -493,14 +493,14 @@ jump_0800cfec: \n\
 branch_0800cffa: \n\
 /* 0800cffa */ MOV R6, R9 @ Set R6 to R9 \n\
 /* 0800cffc */ LDR R0, [R6, 0x8] \n\
-/* 0800cffe */ BL func_0800c6e4 \n\
+/* 0800cffe */ BL beatscript_stream_jump_cond_if \n\
 /* 0800d002 */ STR R0, [R6, 0x8] \n\
 /* 0800d004 */ BL branch_0800df9e \n\
 \n\
 jump_0800d008: \n\
 /* 0800d008 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0800d00a */ LDR R0, [R1, 0x8] \n\
-/* 0800d00c */ BL func_0800c824 \n\
+/* 0800d00c */ BL beatscript_stream_jump_cond_else \n\
 /* 0800d010 */ B branch_0800d1a6 \n\
 \n\
 jump_0800d012: \n\
@@ -537,13 +537,13 @@ branch_0800d03c: \n\
 /* 0800d03c */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0800d03e */ LDR R0, [R1, 0x8] \n\
 /* 0800d040 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 0800d042 */ BL func_0800c95c \n\
+/* 0800d042 */ BL beatscript_stream_jump_cond_switch \n\
 /* 0800d046 */ B branch_0800d1a6 \n\
 \n\
 jump_0800d048: \n\
 /* 0800d048 */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 0800d04a */ LDR R0, [R3, 0x8] \n\
-/* 0800d04c */ BL func_0800c9a4 \n\
+/* 0800d04c */ BL beatscript_stream_jump_cond_break \n\
 /* 0800d050 */ BL branch_0800d86c \n\
 \n\
 jump_0800d054: \n\
@@ -604,14 +604,14 @@ branch_0800d098: \n\
 branch_0800d0a0: \n\
 /* 0800d0a0 */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 0800d0a2 */ LDR R0, [R3, 0x8] \n\
-/* 0800d0a4 */ BL func_0800c9c8 \n\
+/* 0800d0a4 */ BL beatscript_stream_jump_cond_while \n\
 /* 0800d0a8 */ BL branch_0800d86c \n\
 \n\
 jump_0800d0ac: \n\
 /* 0800d0ac */ MOV R5, R9 @ Set R5 to R9 \n\
 /* 0800d0ae */ LDR R0, [R5, 0x8] \n\
 /* 0800d0b0 */ SUBS R0, 0xC @ Subtract 0xC from R0 \n\
-/* 0800d0b2 */ BL func_0800ca1c \n\
+/* 0800d0b2 */ BL beatscript_stream_jump_cond_end_while \n\
 /* 0800d0b6 */ STR R0, [R5, 0x8] \n\
 /* 0800d0b8 */ BL branch_0800df9e \n\
 \n\
@@ -707,7 +707,7 @@ branch_0800d13a: \n\
 /* 0800d13a */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0800d13c */ LDR R0, [R1, 0x8] \n\
 /* 0800d13e */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 0800d140 */ BL func_0800c95c \n\
+/* 0800d140 */ BL beatscript_stream_jump_cond_switch \n\
 /* 0800d144 */ B branch_0800d1a6 \n\
 \n\
 jump_0800d146: \n\
@@ -773,7 +773,7 @@ branch_0800d196: \n\
 branch_0800d19e: \n\
 /* 0800d19e */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0800d1a0 */ LDR R0, [R1, 0x8] \n\
-/* 0800d1a2 */ BL func_0800c9c8 \n\
+/* 0800d1a2 */ BL beatscript_stream_jump_cond_while \n\
  \n\
 branch_0800d1a6: \n\
 /* 0800d1a6 */ MOV R2, R9 @ Set R2 to R9 \n\
@@ -1132,40 +1132,40 @@ jump_0800d434: \n\
 /* 0800d434 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0800d436 */ BEQ branch_0800d440 \n\
 /* 0800d438 */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d43a */ BL beats_to_ticks \n\
+/* 0800d43a */ BL ticks_to_frames \n\
 /* 0800d43e */ B branch_0800d442 \n\
  \n\
 branch_0800d440: \n\
 /* 0800d440 */ MOV R0, R8 @ Set R0 to R8 \n\
  \n\
 branch_0800d442: \n\
-/* 0800d442 */ BL func_0800ed24 \n\
+/* 0800d442 */ BL scene_fade_music_in \n\
 /* 0800d446 */ BL branch_0800df9e \n\
 \n\
 jump_0800d44a: \n\
 /* 0800d44a */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0800d44c */ BEQ branch_0800d456 \n\
 /* 0800d44e */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d450 */ BL beats_to_ticks \n\
+/* 0800d450 */ BL ticks_to_frames \n\
 /* 0800d454 */ B branch_0800d458 \n\
  \n\
 branch_0800d456: \n\
 /* 0800d456 */ MOV R0, R8 @ Set R0 to R8 \n\
  \n\
 branch_0800d458: \n\
-/* 0800d458 */ BL func_0800ed3c \n\
+/* 0800d458 */ BL scene_fade_music_out \n\
 /* 0800d45c */ BL branch_0800df9e \n\
 \n\
 jump_0800d460: \n\
 /* 0800d460 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800d462 */ LSLS R0, R1, 0x10 \n\
 /* 0800d464 */ LSRS R0, R0, 0x10 \n\
-/* 0800d466 */ BL beats_to_ticks \n\
+/* 0800d466 */ BL ticks_to_frames \n\
 /* 0800d46a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800d46c */ LSLS R1, R1, 0x10 \n\
 /* 0800d46e */ LSRS R1, R1, 0x10 \n\
 /* 0800d470 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0800d472 */ BL func_080027dc \n\
+/* 0800d472 */ BL fade_out_sound \n\
 /* 0800d476 */ BL branch_0800df9e \n\
 \n\
 jump_0800d47a: \n\
@@ -1262,7 +1262,7 @@ jump_0800d530: \n\
 /* 0800d536 */ CMP R3, 0x0 @ Compare R3 and 0x0 \n\
 /* 0800d538 */ BGE branch_0800d542 \n\
 /* 0800d53a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800d53c */ BL beats_to_ticks \n\
+/* 0800d53c */ BL ticks_to_frames \n\
 /* 0800d540 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
  \n\
 branch_0800d542: \n\
@@ -1272,7 +1272,7 @@ branch_0800d542: \n\
 /* 0800d54a */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 0800d54c */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0800d54e */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
-/* 0800d550 */ BL interpolate_lcd_blend_mode \n\
+/* 0800d550 */ BL interp_lcd_blend_mode \n\
 /* 0800d554 */ BL branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1286,7 +1286,7 @@ jump_0800d55c: \n\
 /* 0800d566 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0800d568 */ BEQ branch_0800d572 \n\
 /* 0800d56a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800d56c */ BL beats_to_ticks \n\
+/* 0800d56c */ BL ticks_to_frames \n\
 /* 0800d570 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
  \n\
 branch_0800d572: \n\
@@ -1391,7 +1391,7 @@ jump_0800d62c: \n\
 /* 0800d63a */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 0800d63c */ STRB R0, [R3] \n\
 /* 0800d63e */ LSRS R0, R7, 0x2 \n\
-/* 0800d640 */ BL beats_to_ticks \n\
+/* 0800d640 */ BL ticks_to_frames \n\
 /* 0800d644 */ LDR R1, =0x7fff \n\
 /* 0800d646 */ ANDS R1, R0 @ Set R1 to R1 & R0 \n\
 /* 0800d648 */ LSLS R1, R1, 0x2 \n\
@@ -1410,7 +1410,7 @@ jump_0800d62c: \n\
 /* 0800d662 */ BL get_current_mem_id \n\
 /* 0800d666 */ LSLS R0, R0, 0x10 \n\
 /* 0800d668 */ LSRS R0, R0, 0x10 \n\
-/* 0800d66a */ LDR R1, =D_08936c14 \n\
+/* 0800d66a */ LDR R1, =integer_interp_task \n\
 /* 0800d66c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800d66e */ STR R2, [SP] \n\
 /* 0800d670 */ ADD R2, SP, 0xC \n\
@@ -1431,7 +1431,7 @@ jump_0800d688: \n\
 /* 0800d696 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 0800d698 */ STRB R0, [R4] \n\
 /* 0800d69a */ LSRS R0, R7, 0x2 \n\
-/* 0800d69c */ BL beats_to_ticks \n\
+/* 0800d69c */ BL ticks_to_frames \n\
 /* 0800d6a0 */ LDR R1, =0x7fff \n\
 /* 0800d6a2 */ ANDS R1, R0 @ Set R1 to R1 & R0 \n\
 /* 0800d6a4 */ LSLS R1, R1, 0x2 \n\
@@ -1450,7 +1450,7 @@ jump_0800d688: \n\
 /* 0800d6be */ BL get_current_mem_id \n\
 /* 0800d6c2 */ LSLS R0, R0, 0x10 \n\
 /* 0800d6c4 */ LSRS R0, R0, 0x10 \n\
-/* 0800d6c6 */ LDR R1, =D_08936c24 \n\
+/* 0800d6c6 */ LDR R1, =integer_alternator_task \n\
 /* 0800d6c8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800d6ca */ STR R2, [SP] \n\
 /* 0800d6cc */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
@@ -1471,7 +1471,7 @@ jump_0800d6e4: \n\
 /* 0800d6f2 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 0800d6f4 */ STRB R0, [R4] \n\
 /* 0800d6f6 */ LSRS R0, R7, 0x2 \n\
-/* 0800d6f8 */ BL beats_to_ticks \n\
+/* 0800d6f8 */ BL ticks_to_frames \n\
 /* 0800d6fc */ LDR R1, =0x7fff \n\
 /* 0800d6fe */ ANDS R1, R0 @ Set R1 to R1 & R0 \n\
 /* 0800d700 */ LSLS R1, R1, 0x2 \n\
@@ -1490,7 +1490,7 @@ jump_0800d6e4: \n\
 /* 0800d71a */ BL get_current_mem_id \n\
 /* 0800d71e */ LSLS R0, R0, 0x10 \n\
 /* 0800d720 */ LSRS R0, R0, 0x10 \n\
-/* 0800d722 */ LDR R1, =D_08936c34 \n\
+/* 0800d722 */ LDR R1, =integer_incrementer_task \n\
 /* 0800d724 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800d726 */ STR R2, [SP] \n\
 /* 0800d728 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
@@ -1527,7 +1527,7 @@ jump_0800d740: \n\
 /* 0800d76e */ BL get_current_mem_id \n\
 /* 0800d772 */ LSLS R0, R0, 0x10 \n\
 /* 0800d774 */ LSRS R0, R0, 0x10 \n\
-/* 0800d776 */ LDR R1, =D_08936c44 \n\
+/* 0800d776 */ LDR R1, =integer_sine_interp_task \n\
 /* 0800d778 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800d77a */ STR R2, [SP] \n\
 /* 0800d77c */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
@@ -1540,7 +1540,7 @@ jump_0800d740: \n\
 jump_0800d78c: \n\
 /* 0800d78c */ LDR R0, =D_030053c0 \n\
 /* 0800d78e */ LDRH R0, [R0, 0x10] \n\
-/* 0800d790 */ BL func_0800ed60 \n\
+/* 0800d790 */ BL func_0800ed60_stub \n\
 /* 0800d794 */ BL branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1571,7 +1571,7 @@ jump_0800d7cc: \n\
 /* 0800d7cc */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0800d7ce */ BEQ branch_0800d7e8 \n\
 /* 0800d7d0 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0800d7d2 */ BL beats_to_ticks \n\
+/* 0800d7d2 */ BL ticks_to_frames \n\
 /* 0800d7d6 */ LSLS R0, R0, 0x10 \n\
 /* 0800d7d8 */ LSRS R0, R0, 0x10 \n\
 /* 0800d7da */ MOV R4, R8 @ Set R4 to R8 \n\
@@ -1582,7 +1582,7 @@ jump_0800d7cc: \n\
  \n\
 branch_0800d7e8: \n\
 /* 0800d7e8 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0800d7ea */ BL beats_to_ticks \n\
+/* 0800d7ea */ BL ticks_to_frames \n\
 /* 0800d7ee */ LSLS R0, R0, 0x10 \n\
 /* 0800d7f0 */ LSRS R0, R0, 0x10 \n\
 /* 0800d7f2 */ MOV R5, R8 @ Set R5 to R8 \n\
@@ -1602,18 +1602,18 @@ jump_0800d804: \n\
  \n\
 branch_0800d80c: \n\
 /* 0800d80c */ MOV R1, R8 @ Set R1 to R8 \n\
-/* 0800d80e */ BL func_0800ebf8 \n\
+/* 0800d80e */ BL scene_interpolate_tempo \n\
 /* 0800d812 */ BL branch_0800df9e \n\
 \n\
 jump_0800d816: \n\
 /* 0800d816 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0800d818 */ MOV R1, R8 @ Set R1 to R8 \n\
-/* 0800d81a */ BL func_0800ecec \n\
+/* 0800d81a */ BL scene_interpolate_music_pitch \n\
 /* 0800d81e */ B branch_0800df9e \n\
 \n\
 jump_0800d820: \n\
 /* 0800d820 */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d822 */ BL beats_to_ticks \n\
+/* 0800d822 */ BL ticks_to_frames \n\
 /* 0800d826 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800d828 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0800d82a */ BL scene_interpolate_music_volume \n\
@@ -1637,7 +1637,7 @@ jump_0800d83e: \n\
 /* 0800d84a */ LDRH R1, [R1] \n\
 /* 0800d84c */ BL scene_set_music_track_volume \n\
 /* 0800d850 */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d852 */ BL beats_to_ticks \n\
+/* 0800d852 */ BL ticks_to_frames \n\
 /* 0800d856 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800d858 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0800d85a */ BL scene_interpolate_music_track_volume \n\
@@ -1648,7 +1648,7 @@ jump_0800d83e: \n\
 jump_0800d864: \n\
 /* 0800d864 */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 0800d866 */ LDR R0, [R3, 0x8] \n\
-/* 0800d868 */ BL func_0800c6e4 \n\
+/* 0800d868 */ BL beatscript_stream_jump_cond_if \n\
 \n\
 branch_0800d86c: \n\
 /* 0800d86c */ MOV R4, R9 @ Set R4 to R9 \n\
@@ -1658,7 +1658,7 @@ branch_0800d86c: \n\
 jump_0800d872: \n\
 /* 0800d872 */ MOV R5, R9 @ Set R5 to R9 \n\
 /* 0800d874 */ LDR R0, [R5, 0x8] \n\
-/* 0800d876 */ BL func_0800c6e4 \n\
+/* 0800d876 */ BL beatscript_stream_jump_cond_if \n\
 /* 0800d87a */ STR R0, [R5, 0x8] \n\
 /* 0800d87c */ B branch_0800df9e \n\
 \n\
@@ -1766,7 +1766,7 @@ jump_0800d930: \n\
 /* 0800d944 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0800d946 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0800d948 */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 0800d94a */ BL func_0800ca70 \n\
+/* 0800d94a */ BL beatscript_stream_get_sprite_for_motion \n\
 /* 0800d94e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800d950 */ LDR R0, =D_03005380 \n\
 /* 0800d952 */ LDR R0, [R0] \n\
@@ -2053,7 +2053,7 @@ jump_0800db54: \n\
 /* 0800db5c */ LSLS R1, R6, 0x10 \n\
 /* 0800db5e */ ASRS R1, R1, 0x10 \n\
 /* 0800db60 */ ASRS R2, R6, 0x10 \n\
-/* 0800db62 */ BL func_0800e208 \n\
+/* 0800db62 */ BL scene_move_sprite_indefinite \n\
 /* 0800db66 */ B branch_0800dd68 \n\
 \n\
 jump_0800db68: \n\
@@ -2068,7 +2068,7 @@ jump_0800db68: \n\
 /* 0800db78 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0800db7a */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0800db7c */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 0800db7e */ BL func_0800ca70 \n\
+/* 0800db7e */ BL beatscript_stream_get_sprite_for_motion \n\
 /* 0800db82 */ LSLS R0, R0, 0x10 \n\
 /* 0800db84 */ ASRS R0, R0, 0x10 \n\
 /* 0800db86 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -2078,7 +2078,7 @@ jump_0800db68: \n\
 /* 0800db8e */ MOV R4, R8 @ Set R4 to R8 \n\
 /* 0800db90 */ LSLS R3, R4, 0x10 \n\
 /* 0800db92 */ ASRS R3, R3, 0x10 \n\
-/* 0800db94 */ BL func_0800e2a8 \n\
+/* 0800db94 */ BL scene_move_sprite_decelerate \n\
 /* 0800db98 */ B branch_0800dd68 \n\
 \n\
 jump_0800db9a: \n\
@@ -2093,7 +2093,7 @@ jump_0800db9a: \n\
 /* 0800dbaa */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0800dbac */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0800dbae */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 0800dbb0 */ BL func_0800ca70 \n\
+/* 0800dbb0 */ BL beatscript_stream_get_sprite_for_motion \n\
 /* 0800dbb4 */ LSLS R0, R0, 0x10 \n\
 /* 0800dbb6 */ ASRS R0, R0, 0x10 \n\
 /* 0800dbb8 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
@@ -2105,7 +2105,7 @@ jump_0800db9a: \n\
 /* 0800dbc4 */ ASRS R3, R3, 0x10 \n\
 /* 0800dbc6 */ ASRS R4, R4, 0x10 \n\
 /* 0800dbc8 */ STR R4, [SP] \n\
-/* 0800dbca */ BL func_0800e364 \n\
+/* 0800dbca */ BL scene_move_sprite_accelerate \n\
 /* 0800dbce */ B branch_0800dd68 \n\
 \n\
 jump_0800dbd0: \n\
@@ -2121,7 +2121,7 @@ jump_0800dbd0: \n\
 /* 0800dbe2 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0800dbe4 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 0800dbe6 */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
-/* 0800dbe8 */ BL func_0800ca70 \n\
+/* 0800dbe8 */ BL beatscript_stream_get_sprite_for_motion \n\
 /* 0800dbec */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0800dbee */ LSLS R4, R4, 0x10 \n\
 /* 0800dbf0 */ ASRS R4, R4, 0x10 \n\
@@ -2133,14 +2133,14 @@ jump_0800dbd0: \n\
 /* 0800dbfc */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0800dbfe */ LSLS R0, R2, 0x10 \n\
 /* 0800dc00 */ LSRS R0, R0, 0x10 \n\
-/* 0800dc02 */ BL beats_to_ticks \n\
+/* 0800dc02 */ BL ticks_to_frames \n\
 /* 0800dc06 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0800dc08 */ LSLS R3, R3, 0x10 \n\
 /* 0800dc0a */ LSRS R3, R3, 0x10 \n\
 /* 0800dc0c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0800dc0e */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
 /* 0800dc10 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
-/* 0800dc12 */ BL func_0800e430 \n\
+/* 0800dc12 */ BL scene_move_sprite_lerp \n\
 /* 0800dc16 */ B branch_0800dd68 \n\
 \n\
 jump_0800dc18: \n\
@@ -2156,13 +2156,13 @@ jump_0800dc18: \n\
 /* 0800dc2a */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0800dc2c */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 0800dc2e */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
-/* 0800dc30 */ BL func_0800ca70 \n\
+/* 0800dc30 */ BL beatscript_stream_get_sprite_for_motion \n\
 /* 0800dc34 */ LSLS R0, R0, 0x10 \n\
 /* 0800dc36 */ LSRS R4, R0, 0x10 \n\
 /* 0800dc38 */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0800dc3a */ LSLS R0, R6, 0x10 \n\
 /* 0800dc3c */ LSRS R0, R0, 0x10 \n\
-/* 0800dc3e */ BL beats_to_ticks \n\
+/* 0800dc3e */ BL ticks_to_frames \n\
 /* 0800dc42 */ LSLS R0, R0, 0x10 \n\
 /* 0800dc44 */ LSRS R0, R0, 0x10 \n\
 /* 0800dc46 */ LSLS R4, R4, 0x10 \n\
@@ -2175,7 +2175,7 @@ jump_0800dc18: \n\
 /* 0800dc54 */ LDRSH R3, [R5, R6] \n\
 /* 0800dc56 */ STR R0, [SP] \n\
 /* 0800dc58 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800dc5a */ BL func_0800e62c \n\
+/* 0800dc5a */ BL scene_move_sprite_sine_vel \n\
 /* 0800dc5e */ B branch_0800dd68 \n\
 \n\
 jump_0800dc60: \n\
@@ -2191,13 +2191,13 @@ jump_0800dc60: \n\
 /* 0800dc72 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0800dc74 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 0800dc76 */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
-/* 0800dc78 */ BL func_0800ca70 \n\
+/* 0800dc78 */ BL beatscript_stream_get_sprite_for_motion \n\
 /* 0800dc7c */ LSLS R0, R0, 0x10 \n\
 /* 0800dc7e */ LSRS R4, R0, 0x10 \n\
 /* 0800dc80 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800dc82 */ LSLS R0, R1, 0x10 \n\
 /* 0800dc84 */ LSRS R0, R0, 0x10 \n\
-/* 0800dc86 */ BL beats_to_ticks \n\
+/* 0800dc86 */ BL ticks_to_frames \n\
 /* 0800dc8a */ LSLS R0, R0, 0x10 \n\
 /* 0800dc8c */ LSRS R0, R0, 0x10 \n\
 /* 0800dc8e */ LSLS R4, R4, 0x10 \n\
@@ -2223,7 +2223,7 @@ jump_0800dca2: \n\
 /* 0800dcb2 */ MOV R4, R8 @ Set R4 to R8 \n\
 /* 0800dcb4 */ LSLS R3, R4, 0x10 \n\
 /* 0800dcb6 */ ASRS R3, R3, 0x10 \n\
-/* 0800dcb8 */ BL func_0800e2a8 \n\
+/* 0800dcb8 */ BL scene_move_sprite_decelerate \n\
 /* 0800dcbc */ B branch_0800dd68 \n\
 \n\
 jump_0800dcbe: \n\
@@ -2240,7 +2240,7 @@ jump_0800dcbe: \n\
 /* 0800dcd2 */ ASRS R3, R3, 0x10 \n\
 /* 0800dcd4 */ ASRS R4, R4, 0x10 \n\
 /* 0800dcd6 */ STR R4, [SP] \n\
-/* 0800dcd8 */ BL func_0800e364 \n\
+/* 0800dcd8 */ BL scene_move_sprite_accelerate \n\
 /* 0800dcdc */ B branch_0800dd68 \n\
 \n\
 jump_0800dcde: \n\
@@ -2255,14 +2255,14 @@ jump_0800dcde: \n\
 /* 0800dcee */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0800dcf0 */ LSLS R0, R2, 0x10 \n\
 /* 0800dcf2 */ LSRS R0, R0, 0x10 \n\
-/* 0800dcf4 */ BL beats_to_ticks \n\
+/* 0800dcf4 */ BL ticks_to_frames \n\
 /* 0800dcf8 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0800dcfa */ LSLS R3, R3, 0x10 \n\
 /* 0800dcfc */ LSRS R3, R3, 0x10 \n\
 /* 0800dcfe */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0800dd00 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0800dd02 */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
-/* 0800dd04 */ BL func_0800e430 \n\
+/* 0800dd04 */ BL scene_move_sprite_lerp \n\
 /* 0800dd08 */ B branch_0800dd68 \n\
 \n\
 jump_0800dd0a: \n\
@@ -2270,7 +2270,7 @@ jump_0800dd0a: \n\
 /* 0800dd0c */ LSLS R0, R3, 0x10 \n\
 /* 0800dd0e */ LSRS R0, R0, 0x10 \n\
 /* 0800dd10 */ STR R2, [SP, 0x50] \n\
-/* 0800dd12 */ BL beats_to_ticks \n\
+/* 0800dd12 */ BL ticks_to_frames \n\
 /* 0800dd16 */ LSLS R0, R0, 0x10 \n\
 /* 0800dd18 */ LSRS R0, R0, 0x10 \n\
 /* 0800dd1a */ LSLS R1, R7, 0x1 \n\
@@ -2286,7 +2286,7 @@ jump_0800dd0a: \n\
 /* 0800dd2e */ LDRSH R3, [R6, R5] \n\
 /* 0800dd30 */ STR R0, [SP] \n\
 /* 0800dd32 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800dd34 */ BL func_0800e62c \n\
+/* 0800dd34 */ BL scene_move_sprite_sine_vel \n\
 /* 0800dd38 */ B branch_0800dd68 \n\
 \n\
 jump_0800dd3a: \n\
@@ -2294,7 +2294,7 @@ jump_0800dd3a: \n\
 /* 0800dd3c */ LSLS R0, R1, 0x10 \n\
 /* 0800dd3e */ LSRS R0, R0, 0x10 \n\
 /* 0800dd40 */ STR R2, [SP, 0x50] \n\
-/* 0800dd42 */ BL beats_to_ticks \n\
+/* 0800dd42 */ BL ticks_to_frames \n\
 /* 0800dd46 */ LSLS R0, R0, 0x10 \n\
 /* 0800dd48 */ LSRS R0, R0, 0x10 \n\
 /* 0800dd4a */ LSLS R1, R7, 0x1 \n\
@@ -2312,7 +2312,7 @@ jump_0800dd3a: \n\
 branch_0800dd60: \n\
 /* 0800dd60 */ STR R0, [SP] \n\
 /* 0800dd62 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800dd64 */ BL func_0800e6ec \n\
+/* 0800dd64 */ BL scene_move_sprite_sine_wave \n\
  \n\
 branch_0800dd68: \n\
 /* 0800dd68 */ MOV R1, R9 @ Set R1 to R9 \n\

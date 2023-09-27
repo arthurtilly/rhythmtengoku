@@ -30,7 +30,7 @@ branch_0802de6c: \n\
 /* 0802de8c */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0802de8e */ STR R0, [R4, 0x1C] \n\
 /* 0802de90 */ LDRH R0, [R4, 0xA] \n\
-/* 0802de92 */ BL beats_to_ticks \n\
+/* 0802de92 */ BL ticks_to_frames \n\
 /* 0802de96 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0802de98 */ STR R0, [R4, 0x20] \n\
 /* 0802de9a */ B branch_0802dea8 \n\

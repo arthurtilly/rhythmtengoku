@@ -1,0 +1,40 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Script
+script script_scene_perfect
+    set_tempo 145
+    pause_scene
+    rest 24
+    run func_08007324, TRUE
+    play_music s_perfect_fan_seqData
+    rest 12
+    scene_set_int INT8, 4, TRUE
+    pause_scene
+
+    scene_set_int INT8, 4, FALSE
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    stop
+
+
+@ Local Scene
+struct sub_scene_perfect
+    /* Start  */ .word perfect_scene_start,  0
+    /* Paused */ .word perfect_scene_paused, 0
+    /* Active */ .word perfect_scene_update, 0
+    /* Stop   */ .word perfect_scene_stop,   0
+    /* Script */ .word script_scene_perfect
+endstruct
+
+@ RIQ Perfect Certificate Scene
+struct scene_perfect
+    /* Start  */ .word func_0801d86c, sub_scene_perfect
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0x20C
+endstruct
+
+.end

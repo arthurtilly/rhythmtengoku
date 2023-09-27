@@ -96,7 +96,7 @@ void polyrhythm_cue_spawn(struct Cue *cue, struct PolyrhythmCue *info, u32 lane)
 
 // Cue - Update
 u32 polyrhythm_cue_update(struct Cue *cue, struct PolyrhythmCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > (duration + beats_to_ticks(0x0C))) {
+    if (runningTime > (duration + ticks_to_frames(0x0C))) {
         return TRUE;
     }
     return FALSE;
@@ -174,7 +174,7 @@ void polyrhythm_populate_world(void) {
 
     func_0804d160(D_03005380, anim_polyrhythm_world_start, 0, 32, 112, 0x4400, 0, 0, 0);
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < POLYRHYTHM_LINE_AMOUNT; i++) {
         x = polyrhythm_lane_start_x[i];
         y = polyrhythm_lane_start_y[i];
         z = ((1 - i) * 0x400) + 0x4404;
@@ -182,7 +182,7 @@ void polyrhythm_populate_world(void) {
         func_0804d160(D_03005380, anim_polyrhythm_signs, 1 - i, 122, 111, z - 1, 0, 0, 0);
 
         block = gPolyrhythm->lanes[i];
-        for (j = 0; j < 16; j++) {
+        for (j = 0; j < POLYRHYTHM_BLOCK_AMOUNT; j++) {
             block->sprite = func_0804d160(D_03005380, anim_polyrhythm_block, 0, x, y, z, 0, 0, 0);
             block->type = BLOCK_TYPE_PLATFORM;
             block->state = BLOCK_STATE_HIDDEN;
@@ -204,7 +204,7 @@ void polyrhythm_get_pistons(u32 lane, s32 *piston1ID, s32 *piston2ID) {
     *piston2ID = -1;
     *piston1ID = -1;
 
-    for (i = 0; i < 16; i++) {
+    for (i = 0; i < POLYRHYTHM_BLOCK_AMOUNT; i++) {
         block = &gPolyrhythm->lanes[lane][i];
 
         if ((block->type == BLOCK_TYPE_PISTON_UPSIDE) || (block->type == BLOCK_TYPE_PISTON_DOWNSIDE)) {
@@ -305,7 +305,7 @@ s32 polyrhythm_get_block_height(u32 lane, s32 blockID) {
     if (blockID < 0) {
         return polyrhythm_block_heights[BLOCK_STATE_PLATFORM];
     }
-    if (blockID > 15) {
+    if (blockID > (POLYRHYTHM_BLOCK_AMOUNT - 1)) {
         return 0;
     }
 
@@ -337,7 +337,7 @@ void polyrhythm_init_rods(void) {
     struct PolyrhythmRod *rod = gPolyrhythm->rods;
     u32 i;
 
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i < POLYRHYTHM_ROD_AMOUNT; i++) {
         rod->active = FALSE;
         rod->sprite = func_0804d160(D_03005380, anim_polyrhythm_rod, 0, 32, 96, 0, 1, 0, 0x8000);
         rod++;
@@ -416,7 +416,7 @@ void func_08036630(struct PolyrhythmRod *rod) {
     func_0804d55c(D_03005380, rod->sprite, x, y, z);
     func_0804d770(D_03005380, rod->sprite, TRUE);
     rod->runningTime++;
-    if (rod->runningTime > (rod->maxDuration - beats_to_ticks(0x18))) {
+    if (rod->runningTime > (rod->maxDuration - ticks_to_frames(0x18))) {
         rod->active = FALSE;
     }
 }
@@ -439,7 +439,7 @@ void polyrhythm_update_rods(void) {
     s32 x, y;
     u32 z;
 
-    for (rod = gPolyrhythm->rods, i = 0; i < 8; rod++, i++) {
+    for (rod = gPolyrhythm->rods, i = 0; i < POLYRHYTHM_ROD_AMOUNT; rod++, i++) {
         if (rod->active) {
             switch (rod->unk0_b4) {
                 case 0:
@@ -476,14 +476,14 @@ void polyrhythm_spawn_rod(u32 lane) {
     struct PolyrhythmRod *rod = gPolyrhythm->rods;
     u32 i;
 
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i < POLYRHYTHM_ROD_AMOUNT; i++) {
         if (!rod->active) {
             break;
         }
         rod++;
     }
 
-    if (i >= 8) {
+    if (i >= POLYRHYTHM_ROD_AMOUNT) {
         return;
     }
 
@@ -492,10 +492,10 @@ void polyrhythm_spawn_rod(u32 lane) {
     rod->horizontal = 0;
     rod->yOffset = 16;
     rod->runningTime = 0;
-    rod->maxDuration = beats_to_ticks(0x120);
+    rod->maxDuration = ticks_to_frames(0x120);
     rod->lane = lane;
     rod->unk0_b4 = 0;
-    rod->timeUntilExplosion = beats_to_ticks(0x18);
+    rod->timeUntilExplosion = ticks_to_frames(0x18);
     func_0804dae0(D_03005380, rod->sprite, 1, 0, 0);
     func_0804dcb8(D_03005380, rod->sprite, INT_TO_FIXED(2.0));
 }

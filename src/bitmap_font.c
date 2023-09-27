@@ -21,7 +21,7 @@ enum FTextLatinCharTypesEnum {
     F_TEXT_LATIN_HALFWIDTH
 };
 
-extern s32 (*D_03004ae4)(s32);
+extern s32 (*math_sqrt)(s32);
 extern u8 sSceneTextCurrentStringId; // Current String in Scene Text Table to Print with SceneObject
 
 
@@ -670,7 +670,7 @@ struct WobblyPrintedTextAnim *bmp_font_obj_print_wobbly(struct BitmapFontOBJ *te
     newAnim = mem_heap_alloc_id(textObj->memID, size);
     newCel = newAnim->oam;
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < (ARRAY_COUNT(newAnim->frames) - 1); i++) {
         (newAnim->frames + i)->cel = newCel;
         (newAnim->frames + i)->duration = frameDuration;
         newCel[0] = count;
@@ -741,7 +741,7 @@ void bmp_font_obj_curve_anim_y(struct Animation *anim, s16 vel) {
             }
 
             centre = x + (sObjStringGlyphWidths[i] / 2);
-            ((struct OAM *)oam)->yPos = -D_03004ae4((vel * vel) - (centre * centre)) - 10;
+            ((struct OAM *)oam)->yPos = -math_sqrt((vel * vel) - (centre * centre)) - 10;
 
             oam += 3;
         }

@@ -32,16 +32,16 @@ branch_08040728: \n\
 /* 08040748 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 0804074a */ STR R0, [R1] \n\
 /* 0804074c */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0804074e */ BL beats_to_ticks \n\
+/* 0804074e */ BL ticks_to_frames \n\
 /* 08040752 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 08040754 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08040756 */ BL beats_to_ticks \n\
+/* 08040756 */ BL ticks_to_frames \n\
 /* 0804075a */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0804075c */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0804075e */ BL beats_to_ticks \n\
+/* 0804075e */ BL ticks_to_frames \n\
 /* 08040762 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08040764 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08040766 */ BL beats_to_ticks \n\
+/* 08040766 */ BL ticks_to_frames \n\
 /* 0804076a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0804076c */ LDR R3, =gCurrentEngineData \n\
 /* 0804076e */ LDR R4, [R3] \n\
@@ -88,7 +88,7 @@ branch_080407b8: \n\
 /* 080407c4 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 080407c6 */ STR R0, [R1] \n\
 /* 080407c8 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 080407ca */ BL beats_to_ticks \n\
+/* 080407ca */ BL ticks_to_frames \n\
 /* 080407ce */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080407d0 */ LDR R0, =gCurrentEngineData \n\
 /* 080407d2 */ LDR R4, [R0] \n\
@@ -122,7 +122,7 @@ branch_08040804: \n\
 /* 0804080c */ ADDS R4, 0x10 @ Add 0x10 to R4 \n\
 /* 0804080e */ ADDS R4, R4, R7 @ Set R4 to R4 + R7 \n\
 /* 08040810 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08040812 */ BL beats_to_ticks \n\
+/* 08040812 */ BL ticks_to_frames \n\
 /* 08040816 */ LDR R1, [R4] \n\
 /* 08040818 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 0804081a */ BCS branch_0804081e \n\
@@ -166,16 +166,16 @@ branch_08040848: \n\
 /* 08040862 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08040864 */ LDR R4, [R1] \n\
 /* 08040866 */ LDR R0, [SP, 0x10] \n\
-/* 08040868 */ BL beats_to_ticks \n\
+/* 08040868 */ BL ticks_to_frames \n\
 /* 0804086c */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0804086e */ LDR R0, [SP, 0x10] \n\
-/* 08040870 */ BL beats_to_ticks \n\
+/* 08040870 */ BL ticks_to_frames \n\
 /* 08040874 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08040876 */ LDR R0, [SP, 0x10] \n\
-/* 08040878 */ BL beats_to_ticks \n\
+/* 08040878 */ BL ticks_to_frames \n\
 /* 0804087c */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 0804087e */ LDR R0, [SP, 0x10] \n\
-/* 08040880 */ BL beats_to_ticks \n\
+/* 08040880 */ BL ticks_to_frames \n\
 /* 08040884 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08040886 */ LDR R0, =gCurrentEngineData \n\
 /* 08040888 */ LDR R5, [R0] \n\
@@ -219,7 +219,7 @@ branch_08040848: \n\
 /* 080408da */ ADDS R4, R4, R7 @ Set R4 to R4 + R7 \n\
 /* 080408dc */ LDR R0, [SP, 0x10] \n\
 /* 080408de */ ADDS R0, 0x6 @ Add 0x6 to R0 \n\
-/* 080408e0 */ BL beats_to_ticks \n\
+/* 080408e0 */ BL ticks_to_frames \n\
 /* 080408e4 */ LDR R1, [R4] \n\
 /* 080408e6 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 080408e8 */ BLS branch_0804092c \n\
@@ -267,7 +267,7 @@ branch_0804092c: \n\
 /* 0804093a */ ADDS R4, R4, R5 @ Set R4 to R4 + R5 \n\
 /* 0804093c */ LDR R3, [SP, 0x10] \n\
 /* 0804093e */ LSLS R0, R3, 0x1 \n\
-/* 08040940 */ BL beats_to_ticks \n\
+/* 08040940 */ BL ticks_to_frames \n\
 /* 08040944 */ LDR R1, [R4] \n\
 /* 08040946 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 08040948 */ BCC branch_08040998 \n\

@@ -1,127 +1,143 @@
 #include "data_08936b54.h"
-#include "src/code_08003980.h"
+#include "src/code_08003b28.h"
 #include "src/code_080068f8.h"
 #include "src/code_08007468.h"
 
+// ?
 struct TaskMethods D_08936b84 = {
     (TaskStartFunc)func_08006bb4,
     (TaskUpdateFunc)func_08006c08,
     NULL,
-    NULL,
+    NULL
 };
 
+// ?
 struct TaskMethods D_08936b94 = {
     (TaskStartFunc)func_08006ca4,
     (TaskUpdateFunc)func_08006ce8,
     NULL,
-    NULL,
+    NULL
 };
 
-struct TaskMethods D_08936ba4 = {
-    (TaskStartFunc)func_080074ec,
-    (TaskUpdateFunc)func_08007544,
+// Sprite Motion - Indefinite Linear
+struct TaskMethods sprite_motion_task_indefinite = {
+    (TaskStartFunc)start_sprite_motion_task_indefinite,
+    (TaskUpdateFunc)update_sprite_motion_task_indefinite,
     NULL,
-    NULL,
+    NULL
 };
 
-struct TaskMethods D_08936bb4 = {
-    (TaskStartFunc)func_0800757c,
-    (TaskUpdateFunc)func_080075e4,
+// Sprite Motion - Decelerate to Point
+struct TaskMethods sprite_motion_task_decelerate = {
+    (TaskStartFunc)start_sprite_motion_task_decelerate,
+    (TaskUpdateFunc)update_sprite_motion_task_decelerate,
     NULL,
-    NULL,
+    NULL
 };
 
-struct TaskMethods D_08936bc4 = {
-    (TaskStartFunc)func_0800765c,
-    (TaskUpdateFunc)func_080076ec,
+// Sprite Motion - Accelerate to Point
+struct TaskMethods sprite_motion_task_accelerate = {
+    (TaskStartFunc)start_sprite_motion_task_accelerate,
+    (TaskUpdateFunc)update_sprite_motion_task_accelerate,
     NULL,
-    NULL,
+    NULL
 };
 
-struct TaskMethods D_08936bd4 = {
-    (TaskStartFunc)func_08007788,
-    (TaskUpdateFunc)func_080077e8,
+// Sprite Motion - LERP to Point
+struct TaskMethods sprite_motion_task_lerp = {
+    (TaskStartFunc)start_sprite_motion_task_lerp,
+    (TaskUpdateFunc)update_sprite_motion_task_lerp,
     NULL,
-    NULL,
+    NULL
 };
 
-struct TaskMethods D_08936be4 = {
-    (TaskStartFunc)func_080078ec,
-    (TaskUpdateFunc)func_08007854,
+// Sprite Motion - Sinusoidal Oscillation
+struct TaskMethods sprite_motion_task_sine_osc = {
+    (TaskStartFunc)start_sprite_motion_task_sine_osc,
+    (TaskUpdateFunc)update_sprite_motion_task_sine_osc,
     NULL,
-    NULL,
+    NULL
 };
 
-struct TaskMethods D_08936bf4 = {
-    (TaskStartFunc)func_080079bc,
-    (TaskUpdateFunc)func_0800793c,
+// Sprite Motion - Sinusoidal Velocity to Point
+struct TaskMethods sprite_motion_task_sine_vel = {
+    (TaskStartFunc)start_sprite_motion_task_sine_vel,
+    (TaskUpdateFunc)update_sprite_motion_task_sine_vel,
     NULL,
-    NULL,
+    NULL
 };
 
-struct TaskMethods D_08936c04 = {
-    (TaskStartFunc)func_08007aa0,
-    (TaskUpdateFunc)func_08007a14,
+// Sprite Motion - Move Along Sine Wave
+struct TaskMethods sprite_motion_task_sine_wave = {
+    (TaskStartFunc)start_sprite_motion_task_sine_wave,
+    (TaskUpdateFunc)update_sprite_motion_task_sine_wave,
     NULL,
-    NULL,
+    NULL
 };
 
-// 1-Dimensional Linear Interpolation
-struct TaskMethods D_08936c14 = {
-    (TaskStartFunc)func_08007bb8,
-    (TaskUpdateFunc)func_08007c30,
+// Number Task - Interpolate Linearly
+struct TaskMethods integer_interp_task = {
+    (TaskStartFunc)start_integer_interp_task,
+    (TaskUpdateFunc)update_integer_interp_task,
     NULL,
-    NULL,
+    NULL
 };
 
-struct TaskMethods D_08936c24 = {
-    (TaskStartFunc)func_08007ca8,
-    (TaskUpdateFunc)func_08007d20,
+// Number Task - Swap Endlessly
+struct TaskMethods integer_alternator_task = {
+    (TaskStartFunc)start_integer_alternator_task,
+    (TaskUpdateFunc)update_integer_alternator_task,
     NULL,
-    NULL,
+    NULL
 };
 
-struct TaskMethods D_08936c34 = {
-    (TaskStartFunc)func_08007d88,
-    (TaskUpdateFunc)func_08007e00,
+// Number Task - Increment Endlessly
+struct TaskMethods integer_incrementer_task = {
+    (TaskStartFunc)start_integer_incrementer_task,
+    (TaskUpdateFunc)update_integer_incrementer_task,
     NULL,
-    NULL,
+    NULL
 };
 
-struct TaskMethods D_08936c44 = {
-    (TaskStartFunc)func_08007e7c,
-    (TaskUpdateFunc)func_08007ef8,
+// Number Sine Interpolator Task
+struct TaskMethods integer_sine_interp_task = {
+    (TaskStartFunc)start_integer_sine_interp_task,
+    (TaskUpdateFunc)update_integer_sine_interp_task,
     NULL,
-    NULL,
+    NULL
 };
 
 // Interpolate LCD Special Effects (Blend Controls)
-struct TaskMethods D_08936c54 = {
-    (TaskStartFunc)init_lcd_blend_mode_interpolator,
-    (TaskUpdateFunc)update_lcd_blend_mode_interpolator,
+struct TaskMethods lcd_blend_mode_interp_task = {
+    (TaskStartFunc)start_lcd_blend_mode_interp,
+    (TaskUpdateFunc)update_lcd_blend_mode_interp,
     NULL,
-    NULL,
+    NULL
 };
 
+// Fullwidth Number Characters
 char D_08936c64[] = "‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚X";
 
+// ?
 struct TaskMethods D_08936c7c = {
     (TaskStartFunc)func_08008420,
     (TaskUpdateFunc)func_08008464,
     NULL,
-    NULL,
+    NULL
 };
 
+// Delayed Function Call
 struct TaskMethods D_08936c8c = {
     (TaskStartFunc)init_scheduled_function_task,
     (TaskUpdateFunc)update_scheduled_function_task,
     NULL,
-    NULL,
+    NULL
 };
 
+// Buffered Texture Loader
 struct TaskMethods D_08936c9c = {
     (TaskStartFunc)init_texture_loader_task,
     (TaskUpdateFunc)update_texture_loader_task,
     NULL,
-    NULL,
+    NULL
 };

@@ -21,7 +21,7 @@ branch_080441e6: \n\
 /* 080441e8 */ LSLS R0, R4, 0x2 \n\
 /* 080441ea */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 080441ec */ LDR R0, [R0] \n\
-/* 080441ee */ BL func_0800c2d0 \n\
+/* 080441ee */ BL scene_play_random_sound \n\
 /* 080441f2 */ LDR R1, [R6] \n\
 /* 080441f4 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
 /* 080441f6 */ STR R0, [R1] \n\

@@ -63,12 +63,12 @@ branch_08041802: \n\
 /* 08041820 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08041822 */ LDR R4, [R0] \n\
 /* 08041824 */ MOVS R0, 0x60 @ Set R0 to 0x60 \n\
-/* 08041826 */ BL beats_to_ticks \n\
+/* 08041826 */ BL ticks_to_frames \n\
 /* 0804182a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0804182c */ LSLS R1, R1, 0x10 \n\
 /* 0804182e */ LSRS R1, R1, 0x10 \n\
 /* 08041830 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08041832 */ BL func_080027dc \n\
+/* 08041832 */ BL fade_out_sound \n\
 /* 08041836 */ B branch_08041870 \n\
 \n\
 .ltorg \n\
@@ -80,12 +80,12 @@ branch_08041854: \n\
 /* 0804185a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0804185c */ LDR R4, [R0] \n\
 /* 0804185e */ MOVS R0, 0xC0 @ Set R0 to 0xC0 \n\
-/* 08041860 */ BL beats_to_ticks \n\
+/* 08041860 */ BL ticks_to_frames \n\
 /* 08041864 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08041866 */ LSLS R1, R1, 0x10 \n\
 /* 08041868 */ LSRS R1, R1, 0x10 \n\
 /* 0804186a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0804186c */ BL func_080027dc \n\
+/* 0804186c */ BL fade_out_sound \n\
  \n\
 branch_08041870: \n\
 /* 08041870 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

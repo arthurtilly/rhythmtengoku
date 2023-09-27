@@ -1,38 +1,42 @@
 #pragma once
 
+/*
+ *  General "Scene"/"SubScene" header file.
+ *  Should probably contain all of the functions and/or headers that are referenced in the scene C files,
+ *  along with any other sort of common data.
+*/
+
 #include "global.h"
-#include "graphics.h"
-#include "sound.h"
+#include "lib_agb.h"
 #include "data/beatscript_scene_data.h"
 
-/*
-    General "Scene"/"SubScene" header file.
-    Should probably contain all of the functions and/or headers that are referenced in the scene C files,
-    along with any other sort of common data.
-*/
 
 // Scene Static Info
 extern void *gCurrentSceneData;
 
 // Menus
-extern struct Scene scene_riq_title;
+extern struct Scene scene_warning;
+extern struct Scene scene_title;
+extern struct Scene scene_main_menu;
+extern struct Scene scene_game_select;
 extern struct Scene scene_results_ver_rank;
 extern struct Scene scene_results_ver_debug;
 extern struct Scene scene_results_ver_score;
 extern struct Scene scene_epilogue;
-extern struct Scene scene_game_select;
-extern struct Scene scene_main_menu;
-extern struct Scene scene_warning;
+extern struct Scene scene_perfect;
 extern struct Scene scene_data_room;
-extern struct Scene scene_data_clear;
+extern struct Scene scene_reading;
+extern struct Scene scene_arrival;
 extern struct Scene scene_studio;
 extern struct Scene scene_options_menu;
-extern struct Scene scene_perfect;
 extern struct Scene scene_cafe;
 extern struct Scene scene_toys_menu;
 extern struct Scene scene_endless_menu;
 extern struct Scene scene_lessons_menu;
 extern struct Scene scene_debug_menu;
+extern struct Scene scene_data_check;
+extern struct Scene scene_data_clear;
+extern struct Scene scene_flash_mem_test;
 
 // Main Games
 extern struct Scene scene_karate_man;
@@ -118,20 +122,25 @@ extern struct Scene scene_drum_lesson_long_6;
 extern struct Scene scene_drum_lesson_hi_tech_1;
 extern struct Scene scene_drum_lesson_hi_tech_2;
 
+// Other
+extern struct Scene scene_rhythm_test;
+
 // Unlabelled
 extern struct Scene D_089d48ec;
 extern struct Scene D_089d4464;
 extern struct Scene D_089d454c;
 extern struct Scene D_089d4634;
 extern struct Scene D_089d4804;
-extern struct Scene D_089d80d0;
 extern struct Scene D_089d6534;
-extern struct Scene D_089cdad8;
 extern struct Scene D_089d3a6c;
 extern struct Scene D_089d3984;
 extern struct Scene D_089d2f98;
 extern struct Scene D_089de05c;
 extern struct Scene scene_metronome;
 extern struct Scene D_089d2670;
-extern struct Scene D_089cd2cc;
 extern struct Scene D_089d6d74;
+
+
+// Bitmap Fonts from WarioWare
+extern struct BitmapFontData bitmap_font_warioware_outline[];
+extern struct BitmapFontData bitmap_font_warioware_body[];

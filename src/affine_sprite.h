@@ -5,7 +5,7 @@
 
 struct AffineSprite {
     s16 sprite;      // Sprite ID
-    s8  index;       // func_0800c42c()
+    s8  index;       // Affine Param. Group ID
     u8  doubleSize;  // "Double-Size" Flag
     s16 scaleX;      // Horizontal Scale
     s16 scaleY;      // Vertical Scale

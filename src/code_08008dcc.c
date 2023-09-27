@@ -102,7 +102,7 @@ void math_arr_invert_palette(s16 src[], s16 dest[], u32 total) {
 
 // Retrieve Item from Array at Scene-related Index
 s32 math_arr_get_scene(s32 arr[]) {
-    u32 id = func_0800c490();
+    u32 id = scene_get_default_text_id();
 
     if (arr == NULL) {
         return 0;
@@ -250,10 +250,10 @@ void func_080090d0(void) {
 
 
 //
-void func_080090ec(u32 arg0, u8 arg1[], u32 arg2) {
+void func_080090ec(u32 arg0, u8 arr[], u32 len) {
     u32 i;
     
-    if (arg2 == 0) {
+    if (len == 0) {
         return;
     }
     
@@ -264,15 +264,18 @@ void func_080090ec(u32 arg0, u8 arg1[], u32 arg2) {
     D_0E000001 = arg0;
     D_0E000001 = arg0 >> 8;
     
-    while (arg2 != 0) {
-        u32 temp = arg2;
-        if (temp > UNK_SIZE_210) {
-            temp = UNK_SIZE_210;
+    while (len != 0) {
+        u32 n = len;
+
+        if (n > UNK_SIZE_210) {
+            n = UNK_SIZE_210;
         }
-        arg2 -= temp;
+
+        len -= n;
         func_080090d0();
-        for (i = 0; i < temp; i++) {
-            *arg1++ = D_0E000002;
+
+        for (i = 0; i < n; i++) {
+            *arr++ = D_0E000002;
         }
     }
     

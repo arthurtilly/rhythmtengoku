@@ -13,7 +13,7 @@ thumb_func_start func_080394a4 \n\
 /* 080394b2 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080394b4 */ BNE branch_08039514 \n\
 /* 080394b6 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 080394b8 */ BL beats_to_ticks \n\
+/* 080394b8 */ BL ticks_to_frames \n\
 /* 080394bc */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080394be */ LDR R4, [R6] \n\
 /* 080394c0 */ ADDS R5, R4, 0x0 @ Set R5 to R4 + 0x0 \n\
@@ -33,7 +33,7 @@ thumb_func_start func_080394a4 \n\
 /* 080394de */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 080394e0 */ BLT branch_080394fc \n\
 /* 080394e2 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 080394e4 */ BL beats_to_ticks \n\
+/* 080394e4 */ BL ticks_to_frames \n\
 /* 080394e8 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080394ea */ LDR R4, [R6] \n\
 /* 080394ec */ ADDS R4, 0xE8 @ Add 0xE8 to R4 \n\
@@ -46,7 +46,7 @@ thumb_func_start func_080394a4 \n\
  \n\
 branch_080394fc: \n\
 /* 080394fc */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 080394fe */ BL beats_to_ticks \n\
+/* 080394fe */ BL ticks_to_frames \n\
 /* 08039502 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08039504 */ LDR R4, [R6] \n\
 /* 08039506 */ ADDS R4, 0xEC @ Add 0xEC to R4 \n\

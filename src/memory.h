@@ -24,18 +24,18 @@ extern struct SaveBuffer {
         u16 levelScores[TOTAL_LEVELS];
         u16 currentFlow;
         u16 unkB0;
-        u8 unkB2; // relates to studio
+        u8 totalSongs;
         u8 unkB3; // above
-        struct DrumReplayData {
+        struct StudioSongData {
             u8 songID;
-            s8 saveID;
+            s8 replayID;
             u8 drumKitID;
             u8 unk3;
-        } drumReplayData[TOTAL_LEVELS];
-        u8 unk190[TOTAL_LEVELS]; // number of plays?
-        u8 unk1C7[TOTAL_LEVELS];
-        u8 unk1FE[TOTAL_LEVELS];
-        u8 unk235;
+        } studioSongs[45 + 10];
+        u8 levelTotalPlays[TOTAL_LEVELS];
+        u8 levelFirstOK[TOTAL_LEVELS];
+        u8 levelFirstSuperb[TOTAL_LEVELS];
+        u8 totalPerfects;
         u8 campaignsCleared[TOTAL_PERFECT_CAMPAIGNS];
         u8 campaignState;
         u8 campaignAttemptsLeft;
@@ -46,7 +46,7 @@ extern struct SaveBuffer {
         u8 drumKitsUnlocked[15];
         u8 totalMedals;
         u8 unk28F;
-        u8 unk290;
+        u8 minFailsForBaristaHelp;
         u8 unk291;
         u32 unk294[16];
         /*
@@ -59,7 +59,7 @@ extern struct SaveBuffer {
             u32 unk2AC;
             u32 unk2B0;
             u32 soundMode;
-            u32 unk2B8;
+            u32 perfectClearCafeDialoguePending;
             u32 unk2BC;
             u32 unk2C0;
             u32 unk2C4;

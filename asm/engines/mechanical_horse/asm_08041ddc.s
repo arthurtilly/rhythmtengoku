@@ -109,7 +109,7 @@ branch_08041e92: \n\
 /* 08041eaa */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08041eac */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08041eae */ LDR R0, [R1] \n\
-/* 08041eb0 */ BL beats_to_ticks \n\
+/* 08041eb0 */ BL ticks_to_frames \n\
 /* 08041eb4 */ LDR R1, [R5] \n\
 /* 08041eb6 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 08041eb8 */ LDR R2, =0x26f \n\

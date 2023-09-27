@@ -5,22 +5,6 @@
 
 #include "games/quiz_show/graphics/quiz_show_graphics.h"
 
-// Engine Types:
-struct QuizShowEngineData {
-    u8 pad[0x58];
-};
-
-struct QuizShowCue {
-    /* add fields here */
-};
-
-struct QuizShowScriptTable {
-    struct Beatscript *scriptA;
-    struct Beatscript *scriptB;
-    struct QuizShowScriptTable **scriptTable;
-};
-
-
 // Engine Macros/Enums:
 enum QuizShowVersionsEnum {
     QUIZ_SHOW_VER_0,
@@ -35,6 +19,22 @@ enum QuizShowCharactersEnum {
 enum QuizShowHostArmsEnum {
     QUIZ_SHOW_HOST_ARM_RIGHT,
     QUIZ_SHOW_HOST_ARM_LEFT
+};
+
+
+// Engine Types:
+struct QuizShowEngineData {
+    u8 pad[0x58];
+};
+
+struct QuizShowCue {
+    /* add fields here */
+};
+
+struct QuizShowScriptTable {
+    struct Beatscript *scriptA;
+    struct Beatscript *scriptB;
+    struct QuizShowScriptTable **scriptTable;
 };
 
 

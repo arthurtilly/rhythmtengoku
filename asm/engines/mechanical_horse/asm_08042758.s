@@ -21,7 +21,7 @@ thumb_func_start mechanical_horse_cue_spawn \n\
 /* 08042778 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0804277a */ STRB R0, [R1] \n\
 /* 0804277c */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0804277e */ BL beats_to_ticks \n\
+/* 0804277e */ BL ticks_to_frames \n\
 /* 08042782 */ LDR R2, [R5] \n\
 /* 08042784 */ LDRB R3, [R4, 0x2] \n\
 /* 08042786 */ LSLS R1, R3, 0x3 \n\

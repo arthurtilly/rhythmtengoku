@@ -1,16 +1,9 @@
 #include "global.h"
 #include "gameplay.h"
 #include "graphics/gameplay/gameplay_graphics.h"
-#include "src/code_08001360.h"
-#include "src/bitmap_font.h"
-#include "src/task_pool.h"
-#include "src/memory_heap.h"
-#include "src/code_08007468.h"
-#include "src/text_printer.h"
-#include "src/code_0800b778.h"
-#include "src/lib_0804ca80.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
+
 
 // For readability.
 #define gGameplay ((struct GameplaySceneData *)gCurrentSceneData)
@@ -28,7 +21,7 @@ extern const struct Beatscript D_089cfda4[]; // Generic Fade-Out Sequence
 /* MAIN GAMEPLAY SCENE */
 
 
-static struct Scene *D_03001328; // ?
+static struct Scene *D_03001328; // Pause Menu Quit Destination
 
 
 // [func_08016e04] Set Sound Effect Original Tempo
@@ -126,10 +119,10 @@ void gameplay_start_scene(void) {
     gGameplay->earlinessRangeMin = -0x80;
     gGameplay->latenessRangeMax = 0x7f;
     func_0804c340(35, 2, 2, 4); // Reverb
-    if (func_08000608() == NULL) {
-        func_08000584(&scene_results_ver_rank);
+    if (get_current_scene_trans_target() == NULL) {
+        set_next_scene(&scene_results_ver_rank);
     }
-    func_0801911c(0); // set D_03001330 to 0
+    score_results_set_grade_thresholds(NULL);
 }
 
 
@@ -478,7 +471,7 @@ void gameplay_set_miss_punishment_duration(u32 duration) {
 
 // [func_08017758] Set Inter-Engine Variable
 void gameplay_set_inter_engine_variable(u32 i, s32 val) {
-    if (i >= 64) {
+    if (i >= ARRAY_COUNT(gGameplay->interEngineVariableSpace)) {
         return;
     }
 
@@ -488,7 +481,7 @@ void gameplay_set_inter_engine_variable(u32 i, s32 val) {
 
 // [func_0801777c] Get Inter-Engine Variable
 s32 gameplay_get_inter_engine_variable(u32 i) {
-    if (i >= 64) {
+    if (i >= ARRAY_COUNT(gGameplay->interEngineVariableSpace)) {
         return 0;
     }
 
@@ -519,7 +512,7 @@ void gameplay_set_mercy_count(u32 total) {
 void gameplay_stop_scene(void) {
     struct Scene *tempScene;
 
-    func_0804e0c4(D_03005380, 0x10);
+    func_0804e0c4(D_03005380, 16);
     gameplay_reset_cues(); // Reset Cues
     if (gGameplay->gameEngine->closeFunc != NULL) {
         gGameplay->gameEngine->closeFunc();
@@ -529,15 +522,15 @@ void gameplay_stop_scene(void) {
     }
     if (gGameplay->skippingTutorial) {
         if (gGameplay->skipDestination != NULL) {
-            tempScene = func_08000608();
-            func_08000584(gGameplay->skipDestination);
-            func_080006b0(gGameplay->skipDestination, tempScene);
+            tempScene = get_current_scene_trans_target();
+            set_next_scene(gGameplay->skipDestination);
+            set_scene_trans_target(gGameplay->skipDestination, tempScene);
         }
         stop_all_soundplayers(); // Sound
     } else {
         if (gGameplay->goingForPerfect && !gGameplay->perfectFailed) {
-            func_08000584(&scene_perfect);
-            func_080006b0(&scene_perfect, func_080005e0(&scene_epilogue));
+            set_next_scene(&scene_perfect);
+            set_scene_trans_target(&scene_perfect, get_scene_trans_target(&scene_epilogue));
         }
     }
 
@@ -661,10 +654,10 @@ void gameplay_spawn_cue(s32 id) {
     newCue->runningTime = 0;
 
     if (gGameplay->nextCueDuration != 0) {
-        newCue->duration = beats_to_ticks(gGameplay->nextCueDuration);
+        newCue->duration = ticks_to_frames(gGameplay->nextCueDuration);
         gGameplay->nextCueDuration = 0;
     } else {
-        newCue->duration = beats_to_ticks(cueDef->duration);
+        newCue->duration = ticks_to_frames(cueDef->duration);
     }
 
     newCue->spawnSfx  = ((gGameplay->nextCueSpawnSfx != NULL)  ? gGameplay->nextCueSpawnSfx  : cueDef->spawnSfx);
@@ -759,7 +752,7 @@ void gameplay_update_cue(struct Cue *cue) {
     cue->runningTime++;
     gGameplay->ignoreThisCueResult = FALSE;
     if (cueDef->tempoDependent) {
-        missTimeOffset = beats_to_ticks(cueDef->missWindowLate);
+        missTimeOffset = ticks_to_frames(cueDef->missWindowLate);
     } else {
         missTimeOffset = cueDef->missWindowLate;
     }
@@ -819,10 +812,10 @@ s32 gameplay_calculate_input_timing(struct Cue *cue, u16 pressed, u16 released, 
     duration = cue->duration;
 
     if (cueDef->tempoDependent) { // Used by the Rhythm Test, Mr. Upbeat, and the unused drumming tutorials.
-        hitEarly = beats_to_ticks(cueDef->hitWindowEarly);
-        hitLate = beats_to_ticks(cueDef->hitWindowLate);
-        missEarly = beats_to_ticks(cueDef->missWindowEarly);
-        missLate = beats_to_ticks(cueDef->missWindowLate);
+        hitEarly = ticks_to_frames(cueDef->hitWindowEarly);
+        hitLate = ticks_to_frames(cueDef->hitWindowLate);
+        missEarly = ticks_to_frames(cueDef->missWindowEarly);
+        missLate = ticks_to_frames(cueDef->missWindowLate);
     } else {
         hitEarly = cueDef->hitWindowEarly;
         hitLate = cueDef->hitWindowLate;
@@ -951,7 +944,7 @@ void gameplay_update_inputs(u32 pressed, u32 released) {
         if (gGameplay->gameEngine->inputFunc != NULL) {
             gGameplay->gameEngine->inputFunc(unrelatedInputs & 0xffff, unrelatedInputs >> 16);
         }
-        gGameplay->missPunishmentTimer = beats_to_ticks(gGameplay->missPunishmentInterval);
+        gGameplay->missPunishmentTimer = ticks_to_frames(gGameplay->missPunishmentInterval);
     }
 }
 
@@ -1090,7 +1083,22 @@ void gameplay_get_previous_cue_info(struct Cue *cue, struct Cue **prev, void **i
 
 
 // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
-#include "asm/gameplay/asm_08018154.s"
+void gameplay_init_overlay(void) {
+    u32 memID;
+
+    memID = func_0804e0c0(D_03005380);
+    func_0804e0bc(D_03005380, 16);
+    gGameplay->pauseSprite = func_0804d160(D_03005380, anim_gameplay_pause_title, 0, 120, 80, 0, 1, 0, 0x8000);
+    gGameplay->pauseOptionsSprite = func_0804d160(D_03005380, anim_gameplay_pause_option1, 0, 120, 80, 0, 1, 0, 0x8000);
+    gGameplay->skipTutorialSprite = func_0804d160(D_03005380, anim_gameplay_skip_icon, 0, 120, 80, 0, 0, 0, 0x8000);
+    gGameplay->aButtonSprite = func_0804d160(D_03005380, anim_gameplay_text_button_black, 0, 64, 64, 0x64, 1, 0, 0x8000);
+    gGameplay->perfectSprite = func_0804d160(D_03005380, anim_gameplay_perfect_icon, 0, 230, 10, 0x5A, 1, 0x7f, 0x8000);
+    func_0804da68(D_03005380, gGameplay->pauseSprite, 1);
+    func_0804da68(D_03005380, gGameplay->pauseOptionsSprite, 1);
+    func_0804e158(D_03005380, 16, 960);
+    func_0804e170(D_03005380, 16, 14);
+    func_0804e0bc(D_03005380, memID);
+}
 
 
 // [func_080182ac] Set D_03001328
@@ -1157,7 +1165,7 @@ s32 gameplay_update_pause_menu(void) {
                 return PAUSE_MENU_SELECTION_PENDING;
             } else {
                 gGameplay->perfectFailed = TRUE;
-                func_08000584(D_03001328);
+                set_next_scene(D_03001328);
                 return PAUSE_MENU_SELECTION_QUIT;
             }
         }

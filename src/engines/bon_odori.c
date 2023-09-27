@@ -40,9 +40,9 @@ void bon_odori_init_donpans(void) {
     y = 120;
     z = 0x4800;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < BON_ODORI_DONPAN_AMOUNT; i++) {
         anim = bon_odori_get_donpan_anim(DONPAN_ANIM_BEAT, i);
-        gBonOdori->donpanSprites[i] = func_0804d160(D_03005380, anim, 0x7f, x, y, z, 1, 0x7f, 0);;
+        gBonOdori->donpanSprites[i] = func_0804d160(D_03005380, anim, 0x7f, x, y, z, 1, 0x7f, 0);
         gBonOdori->donpanAnimTimers[i] = 0;
         x += 53;
     }
@@ -63,7 +63,7 @@ struct Animation *bon_odori_get_donpan_anim(u32 animation, u32 donpan) {
 void bon_odori_set_donpan_anim(u32 animation, u32 donpan) {
     struct Animation *anim = bon_odori_get_donpan_anim(animation, donpan);
     func_0804d8f8(D_03005380, gBonOdori->donpanSprites[donpan], anim, 0, 1, 0x7f, 0);
-    gBonOdori->donpanAnimTimers[donpan] = beats_to_ticks(bon_odori_anim_durations[animation]);
+    gBonOdori->donpanAnimTimers[donpan] = ticks_to_frames(bon_odori_anim_durations[animation]);
 }
 
 
@@ -71,7 +71,7 @@ void bon_odori_set_donpan_anim(u32 animation, u32 donpan) {
 void bon_odori_set_cpu_donpan_anim(u32 anim) {
     u32 i;
 
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < (BON_ODORI_DONPAN_AMOUNT - 1); i++) {
         bon_odori_set_donpan_anim(anim, i);
     }
 }
@@ -94,8 +94,8 @@ void bon_odori_set_all_donpan_anim(u32 anim) {
 void bon_odori_set_cpu_donpan_anim_timer(u32 duration) {
     u32 i;
 
-    for (i = 0; i < 3; i++) {
-        gBonOdori->donpanAnimTimers[i] = beats_to_ticks(duration);
+    for (i = 0; i < (BON_ODORI_DONPAN_AMOUNT - 1); i++) {
+        gBonOdori->donpanAnimTimers[i] = ticks_to_frames(duration);
     }
 }
 
@@ -104,7 +104,7 @@ void bon_odori_set_cpu_donpan_anim_timer(u32 duration) {
 void bon_odori_update_donpans(void) {
     u32 i;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < BON_ODORI_DONPAN_AMOUNT; i++) {
         if (gBonOdori->donpanAnimTimers[i] != 0) {
             gBonOdori->donpanAnimTimers[i]--;
         }
@@ -151,12 +151,12 @@ void bon_odori_engine_start(u32 ver) {
     scene_set_bg_layer_display(BG_LAYER_0, TRUE, 0, -64, 2, 24, 0xC000);
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
     scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, 1);
-    gBonOdori->unk4 = func_0800c660(0x340, 2);
+    gBonOdori->unk4 = scene_create_obj_font_printer(0x340, 2);
     D_03004b10.WINOUT = (WINOUT_OUT_BG1 | WINOUT_OUT_BG2 | WINOUT_OUT_BG3 | WINOUT_OUT_SPRITES | WINOUT_SPRW_BG0 | WINOUT_SPRW_SPRITES | WINOUT_SPRW_BLENDS);
     D_03004b10.BLDMOD = (BLDMOD_BG0_SRC | BLDMOD_BLEND_MODE(BLEND_MODE_ALPHA) | BLDMOD_SPRITES_TGT);
     D_03004b10.COLEV = (COLEV_SRC_PIXEL(0x10) | COLEV_TGT_PIXEL(0x10));
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < BON_ODORI_LYRIC_AMOUNT; i++) {
         gBonOdori->lyrics[i].textSprite = -1;
     }
 
@@ -168,8 +168,8 @@ void bon_odori_engine_start(u32 ver) {
     bon_odori_init_donpans();
     gBonOdori->srcObjPal = bon_odori_obj_palettes[gBonOdori->version];
     gBonOdori->srcBgPal = bon_odori_bg_palettes[gBonOdori->version];
-    func_08001ec4(0x0C, 7, gBonOdori->srcObjPal, 0, gBonOdori->darkObjPalBuf[0]);
-    func_08001ec4(0x14, 7, gBonOdori->srcBgPal, 0, gBonOdori->darkBgPalBuf[0]);
+    func_08001ec4(12, 7, gBonOdori->srcObjPal, 0, gBonOdori->darkObjPalBuf[0]);
+    func_08001ec4(20, 7, gBonOdori->srcBgPal, 0, gBonOdori->darkBgPalBuf[0]);
     gameplay_set_input_buttons(A_BUTTON, 0);
     gBonOdori->playerClapTimer = 0;
 }
@@ -297,22 +297,22 @@ void bon_odori_lyrics_start_highlight(u32 duration) {
     y -= gBonOdori->currentLyric * 24;
     D_03004b10.BG_OFS[BG_LAYER_0].y = y;
 
-    task = func_0800c4b0(1, beats_to_ticks(duration), &D_03004b10.BG_OFS[BG_LAYER_0].x, initX, targetX);
+    task = scene_start_integer_interp(1, ticks_to_frames(duration), &D_03004b10.BG_OFS[BG_LAYER_0].x, initX, targetX);
     run_func_after_task(task, bon_odori_lyrics_finish_highlight, gBonOdori->currentLyric);
 }
 
 
 // [func_08020d20] ENGINE Func_06 - Lighten Screen (Gradual)
 void bon_odori_screen_lighten(u32 duration) {
-    func_08001fe0(get_current_mem_id(), beats_to_ticks(duration), 7, gBonOdori->darkBgPalBuf[0], gBonOdori->srcBgPal, BG_PALETTE_BUFFER(0));
-    func_08001fe0(get_current_mem_id(), beats_to_ticks(duration), 7, gBonOdori->darkObjPalBuf[0], gBonOdori->srcObjPal, OBJ_PALETTE_BUFFER(0));
+    func_08001fe0(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->darkBgPalBuf[0], gBonOdori->srcBgPal, BG_PALETTE_BUFFER(0));
+    func_08001fe0(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->darkObjPalBuf[0], gBonOdori->srcObjPal, OBJ_PALETTE_BUFFER(0));
 }
 
 
 // [func_08020da0] ENGINE Func_07 - Darken Screen (Gradual)
 void bon_odori_screen_darken(u32 duration) {
-    func_08001fe0(get_current_mem_id(), beats_to_ticks(duration), 7, gBonOdori->srcBgPal, gBonOdori->darkBgPalBuf[0], BG_PALETTE_BUFFER(0));
-    func_08001fe0(get_current_mem_id(), beats_to_ticks(duration), 7, gBonOdori->srcObjPal, gBonOdori->darkObjPalBuf[0], OBJ_PALETTE_BUFFER(0));
+    func_08001fe0(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->srcBgPal, gBonOdori->darkBgPalBuf[0], BG_PALETTE_BUFFER(0));
+    func_08001fe0(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->srcObjPal, gBonOdori->darkObjPalBuf[0], OBJ_PALETTE_BUFFER(0));
 }
 
 
@@ -390,7 +390,7 @@ void bon_odori_cue_spawn(struct Cue *cue, struct BonOdoriCue *info, u32 clapAnim
 
 // [func_08020fb0] CUE - Update
 u32 bon_odori_cue_update(struct Cue *cue, struct BonOdoriCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x30)) {
+    if (runningTime > ticks_to_frames(0x30)) {
         return TRUE;
     } else {
         return FALSE;
@@ -428,7 +428,7 @@ void bon_odori_cue_miss(struct Cue *cue, struct BonOdoriCue *info) {
 
 // [func_08021034] MAIN - Input Event
 void bon_odori_input_event(u32 pressed, u32 released) {
-    gBonOdori->playerClapTimer = beats_to_ticks(6);
+    gBonOdori->playerClapTimer = ticks_to_frames(6);
     gameplay_set_input_buttons(0, 0);
     bon_odori_set_player_anim(gBonOdori->currentClapAnim);
     gBonOdori->mistimedClaps++;
@@ -441,10 +441,10 @@ void bon_odori_common_beat_animation(u32 arg) {
     struct Animation *anim;
     u32 i;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < BON_ODORI_DONPAN_AMOUNT; i++) {
         if (gBonOdori->donpanAnimTimers[i] == 0) {
             anim = bon_odori_get_donpan_anim(DONPAN_ANIM_BEAT, i);
-            if ((i < 3) && (gBonOdori->donpanEmoteTimer != 0)) {
+            if ((i < (BON_ODORI_DONPAN_AMOUNT - 1)) && (gBonOdori->donpanEmoteTimer != 0)) {
                 anim = bon_odori_get_donpan_anim(gBonOdori->donpanEmoteAnim, i);
             }
             func_0804d8f8(D_03005380, gBonOdori->donpanSprites[i], anim, 0, 1, 0x7f, 0);
@@ -454,7 +454,7 @@ void bon_odori_common_beat_animation(u32 arg) {
     if (gBonOdori->yaguraFrownTimer == 0) {
         if (gBonOdori->yaguraNoticedMistake) {
             func_0804d8f8(D_03005380, gBonOdori->yaguraSprite, bon_odori_get_anim(BON_ODORI_ANIM_YAGURA_FROWN), 0, 1, 0x7f, 0);
-            gBonOdori->yaguraFrownTimer = beats_to_ticks(0x24);
+            gBonOdori->yaguraFrownTimer = ticks_to_frames(0x24);
             gBonOdori->yaguraNoticedMistake = FALSE;
         } else {
             func_0804d8f8(D_03005380, gBonOdori->yaguraSprite, bon_odori_get_anim(BON_ODORI_ANIM_YAGURA_BEAT), 0, 1, 0x7f, 0);

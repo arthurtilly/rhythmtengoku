@@ -59,7 +59,7 @@ struct BeatscriptThread {
     u8 startDelay:2;
     u8 unk0_b7:1;
     const struct SubScene *subScene;
-    const struct Beatscript *current;
+    const struct Beatscript *currentCmd;
     s24_8 timeUntilNext; // Time until next instruction (in Q24.8 Beats)
     const struct Beatscript *jumpStack[8];
     u8 unk30[0x20];
@@ -71,52 +71,57 @@ struct BeatscriptThread {
 };
 
 // Beatscript Handler
-// Null = "Data Not Known to be Used YET"
-
 extern struct BeatscriptScene {
-    u32 memID:4;
+    u32 mode:4;
     u32 bypassLoops:1;
     u32 exitLoopNextUpdate:1;
     u32 unk0_b6:1;
     u32 unk0_b7:1;
     u32 paused:1;
     u32 currentThread:3;
-    u32 unk1_b4:3;
-    u32 unk1_b7:1;
-    u32 unk2_b0:1;
-    u32 unk2_b1:1;
+    u32 unk1_b4:1;
+    u32 unk1_b5:1;
+    u32 unk1_b6:1;
+    u32 interpolatingTempo:1;
+    u32 interpolatingMusicPitch:1;
+    u32 musicInterpolationEnabled:1;
     struct SoundPlayer *musicPlayer; // [D_030053c4] Music Player
     u16 musicBaseBPM;
     u16 scriptBaseBPM;
-    u16 scriptBPM; // [D_030053cc] Tempo after speed multiplication.
-    u16 scriptSpeed; // [Q8.8] Speed Multiplier
-    u16 unk10; // [Q8.8] (currentTempo / 140)
-    s32 deltaTime; // [D_030053d4] Script Ticks per Game Update ([Q8.8] (currentTempo / 150))
-    u32 runningTime;
+    u16 scriptBPM; // [D_030053cc] Tempo after Speed Multiplication
+    u8_8 scriptSpeed; // [Q8.8] Speed Multiplier
+    u8_8 spriteAnimSpeed; // [Q8.8] (currentTempo / 140)
+    s24_8 deltaTime; // [D_030053d4] Script Ticks per Game Update ([Q8.8] (currentTempo / 150))
+    s24_8 runningTime;
     u8  unk1C;
-    s16 musicPitchSrc1;
-    s16 musicPitchSrc2;
-    s16 musicPitch;
+    s8_8 musicPitchSrc1;
+    s8_8 musicPitchSrc2;
+    s8_8 musicPitch;
     u32 globalVariable; // [D_030053c0 + 0x24] Global (Main Scene) Variable
     struct BeatscriptThread threads[2];
-    u32 localVariables[12]; // [D_030053c0 + 0x160] Local (Sub-Scene) Variables
+    u32 localVariables[2]; // [D_030053c0 + 0x160] Local (Sub-Scene) Variables
+    s16 unk168;
+    u16 unk16A;
+    u16 unk16C;
+    u16 unk16E;
+    u16 unk170;
+    s16 interpTempoInitial;
+    s16 interpTempoTarget;
+    u24_8 interpTempoDuration;
+    u24_8 interpTempoRunningTime;
+    u16 interpTempoFramesUntilUpdate;
+    s16 interpPitchInitial;
+    s16 interpPitchTarget;
+    u24_8 interpPitchDuration;
+    u24_8 interpPitchRunningTime;
     u16 musicVolume; // [D_03005550] Beatscript: Music Volume
     u16 musicTrkVolume; // [D_03005552] Beatscript: Music Channel Selection Volume
     u16 musicTrkTargets; // [D_03005554] Beatscript: Music Channel Selection
     s8  musicKey; // [D_03005556] Beatscript: Music Key
-    u32 null198;
-    u32 null19C;
-    u32 null1A0;
-    u32 null1A4;
-    u32 null1A8;
-    u32 null1AC;
-    u32 null1B0;
-    u32 null1B4;
-    u32 null1B8;
-    u32 null1BC;
-    void (*unk1C0)(u32);
-    u32 unk1C4;
+    const char *strings[10]; // [D_030053c0 + 0x198]
+    void (*callbackFunction)(s32);
+    s32 callbackArgument;
 } D_030053c0;
 
-extern u32 *D_03005588; // Local Scene Variable
-extern s16 *D_0300558c; // Global Scene Sprite Pool
+extern u32 *D_03005588; // Current Scene Variable
+extern s16 *D_0300558c; // Current Scene Sprite Pool

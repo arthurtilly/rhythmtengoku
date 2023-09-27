@@ -1,0 +1,39 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Script
+script script_scene_asset_test
+    set_tempo 120
+    pause_scene
+
+    run func_08007324 TRUE
+    play_music s_ending_bgm_seqData
+    scene_set_int INT8, 8, TRUE
+    pause_scene
+
+    scene_set_int INT8, 8, FALSE
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 12
+    stop
+
+
+@ Local Scene
+struct sub_scene_asset_test
+    /* Start  */ .word asset_test_scene_start,  0
+    /* Paused */ .word asset_test_scene_paused, 0
+    /* Active */ .word asset_test_scene_update, 0
+    /* Stop   */ .word asset_test_scene_stop,   0
+    /* Script */ .word script_scene_asset_test
+endstruct
+
+@ RIQ Asset Test Scene
+struct scene_asset_test
+    /* Start  */ .word func_0801d86c, sub_scene_asset_test
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0xC
+endstruct
+
+.end

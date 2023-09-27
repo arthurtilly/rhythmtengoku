@@ -3,33 +3,56 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
-struct DataRoomSceneData {
-    /* add fields here */
+
+// VALUES
+enum DataRoomEventsEnum {
+    /* 00 */ DATAROOM_EV_NONE,
+    /* 01 */ DATAROOM_EV_CONFIRM,
+    /* 02 */ DATAROOM_EV_SCROLL_UP,
+    /* 03 */ DATAROOM_EV_SCROLL_DOWN,
+    /* 04 */ DATAROOM_EV_CANCEL
+};
+
+enum DataRoomUserStatesEnum {
+    /* 00 */ DATAROOM_USER_STARING,
+    /* 01 */ DATAROOM_USER_SCROLLING,
+    /* 02 */ DATAROOM_USER_ASLEEP
 };
 
 
-// Scene Macros/Enums:
+// MACROS
+#define gDataRoom ((struct DataRoomSceneData *)gCurrentSceneData)
 
 
-// Scene Data:
+// TYPES
+struct DataRoomSceneData {
+    u32 inputsEnabled;
+    struct Listbox *listbox;
+    s16 lines[8];
+    s16 userSprite;
+    u16 userAnimTimer;
+    u8 userState;
+};
+
+
+// DATA
 extern struct GraphicsTable data_room_gfx_table[];
 extern struct CompressedGraphics *data_room_buffered_textures[];
 
 
-// Functions:
-// extern ? func_08011ec0(?); // Initialise Static Variables
-// extern ? func_08011ed0(?); // Graphics Init. 3
-// extern ? func_08011efc(?); // Graphics Init. 2
-// extern ? func_08011f2c(?); // Graphics Init. 1
-// extern ? func_08011f68(?); // ?
-// extern ? func_08011fa8(?); // ?
-// extern ? func_08012084(?); // ?
-// extern ? func_08012090(?); // ?
-// extern ? func_080120e4(?); // Scene Start
-// extern ? func_08012200(?); // ?
-// extern ? func_08012214(?); // Scene Update (Paused)
-// extern ? func_08012218(?); // ?
-// extern ? func_080122a8(?); // Scene Update (Active)
-// extern ? func_080123e0(?); // ?
-// extern ? func_080123fc(?); // Scene Stop
+// FUNCTIONS
+extern void dataroom_scene_init_memory(void);
+extern void dataroom_scene_init_gfx3(void);
+extern void dataroom_scene_init_gfx2(void);
+extern void dataroom_scene_init_gfx1(void);
+extern const char *dataroom_listbox_get_item_name(u32 item);
+extern void dataroom_listbox_update(void);
+extern void dataroom_listbox_on_finish(void);
+extern void dataroom_listbox_on_scroll(void);
+extern void dataroom_scene_start(void *sVar, s32 dArg);
+extern void dataroom_scene_set_listbox_sel(u32 item, u32 line);
+extern void dataroom_scene_paused(void *sVar, s32 dArg);
+extern void dataroom_scene_update_user(void);
+extern void dataroom_scene_update(void *sVar, s32 dArg);
+extern u32  dataroom_scene_inputs_enabled(void);
+extern void dataroom_scene_stop(void *sVar, s32 dArg);
