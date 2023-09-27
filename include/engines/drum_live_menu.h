@@ -5,6 +5,14 @@
 
 #include "games/drum_live/graphics/drum_live_menu_graphics.h"
 
+// Engine Macros/Enums:
+enum DrumLiveMenuPostersEnum {
+    POSTER_DRUM_GIRLS_LIVE,
+    POSTER_DRUM_BOYS_LIVE,
+    POSTER_DRUM_SAMURAI_BAND_LIVE
+};
+
+
 // Engine Types:
 struct DrumLiveMenuEngineData {
     u8 pad[0x1c];
@@ -12,14 +20,6 @@ struct DrumLiveMenuEngineData {
 
 struct DrumLiveMenuCue {
     /* add fields here */
-};
-
-
-// Engine Macros/Enums:
-enum DrumLiveMenuPostersEnum {
-    POSTER_DRUM_GIRLS_LIVE,
-    POSTER_DRUM_BOYS_LIVE,
-    POSTER_DRUM_SAMURAI_BAND_LIVE
 };
 
 

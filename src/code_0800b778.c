@@ -133,7 +133,7 @@ void start_beatscript_scene(u32 mode) {
     D_030053c0.musicTrkTargets = 0;
     D_030053c0.musicKey = 0;
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_030053c0.threads); i++) {
         D_030053c0.threads[i].active = FALSE;
     }
 
@@ -156,12 +156,12 @@ void set_beatscript_subscenes(const struct SubScene **subScenes) {
     D_030053c0.exitLoopNextUpdate = FALSE;
     D_030053c0.runningTime = 0;
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_030053c0.threads); i++) {
         D_030053c0.threads[i].active = FALSE;
         D_030053c0.threads[i].unk0_b7 = FALSE;
     }
 
-    for (i = 0; (i < 2) && (subScenes[i] != NULL); i++) {
+    for (i = 0; (i < ARRAY_COUNT(D_030053c0.threads)) && (subScenes[i] != NULL); i++) {
         D_030053c0.currentThread = i;
         set_current_mem_id(D_030053c0.currentThread + 1);
         D_030053c0.threads[i].active = TRUE;
@@ -191,7 +191,7 @@ void update_paused_beatscript_scene(void) {
     const struct SubScene *subScene;
     u32 i;
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_030053c0.threads); i++) {
         D_030053c0.currentThread = i;
         set_current_mem_id(D_030053c0.currentThread + 1);
 
@@ -230,7 +230,7 @@ void update_active_beatscript_scene(void) {
         }
     }
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_030053c0.threads); i++) {
         D_030053c0.currentThread = i;
         set_current_mem_id(D_030053c0.currentThread + 1);
         thread = &D_030053c0.threads[i];
@@ -287,7 +287,7 @@ void update_active_beatscript_scene(void) {
     }
 
     if (!D_030053c0.paused) {
-        for (i = 0; i < 2; i++) {
+        for (i = 0; i < ARRAY_COUNT(D_030053c0.threads); i++) {
             D_030053c0.threads[i].timeUntilNext -= D_030053c0.deltaTime;
         }
 
@@ -300,7 +300,7 @@ void update_active_beatscript_scene(void) {
 s32 beatscript_scene_is_inactive(void) {
     u32 i;
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_030053c0.threads); i++) {
         if (D_030053c0.threads[i].active) {
             return FALSE;
         }
@@ -387,7 +387,7 @@ void stop_beatscript_scene(void) {
     const struct SubScene *subScene;
     u32 i, memID;
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_030053c0.threads); i++) {
         D_030053c0.currentThread = i;
         set_current_mem_id(D_030053c0.currentThread + 1);
         thread = &D_030053c0.threads[i];
@@ -1315,16 +1315,11 @@ void func_0800dfc0_stub(void) {
 }
 
 
-// a very broken (and unused) function
+// Get current thread's task ID
 s32 func_0800dfc4(void) {
-    void *r0;
+    struct BeatscriptThread *thread = &D_030053c0.threads[get_current_mem_id()] - 1;
 
-    r0 = (s32 *)((get_current_mem_id() * 0x9c));
-    r0 += ((s32)&D_030053c0 - 0x74); // ((s32)&D_03004b10 + 0x83c)
-    r0 += 0x98;
-    return *((s32 *)r0);
-
-    // return *((s32 *)&D_030053c0.threads[get_current_mem_id()]-1);
+    return thread->currentTaskID;
 }
 
 

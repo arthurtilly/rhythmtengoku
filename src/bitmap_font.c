@@ -670,7 +670,7 @@ struct WobblyPrintedTextAnim *bmp_font_obj_print_wobbly(struct BitmapFontOBJ *te
     newAnim = mem_heap_alloc_id(textObj->memID, size);
     newCel = newAnim->oam;
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < (ARRAY_COUNT(newAnim->frames) - 1); i++) {
         (newAnim->frames + i)->cel = newCel;
         (newAnim->frames + i)->duration = frameDuration;
         newCel[0] = count;

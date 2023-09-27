@@ -24,11 +24,11 @@ void sick_beats_init_particles(void) {
         return;
     }
     gSickBeats->particleSprites[0] = func_0804d160(D_03005380, anim_sick_beats_endless_particle, 0, 64, 64, 0x800, 0, 0, 0x8000);
-    for (i = 1; i < ARRAY_COUNT(gSickBeats->particleSprites); i++) { // Copy particles
+    for (i = 1; i < SICK_BEATS_PARTICLE_AMOUNT; i++) { // Copy particles
         gSickBeats->particleSprites[i] = func_0804d3cc(D_03005380, gSickBeats->particleSprites[0]);
     }
 
-    for (i = 0; i < ARRAY_COUNT(gSickBeats->particleCounters); i++) {
+    for (i = 0; i < SICK_BEATS_PARTICLE_AMOUNT; i++) {
         gSickBeats->particleCounters[i] = 0;
     }
     gSickBeats->particleCurrent = 0;
@@ -43,7 +43,7 @@ void sick_beats_update_particles(void) {
     if ((gSickBeats->version != ENGINE_VER_SICK_BEATS_ENDLESS) || gSickBeats->microbeWasHurt) {
         return;
     }
-    for (i = 0; i < ARRAY_COUNT(gSickBeats->particleCounters); i++) {
+    for (i = 0; i < SICK_BEATS_PARTICLE_AMOUNT; i++) {
         if (gSickBeats->particleCounters[i]) {
             gSickBeats->particleCounters[i] -= 1;
             if (!gSickBeats->particleCounters[i]) {
@@ -125,7 +125,7 @@ void sick_beats_draw_score(u32 type) {
     struct SickBeatsScoreCounter *scoreCounters = &gSickBeats->scoreCounters[type];
     u32 value = scoreCounters->value;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < ARRAY_COUNT(scoreCounters->digitSprite); i++) {
         func_0804cebc(D_03005380, scoreCounters->digitSprite[i], value % 10);
         value /= 10;
     }
@@ -159,7 +159,9 @@ void sick_beats_init_virus(void) {
     u32 i;
     struct SickBeatsVirus *virus = &gSickBeats->virus;
 
-    for (i = 0; i < ARRAY_COUNT(virus->exists); i++) virus->exists[i] = FALSE;
+    for (i = 0; i < ARRAY_COUNT(virus->exists); i++) {
+        virus->exists[i] = FALSE;
+    }
     virus->state = SICK_BEATS_VIRUS_STATE_INVALID;
     virus->current = 0;
     virus->spawnedCounter = 0;
@@ -168,7 +170,9 @@ void sick_beats_init_virus(void) {
     virus->hitsRequired = 1;
     virus->virusPalette = 0;
 
-    for (i = 0; i < ARRAY_COUNT(virus->virusData); i++) virus->virusData[i].path = NULL;
+    for (i = 0; i < SICK_BEATS_VIRUS_AMOUNT; i++) {
+        virus->virusData[i].path = NULL;
+    }
 }
 
 // Process Virus Data
@@ -216,7 +220,7 @@ void sick_beats_update_virus(void) {
     i = 0;
     virusData = engineData->virus.virusData;
 
-    for (i; i < ARRAY_COUNT(gSickBeats->virus.virusData); i++) {
+    for (i; i < SICK_BEATS_VIRUS_AMOUNT; i++) {
         sick_beats_process_virus_data(virusData);
         virusData++;
     }
@@ -235,19 +239,12 @@ void sick_beats_spawn_virus(struct SickBeatsPath *path) {
     struct SickBeatsVirusData *virusData;
     u32 i = 0;
     
-    virusData = gSickBeats->virus.virusData;
-    if (virusData->path) {
-        struct SickBeatsVirusData *virusDatatemp = virus->virusData;
-        
-        do {
-            virusDatatemp++;
-            if (++i > ARRAY_COUNT(gSickBeats->virus.virusData)-1) {
-                return;
-            }
-            virusData = virusDatatemp;
-        } while (virusData->path);
+    for (virusData = &virus->virusData[0]; virusData->path != NULL; virusData = &virus->virusData[i]) {
+        if (++i > (SICK_BEATS_VIRUS_AMOUNT - 1)) {
+            return;
+        }
     }
-    if (i > ARRAY_COUNT(gSickBeats->virus.virusData)-1) {
+    if (i > (SICK_BEATS_VIRUS_AMOUNT - 1)) {
         return;
     }
     virusData->path = path;
@@ -544,7 +541,7 @@ struct SickBeatsVirusData *sick_beats_get_virus_data(u32 id) {
     struct SickBeatsVirusData *virusData = gSickBeats->virus.virusData;
     struct SickBeatsVirusData *virusData1 = virus->virusData;
 
-    for (i; (i < ARRAY_COUNT(gSickBeats->virus.virusData)); virusData++, virusData1++, i++) {
+    for (i; (i < SICK_BEATS_VIRUS_AMOUNT); virusData++, virusData1++, i++) {
         if (virusData->path && virusData->virusID == id) {
             return virusData1;
         }

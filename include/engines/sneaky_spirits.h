@@ -5,14 +5,25 @@
 
 #include "games/sneaky_spirits/graphics/sneaky_spirits_graphics.h"
 
+// Engine Macros/Enums:
+#define SNEAKY_SPIRITS_RAIN_DROP_AMOUNT 30
+#define SNEAKY_SPIRITS_RAIN_SPLASH_AMOUNT 20
+
+enum SneakySpiritsVersionsEnum {
+    SNEAKY_SPIRITS_VERSION_1,
+    SNEAKY_SPIRITS_VERSION_REMIX,
+    SNEAKY_SPIRITS_VERSION_2
+};
+
+
 // Engine Types:
 struct SneakySpiritsEngineData {
     struct BitmapFontOBJ *unk0;  // Pointer: Font? (Related to Tutorial Text)
     u8  version;        // Value:   Version
     u8  rainSlow;       // Flag:    Slow-Motion Rain
-    s16 rainDrops[30];      // Sprite:  Raindrops
+    s16 rainDrops[SNEAKY_SPIRITS_RAIN_DROP_AMOUNT];      // Sprite: Raindrops
     u16 rainDropNext;       // Counter: Next Raindrop to Update
-    s16 rainSplashes[20];   // Sprite:  Rain Splashes
+    s16 rainSplashes[SNEAKY_SPIRITS_RAIN_SPLASH_AMOUNT]; // Sprite: Rain Splashes
     u16 rainSplashNext;     // Counter: Next Rain Splash to Update
     s16 tree;           // Sprite:  Tree
     s16 bow;            // Sprite:  Bow
@@ -43,14 +54,6 @@ struct SneakySpiritsCue {
     u32 unused20;
     u16 unused24;
     u8 disableTaunt;
-};
-
-
-// Engine Macros/Enums:
-enum SneakySpiritsVersionsEnum {
-    SNEAKY_SPIRITS_VERSION_1,
-    SNEAKY_SPIRITS_VERSION_REMIX,
-    SNEAKY_SPIRITS_VERSION_2
 };
 
 

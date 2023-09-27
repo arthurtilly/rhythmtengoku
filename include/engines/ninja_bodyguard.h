@@ -5,22 +5,6 @@
 
 #include "games/ninja_bodyguard/graphics/ninja_bodyguard_graphics.h"
 
-// Engine Types:
-struct NinjaBodyguardEngineData {
-    u8 pad[0x300];
-};
-
-struct NinjaBodyguardCue {
-    /* add fields here */
-};
-
-struct SpriteVector3 {
-    s16 x;
-    s16 y;
-    s16 z;
-};
-
-
 // Engine Macros/Enums:
 enum NinjaBodyguardVersionsEnum {
     ENGINE_VER_NINJA_BODYGUARD,
@@ -51,6 +35,22 @@ enum NinjaBodyguardAnimationsEnum {
     NINJA_ANIM_RAISE_SWORD,
     NINJA_ANIM_BUTTON_INDICATOR,
     NINJA_ANIM_CUTSCENE_ARROW
+};
+
+
+// Engine Types:
+struct NinjaBodyguardEngineData {
+    u8 pad[0x300];
+};
+
+struct NinjaBodyguardCue {
+    /* add fields here */
+};
+
+struct SpriteVector3 {
+    s16 x;
+    s16 y;
+    s16 z;
 };
 
 

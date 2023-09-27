@@ -5,22 +5,6 @@
 
 #include "games/marching_orders/graphics/marching_orders_graphics.h"
 
-// Engine Types:
-struct MarchingOrdersEngineData {
-    u8 pad[0x48];
-};
-
-struct MarchingOrdersCue {
-    /* add fields here */
-};
-
-struct MarchingSfxData {
-    struct SequenceData *sound;
-    u16 volume;
-    s16 pitch;
-};
-
-
 // Engine Macros/Enums:
 enum MarchingOrdersVersionsEnum {
     MARCHING_ORDERS_VER_0,
@@ -60,6 +44,22 @@ enum MarchingOrdersSoundEffectsEnum {
     MARCHING_SFX_CMD_LEFT_FACE,
     MARCHING_SFX_CMD_LEFT_FACE_F,
     MARCHING_SFX_CMD_TURN_LEFT
+};
+
+
+// Engine Types:
+struct MarchingOrdersEngineData {
+    u8 pad[0x48];
+};
+
+struct MarchingOrdersCue {
+    /* add fields here */
+};
+
+struct MarchingSfxData {
+    struct SequenceData *sound;
+    u16 volume;
+    s16 pitch;
 };
 
 

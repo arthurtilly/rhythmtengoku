@@ -89,7 +89,7 @@ void results_init_cue_tracking(void) {
 
     score_handler->markingData = NULL;
 
-    for (i = 0; i < 16; i++) {
+    for (i = 0; i < ARRAY_COUNT(score_handler->cueInputTrackers); i++) {
         results_init_tracker(&score_handler->cueInputTrackers[i]);
     }
 }
@@ -104,7 +104,7 @@ void results_init_score_handler(void) {
     score_handler->prevInputLevel = -1;
     score_handler->totalIrrelevantInputs = 0;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < ARRAY_COUNT(score_handler->anyInputTrackers); i++) {
         results_init_tracker(&score_handler->anyInputTrackers[i]);
     }
 

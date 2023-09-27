@@ -5,6 +5,25 @@
 
 #include "games/rhythm_tweezers/graphics/rhythm_tweezers_graphics.h"
 
+// Engine Macros/Enums:
+#define RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT 5
+
+enum RhythmTweezersHeldHairsEnum {
+    TWEEZERS_HELD_HAIR_NONE,
+    TWEEZERS_HELD_HAIR_FULL,
+    TWEEZERS_HELD_HAIR_BARELY
+};
+
+enum RhythmTweezersVegetableTypesEnum {
+    VEGETABLE_TYPE_ONION,
+    VEGETABLE_TYPE_TURNIP,
+    VEGETABLE_TYPE_POTATO
+};
+
+#define RT_VEGETABLE_BG_MAP_L *(u32 *)(VRAMBase + 0xF000) // VRAM BG Map for vegetable textures (left).
+#define RT_VEGETABLE_BG_MAP_R *(u32 *)(VRAMBase + 0xF800) // VRAM BG Map for vegetable textures (right).
+
+
 // Engine Types:
 struct RhythmTweezersEngineData {
     u8 version; // Value:   Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
@@ -26,7 +45,7 @@ struct RhythmTweezersEngineData {
         u32 fallSpeed;      // Value: Vertical Velocity
         s16 rotation;       // Value:   Rotation
         u16 rotationSpeed;  // Value:   Randomised Rotation Speed ( agb_random(0x1f) - 0xf )
-    } fallingHairs[5];
+    } fallingHairs[RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT];
     struct RhythmTweezersVegetable {
         s16 spriteCurrent;  // Sprite:  Current Vegetable Face
         s16 spriteNext;     // Sprite:  Upcoming Vegetable Face
@@ -65,23 +84,6 @@ struct RhythmTweezersCue {
     u16 pullTime; // Current pulling time.
     u16 pullTarget; // Target pulling time.
 };
-
-
-// Engine Macros/Enums:
-enum RhythmTweezersHeldHairsEnum {
-    TWEEZERS_HELD_HAIR_NONE,
-    TWEEZERS_HELD_HAIR_FULL,
-    TWEEZERS_HELD_HAIR_BARELY
-};
-
-enum RhythmTweezersVegetableTypesEnum {
-    VEGETABLE_TYPE_ONION,
-    VEGETABLE_TYPE_TURNIP,
-    VEGETABLE_TYPE_POTATO
-};
-
-#define RT_VEGETABLE_BG_MAP_L *(u32 *)(VRAMBase + 0xF000) // VRAM BG Map for vegetable textures (left).
-#define RT_VEGETABLE_BG_MAP_R *(u32 *)(VRAMBase + 0xF800) // VRAM BG Map for vegetable textures (right).
 
 
 // Engine Definition Data:

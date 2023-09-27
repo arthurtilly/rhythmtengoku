@@ -5,6 +5,28 @@
 
 #include "games/night_walk/graphics/night_walk_graphics.h"
 
+// Engine Macros/Enums:
+#define NIGHT_WALK_STAR_AMOUNT 32
+
+enum NightWalkVersionsEnum {
+    NIGHT_WALK_VER_0,
+    NIGHT_WALK_VER_1 // Unused
+};
+
+enum NightWalkCuesEnum {
+    NIGHT_WALK_CUE_HEART,
+    NIGHT_WALK_CUE_LOLLIPOP,
+    NIGHT_WALK_CUE_UMBRELLA,
+    NIGHT_WALK_CUE_HEART_2,
+    NIGHT_WALK_CUE_STAR_WAND
+};
+
+#define DRUMTECH_NOTE_FUNC 0xFFFF
+#define DRUMTECH_NOTE_REST 0xFFFE
+#define DRUMTECH_NOTE_END_SEQ 0xFF
+#define END_OF_DRUM_TECH_SEQUENCE { DRUMTECH_NOTE_END_SEQ, 0, 0, 0 }
+
+
 // Engine Types:
 struct DrumTechInstrument {
     s8 soundPlayerID;
@@ -92,7 +114,7 @@ struct NightWalkEngineData {
         u16 size;
         s32 x;
         s32 y;
-    } stars[32];
+    } stars[NIGHT_WALK_STAR_AMOUNT];
     s16 starsVOffset;
     u32 nextStar;
     u32 currentStarSize;
@@ -119,26 +141,6 @@ struct NightWalkCue {
     u8 hasFish;
     s16 fishSprite;
 };
-
-
-// Engine Macros/Enums:
-enum NightWalkVersionsEnum {
-    NIGHT_WALK_VER_0,
-    NIGHT_WALK_VER_1 // Unused
-};
-
-enum NightWalkCuesEnum {
-    NIGHT_WALK_CUE_HEART,
-    NIGHT_WALK_CUE_LOLLIPOP,
-    NIGHT_WALK_CUE_UMBRELLA,
-    NIGHT_WALK_CUE_HEART_2,
-    NIGHT_WALK_CUE_STAR_WAND
-};
-
-#define DRUMTECH_NOTE_FUNC 0xFFFF
-#define DRUMTECH_NOTE_REST 0xFFFE
-#define DRUMTECH_NOTE_END_SEQ 0xFF
-#define END_OF_DRUM_TECH_SEQUENCE { DRUMTECH_NOTE_END_SEQ, 0, 0, 0 }
 
 
 // Engine Definition Data:

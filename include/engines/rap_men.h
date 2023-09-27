@@ -5,24 +5,6 @@
 
 #include "games/rap_men/graphics/rap_men_graphics.h"
 
-// Engine Types:
-struct RapMenEngineData {
-    u8 version;
-    struct BitmapFontOBJ *unk4;
-    s16 rapperSprite;
-    s16 playerSprite;
-    s16 textSprite;
-    u16 rapperAnimTimer;
-    u16 playerAnimTimer;
-    u16 unusedAnimTimer;
-    u8 isTutorial;
-};
-
-struct RapMenCue {
-    u32 sound;
-};
-
-
 // Engine Macros/Enums:
 enum RapMenVersionsEnum {
     ENGINE_VER_RAP_MEN,
@@ -54,6 +36,24 @@ enum RappingAnimationsEnum {
     RAPPING_ANIM_SAIKO,
     RAPPING_ANIM_RECOIL,
     RAPPING_ANIM_HONTO
+};
+
+
+// Engine Types:
+struct RapMenEngineData {
+    u8 version;
+    struct BitmapFontOBJ *unk4;
+    s16 rapperSprite;
+    s16 playerSprite;
+    s16 textSprite;
+    u16 rapperAnimTimer;
+    u16 playerAnimTimer;
+    u16 unusedAnimTimer;
+    u8 isTutorial;
+};
+
+struct RapMenCue {
+    u32 sound;
 };
 
 

@@ -5,29 +5,6 @@
 
 #include "games/tap_trial/graphics/tap_trial_graphics.h"
 
-// Engine Types:
-struct TapTrialEngineData {
-    u8 pad[0x398];
-};
-
-struct TapTrialCue {
-    s32 unused;
-};
-
-struct TapTrialAction {
-    s8 animID;
-    s8 playbackArg1;
-    s8 playbackArg2;
-    s8 unk3;
-    s8 playbackArg3;
-    u16 playbackArg4;
-    u8 duration;
-    struct SequenceData *sfx;
-    u16 sfxVolume;
-    s16 sfxPitch;
-};
-
-
 // Engine Macros/Enums:
 enum TapTrialVersionsEnum {
     ENGINE_VER_TAP_TRIAL,
@@ -70,6 +47,29 @@ enum TapTrialAnimationsEnum {
     TAP_TRIAL_ANIM_GIRAFFE_BEDAZZLED,
     TAP_TRIAL_ANIM_GIRAFFE_NEUTRAL,
     TAP_TRIAL_ANIM_GIRAFFE_DISAPPOINTED
+};
+
+
+// Engine Types:
+struct TapTrialEngineData {
+    u8 pad[0x398];
+};
+
+struct TapTrialCue {
+    s32 unused;
+};
+
+struct TapTrialAction {
+    s8 animID;
+    s8 playbackArg1;
+    s8 playbackArg2;
+    s8 unk3;
+    s8 playbackArg3;
+    u16 playbackArg4;
+    u8 duration;
+    struct SequenceData *sfx;
+    u16 sfxVolume;
+    s16 sfxPitch;
 };
 
 

@@ -5,6 +5,10 @@
 
 #include "games/wizards_waltz/graphics/wizards_waltz_graphics.h"
 
+// Engine Macros/Enums:
+#define WIZARDS_WALTZ_SPARKLE_AMOUNT 10
+
+
 // Engine Types:
 struct WizardsWaltzEntity {
     struct AffineSprite *sprite;
@@ -21,7 +25,7 @@ struct WizardsWaltzEngineData {
     u8 version;
     struct WizardsWaltzEntity wizard;
     struct WizardsWaltzEntity shadow;
-    struct WizardsWaltzEntity sparkle[10];
+    struct WizardsWaltzEntity sparkle[WIZARDS_WALTZ_SPARKLE_AMOUNT];
     struct WizardsWaltzEntity girl;
     s32 cyclePosition;  // Current point in cycle
     s32 cycleInterval;  // Duration of one cycle

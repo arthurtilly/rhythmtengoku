@@ -206,7 +206,7 @@ void func_0802c1f0(u32 unused, s16 sprite, u32 arg2) {
 void func_0802c23c() {
     s32 i;
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < SHOWTIME_SUB_AMOUNT; i++) {
         gShowtime->unk8[i].unk4 = 0;
 
         if (gShowtime->version != SHOWTIME_VER_REMIX_3) {
@@ -230,7 +230,7 @@ void func_0802c23c() {
 void func_0802c334() {
     s32 i;
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < SHOWTIME_SUB_AMOUNT; i++) {
         if (gShowtime->unk8[i].unk4 == 0) {
             continue;
         }
@@ -341,7 +341,7 @@ void func_0802d38c(void) {
 void func_0802d8bc(u32 arg) {
     s32 i;
 
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i < SHOWTIME_SUB2_AMOUNT; i++) {
         if (gShowtime->unk174[i].unk4 == 0) {
             gShowtime->unk174[i].unk4 = 4;
             gShowtime->unk174[i].unkC = arg;

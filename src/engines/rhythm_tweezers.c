@@ -117,7 +117,7 @@ void rhythm_tweezers_init_falling_hairs(void) {
     struct RhythmTweezersFallingHair *hair;
     u32 i;
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT; i++) {
         hair = &gRhythmTweezers->fallingHairs[i];
         hair->sprite = create_affine_sprite(anim_rhythm_tweezers_falling_hair, 0, 120, 16, 0x4800, 0x100, -0x200, 0, 0, 0x8000, 0);
         affine_sprite_rotate_with_orbit(hair->sprite, TRUE);
@@ -134,7 +134,7 @@ void rhythm_tweezers_update_falling_hairs(void) {
     struct RhythmTweezersFallingHair *hair;
     u32 i = 0;
 
-    for (i; i <= 4; i++) {
+    for (i; i < RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT; i++) {
         hair = &gRhythmTweezers->fallingHairs[i];
         if (hair->fallDistance <= 0xc7ff) {
             hair->fallDistance += hair->fallSpeed += 0x20;
@@ -163,7 +163,7 @@ void rhythm_tweezers_spawn_falling_hair(u32 arg0) {
     hair->fallSpeed = 0;
     affine_sprite_set_anim_frame(hair->sprite, arg0);
 
-    if ((gRhythmTweezers->fallingHairsNext += 1) > 4) {
+    if (++gRhythmTweezers->fallingHairsNext > (RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT - 1)) {
         gRhythmTweezers->fallingHairsNext = 0;
     }
 }

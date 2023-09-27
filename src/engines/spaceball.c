@@ -38,7 +38,7 @@ void spaceball_update_stars_x_y(void) {
     s32 scale, x, y;
     u32 i;
 
-    for (i = 0; i < 24; i++) {
+    for (i = 0; i < SPACEBALL_STAR_AMOUNT; i++) {
         sprite = gSpaceball->starSprite[i];
         star = &gSpaceball->stars[i];
 
@@ -57,7 +57,7 @@ void spaceball_update_stars_z(void) {
     s32 zMax = gSpaceball->zoom + INT_TO_FIXED(4);
     u32 i;
 
-    for (i = 0; i < 24; i++) {
+    for (i = 0; i < SPACEBALL_STAR_AMOUNT; i++) {
         star = &gSpaceball->stars[i];
         star->z -= 8;
         if ((star->z < zMin) || (star->z > zMax)) {
@@ -133,7 +133,7 @@ void spaceball_update_graphics(void) {
     func_08008910(BG_LAYER_2, INT_TO_FIXED(128), INT_TO_FIXED(176), h, v, 0);
 
     // Update Stars
-    if (gSpaceball->currentStar < 24) {
+    if (gSpaceball->currentStar < SPACEBALL_STAR_AMOUNT) {
         gSpaceball->starSprite[gSpaceball->currentStar] = func_0804d160(D_03005380, anim_spaceball_bg_star, 0, 0, 0, 0xc800, 1, 0, 0);
         spaceball_reset_star(gSpaceball->currentStar);
         gSpaceball->currentStar++;

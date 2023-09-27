@@ -5,44 +5,10 @@
 
 #include "games/bon_odori/graphics/bon_odori_graphics.h"
 
-// Engine Types:
-struct BonOdoriText {
-    s16 textSprite;
-    s16 highlightSprite;
-    struct Animation *anim;
-    s16 leftEdge;
-    u16 width;
-};
-
-struct BonOdoriEngineData {
-    u8 version;
-    struct BitmapFontOBJ *unk4;
-    struct BonOdoriText lyrics[4];
-    u8 currentLyric;
-    s16 lyricsX;
-    s16 lyricsY;
-    s16 yaguraSprite;
-    u16 yaguraFrownTimer;
-    u8 yaguraNoticedMistake;
-    s16 donpanSprites[4];
-    u16 donpanAnimTimers[4];
-    u8 donpanEmoteTimer;
-    u8 donpanEmoteAnim;
-    const u16 *srcBgPal;
-    const u16 *srcObjPal;
-    u16 darkBgPalBuf[32][16];
-    u16 darkObjPalBuf[32][16];
-    u16 mistimedClaps;
-    u8 currentClapAnim;
-    u16 playerClapTimer;
-};
-
-struct BonOdoriCue {
-    u8 type;
-};
-
-
 // Engine Macros/Enums:
+#define BON_ODORI_DONPAN_AMOUNT 4
+#define BON_ODORI_LYRIC_AMOUNT 4
+
 enum BonOdoriAnimationsEnum {
     BON_ODORI_ANIM_DONPAN1_BEAT,
     BON_ODORI_ANIM_DONPAN2_BEAT,
@@ -89,6 +55,43 @@ enum BonOdoriDonpanAnimationsEnum {
     DONPAN_ANIM_HAPPY,
     DONPAN_ANIM_VERY_HAPPY,
     DONPAN_ANIM_SPIN
+};
+
+
+// Engine Types:
+struct BonOdoriText {
+    s16 textSprite;
+    s16 highlightSprite;
+    struct Animation *anim;
+    s16 leftEdge;
+    u16 width;
+};
+
+struct BonOdoriEngineData {
+    u8 version;
+    struct BitmapFontOBJ *unk4;
+    struct BonOdoriText lyrics[BON_ODORI_LYRIC_AMOUNT];
+    u8 currentLyric;
+    s16 lyricsX;
+    s16 lyricsY;
+    s16 yaguraSprite;
+    u16 yaguraFrownTimer;
+    u8 yaguraNoticedMistake;
+    s16 donpanSprites[BON_ODORI_DONPAN_AMOUNT];
+    u16 donpanAnimTimers[BON_ODORI_DONPAN_AMOUNT];
+    u8 donpanEmoteTimer;
+    u8 donpanEmoteAnim;
+    const u16 *srcBgPal;
+    const u16 *srcObjPal;
+    u16 darkBgPalBuf[32][16];
+    u16 darkObjPalBuf[32][16];
+    u16 mistimedClaps;
+    u8 currentClapAnim;
+    u16 playerClapTimer;
+};
+
+struct BonOdoriCue {
+    u8 type;
 };
 
 

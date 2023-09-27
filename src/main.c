@@ -208,7 +208,7 @@ void set_next_scene(struct Scene *next) {
 void clear_scene_trans(void) {
 	u32 i;
 
-	for (i = 0; i < 10; i++) {
+	for (i = 0; i < ARRAY_COUNT(D_03000008); i++) {
 		gSceneTrans[i].initial = NULL;
 		gSceneTrans[i].target = NULL;
 		gSceneTrans[i].variable = 0;
@@ -220,7 +220,7 @@ void clear_scene_trans(void) {
 struct SceneTransition *get_scene_trans(struct Scene *scene) {
 	u32 i;
 
-	for (i = 0; i < 10; i++) {
+	for (i = 0; i < ARRAY_COUNT(D_03000008); i++) {
 		if (gSceneTrans[i].initial == scene) {
 			return &gSceneTrans[i];
 		}
@@ -274,7 +274,7 @@ struct SceneTransition *alloc_scene_trans(struct Scene *scene) {
 		return NULL;
 	}
 
-	for (i = 0; i < 10; i++) {
+	for (i = 0; i < ARRAY_COUNT(D_03000008); i++) {
 		if (gSceneTrans[i].initial == NULL) {
 			gSceneTrans[i].initial = scene;
 			gSceneTrans[i].target = NULL;
@@ -295,7 +295,7 @@ void dealloc_scene_trans(struct Scene *scene) {
 	    return;
 	}
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03000008); i++) {
         if (gSceneTrans[i].initial == scene) {
             gSceneTrans[i].initial = NULL;
             gSceneTrans[i].target = NULL;

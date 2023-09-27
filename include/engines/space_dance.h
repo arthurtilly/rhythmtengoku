@@ -5,16 +5,6 @@
 
 #include "games/space_dance/graphics/space_dance_graphics.h"
 
-// Engine Types:
-struct SpaceDanceEngineData {
-    u8 pad[0x38];
-};
-
-struct SpaceDanceCue {
-    /* add fields here */
-};
-
-
 // Engine Macros/Enums:
 enum SpaceDanceVersionsEnum {
     ENGINE_VER_SPACE_DANCE,
@@ -74,6 +64,16 @@ enum SpaceGrampsAnimationsEnum {
     SPACE_GRAMPS_ANIM_DOWN_CUE,
     SPACE_GRAMPS_ANIM_SPEAK,
     SPACE_GRAMPS_ANIM_BLINK
+};
+
+
+// Engine Types:
+struct SpaceDanceEngineData {
+    u8 pad[0x38];
+};
+
+struct SpaceDanceCue {
+    /* add fields here */
 };
 
 

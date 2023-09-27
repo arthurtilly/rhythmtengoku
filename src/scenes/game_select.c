@@ -573,7 +573,7 @@ void save_level_state_from_grid_xy(s32 x, s32 y, s32 state) {
 void game_select_init_color_mod(void) {
     u32 i;
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < ARRAY_COUNT(gGameSelect->colorChangers); i++) {
         struct ColorChanger *changer = &gGameSelect->colorChangers[i];
 
         changer->r1 = changer->g1 = changer->b1 = 31;
@@ -1286,7 +1286,7 @@ void game_select_enqueue_level_event(s32 x, s32 y, s32 state) {
         data->state = state;
 
         gGameSelect->totalLevelEventsQueued++;
-        if (++gGameSelect->levelEventEnqueueID >= 16) {
+        if (++gGameSelect->levelEventEnqueueID >= ARRAY_COUNT(gGameSelect->levelEventsQueue)) {
             gGameSelect->levelEventEnqueueID = 0;
         }
     }
@@ -1308,7 +1308,7 @@ void game_select_dequeue_level_event(s32 *xReq, s32 *yReq, s32 *stateReq) {
     *stateReq = data->state;
 
     gGameSelect->totalLevelEventsQueued--;
-    if (++gGameSelect->levelEventDequeueID >= 16) {
+    if (++gGameSelect->levelEventDequeueID >= ARRAY_COUNT(gGameSelect->levelEventsQueue)) {
         gGameSelect->levelEventDequeueID = 0;
     }
 }
@@ -2100,7 +2100,7 @@ void game_select_init_flow_pane(void) {
     u32 updateFlow;
     u32 i;
 
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < ARRAY_COUNT(flowPane->digits); i++) {
         flowPane->digits[i] = func_0804d160(D_03005380, anim_game_select_flow_num, 10, 208 - (i * 8), 128, 0, 0, 0, 0);
         func_0804db44(D_03005380, flowPane->digits[i], &bgOfs->x, &bgOfs->y);
     }
@@ -2115,7 +2115,7 @@ void game_select_init_flow_pane(void) {
     initialScore = flowPane->previousScore;
 
     if (initialScore > 0) {
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < ARRAY_COUNT(flowPane->digits); i++) {
             func_0804cebc(D_03005380, flowPane->digits[i], ((initialScore != 0) ? (initialScore % 10) : 10));
             initialScore /= 10;
         }
@@ -2161,7 +2161,7 @@ void game_select_update_flow_pane(void) {
                 func_0804cebc(D_03005380, flowPane->title, 0);
                 flow = flowPane->currentScore;
 
-                for (i = 0; i < 3; i++) {
+                for (i = 0; i < ARRAY_COUNT(flowPane->digits); i++) {
                     func_0804cebc(D_03005380, flowPane->digits[i], ((flow != 0) ? (flow % 10) : 10));
                     flow /= 10;
                 }
@@ -2197,14 +2197,14 @@ void game_select_update_flow_pane(void) {
                     func_0804d770(D_03005380, flowPane->arrow, TRUE);
                 }
 
-                for (i = 0; i < 3; i++) {
+                for (i = 0; i < ARRAY_COUNT(flowPane->digits); i++) {
                     func_0804d770(D_03005380, flowPane->digits[i], TRUE);
                 }
             } else {
                 render = (flowPane->timer >> 4) & 1;
                 render ^= 1;
 
-                for (i = 0; i < 3; i++) {
+                for (i = 0; i < ARRAY_COUNT(flowPane->digits); i++) {
                     func_0804d770(D_03005380, flowPane->digits[i], render);
                 }
 
@@ -2489,7 +2489,7 @@ void game_select_init_squares(void) {
     x *= 2;
     y *= 2;
 
-    for (i = 16; i < 50; i++) {
+    for (i = 16; i < ARRAY_COUNT(gGameSelect->squareVectors); i++) {
         vector = &gGameSelect->squareVectors[i];
         vector->x = agb_random(x);
         vector->y = agb_random(y);
@@ -2500,7 +2500,7 @@ void game_select_init_squares(void) {
     D_03004b10.BLDMOD = (BLDMOD_BG0_TGT | BLDMOD_BG1_TGT | BLDMOD_BG2_TGT | BLDMOD_BG3_TGT | BLDMOD_BACKDROP_TGT);
     D_03004b10.COLEV = (COLEV_SRC_PIXEL(16) | COLEV_TGT_PIXEL(16));
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(gGameSelect->newIconSquares); i++) {
         gGameSelect->newIconSquares[i].active = FALSE;
     }
 }
@@ -2549,7 +2549,7 @@ void game_select_update_bg_squares_motion(s32 dx, s32 dy) {
     y2 = y * 2;
 
     // Small Squares
-    for (i = 16; i < 50; i++) {
+    for (i = 16; i < ARRAY_COUNT(gGameSelect->squareVectors); i++) {
         vector = &gGameSelect->squareVectors[i];
         vector->x += dx;
         vector->y += dy;
@@ -2582,14 +2582,14 @@ void game_select_spawn_icon_square(s16 x, s16 y, void *onFinish, s32 onFinishArg
     s32 x1, y1, x2, y2;
     u32 i;
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(gGameSelect->newIconSquares); i++) {
         if (!shadow->active) {
             break;
         }
         shadow++;
     }
 
-    if (i >= 10) {
+    if (i >= ARRAY_COUNT(gGameSelect->newIconSquares)) {
         return;
     }
 
@@ -2658,7 +2658,7 @@ void game_select_update_icon_square(struct NewIconSquare *shadow) {
 void game_select_update_icon_squares(void) {
     u32 i;
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(gGameSelect->newIconSquares); i++) {
         game_select_update_icon_square(&gGameSelect->newIconSquares[i]);
     }
 }
@@ -2669,7 +2669,7 @@ u32 game_select_check_for_icon_squares(void) {
     struct NewIconSquare *shadow = gGameSelect->newIconSquares;
     u32 i;
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(gGameSelect->newIconSquares); i++) {
         if (shadow->active) {
             return TRUE;
         }

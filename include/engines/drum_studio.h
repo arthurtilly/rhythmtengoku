@@ -7,6 +7,26 @@
 
 #include "games/drum_studio/graphics/drum_studio_graphics.h"
 
+// Engine Macros/Enums:
+#define DRUM_STUDIO_ACCURACY_LIGHTS_AMOUNT 7
+
+enum DrumLessonsVersionsEnum {
+    ENGINE_VER_DRUM_STUDIO_0,
+    ENGINE_VER_DRUM_STUDIO_PLAY,
+    ENGINE_VER_DRUM_STUDIO_2,
+    ENGINE_VER_DRUM_STUDIO_LISTEN,
+    ENGINE_VER_DRUM_LESSONS
+};
+
+enum DrumLessonsRanksEnum {
+    DRUM_LESSON_RANK_0,
+    DRUM_LESSON_RANK_C,
+    DRUM_LESSON_RANK_B,
+    DRUM_LESSON_RANK_A,
+    DRUM_LESSON_RANK_S,
+};
+
+
 // Engine Types:
 struct StudioDrummer {
     s16 snareDrum;
@@ -106,7 +126,7 @@ struct DrumStudioEngineData {
     u8 unk563;
     u16 unk564;
     u16 null566;
-    s16 accuracyLightSprites[7]; // 0x568
+    s16 accuracyLightSprites[DRUM_STUDIO_ACCURACY_LIGHTS_AMOUNT]; // 0x568
     u8 unk576;
     struct SoundPlayer *musicPlayer; // 0x578
     u32 unk57C;
@@ -142,24 +162,6 @@ struct DrumTeacherExpression {
     struct Animation *head;
     struct Animation *rightArm;
     struct Animation *leftArm;
-};
-
-
-// Engine Macros/Enums:
-enum DrumLessonsVersionsEnum {
-    ENGINE_VER_DRUM_STUDIO_0,
-    ENGINE_VER_DRUM_STUDIO_PLAY,
-    ENGINE_VER_DRUM_STUDIO_2,
-    ENGINE_VER_DRUM_STUDIO_LISTEN,
-    ENGINE_VER_DRUM_LESSONS
-};
-
-enum DrumLessonsRanksEnum {
-    DRUM_LESSON_RANK_0,
-    DRUM_LESSON_RANK_C,
-    DRUM_LESSON_RANK_B,
-    DRUM_LESSON_RANK_A,
-    DRUM_LESSON_RANK_S,
 };
 
 
