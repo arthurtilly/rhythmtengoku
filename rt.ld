@@ -10,6 +10,7 @@ SECTIONS {
 		build/src/main.c.o(.bss);
         build/src/memory.c.o(.bss);
 		build/src/code_08001360.c.o(.bss);
+		build/src/palette.c.o(.bss);
 		build/src/affine_param.c.o(.bss);
 		build/src/audio.c.o(.bss);
 		build/src/graphics_table.c.o(.bss);
@@ -150,6 +151,7 @@ SECTIONS {
         build/src/memory.c.o(.text);
         build/asm/code_08000a00.s.o(.text);
         build/src/code_08001360.c.o(.text);
+        build/src/palette.c.o(.text);
         build/src/affine_param.c.o(.text);
         build/src/audio.c.o(.text);
         build/src/graphics_table.c.o(.text);

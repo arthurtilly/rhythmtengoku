@@ -1,6 +1,6 @@
 #include "global.h"
 #include "src/task_pool.h"
-#include "src/code_08001360.h"
+#include "src/palette.h"
 
 struct TaskMethods D_089363cc = {
     (TaskStartFunc)func_08001f34,

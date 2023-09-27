@@ -1,13 +1,15 @@
 #include "global.h"
 #include "code_0800b778.h"
-#include "code_08001360.h"
-#include "affine_param.h"
-#include "audio.h"
-#include "graphics_table.h"
-#include "bitmap_font.h"
-#include "task_pool.h"
-#include "memory_heap.h"
-#include "code_08007468.h"
+
+#include "src/code_08001360.h"
+#include "src/palette.h"
+#include "src/affine_param.h"
+#include "src/audio.h"
+#include "src/graphics_table.h"
+#include "src/bitmap_font.h"
+#include "src/task_pool.h"
+#include "src/memory_heap.h"
+#include "src/code_08007468.h"
 #include "src/lib_08049144.h"
 #include "src/lib_0804ca80.h"
 
@@ -15,15 +17,15 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-static s32 D_03001310[2]; // unknown type
-
 
 /* BEATSCRIPT SCENE HANDLER */
 
 
-// Bitmap Fonts from WarioWare
 extern struct BitmapFontData bitmap_font_warioware_outline[];
 extern struct BitmapFontData bitmap_font_warioware_body[];
+
+static s32 D_03001310; // Active Mem. ID
+static s32 D_03001314; // unused
 
 
 // ?
@@ -37,17 +39,6 @@ u8 func_0800b634(s16 *arg0, s16 *arg1, s16 *arg2, s16 *arg3) {
         return FALSE;
     }
 }
-
-/*
-    if (a1.x + a2.x1 < b1.x + b2.x1 + b2.x2
-     && b1.x + b2.x1 < a1.x + a2.x1 + a2.x2
-     && a1.y + a2.y1 < b1.y + b2.y1 + b2.y2
-     && b1.y + b2.y1 < a1.y + a2.y1 + a2.y2) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
-*/
 
 
 // Run BeatScript Engine Callback
@@ -820,13 +811,13 @@ s32 ticks_to_frames(u32 beats) {
 
 // Get Current Active Thread (Memory ID / SubScene)
 u32 get_current_mem_id() {
-    return D_03001310[0];
+    return D_03001310;
 }
 
 
 // Set Current Memory ID / SubScene
 void set_current_mem_id(u32 memID) {
-    D_03001310[0] = memID;
+    D_03001310 = memID;
     func_0804e0bc(D_03005380, memID);
 }
 

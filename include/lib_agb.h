@@ -11,6 +11,7 @@
 #include "src/main.h"
 #include "src/memory.h"
 #include "src/code_08001360.h"
+#include "src/palette.h"
 #include "src/affine_param.h"
 #include "src/audio.h"
 #include "src/graphics_table.h"
