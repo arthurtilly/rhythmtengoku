@@ -2,7 +2,7 @@
 #include "src/lib_08049144.h"
 
 
-/* SOUND */
+/* AUDIO LIBRARY INTERFACE */
 
 
 // Get SoundTable Index
