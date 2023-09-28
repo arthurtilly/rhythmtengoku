@@ -426,8 +426,54 @@ void text_printer_fill_vram_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTil
 }
 
 
-// Get Glyph ID (https://decomp.me/scratch/CJd8T)
-#include "asm/code_080092cc/asm_0800a108.s"
+// Get Glyph ID 
+s32 text_printer_get_glyph_id(const char **string) {
+    const char *s;
+    char c1;
+    char c2;
+    s8 r0;
+    s32 id;
+
+    s = *string;
+    c1 = s[0];
+    (*string)++;
+
+    r0 = (c1 - 0x20);
+    if ((u8)r0 < 0x5f) {
+        c2 = D_08938194[((u8)r0 * 2) + 1];
+        c1 = D_08938194[(u8)r0 * 2];
+    } else {
+        c2 = s[1];
+        (*string)++;
+    }
+
+    r0 = (c1 + 0x7f);
+    if ((u8)r0 < 0x1f) {
+        id = (u16)D_08938140[c1 - 0x81];
+    } else {
+        r0 = (c1 + 0x20);
+        if ((u8)r0 < 0xb) {
+            id = (u16)D_0893817e[c1 - 0xe0];
+        } else {
+            id = -1;
+        }
+    }
+
+    if (id != -1) {
+        if (c2 < 0x7f) {
+            id -= 0x40 - c2;
+        } else {
+            r0 = (c2 + 0x80);
+            if ((u8)r0 < 0x7d) {
+                id -= 0x41 - c2;
+            } else {
+                id = -1;
+            }
+        }
+    }
+
+    return id;
+}
 
 
 // Get Value for unk4
