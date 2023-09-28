@@ -216,7 +216,73 @@ void gameplay_clear_palette_buffer(Palette buffer) {
 
 
 // [func_08017188] Load New Engine
-#include "asm/gameplay/asm_08017188.s"
+void gameplay_set_current_engine(const struct GameEngine *engine, u32 version) {
+    const struct GameEngine *temp = engine;
+    u32 i;
+    void (*func)();
+
+    if (gGameplay->gameEngine != NULL) {
+        gameplay_reset_cues();
+        gameplay_enable_cue_spawning(TRUE);
+        func = gGameplay->gameEngine->closeFunc;
+        if (func != NULL) {
+            func(gGameplay->gameEngine);
+        }
+        if (gGameplay->gameEngineData != NULL) {
+            mem_heap_dealloc(gGameplay->gameEngineData);
+        }
+        func_0804e0c4(D_03005380, get_current_mem_id());
+        func_0800222c(get_current_mem_id());
+        task_pool_force_cancel_id(get_current_mem_id());
+        mem_heap_dealloc_with_id(get_current_mem_id());
+        gameplay_set_text_printer(NULL);
+    }
+
+    scene_set_video_mode(0);
+    scene_hide_bg_layer(BG_LAYER_0);
+    scene_hide_bg_layer(BG_LAYER_1);
+    scene_hide_bg_layer(BG_LAYER_2);
+    scene_hide_bg_layer(BG_LAYER_3);
+    func_08004058();
+    func_08007344(gameplay_clear_palette_buffer);
+    gameplay_prevent_dpad_overlap(TRUE);
+    gGameplay->sfxTempo = 0;
+    gGameplay->gameEngine = engine;
+
+    if (engine == NULL) {
+        return;
+    }
+
+    if (engine->gameDataSize > 0) {
+        gGameplay->gameEngineData = mem_heap_alloc(engine->gameDataSize);
+        dma3_fill(0, gGameplay->gameEngineData, engine->gameDataSize, 0x20, 0x200);
+    } else {
+        gGameplay->gameEngineData = NULL;
+    }
+    gCurrentEngineData = gGameplay->gameEngineData;
+    
+    for (i = 0; i < 12; i++) {
+        gGameplay->cueDefinitions[i] = NULL;
+    }
+
+    for (i = 0; (i < 12) && (engine->cueDefinitions[i] != (void *)-1); i++) {
+        gGameplay->cueDefinitions[i] = engine->cueDefinitions[i];
+    }
+
+    for (i = 0; i < 3; i++) {
+        gGameplay->commonFunctions[i] = NULL;
+    }
+
+    for (i = 0; (i < 3) && (engine->commonFunctions[i] != (void *)-1); i++) {
+        gGameplay->commonFunctions[i] = engine->commonFunctions[i];
+    }
+
+    temp = engine;
+    func = temp->initFunc;
+    if (func != NULL) {
+        func(version);
+    }
+}
 
 
 // [func_0801732c] Get Current Game Engine Data
