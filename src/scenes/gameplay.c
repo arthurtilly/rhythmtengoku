@@ -858,7 +858,36 @@ s32 gameplay_calculate_input_timing(struct Cue *cue, u16 pressed, u16 released, 
 
 
 // [func_08017e2c] Hit/Barely Event
-#include "asm/gameplay/asm_08017e2c.s"
+void gameplay_register_hit_barely(struct Cue *cue, s32 timingLevel, s32 offset, u32 pressed, u32 released) {
+    struct CueDefinition *cueDef = &cue->data;
+    CueHitEvent hitEvent;
+
+    gGameplay->ignoreThisCueResult = FALSE;
+    cue->unk48_b0 = TRUE;
+    gGameplay->lastCueInputOffset = offset;
+
+    if (timingLevel == CUE_TIMING_HIT) {
+        hitEvent = cueDef->hitFunc;
+        if (hitEvent != NULL) {
+            hitEvent(cue, cue->gameCueInfo, pressed, released);
+        }
+        // RUN_IF_NOT_NULL_B(hitFunc, cue, cue->gameCueInfo, pressed, released);
+        // RUN_IF_NOT_NULL(hitFunc, hitFunc(cue, cue->gameCueInfo, pressed, released));
+        if (gGameplay->ignoreThisCueResult == FALSE) {
+            gameplay_add_cue_result(cue->markingCriteria, 0, offset);
+            gameplay_play_sound(cue->hitSfx);
+        }
+    } else {
+        hitEvent = cueDef->barelyFunc;
+        if (hitEvent != NULL) {
+            hitEvent(cue, cue->gameCueInfo, pressed, released);
+        }
+        if (gGameplay->ignoreThisCueResult == FALSE) {
+            gameplay_add_cue_result(cue->markingCriteria, 1, offset);
+            gameplay_play_sound(cue->barelySfx);
+        }
+    }
+}
 
 
 // [func_08017ec8] Update Inputs
