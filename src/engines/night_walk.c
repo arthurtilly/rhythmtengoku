@@ -261,8 +261,31 @@ void night_walk_update_play_yan(void) {
 }
 
 
-// Init. Stars (https://decomp.me/scratch/D0g8d)
-#include "asm/engines/night_walk/asm_0802a564.s"
+// Init. Stars
+void night_walk_init_stars(void) {
+    struct NightWalkUnk3B8 *unk3B8;
+    struct NightWalkStar *star;
+    u32 i;
+    s24_8 fixednegative8; 
+
+    unk3B8 = &gNightWalk->unk3B8;
+
+    for (i = 0, fixednegative8 = -INT_TO_FIXED(8); i < NIGHT_WALK_STAR_AMOUNT; i++) {
+        star = &gNightWalk->stars[i];
+
+        star->sprite = func_0804d160(D_03005380, anim_night_walk_star_tiny, agb_random(8), 64, 64, 0x490a, 1, 0, 0);
+        star->x = INT_TO_FIXED(agb_random(0x100)) + fixednegative8;
+        star->y = INT_TO_FIXED(agb_random(0xb0)) + fixednegative8;
+        star->x += agb_random(0x100);
+        func_0804d5d4(D_03005380, star->sprite, FIXED_TO_INT(star->x), FIXED_TO_INT(star->y));
+        func_0804db44(D_03005380, star->sprite, NULL, &gNightWalk->starsVOffset);
+        star->size = 0;
+    }
+
+    gNightWalk->starsVOffset = unk3B8->unk6 / 2;
+    gNightWalk->nextStar = 0;
+    gNightWalk->currentStarSize = 0;
+}
 
 
 // Update Stars
