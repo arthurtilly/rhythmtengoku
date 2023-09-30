@@ -187,7 +187,7 @@ extern void listbox_scroll_up(struct Listbox *listbox);
 extern void listbox_scroll_down(struct Listbox *listbox);
 extern void listbox_run_func_on_scroll(struct Listbox *listbox, void onScroll(), s32 onScrollArg);
 extern void listbox_run_func_on_finish(struct Listbox *listbox, void onFinish(), s32 onFinishArg);
-// extern ? func_0800b32c(?);
+extern s16 func_0800b32c(struct Listbox *listbox);
 extern s32 listbox_is_busy(struct Listbox *listbox);
 extern void listbox_offset_x_y(struct Listbox *listbox, s16 x, s16 y);
 extern void listbox_show_sel_sprite(struct Listbox *listbox);

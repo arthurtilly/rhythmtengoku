@@ -1502,8 +1502,22 @@ void listbox_run_func_on_finish(struct Listbox *listbox, void onFinish(), s32 on
 }
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b32c.s"
+// Get Sprite for... some line.
+s16 func_0800b32c(struct Listbox *listbox) {
+    struct Listbox *listbox1 = listbox;
+    s32 temp;
+    
+    if (listbox == NULL) {
+        return; // !UB: no return value
+    }
+
+    temp = listbox->scrollIndex + listbox->selMinLine + listbox->selLine;
+    temp %= listbox->maxLines;
+    if (temp < 0) {
+        temp += listbox->maxLines;
+    }
+    return text_printer_get_line_sprite(listbox1->printer, temp);
+}
 
 
 // Check if Listbox is Busy
