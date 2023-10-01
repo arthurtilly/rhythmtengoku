@@ -99,15 +99,23 @@ u16 func_08003004(s16 arg0, s16 arg1) {
 
 #include "asm/code_08001360/asm_08003278.s"
 
-#include "asm/code_08001360/asm_08003384.s"
+void func_08003384(struct struct_08003070 *arg0) {
+    arg0->unk0_b1 = 0;
+    arg0->unk0_b2 = 0;
+}
 
-#include "asm/code_08001360/asm_08003398.s"
+u32 func_08003398(struct struct_08003070 *arg0) {
+    return arg0->unk0_b1;
+}
 
 #include "asm/code_08001360/asm_080033a0.s"
 
 #include "asm/code_08001360/asm_0800351c.s"
 
-#include "asm/code_08001360/asm_08003598.s"
+void func_08003598(struct struct_08003070 *arg0, u16 arg1, u16 arg2) {
+    arg0->unk10 = arg1;
+    arg0->unk12 = arg2;
+}
 
 #include "asm/code_08001360/asm_080035a0.s"
 
@@ -119,31 +127,92 @@ u16 func_08003004(s16 arg0, s16 arg1) {
 
 #include "asm/code_08001360/asm_080038b0.s"
 
-#include "asm/code_08001360/asm_08003974.s"
+void func_08003974(struct struct_08003974 *arg0) {
+    arg0->unk0 = 0;
+    arg0->unk5 = 0;
+    arg0->unk4 = 0;
+}
 
 #include "asm/code_08003980/asm_08003980.s"
 
 #include "asm/code_08003980/asm_080039a8.s"
 
-#include "asm/code_08003980/asm_080039d4.s"
+void func_080039d4(struct struct_08003974 *arg0, u32 arg1, u32 arg2, u32 arg3) {
+    arg0->unk0 = arg1;
+    arg0->unk4 = arg2;
+    arg0->unk5 = arg3;
+    arg0++;
+    arg0->unk0 = 0;
+    arg0->unk5 = 0;
+    arg0->unk4 = 0;
+}
 
-#include "asm/code_08003980/asm_080039e8.s"
+void func_080039e8(struct struct_08003974 *arg0, struct struct_08003974 *arg1) {
+    while (arg0->unk0) {
+        arg0++;
+    }
+    func_08003980(arg0, arg1);
+}
 
-#include "asm/code_08003980/asm_08003a00.s"
+void func_08003a00(struct struct_08003974 *arg0, struct struct_08003974 *arg1, u32 arg2) {
+    while (arg0->unk0) {
+        arg0++;
+    }
+    func_080039a8(arg0, arg1, arg2);
+}
 
-#include "asm/code_08003980/asm_08003a18.s"
+void func_08003a18(struct struct_08003974 *arg0, u32 arg1, u32 arg2, u32 arg3) {
+    while (arg0->unk0) {
+        arg0++;
+    }
+    func_080039d4(arg0, arg1, arg2, arg3);
+}
 
-#include "asm/code_08003980/asm_08003a34.s"
+void func_08003a34(u8 **arg0, u32 arg1) {
+    u8 *temp = *arg0;
 
-#include "asm/code_08003980/asm_08003a40.s"
+    *temp++ = arg1;
+    *arg0 = temp;
+}
 
-#include "asm/code_08003980/asm_08003a50.s"
+void func_08003a40(u8 **arg0, u32 arg1) {
+    u8 *temp = *arg0;
 
-#include "asm/code_08003980/asm_08003a6c.s"
+    *temp++ = arg1;
+    *temp++ = (arg1 >> 8);
+    *arg0 = temp;
+}
 
-#include "asm/code_08003980/asm_08003a78.s"
+void func_08003a50(u8 **arg0, u32 arg1) {
+    u8 *temp = *arg0;
 
-#include "asm/code_08003980/asm_08003a88.s"
+    *temp++ = arg1;
+    *temp++ = (arg1 >> 8);
+    *temp++ = (arg1 >> 0x10);
+    *temp++ = (arg1 >> 0x18);
+    *arg0 = temp;
+}
+
+u32 func_08003a6c(u8 **arg0) {
+    u8 *temp = *arg0;
+
+    *arg0 = (temp -= 1);
+    return temp[0];
+}
+
+u32 func_08003a78(u8 **arg0) {
+    u8 *temp = *arg0;
+
+    *arg0 = (temp -= 2);
+    return temp[0] | (temp[1] << 8);
+}
+
+u32 func_08003a88(u8 **arg0) {
+    u8 *temp = *arg0;
+
+    *arg0 = (temp -= 4);
+    return temp[0] | (temp[1] << 8) | (temp[2] << 0x10) | (temp[3] << 0x18);
+}
 
 
 // Get Absolute Value (16 bits)

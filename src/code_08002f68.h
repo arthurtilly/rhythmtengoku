@@ -2,6 +2,23 @@
 
 #include "global.h"
 
+struct struct_08003070 {
+    u16 unk0_b0:1;
+    u16 unk0_b1:1;
+    u16 unk0_b2:14;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u16 unk10;
+    u16 unk12;
+};
+
+struct struct_08003974 {
+    u32 unk0;
+    u8 unk4;
+    u8 unk5;
+};
+
 extern void init_math_sqrt(void); // Init. sqrt()
 extern u8 func_08002f9c(s16 arg0, s16 arg1);
 extern u16 func_08003004(s16 arg0, s16 arg1);
