@@ -217,7 +217,7 @@ void func_080033a0(struct struct_08003070 *arg0, u32 arg1, u32 arg2, u32 arg3, u
         for (i = 0; i < arg4_1; i++) {
             if (!arg0->unk0_b0) {
                 for (j = 0; j < arg3_1; j++) {
-                    temp_r6[j] = (temp_r4 + j) | (temp_r7[j] << 12) ;
+                    temp_r6[j] = (temp_r4 + j) | (temp_r7[j] << 12);
                 }
             } else {
                 for (j = 0; j < arg3_1; j++) {
