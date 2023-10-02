@@ -160,7 +160,7 @@ void func_08003278(struct struct_08003070 *arg0) {
         temp_r5 = arg0->unk12;
         temp_r5 += arg0->unk2A[i];
         func_08003070(arg0, temp_r8 % arg0->unk14, temp_r5 % arg0->unk15, arg0->unk32[i], arg0->unk3A[i], temp_r8, temp_r5);
-        func_0800318c(arg0, temp_r8 % 0x20, temp_r5 % 0x20, arg0->unk22[i], arg0->unk2A[i], arg0->unk32[i], arg0->unk3A[i]);
+        func_0800318c(arg0, temp_r8 % 32, temp_r5 % 32, arg0->unk22[i], arg0->unk2A[i], arg0->unk32[i], arg0->unk3A[i]);
     }
     arg0->unk58[0] = arg0->unk4E + arg0->unk52;
     arg0->unk5C[0] = arg0->unk50 + arg0->unk54;
@@ -378,7 +378,7 @@ void func_08003720(struct struct_08003070 *arg0, u16 arg1, u16 arg2) {
 
 void func_0800387c(struct struct_0800387c *arg0, u8 *arg1) {
     while (arg0->unk0 != NULL) {
-        dma3_set(arg0->unk0, arg1 + arg0->unk4 * 0x20, arg0->unk5 * 32, 32, 256);
+        dma3_set(arg0->unk0, arg1 + arg0->unk4 * 32, arg0->unk5 * 32, 32, 256);
         arg0++;
     }
 }
