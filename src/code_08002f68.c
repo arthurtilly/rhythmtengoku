@@ -1,7 +1,6 @@
 #include "code_08001360.h"
 #include "code_08002f68.h"
 #include "memory_heap.h"
-#include "palette.h"
 
 
 /* ARITHMETIC */
