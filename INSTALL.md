@@ -5,7 +5,7 @@ These instructions explain how to set up the tools required to build **rhythmten
 These instructions come with notes which can be expanded by clicking the "<i>Note...</i>" text.
 In general, you should not need to open these unless if you get an error or if you need additional clarification.
 
-If you run into trouble, ask for help on Discord or IRC (see [README.md](README.md)).
+If you run into trouble, ask for help on the RHModding Discord (see [README.md](README.md)).
 
 ## Windows
 Windows has instructions for building with three possible terminals, providing 3 different options in case the user stumbles upon unexpected errors.
@@ -150,7 +150,7 @@ cd Desktop/decomps
 
 If this works, then proceed to [Installation](#installation).
 
-Otherwise, ask for help on Discord or IRC (see [README.md](README.md)), or continue reading below for [Windows instructions using Cygwin](#windows-cygwin).
+Otherwise, ask for help on the RHModding Discord (see [README.md](README.md)), or continue reading below for [Windows instructions using Cygwin](#windows-cygwin).
 
 ## Windows (Cygwin)
 1. If devkitARM is **not installed**, then follow the instructions used to [install devkitARM](#installing-devkitarm) for the msys2 setup before continuing. *Remember to not continue following the msys2 instructions by mistake!*
@@ -217,7 +217,7 @@ Note that the directory **must exist** in Windows. If you want to store rhythmte
 >   Note 2: Windows path names are case-insensitive so adhering to capitalization isn't needed
 </details>
 
-If this works, then proceed to [Installation](#installation). Otherwise, ask for help on Discord or IRC (see [README.md](README.md)).
+If this works, then proceed to [Installation](#installation). Otherwise, ask for help on the RHModding Discord (see [README.md](README.md)).
 
 ## macOS
 1. If the Xcode Command Line Tools are not installed, download the tools [here](https://developer.apple.com/xcode/resources/), open your Terminal, and run the following command:
@@ -268,7 +268,7 @@ Note that the directory **must exist** in the folder system. If you want to stor
 >   Note: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "Desktop/decomp folder"`
 </details>
 
-If this works, then proceed to [Installation](#installation). Otherwise, ask for help on Discord or IRC (see [README.md](README.md)).
+If this works, then proceed to [Installation](#installation). Otherwise, ask for help on the RHModding Discord (see [README.md](README.md)).
 
 ## Linux
 Open Terminal and enter the following commands, depending on which distro you're using.
@@ -310,7 +310,7 @@ _(Specific instructions for other distributions would be greatly appreciated!)_
 ### Choosing where to store rhythmtengoku (Linux)
 At this point, you can choose a folder to store rhythmtengoku (and agbcc) into. If so, you'll have to account for the modified folder path when changing directory to the rhythmtengoku folder.
 
-If this works, then proceed to [Installation](#installation). Otherwise, ask for help on Discord or IRC (see [README.md](README.md)).
+If this works, then proceed to [Installation](#installation). Otherwise, ask for help on the RHModding Discord (see [README.md](README.md)).
 
 ## Installation
 
