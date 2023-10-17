@@ -1895,9 +1895,8 @@ SECTIONS {
         build/audio/sequences/s_f_marcher2_v_hidarimukeL.mid.o(.rodata*);
         build/audio/sequences/s_f_marcher2_v_hidarimukeS.mid.o(.rodata*);
         build/audio/sequences/s_f_marcher2_v_hidari.mid.o(.rodata*);
-        
-        build/bin/bindata_08bd0cac.bin.o(.rodata*);
-        build/bin/bindata_08cc4bcc.bin.o(.rodata*);
+
+        build/graphics/unknown/unknown_graphics.c.o(.data*);
 	}
 
 	_end = . ;
