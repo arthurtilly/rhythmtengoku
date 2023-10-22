@@ -1169,7 +1169,7 @@ SECTIONS {
         build/audio/instruments.c.o(.data);
         build/audio/sequences.c.o(.rodata);
         build/audio/sequences.c.o(.data);
-        build/bin/bindata_08a9e8e0.bin.o(.rodata*);
+        build/audio/sequence_table.c.o(.data*);
         build/bin/bindata_08aa06f8.bin.o(.rodata*);
 		build/audio/sample_table.json.c.o(.data);
 
