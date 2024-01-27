@@ -1,4 +1,6 @@
 #include "code_08005e54.h"
+#include "memory_heap.h"
+#include "code_08001360.h"
 
 
 /* ? */
@@ -71,32 +73,32 @@ void func_08005f34(struct struct_08005e54 *arg0, s32 arg1, s32 arg2, s32 arg3, s
     }
 }
 
-void func_08005fe4(struct struct_08005e54 *arg0, u16 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, u32 arg6) {
-    func_08005f34(arg0, arg2 + 1, arg3, arg4 - 2, 1, arg1[1]);
-    func_08005f34(arg0, arg2 + 1, arg5 + arg3 - 1, arg4 - 2, 1, arg1[7]);
-    func_08005f34(arg0, arg2, arg3 + 1, 1, arg5 - 2, arg1[3]);
-    func_08005f34(arg0, arg4 + arg2 - 1, arg3 + 1, 1, arg5 - 2, arg1[5]);
-    func_08005f04(arg0, arg2, arg3, arg1[0]);
-    func_08005f04(arg0, arg4 + arg2 - 1, arg3, arg1[2]);
-    func_08005f04(arg0, arg2, arg3 + arg5 - 1, arg1[6]);
-    func_08005f04(arg0, arg4 + arg2 - 1, arg3 + arg5 - 1, arg1[8]);
+void func_08005fe4(struct struct_08005e54 *arg0, struct tenU16s *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, u32 arg6) {
+    func_08005f34(arg0, arg2 + 1, arg3, arg4 - 2, 1, arg1->unk2);
+    func_08005f34(arg0, arg2 + 1, arg5 + arg3 - 1, arg4 - 2, 1, arg1->unkE);
+    func_08005f34(arg0, arg2, arg3 + 1, 1, arg5 - 2, arg1->unk6);
+    func_08005f34(arg0, arg4 + arg2 - 1, arg3 + 1, 1, arg5 - 2, arg1->unkA);
+    func_08005f04(arg0, arg2, arg3, arg1->unk0);
+    func_08005f04(arg0, arg4 + arg2 - 1, arg3, arg1->unk4);
+    func_08005f04(arg0, arg2, arg3 + arg5 - 1, arg1->unkC);
+    func_08005f04(arg0, arg4 + arg2 - 1, arg3 + arg5 - 1, arg1->unk10);
     if (arg6) {
-        func_08005f34(arg0, arg2 + 1, arg3 + 1, arg4 - 2, arg5 - 2, arg1[4]);
+        func_08005f34(arg0, arg2 + 1, arg3 + 1, arg4 - 2, arg5 - 2, arg1->unk8);
     }
     
 }
 
-void func_080060bc(u16 *arg0, u16 *arg1, u16 *arg2) {
+void func_080060bc(u16 *arg0, struct tenU16s *arg1, u16 *arg2) {
     if (arg2 != NULL) {
-        arg1[4] = arg2[arg0[4] & 0x3ff] | (arg0[4] & -0x400);
-        arg1[1] = arg2[arg0[1] & 0x3ff] | (arg0[1] & -0x400);
-        arg1[7] = arg2[arg0[7] & 0x3ff] | (arg0[7] & -0x400);
-        arg1[3] = arg2[arg0[3] & 0x3ff] | (arg0[3] & -0x400);
-        arg1[5] = arg2[arg0[5] & 0x3ff] | (arg0[5] & -0x400);
-        arg1[0] = arg2[arg0[0] & 0x3ff] | (arg0[0] & -0x400);
-        arg1[2] = arg2[arg0[2] & 0x3ff] | (arg0[2] & -0x400);
-        arg1[6] = arg2[arg0[6] & 0x3ff] | (arg0[6] & -0x400);
-        arg1[8] = arg2[arg0[8] & 0x3ff] | (arg0[8] & -0x400);
+        arg1->unk8 = arg2[arg0[4] & 0x3ff] | (arg0[4] & -0x400);
+        arg1->unk2 = arg2[arg0[1] & 0x3ff] | (arg0[1] & -0x400);
+        arg1->unkE = arg2[arg0[7] & 0x3ff] | (arg0[7] & -0x400);
+        arg1->unk6 = arg2[arg0[3] & 0x3ff] | (arg0[3] & -0x400);
+        arg1->unkA = arg2[arg0[5] & 0x3ff] | (arg0[5] & -0x400);
+        arg1->unk0 = arg2[arg0[0] & 0x3ff] | (arg0[0] & -0x400);
+        arg1->unk4 = arg2[arg0[2] & 0x3ff] | (arg0[2] & -0x400);
+        arg1->unkC = arg2[arg0[6] & 0x3ff] | (arg0[6] & -0x400);
+        arg1->unk10 = arg2[arg0[8] & 0x3ff] | (arg0[8] & -0x400);
         return;
     }
     dma3_set(arg0, arg1, 20, 32, 0x100);

@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "src/task_pool.h"
+#include "src/bitmap_font.h"
 
 extern struct TaskMethods D_08936b84;
 extern struct TaskMethods D_08936b94;
@@ -23,17 +24,37 @@ extern struct TaskMethods D_08936c8c;
 extern struct TaskMethods D_08936c9c;
 
 // ?
+struct tenU16s {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u16 unk6;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+};
 struct unk_struct_08006bb4_init {
-    u32 pad0;
-    u32 pad4;
-    u32 pad8;
-    u32 padC;
-    u32 pad10;
-    u32 pad14;
-    u8 *unk18;
-    u32 unk1C_1:12;
+    struct BitmapFontBG *unk0;
+    union {
+        struct struct_08005e54 *as5e54;
+        const char *str;
+    } unk4;
+    struct struct_08005e54 *unk8;
+    s16 unkC;
+    s16 unkE;
+    struct tenU16s *unk10;
+    struct struct_08005e54 *unk14;
+    struct struct_080067a4_1 *unk18;
+    u32 unk1C_0:12;
+    u32 unk1C_12:4;
+    u16 unk1E;
     void (*unk20)(struct unk_struct_08006bb4_init *, u32); // dunno type of second parameter
     u32 unk24; // unknown type
+    void (*unk28)(struct unk_struct_08006bb4_init *, u32);
+    u32 unk2C;
 };
 struct unk_struct_08006bb4 {
     struct unk_struct_08006bb4_init *unk0;
@@ -45,8 +66,6 @@ struct unk_struct_08006bb4 {
 };
 
 // ?
-struct unk_struct_08006ca4_init;
-struct unk_struct_08006ca4;
 
 // Sprite Motion - Indefinite Linear
 struct SpriteMover_Indefinite_Inputs {
