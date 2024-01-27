@@ -39,7 +39,7 @@ branch_0802abb8: \n\
 /* 0802abc0 */ LSLS R0, R0, 0x2 \n\
 /* 0802abc2 */ LDR R1, [R1, 0xC] \n\
 /* 0802abc4 */ ADDS R5, R1, R0 @ Set R5 to R1 + R0 \n\
-/* 0802abc6 */ LDR R2, =D_08aa4460 \n\
+/* 0802abc6 */ LDR R2, =sound_player_table \n\
 /* 0802abc8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802abca */ LDRSB R1, [R5, R1] \n\
 /* 0802abcc */ LSLS R0, R1, 0x1 \n\

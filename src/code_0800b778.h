@@ -240,12 +240,12 @@ extern void set_beatscript_speed(u16 speed); // Set Script Speed (Q8.8)
 extern void func_0800be9c_stub(void);
 extern void func_0800bea0(u32 arg); // Set unk0_b7
 extern void func_0800bebc(u32 arg); // Set unk1C
-extern u32  scene_change_music(struct SequenceData *, u32 override, s32 soundPlayer); // Play Music
-extern void scene_set_music(struct SequenceData *); // Play Music (Override)
-extern void scene_play_music(struct SequenceData *); // Play Music (No Override)
-extern void scene_set_music_with_soundplayer(struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)
-extern void scene_play_music_with_soundplayer(struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
-extern void scene_set_music_player_by_sound(struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
+extern u32  scene_change_music(struct SongHeader *, u32 override, s32 soundPlayer); // Play Music
+extern void scene_set_music(struct SongHeader *); // Play Music (Override)
+extern void scene_play_music(struct SongHeader *); // Play Music (No Override)
+extern void scene_set_music_with_soundplayer(struct SongHeader *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)
+extern void scene_play_music_with_soundplayer(struct SongHeader *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
+extern void scene_set_music_player_by_sound(struct SongHeader *); // Play Music (override, use predefined SoundPlayer ID)
 extern void scene_stop_music(void); // Stop Music
 extern void scene_fade_in_music(u16 duration); // Fade-In Music
 extern void scene_fade_out_music(u16 duration); // Fade-Out Music
@@ -265,12 +265,12 @@ extern u32 func_0800c1b4(void); // Get Sprite Animation Speed
 extern s32 func_0800c1c0(s24_8 arg); // Return (arg * spriteAnimSpeed)
 extern s32 func_0800c1d0(s24_8 arg); // Return (arg * (spriteAnimSpeed ^ 2))
 extern void scene_set_soundplayer_panning(struct SoundPlayer *player, s16 panning); // Set Music Panning
-extern struct SoundPlayer *scene_set_random_music(struct SequenceData **musicPool);
-extern struct SoundPlayer *scene_play_sound_to_tempo_and_pitch(struct SequenceData *sfx);
-extern struct SoundPlayer *scene_play_sound_to_tempo(struct SequenceData *sfx);
-extern struct SoundPlayer *scene_play_random_sound(struct SequenceData **sfxPool);
-extern struct SoundPlayer *scene_play_random_sound_to_tempo_and_pitch(struct SequenceData **sfxPool);
-extern struct SoundPlayer *scene_play_random_sound_to_tempo(struct SequenceData **sfxPool);
+extern struct SoundPlayer *scene_set_random_music(struct SongHeader **musicPool);
+extern struct SoundPlayer *scene_play_sound_to_tempo_and_pitch(struct SongHeader *sfx);
+extern struct SoundPlayer *scene_play_sound_to_tempo(struct SongHeader *sfx);
+extern struct SoundPlayer *scene_play_random_sound(struct SongHeader **sfxPool);
+extern struct SoundPlayer *scene_play_random_sound_to_tempo_and_pitch(struct SongHeader **sfxPool);
+extern struct SoundPlayer *scene_play_random_sound_to_tempo(struct SongHeader **sfxPool);
 extern void func_0800c390_stub(void);
 extern u32 func_0800c394(void);
 extern u32 func_0800c398(void);

@@ -1,126 +1,54 @@
-// 128 entries
-InstrumentBank instrument_bank_1 = {
-    /* 000 */ &instrument_pcm_data_1.header,  &instrument_pcm_data_2.header,  &instrument_pcm_data_3.header,  &instrument_pcm_data_4.header,
-    /* 004 */ NULL,                           &instrument_pcm_data_5.header,  NULL,                           &instrument_pcm_data_6.header,
-    /* 008 */ &instrument_pcm_data_7.header,  NULL,                           &instrument_pcm_data_8.header,  &instrument_pcm_data_9.header,
-    /* 012 */ &instrument_pcm_data_10.header, NULL,                           NULL,                           NULL,
-    /* 020 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 024 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 028 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 032 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 036 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 016 */ NULL,                           NULL,                           NULL,                           &instrument_pcm_data_12.header,
-    /* 040 */ NULL,                           &instrument_subbank_multi_key_data_11.header, NULL,             NULL,
-    /* 044 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 048 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 052 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 056 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 060 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 064 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 068 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 072 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 076 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 080 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 084 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 088 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 092 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 096 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 100 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 104 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 108 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 112 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 116 */ NULL,                           NULL,                           NULL,                           &instrument_pcm_data_13.header,
-    /* 120 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 124 */ NULL,                           &instrument_subbank_single_key_data_14.header, &instrument_subbank_single_key_data_15.header, &instrument_subbank_single_key_data_16.header
-};
-
-// 128 entries
-InstrumentBank instrument_bank_2 = {
-    /* 000 */ &instrument_pcm_data_17.header, &instrument_pcm_data_18.header, &instrument_pcm_data_19.header, &instrument_pcm_data_20.header,
-    /* 004 */ &instrument_pcm_data_21.header, &instrument_pcm_data_22.header, &instrument_pcm_data_23.header, &instrument_pcm_data_24.header,
-    /* 008 */ &instrument_pcm_data_25.header, &instrument_pcm_data_26.header, &instrument_pcm_data_27.header, &instrument_pcm_data_28.header,
-    /* 012 */ &instrument_pcm_data_29.header, &instrument_pcm_data_30.header, &instrument_pcm_data_31.header, &instrument_pcm_data_32.header,
-    /* 016 */ &instrument_pcm_data_33.header, &instrument_pcm_data_34.header, &instrument_pcm_data_35.header, &instrument_pcm_data_36.header,
-    /* 020 */ &instrument_psg_data_37.header, &instrument_pcm_data_38.header, &instrument_pcm_data_39.header, &instrument_pcm_data_40.header,
-    /* 024 */ &instrument_pcm_data_41.header, &instrument_pcm_data_42.header, &instrument_pcm_data_43.header, &instrument_pcm_data_44.header,
-    /* 028 */ &instrument_pcm_data_45.header, &instrument_pcm_data_46.header, &instrument_pcm_data_47.header, &instrument_pcm_data_48.header,
-    /* 032 */ &instrument_pcm_data_49.header, &instrument_pcm_data_50.header, &instrument_pcm_data_51.header, NULL,
-    /* 036 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 040 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 044 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 048 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 052 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 056 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 060 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 064 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 068 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 072 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 076 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 080 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 084 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 088 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 092 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 096 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 100 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 104 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 108 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 112 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 116 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 120 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 124 */ &instrument_subbank_single_key_data_52.header, &instrument_subbank_single_key_data_53.header, &instrument_subbank_single_key_data_54.header, &instrument_subbank_single_key_data_55.header
-};
-
-// 128 entries
-InstrumentBank instrument_bank_3 = {
-    /* 000 */ &instrument_pcm_data_56.header, &instrument_pcm_data_57.header, &instrument_pcm_data_58.header, &instrument_pcm_data_59.header,
-    /* 004 */ &instrument_pcm_data_60.header, &instrument_pcm_data_61.header, &instrument_pcm_data_62.header, &instrument_pcm_data_63.header,
-    /* 008 */ &instrument_pcm_data_64.header, &instrument_pcm_data_65.header, &instrument_pcm_data_66.header, &instrument_pcm_data_67.header,
-    /* 012 */ &instrument_pcm_data_68.header, &instrument_pcm_data_69.header, &instrument_psg_data_70.header, NULL,
-    /* 016 */ NULL,                           NULL,                           NULL,                           &instrument_pcm_data_71.header,
-    /* 020 */ &instrument_pcm_data_72.header, &instrument_pcm_data_73.header, &instrument_pcm_data_74.header, &instrument_pcm_data_75.header,
-    /* 024 */ &instrument_pcm_data_76.header, &instrument_pcm_data_77.header, &instrument_pcm_data_78.header, &instrument_pcm_data_79.header,
-    /* 028 */ &instrument_pcm_data_80.header, NULL,                           NULL,                           NULL,
-    /* 032 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 036 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 040 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 044 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 048 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 052 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 056 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 060 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 064 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 068 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 072 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 076 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 080 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 084 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 088 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 092 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 096 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 100 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 104 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 108 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 112 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 116 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 120 */ NULL,                           NULL,                           NULL,                           NULL,
-    /* 124 */ NULL,                           NULL,                           NULL,                           &instrument_subbank_single_key_data_81.header
-};
-
-// 128 entries
-InstrumentBank instrument_bank_4 = {
-    /* 000 */ &instrument_pcm_data_82.header,  &instrument_pcm_data_83.header,  &instrument_pcm_data_84.header,  &instrument_pcm_data_85.header,
-    /* 004 */ &instrument_pcm_data_86.header,  &instrument_pcm_data_87.header,  &instrument_pcm_data_88.header,  &instrument_psg_data_89.header,
-    /* 008 */ &instrument_psg_data_90.header,  &instrument_pcm_data_91.header,  &instrument_pcm_data_92.header,  &instrument_psg_data_93.header,
-    /* 012 */ &instrument_pcm_data_94.header,  &instrument_pcm_data_95.header,  NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_01[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0001 }, { .pcm = &instrument_pcm_0002 }, { .pcm = &instrument_pcm_0003 }, { .pcm = &instrument_pcm_0004 },
+    /* 004 */ NULL,                            { .pcm = &instrument_pcm_0005 }, NULL,                            { .pcm = &instrument_pcm_0006 },
+    /* 008 */ { .pcm = &instrument_pcm_0007 }, NULL,                            { .pcm = &instrument_pcm_0008 }, { .pcm = &instrument_pcm_0009 },
+    /* 012 */ { .pcm = &instrument_pcm_0010 }, NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 020 */ &instrument_pcm_data_96.header,  &instrument_pcm_data_97.header,  &instrument_pcm_data_98.header,  &instrument_pcm_data_99.header,
-    /* 024 */ &instrument_pcm_data_100.header, &instrument_pcm_data_101.header, &instrument_pcm_data_102.header, &instrument_pcm_data_103.header,
-    /* 028 */ &instrument_pcm_data_104.header, &instrument_pcm_data_105.header, &instrument_pcm_data_106.header, &instrument_pcm_data_107.header,
-    /* 032 */ &instrument_pcm_data_108.header, NULL,                            NULL,                            NULL,
+    /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 036 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_0012 },
+    /* 040 */ NULL,                            { .spl = &instrument_spl_0011 }, NULL,                            NULL,
+    /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 056 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 064 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 068 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 072 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 080 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 084 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 088 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 092 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 096 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 100 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 104 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 116 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_0013 },
+    /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0014 }, { .rhy = &instrument_rhy_0015 }, { .rhy = &instrument_rhy_0016 }
+};
+
+// 128 Instruments
+union Instrument inst_bank_02[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0017 }, { .pcm = &instrument_pcm_0018 }, { .pcm = &instrument_pcm_0019 }, { .pcm = &instrument_pcm_0020 },
+    /* 004 */ { .pcm = &instrument_pcm_0021 }, { .pcm = &instrument_pcm_0022 }, { .pcm = &instrument_pcm_0023 }, { .pcm = &instrument_pcm_0024 },
+    /* 008 */ { .pcm = &instrument_pcm_0025 }, { .pcm = &instrument_pcm_0026 }, { .pcm = &instrument_pcm_0027 }, { .pcm = &instrument_pcm_0028 },
+    /* 012 */ { .pcm = &instrument_pcm_0029 }, { .pcm = &instrument_pcm_0030 }, { .pcm = &instrument_pcm_0031 }, { .pcm = &instrument_pcm_0032 },
+    /* 016 */ { .pcm = &instrument_pcm_0033 }, { .pcm = &instrument_pcm_0034 }, { .pcm = &instrument_pcm_0035 }, { .pcm = &instrument_pcm_0036 },
+    /* 020 */ { .psg = &instrument_psg_0037 }, { .pcm = &instrument_pcm_0038 }, { .pcm = &instrument_pcm_0039 }, { .pcm = &instrument_pcm_0040 },
+    /* 024 */ { .pcm = &instrument_pcm_0041 }, { .pcm = &instrument_pcm_0042 }, { .pcm = &instrument_pcm_0043 }, { .pcm = &instrument_pcm_0044 },
+    /* 028 */ { .pcm = &instrument_pcm_0045 }, { .pcm = &instrument_pcm_0046 }, { .pcm = &instrument_pcm_0047 }, { .pcm = &instrument_pcm_0048 },
+    /* 032 */ { .pcm = &instrument_pcm_0049 }, { .pcm = &instrument_pcm_0050 }, { .pcm = &instrument_pcm_0051 }, NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 040 */ &instrument_pcm_data_109.header, &instrument_pcm_data_110.header, &instrument_pcm_data_111.header, &instrument_pcm_data_112.header,
-    /* 044 */ &instrument_pcm_data_113.header, &instrument_pcm_data_114.header, &instrument_pcm_data_115.header, &instrument_pcm_data_116.header,
-    /* 048 */ NULL,                            &instrument_pcm_data_117.header, &instrument_pcm_data_118.header, NULL,
+    /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 056 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -139,18 +67,90 @@ InstrumentBank instrument_bank_4 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            &instrument_subbank_single_key_data_119.header, &instrument_subbank_single_key_data_120.header
+    /* 124 */ { .rhy = &instrument_rhy_0052 }, { .rhy = &instrument_rhy_0053 }, { .rhy = &instrument_rhy_0054 }, { .rhy = &instrument_rhy_0055 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_5 = {
-    /* 000 */ &instrument_pcm_data_121.header, &instrument_pcm_data_122.header, &instrument_psg_data_123.header, &instrument_pcm_data_124.header,
-    /* 004 */ &instrument_pcm_data_125.header, &instrument_pcm_data_126.header, &instrument_pcm_data_127.header, &instrument_pcm_data_128.header,
-    /* 008 */ &instrument_pcm_data_129.header, NULL,                            NULL,                            NULL,
-    /* 012 */ &instrument_pcm_data_130.header, &instrument_pcm_data_131.header, &instrument_pcm_data_132.header, &instrument_pcm_data_133.header,
-    /* 016 */ &instrument_pcm_data_134.header, &instrument_pcm_data_135.header, &instrument_pcm_data_136.header, &instrument_pcm_data_137.header,
-    /* 020 */ &instrument_pcm_data_138.header, &instrument_pcm_data_139.header, &instrument_pcm_data_140.header, &instrument_pcm_data_141.header,
-    /* 024 */ &instrument_pcm_data_142.header, &instrument_pcm_data_143.header, &instrument_pcm_data_144.header, NULL,
+// 128 Instruments
+union Instrument inst_bank_03[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0056 }, { .pcm = &instrument_pcm_0057 }, { .pcm = &instrument_pcm_0058 }, { .pcm = &instrument_pcm_0059 },
+    /* 004 */ { .pcm = &instrument_pcm_0060 }, { .pcm = &instrument_pcm_0061 }, { .pcm = &instrument_pcm_0062 }, { .pcm = &instrument_pcm_0063 },
+    /* 008 */ { .pcm = &instrument_pcm_0064 }, { .pcm = &instrument_pcm_0065 }, { .pcm = &instrument_pcm_0066 }, { .pcm = &instrument_pcm_0067 },
+    /* 012 */ { .pcm = &instrument_pcm_0068 }, { .pcm = &instrument_pcm_0069 }, { .psg = &instrument_psg_0070 }, NULL,
+    /* 016 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_0071 },
+    /* 020 */ { .pcm = &instrument_pcm_0072 }, { .pcm = &instrument_pcm_0073 }, { .pcm = &instrument_pcm_0074 }, { .pcm = &instrument_pcm_0075 },
+    /* 024 */ { .pcm = &instrument_pcm_0076 }, { .pcm = &instrument_pcm_0077 }, { .pcm = &instrument_pcm_0078 }, { .pcm = &instrument_pcm_0079 },
+    /* 028 */ { .pcm = &instrument_pcm_0080 }, NULL,                            NULL,                            NULL,
+    /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 056 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 064 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 068 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 072 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 080 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 084 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 088 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 092 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 096 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 100 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 104 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0081 }
+};
+
+// 128 Instruments
+union Instrument inst_bank_04[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0082 }, { .pcm = &instrument_pcm_0083 }, { .pcm = &instrument_pcm_0084 }, { .pcm = &instrument_pcm_0085 },
+    /* 004 */ { .pcm = &instrument_pcm_0086 }, { .pcm = &instrument_pcm_0087 }, { .pcm = &instrument_pcm_0088 }, { .psg = &instrument_psg_0089 },
+    /* 008 */ { .psg = &instrument_psg_0090 }, { .pcm = &instrument_pcm_0091 }, { .pcm = &instrument_pcm_0092 }, { .psg = &instrument_psg_0093 },
+    /* 012 */ { .pcm = &instrument_pcm_0094 }, { .pcm = &instrument_pcm_0095 }, NULL,                            NULL,
+    /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 020 */ { .pcm = &instrument_pcm_0096 }, { .pcm = &instrument_pcm_0097 }, { .pcm = &instrument_pcm_0098 }, { .pcm = &instrument_pcm_0099 },
+    /* 024 */ { .pcm = &instrument_pcm_0100 }, { .pcm = &instrument_pcm_0101 }, { .pcm = &instrument_pcm_0102 }, { .pcm = &instrument_pcm_0103 },
+    /* 028 */ { .pcm = &instrument_pcm_0104 }, { .pcm = &instrument_pcm_0105 }, { .pcm = &instrument_pcm_0106 }, { .pcm = &instrument_pcm_0107 },
+    /* 032 */ { .pcm = &instrument_pcm_0108 }, NULL,                            NULL,                            NULL,
+    /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 040 */ { .pcm = &instrument_pcm_0109 }, { .pcm = &instrument_pcm_0110 }, { .pcm = &instrument_pcm_0111 }, { .pcm = &instrument_pcm_0112 },
+    /* 044 */ { .pcm = &instrument_pcm_0113 }, { .pcm = &instrument_pcm_0114 }, { .pcm = &instrument_pcm_0115 }, { .pcm = &instrument_pcm_0116 },
+    /* 048 */ NULL,                            { .pcm = &instrument_pcm_0117 }, { .pcm = &instrument_pcm_0118 }, NULL,
+    /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 056 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 064 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 068 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 072 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 080 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 084 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 088 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 092 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 096 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 100 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 104 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 124 */ NULL,                            NULL,                            { .rhy = &instrument_rhy_0119 }, { .rhy = &instrument_rhy_0120 }
+};
+
+// 128 Instruments
+union Instrument inst_bank_05[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0121 }, { .pcm = &instrument_pcm_0122 }, { .psg = &instrument_psg_0123 }, { .pcm = &instrument_pcm_0124 },
+    /* 004 */ { .pcm = &instrument_pcm_0125 }, { .pcm = &instrument_pcm_0126 }, { .pcm = &instrument_pcm_0127 }, { .pcm = &instrument_pcm_0128 },
+    /* 008 */ { .pcm = &instrument_pcm_0129 }, NULL,                            NULL,                            NULL,
+    /* 012 */ { .pcm = &instrument_pcm_0130 }, { .pcm = &instrument_pcm_0131 }, { .pcm = &instrument_pcm_0132 }, { .pcm = &instrument_pcm_0133 },
+    /* 016 */ { .pcm = &instrument_pcm_0134 }, { .pcm = &instrument_pcm_0135 }, { .pcm = &instrument_pcm_0136 }, { .pcm = &instrument_pcm_0137 },
+    /* 020 */ { .pcm = &instrument_pcm_0138 }, { .pcm = &instrument_pcm_0139 }, { .pcm = &instrument_pcm_0140 }, { .pcm = &instrument_pcm_0141 },
+    /* 024 */ { .pcm = &instrument_pcm_0142 }, { .pcm = &instrument_pcm_0143 }, { .pcm = &instrument_pcm_0144 }, NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -175,20 +175,20 @@ InstrumentBank instrument_bank_5 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_145.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0145 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_6 = {
-    /* 000 */ &instrument_pcm_data_146.header, &instrument_pcm_data_147.header, &instrument_pcm_data_148.header, &instrument_pcm_data_149.header,
-    /* 004 */ &instrument_pcm_data_150.header, &instrument_pcm_data_151.header, &instrument_pcm_data_152.header, &instrument_pcm_data_153.header,
-    /* 008 */ &instrument_pcm_data_154.header, &instrument_pcm_data_155.header, &instrument_pcm_data_156.header, &instrument_subbank_multi_key_data_157.header,
-    /* 012 */ &instrument_pcm_data_158.header, &instrument_pcm_data_159.header, &instrument_pcm_data_160.header, &instrument_pcm_data_161.header,
-    /* 016 */ &instrument_pcm_data_162.header, &instrument_pcm_data_163.header, &instrument_pcm_data_164.header, &instrument_pcm_data_165.header,
-    /* 020 */ &instrument_pcm_data_166.header, &instrument_pcm_data_167.header, &instrument_pcm_data_168.header, &instrument_pcm_data_169.header,
-    /* 024 */ &instrument_pcm_data_170.header, &instrument_pcm_data_171.header, &instrument_psg_data_172.header, &instrument_psg_data_173.header,
-    /* 028 */ &instrument_pcm_data_174.header, &instrument_pcm_data_175.header, &instrument_pcm_data_176.header, &instrument_pcm_data_177.header,
-    /* 032 */ &instrument_pcm_data_178.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_06[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0146 }, { .pcm = &instrument_pcm_0147 }, { .pcm = &instrument_pcm_0148 }, { .pcm = &instrument_pcm_0149 },
+    /* 004 */ { .pcm = &instrument_pcm_0150 }, { .pcm = &instrument_pcm_0151 }, { .pcm = &instrument_pcm_0152 }, { .pcm = &instrument_pcm_0153 },
+    /* 008 */ { .pcm = &instrument_pcm_0154 }, { .pcm = &instrument_pcm_0155 }, { .pcm = &instrument_pcm_0156 }, { .spl = &instrument_spl_0157 },
+    /* 012 */ { .pcm = &instrument_pcm_0158 }, { .pcm = &instrument_pcm_0159 }, { .pcm = &instrument_pcm_0160 }, { .pcm = &instrument_pcm_0161 },
+    /* 016 */ { .pcm = &instrument_pcm_0162 }, { .pcm = &instrument_pcm_0163 }, { .pcm = &instrument_pcm_0164 }, { .pcm = &instrument_pcm_0165 },
+    /* 020 */ { .pcm = &instrument_pcm_0166 }, { .pcm = &instrument_pcm_0167 }, { .pcm = &instrument_pcm_0168 }, { .pcm = &instrument_pcm_0169 },
+    /* 024 */ { .pcm = &instrument_pcm_0170 }, { .pcm = &instrument_pcm_0171 }, { .psg = &instrument_psg_0172 }, { .psg = &instrument_psg_0173 },
+    /* 028 */ { .pcm = &instrument_pcm_0174 }, { .pcm = &instrument_pcm_0175 }, { .pcm = &instrument_pcm_0176 }, { .pcm = &instrument_pcm_0177 },
+    /* 032 */ { .pcm = &instrument_pcm_0178 }, NULL,                            NULL,                            NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -211,16 +211,16 @@ InstrumentBank instrument_bank_6 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ &instrument_subbank_single_key_data_179.header, NULL,             &instrument_subbank_single_key_data_180.header, &instrument_subbank_single_key_data_181.header
+    /* 124 */ { .rhy = &instrument_rhy_0179 }, NULL,                            { .rhy = &instrument_rhy_0180 }, { .rhy = &instrument_rhy_0181 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_7 = {
-    /* 000 */ &instrument_pcm_data_182.header, &instrument_pcm_data_183.header, NULL,                            NULL,
-    /* 004 */ &instrument_pcm_data_184.header, &instrument_pcm_data_185.header, &instrument_pcm_data_186.header, &instrument_pcm_data_187.header,
-    /* 008 */ &instrument_pcm_data_188.header, &instrument_pcm_data_189.header, &instrument_pcm_data_190.header, &instrument_pcm_data_191.header,
-    /* 012 */ &instrument_pcm_data_192.header, &instrument_pcm_data_193.header, &instrument_pcm_data_194.header, &instrument_pcm_data_195.header,
-    /* 016 */ &instrument_pcm_data_196.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_07[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0182 }, { .pcm = &instrument_pcm_0183 }, NULL,                            NULL,
+    /* 004 */ { .pcm = &instrument_pcm_0184 }, { .pcm = &instrument_pcm_0185 }, { .pcm = &instrument_pcm_0186 }, { .pcm = &instrument_pcm_0187 },
+    /* 008 */ { .pcm = &instrument_pcm_0188 }, { .pcm = &instrument_pcm_0189 }, { .pcm = &instrument_pcm_0190 }, { .pcm = &instrument_pcm_0191 },
+    /* 012 */ { .pcm = &instrument_pcm_0192 }, { .pcm = &instrument_pcm_0193 }, { .pcm = &instrument_pcm_0194 }, { .pcm = &instrument_pcm_0195 },
+    /* 016 */ { .pcm = &instrument_pcm_0196 }, NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -247,13 +247,13 @@ InstrumentBank instrument_bank_7 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_197.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0197 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_8 = {
-    /* 000 */ &instrument_pcm_data_198.header, &instrument_pcm_data_199.header, &instrument_pcm_data_200.header, &instrument_pcm_data_201.header,
-    /* 004 */ &instrument_pcm_data_202.header, &instrument_pcm_data_203.header, &instrument_pcm_data_204.header, NULL,
+// 128 Instruments
+union Instrument inst_bank_08[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0198 }, { .pcm = &instrument_pcm_0199 }, { .pcm = &instrument_pcm_0200 }, { .pcm = &instrument_pcm_0201 },
+    /* 004 */ { .pcm = &instrument_pcm_0202 }, { .pcm = &instrument_pcm_0203 }, { .pcm = &instrument_pcm_0204 }, NULL,
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -283,24 +283,24 @@ InstrumentBank instrument_bank_8 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_205.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0205 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_9 = {
-    /* 000 */ &instrument_pcm_data_206.header, &instrument_pcm_data_207.header, &instrument_pcm_data_208.header, &instrument_pcm_data_209.header,
-    /* 004 */ &instrument_pcm_data_210.header, &instrument_pcm_data_212.header, &instrument_pcm_data_213.header, &instrument_pcm_data_214.header,
+// 128 Instruments
+union Instrument inst_bank_09[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0206 }, { .pcm = &instrument_pcm_0207 }, { .pcm = &instrument_pcm_0208 }, { .pcm = &instrument_pcm_0209 },
+    /* 004 */ { .pcm = &instrument_pcm_0210 }, { .pcm = &instrument_pcm_0212 }, { .pcm = &instrument_pcm_0213 }, { .pcm = &instrument_pcm_0214 },
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 012 */ &instrument_pcm_data_215.header, &instrument_pcm_data_217.header, &instrument_pcm_data_218.header, &instrument_pcm_data_219.header,
-    /* 016 */ &instrument_pcm_data_220.header, NULL,                            &instrument_pcm_data_221.header, &instrument_pcm_data_222.header,
+    /* 012 */ { .pcm = &instrument_pcm_0215 }, { .pcm = &instrument_pcm_0217 }, { .pcm = &instrument_pcm_0218 }, { .pcm = &instrument_pcm_0219 },
+    /* 016 */ { .pcm = &instrument_pcm_0220 }, NULL,                            { .pcm = &instrument_pcm_0221 }, { .pcm = &instrument_pcm_0222 },
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 024 */ &instrument_pcm_data_223.header, &instrument_pcm_data_224.header, &instrument_pcm_data_225.header, &instrument_pcm_data_226.header,
-    /* 028 */ &instrument_pcm_data_227.header, &instrument_pcm_data_229.header, &instrument_pcm_data_230.header, &instrument_pcm_data_231.header,
-    /* 032 */ NULL,                            &instrument_pcm_data_232.header, NULL,                            NULL,
-    /* 036 */ &instrument_pcm_data_233.header, &instrument_pcm_data_234.header, NULL,                            &instrument_pcm_data_235.header,
-    /* 040 */ &instrument_pcm_data_236.header, &instrument_pcm_data_237.header, &instrument_pcm_data_238.header, &instrument_pcm_data_239.header,
-    /* 044 */ &instrument_pcm_data_240.header, &instrument_pcm_data_241.header, &instrument_pcm_data_211.header, &instrument_pcm_data_216.header,
-    /* 048 */ &instrument_pcm_data_228.header, NULL,                            NULL,                            NULL,
+    /* 024 */ { .pcm = &instrument_pcm_0223 }, { .pcm = &instrument_pcm_0224 }, { .pcm = &instrument_pcm_0225 }, { .pcm = &instrument_pcm_0226 },
+    /* 028 */ { .pcm = &instrument_pcm_0227 }, { .pcm = &instrument_pcm_0229 }, { .pcm = &instrument_pcm_0230 }, { .pcm = &instrument_pcm_0231 },
+    /* 032 */ NULL,                            { .pcm = &instrument_pcm_0232 }, NULL,                            NULL,
+    /* 036 */ { .pcm = &instrument_pcm_0233 }, { .pcm = &instrument_pcm_0234 }, NULL,                            { .pcm = &instrument_pcm_0235 },
+    /* 040 */ { .pcm = &instrument_pcm_0236 }, { .pcm = &instrument_pcm_0237 }, { .pcm = &instrument_pcm_0238 }, { .pcm = &instrument_pcm_0239 },
+    /* 044 */ { .pcm = &instrument_pcm_0240 }, { .pcm = &instrument_pcm_0241 }, { .pcm = &instrument_pcm_0211 }, { .pcm = &instrument_pcm_0216 },
+    /* 048 */ { .pcm = &instrument_pcm_0228 }, NULL,                            NULL,                            NULL,
     /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 056 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -319,24 +319,24 @@ InstrumentBank instrument_bank_9 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_242.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0242 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_10 = {
-    /* 000 */ &instrument_pcm_data_243.header, &instrument_pcm_data_244.header, &instrument_pcm_data_245.header, &instrument_pcm_data_246.header,
-    /* 004 */ &instrument_pcm_data_247.header, &instrument_pcm_data_248.header, &instrument_pcm_data_249.header, &instrument_pcm_data_250.header,
-    /* 008 */ &instrument_pcm_data_251.header, &instrument_pcm_data_252.header, &instrument_pcm_data_253.header, &instrument_pcm_data_254.header,
-    /* 012 */ &instrument_pcm_data_255.header, &instrument_pcm_data_256.header, &instrument_pcm_data_257.header, &instrument_pcm_data_258.header,
-    /* 016 */ &instrument_pcm_data_259.header, &instrument_pcm_data_260.header, &instrument_pcm_data_261.header, &instrument_pcm_data_262.header,
-    /* 020 */ NULL,                            &instrument_pcm_data_263.header, &instrument_pcm_data_264.header, &instrument_pcm_data_265.header,
-    /* 024 */ &instrument_pcm_data_266.header, &instrument_pcm_data_267.header, &instrument_pcm_data_268.header, &instrument_pcm_data_269.header,
-    /* 028 */ &instrument_pcm_data_270.header, &instrument_pcm_data_271.header, &instrument_pcm_data_272.header, &instrument_pcm_data_273.header,
-    /* 032 */ &instrument_pcm_data_274.header, &instrument_pcm_data_275.header, &instrument_pcm_data_276.header, &instrument_pcm_data_277.header,
-    /* 036 */ &instrument_pcm_data_278.header, &instrument_pcm_data_279.header, &instrument_pcm_data_280.header, &instrument_pcm_data_281.header,
-    /* 040 */ &instrument_subbank_multi_key_data_282.header, &instrument_pcm_data_283.header, &instrument_pcm_data_284.header, &instrument_pcm_data_285.header,
+// 128 Instruments
+union Instrument inst_bank_10[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0243 }, { .pcm = &instrument_pcm_0244 }, { .pcm = &instrument_pcm_0245 }, { .pcm = &instrument_pcm_0246 },
+    /* 004 */ { .pcm = &instrument_pcm_0247 }, { .pcm = &instrument_pcm_0248 }, { .pcm = &instrument_pcm_0249 }, { .pcm = &instrument_pcm_0250 },
+    /* 008 */ { .pcm = &instrument_pcm_0251 }, { .pcm = &instrument_pcm_0252 }, { .pcm = &instrument_pcm_0253 }, { .pcm = &instrument_pcm_0254 },
+    /* 012 */ { .pcm = &instrument_pcm_0255 }, { .pcm = &instrument_pcm_0256 }, { .pcm = &instrument_pcm_0257 }, { .pcm = &instrument_pcm_0258 },
+    /* 016 */ { .pcm = &instrument_pcm_0259 }, { .pcm = &instrument_pcm_0260 }, { .pcm = &instrument_pcm_0261 }, { .pcm = &instrument_pcm_0262 },
+    /* 020 */ NULL,                            { .pcm = &instrument_pcm_0263 }, { .pcm = &instrument_pcm_0264 }, { .pcm = &instrument_pcm_0265 },
+    /* 024 */ { .pcm = &instrument_pcm_0266 }, { .pcm = &instrument_pcm_0267 }, { .pcm = &instrument_pcm_0268 }, { .pcm = &instrument_pcm_0269 },
+    /* 028 */ { .pcm = &instrument_pcm_0270 }, { .pcm = &instrument_pcm_0271 }, { .pcm = &instrument_pcm_0272 }, { .pcm = &instrument_pcm_0273 },
+    /* 032 */ { .pcm = &instrument_pcm_0274 }, { .pcm = &instrument_pcm_0275 }, { .pcm = &instrument_pcm_0276 }, { .pcm = &instrument_pcm_0277 },
+    /* 036 */ { .pcm = &instrument_pcm_0278 }, { .pcm = &instrument_pcm_0279 }, { .pcm = &instrument_pcm_0280 }, { .pcm = &instrument_pcm_0281 },
+    /* 040 */ { .spl = &instrument_spl_0282 }, { .pcm = &instrument_pcm_0283 }, { .pcm = &instrument_pcm_0284 }, { .pcm = &instrument_pcm_0285 },
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 048 */ NULL,                            NULL,                            NULL,                            &instrument_pcm_data_286.header,
+    /* 048 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_0286 },
     /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 056 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -355,19 +355,19 @@ InstrumentBank instrument_bank_10 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_287.header, &instrument_subbank_single_key_data_288.header, &instrument_subbank_single_key_data_289.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0287 }, { .rhy = &instrument_rhy_0288 }, { .rhy = &instrument_rhy_0289 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_11 = {
-    /* 000 */ &instrument_pcm_data_290.header, &instrument_pcm_data_291.header, &instrument_pcm_data_292.header, &instrument_pcm_data_293.header,
-    /* 004 */ &instrument_pcm_data_294.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_11[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0290 }, { .pcm = &instrument_pcm_0291 }, { .pcm = &instrument_pcm_0292 }, { .pcm = &instrument_pcm_0293 },
+    /* 004 */ { .pcm = &instrument_pcm_0294 }, NULL,                            NULL,                            NULL,
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 020 */ &instrument_pcm_data_295.header, &instrument_pcm_data_296.header, &instrument_pcm_data_297.header, &instrument_pcm_data_298.header,
-    /* 024 */ &instrument_pcm_data_299.header, &instrument_pcm_data_300.header, &instrument_pcm_data_301.header, &instrument_pcm_data_302.header,
-    /* 028 */ &instrument_pcm_data_303.header, &instrument_pcm_data_304.header, &instrument_pcm_data_305.header, NULL,
+    /* 020 */ { .pcm = &instrument_pcm_0295 }, { .pcm = &instrument_pcm_0296 }, { .pcm = &instrument_pcm_0297 }, { .pcm = &instrument_pcm_0298 },
+    /* 024 */ { .pcm = &instrument_pcm_0299 }, { .pcm = &instrument_pcm_0300 }, { .pcm = &instrument_pcm_0301 }, { .pcm = &instrument_pcm_0302 },
+    /* 028 */ { .pcm = &instrument_pcm_0303 }, { .pcm = &instrument_pcm_0304 }, { .pcm = &instrument_pcm_0305 }, NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -391,17 +391,17 @@ InstrumentBank instrument_bank_11 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_306.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0306 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_12 = {
-    /* 000 */ &instrument_pcm_data_307.header, &instrument_pcm_data_308.header, &instrument_pcm_data_309.header, &instrument_pcm_data_310.header,
-    /* 004 */ &instrument_pcm_data_311.header, &instrument_pcm_data_312.header, &instrument_pcm_data_313.header, &instrument_pcm_data_314.header,
-    /* 008 */ &instrument_pcm_data_315.header, &instrument_pcm_data_316.header, &instrument_pcm_data_317.header, &instrument_pcm_data_318.header,
-    /* 012 */ &instrument_pcm_data_319.header, &instrument_pcm_data_320.header, &instrument_pcm_data_321.header, &instrument_pcm_data_322.header,
-    /* 016 */ &instrument_pcm_data_323.header, NULL,                            NULL,                            NULL,
-    /* 020 */ &instrument_pcm_data_324.header, &instrument_pcm_data_325.header, NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_12[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0307 }, { .pcm = &instrument_pcm_0308 }, { .pcm = &instrument_pcm_0309 }, { .pcm = &instrument_pcm_0310 },
+    /* 004 */ { .pcm = &instrument_pcm_0311 }, { .pcm = &instrument_pcm_0312 }, { .pcm = &instrument_pcm_0313 }, { .pcm = &instrument_pcm_0314 },
+    /* 008 */ { .pcm = &instrument_pcm_0315 }, { .pcm = &instrument_pcm_0316 }, { .pcm = &instrument_pcm_0317 }, { .pcm = &instrument_pcm_0318 },
+    /* 012 */ { .pcm = &instrument_pcm_0319 }, { .pcm = &instrument_pcm_0320 }, { .pcm = &instrument_pcm_0321 }, { .pcm = &instrument_pcm_0322 },
+    /* 016 */ { .pcm = &instrument_pcm_0323 }, NULL,                            NULL,                            NULL,
+    /* 020 */ { .pcm = &instrument_pcm_0324 }, { .pcm = &instrument_pcm_0325 }, NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -427,17 +427,17 @@ InstrumentBank instrument_bank_12 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_326.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0326 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_13 = {
-    /* 000 */ &instrument_pcm_data_327.header, &instrument_pcm_data_328.header, &instrument_pcm_data_329.header, &instrument_pcm_data_330.header,
-    /* 004 */ &instrument_pcm_data_331.header, &instrument_pcm_data_332.header, &instrument_pcm_data_333.header, &instrument_pcm_data_334.header,
-    /* 008 */ &instrument_pcm_data_335.header, &instrument_pcm_data_336.header, NULL,                            &instrument_pcm_data_337.header,
-    /* 012 */ NULL,                            &instrument_pcm_data_338.header, NULL,                            &instrument_subbank_multi_key_data_339.header,
-    /* 016 */ &instrument_pcm_data_340.header, &instrument_pcm_data_341.header, &instrument_pcm_data_342.header, NULL,
-    /* 020 */ &instrument_pcm_data_343.header, &instrument_pcm_data_344.header, NULL,                            &instrument_pcm_data_345.header,
+// 128 Instruments
+union Instrument inst_bank_13[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0327 }, { .pcm = &instrument_pcm_0328 }, { .pcm = &instrument_pcm_0329 }, { .pcm = &instrument_pcm_0330 },
+    /* 004 */ { .pcm = &instrument_pcm_0331 }, { .pcm = &instrument_pcm_0332 }, { .pcm = &instrument_pcm_0333 }, { .pcm = &instrument_pcm_0334 },
+    /* 008 */ { .pcm = &instrument_pcm_0335 }, { .pcm = &instrument_pcm_0336 }, NULL,                            { .pcm = &instrument_pcm_0337 },
+    /* 012 */ NULL,                            { .pcm = &instrument_pcm_0338 }, NULL,                            { .spl = &instrument_spl_0339 },
+    /* 016 */ { .pcm = &instrument_pcm_0340 }, { .pcm = &instrument_pcm_0341 }, { .pcm = &instrument_pcm_0342 }, NULL,
+    /* 020 */ { .pcm = &instrument_pcm_0343 }, { .pcm = &instrument_pcm_0344 }, NULL,                            { .pcm = &instrument_pcm_0345 },
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -463,59 +463,59 @@ InstrumentBank instrument_bank_13 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_346.header, NULL,             &instrument_subbank_single_key_data_347.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0346 }, NULL,                            { .rhy = &instrument_rhy_0347 }
 };
 
-// 113 entries
-InstrumentBank instrument_bank_14 = {
-    /* 000 */ &instrument_psg_data_348.header, &instrument_psg_data_349.header, &instrument_psg_data_350.header, &instrument_psg_data_351.header,
-    /* 004 */ &instrument_psg_data_352.header, &instrument_psg_data_353.header, &instrument_psg_data_354.header, &instrument_psg_data_355.header,
-    /* 008 */ &instrument_psg_data_356.header, &instrument_psg_data_357.header, &instrument_psg_data_358.header, NULL,
+// 113 Instruments
+union Instrument inst_bank_14[] = {
+    /* 000 */ { .psg = &instrument_psg_0348 }, { .psg = &instrument_psg_0349 }, { .psg = &instrument_psg_0350 }, { .psg = &instrument_psg_0351 },
+    /* 004 */ { .psg = &instrument_psg_0352 }, { .psg = &instrument_psg_0353 }, { .psg = &instrument_psg_0354 }, { .psg = &instrument_psg_0355 },
+    /* 008 */ { .psg = &instrument_psg_0356 }, { .psg = &instrument_psg_0357 }, { .psg = &instrument_psg_0358 }, NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 028 */ NULL,                            NULL,                            &instrument_psg_data_359.header, &instrument_psg_data_360.header,
-    /* 032 */ &instrument_psg_data_361.header, &instrument_psg_data_362.header, &instrument_psg_data_363.header, &instrument_psg_data_364.header,
-    /* 036 */ &instrument_psg_data_365.header, &instrument_psg_data_366.header, &instrument_psg_data_367.header, &instrument_psg_data_368.header,
-    /* 040 */ &instrument_psg_data_369.header, &instrument_psg_data_370.header, &instrument_psg_data_371.header, &instrument_psg_data_372.header,
-    /* 044 */ &instrument_psg_data_373.header, &instrument_psg_data_374.header, &instrument_psg_data_375.header, &instrument_psg_data_376.header,
-    /* 048 */ &instrument_psg_data_377.header, &instrument_psg_data_378.header, &instrument_psg_data_379.header, &instrument_psg_data_380.header,
-    /* 052 */ &instrument_psg_data_381.header, &instrument_psg_data_382.header, &instrument_psg_data_383.header, &instrument_psg_data_384.header,
-    /* 056 */ &instrument_psg_data_385.header, &instrument_psg_data_386.header, &instrument_psg_data_387.header, &instrument_psg_data_388.header,
+    /* 028 */ NULL,                            NULL,                            { .psg = &instrument_psg_0359 }, { .psg = &instrument_psg_0360 },
+    /* 032 */ { .psg = &instrument_psg_0361 }, { .psg = &instrument_psg_0362 }, { .psg = &instrument_psg_0363 }, { .psg = &instrument_psg_0364 },
+    /* 036 */ { .psg = &instrument_psg_0365 }, { .psg = &instrument_psg_0366 }, { .psg = &instrument_psg_0367 }, { .psg = &instrument_psg_0368 },
+    /* 040 */ { .psg = &instrument_psg_0369 }, { .psg = &instrument_psg_0370 }, { .psg = &instrument_psg_0371 }, { .psg = &instrument_psg_0372 },
+    /* 044 */ { .psg = &instrument_psg_0373 }, { .psg = &instrument_psg_0374 }, { .psg = &instrument_psg_0375 }, { .psg = &instrument_psg_0376 },
+    /* 048 */ { .psg = &instrument_psg_0377 }, { .psg = &instrument_psg_0378 }, { .psg = &instrument_psg_0379 }, { .psg = &instrument_psg_0380 },
+    /* 052 */ { .psg = &instrument_psg_0381 }, { .psg = &instrument_psg_0382 }, { .psg = &instrument_psg_0383 }, { .psg = &instrument_psg_0384 },
+    /* 056 */ { .psg = &instrument_psg_0385 }, { .psg = &instrument_psg_0386 }, { .psg = &instrument_psg_0387 }, { .psg = &instrument_psg_0388 },
     /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 064 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 068 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 072 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 080 */ &instrument_psg_data_389.header, &instrument_psg_data_390.header, &instrument_psg_data_391.header, &instrument_psg_data_392.header,
-    /* 084 */ &instrument_psg_data_393.header, &instrument_psg_data_394.header, &instrument_psg_data_395.header, &instrument_psg_data_396.header,
-    /* 088 */ NULL,                            NULL,                            &instrument_psg_data_397.header, &instrument_psg_data_398.header,
-    /* 092 */ &instrument_psg_data_399.header, &instrument_psg_data_400.header, &instrument_psg_data_401.header, &instrument_psg_data_402.header,
-    /* 096 */ NULL,                            NULL,                            &instrument_psg_data_403.header, &instrument_psg_data_404.header,
-    /* 100 */ &instrument_psg_data_405.header, &instrument_psg_data_406.header, &instrument_psg_data_407.header, &instrument_psg_data_408.header,
-    /* 104 */ &instrument_psg_data_409.header, &instrument_psg_data_410.header, &instrument_psg_data_411.header, &instrument_psg_data_412.header,
-    /* 108 */ &instrument_psg_data_413.header, &instrument_psg_data_414.header, &instrument_psg_data_415.header, &instrument_psg_data_416.header,
-    /* 112 */ &instrument_pcm_data_417.header
+    /* 080 */ { .psg = &instrument_psg_0389 }, { .psg = &instrument_psg_0390 }, { .psg = &instrument_psg_0391 }, { .psg = &instrument_psg_0392 },
+    /* 084 */ { .psg = &instrument_psg_0393 }, { .psg = &instrument_psg_0394 }, { .psg = &instrument_psg_0395 }, { .psg = &instrument_psg_0396 },
+    /* 088 */ NULL,                            NULL,                            { .psg = &instrument_psg_0397 }, { .psg = &instrument_psg_0398 },
+    /* 092 */ { .psg = &instrument_psg_0399 }, { .psg = &instrument_psg_0400 }, { .psg = &instrument_psg_0401 }, { .psg = &instrument_psg_0402 },
+    /* 096 */ NULL,                            NULL,                            { .psg = &instrument_psg_0403 }, { .psg = &instrument_psg_0404 },
+    /* 100 */ { .psg = &instrument_psg_0405 }, { .psg = &instrument_psg_0406 }, { .psg = &instrument_psg_0407 }, { .psg = &instrument_psg_0408 },
+    /* 104 */ { .psg = &instrument_psg_0409 }, { .psg = &instrument_psg_0410 }, { .psg = &instrument_psg_0411 }, { .psg = &instrument_psg_0412 },
+    /* 108 */ { .psg = &instrument_psg_0413 }, { .psg = &instrument_psg_0414 }, { .psg = &instrument_psg_0415 }, { .psg = &instrument_psg_0416 },
+    /* 112 */ { .pcm = &instrument_pcm_0417 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_15 = {
-    /* 000 */ &instrument_pcm_data_418.header, &instrument_pcm_data_419.header, &instrument_pcm_data_420.header, &instrument_pcm_data_421.header,
-    /* 004 */ &instrument_pcm_data_422.header, &instrument_pcm_data_423.header, &instrument_pcm_data_424.header, NULL,
-    /* 008 */ &instrument_pcm_data_425.header, NULL,                            NULL,                            &instrument_pcm_data_426.header,
-    /* 012 */ &instrument_pcm_data_427.header, &instrument_pcm_data_428.header, &instrument_pcm_data_429.header, NULL,
-    /* 016 */ &instrument_pcm_data_430.header, NULL,                            &instrument_pcm_data_431.header, &instrument_pcm_data_432.header,
-    /* 020 */ &instrument_pcm_data_433.header, &instrument_pcm_data_434.header, &instrument_pcm_data_435.header, &instrument_pcm_data_436.header,
-    /* 024 */ &instrument_pcm_data_437.header, &instrument_pcm_data_438.header, &instrument_pcm_data_439.header, NULL,
-    /* 028 */ NULL,                            &instrument_pcm_data_440.header, &instrument_pcm_data_441.header, &instrument_pcm_data_442.header,
-    /* 032 */ &instrument_pcm_data_443.header, &instrument_pcm_data_444.header, &instrument_pcm_data_445.header, &instrument_pcm_data_446.header,
-    /* 036 */ &instrument_pcm_data_447.header, &instrument_pcm_data_448.header, &instrument_pcm_data_449.header, &instrument_pcm_data_450.header,
-    /* 040 */ &instrument_subbank_multi_key_data_451.header, &instrument_pcm_data_452.header, NULL,              NULL,
-    /* 044 */ NULL,                            NULL,                            NULL,                            &instrument_pcm_data_453.header,
-    /* 048 */ &instrument_pcm_data_454.header, &instrument_pcm_data_455.header, &instrument_pcm_data_456.header, &instrument_pcm_data_457.header,
-    /* 052 */ &instrument_pcm_data_458.header, &instrument_pcm_data_459.header, &instrument_pcm_data_460.header, &instrument_pcm_data_461.header,
-    /* 056 */ &instrument_pcm_data_462.header, &instrument_pcm_data_463.header, NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_15[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0418 }, { .pcm = &instrument_pcm_0419 }, { .pcm = &instrument_pcm_0420 }, { .pcm = &instrument_pcm_0421 },
+    /* 004 */ { .pcm = &instrument_pcm_0422 }, { .pcm = &instrument_pcm_0423 }, { .pcm = &instrument_pcm_0424 }, NULL,
+    /* 008 */ { .pcm = &instrument_pcm_0425 }, NULL,                            NULL,                            { .pcm = &instrument_pcm_0426 },
+    /* 012 */ { .pcm = &instrument_pcm_0427 }, { .pcm = &instrument_pcm_0428 }, { .pcm = &instrument_pcm_0429 }, NULL,
+    /* 016 */ { .pcm = &instrument_pcm_0430 }, NULL,                            { .pcm = &instrument_pcm_0431 }, { .pcm = &instrument_pcm_0432 },
+    /* 020 */ { .pcm = &instrument_pcm_0433 }, { .pcm = &instrument_pcm_0434 }, { .pcm = &instrument_pcm_0435 }, { .pcm = &instrument_pcm_0436 },
+    /* 024 */ { .pcm = &instrument_pcm_0437 }, { .pcm = &instrument_pcm_0438 }, { .pcm = &instrument_pcm_0439 }, NULL,
+    /* 028 */ NULL,                            { .pcm = &instrument_pcm_0440 }, { .pcm = &instrument_pcm_0441 }, { .pcm = &instrument_pcm_0442 },
+    /* 032 */ { .pcm = &instrument_pcm_0443 }, { .pcm = &instrument_pcm_0444 }, { .pcm = &instrument_pcm_0445 }, { .pcm = &instrument_pcm_0446 },
+    /* 036 */ { .pcm = &instrument_pcm_0447 }, { .pcm = &instrument_pcm_0448 }, { .pcm = &instrument_pcm_0449 }, { .pcm = &instrument_pcm_0450 },
+    /* 040 */ { .spl = &instrument_spl_0451 }, { .pcm = &instrument_pcm_0452 }, NULL,                            NULL,
+    /* 044 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_0453 },
+    /* 048 */ { .pcm = &instrument_pcm_0454 }, { .pcm = &instrument_pcm_0455 }, { .pcm = &instrument_pcm_0456 }, { .pcm = &instrument_pcm_0457 },
+    /* 052 */ { .pcm = &instrument_pcm_0458 }, { .pcm = &instrument_pcm_0459 }, { .pcm = &instrument_pcm_0460 }, { .pcm = &instrument_pcm_0461 },
+    /* 056 */ { .pcm = &instrument_pcm_0462 }, { .pcm = &instrument_pcm_0463 }, NULL,                            NULL,
     /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 064 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 068 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -532,16 +532,16 @@ InstrumentBank instrument_bank_15 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_464.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0464 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_16 = {
-    /* 000 */ &instrument_pcm_data_465.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_16[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0465 }, NULL,                            NULL,                            NULL,
     /* 004 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 016 */ NULL,                            &instrument_pcm_data_466.header, NULL,                            NULL,
+    /* 016 */ NULL,                            { .pcm = &instrument_pcm_0466 }, NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -568,22 +568,22 @@ InstrumentBank instrument_bank_16 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_467.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0467 }
 };
 
-// 1 entry
-InstrumentBank instrument_bank_17 = {
-    /* 000 */ &instrument_pcm_data_468.header
+// 1 Instrument
+union Instrument inst_bank_17[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0468 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_18 = {
-    /* 000 */ &instrument_pcm_data_469.header, &instrument_pcm_data_470.header, &instrument_pcm_data_471.header, &instrument_pcm_data_472.header,
-    /* 004 */ &instrument_pcm_data_473.header, NULL,                            NULL,                            NULL,
-    /* 008 */ NULL,                            NULL,                            &instrument_pcm_data_474.header, NULL,
-    /* 012 */ &instrument_pcm_data_475.header, &instrument_pcm_data_476.header, &instrument_pcm_data_477.header, &instrument_pcm_data_478.header,
-    /* 016 */ NULL,                            &instrument_pcm_data_479.header, &instrument_pcm_data_480.header, &instrument_pcm_data_481.header,
-    /* 020 */ &instrument_pcm_data_482.header, &instrument_pcm_data_483.header, NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_18[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0469 }, { .pcm = &instrument_pcm_0470 }, { .pcm = &instrument_pcm_0471 }, { .pcm = &instrument_pcm_0472 },
+    /* 004 */ { .pcm = &instrument_pcm_0473 }, NULL,                            NULL,                            NULL,
+    /* 008 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_0474 }, NULL,
+    /* 012 */ { .pcm = &instrument_pcm_0475 }, { .pcm = &instrument_pcm_0476 }, { .pcm = &instrument_pcm_0477 }, { .pcm = &instrument_pcm_0478 },
+    /* 016 */ NULL,                            { .pcm = &instrument_pcm_0479 }, { .pcm = &instrument_pcm_0480 }, { .pcm = &instrument_pcm_0481 },
+    /* 020 */ { .pcm = &instrument_pcm_0482 }, { .pcm = &instrument_pcm_0483 }, NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -609,14 +609,14 @@ InstrumentBank instrument_bank_18 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_484.header, NULL,             &instrument_subbank_single_key_data_485.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0484 }, NULL,                            { .rhy = &instrument_rhy_0485 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_19 = {
-    /* 000 */ &instrument_pcm_data_486.header, &instrument_pcm_data_487.header, &instrument_pcm_data_488.header, &instrument_pcm_data_489.header,
-    /* 004 */ &instrument_pcm_data_490.header, NULL,                            &instrument_pcm_data_491.header, &instrument_pcm_data_492.header,
-    /* 008 */ &instrument_pcm_data_493.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_19[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0486 }, { .pcm = &instrument_pcm_0487 }, { .pcm = &instrument_pcm_0488 }, { .pcm = &instrument_pcm_0489 },
+    /* 004 */ { .pcm = &instrument_pcm_0490 }, NULL,                            { .pcm = &instrument_pcm_0491 }, { .pcm = &instrument_pcm_0492 },
+    /* 008 */ { .pcm = &instrument_pcm_0493 }, NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -645,14 +645,14 @@ InstrumentBank instrument_bank_19 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_494.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0494 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_20 = {
-    /* 000 */ &instrument_pcm_data_495.header, &instrument_pcm_data_496.header, &instrument_pcm_data_497.header, &instrument_pcm_data_498.header,
-    /* 004 */ &instrument_pcm_data_499.header, &instrument_pcm_data_500.header, &instrument_pcm_data_501.header, &instrument_pcm_data_502.header,
-    /* 008 */ &instrument_pcm_data_503.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_20[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0495 }, { .pcm = &instrument_pcm_0496 }, { .pcm = &instrument_pcm_0497 }, { .pcm = &instrument_pcm_0498 },
+    /* 004 */ { .pcm = &instrument_pcm_0499 }, { .pcm = &instrument_pcm_0500 }, { .pcm = &instrument_pcm_0501 }, { .pcm = &instrument_pcm_0502 },
+    /* 008 */ { .pcm = &instrument_pcm_0503 }, NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -681,13 +681,13 @@ InstrumentBank instrument_bank_20 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_504.header, NULL,             &instrument_subbank_single_key_data_505.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0504 }, NULL,                            { .rhy = &instrument_rhy_0505 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_21 = {
-    /* 000 */ NULL,                            &instrument_pcm_data_506.header, &instrument_pcm_data_507.header, &instrument_pcm_data_508.header,
-    /* 004 */ &instrument_pcm_data_509.header, &instrument_pcm_data_510.header, &instrument_pcm_data_511.header, NULL,
+// 128 Instruments
+union Instrument inst_bank_21[] = {
+    /* 000 */ NULL,                            { .pcm = &instrument_pcm_0506 }, { .pcm = &instrument_pcm_0507 }, { .pcm = &instrument_pcm_0508 },
+    /* 004 */ { .pcm = &instrument_pcm_0509 }, { .pcm = &instrument_pcm_0510 }, { .pcm = &instrument_pcm_0511 }, NULL,
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -717,15 +717,15 @@ InstrumentBank instrument_bank_21 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_512.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0512 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_22 = {
-    /* 000 */ &instrument_pcm_data_513.header, &instrument_pcm_data_514.header, &instrument_pcm_data_515.header, &instrument_pcm_data_516.header,
-    /* 004 */ &instrument_pcm_data_517.header, &instrument_pcm_data_518.header, &instrument_pcm_data_519.header, &instrument_pcm_data_520.header,
-    /* 008 */ &instrument_pcm_data_521.header, &instrument_pcm_data_522.header, &instrument_pcm_data_523.header, &instrument_subbank_multi_key_data_524.header,
-    /* 012 */ &instrument_pcm_data_525.header, &instrument_pcm_data_526.header, &instrument_pcm_data_527.header, NULL,
+// 128 Instruments
+union Instrument inst_bank_22[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0513 }, { .pcm = &instrument_pcm_0514 }, { .pcm = &instrument_pcm_0515 }, { .pcm = &instrument_pcm_0516 },
+    /* 004 */ { .pcm = &instrument_pcm_0517 }, { .pcm = &instrument_pcm_0518 }, { .pcm = &instrument_pcm_0519 }, { .pcm = &instrument_pcm_0520 },
+    /* 008 */ { .pcm = &instrument_pcm_0521 }, { .pcm = &instrument_pcm_0522 }, { .pcm = &instrument_pcm_0523 }, { .spl = &instrument_spl_0524 },
+    /* 012 */ { .pcm = &instrument_pcm_0525 }, { .pcm = &instrument_pcm_0526 }, { .pcm = &instrument_pcm_0527 }, NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -747,22 +747,22 @@ InstrumentBank instrument_bank_22 = {
     /* 088 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 092 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 096 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 100 */ &instrument_pcm_data_528.header, NULL,                            NULL,                            NULL,
+    /* 100 */ { .pcm = &instrument_pcm_0528 }, NULL,                            NULL,                            NULL,
     /* 104 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_529.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0529 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_23 = {
-    /* 000 */ &instrument_pcm_data_530.header, &instrument_pcm_data_531.header, &instrument_pcm_data_533.header, &instrument_pcm_data_534.header,
-    /* 004 */ &instrument_pcm_data_535.header, &instrument_pcm_data_536.header, &instrument_pcm_data_537.header, &instrument_pcm_data_538.header,
-    /* 008 */ &instrument_pcm_data_539.header, &instrument_pcm_data_540.header, &instrument_pcm_data_541.header, &instrument_pcm_data_542.header,
-    /* 012 */ &instrument_pcm_data_543.header, &instrument_pcm_data_544.header, &instrument_pcm_data_545.header, &instrument_pcm_data_546.header,
-    /* 016 */ &instrument_pcm_data_547.header, &instrument_pcm_data_532.header, &instrument_pcm_data_548.header, &instrument_pcm_data_549.header,
+// 128 Instruments
+union Instrument inst_bank_23[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0530 }, { .pcm = &instrument_pcm_0531 }, { .pcm = &instrument_pcm_0533 }, { .pcm = &instrument_pcm_0534 },
+    /* 004 */ { .pcm = &instrument_pcm_0535 }, { .pcm = &instrument_pcm_0536 }, { .pcm = &instrument_pcm_0537 }, { .pcm = &instrument_pcm_0538 },
+    /* 008 */ { .pcm = &instrument_pcm_0539 }, { .pcm = &instrument_pcm_0540 }, { .pcm = &instrument_pcm_0541 }, { .pcm = &instrument_pcm_0542 },
+    /* 012 */ { .pcm = &instrument_pcm_0543 }, { .pcm = &instrument_pcm_0544 }, { .pcm = &instrument_pcm_0545 }, { .pcm = &instrument_pcm_0546 },
+    /* 016 */ { .pcm = &instrument_pcm_0547 }, { .pcm = &instrument_pcm_0532 }, { .pcm = &instrument_pcm_0548 }, { .pcm = &instrument_pcm_0549 },
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -789,14 +789,14 @@ InstrumentBank instrument_bank_23 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_550.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0550 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_24 = {
-    /* 000 */ &instrument_pcm_data_551.header, &instrument_pcm_data_552.header, &instrument_pcm_data_553.header, &instrument_pcm_data_554.header,
-    /* 004 */ &instrument_pcm_data_555.header, &instrument_pcm_data_556.header, &instrument_pcm_data_557.header, &instrument_pcm_data_558.header,
-    /* 008 */ &instrument_pcm_data_559.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_24[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0551 }, { .pcm = &instrument_pcm_0552 }, { .pcm = &instrument_pcm_0553 }, { .pcm = &instrument_pcm_0554 },
+    /* 004 */ { .pcm = &instrument_pcm_0555 }, { .pcm = &instrument_pcm_0556 }, { .pcm = &instrument_pcm_0557 }, { .pcm = &instrument_pcm_0558 },
+    /* 008 */ { .pcm = &instrument_pcm_0559 }, NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -825,13 +825,13 @@ InstrumentBank instrument_bank_24 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_560.header, NULL,             &instrument_subbank_single_key_data_561.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0560 }, NULL,                            { .rhy = &instrument_rhy_0561 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_25 = {
-    /* 000 */ &instrument_pcm_data_562.header, &instrument_pcm_data_563.header, &instrument_pcm_data_564.header, &instrument_pcm_data_565.header,
-    /* 004 */ &instrument_pcm_data_566.header, &instrument_pcm_data_567.header, &instrument_pcm_data_568.header, &instrument_pcm_data_569.header,
+// 128 Instruments
+union Instrument inst_bank_25[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0562 }, { .pcm = &instrument_pcm_0563 }, { .pcm = &instrument_pcm_0564 }, { .pcm = &instrument_pcm_0565 },
+    /* 004 */ { .pcm = &instrument_pcm_0566 }, { .pcm = &instrument_pcm_0567 }, { .pcm = &instrument_pcm_0568 }, { .pcm = &instrument_pcm_0569 },
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -861,17 +861,17 @@ InstrumentBank instrument_bank_25 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_570.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0570 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_26 = {
-    /* 000 */ NULL,                            &instrument_pcm_data_571.header, &instrument_pcm_data_572.header, &instrument_pcm_data_573.header,
-    /* 004 */ &instrument_pcm_data_574.header, &instrument_pcm_data_575.header, &instrument_pcm_data_576.header, &instrument_pcm_data_577.header,
-    /* 008 */ &instrument_pcm_data_578.header, &instrument_pcm_data_579.header, &instrument_pcm_data_580.header, &instrument_pcm_data_581.header,
+// 128 Instruments
+union Instrument inst_bank_26[] = {
+    /* 000 */ NULL,                            { .pcm = &instrument_pcm_0571 }, { .pcm = &instrument_pcm_0572 }, { .pcm = &instrument_pcm_0573 },
+    /* 004 */ { .pcm = &instrument_pcm_0574 }, { .pcm = &instrument_pcm_0575 }, { .pcm = &instrument_pcm_0576 }, { .pcm = &instrument_pcm_0577 },
+    /* 008 */ { .pcm = &instrument_pcm_0578 }, { .pcm = &instrument_pcm_0579 }, { .pcm = &instrument_pcm_0580 }, { .pcm = &instrument_pcm_0581 },
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 020 */ &instrument_pcm_data_582.header, &instrument_pcm_data_583.header, NULL,                            NULL,
+    /* 020 */ { .pcm = &instrument_pcm_0582 }, { .pcm = &instrument_pcm_0583 }, NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -897,15 +897,15 @@ InstrumentBank instrument_bank_26 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_584.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0584 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_27 = {
-    /* 000 */ &instrument_pcm_data_585.header, &instrument_pcm_data_586.header, &instrument_pcm_data_587.header, &instrument_pcm_data_588.header,
-    /* 004 */ &instrument_pcm_data_589.header, &instrument_pcm_data_590.header, &instrument_pcm_data_591.header, &instrument_psg_data_592.header,
-    /* 008 */ &instrument_psg_data_593.header, &instrument_pcm_data_594.header, &instrument_pcm_data_595.header, NULL,
-    /* 012 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_multi_key_data_596.header,
+// 128 Instruments
+union Instrument inst_bank_27[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0585 }, { .pcm = &instrument_pcm_0586 }, { .pcm = &instrument_pcm_0587 }, { .pcm = &instrument_pcm_0588 },
+    /* 004 */ { .pcm = &instrument_pcm_0589 }, { .pcm = &instrument_pcm_0590 }, { .pcm = &instrument_pcm_0591 }, { .psg = &instrument_psg_0592 },
+    /* 008 */ { .psg = &instrument_psg_0593 }, { .pcm = &instrument_pcm_0594 }, { .pcm = &instrument_pcm_0595 }, NULL,
+    /* 012 */ NULL,                            NULL,                            NULL,                            { .spl = &instrument_spl_0596 },
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -933,14 +933,14 @@ InstrumentBank instrument_bank_27 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_597.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0597 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_28 = {
-    /* 000 */ &instrument_pcm_data_598.header, &instrument_pcm_data_599.header, &instrument_pcm_data_600.header, &instrument_pcm_data_601.header,
-    /* 004 */ &instrument_pcm_data_602.header, &instrument_pcm_data_603.header, &instrument_pcm_data_604.header, &instrument_pcm_data_605.header,
-    /* 008 */ &instrument_pcm_data_606.header, &instrument_pcm_data_607.header, &instrument_pcm_data_608.header, NULL,
+// 128 Instruments
+union Instrument inst_bank_28[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0598 }, { .pcm = &instrument_pcm_0599 }, { .pcm = &instrument_pcm_0600 }, { .pcm = &instrument_pcm_0601 },
+    /* 004 */ { .pcm = &instrument_pcm_0602 }, { .pcm = &instrument_pcm_0603 }, { .pcm = &instrument_pcm_0604 }, { .pcm = &instrument_pcm_0605 },
+    /* 008 */ { .pcm = &instrument_pcm_0606 }, { .pcm = &instrument_pcm_0607 }, { .pcm = &instrument_pcm_0608 }, NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -969,15 +969,15 @@ InstrumentBank instrument_bank_28 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_609.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0609 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_29 = {
-    /* 000 */ &instrument_pcm_data_610.header, &instrument_pcm_data_611.header, &instrument_pcm_data_612.header, &instrument_pcm_data_613.header,
-    /* 004 */ &instrument_pcm_data_614.header, &instrument_pcm_data_615.header, &instrument_pcm_data_616.header, NULL,
-    /* 008 */ NULL,                            NULL,                            &instrument_pcm_data_617.header, &instrument_pcm_data_618.header,
-    /* 012 */ &instrument_pcm_data_619.header, &instrument_pcm_data_620.header, NULL,                            &instrument_subbank_multi_key_data_621.header,
+// 128 Instruments
+union Instrument inst_bank_29[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0610 }, { .pcm = &instrument_pcm_0611 }, { .pcm = &instrument_pcm_0612 }, { .pcm = &instrument_pcm_0613 },
+    /* 004 */ { .pcm = &instrument_pcm_0614 }, { .pcm = &instrument_pcm_0615 }, { .pcm = &instrument_pcm_0616 }, NULL,
+    /* 008 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_0617 }, { .pcm = &instrument_pcm_0618 },
+    /* 012 */ { .pcm = &instrument_pcm_0619 }, { .pcm = &instrument_pcm_0620 }, NULL,                            { .spl = &instrument_spl_0621 },
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1005,15 +1005,15 @@ InstrumentBank instrument_bank_29 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_622.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0622 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_30 = {
-    /* 000 */ &instrument_pcm_data_623.header, &instrument_pcm_data_624.header, &instrument_pcm_data_625.header, &instrument_pcm_data_626.header,
-    /* 004 */ &instrument_pcm_data_627.header, &instrument_pcm_data_628.header, &instrument_pcm_data_629.header, &instrument_pcm_data_630.header,
-    /* 008 */ &instrument_pcm_data_631.header, &instrument_pcm_data_632.header, &instrument_pcm_data_633.header, &instrument_pcm_data_634.header,
-    /* 012 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_multi_key_data_635.header,
+// 128 Instruments
+union Instrument inst_bank_30[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0623 }, { .pcm = &instrument_pcm_0624 }, { .pcm = &instrument_pcm_0625 }, { .pcm = &instrument_pcm_0626 },
+    /* 004 */ { .pcm = &instrument_pcm_0627 }, { .pcm = &instrument_pcm_0628 }, { .pcm = &instrument_pcm_0629 }, { .pcm = &instrument_pcm_0630 },
+    /* 008 */ { .pcm = &instrument_pcm_0631 }, { .pcm = &instrument_pcm_0632 }, { .pcm = &instrument_pcm_0633 }, { .pcm = &instrument_pcm_0634 },
+    /* 012 */ NULL,                            NULL,                            NULL,                            { .spl = &instrument_spl_0635 },
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1041,15 +1041,15 @@ InstrumentBank instrument_bank_30 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_636.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0636 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_31 = {
-    /* 000 */ &instrument_pcm_data_637.header, &instrument_pcm_data_638.header, &instrument_pcm_data_639.header, &instrument_pcm_data_640.header,
-    /* 004 */ &instrument_pcm_data_641.header, &instrument_pcm_data_642.header, &instrument_pcm_data_643.header, &instrument_pcm_data_644.header,
-    /* 008 */ &instrument_pcm_data_645.header, &instrument_pcm_data_646.header, &instrument_pcm_data_647.header, NULL,
-    /* 012 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_multi_key_data_648.header,
+// 128 Instruments
+union Instrument inst_bank_31[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0637 }, { .pcm = &instrument_pcm_0638 }, { .pcm = &instrument_pcm_0639 }, { .pcm = &instrument_pcm_0640 },
+    /* 004 */ { .pcm = &instrument_pcm_0641 }, { .pcm = &instrument_pcm_0642 }, { .pcm = &instrument_pcm_0643 }, { .pcm = &instrument_pcm_0644 },
+    /* 008 */ { .pcm = &instrument_pcm_0645 }, { .pcm = &instrument_pcm_0646 }, { .pcm = &instrument_pcm_0647 }, NULL,
+    /* 012 */ NULL,                            NULL,                            NULL,                            { .spl = &instrument_spl_0648 },
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1077,16 +1077,16 @@ InstrumentBank instrument_bank_31 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_649.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0649 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_32 = {
-    /* 000 */ &instrument_pcm_data_650.header, &instrument_pcm_data_651.header, &instrument_pcm_data_652.header, &instrument_pcm_data_653.header,
-    /* 004 */ &instrument_pcm_data_654.header, &instrument_pcm_data_655.header, &instrument_pcm_data_656.header, &instrument_pcm_data_657.header,
-    /* 008 */ &instrument_pcm_data_658.header, &instrument_pcm_data_659.header, NULL,                            NULL,
-    /* 012 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_multi_key_data_660.header,
-    /* 016 */ &instrument_subbank_multi_key_data_661.header, NULL,              NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_32[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0650 }, { .pcm = &instrument_pcm_0651 }, { .pcm = &instrument_pcm_0652 }, { .pcm = &instrument_pcm_0653 },
+    /* 004 */ { .pcm = &instrument_pcm_0654 }, { .pcm = &instrument_pcm_0655 }, { .pcm = &instrument_pcm_0656 }, { .pcm = &instrument_pcm_0657 },
+    /* 008 */ { .pcm = &instrument_pcm_0658 }, { .pcm = &instrument_pcm_0659 }, NULL,                            NULL,
+    /* 012 */ NULL,                            NULL,                            NULL,                            { .spl = &instrument_spl_0660 },
+    /* 016 */ { .spl = &instrument_spl_0661 }, NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1113,16 +1113,16 @@ InstrumentBank instrument_bank_32 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_662.header
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0662 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_33 = {
-    /* 000 */ &instrument_pcm_data_663.header, &instrument_pcm_data_664.header, &instrument_pcm_data_665.header, &instrument_pcm_data_666.header,
-    /* 004 */ &instrument_pcm_data_667.header, &instrument_pcm_data_668.header, NULL,                            NULL,
-    /* 008 */ NULL,                            &instrument_pcm_data_669.header, &instrument_pcm_data_670.header, &instrument_pcm_data_671.header,
-    /* 012 */ &instrument_pcm_data_672.header, &instrument_pcm_data_673.header, &instrument_pcm_data_674.header, &instrument_pcm_data_675.header,
-    /* 016 */ &instrument_pcm_data_676.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_33[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0663 }, { .pcm = &instrument_pcm_0664 }, { .pcm = &instrument_pcm_0665 }, { .pcm = &instrument_pcm_0666 },
+    /* 004 */ { .pcm = &instrument_pcm_0667 }, { .pcm = &instrument_pcm_0668 }, NULL,                            NULL,
+    /* 008 */ NULL,                            { .pcm = &instrument_pcm_0669 }, { .pcm = &instrument_pcm_0670 }, { .pcm = &instrument_pcm_0671 },
+    /* 012 */ { .pcm = &instrument_pcm_0672 }, { .pcm = &instrument_pcm_0673 }, { .pcm = &instrument_pcm_0674 }, { .pcm = &instrument_pcm_0675 },
+    /* 016 */ { .pcm = &instrument_pcm_0676 }, NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1149,13 +1149,13 @@ InstrumentBank instrument_bank_33 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_677.header, NULL,             &instrument_subbank_single_key_data_678.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0677 }, NULL,                            { .rhy = &instrument_rhy_0678 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_34 = {
-    /* 000 */ &instrument_pcm_data_679.header, &instrument_pcm_data_680.header, &instrument_pcm_data_681.header, &instrument_pcm_data_682.header,
-    /* 004 */ &instrument_pcm_data_683.header, &instrument_pcm_data_684.header, NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_34[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0679 }, { .pcm = &instrument_pcm_0680 }, { .pcm = &instrument_pcm_0681 }, { .pcm = &instrument_pcm_0682 },
+    /* 004 */ { .pcm = &instrument_pcm_0683 }, { .pcm = &instrument_pcm_0684 }, NULL,                            NULL,
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1185,22 +1185,22 @@ InstrumentBank instrument_bank_34 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_685.header, NULL,             &instrument_subbank_single_key_data_686.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0685 }, NULL,                            { .rhy = &instrument_rhy_0686 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_35 = {
-    /* 000 */ &instrument_pcm_data_687.header, &instrument_pcm_data_688.header, &instrument_pcm_data_689.header, &instrument_pcm_data_690.header,
-    /* 004 */ &instrument_pcm_data_691.header, &instrument_pcm_data_692.header, &instrument_pcm_data_693.header, &instrument_pcm_data_694.header,
-    /* 008 */ &instrument_pcm_data_695.header, &instrument_pcm_data_696.header, &instrument_pcm_data_697.header, &instrument_pcm_data_698.header,
-    /* 012 */ &instrument_pcm_data_699.header, &instrument_pcm_data_700.header, &instrument_pcm_data_701.header, &instrument_pcm_data_702.header,
-    /* 016 */ &instrument_pcm_data_703.header, &instrument_pcm_data_704.header, NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_35[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0687 }, { .pcm = &instrument_pcm_0688 }, { .pcm = &instrument_pcm_0689 }, { .pcm = &instrument_pcm_0690 },
+    /* 004 */ { .pcm = &instrument_pcm_0691 }, { .pcm = &instrument_pcm_0692 }, { .pcm = &instrument_pcm_0693 }, { .pcm = &instrument_pcm_0694 },
+    /* 008 */ { .pcm = &instrument_pcm_0695 }, { .pcm = &instrument_pcm_0696 }, { .pcm = &instrument_pcm_0697 }, { .pcm = &instrument_pcm_0698 },
+    /* 012 */ { .pcm = &instrument_pcm_0699 }, { .pcm = &instrument_pcm_0700 }, { .pcm = &instrument_pcm_0701 }, { .pcm = &instrument_pcm_0702 },
+    /* 016 */ { .pcm = &instrument_pcm_0703 }, { .pcm = &instrument_pcm_0704 }, NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 040 */ &instrument_subbank_multi_key_data_705.header, &instrument_subbank_multi_key_data_706.header, NULL, NULL,
+    /* 040 */ { .spl = &instrument_spl_0705 }, { .spl = &instrument_spl_0706 }, NULL,                            NULL,
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1221,16 +1221,16 @@ InstrumentBank instrument_bank_35 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_707.header, NULL,             &instrument_subbank_single_key_data_708.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0707 }, NULL,                            { .rhy = &instrument_rhy_0708 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_36 = {
-    /* 000 */ &instrument_pcm_data_709.header, &instrument_psg_data_710.header, &instrument_psg_data_711.header, &instrument_pcm_data_712.header,
-    /* 004 */ &instrument_pcm_data_713.header, &instrument_pcm_data_714.header, &instrument_pcm_data_715.header, &instrument_pcm_data_716.header,
-    /* 008 */ &instrument_pcm_data_717.header, &instrument_pcm_data_718.header, &instrument_pcm_data_719.header, &instrument_pcm_data_720.header,
-    /* 012 */ &instrument_pcm_data_721.header, &instrument_pcm_data_722.header, &instrument_pcm_data_723.header, &instrument_pcm_data_724.header,
-    /* 016 */ &instrument_pcm_data_725.header, NULL,                            &instrument_pcm_data_726.header, NULL,
+// 128 Instruments
+union Instrument inst_bank_36[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0709 }, { .psg = &instrument_psg_0710 }, { .psg = &instrument_psg_0711 }, { .pcm = &instrument_pcm_0712 },
+    /* 004 */ { .pcm = &instrument_pcm_0713 }, { .pcm = &instrument_pcm_0714 }, { .pcm = &instrument_pcm_0715 }, { .pcm = &instrument_pcm_0716 },
+    /* 008 */ { .pcm = &instrument_pcm_0717 }, { .pcm = &instrument_pcm_0718 }, { .pcm = &instrument_pcm_0719 }, { .pcm = &instrument_pcm_0720 },
+    /* 012 */ { .pcm = &instrument_pcm_0721 }, { .pcm = &instrument_pcm_0722 }, { .pcm = &instrument_pcm_0723 }, { .pcm = &instrument_pcm_0724 },
+    /* 016 */ { .pcm = &instrument_pcm_0725 }, NULL,                            { .pcm = &instrument_pcm_0726 }, NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1257,28 +1257,28 @@ InstrumentBank instrument_bank_36 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_727.header, &instrument_subbank_single_key_data_728.header, &instrument_subbank_single_key_data_729.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0727 }, { .rhy = &instrument_rhy_0728 }, { .rhy = &instrument_rhy_0729 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_37 = {
-    /* 000 */ &instrument_pcm_data_730.header, &instrument_pcm_data_731.header, &instrument_pcm_data_732.header, &instrument_pcm_data_733.header,
-    /* 004 */ &instrument_pcm_data_734.header, &instrument_pcm_data_735.header, &instrument_pcm_data_736.header, &instrument_pcm_data_737.header,
-    /* 008 */ &instrument_pcm_data_738.header, NULL,                            &instrument_pcm_data_739.header, &instrument_pcm_data_740.header,
-    /* 012 */ &instrument_pcm_data_741.header, &instrument_pcm_data_742.header, &instrument_pcm_data_743.header, &instrument_pcm_data_744.header,
-    /* 016 */ &instrument_pcm_data_745.header, &instrument_pcm_data_746.header, &instrument_pcm_data_747.header, &instrument_pcm_data_748.header,
-    /* 020 */ &instrument_pcm_data_749.header, &instrument_subbank_multi_key_data_750.header, &instrument_pcm_data_751.header, &instrument_pcm_data_752.header,
-    /* 024 */ &instrument_pcm_data_753.header, &instrument_pcm_data_754.header, &instrument_pcm_data_755.header, &instrument_pcm_data_756.header,
+// 128 Instruments
+union Instrument inst_bank_37[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0730 }, { .pcm = &instrument_pcm_0731 }, { .pcm = &instrument_pcm_0732 }, { .pcm = &instrument_pcm_0733 },
+    /* 004 */ { .pcm = &instrument_pcm_0734 }, { .pcm = &instrument_pcm_0735 }, { .pcm = &instrument_pcm_0736 }, { .pcm = &instrument_pcm_0737 },
+    /* 008 */ { .pcm = &instrument_pcm_0738 }, NULL,                            { .pcm = &instrument_pcm_0739 }, { .pcm = &instrument_pcm_0740 },
+    /* 012 */ { .pcm = &instrument_pcm_0741 }, { .pcm = &instrument_pcm_0742 }, { .pcm = &instrument_pcm_0743 }, { .pcm = &instrument_pcm_0744 },
+    /* 016 */ { .pcm = &instrument_pcm_0745 }, { .pcm = &instrument_pcm_0746 }, { .pcm = &instrument_pcm_0747 }, { .pcm = &instrument_pcm_0748 },
+    /* 020 */ { .pcm = &instrument_pcm_0749 }, { .spl = &instrument_spl_0750 }, { .pcm = &instrument_pcm_0751 }, { .pcm = &instrument_pcm_0752 },
+    /* 024 */ { .pcm = &instrument_pcm_0753 }, { .pcm = &instrument_pcm_0754 }, { .pcm = &instrument_pcm_0755 }, { .pcm = &instrument_pcm_0756 },
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 048 */ NULL,                            NULL,                            &instrument_psg_data_757.header, &instrument_psg_data_758.header,
-    /* 052 */ &instrument_psg_data_759.header, &instrument_psg_data_760.header, &instrument_psg_data_761.header, &instrument_psg_data_762.header,
-    /* 056 */ &instrument_psg_data_763.header, &instrument_psg_data_764.header, &instrument_psg_data_765.header, &instrument_psg_data_766.header,
-    /* 060 */ NULL,                            NULL,                            &instrument_pcm_data_767.header, &instrument_pcm_data_768.header,
-    /* 064 */ &instrument_subbank_multi_key_data_769.header, NULL,              NULL,                            NULL,
+    /* 048 */ NULL,                            NULL,                            { .psg = &instrument_psg_0757 }, { .psg = &instrument_psg_0758 },
+    /* 052 */ { .psg = &instrument_psg_0759 }, { .psg = &instrument_psg_0760 }, { .psg = &instrument_psg_0761 }, { .psg = &instrument_psg_0762 },
+    /* 056 */ { .psg = &instrument_psg_0763 }, { .psg = &instrument_psg_0764 }, { .psg = &instrument_psg_0765 }, { .psg = &instrument_psg_0766 },
+    /* 060 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_0767 }, { .pcm = &instrument_pcm_0768 },
+    /* 064 */ { .spl = &instrument_spl_0769 }, NULL,                            NULL,                            NULL,
     /* 068 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 072 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1293,14 +1293,14 @@ InstrumentBank instrument_bank_37 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_770.header, NULL,             &instrument_subbank_single_key_data_771.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0770 }, NULL,                            { .rhy = &instrument_rhy_0771 }
 };
 
-// 127 entries
-InstrumentBank instrument_bank_38 = {
-    /* 000 */ &instrument_pcm_data_772.header, &instrument_pcm_data_773.header, &instrument_pcm_data_774.header, &instrument_pcm_data_775.header,
-    /* 004 */ &instrument_pcm_data_776.header, &instrument_pcm_data_777.header, &instrument_pcm_data_778.header, &instrument_pcm_data_779.header,
-    /* 008 */ &instrument_pcm_data_780.header, NULL,                            NULL,                            NULL,
+// 127 Instruments
+union Instrument inst_bank_38[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0772 }, { .pcm = &instrument_pcm_0773 }, { .pcm = &instrument_pcm_0774 }, { .pcm = &instrument_pcm_0775 },
+    /* 004 */ { .pcm = &instrument_pcm_0776 }, { .pcm = &instrument_pcm_0777 }, { .pcm = &instrument_pcm_0778 }, { .pcm = &instrument_pcm_0779 },
+    /* 008 */ { .pcm = &instrument_pcm_0780 }, NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1329,13 +1329,13 @@ InstrumentBank instrument_bank_38 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_781.header, &instrument_subbank_single_key_data_782.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0781 }, { .rhy = &instrument_rhy_0782 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_39 = {
-    /* 000 */ &instrument_pcm_data_783.header, &instrument_pcm_data_784.header, &instrument_pcm_data_785.header, &instrument_pcm_data_786.header,
-    /* 004 */ &instrument_pcm_data_787.header, &instrument_pcm_data_788.header, NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_39[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0783 }, { .pcm = &instrument_pcm_0784 }, { .pcm = &instrument_pcm_0785 }, { .pcm = &instrument_pcm_0786 },
+    /* 004 */ { .pcm = &instrument_pcm_0787 }, { .pcm = &instrument_pcm_0788 }, NULL,                            NULL,
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1365,13 +1365,13 @@ InstrumentBank instrument_bank_39 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_789.header, &instrument_subbank_single_key_data_790.header, &instrument_subbank_single_key_data_791.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0789 }, { .rhy = &instrument_rhy_0790 }, { .rhy = &instrument_rhy_0791 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_40 = {
-    /* 000 */ &instrument_pcm_data_792.header, &instrument_pcm_data_793.header, &instrument_pcm_data_794.header, &instrument_pcm_data_795.header,
-    /* 004 */ &instrument_pcm_data_796.header, &instrument_pcm_data_797.header, &instrument_pcm_data_798.header, NULL,
+// 128 Instruments
+union Instrument inst_bank_40[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0792 }, { .pcm = &instrument_pcm_0793 }, { .pcm = &instrument_pcm_0794 }, { .pcm = &instrument_pcm_0795 },
+    /* 004 */ { .pcm = &instrument_pcm_0796 }, { .pcm = &instrument_pcm_0797 }, { .pcm = &instrument_pcm_0798 }, NULL,
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1380,7 +1380,7 @@ InstrumentBank instrument_bank_40 = {
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 040 */ &instrument_subbank_multi_key_data_799.header, NULL,              NULL,                            NULL,
+    /* 040 */ { .spl = &instrument_spl_0799 }, NULL,                            NULL,                            NULL,
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1401,13 +1401,13 @@ InstrumentBank instrument_bank_40 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_800.header, NULL,             &instrument_subbank_single_key_data_801.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0800 }, NULL,                            { .rhy = &instrument_rhy_0801 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_41 = {
-    /* 000 */ &instrument_pcm_data_802.header, &instrument_pcm_data_803.header, &instrument_pcm_data_804.header, &instrument_pcm_data_805.header,
-    /* 004 */ &instrument_pcm_data_806.header, &instrument_pcm_data_807.header, &instrument_pcm_data_808.header, NULL,
+// 128 Instruments
+union Instrument inst_bank_41[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0802 }, { .pcm = &instrument_pcm_0803 }, { .pcm = &instrument_pcm_0804 }, { .pcm = &instrument_pcm_0805 },
+    /* 004 */ { .pcm = &instrument_pcm_0806 }, { .pcm = &instrument_pcm_0807 }, { .pcm = &instrument_pcm_0808 }, NULL,
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1437,22 +1437,22 @@ InstrumentBank instrument_bank_41 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_809.header, NULL,             &instrument_subbank_single_key_data_810.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0809 }, NULL,                            { .rhy = &instrument_rhy_0810 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_42 = {
-    /* 000 */ &instrument_pcm_data_811.header, &instrument_pcm_data_812.header, &instrument_pcm_data_813.header, &instrument_pcm_data_814.header,
-    /* 004 */ &instrument_pcm_data_815.header, &instrument_pcm_data_816.header, &instrument_pcm_data_817.header, &instrument_pcm_data_818.header,
-    /* 008 */ &instrument_pcm_data_819.header, &instrument_pcm_data_820.header, &instrument_pcm_data_821.header, &instrument_pcm_data_822.header,
-    /* 012 */ &instrument_pcm_data_823.header, NULL,                            NULL,                            &instrument_pcm_data_824.header,
-    /* 016 */ &instrument_pcm_data_825.header, &instrument_pcm_data_826.header, &instrument_pcm_data_827.header, &instrument_pcm_data_828.header,
-    /* 020 */ &instrument_pcm_data_829.header, &instrument_pcm_data_830.header, NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_42[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0811 }, { .pcm = &instrument_pcm_0812 }, { .pcm = &instrument_pcm_0813 }, { .pcm = &instrument_pcm_0814 },
+    /* 004 */ { .pcm = &instrument_pcm_0815 }, { .pcm = &instrument_pcm_0816 }, { .pcm = &instrument_pcm_0817 }, { .pcm = &instrument_pcm_0818 },
+    /* 008 */ { .pcm = &instrument_pcm_0819 }, { .pcm = &instrument_pcm_0820 }, { .pcm = &instrument_pcm_0821 }, { .pcm = &instrument_pcm_0822 },
+    /* 012 */ { .pcm = &instrument_pcm_0823 }, NULL,                            NULL,                            { .pcm = &instrument_pcm_0824 },
+    /* 016 */ { .pcm = &instrument_pcm_0825 }, { .pcm = &instrument_pcm_0826 }, { .pcm = &instrument_pcm_0827 }, { .pcm = &instrument_pcm_0828 },
+    /* 020 */ { .pcm = &instrument_pcm_0829 }, { .pcm = &instrument_pcm_0830 }, NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 040 */ &instrument_subbank_multi_key_data_831.header, &instrument_subbank_multi_key_data_832.header, NULL, NULL,
+    /* 040 */ { .spl = &instrument_spl_0831 }, { .spl = &instrument_spl_0832 }, NULL,                            NULL,
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1473,22 +1473,22 @@ InstrumentBank instrument_bank_42 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_833.header, &instrument_subbank_single_key_data_834.header, &instrument_subbank_single_key_data_835.header
-};   
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0833 }, { .rhy = &instrument_rhy_0834 }, { .rhy = &instrument_rhy_0835 }
+};
 
-// 128 entries
-InstrumentBank instrument_bank_43 = {
-    /* 000 */ &instrument_pcm_data_836.header, &instrument_pcm_data_837.header, &instrument_pcm_data_838.header, &instrument_pcm_data_839.header,
-    /* 004 */ &instrument_pcm_data_840.header, &instrument_pcm_data_841.header, &instrument_subbank_multi_key_data_848.header, &instrument_pcm_data_842.header,
-    /* 008 */ &instrument_pcm_data_843.header, &instrument_pcm_data_844.header, &instrument_pcm_data_845.header, &instrument_pcm_data_846.header,
-    /* 012 */ &instrument_pcm_data_847.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_43[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0836 }, { .pcm = &instrument_pcm_0837 }, { .pcm = &instrument_pcm_0838 }, { .pcm = &instrument_pcm_0839 },
+    /* 004 */ { .pcm = &instrument_pcm_0840 }, { .pcm = &instrument_pcm_0841 }, { .spl = &instrument_spl_0848 }, { .pcm = &instrument_pcm_0842 },
+    /* 008 */ { .pcm = &instrument_pcm_0843 }, { .pcm = &instrument_pcm_0844 }, { .pcm = &instrument_pcm_0845 }, { .pcm = &instrument_pcm_0846 },
+    /* 012 */ { .pcm = &instrument_pcm_0847 }, NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 040 */ &instrument_subbank_multi_key_data_849.header, NULL,              NULL,                            NULL,
+    /* 040 */ { .spl = &instrument_spl_0849 }, NULL,                            NULL,                            NULL,
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1509,22 +1509,22 @@ InstrumentBank instrument_bank_43 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_850.header, &instrument_subbank_single_key_data_851.header, &instrument_subbank_single_key_data_852.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0850 }, { .rhy = &instrument_rhy_0851 }, { .rhy = &instrument_rhy_0852 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_44 = {
-    /* 000 */ &instrument_pcm_data_853.header, &instrument_pcm_data_854.header, &instrument_pcm_data_855.header, &instrument_pcm_data_856.header,
-    /* 004 */ &instrument_pcm_data_857.header, &instrument_psg_data_858.header, &instrument_psg_data_859.header, &instrument_pcm_data_860.header,
-    /* 008 */ &instrument_pcm_data_861.header, &instrument_pcm_data_862.header, &instrument_pcm_data_863.header, &instrument_pcm_data_864.header,
-    /* 012 */ &instrument_pcm_data_865.header, &instrument_pcm_data_866.header, &instrument_pcm_data_867.header, &instrument_pcm_data_868.header,
-    /* 016 */ &instrument_pcm_data_869.header, &instrument_pcm_data_870.header, &instrument_pcm_data_871.header, &instrument_pcm_data_872.header,
-    /* 020 */ &instrument_pcm_data_873.header, &instrument_pcm_data_874.header, &instrument_pcm_data_875.header, &instrument_pcm_data_876.header,
-    /* 024 */ &instrument_pcm_data_877.header, &instrument_pcm_data_878.header, &instrument_pcm_data_879.header, &instrument_pcm_data_880.header,
-    /* 028 */ &instrument_pcm_data_881.header, &instrument_pcm_data_882.header, &instrument_pcm_data_883.header, &instrument_pcm_data_884.header,
-    /* 032 */ &instrument_pcm_data_885.header, &instrument_pcm_data_886.header, &instrument_pcm_data_887.header, &instrument_pcm_data_888.header,
-    /* 036 */ &instrument_pcm_data_889.header, &instrument_pcm_data_890.header, &instrument_pcm_data_891.header, &instrument_pcm_data_892.header,
-    /* 040 */ &instrument_pcm_data_893.header, &instrument_pcm_data_894.header, &instrument_pcm_data_895.header, NULL,
+// 128 Instruments
+union Instrument inst_bank_44[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0853 }, { .pcm = &instrument_pcm_0854 }, { .pcm = &instrument_pcm_0855 }, { .pcm = &instrument_pcm_0856 },
+    /* 004 */ { .pcm = &instrument_pcm_0857 }, { .psg = &instrument_psg_0858 }, { .psg = &instrument_psg_0859 }, { .pcm = &instrument_pcm_0860 },
+    /* 008 */ { .pcm = &instrument_pcm_0861 }, { .pcm = &instrument_pcm_0862 }, { .pcm = &instrument_pcm_0863 }, { .pcm = &instrument_pcm_0864 },
+    /* 012 */ { .pcm = &instrument_pcm_0865 }, { .pcm = &instrument_pcm_0866 }, { .pcm = &instrument_pcm_0867 }, { .pcm = &instrument_pcm_0868 },
+    /* 016 */ { .pcm = &instrument_pcm_0869 }, { .pcm = &instrument_pcm_0870 }, { .pcm = &instrument_pcm_0871 }, { .pcm = &instrument_pcm_0872 },
+    /* 020 */ { .pcm = &instrument_pcm_0873 }, { .pcm = &instrument_pcm_0874 }, { .pcm = &instrument_pcm_0875 }, { .pcm = &instrument_pcm_0876 },
+    /* 024 */ { .pcm = &instrument_pcm_0877 }, { .pcm = &instrument_pcm_0878 }, { .pcm = &instrument_pcm_0879 }, { .pcm = &instrument_pcm_0880 },
+    /* 028 */ { .pcm = &instrument_pcm_0881 }, { .pcm = &instrument_pcm_0882 }, { .pcm = &instrument_pcm_0883 }, { .pcm = &instrument_pcm_0884 },
+    /* 032 */ { .pcm = &instrument_pcm_0885 }, { .pcm = &instrument_pcm_0886 }, { .pcm = &instrument_pcm_0887 }, { .pcm = &instrument_pcm_0888 },
+    /* 036 */ { .pcm = &instrument_pcm_0889 }, { .pcm = &instrument_pcm_0890 }, { .pcm = &instrument_pcm_0891 }, { .pcm = &instrument_pcm_0892 },
+    /* 040 */ { .pcm = &instrument_pcm_0893 }, { .pcm = &instrument_pcm_0894 }, { .pcm = &instrument_pcm_0895 }, NULL,
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1534,7 +1534,7 @@ InstrumentBank instrument_bank_44 = {
     /* 068 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 072 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 080 */ NULL,                            &instrument_pcm_data_898.header, NULL,                            NULL,
+    /* 080 */ NULL,                            { .pcm = &instrument_pcm_0898 }, NULL,                            NULL,
     /* 084 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 088 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 092 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1543,16 +1543,16 @@ InstrumentBank instrument_bank_44 = {
     /* 104 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 116 */ NULL,                            NULL,                            NULL,                            &instrument_pcm_data_897.header,
-    /* 120 */ &instrument_pcm_data_896.header, NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_899.header, &instrument_subbank_single_key_data_900.header, &instrument_subbank_single_key_data_901.header
+    /* 116 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_0897 },
+    /* 120 */ { .pcm = &instrument_pcm_0896 }, NULL,                            NULL,                            NULL,
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0899 }, { .rhy = &instrument_rhy_0900 }, { .rhy = &instrument_rhy_0901 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_45 = {
-    /* 000 */ &instrument_pcm_data_902.header, &instrument_pcm_data_903.header, &instrument_pcm_data_904.header, &instrument_pcm_data_905.header,
-    /* 004 */ &instrument_pcm_data_906.header, &instrument_pcm_data_907.header, &instrument_pcm_data_908.header, &instrument_pcm_data_909.header,
-    /* 008 */ &instrument_pcm_data_910.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_45[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0902 }, { .pcm = &instrument_pcm_0903 }, { .pcm = &instrument_pcm_0904 }, { .pcm = &instrument_pcm_0905 },
+    /* 004 */ { .pcm = &instrument_pcm_0906 }, { .pcm = &instrument_pcm_0907 }, { .pcm = &instrument_pcm_0908 }, { .pcm = &instrument_pcm_0909 },
+    /* 008 */ { .pcm = &instrument_pcm_0910 }, NULL,                            NULL,                            NULL,
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1581,22 +1581,22 @@ InstrumentBank instrument_bank_45 = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            &instrument_subbank_single_key_data_911.header, NULL,             &instrument_subbank_single_key_data_912.header
+    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0911 }, NULL,                            { .rhy = &instrument_rhy_0912 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_46 = {
-    /* 000 */ &instrument_pcm_data_913.header, &instrument_pcm_data_914.header, &instrument_pcm_data_915.header, &instrument_pcm_data_916.header,
-    /* 004 */ &instrument_pcm_data_917.header, &instrument_pcm_data_918.header, &instrument_pcm_data_919.header, &instrument_pcm_data_920.header,
-    /* 008 */ &instrument_pcm_data_921.header, NULL,                            &instrument_pcm_data_922.header, &instrument_pcm_data_923.header,
-    /* 012 */ &instrument_pcm_data_924.header, &instrument_pcm_data_925.header, &instrument_pcm_data_926.header, &instrument_subbank_multi_key_data_927.header,
-    /* 016 */ &instrument_pcm_data_928.header, &instrument_pcm_data_929.header, &instrument_pcm_data_930.header, &instrument_pcm_data_931.header,
-    /* 020 */ &instrument_pcm_data_932.header, &instrument_pcm_data_933.header, &instrument_subbank_multi_key_data_934.header, &instrument_pcm_data_935.header,
-    /* 024 */ &instrument_pcm_data_936.header, &instrument_pcm_data_937.header, &instrument_pcm_data_938.header, &instrument_pcm_data_939.header,
-    /* 028 */ &instrument_pcm_data_940.header, &instrument_pcm_data_941.header, &instrument_pcm_data_942.header, &instrument_pcm_data_943.header,
-    /* 032 */ &instrument_pcm_data_944.header, &instrument_pcm_data_945.header, &instrument_pcm_data_946.header, &instrument_pcm_data_947.header,
-    /* 036 */ &instrument_pcm_data_948.header, &instrument_pcm_data_949.header, &instrument_pcm_data_950.header, &instrument_pcm_data_951.header,
-    /* 040 */ &instrument_pcm_data_952.header, NULL,                            NULL,                            NULL,
+// 128 Instruments
+union Instrument inst_bank_46[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0913 }, { .pcm = &instrument_pcm_0914 }, { .pcm = &instrument_pcm_0915 }, { .pcm = &instrument_pcm_0916 },
+    /* 004 */ { .pcm = &instrument_pcm_0917 }, { .pcm = &instrument_pcm_0918 }, { .pcm = &instrument_pcm_0919 }, { .pcm = &instrument_pcm_0920 },
+    /* 008 */ { .pcm = &instrument_pcm_0921 }, NULL,                            { .pcm = &instrument_pcm_0922 }, { .pcm = &instrument_pcm_0923 },
+    /* 012 */ { .pcm = &instrument_pcm_0924 }, { .pcm = &instrument_pcm_0925 }, { .pcm = &instrument_pcm_0926 }, { .spl = &instrument_spl_0927 },
+    /* 016 */ { .pcm = &instrument_pcm_0928 }, { .pcm = &instrument_pcm_0929 }, { .pcm = &instrument_pcm_0930 }, { .pcm = &instrument_pcm_0931 },
+    /* 020 */ { .pcm = &instrument_pcm_0932 }, { .pcm = &instrument_pcm_0933 }, { .spl = &instrument_spl_0934 }, { .pcm = &instrument_pcm_0935 },
+    /* 024 */ { .pcm = &instrument_pcm_0936 }, { .pcm = &instrument_pcm_0937 }, { .pcm = &instrument_pcm_0938 }, { .pcm = &instrument_pcm_0939 },
+    /* 028 */ { .pcm = &instrument_pcm_0940 }, { .pcm = &instrument_pcm_0941 }, { .pcm = &instrument_pcm_0942 }, { .pcm = &instrument_pcm_0943 },
+    /* 032 */ { .pcm = &instrument_pcm_0944 }, { .pcm = &instrument_pcm_0945 }, { .pcm = &instrument_pcm_0946 }, { .pcm = &instrument_pcm_0947 },
+    /* 036 */ { .pcm = &instrument_pcm_0948 }, { .pcm = &instrument_pcm_0949 }, { .pcm = &instrument_pcm_0950 }, { .pcm = &instrument_pcm_0951 },
+    /* 040 */ { .pcm = &instrument_pcm_0952 }, NULL,                            NULL,                            NULL,
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -1616,326 +1616,326 @@ InstrumentBank instrument_bank_46 = {
     /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 120 */ NULL,                            NULL,                            NULL,                            &instrument_subbank_single_key_data_953.header,
-    /* 124 */ &instrument_subbank_single_key_data_954.header, &instrument_subbank_single_key_data_955.header, &instrument_subbank_single_key_data_956.header, &instrument_subbank_single_key_data_957.header
+    /* 120 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0953 },
+    /* 124 */ { .rhy = &instrument_rhy_0954 }, { .rhy = &instrument_rhy_0955 }, { .rhy = &instrument_rhy_0956 }, { .rhy = &instrument_rhy_0957 }
 };
 
-// 92 entries
-InstrumentBank instrument_bank_47 = {
-    /* 000 */ &instrument_pcm_data_958.header,  &instrument_pcm_data_959.header,  &instrument_pcm_data_960.header,  &instrument_pcm_data_961.header,
-    /* 004 */ &instrument_pcm_data_962.header,  &instrument_pcm_data_963.header,  &instrument_pcm_data_964.header,  &instrument_pcm_data_965.header,
-    /* 008 */ &instrument_pcm_data_966.header,  &instrument_pcm_data_967.header,  &instrument_pcm_data_968.header,  &instrument_pcm_data_969.header,
-    /* 012 */ &instrument_pcm_data_970.header,  &instrument_pcm_data_971.header,  &instrument_pcm_data_972.header,  &instrument_pcm_data_973.header,
-    /* 016 */ &instrument_pcm_data_974.header,  &instrument_pcm_data_975.header,  &instrument_pcm_data_976.header,  &instrument_pcm_data_977.header,
-    /* 020 */ &instrument_pcm_data_978.header,  &instrument_pcm_data_979.header,  &instrument_pcm_data_980.header,  &instrument_pcm_data_981.header,
-    /* 024 */ &instrument_pcm_data_982.header,  &instrument_pcm_data_983.header,  &instrument_pcm_data_984.header,  &instrument_pcm_data_985.header,
-    /* 028 */ &instrument_pcm_data_986.header,  &instrument_pcm_data_987.header,  &instrument_pcm_data_988.header,  &instrument_pcm_data_989.header,
-    /* 032 */ &instrument_pcm_data_990.header,  &instrument_pcm_data_991.header,  &instrument_pcm_data_992.header,  &instrument_pcm_data_993.header,
-    /* 036 */ &instrument_pcm_data_994.header,  &instrument_pcm_data_995.header,  &instrument_pcm_data_996.header,  &instrument_pcm_data_997.header,
-    /* 040 */ &instrument_pcm_data_998.header,  &instrument_pcm_data_999.header,  &instrument_pcm_data_1000.header, &instrument_pcm_data_1001.header,
-    /* 044 */ &instrument_pcm_data_1002.header, &instrument_pcm_data_1003.header, &instrument_pcm_data_1004.header, &instrument_pcm_data_1005.header,
-    /* 048 */ &instrument_pcm_data_1006.header, &instrument_pcm_data_1007.header, &instrument_pcm_data_1008.header, &instrument_pcm_data_1009.header,
-    /* 052 */ &instrument_pcm_data_1010.header, &instrument_pcm_data_1011.header, &instrument_pcm_data_1012.header, &instrument_pcm_data_1013.header,
-    /* 056 */ &instrument_pcm_data_1014.header, &instrument_pcm_data_1015.header, &instrument_pcm_data_1016.header, &instrument_pcm_data_1017.header,
-    /* 060 */ &instrument_pcm_data_1018.header, &instrument_pcm_data_1019.header, &instrument_pcm_data_1020.header, &instrument_pcm_data_1021.header,
-    /* 064 */ &instrument_pcm_data_1022.header, &instrument_pcm_data_1023.header, &instrument_pcm_data_1024.header, &instrument_pcm_data_1025.header,
-    /* 068 */ &instrument_pcm_data_1026.header, &instrument_pcm_data_1027.header, &instrument_pcm_data_1028.header, &instrument_pcm_data_1029.header,
-    /* 072 */ &instrument_pcm_data_1030.header, &instrument_pcm_data_1031.header, &instrument_pcm_data_1032.header, &instrument_pcm_data_1033.header,
-    /* 076 */ &instrument_pcm_data_1034.header, &instrument_pcm_data_1035.header, &instrument_pcm_data_1036.header, &instrument_pcm_data_1037.header,
-    /* 080 */ &instrument_pcm_data_1038.header, &instrument_pcm_data_1039.header, &instrument_pcm_data_1040.header, &instrument_pcm_data_1041.header,
-    /* 084 */ &instrument_pcm_data_1042.header, &instrument_pcm_data_1043.header, &instrument_pcm_data_1044.header, &instrument_pcm_data_1045.header,
-    /* 088 */ &instrument_pcm_data_1046.header, &instrument_pcm_data_1047.header, &instrument_pcm_data_1048.header, &instrument_pcm_data_1049.header
+// 92 Instruments
+union Instrument inst_bank_47[] = {
+    /* 000 */ { .pcm = &instrument_pcm_0958 }, { .pcm = &instrument_pcm_0959 }, { .pcm = &instrument_pcm_0960 }, { .pcm = &instrument_pcm_0961 },
+    /* 004 */ { .pcm = &instrument_pcm_0962 }, { .pcm = &instrument_pcm_0963 }, { .pcm = &instrument_pcm_0964 }, { .pcm = &instrument_pcm_0965 },
+    /* 008 */ { .pcm = &instrument_pcm_0966 }, { .pcm = &instrument_pcm_0967 }, { .pcm = &instrument_pcm_0968 }, { .pcm = &instrument_pcm_0969 },
+    /* 012 */ { .pcm = &instrument_pcm_0970 }, { .pcm = &instrument_pcm_0971 }, { .pcm = &instrument_pcm_0972 }, { .pcm = &instrument_pcm_0973 },
+    /* 016 */ { .pcm = &instrument_pcm_0974 }, { .pcm = &instrument_pcm_0975 }, { .pcm = &instrument_pcm_0976 }, { .pcm = &instrument_pcm_0977 },
+    /* 020 */ { .pcm = &instrument_pcm_0978 }, { .pcm = &instrument_pcm_0979 }, { .pcm = &instrument_pcm_0980 }, { .pcm = &instrument_pcm_0981 },
+    /* 024 */ { .pcm = &instrument_pcm_0982 }, { .pcm = &instrument_pcm_0983 }, { .pcm = &instrument_pcm_0984 }, { .pcm = &instrument_pcm_0985 },
+    /* 028 */ { .pcm = &instrument_pcm_0986 }, { .pcm = &instrument_pcm_0987 }, { .pcm = &instrument_pcm_0988 }, { .pcm = &instrument_pcm_0989 },
+    /* 032 */ { .pcm = &instrument_pcm_0990 }, { .pcm = &instrument_pcm_0991 }, { .pcm = &instrument_pcm_0992 }, { .pcm = &instrument_pcm_0993 },
+    /* 036 */ { .pcm = &instrument_pcm_0994 }, { .pcm = &instrument_pcm_0995 }, { .pcm = &instrument_pcm_0996 }, { .pcm = &instrument_pcm_0997 },
+    /* 040 */ { .pcm = &instrument_pcm_0998 }, { .pcm = &instrument_pcm_0999 }, { .pcm = &instrument_pcm_1000 }, { .pcm = &instrument_pcm_1001 },
+    /* 044 */ { .pcm = &instrument_pcm_1002 }, { .pcm = &instrument_pcm_1003 }, { .pcm = &instrument_pcm_1004 }, { .pcm = &instrument_pcm_1005 },
+    /* 048 */ { .pcm = &instrument_pcm_1006 }, { .pcm = &instrument_pcm_1007 }, { .pcm = &instrument_pcm_1008 }, { .pcm = &instrument_pcm_1009 },
+    /* 052 */ { .pcm = &instrument_pcm_1010 }, { .pcm = &instrument_pcm_1011 }, { .pcm = &instrument_pcm_1012 }, { .pcm = &instrument_pcm_1013 },
+    /* 056 */ { .pcm = &instrument_pcm_1014 }, { .pcm = &instrument_pcm_1015 }, { .pcm = &instrument_pcm_1016 }, { .pcm = &instrument_pcm_1017 },
+    /* 060 */ { .pcm = &instrument_pcm_1018 }, { .pcm = &instrument_pcm_1019 }, { .pcm = &instrument_pcm_1020 }, { .pcm = &instrument_pcm_1021 },
+    /* 064 */ { .pcm = &instrument_pcm_1022 }, { .pcm = &instrument_pcm_1023 }, { .pcm = &instrument_pcm_1024 }, { .pcm = &instrument_pcm_1025 },
+    /* 068 */ { .pcm = &instrument_pcm_1026 }, { .pcm = &instrument_pcm_1027 }, { .pcm = &instrument_pcm_1028 }, { .pcm = &instrument_pcm_1029 },
+    /* 072 */ { .pcm = &instrument_pcm_1030 }, { .pcm = &instrument_pcm_1031 }, { .pcm = &instrument_pcm_1032 }, { .pcm = &instrument_pcm_1033 },
+    /* 076 */ { .pcm = &instrument_pcm_1034 }, { .pcm = &instrument_pcm_1035 }, { .pcm = &instrument_pcm_1036 }, { .pcm = &instrument_pcm_1037 },
+    /* 080 */ { .pcm = &instrument_pcm_1038 }, { .pcm = &instrument_pcm_1039 }, { .pcm = &instrument_pcm_1040 }, { .pcm = &instrument_pcm_1041 },
+    /* 084 */ { .pcm = &instrument_pcm_1042 }, { .pcm = &instrument_pcm_1043 }, { .pcm = &instrument_pcm_1044 }, { .pcm = &instrument_pcm_1045 },
+    /* 088 */ { .pcm = &instrument_pcm_1046 }, { .pcm = &instrument_pcm_1047 }, { .pcm = &instrument_pcm_1048 }, { .pcm = &instrument_pcm_1049 }
 };
 
-// 90 entries
-InstrumentBank instrument_bank_48 = {
-    /* 000 */ &instrument_pcm_data_1050.header, &instrument_pcm_data_1051.header, &instrument_pcm_data_1052.header, &instrument_pcm_data_1053.header,
-    /* 004 */ &instrument_pcm_data_1054.header, &instrument_pcm_data_1055.header, &instrument_pcm_data_1056.header, &instrument_pcm_data_1057.header,
-    /* 008 */ &instrument_pcm_data_1058.header, &instrument_pcm_data_1059.header, &instrument_pcm_data_1060.header, &instrument_pcm_data_1061.header,
-    /* 012 */ &instrument_pcm_data_1062.header, &instrument_pcm_data_1063.header, &instrument_pcm_data_1064.header, &instrument_pcm_data_1065.header,
-    /* 016 */ &instrument_pcm_data_1066.header, &instrument_pcm_data_1067.header, &instrument_pcm_data_1068.header, &instrument_pcm_data_1069.header,
-    /* 020 */ &instrument_pcm_data_1070.header, &instrument_pcm_data_1071.header, &instrument_pcm_data_1072.header, &instrument_pcm_data_1073.header,
-    /* 024 */ &instrument_pcm_data_1074.header, &instrument_pcm_data_1075.header, &instrument_pcm_data_1076.header, &instrument_pcm_data_1077.header,
-    /* 028 */ &instrument_pcm_data_1078.header, &instrument_pcm_data_1079.header, &instrument_pcm_data_1080.header, &instrument_pcm_data_1081.header,
-    /* 032 */ &instrument_pcm_data_1082.header, &instrument_pcm_data_1083.header, &instrument_pcm_data_1084.header, &instrument_pcm_data_1085.header,
-    /* 036 */ &instrument_pcm_data_1086.header, &instrument_pcm_data_1087.header, &instrument_pcm_data_1088.header, &instrument_pcm_data_1089.header,
-    /* 040 */ &instrument_pcm_data_1090.header, &instrument_pcm_data_1091.header, &instrument_pcm_data_1092.header, NULL,
-    /* 044 */ &instrument_pcm_data_1093.header, &instrument_pcm_data_1094.header, &instrument_pcm_data_1095.header, &instrument_pcm_data_1096.header,
-    /* 048 */ &instrument_pcm_data_1097.header, &instrument_pcm_data_1098.header, &instrument_pcm_data_1099.header, &instrument_pcm_data_1100.header,
-    /* 052 */ &instrument_pcm_data_1101.header, &instrument_pcm_data_1102.header, &instrument_pcm_data_1103.header, &instrument_pcm_data_1104.header,
-    /* 056 */ &instrument_pcm_data_1105.header, &instrument_pcm_data_1106.header, &instrument_pcm_data_1107.header, &instrument_pcm_data_1108.header,
-    /* 060 */ &instrument_pcm_data_1109.header, &instrument_pcm_data_1110.header, &instrument_pcm_data_1111.header, &instrument_pcm_data_1112.header,
-    /* 064 */ &instrument_pcm_data_1113.header, &instrument_pcm_data_1114.header, &instrument_pcm_data_1115.header, &instrument_pcm_data_1116.header,
-    /* 068 */ &instrument_pcm_data_1117.header, &instrument_pcm_data_1118.header, &instrument_pcm_data_1119.header, &instrument_pcm_data_1120.header,
-    /* 072 */ &instrument_pcm_data_1121.header, &instrument_pcm_data_1122.header, &instrument_pcm_data_1123.header, NULL,
-    /* 076 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 080 */ NULL,                             NULL,                             &instrument_pcm_data_1124.header, &instrument_pcm_data_1125.header,
-    /* 084 */ &instrument_pcm_data_1126.header, &instrument_pcm_data_1127.header, &instrument_pcm_data_1128.header, &instrument_pcm_data_1129.header,
-    /* 088 */ &instrument_pcm_data_1130.header, &instrument_pcm_data_1131.header
+// 90 Instruments
+union Instrument inst_bank_48[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1050 }, { .pcm = &instrument_pcm_1051 }, { .pcm = &instrument_pcm_1052 }, { .pcm = &instrument_pcm_1053 },
+    /* 004 */ { .pcm = &instrument_pcm_1054 }, { .pcm = &instrument_pcm_1055 }, { .pcm = &instrument_pcm_1056 }, { .pcm = &instrument_pcm_1057 },
+    /* 008 */ { .pcm = &instrument_pcm_1058 }, { .pcm = &instrument_pcm_1059 }, { .pcm = &instrument_pcm_1060 }, { .pcm = &instrument_pcm_1061 },
+    /* 012 */ { .pcm = &instrument_pcm_1062 }, { .pcm = &instrument_pcm_1063 }, { .pcm = &instrument_pcm_1064 }, { .pcm = &instrument_pcm_1065 },
+    /* 016 */ { .pcm = &instrument_pcm_1066 }, { .pcm = &instrument_pcm_1067 }, { .pcm = &instrument_pcm_1068 }, { .pcm = &instrument_pcm_1069 },
+    /* 020 */ { .pcm = &instrument_pcm_1070 }, { .pcm = &instrument_pcm_1071 }, { .pcm = &instrument_pcm_1072 }, { .pcm = &instrument_pcm_1073 },
+    /* 024 */ { .pcm = &instrument_pcm_1074 }, { .pcm = &instrument_pcm_1075 }, { .pcm = &instrument_pcm_1076 }, { .pcm = &instrument_pcm_1077 },
+    /* 028 */ { .pcm = &instrument_pcm_1078 }, { .pcm = &instrument_pcm_1079 }, { .pcm = &instrument_pcm_1080 }, { .pcm = &instrument_pcm_1081 },
+    /* 032 */ { .pcm = &instrument_pcm_1082 }, { .pcm = &instrument_pcm_1083 }, { .pcm = &instrument_pcm_1084 }, { .pcm = &instrument_pcm_1085 },
+    /* 036 */ { .pcm = &instrument_pcm_1086 }, { .pcm = &instrument_pcm_1087 }, { .pcm = &instrument_pcm_1088 }, { .pcm = &instrument_pcm_1089 },
+    /* 040 */ { .pcm = &instrument_pcm_1090 }, { .pcm = &instrument_pcm_1091 }, { .pcm = &instrument_pcm_1092 }, NULL,
+    /* 044 */ { .pcm = &instrument_pcm_1093 }, { .pcm = &instrument_pcm_1094 }, { .pcm = &instrument_pcm_1095 }, { .pcm = &instrument_pcm_1096 },
+    /* 048 */ { .pcm = &instrument_pcm_1097 }, { .pcm = &instrument_pcm_1098 }, { .pcm = &instrument_pcm_1099 }, { .pcm = &instrument_pcm_1100 },
+    /* 052 */ { .pcm = &instrument_pcm_1101 }, { .pcm = &instrument_pcm_1102 }, { .pcm = &instrument_pcm_1103 }, { .pcm = &instrument_pcm_1104 },
+    /* 056 */ { .pcm = &instrument_pcm_1105 }, { .pcm = &instrument_pcm_1106 }, { .pcm = &instrument_pcm_1107 }, { .pcm = &instrument_pcm_1108 },
+    /* 060 */ { .pcm = &instrument_pcm_1109 }, { .pcm = &instrument_pcm_1110 }, { .pcm = &instrument_pcm_1111 }, { .pcm = &instrument_pcm_1112 },
+    /* 064 */ { .pcm = &instrument_pcm_1113 }, { .pcm = &instrument_pcm_1114 }, { .pcm = &instrument_pcm_1115 }, { .pcm = &instrument_pcm_1116 },
+    /* 068 */ { .pcm = &instrument_pcm_1117 }, { .pcm = &instrument_pcm_1118 }, { .pcm = &instrument_pcm_1119 }, { .pcm = &instrument_pcm_1120 },
+    /* 072 */ { .pcm = &instrument_pcm_1121 }, { .pcm = &instrument_pcm_1122 }, { .pcm = &instrument_pcm_1123 }, NULL,
+    /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 080 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_1124 }, { .pcm = &instrument_pcm_1125 },
+    /* 084 */ { .pcm = &instrument_pcm_1126 }, { .pcm = &instrument_pcm_1127 }, { .pcm = &instrument_pcm_1128 }, { .pcm = &instrument_pcm_1129 },
+    /* 088 */ { .pcm = &instrument_pcm_1130 }, { .pcm = &instrument_pcm_1131 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_49 = {
-    /* 000 */ &instrument_pcm_data_1132.header, &instrument_pcm_data_1133.header, &instrument_pcm_data_1134.header, &instrument_pcm_data_1135.header,
-    /* 004 */ &instrument_pcm_data_1136.header, &instrument_pcm_data_1137.header, &instrument_pcm_data_1138.header, &instrument_pcm_data_1139.header,
-    /* 008 */ &instrument_pcm_data_1140.header, &instrument_pcm_data_1141.header, &instrument_pcm_data_1142.header, &instrument_pcm_data_1143.header,
-    /* 012 */ &instrument_pcm_data_1144.header, &instrument_pcm_data_1145.header, &instrument_pcm_data_1146.header, &instrument_pcm_data_1147.header,
-    /* 016 */ &instrument_pcm_data_1148.header, &instrument_pcm_data_1149.header, &instrument_pcm_data_1150.header, &instrument_pcm_data_1151.header,
-    /* 020 */ &instrument_pcm_data_1152.header, &instrument_pcm_data_1153.header, &instrument_pcm_data_1154.header, &instrument_pcm_data_1155.header,
-    /* 024 */ &instrument_pcm_data_1156.header, &instrument_pcm_data_1157.header, &instrument_pcm_data_1158.header, &instrument_pcm_data_1159.header,
-    /* 028 */ &instrument_pcm_data_1160.header, &instrument_pcm_data_1161.header, &instrument_pcm_data_1162.header, &instrument_pcm_data_1163.header,
-    /* 032 */ &instrument_pcm_data_1164.header, &instrument_pcm_data_1165.header, &instrument_pcm_data_1166.header, &instrument_pcm_data_1167.header,
-    /* 036 */ &instrument_pcm_data_1168.header, &instrument_pcm_data_1169.header, &instrument_pcm_data_1170.header, &instrument_pcm_data_1171.header,
-    /* 040 */ &instrument_pcm_data_1172.header, &instrument_pcm_data_1173.header, &instrument_pcm_data_1174.header, &instrument_pcm_data_1175.header,
-    /* 044 */ &instrument_pcm_data_1176.header, &instrument_pcm_data_1177.header, &instrument_pcm_data_1178.header, &instrument_pcm_data_1179.header,
-    /* 048 */ &instrument_pcm_data_1180.header, &instrument_pcm_data_1181.header, &instrument_pcm_data_1182.header, &instrument_pcm_data_1183.header,
-    /* 052 */ &instrument_pcm_data_1184.header, &instrument_pcm_data_1185.header, &instrument_pcm_data_1186.header, NULL,
-    /* 056 */ &instrument_pcm_data_1187.header, &instrument_pcm_data_1188.header, &instrument_pcm_data_1189.header, &instrument_pcm_data_1190.header,
-    /* 060 */ &instrument_pcm_data_1191.header, &instrument_pcm_data_1192.header, &instrument_pcm_data_1193.header, &instrument_pcm_data_1194.header,
-    /* 064 */ &instrument_pcm_data_1195.header, &instrument_pcm_data_1196.header, NULL,                             &instrument_pcm_data_1197.header,
-    /* 068 */ &instrument_pcm_data_1198.header, &instrument_pcm_data_1199.header, &instrument_pcm_data_1200.header, &instrument_pcm_data_1201.header,
-    /* 072 */ &instrument_pcm_data_1202.header, &instrument_pcm_data_1203.header, &instrument_pcm_data_1204.header, &instrument_pcm_data_1205.header,
-    /* 076 */ &instrument_pcm_data_1206.header, &instrument_pcm_data_1207.header, &instrument_pcm_data_1208.header, &instrument_pcm_data_1209.header,
-    /* 080 */ &instrument_pcm_data_1210.header, &instrument_pcm_data_1211.header, &instrument_pcm_data_1212.header, &instrument_pcm_data_1213.header,
-    /* 084 */ &instrument_pcm_data_1214.header, &instrument_pcm_data_1215.header, &instrument_pcm_data_1216.header, &instrument_pcm_data_1217.header,
-    /* 088 */ &instrument_pcm_data_1218.header, NULL,                             NULL,                             NULL,
-    /* 092 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 096 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 100 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 104 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 108 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 112 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 116 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 120 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 124 */ NULL,                             NULL,                             NULL,                             &instrument_subbank_single_key_data_1219.header
+// 128 Instruments
+union Instrument inst_bank_49[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1132 }, { .pcm = &instrument_pcm_1133 }, { .pcm = &instrument_pcm_1134 }, { .pcm = &instrument_pcm_1135 },
+    /* 004 */ { .pcm = &instrument_pcm_1136 }, { .pcm = &instrument_pcm_1137 }, { .pcm = &instrument_pcm_1138 }, { .pcm = &instrument_pcm_1139 },
+    /* 008 */ { .pcm = &instrument_pcm_1140 }, { .pcm = &instrument_pcm_1141 }, { .pcm = &instrument_pcm_1142 }, { .pcm = &instrument_pcm_1143 },
+    /* 012 */ { .pcm = &instrument_pcm_1144 }, { .pcm = &instrument_pcm_1145 }, { .pcm = &instrument_pcm_1146 }, { .pcm = &instrument_pcm_1147 },
+    /* 016 */ { .pcm = &instrument_pcm_1148 }, { .pcm = &instrument_pcm_1149 }, { .pcm = &instrument_pcm_1150 }, { .pcm = &instrument_pcm_1151 },
+    /* 020 */ { .pcm = &instrument_pcm_1152 }, { .pcm = &instrument_pcm_1153 }, { .pcm = &instrument_pcm_1154 }, { .pcm = &instrument_pcm_1155 },
+    /* 024 */ { .pcm = &instrument_pcm_1156 }, { .pcm = &instrument_pcm_1157 }, { .pcm = &instrument_pcm_1158 }, { .pcm = &instrument_pcm_1159 },
+    /* 028 */ { .pcm = &instrument_pcm_1160 }, { .pcm = &instrument_pcm_1161 }, { .pcm = &instrument_pcm_1162 }, { .pcm = &instrument_pcm_1163 },
+    /* 032 */ { .pcm = &instrument_pcm_1164 }, { .pcm = &instrument_pcm_1165 }, { .pcm = &instrument_pcm_1166 }, { .pcm = &instrument_pcm_1167 },
+    /* 036 */ { .pcm = &instrument_pcm_1168 }, { .pcm = &instrument_pcm_1169 }, { .pcm = &instrument_pcm_1170 }, { .pcm = &instrument_pcm_1171 },
+    /* 040 */ { .pcm = &instrument_pcm_1172 }, { .pcm = &instrument_pcm_1173 }, { .pcm = &instrument_pcm_1174 }, { .pcm = &instrument_pcm_1175 },
+    /* 044 */ { .pcm = &instrument_pcm_1176 }, { .pcm = &instrument_pcm_1177 }, { .pcm = &instrument_pcm_1178 }, { .pcm = &instrument_pcm_1179 },
+    /* 048 */ { .pcm = &instrument_pcm_1180 }, { .pcm = &instrument_pcm_1181 }, { .pcm = &instrument_pcm_1182 }, { .pcm = &instrument_pcm_1183 },
+    /* 052 */ { .pcm = &instrument_pcm_1184 }, { .pcm = &instrument_pcm_1185 }, { .pcm = &instrument_pcm_1186 }, NULL,
+    /* 056 */ { .pcm = &instrument_pcm_1187 }, { .pcm = &instrument_pcm_1188 }, { .pcm = &instrument_pcm_1189 }, { .pcm = &instrument_pcm_1190 },
+    /* 060 */ { .pcm = &instrument_pcm_1191 }, { .pcm = &instrument_pcm_1192 }, { .pcm = &instrument_pcm_1193 }, { .pcm = &instrument_pcm_1194 },
+    /* 064 */ { .pcm = &instrument_pcm_1195 }, { .pcm = &instrument_pcm_1196 }, NULL,                            { .pcm = &instrument_pcm_1197 },
+    /* 068 */ { .pcm = &instrument_pcm_1198 }, { .pcm = &instrument_pcm_1199 }, { .pcm = &instrument_pcm_1200 }, { .pcm = &instrument_pcm_1201 },
+    /* 072 */ { .pcm = &instrument_pcm_1202 }, { .pcm = &instrument_pcm_1203 }, { .pcm = &instrument_pcm_1204 }, { .pcm = &instrument_pcm_1205 },
+    /* 076 */ { .pcm = &instrument_pcm_1206 }, { .pcm = &instrument_pcm_1207 }, { .pcm = &instrument_pcm_1208 }, { .pcm = &instrument_pcm_1209 },
+    /* 080 */ { .pcm = &instrument_pcm_1210 }, { .pcm = &instrument_pcm_1211 }, { .pcm = &instrument_pcm_1212 }, { .pcm = &instrument_pcm_1213 },
+    /* 084 */ { .pcm = &instrument_pcm_1214 }, { .pcm = &instrument_pcm_1215 }, { .pcm = &instrument_pcm_1216 }, { .pcm = &instrument_pcm_1217 },
+    /* 088 */ { .pcm = &instrument_pcm_1218 }, NULL,                            NULL,                            NULL,
+    /* 092 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 096 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 100 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 104 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_1219 }
 };
 
-// 76 entries
-InstrumentBank instrument_bank_50 = {
-    /* 000 */ &instrument_pcm_data_1220.header, &instrument_pcm_data_1221.header, &instrument_pcm_data_1222.header, &instrument_pcm_data_1223.header,
-    /* 004 */ &instrument_pcm_data_1224.header, &instrument_pcm_data_1225.header, &instrument_pcm_data_1226.header, &instrument_pcm_data_1227.header,
-    /* 008 */ &instrument_pcm_data_1228.header, &instrument_pcm_data_1229.header, &instrument_pcm_data_1230.header, &instrument_pcm_data_1231.header,
-    /* 012 */ &instrument_pcm_data_1232.header, &instrument_pcm_data_1233.header, &instrument_pcm_data_1234.header, &instrument_pcm_data_1235.header,
-    /* 016 */ &instrument_pcm_data_1236.header, &instrument_pcm_data_1237.header, &instrument_pcm_data_1238.header, &instrument_pcm_data_1239.header,
-    /* 020 */ &instrument_pcm_data_1240.header, &instrument_pcm_data_1241.header, &instrument_pcm_data_1242.header, NULL,
-    /* 024 */ NULL,                             NULL,                             &instrument_pcm_data_1243.header, &instrument_pcm_data_1244.header,
-    /* 028 */ &instrument_pcm_data_1245.header, &instrument_pcm_data_1246.header, &instrument_pcm_data_1247.header, &instrument_pcm_data_1248.header,
-    /* 032 */ &instrument_pcm_data_1249.header, &instrument_pcm_data_1250.header, &instrument_pcm_data_1251.header, &instrument_pcm_data_1252.header,
-    /* 036 */ &instrument_pcm_data_1253.header, &instrument_pcm_data_1254.header, NULL,                             &instrument_pcm_data_1255.header,
-    /* 040 */ &instrument_pcm_data_1256.header, &instrument_pcm_data_1257.header, &instrument_pcm_data_1258.header, NULL,
-    /* 044 */ &instrument_pcm_data_1259.header, &instrument_pcm_data_1260.header, &instrument_pcm_data_1261.header, NULL,
-    /* 048 */ &instrument_pcm_data_1262.header, NULL,                             &instrument_pcm_data_1263.header, NULL,
-    /* 052 */ &instrument_pcm_data_1264.header, NULL,                             NULL,                             NULL,
-    /* 056 */ &instrument_pcm_data_1265.header, &instrument_pcm_data_1266.header, &instrument_pcm_data_1267.header, NULL,
-    /* 060 */ NULL,                             &instrument_pcm_data_1268.header, &instrument_pcm_data_1269.header, NULL,
-    /* 064 */ &instrument_pcm_data_1270.header, NULL,                             &instrument_pcm_data_1271.header, NULL,
-    /* 068 */ &instrument_pcm_data_1272.header, &instrument_pcm_data_1273.header, &instrument_pcm_data_1274.header, &instrument_pcm_data_1275.header,
-    /* 072 */ &instrument_pcm_data_1276.header, &instrument_pcm_data_1277.header, &instrument_pcm_data_1278.header, &instrument_pcm_data_1279.header
+// 76 Instruments
+union Instrument inst_bank_50[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1220 }, { .pcm = &instrument_pcm_1221 }, { .pcm = &instrument_pcm_1222 }, { .pcm = &instrument_pcm_1223 },
+    /* 004 */ { .pcm = &instrument_pcm_1224 }, { .pcm = &instrument_pcm_1225 }, { .pcm = &instrument_pcm_1226 }, { .pcm = &instrument_pcm_1227 },
+    /* 008 */ { .pcm = &instrument_pcm_1228 }, { .pcm = &instrument_pcm_1229 }, { .pcm = &instrument_pcm_1230 }, { .pcm = &instrument_pcm_1231 },
+    /* 012 */ { .pcm = &instrument_pcm_1232 }, { .pcm = &instrument_pcm_1233 }, { .pcm = &instrument_pcm_1234 }, { .pcm = &instrument_pcm_1235 },
+    /* 016 */ { .pcm = &instrument_pcm_1236 }, { .pcm = &instrument_pcm_1237 }, { .pcm = &instrument_pcm_1238 }, { .pcm = &instrument_pcm_1239 },
+    /* 020 */ { .pcm = &instrument_pcm_1240 }, { .pcm = &instrument_pcm_1241 }, { .pcm = &instrument_pcm_1242 }, NULL,
+    /* 024 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_1243 }, { .pcm = &instrument_pcm_1244 },
+    /* 028 */ { .pcm = &instrument_pcm_1245 }, { .pcm = &instrument_pcm_1246 }, { .pcm = &instrument_pcm_1247 }, { .pcm = &instrument_pcm_1248 },
+    /* 032 */ { .pcm = &instrument_pcm_1249 }, { .pcm = &instrument_pcm_1250 }, { .pcm = &instrument_pcm_1251 }, { .pcm = &instrument_pcm_1252 },
+    /* 036 */ { .pcm = &instrument_pcm_1253 }, { .pcm = &instrument_pcm_1254 }, NULL,                            { .pcm = &instrument_pcm_1255 },
+    /* 040 */ { .pcm = &instrument_pcm_1256 }, { .pcm = &instrument_pcm_1257 }, { .pcm = &instrument_pcm_1258 }, NULL,
+    /* 044 */ { .pcm = &instrument_pcm_1259 }, { .pcm = &instrument_pcm_1260 }, { .pcm = &instrument_pcm_1261 }, NULL,
+    /* 048 */ { .pcm = &instrument_pcm_1262 }, NULL,                            { .pcm = &instrument_pcm_1263 }, NULL,
+    /* 052 */ { .pcm = &instrument_pcm_1264 }, NULL,                            NULL,                            NULL,
+    /* 056 */ { .pcm = &instrument_pcm_1265 }, { .pcm = &instrument_pcm_1266 }, { .pcm = &instrument_pcm_1267 }, NULL,
+    /* 060 */ NULL,                            { .pcm = &instrument_pcm_1268 }, { .pcm = &instrument_pcm_1269 }, NULL,
+    /* 064 */ { .pcm = &instrument_pcm_1270 }, NULL,                            { .pcm = &instrument_pcm_1271 }, NULL,
+    /* 068 */ { .pcm = &instrument_pcm_1272 }, { .pcm = &instrument_pcm_1273 }, { .pcm = &instrument_pcm_1274 }, { .pcm = &instrument_pcm_1275 },
+    /* 072 */ { .pcm = &instrument_pcm_1276 }, { .pcm = &instrument_pcm_1277 }, { .pcm = &instrument_pcm_1278 }, { .pcm = &instrument_pcm_1279 }
 };
 
-// 78 entries
-InstrumentBank instrument_bank_51 = {
-    /* 000 */ &instrument_pcm_data_1280.header, &instrument_pcm_data_1281.header, &instrument_pcm_data_1282.header, &instrument_pcm_data_1283.header,
-    /* 004 */ &instrument_pcm_data_1284.header, &instrument_pcm_data_1285.header, &instrument_pcm_data_1286.header, &instrument_pcm_data_1287.header,
-    /* 008 */ &instrument_pcm_data_1288.header, &instrument_pcm_data_1289.header, &instrument_pcm_data_1290.header, &instrument_pcm_data_1291.header,
-    /* 012 */ &instrument_pcm_data_1292.header, &instrument_pcm_data_1293.header, &instrument_pcm_data_1294.header, &instrument_pcm_data_1295.header,
-    /* 016 */ &instrument_pcm_data_1296.header, &instrument_pcm_data_1297.header, &instrument_pcm_data_1298.header, &instrument_pcm_data_1299.header,
-    /* 020 */ &instrument_pcm_data_1300.header, &instrument_pcm_data_1301.header, &instrument_pcm_data_1302.header, &instrument_pcm_data_1303.header,
-    /* 024 */ &instrument_pcm_data_1304.header, &instrument_pcm_data_1305.header, &instrument_pcm_data_1306.header, &instrument_pcm_data_1307.header,
-    /* 028 */ &instrument_pcm_data_1308.header, NULL,                             NULL,                             NULL,
-    /* 032 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 036 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 040 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 044 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 048 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 052 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 056 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 060 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 064 */ NULL,                             NULL,                             NULL,                             &instrument_pcm_data_1309.header,
-    /* 068 */ &instrument_pcm_data_1310.header, &instrument_pcm_data_1311.header, &instrument_pcm_data_1312.header, &instrument_pcm_data_1313.header,
-    /* 072 */ &instrument_pcm_data_1314.header, &instrument_pcm_data_1315.header, &instrument_pcm_data_1316.header, &instrument_pcm_data_1317.header,
-    /* 076 */ &instrument_pcm_data_1318.header, &instrument_pcm_data_1319.header
+// 78 Instruments
+union Instrument inst_bank_51[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1280 }, { .pcm = &instrument_pcm_1281 }, { .pcm = &instrument_pcm_1282 }, { .pcm = &instrument_pcm_1283 },
+    /* 004 */ { .pcm = &instrument_pcm_1284 }, { .pcm = &instrument_pcm_1285 }, { .pcm = &instrument_pcm_1286 }, { .pcm = &instrument_pcm_1287 },
+    /* 008 */ { .pcm = &instrument_pcm_1288 }, { .pcm = &instrument_pcm_1289 }, { .pcm = &instrument_pcm_1290 }, { .pcm = &instrument_pcm_1291 },
+    /* 012 */ { .pcm = &instrument_pcm_1292 }, { .pcm = &instrument_pcm_1293 }, { .pcm = &instrument_pcm_1294 }, { .pcm = &instrument_pcm_1295 },
+    /* 016 */ { .pcm = &instrument_pcm_1296 }, { .pcm = &instrument_pcm_1297 }, { .pcm = &instrument_pcm_1298 }, { .pcm = &instrument_pcm_1299 },
+    /* 020 */ { .pcm = &instrument_pcm_1300 }, { .pcm = &instrument_pcm_1301 }, { .pcm = &instrument_pcm_1302 }, { .pcm = &instrument_pcm_1303 },
+    /* 024 */ { .pcm = &instrument_pcm_1304 }, { .pcm = &instrument_pcm_1305 }, { .pcm = &instrument_pcm_1306 }, { .pcm = &instrument_pcm_1307 },
+    /* 028 */ { .pcm = &instrument_pcm_1308 }, NULL,                            NULL,                            NULL,
+    /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 056 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 064 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_1309 },
+    /* 068 */ { .pcm = &instrument_pcm_1310 }, { .pcm = &instrument_pcm_1311 }, { .pcm = &instrument_pcm_1312 }, { .pcm = &instrument_pcm_1313 },
+    /* 072 */ { .pcm = &instrument_pcm_1314 }, { .pcm = &instrument_pcm_1315 }, { .pcm = &instrument_pcm_1316 }, { .pcm = &instrument_pcm_1317 },
+    /* 076 */ { .pcm = &instrument_pcm_1318 }, { .pcm = &instrument_pcm_1319 }
 };
 
-// 69 entries
-InstrumentBank instrument_bank_52 = {
-    /* 000 */ &instrument_pcm_data_1320.header, &instrument_pcm_data_1321.header, &instrument_pcm_data_1322.header, &instrument_pcm_data_1323.header,
-    /* 004 */ &instrument_pcm_data_1324.header, &instrument_pcm_data_1325.header, &instrument_pcm_data_1326.header, &instrument_pcm_data_1327.header,
-    /* 008 */ &instrument_pcm_data_1328.header, &instrument_pcm_data_1329.header, &instrument_pcm_data_1330.header, &instrument_pcm_data_1331.header,
-    /* 012 */ &instrument_pcm_data_1332.header, &instrument_pcm_data_1333.header, &instrument_pcm_data_1334.header, &instrument_pcm_data_1335.header,
-    /* 016 */ &instrument_pcm_data_1336.header, &instrument_pcm_data_1337.header, &instrument_pcm_data_1338.header, &instrument_pcm_data_1339.header,
-    /* 020 */ &instrument_pcm_data_1340.header, &instrument_pcm_data_1341.header, &instrument_pcm_data_1342.header, &instrument_pcm_data_1343.header,
-    /* 024 */ &instrument_pcm_data_1344.header, &instrument_pcm_data_1345.header, &instrument_pcm_data_1346.header, &instrument_pcm_data_1347.header,
-    /* 028 */ &instrument_pcm_data_1348.header, &instrument_pcm_data_1349.header, &instrument_pcm_data_1350.header, &instrument_pcm_data_1351.header,
-    /* 032 */ &instrument_pcm_data_1352.header, &instrument_pcm_data_1353.header, &instrument_pcm_data_1354.header, &instrument_pcm_data_1355.header,
-    /* 036 */ &instrument_pcm_data_1356.header, &instrument_pcm_data_1357.header, &instrument_pcm_data_1358.header, &instrument_pcm_data_1359.header,
-    /* 040 */ &instrument_pcm_data_1360.header, &instrument_pcm_data_1361.header, NULL,                             NULL,
-    /* 044 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 048 */ NULL,                             NULL,                             NULL,                             &instrument_pcm_data_1362.header,
-    /* 052 */ &instrument_pcm_data_1363.header, &instrument_pcm_data_1364.header, &instrument_pcm_data_1365.header, &instrument_pcm_data_1366.header,
-    /* 056 */ &instrument_pcm_data_1367.header, &instrument_pcm_data_1368.header, &instrument_pcm_data_1369.header, &instrument_pcm_data_1370.header,
-    /* 060 */ &instrument_pcm_data_1371.header, &instrument_pcm_data_1372.header, &instrument_pcm_data_1373.header, &instrument_pcm_data_1374.header,
-    /* 064 */ &instrument_pcm_data_1375.header, &instrument_pcm_data_1376.header, &instrument_pcm_data_1377.header, &instrument_pcm_data_1378.header,
-    /* 068 */ &instrument_pcm_data_1379.header
+// 69 Instruments
+union Instrument inst_bank_52[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1320 }, { .pcm = &instrument_pcm_1321 }, { .pcm = &instrument_pcm_1322 }, { .pcm = &instrument_pcm_1323 },
+    /* 004 */ { .pcm = &instrument_pcm_1324 }, { .pcm = &instrument_pcm_1325 }, { .pcm = &instrument_pcm_1326 }, { .pcm = &instrument_pcm_1327 },
+    /* 008 */ { .pcm = &instrument_pcm_1328 }, { .pcm = &instrument_pcm_1329 }, { .pcm = &instrument_pcm_1330 }, { .pcm = &instrument_pcm_1331 },
+    /* 012 */ { .pcm = &instrument_pcm_1332 }, { .pcm = &instrument_pcm_1333 }, { .pcm = &instrument_pcm_1334 }, { .pcm = &instrument_pcm_1335 },
+    /* 016 */ { .pcm = &instrument_pcm_1336 }, { .pcm = &instrument_pcm_1337 }, { .pcm = &instrument_pcm_1338 }, { .pcm = &instrument_pcm_1339 },
+    /* 020 */ { .pcm = &instrument_pcm_1340 }, { .pcm = &instrument_pcm_1341 }, { .pcm = &instrument_pcm_1342 }, { .pcm = &instrument_pcm_1343 },
+    /* 024 */ { .pcm = &instrument_pcm_1344 }, { .pcm = &instrument_pcm_1345 }, { .pcm = &instrument_pcm_1346 }, { .pcm = &instrument_pcm_1347 },
+    /* 028 */ { .pcm = &instrument_pcm_1348 }, { .pcm = &instrument_pcm_1349 }, { .pcm = &instrument_pcm_1350 }, { .pcm = &instrument_pcm_1351 },
+    /* 032 */ { .pcm = &instrument_pcm_1352 }, { .pcm = &instrument_pcm_1353 }, { .pcm = &instrument_pcm_1354 }, { .pcm = &instrument_pcm_1355 },
+    /* 036 */ { .pcm = &instrument_pcm_1356 }, { .pcm = &instrument_pcm_1357 }, { .pcm = &instrument_pcm_1358 }, { .pcm = &instrument_pcm_1359 },
+    /* 040 */ { .pcm = &instrument_pcm_1360 }, { .pcm = &instrument_pcm_1361 }, NULL,                            NULL,
+    /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 048 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_1362 },
+    /* 052 */ { .pcm = &instrument_pcm_1363 }, { .pcm = &instrument_pcm_1364 }, { .pcm = &instrument_pcm_1365 }, { .pcm = &instrument_pcm_1366 },
+    /* 056 */ { .pcm = &instrument_pcm_1367 }, { .pcm = &instrument_pcm_1368 }, { .pcm = &instrument_pcm_1369 }, { .pcm = &instrument_pcm_1370 },
+    /* 060 */ { .pcm = &instrument_pcm_1371 }, { .pcm = &instrument_pcm_1372 }, { .pcm = &instrument_pcm_1373 }, { .pcm = &instrument_pcm_1374 },
+    /* 064 */ { .pcm = &instrument_pcm_1375 }, { .pcm = &instrument_pcm_1376 }, { .pcm = &instrument_pcm_1377 }, { .pcm = &instrument_pcm_1378 },
+    /* 068 */ { .pcm = &instrument_pcm_1379 }
 };
 
-// 55 entries
-InstrumentBank instrument_bank_53 = {
-    /* 000 */ &instrument_pcm_data_1380.header, &instrument_pcm_data_1381.header, &instrument_pcm_data_1382.header, &instrument_pcm_data_1383.header,
-    /* 004 */ &instrument_pcm_data_1384.header, &instrument_pcm_data_1385.header, &instrument_pcm_data_1386.header, &instrument_pcm_data_1387.header,
-    /* 008 */ &instrument_pcm_data_1388.header, &instrument_pcm_data_1389.header, &instrument_pcm_data_1390.header, &instrument_pcm_data_1391.header,
-    /* 012 */ &instrument_pcm_data_1392.header, &instrument_pcm_data_1393.header, &instrument_pcm_data_1394.header, &instrument_pcm_data_1395.header,
-    /* 016 */ &instrument_pcm_data_1396.header, &instrument_pcm_data_1397.header, &instrument_pcm_data_1398.header, &instrument_pcm_data_1399.header,
-    /* 020 */ &instrument_pcm_data_1400.header, &instrument_pcm_data_1401.header, &instrument_pcm_data_1402.header, &instrument_pcm_data_1403.header,
-    /* 024 */ &instrument_pcm_data_1404.header, &instrument_pcm_data_1405.header, &instrument_pcm_data_1406.header, &instrument_pcm_data_1407.header,
-    /* 028 */ &instrument_pcm_data_1408.header, &instrument_pcm_data_1409.header, &instrument_pcm_data_1410.header, &instrument_pcm_data_1411.header,
-    /* 032 */ &instrument_pcm_data_1412.header, &instrument_pcm_data_1413.header, &instrument_pcm_data_1414.header, &instrument_pcm_data_1415.header,
-    /* 036 */ &instrument_pcm_data_1416.header, &instrument_pcm_data_1417.header, &instrument_pcm_data_1418.header, &instrument_pcm_data_1419.header,
-    /* 040 */ &instrument_pcm_data_1420.header, &instrument_pcm_data_1421.header, &instrument_pcm_data_1422.header, &instrument_pcm_data_1423.header,
-    /* 044 */ &instrument_pcm_data_1424.header, &instrument_pcm_data_1425.header, &instrument_pcm_data_1426.header, &instrument_pcm_data_1427.header,
-    /* 048 */ &instrument_pcm_data_1428.header, &instrument_pcm_data_1429.header, &instrument_pcm_data_1430.header, &instrument_pcm_data_1431.header,
-    /* 052 */ &instrument_pcm_data_1432.header, &instrument_pcm_data_1433.header, &instrument_pcm_data_1434.header
+// 55 Instruments
+union Instrument inst_bank_53[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1380 }, { .pcm = &instrument_pcm_1381 }, { .pcm = &instrument_pcm_1382 }, { .pcm = &instrument_pcm_1383 },
+    /* 004 */ { .pcm = &instrument_pcm_1384 }, { .pcm = &instrument_pcm_1385 }, { .pcm = &instrument_pcm_1386 }, { .pcm = &instrument_pcm_1387 },
+    /* 008 */ { .pcm = &instrument_pcm_1388 }, { .pcm = &instrument_pcm_1389 }, { .pcm = &instrument_pcm_1390 }, { .pcm = &instrument_pcm_1391 },
+    /* 012 */ { .pcm = &instrument_pcm_1392 }, { .pcm = &instrument_pcm_1393 }, { .pcm = &instrument_pcm_1394 }, { .pcm = &instrument_pcm_1395 },
+    /* 016 */ { .pcm = &instrument_pcm_1396 }, { .pcm = &instrument_pcm_1397 }, { .pcm = &instrument_pcm_1398 }, { .pcm = &instrument_pcm_1399 },
+    /* 020 */ { .pcm = &instrument_pcm_1400 }, { .pcm = &instrument_pcm_1401 }, { .pcm = &instrument_pcm_1402 }, { .pcm = &instrument_pcm_1403 },
+    /* 024 */ { .pcm = &instrument_pcm_1404 }, { .pcm = &instrument_pcm_1405 }, { .pcm = &instrument_pcm_1406 }, { .pcm = &instrument_pcm_1407 },
+    /* 028 */ { .pcm = &instrument_pcm_1408 }, { .pcm = &instrument_pcm_1409 }, { .pcm = &instrument_pcm_1410 }, { .pcm = &instrument_pcm_1411 },
+    /* 032 */ { .pcm = &instrument_pcm_1412 }, { .pcm = &instrument_pcm_1413 }, { .pcm = &instrument_pcm_1414 }, { .pcm = &instrument_pcm_1415 },
+    /* 036 */ { .pcm = &instrument_pcm_1416 }, { .pcm = &instrument_pcm_1417 }, { .pcm = &instrument_pcm_1418 }, { .pcm = &instrument_pcm_1419 },
+    /* 040 */ { .pcm = &instrument_pcm_1420 }, { .pcm = &instrument_pcm_1421 }, { .pcm = &instrument_pcm_1422 }, { .pcm = &instrument_pcm_1423 },
+    /* 044 */ { .pcm = &instrument_pcm_1424 }, { .pcm = &instrument_pcm_1425 }, { .pcm = &instrument_pcm_1426 }, { .pcm = &instrument_pcm_1427 },
+    /* 048 */ { .pcm = &instrument_pcm_1428 }, { .pcm = &instrument_pcm_1429 }, { .pcm = &instrument_pcm_1430 }, { .pcm = &instrument_pcm_1431 },
+    /* 052 */ { .pcm = &instrument_pcm_1432 }, { .pcm = &instrument_pcm_1433 }, { .pcm = &instrument_pcm_1434 }
 };
 
-// 59 entries
-InstrumentBank instrument_bank_54 = {
-    /* 000 */ &instrument_pcm_data_1435.header, &instrument_pcm_data_1436.header, &instrument_pcm_data_1437.header, &instrument_pcm_data_1438.header,
-    /* 004 */ &instrument_pcm_data_1439.header, NULL,                             &instrument_pcm_data_1440.header, &instrument_pcm_data_1441.header,
-    /* 008 */ &instrument_pcm_data_1442.header, &instrument_pcm_data_1443.header, &instrument_pcm_data_1444.header, &instrument_pcm_data_1445.header,
-    /* 012 */ &instrument_pcm_data_1446.header, &instrument_pcm_data_1447.header, &instrument_pcm_data_1448.header, &instrument_pcm_data_1449.header,
-    /* 016 */ &instrument_pcm_data_1450.header, &instrument_pcm_data_1451.header, &instrument_pcm_data_1452.header, &instrument_pcm_data_1453.header,
-    /* 020 */ &instrument_pcm_data_1454.header, &instrument_pcm_data_1455.header, &instrument_pcm_data_1456.header, &instrument_pcm_data_1457.header,
-    /* 024 */ NULL,                             NULL,                             &instrument_pcm_data_1458.header, NULL,
-    /* 028 */ NULL,                             &instrument_pcm_data_1459.header, &instrument_pcm_data_1460.header, &instrument_pcm_data_1461.header,
-    /* 032 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 036 */ &instrument_pcm_data_1462.header, &instrument_pcm_data_1463.header, &instrument_pcm_data_1464.header, &instrument_pcm_data_1465.header,
-    /* 040 */ &instrument_pcm_data_1466.header, NULL,                             NULL,                             NULL,
-    /* 044 */ NULL,                             &instrument_pcm_data_1467.header, NULL,                             &instrument_pcm_data_1468.header,
-    /* 048 */ &instrument_pcm_data_1469.header, &instrument_pcm_data_1470.header, NULL,                             NULL,
-    /* 052 */ NULL,                             NULL,                             &instrument_pcm_data_1471.header, &instrument_pcm_data_1472.header,
-    /* 056 */ &instrument_pcm_data_1473.header, &instrument_pcm_data_1474.header, &instrument_pcm_data_1475.header
+// 59 Instruments
+union Instrument inst_bank_54[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1435 }, { .pcm = &instrument_pcm_1436 }, { .pcm = &instrument_pcm_1437 }, { .pcm = &instrument_pcm_1438 },
+    /* 004 */ { .pcm = &instrument_pcm_1439 }, NULL,                            { .pcm = &instrument_pcm_1440 }, { .pcm = &instrument_pcm_1441 },
+    /* 008 */ { .pcm = &instrument_pcm_1442 }, { .pcm = &instrument_pcm_1443 }, { .pcm = &instrument_pcm_1444 }, { .pcm = &instrument_pcm_1445 },
+    /* 012 */ { .pcm = &instrument_pcm_1446 }, { .pcm = &instrument_pcm_1447 }, { .pcm = &instrument_pcm_1448 }, { .pcm = &instrument_pcm_1449 },
+    /* 016 */ { .pcm = &instrument_pcm_1450 }, { .pcm = &instrument_pcm_1451 }, { .pcm = &instrument_pcm_1452 }, { .pcm = &instrument_pcm_1453 },
+    /* 020 */ { .pcm = &instrument_pcm_1454 }, { .pcm = &instrument_pcm_1455 }, { .pcm = &instrument_pcm_1456 }, { .pcm = &instrument_pcm_1457 },
+    /* 024 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_1458 }, NULL,
+    /* 028 */ NULL,                            { .pcm = &instrument_pcm_1459 }, { .pcm = &instrument_pcm_1460 }, { .pcm = &instrument_pcm_1461 },
+    /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 036 */ { .pcm = &instrument_pcm_1462 }, { .pcm = &instrument_pcm_1463 }, { .pcm = &instrument_pcm_1464 }, { .pcm = &instrument_pcm_1465 },
+    /* 040 */ { .pcm = &instrument_pcm_1466 }, NULL,                            NULL,                            NULL,
+    /* 044 */ NULL,                            { .pcm = &instrument_pcm_1467 }, NULL,                            { .pcm = &instrument_pcm_1468 },
+    /* 048 */ { .pcm = &instrument_pcm_1469 }, { .pcm = &instrument_pcm_1470 }, NULL,                            NULL,
+    /* 052 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_1471 }, { .pcm = &instrument_pcm_1472 },
+    /* 056 */ { .pcm = &instrument_pcm_1473 }, { .pcm = &instrument_pcm_1474 }, { .pcm = &instrument_pcm_1475 }
 };
 
-// 6 entries
-InstrumentBank instrument_bank_55 = {
-    /* 000 */ NULL,                             &instrument_pcm_data_1476.header, &instrument_pcm_data_1477.header, NULL,
-    /* 004 */ &instrument_pcm_data_1478.header, &instrument_pcm_data_1479.header
+// 6 Instruments
+union Instrument inst_bank_55[] = {
+    /* 000 */ NULL,                            { .pcm = &instrument_pcm_1476 }, { .pcm = &instrument_pcm_1477 }, NULL,
+    /* 004 */ { .pcm = &instrument_pcm_1478 }, { .pcm = &instrument_pcm_1479 }
 };
 
-// 128 entries
-InstrumentBank instrument_bank_56 = {
-    /* 000 */ &instrument_pcm_data_1480.header, &instrument_pcm_data_1481.header, &instrument_pcm_data_1482.header, &instrument_pcm_data_1483.header,
-    /* 004 */ &instrument_pcm_data_1484.header, &instrument_pcm_data_1485.header, &instrument_pcm_data_1486.header, NULL,
-    /* 008 */ NULL,                             &instrument_pcm_data_1536.header, &instrument_pcm_data_1487.header, &instrument_pcm_data_1488.header,
-    /* 012 */ &instrument_pcm_data_1489.header, &instrument_pcm_data_1490.header, &instrument_pcm_data_1491.header, &instrument_pcm_data_1492.header,
-    /* 016 */ &instrument_pcm_data_1493.header, &instrument_pcm_data_1494.header, &instrument_pcm_data_1495.header, &instrument_pcm_data_1496.header,
-    /* 020 */ &instrument_pcm_data_1497.header, &instrument_pcm_data_1498.header, &instrument_pcm_data_1499.header, &instrument_pcm_data_1534.header,
-    /* 024 */ &instrument_pcm_data_1535.header, &instrument_pcm_data_1500.header, &instrument_psg_data_1501.header, &instrument_pcm_data_1502.header,
-    /* 028 */ &instrument_pcm_data_1503.header, &instrument_pcm_data_1504.header, &instrument_pcm_data_1505.header, &instrument_pcm_data_1506.header,
-    /* 032 */ &instrument_pcm_data_1507.header, &instrument_pcm_data_1532.header, &instrument_pcm_data_1533.header, &instrument_pcm_data_1508.header,
-    /* 036 */ &instrument_pcm_data_1509.header, &instrument_pcm_data_1510.header, &instrument_pcm_data_1511.header, &instrument_pcm_data_1512.header,
-    /* 040 */ &instrument_pcm_data_1513.header, &instrument_pcm_data_1514.header, &instrument_pcm_data_1515.header, &instrument_pcm_data_1516.header,
-    /* 044 */ &instrument_pcm_data_1517.header, &instrument_psg_data_1518.header, &instrument_pcm_data_1519.header, &instrument_pcm_data_1520.header,
-    /* 048 */ &instrument_pcm_data_1521.header, &instrument_pcm_data_1522.header, &instrument_pcm_data_1523.header, &instrument_pcm_data_1524.header,
-    /* 052 */ &instrument_pcm_data_1525.header, &instrument_pcm_data_1526.header, &instrument_pcm_data_1527.header, &instrument_pcm_data_1528.header,
-    /* 056 */ &instrument_pcm_data_1529.header, &instrument_pcm_data_1530.header, &instrument_pcm_data_1531.header, &instrument_pcm_data_1539.header,
-    /* 060 */ &instrument_pcm_data_1540.header, &instrument_pcm_data_1541.header, &instrument_pcm_data_1542.header, &instrument_pcm_data_1543.header,
-    /* 064 */ &instrument_pcm_data_1544.header, &instrument_psg_data_1545.header, &instrument_pcm_data_1546.header, &instrument_pcm_data_1547.header,
-    /* 068 */ &instrument_pcm_data_1548.header, &instrument_pcm_data_1549.header, &instrument_pcm_data_1550.header, &instrument_pcm_data_1551.header,
-    /* 072 */ &instrument_pcm_data_1552.header, &instrument_pcm_data_1553.header, &instrument_pcm_data_1554.header, NULL,
-    /* 076 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 080 */ &instrument_subbank_single_key_data_1555.header, NULL,              NULL,                             NULL,
-    /* 084 */ NULL,                             &instrument_pcm_data_1556.header, &instrument_pcm_data_1557.header, &instrument_pcm_data_1558.header,
-    /* 088 */ &instrument_psg_data_1559.header, &instrument_pcm_data_1560.header, &instrument_psg_data_1561.header, &instrument_pcm_data_1562.header,
-    /* 092 */ NULL,                             NULL,                             NULL,                             &instrument_pcm_data_1563.header,
-    /* 096 */ &instrument_pcm_data_1564.header, NULL,                             NULL,                             NULL,
-    /* 100 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 104 */ NULL,                             &instrument_pcm_data_1565.header, &instrument_pcm_data_1566.header, &instrument_pcm_data_1567.header,
-    /* 108 */ &instrument_pcm_data_1568.header, NULL,                             &instrument_pcm_data_1569.header, &instrument_pcm_data_1570.header,
-    /* 112 */ NULL,                             NULL,                             NULL,                             &instrument_pcm_data_1571.header,
-    /* 116 */ &instrument_pcm_data_1572.header, &instrument_pcm_data_1573.header, &instrument_pcm_data_1574.header, &instrument_pcm_data_1575.header,
-    /* 120 */ &instrument_pcm_data_1576.header, NULL,                             NULL,                             &instrument_pcm_data_1537.header,
-    /* 124 */ &instrument_pcm_data_1538.header, &instrument_subbank_single_key_data_1577.header, &instrument_psg_data_1578.header, &instrument_subbank_single_key_data_1579.header
+// 128 Instruments
+union Instrument inst_bank_56[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1480 }, { .pcm = &instrument_pcm_1481 }, { .pcm = &instrument_pcm_1482 }, { .pcm = &instrument_pcm_1483 },
+    /* 004 */ { .pcm = &instrument_pcm_1484 }, { .pcm = &instrument_pcm_1485 }, { .pcm = &instrument_pcm_1486 }, NULL,
+    /* 008 */ NULL,                            { .pcm = &instrument_pcm_1536 }, { .pcm = &instrument_pcm_1487 }, { .pcm = &instrument_pcm_1488 },
+    /* 012 */ { .pcm = &instrument_pcm_1489 }, { .pcm = &instrument_pcm_1490 }, { .pcm = &instrument_pcm_1491 }, { .pcm = &instrument_pcm_1492 },
+    /* 016 */ { .pcm = &instrument_pcm_1493 }, { .pcm = &instrument_pcm_1494 }, { .pcm = &instrument_pcm_1495 }, { .pcm = &instrument_pcm_1496 },
+    /* 020 */ { .pcm = &instrument_pcm_1497 }, { .pcm = &instrument_pcm_1498 }, { .pcm = &instrument_pcm_1499 }, { .pcm = &instrument_pcm_1534 },
+    /* 024 */ { .pcm = &instrument_pcm_1535 }, { .pcm = &instrument_pcm_1500 }, { .psg = &instrument_psg_1501 }, { .pcm = &instrument_pcm_1502 },
+    /* 028 */ { .pcm = &instrument_pcm_1503 }, { .pcm = &instrument_pcm_1504 }, { .pcm = &instrument_pcm_1505 }, { .pcm = &instrument_pcm_1506 },
+    /* 032 */ { .pcm = &instrument_pcm_1507 }, { .pcm = &instrument_pcm_1532 }, { .pcm = &instrument_pcm_1533 }, { .pcm = &instrument_pcm_1508 },
+    /* 036 */ { .pcm = &instrument_pcm_1509 }, { .pcm = &instrument_pcm_1510 }, { .pcm = &instrument_pcm_1511 }, { .pcm = &instrument_pcm_1512 },
+    /* 040 */ { .pcm = &instrument_pcm_1513 }, { .pcm = &instrument_pcm_1514 }, { .pcm = &instrument_pcm_1515 }, { .pcm = &instrument_pcm_1516 },
+    /* 044 */ { .pcm = &instrument_pcm_1517 }, { .psg = &instrument_psg_1518 }, { .pcm = &instrument_pcm_1519 }, { .pcm = &instrument_pcm_1520 },
+    /* 048 */ { .pcm = &instrument_pcm_1521 }, { .pcm = &instrument_pcm_1522 }, { .pcm = &instrument_pcm_1523 }, { .pcm = &instrument_pcm_1524 },
+    /* 052 */ { .pcm = &instrument_pcm_1525 }, { .pcm = &instrument_pcm_1526 }, { .pcm = &instrument_pcm_1527 }, { .pcm = &instrument_pcm_1528 },
+    /* 056 */ { .pcm = &instrument_pcm_1529 }, { .pcm = &instrument_pcm_1530 }, { .pcm = &instrument_pcm_1531 }, { .pcm = &instrument_pcm_1539 },
+    /* 060 */ { .pcm = &instrument_pcm_1540 }, { .pcm = &instrument_pcm_1541 }, { .pcm = &instrument_pcm_1542 }, { .pcm = &instrument_pcm_1543 },
+    /* 064 */ { .pcm = &instrument_pcm_1544 }, { .psg = &instrument_psg_1545 }, { .pcm = &instrument_pcm_1546 }, { .pcm = &instrument_pcm_1547 },
+    /* 068 */ { .pcm = &instrument_pcm_1548 }, { .pcm = &instrument_pcm_1549 }, { .pcm = &instrument_pcm_1550 }, { .pcm = &instrument_pcm_1551 },
+    /* 072 */ { .pcm = &instrument_pcm_1552 }, { .pcm = &instrument_pcm_1553 }, { .pcm = &instrument_pcm_1554 }, NULL,
+    /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 080 */ { .rhy = &instrument_rhy_1555 }, NULL,                            NULL,                            NULL,
+    /* 084 */ NULL,                            { .pcm = &instrument_pcm_1556 }, { .pcm = &instrument_pcm_1557 }, { .pcm = &instrument_pcm_1558 },
+    /* 088 */ { .psg = &instrument_psg_1559 }, { .pcm = &instrument_pcm_1560 }, { .psg = &instrument_psg_1561 }, { .pcm = &instrument_pcm_1562 },
+    /* 092 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_1563 },
+    /* 096 */ { .pcm = &instrument_pcm_1564 }, NULL,                            NULL,                            NULL,
+    /* 100 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 104 */ NULL,                            { .pcm = &instrument_pcm_1565 }, { .pcm = &instrument_pcm_1566 }, { .pcm = &instrument_pcm_1567 },
+    /* 108 */ { .pcm = &instrument_pcm_1568 }, NULL,                            { .pcm = &instrument_pcm_1569 }, { .pcm = &instrument_pcm_1570 },
+    /* 112 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_1571 },
+    /* 116 */ { .pcm = &instrument_pcm_1572 }, { .pcm = &instrument_pcm_1573 }, { .pcm = &instrument_pcm_1574 }, { .pcm = &instrument_pcm_1575 },
+    /* 120 */ { .pcm = &instrument_pcm_1576 }, NULL,                            NULL,                            { .pcm = &instrument_pcm_1537 },
+    /* 124 */ { .pcm = &instrument_pcm_1538 }, { .rhy = &instrument_rhy_1577 }, { .psg = &instrument_psg_1578 }, { .rhy = &instrument_rhy_1579 }
 };
 
-// 31 entries
-InstrumentBank instrument_bank_57 = {
-    /* 000 */ &instrument_pcm_data_1580.header, &instrument_pcm_data_1581.header, &instrument_pcm_data_1582.header, &instrument_pcm_data_1583.header,
-    /* 004 */ &instrument_pcm_data_1584.header, &instrument_pcm_data_1585.header, &instrument_pcm_data_1586.header, &instrument_pcm_data_1587.header,
-    /* 008 */ &instrument_pcm_data_1588.header, &instrument_pcm_data_1589.header, &instrument_pcm_data_1590.header, &instrument_pcm_data_1591.header,
-    /* 012 */ NULL,                             NULL,                             NULL,                             &instrument_psg_data_1592.header,
-    /* 016 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 020 */ &instrument_pcm_data_1593.header, &instrument_pcm_data_1594.header, &instrument_pcm_data_1595.header, &instrument_pcm_data_1596.header,
-    /* 024 */ &instrument_pcm_data_1599.header, &instrument_pcm_data_1597.header, &instrument_pcm_data_1598.header, NULL,
-    /* 028 */ NULL,                             NULL,                             &instrument_subbank_single_key_data_1600.header
+// 31 Instruments
+union Instrument inst_bank_57[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1580 }, { .pcm = &instrument_pcm_1581 }, { .pcm = &instrument_pcm_1582 }, { .pcm = &instrument_pcm_1583 },
+    /* 004 */ { .pcm = &instrument_pcm_1584 }, { .pcm = &instrument_pcm_1585 }, { .pcm = &instrument_pcm_1586 }, { .pcm = &instrument_pcm_1587 },
+    /* 008 */ { .pcm = &instrument_pcm_1588 }, { .pcm = &instrument_pcm_1589 }, { .pcm = &instrument_pcm_1590 }, { .pcm = &instrument_pcm_1591 },
+    /* 012 */ NULL,                            NULL,                            NULL,                            { .psg = &instrument_psg_1592 },
+    /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 020 */ { .pcm = &instrument_pcm_1593 }, { .pcm = &instrument_pcm_1594 }, { .pcm = &instrument_pcm_1595 }, { .pcm = &instrument_pcm_1596 },
+    /* 024 */ { .pcm = &instrument_pcm_1599 }, { .pcm = &instrument_pcm_1597 }, { .pcm = &instrument_pcm_1598 }, NULL,
+    /* 028 */ NULL,                            NULL,                            { .rhy = &instrument_rhy_1600 }
 };
 
-// 7 entries
-InstrumentBank instrument_bank_58 = {
-    /* 000 */ &instrument_pcm_data_1601.header, &instrument_pcm_data_1602.header, &instrument_pcm_data_1603.header, &instrument_pcm_data_1604.header,
-    /* 004 */ &instrument_pcm_data_1605.header, &instrument_pcm_data_1606.header, &instrument_pcm_data_1607.header
+// 7 Instruments
+union Instrument inst_bank_58[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1601 }, { .pcm = &instrument_pcm_1602 }, { .pcm = &instrument_pcm_1603 }, { .pcm = &instrument_pcm_1604 },
+    /* 004 */ { .pcm = &instrument_pcm_1605 }, { .pcm = &instrument_pcm_1606 }, { .pcm = &instrument_pcm_1607 }
 };
 
-// 6 entries
-InstrumentBank instrument_bank_59 = {
-    /* 000 */ NULL,                             NULL,                             &instrument_pcm_data_1608.header, &instrument_pcm_data_1609.header,
-    /* 004 */ &instrument_pcm_data_1610.header, &instrument_pcm_data_1611.header
+// 6 Instruments
+union Instrument inst_bank_59[] = {
+    /* 000 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_1608 }, { .pcm = &instrument_pcm_1609 },
+    /* 004 */ { .pcm = &instrument_pcm_1610 }, { .pcm = &instrument_pcm_1611 }
 };
 
-// 22 entries
-InstrumentBank instrument_bank_60 = {
-    /* 000 */ &instrument_pcm_data_1612.header, &instrument_pcm_data_1613.header, &instrument_pcm_data_1614.header, NULL,
-    /* 004 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 008 */ NULL,                             NULL,                             NULL,                             &instrument_pcm_data_1615.header,
-    /* 012 */ &instrument_pcm_data_1616.header, &instrument_pcm_data_1617.header, &instrument_subbank_single_key_data_1618.header, &instrument_pcm_data_1619.header,
-    /* 016 */ &instrument_pcm_data_1620.header, &instrument_pcm_data_1621.header, &instrument_psg_data_1622.header, &instrument_psg_data_1623.header,
-    /* 020 */ &instrument_pcm_data_1624.header, &instrument_pcm_data_1625.header
+// 22 Instruments
+union Instrument inst_bank_60[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1612 }, { .pcm = &instrument_pcm_1613 }, { .pcm = &instrument_pcm_1614 }, NULL,
+    /* 004 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 008 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_1615 },
+    /* 012 */ { .pcm = &instrument_pcm_1616 }, { .pcm = &instrument_pcm_1617 }, { .rhy = &instrument_rhy_1618 }, { .pcm = &instrument_pcm_1619 },
+    /* 016 */ { .pcm = &instrument_pcm_1620 }, { .pcm = &instrument_pcm_1621 }, { .psg = &instrument_psg_1622 }, { .psg = &instrument_psg_1623 },
+    /* 020 */ { .pcm = &instrument_pcm_1624 }, { .pcm = &instrument_pcm_1625 }
 };
 
-// 62 entries
-InstrumentBank instrument_bank_61 = {
-    /* 000 */ &instrument_pcm_data_1626.header, &instrument_pcm_data_1627.header, &instrument_pcm_data_1628.header, &instrument_pcm_data_1629.header,
-    /* 004 */ &instrument_pcm_data_1630.header, &instrument_pcm_data_1631.header, &instrument_pcm_data_1632.header, &instrument_pcm_data_1633.header,
-    /* 008 */ &instrument_pcm_data_1634.header, &instrument_psg_data_1635.header, &instrument_psg_data_1636.header, &instrument_psg_data_1637.header,
-    /* 012 */ &instrument_pcm_data_1638.header, &instrument_pcm_data_1639.header, &instrument_pcm_data_1640.header, &instrument_pcm_data_1641.header,
-    /* 016 */ &instrument_pcm_data_1642.header, &instrument_pcm_data_1643.header, &instrument_psg_data_1644.header, &instrument_pcm_data_1645.header,
-    /* 020 */ &instrument_pcm_data_1646.header, &instrument_pcm_data_1647.header, &instrument_pcm_data_1648.header, &instrument_pcm_data_1649.header,
-    /* 024 */ &instrument_psg_data_1650.header, &instrument_psg_data_1651.header, &instrument_psg_data_1652.header, &instrument_psg_data_1653.header,
-    /* 028 */ &instrument_psg_data_1654.header, &instrument_pcm_data_1655.header, &instrument_pcm_data_1656.header, &instrument_pcm_data_1657.header,
-    /* 032 */ &instrument_pcm_data_1658.header, &instrument_subbank_single_key_data_1659.header, &instrument_pcm_data_1660.header, &instrument_pcm_data_1661.header,
-    /* 036 */ &instrument_pcm_data_1662.header, &instrument_pcm_data_1663.header, &instrument_pcm_data_1664.header, &instrument_pcm_data_1665.header,
-    /* 040 */ &instrument_pcm_data_1666.header, &instrument_pcm_data_1667.header, &instrument_pcm_data_1668.header, &instrument_pcm_data_1669.header,
-    /* 044 */ &instrument_pcm_data_1670.header, &instrument_pcm_data_1671.header, &instrument_pcm_data_1672.header, &instrument_pcm_data_1673.header,
-    /* 048 */ &instrument_pcm_data_1674.header, &instrument_pcm_data_1675.header, &instrument_pcm_data_1676.header, &instrument_pcm_data_1677.header,
-    /* 052 */ &instrument_pcm_data_1678.header, &instrument_pcm_data_1679.header, &instrument_pcm_data_1680.header, &instrument_pcm_data_1681.header,
-    /* 056 */ &instrument_pcm_data_1682.header, &instrument_pcm_data_1683.header, &instrument_pcm_data_1684.header, &instrument_pcm_data_1685.header,
-    /* 060 */ &instrument_pcm_data_1686.header, &instrument_pcm_data_1687.header
+// 62 Instruments
+union Instrument inst_bank_61[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1626 }, { .pcm = &instrument_pcm_1627 }, { .pcm = &instrument_pcm_1628 }, { .pcm = &instrument_pcm_1629 },
+    /* 004 */ { .pcm = &instrument_pcm_1630 }, { .pcm = &instrument_pcm_1631 }, { .pcm = &instrument_pcm_1632 }, { .pcm = &instrument_pcm_1633 },
+    /* 008 */ { .pcm = &instrument_pcm_1634 }, { .psg = &instrument_psg_1635 }, { .psg = &instrument_psg_1636 }, { .psg = &instrument_psg_1637 },
+    /* 012 */ { .pcm = &instrument_pcm_1638 }, { .pcm = &instrument_pcm_1639 }, { .pcm = &instrument_pcm_1640 }, { .pcm = &instrument_pcm_1641 },
+    /* 016 */ { .pcm = &instrument_pcm_1642 }, { .pcm = &instrument_pcm_1643 }, { .psg = &instrument_psg_1644 }, { .pcm = &instrument_pcm_1645 },
+    /* 020 */ { .pcm = &instrument_pcm_1646 }, { .pcm = &instrument_pcm_1647 }, { .pcm = &instrument_pcm_1648 }, { .pcm = &instrument_pcm_1649 },
+    /* 024 */ { .psg = &instrument_psg_1650 }, { .psg = &instrument_psg_1651 }, { .psg = &instrument_psg_1652 }, { .psg = &instrument_psg_1653 },
+    /* 028 */ { .psg = &instrument_psg_1654 }, { .pcm = &instrument_pcm_1655 }, { .pcm = &instrument_pcm_1656 }, { .pcm = &instrument_pcm_1657 },
+    /* 032 */ { .pcm = &instrument_pcm_1658 }, { .rhy = &instrument_rhy_1659 }, { .pcm = &instrument_pcm_1660 }, { .pcm = &instrument_pcm_1661 },
+    /* 036 */ { .pcm = &instrument_pcm_1662 }, { .pcm = &instrument_pcm_1663 }, { .pcm = &instrument_pcm_1664 }, { .pcm = &instrument_pcm_1665 },
+    /* 040 */ { .pcm = &instrument_pcm_1666 }, { .pcm = &instrument_pcm_1667 }, { .pcm = &instrument_pcm_1668 }, { .pcm = &instrument_pcm_1669 },
+    /* 044 */ { .pcm = &instrument_pcm_1670 }, { .pcm = &instrument_pcm_1671 }, { .pcm = &instrument_pcm_1672 }, { .pcm = &instrument_pcm_1673 },
+    /* 048 */ { .pcm = &instrument_pcm_1674 }, { .pcm = &instrument_pcm_1675 }, { .pcm = &instrument_pcm_1676 }, { .pcm = &instrument_pcm_1677 },
+    /* 052 */ { .pcm = &instrument_pcm_1678 }, { .pcm = &instrument_pcm_1679 }, { .pcm = &instrument_pcm_1680 }, { .pcm = &instrument_pcm_1681 },
+    /* 056 */ { .pcm = &instrument_pcm_1682 }, { .pcm = &instrument_pcm_1683 }, { .pcm = &instrument_pcm_1684 }, { .pcm = &instrument_pcm_1685 },
+    /* 060 */ { .pcm = &instrument_pcm_1686 }, { .pcm = &instrument_pcm_1687 }
 };
 
-// 42 entries
-InstrumentBank instrument_bank_62 = {
-    /* 000 */ &instrument_pcm_data_1688.header, &instrument_pcm_data_1689.header, &instrument_pcm_data_1690.header, NULL,
-    /* 004 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 008 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 012 */ &instrument_pcm_data_1701.header, &instrument_pcm_data_1702.header, &instrument_pcm_data_1703.header, &instrument_pcm_data_1704.header,
-    /* 016 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 020 */ NULL,                             NULL,                             NULL,                             NULL,
-    /* 024 */ &instrument_pcm_data_1691.header, &instrument_pcm_data_1692.header, &instrument_pcm_data_1693.header, &instrument_pcm_data_1694.header,
-    /* 028 */ &instrument_pcm_data_1695.header, &instrument_pcm_data_1696.header, &instrument_pcm_data_1697.header, &instrument_pcm_data_1698.header,
-    /* 032 */ &instrument_pcm_data_1699.header, &instrument_pcm_data_1700.header, NULL,                             NULL,
-    /* 036 */ &instrument_pcm_data_1705.header, &instrument_pcm_data_1706.header, &instrument_pcm_data_1707.header, &instrument_pcm_data_1708.header,
-    /* 040 */ &instrument_pcm_data_1709.header, &instrument_pcm_data_1710.header
+// 42 Instruments
+union Instrument inst_bank_62[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1688 }, { .pcm = &instrument_pcm_1689 }, { .pcm = &instrument_pcm_1690 }, NULL,
+    /* 004 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 012 */ { .pcm = &instrument_pcm_1701 }, { .pcm = &instrument_pcm_1702 }, { .pcm = &instrument_pcm_1703 }, { .pcm = &instrument_pcm_1704 },
+    /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 024 */ { .pcm = &instrument_pcm_1691 }, { .pcm = &instrument_pcm_1692 }, { .pcm = &instrument_pcm_1693 }, { .pcm = &instrument_pcm_1694 },
+    /* 028 */ { .pcm = &instrument_pcm_1695 }, { .pcm = &instrument_pcm_1696 }, { .pcm = &instrument_pcm_1697 }, { .pcm = &instrument_pcm_1698 },
+    /* 032 */ { .pcm = &instrument_pcm_1699 }, { .pcm = &instrument_pcm_1700 }, NULL,                            NULL,
+    /* 036 */ { .pcm = &instrument_pcm_1705 }, { .pcm = &instrument_pcm_1706 }, { .pcm = &instrument_pcm_1707 }, { .pcm = &instrument_pcm_1708 },
+    /* 040 */ { .pcm = &instrument_pcm_1709 }, { .pcm = &instrument_pcm_1710 }
 };
 
-// 33 entries
-InstrumentBank instrument_bank_63 = {
-    /* 000 */ &instrument_pcm_data_1714.header, &instrument_pcm_data_1715.header, &instrument_pcm_data_1711.header, &instrument_pcm_data_1716.header,
-    /* 004 */ &instrument_pcm_data_1717.header, &instrument_pcm_data_1718.header, &instrument_pcm_data_1719.header, &instrument_pcm_data_1720.header,
-    /* 008 */ &instrument_pcm_data_1721.header, NULL,                             NULL,                             &instrument_pcm_data_1712.header,
-    /* 012 */ &instrument_pcm_data_1722.header, &instrument_pcm_data_1723.header, &instrument_pcm_data_1724.header, &instrument_pcm_data_1725.header,
-    /* 016 */ &instrument_pcm_data_1727.header, &instrument_pcm_data_1728.header, &instrument_pcm_data_1713.header, &instrument_pcm_data_1729.header,
-    /* 020 */ &instrument_pcm_data_1730.header, &instrument_pcm_data_1731.header, &instrument_pcm_data_1732.header, &instrument_pcm_data_1726.header,
-    /* 024 */ &instrument_pcm_data_1733.header, &instrument_pcm_data_1734.header, &instrument_pcm_data_1735.header, &instrument_pcm_data_1736.header,
-    /* 028 */ &instrument_pcm_data_1737.header, &instrument_pcm_data_1738.header, &instrument_pcm_data_1739.header, &instrument_pcm_data_1740.header,
-    /* 032 */ &instrument_pcm_data_1741.header
+// 33 Instruments
+union Instrument inst_bank_63[] = {
+    /* 000 */ { .pcm = &instrument_pcm_1714 }, { .pcm = &instrument_pcm_1715 }, { .pcm = &instrument_pcm_1711 }, { .pcm = &instrument_pcm_1716 },
+    /* 004 */ { .pcm = &instrument_pcm_1717 }, { .pcm = &instrument_pcm_1718 }, { .pcm = &instrument_pcm_1719 }, { .pcm = &instrument_pcm_1720 },
+    /* 008 */ { .pcm = &instrument_pcm_1721 }, NULL,                            NULL,                            { .pcm = &instrument_pcm_1712 },
+    /* 012 */ { .pcm = &instrument_pcm_1722 }, { .pcm = &instrument_pcm_1723 }, { .pcm = &instrument_pcm_1724 }, { .pcm = &instrument_pcm_1725 },
+    /* 016 */ { .pcm = &instrument_pcm_1727 }, { .pcm = &instrument_pcm_1728 }, { .pcm = &instrument_pcm_1713 }, { .pcm = &instrument_pcm_1729 },
+    /* 020 */ { .pcm = &instrument_pcm_1730 }, { .pcm = &instrument_pcm_1731 }, { .pcm = &instrument_pcm_1732 }, { .pcm = &instrument_pcm_1726 },
+    /* 024 */ { .pcm = &instrument_pcm_1733 }, { .pcm = &instrument_pcm_1734 }, { .pcm = &instrument_pcm_1735 }, { .pcm = &instrument_pcm_1736 },
+    /* 028 */ { .pcm = &instrument_pcm_1737 }, { .pcm = &instrument_pcm_1738 }, { .pcm = &instrument_pcm_1739 }, { .pcm = &instrument_pcm_1740 },
+    /* 032 */ { .pcm = &instrument_pcm_1741 }
 };

@@ -15,7 +15,7 @@ script script_quiz_show_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_quiz_show_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -36,7 +36,7 @@ script script_quiz_show_skipped_practice_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_quiz_show_skipped_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -124,7 +124,7 @@ script quiz_show_sub_08a3c108
     mod_music_volume 256, 96
     print_text_s D_0805ecb0
     run gameplay_display_text_and_wait, 0
-    enable_pause 0
+    enable_pause_menu FALSE
     rest 24
 return
 
@@ -591,7 +591,7 @@ script script_quiz_show_main
     rest 12
     print_text_s D_0805edd8
     run gameplay_display_text_and_wait, 0
-    enable_pause 0
+    enable_pause_menu FALSE
     rest 24
 return
 
@@ -603,7 +603,7 @@ script script_quiz_show_practice
     set_music_volume 40
     mod_music_volume 256, 192
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     run gameplay_set_tutorial scene_quiz_show_skipped_practice
     print_text_s D_0805edf4
@@ -635,7 +635,7 @@ script script_quiz_show_skipped_practice
     enable_play_inputs 0
     set_tempo 125
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     run func_080175a0, 3
     goto script_quiz_show_main

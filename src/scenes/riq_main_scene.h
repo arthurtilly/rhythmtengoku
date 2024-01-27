@@ -23,7 +23,7 @@ struct PauseMenuDefinition {
     u16 pauseButton;
     PauseMenuInitFunc onPause;
     PauseMenuUpdateFunc update;
-    struct SequenceData *quitSfx;
+    struct SongHeader *quitSfx;
 };
 
 struct PauseMenu {

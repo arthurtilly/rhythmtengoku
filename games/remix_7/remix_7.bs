@@ -29,7 +29,7 @@ script script_remix_7_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_remix_7_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -153,7 +153,7 @@ script script_remix_7_main
     set_tempo 140
     set_music_volume 200
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     rest 24
     rest 24
@@ -295,7 +295,7 @@ script script_remix_7_main
     rest 24
     rest 24
     set_tempo 133
-    run func_08047ea4, 0
+    run remix7_fade_in_remix2_intro
     rest 24
     rest 24
     run scene_stop_music, 0
@@ -702,7 +702,7 @@ script script_remix_7_main
     spaceball_prep_pitcher 0
     spaceball_zoom_camera 0xff00, 24
     rest 24
-    run func_08047ecc, 0
+    run remix7_start_last_remix1_bgm
     spawn_cue CUE_LOW
     rest 24
     rest 4
@@ -717,10 +717,10 @@ script script_remix_7_main
     spaceball_zoom_camera 0xf000, 32
     rest 8
     set_tempo 120
-    run func_08047ef4, 0
+    run remix7_slow_last_remix1_bgm
     rest 24
     reset_music_track_volumes
-    run func_08047f08, 0
+    run remix7_stop_last_remix1_bgm
     set_game_fade_in_time 20
 
     load_tap_trial_pigs
@@ -821,7 +821,7 @@ script script_remix_7_main
     rest 24
     rest 24
     rest 24
-    enable_pause 0
+    enable_pause_menu FALSE
 return
 
 .end

@@ -61,7 +61,7 @@ void rank_results_scene_start(void *sVar, s32 dArg) {
     gResults->placeholderIcon = func_0804d160(D_03005380, anim_rank_results_header_placeholder, 0, RANK_HEADER_ICON_X, RANK_HEADER_Y, 0x800, 0, 0, 0x8000);
     gResults->resultIcon = func_0804d160(D_03005380, anim_rank_results_icon, 0, RANK_RESULT_ICON_X, RANK_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
     rank_results_scene_init_gfx1();
-    D_03005b3c = LFO_MODE_DISABLED;
+    gMidiLFOMode = LFO_MODE_DISABLED;
     gResults->inputsEnabled = FALSE;
     gResults->medalObtained = FALSE;
     gResults->stillJustOK = FALSE;
@@ -131,7 +131,7 @@ void rank_results_display_rank(void) {
 
 // Play Music (Script Event)
 void rank_results_play_bgm(void) {
-    struct SequenceData *music = rank_results_bgm[gResults->finalResultLevel];
+    struct SongHeader *music = rank_results_bgm[gResults->finalResultLevel];
 
     scene_set_music(music);
     set_beatscript_tempo(get_music_base_tempo(music));

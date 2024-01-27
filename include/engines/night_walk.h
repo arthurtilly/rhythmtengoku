@@ -33,7 +33,7 @@ struct DrumTechInstrument {
     u8 duration;
     u16 volume;
     s16 pitch;
-    struct SequenceData *sound;
+    struct SongHeader *sound;
 };
 
 struct DrumTechNote {
@@ -44,7 +44,7 @@ struct DrumTechNote {
 };
 
 struct DrumTechPhrase {
-    u8 drumID;
+    u8 drumID; // Used if the sequence is NULL.
     u16 volume;
     s16 pitch;
     const struct DrumTechNote *sequence;
@@ -146,7 +146,7 @@ struct NightWalkCue {
 // Engine Definition Data:
 extern struct Animation *night_walk_star_anim[]; // Stars
 extern struct Animation *night_walk_star_expand_anim[]; // Star Flashes
-extern struct SequenceData *D_089e2ef8[];
+extern struct SongHeader *D_089e2ef8[];
 extern struct DrumTechInstrument drumtech_drum_bank[];
 extern struct CompressedGraphics *night_walk_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable night_walk_gfx_table[]; // Graphics Table

@@ -15,7 +15,7 @@ script script_bon_odori_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_bon_odori_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -36,7 +36,7 @@ script script_bon_odori_skipped_practice_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_bon_odori_skipped_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -934,7 +934,7 @@ script script_bon_odori_main
     rest 24
     rest 24
     rest 24
-    enable_pause 0
+    enable_pause_menu FALSE
     rest 24
 return
 
@@ -1029,7 +1029,7 @@ script script_bon_odori_practice
     assess_inputs 0
     set_tempo 121
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     set_music_volume 150
     play_music s_mario2_seqData
@@ -1143,7 +1143,7 @@ script script_bon_odori_practice
 script script_bon_odori_skipped_practice
     set_tempo 120
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     goto script_bon_odori_main
 

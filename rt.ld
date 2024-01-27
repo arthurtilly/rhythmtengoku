@@ -141,6 +141,16 @@ SECTIONS {
 		build/src/prologues/sick_beats.c.o(.bss);
 		build/src/prologues/wizards_waltz.c.o(.bss);
 		build/src/code_08047e50.c.o(.bss);
+        build/asm/lib_midi.s.o(.bss);
+        build/src/midi/directsound.c.o(.bss);
+        build/src/midi/channel.c.o(.bss);
+        build/src/midi/lfo.c.o(.bss);
+        build/src/midi/random.c.o(.bss);
+        build/src/midi/psg.c.o(.bss);
+        build/src/midi/player.c.o(.bss);
+        build/src/lib_sram.c.o(.bss);
+        build/src/lib_0804ca80.c.o(.bss);
+        build/src/lib_0804e564.c.o(.bss);
 	}
 	
 	. = 0x08000000;
@@ -282,8 +292,13 @@ SECTIONS {
 		build/src/prologues/sick_beats.c.o(.text);
 		build/src/prologues/wizards_waltz.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
-        build/asm/lib_080482e0.s.o(.text);
-        build/src/lib_08049144.c.o(.text);
+        build/asm/lib_midi.s.o(.text);
+        build/src/midi/directsound.c.o(.text);
+        build/src/midi/channel.c.o(.text);
+        build/src/midi/lfo.c.o(.text);
+        build/src/midi/random.c.o(.text);
+        build/src/midi/psg.c.o(.text);
+        build/src/midi/player.c.o(.text);
         build/asm/libagbsyscall.s.o(.text);
         build/src/lib_sram.c.o(.text);
         build/src/lib_0804ca80.c.o(.text);
@@ -322,7 +337,6 @@ SECTIONS {
         build/data/scenes/results/debug_results.c.o(.rodata);
         build/data/scenes/results/rank_results.c.o(.rodata);
         build/data/scenes/results/score_results.c.o(.rodata);
-        build/data/scenes/results/data.c.o(.rodata);
 		build/src/scenes/results.c.o(.rodata);
         build/data/scenes/data_room/reading.c.o(.rodata);
         build/src/scenes/studio_warning.c.o(.rodata);
@@ -903,7 +917,6 @@ SECTIONS {
         build/data/scenes/results/rank_scene.bs.o(.scene);
         build/data/scenes/results/score_results.c.o(.data);
         build/data/scenes/results/score_scene.bs.o(.scene);
-        build/data/scenes/results/data.c.o(.data);
         build/src/scenes/results.c.o(.data);
         build/data/scenes/epilogue/data.c.o(.data);
         build/data/scenes/epilogue/scene.bs.o(.scene);
@@ -1153,7 +1166,15 @@ SECTIONS {
         build/games/bon_odori/bon_dance.bs.o(.script.main);
         build/games/remix_6/remix_6.bs.o(.script.main);
         build/games/remix_8/remix_8.bs.o(.script.main);
-        build/games/drum_live/drum_live.bs.o(.script.main);
+        build/games/drum_live/drum_girls_space_dance.bs.o(.script.main);
+        build/games/drum_live/drum_girls_honey_sweet_angel.bs.o(.script.main);
+        build/games/drum_live/drum_girls_night_walk.bs.o(.script.main);
+        build/games/drum_live/drum_boys_clappy_trio.bs.o(.script.main);
+        build/games/drum_live/drum_boys_tap_trial.bs.o(.script.main);
+        build/games/drum_live/drum_boys_wish.bs.o(.script.main);
+        build/games/drum_live/drum_band_cosmic_dance.bs.o(.script.main);
+        build/games/drum_live/drum_band_snappy_trio.bs.o(.script.main);
+        build/games/drum_live/drum_band_tap_trial_2.bs.o(.script.main);
         build/games/sneaky_spirits/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a7a20c.bin.o(.rodata*);
         build/games/drum_live/subroutines.bs.o(.script.sub);
@@ -1165,12 +1186,15 @@ SECTIONS {
         build/bin/bindata_08a85a50.bin.o(.rodata*);
         build/games/tap_trial/subroutines.bs.o(.script.sub);
 
-        build/bin/bindata_08a86008.bin.o(.rodata*);
+        build/data/lib_midi_data.c.o(.data);
+        build/src/midi/directsound.c.o(.data);
+        build/src/midi/channel.c.o(.data);
+        build/src/midi/lfo.c.o(.data);
+        build/src/midi/random.c.o(.data);
+        build/src/midi/psg.c.o(.data);
         build/audio/instruments.c.o(.data);
-        build/audio/sequences.c.o(.rodata);
-        build/audio/sequences.c.o(.data);
-        build/bin/bindata_08a9e8e0.bin.o(.rodata*);
-        build/bin/bindata_08aa06f8.bin.o(.rodata*);
+        build/audio/songs.c.o(.data);
+        build/src/midi/player.c.o(.data);
 		build/audio/sample_table.json.c.o(.data);
 
         build/audio/sequences/Lesson1.mid.o(.rodata*);

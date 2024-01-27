@@ -233,7 +233,7 @@ struct GraphicsTable gfx_table_mechanical_horse[] = {
 
 
 // [D_089e8e60] Horse Clops (Player)
-struct SequenceData *mechanical_horse_player_horse_sfx[][4] = {
+struct SongHeader *mechanical_horse_player_horse_sfx[][4] = {
     /* WALK */ {
         /* 0x00 */ &s_uma_walk1_seqData,
         /* 0x01 */ &s_uma_walk2_seqData,
@@ -261,7 +261,7 @@ struct SequenceData *mechanical_horse_player_horse_sfx[][4] = {
 };
 
 // [D_089e8ea0] Horse Clops (Teacher)
-struct SequenceData *mechanical_horse_teacher_horse_sfx[][4] = {
+struct SongHeader *mechanical_horse_teacher_horse_sfx[][4] = {
     /* WALK */ {
         /* 0x00 */ &s_uma_walk1_t_seqData,
         /* 0x01 */ &s_uma_walk2_t_seqData,
@@ -289,7 +289,7 @@ struct SequenceData *mechanical_horse_teacher_horse_sfx[][4] = {
 };
 
 // [D_089e8ee0] Lesson BGM
-struct SequenceData *mechanical_horse_lesson_bgm[] = {
+struct SongHeader *mechanical_horse_lesson_bgm[] = {
     /* WALK   */ &s_uma_bgm1_seqData,
     /* TROT   */ &s_uma_bgm2_seqData,
     /* CANTER */ &s_uma_bgm3_seqData,

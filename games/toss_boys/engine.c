@@ -556,14 +556,14 @@ s16 D_089e86bc[][4] = {
 };
 
 // [D_089e86dc] Ball Toss SFX
-struct SequenceData *toss_boys_ball_bounce_sfx[] = {
+struct SongHeader *toss_boys_ball_bounce_sfx[] = {
     /* R */ &s_toss_ball_red_seqData,
     /* B */ &s_toss_ball_blue_seqData,
     /* Y */ &s_toss_ball_yelw_seqData
 };
 
 // [D_089e86e8] Ball Pop SFX
-struct SequenceData *toss_boys_ball_pop_sfx[] = {
+struct SongHeader *toss_boys_ball_pop_sfx[] = {
     /* R */ &s_toss_ball_haretu_seqData,
     /* B */ &s_toss_ball_haretu_seqData,
     /* Y */ &s_toss_ball_haretu_seqData
@@ -577,7 +577,7 @@ s8 toss_boys_miss_anim_ids[] = {
 };
 
 // [D_089e86f8] Ball Miss SFX
-struct SequenceData *toss_boys_ball_miss_sfx[] = {
+struct SongHeader *toss_boys_ball_miss_sfx[] = {
     /* R */ &s_f_toss_miss1_seqData,
     /* B */ &s_f_toss_miss2_seqData,
     /* Y */ &s_f_toss_miss3_seqData

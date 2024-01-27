@@ -54,7 +54,7 @@ void func_08000224(void) {
 		}
 	}
 	flush_save_buffer_to_sram_backup();
-	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
+	set_sound_mode(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
 	set_scene_object_current_text_id(scene_get_default_text_id());
 	init_scene_static_var();
 	func_08001360();
@@ -92,9 +92,9 @@ void agb_main(void) {
 	init_ewram();
 	func_08000224();
 	debug_menu_scene_init_memory();
-	func_0804c778(); // Init. MIDI Sound Library
-	func_0804c340(35, 2, 2, 4); // Set Sound Reverb Levels
-	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
+	midi_sound_init(); // Init. MIDI Sound Library
+	midi_player_set_reverb(35, 2, 2, 4);
+	set_sound_mode(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
 
 	REG_DISPSTAT = 8;
 	REG_IE = (INTERRUPT_CART | INTERRUPT_DMA2 | INTERRUPT_TIMER3 | INTERRUPT_VBLANK);
@@ -124,7 +124,7 @@ void agb_main(void) {
 			}
 		}
 
-		func_0804c170();
+		midi_sound_main();
 		update_time_keeper();
 		func_08003ff0();
 	}

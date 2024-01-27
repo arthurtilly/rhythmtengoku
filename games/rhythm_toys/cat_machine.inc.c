@@ -849,7 +849,7 @@ struct DrumTechNote *cat_machine_2_drum_seq_table[] = {
 };
 
 // [D_089e97e0] Cat Machine SFX
-struct SequenceData *cat_machine_meow_sfx_table[] = {
+struct SongHeader *cat_machine_meow_sfx_table[] = {
     /* A */ &s_f_neko1_seqData,
     /* B */ &s_f_neko2_seqData,
     /* U */ &s_f_neko3_seqData,

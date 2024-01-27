@@ -82,8 +82,8 @@ extern s16 polyrhythm_lane_start_y[2]; // Lane Start Y Positions
 extern s16 polyrhythm_block_heights[3]; // Block Heights
 extern struct Animation *polyrhythm_block_appear_anim[]; // Block - Appear
 extern struct Animation *polyrhythm_block_open_anim[]; // Block - Open
-extern struct SequenceData *polyrhythm_block_appear_sfx[]; // Block - Appear
-extern struct SequenceData *polyrhythm_block_open_sfx[]; // Block - Open
+extern struct SongHeader *polyrhythm_block_appear_sfx[]; // Block - Appear
+extern struct SongHeader *polyrhythm_block_open_sfx[]; // Block - Open
 
 
 // Functions:

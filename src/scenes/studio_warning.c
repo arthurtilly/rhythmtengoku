@@ -86,7 +86,7 @@ void studio_warning_update(void) {
 
 
 // Warning Notice - Create
-void studio_warning_create(u32 options, const char *dialogue, void eventFunc(s32, s32), s32 eventArg, struct SequenceData *sfx) {
+void studio_warning_create(u32 options, const char *dialogue, void eventFunc(s32, s32), s32 eventArg, struct SongHeader *sfx) {
     switch (options) {
         case STUDIO_WARNING_OPT_DISMISS:
             func_0804d8f8(D_03005380, gStudio->warningAdvIcon, anim_studio_text_adv_icon, 0, 1, 0, 0);

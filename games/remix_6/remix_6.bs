@@ -39,7 +39,7 @@ script script_remix_6_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_remix_6_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -202,7 +202,7 @@ script script_remix_6_main
     rest 12
     play_music s_remix_all_bgm_seqData
     rest 12
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     start_perfect_campaign
     print_text_f D_0806a86c
@@ -959,7 +959,7 @@ script script_remix_6_main
     beat_anim
     rest 24
     print_text_f D_08a6b230
-    run func_08047f18, s_rap_kimitte_saiko_seqData
+    run remix6_sync_rap_vocal, s_rap_kimitte_saiko_seqData
     rap_men_animate_rapper 2
     beat_anim
     rest 24
@@ -978,7 +978,7 @@ script script_remix_6_main
     rest 24
     rest 8
     rest 8
-    run func_08047f18, s_rap_honto_desuka_seqData
+    run remix6_sync_rap_vocal, s_rap_honto_desuka_seqData
     rap_men_animate_rapper 4
     rest 8
     print_text_f D_08a6b218

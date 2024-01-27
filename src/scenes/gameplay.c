@@ -43,25 +43,25 @@ struct SoundPlayer *gameplay_align_soundplayer_to_tempo(struct SoundPlayer *play
 
 
 // [func_08016e54] Play Sound
-struct SoundPlayer *gameplay_play_sound(struct SequenceData *sfx) {
+struct SoundPlayer *gameplay_play_sound(struct SongHeader *sfx) {
     return gameplay_align_soundplayer_to_tempo(play_sound(sfx));
 }
 
 
 // [func_08016e64] Play Sound
-struct SoundPlayer *gameplay_play_sound_in_player(u32 player, struct SequenceData *sfx) {
+struct SoundPlayer *gameplay_play_sound_in_player(u32 player, struct SongHeader *sfx) {
     return gameplay_align_soundplayer_to_tempo(play_sound_in_player(player, sfx));
 }
 
 
 // [func_08016e74] Play Sound
-struct SoundPlayer *gameplay_play_sound_w_pitch_volume(struct SequenceData *sfx, u32 volume, u32 pitch) {
+struct SoundPlayer *gameplay_play_sound_w_pitch_volume(struct SongHeader *sfx, u32 volume, u32 pitch) {
     return gameplay_align_soundplayer_to_tempo(play_sound_w_pitch_volume(sfx, volume, pitch));
 }
 
 
 // [func_08016e84] Play Sound
-struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 player, struct SequenceData *sfx, u32 volume, s32 pitch) {
+struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 player, struct SongHeader *sfx, u32 volume, s32 pitch) {
     return gameplay_align_soundplayer_to_tempo(play_sound_in_player_w_pitch_volume(player, sfx, volume, pitch));
 }
 
@@ -118,7 +118,7 @@ void gameplay_start_scene(void) {
     gGameplay->latenessRangeMin = 1;
     gGameplay->earlinessRangeMin = -0x80;
     gGameplay->latenessRangeMax = 0x7f;
-    func_0804c340(35, 2, 2, 4); // Reverb
+    midi_player_set_reverb(35, 2, 2, 4);
     if (get_current_scene_trans_target() == NULL) {
         set_next_scene(&scene_results_ver_rank);
     }
@@ -356,25 +356,25 @@ void gameplay_assess_irrelevant_inputs(u32 arg) {
 
 
 // [func_080173dc] Set Next Cue Spawn SFX
-void gameplay_set_next_cue_spawn_sfx(struct SequenceData *sfx) {
+void gameplay_set_next_cue_spawn_sfx(struct SongHeader *sfx) {
     gGameplay->nextCueSpawnSfx = sfx;
 }
 
 
 // [func_080173e8] Set Next Cue Hit SFX
-void gameplay_set_next_cue_hit_sfx(struct SequenceData *sfx) {
+void gameplay_set_next_cue_hit_sfx(struct SongHeader *sfx) {
     gGameplay->nextCueHitSfx = sfx;
 }
 
 
 // [func_080173f4] Set Next Cue Barely SFX
-void gameplay_set_next_cue_barely_sfx(struct SequenceData *sfx) {
+void gameplay_set_next_cue_barely_sfx(struct SongHeader *sfx) {
     gGameplay->nextCueBarelySfx = sfx;
 }
 
 
 // [func_08017400] Set Next Cue Miss SFX
-void gameplay_set_next_cue_miss_sfx(struct SequenceData *sfx) {
+void gameplay_set_next_cue_miss_sfx(struct SongHeader *sfx) {
     gGameplay->nextCueMissSfx = sfx;
 }
 
@@ -385,8 +385,8 @@ void gameplay_force_stop_music_midi_track(s32 midiTrack) {
 
     if ((soundPlayer == NULL) || (midiTrack < 0)) return;
 
-    soundPlayer->midiReader[midiTrack].active_curr = FALSE;
-    soundPlayer->midiReader[midiTrack].active_loop = FALSE;
+    soundPlayer->midiReader[midiTrack].active = FALSE;
+    soundPlayer->midiReader[midiTrack].activeAtLoop = FALSE;
 }
 
 
@@ -481,7 +481,7 @@ u32 func_080175d8(void) {
 
 // [func_080175e8] Set Global Reverb
 void gameplay_set_reverb(u32 level) {
-    func_0804c340(clamp_int32(level + 35, 0, 127), 2, 2, 4);
+    midi_player_set_reverb(clamp_int32(level + 35, 0, 127), 2, 2, 4);
 }
 
 
@@ -602,7 +602,7 @@ void gameplay_stop_scene(void) {
 
     func_08008628();
     func_08004058();
-    func_0804c340(35, 2, 2, 4); // Reverb
+    midi_player_set_reverb(35, 2, 2, 4);
 }
 
 
@@ -1062,49 +1062,49 @@ void gameplay_enable_cue_input_overlap(u32 allow) {
 
 
 // [func_08018088] Set Cue Spawn SFX
-void gameplay_set_cue_spawn_sfx(struct Cue *cue, struct SequenceData *sfx) {
+void gameplay_set_cue_spawn_sfx(struct Cue *cue, struct SongHeader *sfx) {
     cue->spawnSfx = sfx;
 }
 
 
 // [func_0801808c] Set Cue Hit SFX
-void gameplay_set_cue_hit_sfx(struct Cue *cue, struct SequenceData *sfx) {
+void gameplay_set_cue_hit_sfx(struct Cue *cue, struct SongHeader *sfx) {
     cue->hitSfx = sfx;
 }
 
 
 // [func_08018090] Set Cue Barely SFX
-void gameplay_set_cue_barely_sfx(struct Cue *cue, struct SequenceData *sfx) {
+void gameplay_set_cue_barely_sfx(struct Cue *cue, struct SongHeader *sfx) {
     cue->barelySfx = sfx;
 }
 
 
 // [func_08018094] Set Cue Miss SFX
-void gameplay_set_cue_miss_sfx(struct Cue *cue, struct SequenceData *sfx) {
+void gameplay_set_cue_miss_sfx(struct Cue *cue, struct SongHeader *sfx) {
     cue->missSfx = sfx;
 }
 
 
 // [func_08018098] Get Cue Spawn SFX
-struct SequenceData *gameplay_get_cue_spawn_sfx(struct Cue *cue) {
+struct SongHeader *gameplay_get_cue_spawn_sfx(struct Cue *cue) {
     return cue->spawnSfx;
 }
 
 
 // [func_0801809c] Get Cue Hit SFX
-struct SequenceData *gameplay_get_cue_hit_sfx(struct Cue *cue) {
+struct SongHeader *gameplay_get_cue_hit_sfx(struct Cue *cue) {
     return cue->hitSfx;
 }
 
 
 // [func_080180a0] Get Cue Barely SFX
-struct SequenceData *gameplay_get_cue_barely_sfx(struct Cue *cue) {
+struct SongHeader *gameplay_get_cue_barely_sfx(struct Cue *cue) {
     return cue->barelySfx;
 }
 
 
 // [func_080180a4] Get Cue Miss SFX
-struct SequenceData *gameplay_get_cue_miss_sfx(struct Cue *cue) {
+struct SongHeader *gameplay_get_cue_miss_sfx(struct Cue *cue) {
     return cue->missSfx;
 }
 

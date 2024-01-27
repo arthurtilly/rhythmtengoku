@@ -14,7 +14,7 @@ script script_mr_upbeat_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_mr_upbeat_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -32,7 +32,7 @@ define_gameplay_scene scene_mr_upbeat, script_mr_upbeat_entry
 script script_mr_upbeat_game_over
     mod_tempo 120, 24
     run scene_stop_music, 0
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     mr_upbeat_event04 0
     rest 24
@@ -109,7 +109,7 @@ script script_mr_upbeat_main
     mr_upbeat_event01 script_mr_upbeat_game_over
     print_text_s D_08068170
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     set_tempo 70
     call mr_upbeat_sub_08a56c60

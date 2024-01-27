@@ -24,6 +24,13 @@ static struct ScoreHandler sScoreHandler; // Global Score Handler
 static u8 D_03001540; // Update save data upon reaching leaving scene.
 
 
+// [D_089d7980] Main Score Handler
+struct ScoreHandler *score_handler = &sScoreHandler;
+
+
+#include "data/scenes/results/data.inc.c"
+
+
 // Set D_03001540
 void results_set_enable_save(u32 updateSave) {
     D_03001540 = updateSave;

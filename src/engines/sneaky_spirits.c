@@ -271,7 +271,7 @@ void sneaky_spirits_display_text(char *string) {
     struct PrintedTextAnim *textAnim;
 
     delete_bmp_font_obj_text_anim(gSneakySpirits->unk0, gSneakySpirits->text);
-    textAnim = bmp_font_obj_print_c(gSneakySpirits->unk0, string, 1, 0xc);
+    textAnim = bmp_font_obj_print_c(gSneakySpirits->unk0, string, 1, 12);
     func_0804d8f8(D_03005380, gSneakySpirits->text, textAnim->frames, 0, 1, 0, 0);
 }
 
@@ -353,7 +353,7 @@ void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 
     if (gSneakySpirits->slowMotionHit) {
         set_beatscript_speed(0x40);        // Set Game Speed (0x40 = 0.25; Default = 0x100)
         scene_set_music_pitch_env(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
-        scene_set_music_track_volume((1 << 9), 0); // Set Music Channel 9 Volume to 0
+        scene_set_music_track_volume(MIDI_TRACK_9, 0); // Set Music Channel 9 Volume to 0
 
         duration = ticks_to_frames(0x16) - gameplay_get_last_hit_offset();
         targetX = 68;

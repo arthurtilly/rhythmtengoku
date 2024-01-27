@@ -154,7 +154,7 @@ struct DrumStudioMonitorData {
 struct DrumLessonPattern {
     const struct Beatscript *beat1;
     const struct Beatscript *beat2;
-    struct SequenceData *audienceSfx;
+    struct SongHeader *cheerSfx;
     const char *dialogue;
 };
 
@@ -186,7 +186,7 @@ extern struct Animation *drum_lessons_accuracy_light_anim[]; // Accuracy Meter L
 extern struct Vector2 drum_lessons_accuracy_light_positions[]; // Accuracy Meter Light Positions
 extern struct Animation *drum_lessons_rank_anim[];
 extern const char *drum_lessons_rank_text[];
-extern struct SequenceData *drum_lessons_rank_sfx[];
+extern struct SongHeader *drum_lessons_rank_sfx[];
 extern struct DrumStudioMonitorData D_089e17a0[];
 extern DrumPlayFunc D_089e2988[];
 extern struct DrumTechKit *drum_studio_kits[];

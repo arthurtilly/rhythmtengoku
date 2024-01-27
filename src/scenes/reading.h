@@ -59,7 +59,7 @@ struct ReadingMaterial {
     const char *title;
     const char *text;
     const struct GraphicsTable *graphics;
-    struct SequenceData **sounds;
+    struct SongHeader **sounds;
 };
 
 

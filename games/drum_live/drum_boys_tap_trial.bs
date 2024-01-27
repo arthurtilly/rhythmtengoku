@@ -1,0 +1,287 @@
+.include "include/beatscript.inc"
+.include "games/drum_live/macros.inc"
+
+load_drum_live_labels
+
+
+
+.section .script.main
+@ Drum Boys LIVE - Tap Trial
+
+script script_drum_boys_tap_trial
+    set_tempo 124
+    set_music_volume 200
+    mute_music_track (MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_9)
+    run drum_boys_tap_trial_start_crowd_sfx
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dml_clear_input_def
+    dml_define_cool_inputs 0, (A_BUTTON | B_BUTTON | DPAD_LEFT | DPAD_DOWN)
+    dml_define_cool_inputs 1, (A_BUTTON | B_BUTTON | DPAD_LEFT | DPAD_DOWN)
+    run drum_boys_tap_trial_play_count_in, 0
+    rest 24
+    run drum_boys_tap_trial_play_count_in, 0
+    rest 24
+    run drum_boys_tap_trial_play_count_in, 0
+    rest 24
+    run drum_boys_tap_trial_play_count_in, 0
+    run drum_boys_tap_trial_stop_crowd_sfx
+    dml_set_disable_excitement FALSE
+    dml_event06 1
+    dml_set_guitarist_next_state 0x3, 2
+    call drum_live_pat08
+    play_music s_tapdance_bgm_seqData
+    dml_set_guitarist_next_state 0x3, 0
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    dml_set_enable_boredom TRUE
+    dml_event06 0
+    call drum_live_pat08
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    dml_event06 1
+    call drum_live_pat08
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    dml_event06 0
+    call drum_live_pat08
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    dml_set_guitarist_next_state 0x3, 1
+    call drum_live_pat10
+    set_tempo 139
+    run drum_boys_tap_trial_start_crowd_sfx
+    call drum_live_pat00
+    run drum_boys_tap_trial_play_count_in, 96
+    call drum_live_pat00
+    run drum_boys_tap_trial_play_count_in, 96
+    call drum_live_pat00
+    run drum_boys_tap_trial_play_count_in, 96
+    dml_set_guitarist_next_state 0x3, 2
+    dml_event06 1
+    call drum_live_pat08
+    run drum_boys_tap_trial_stop_crowd_sfx
+    dml_set_guitarist_next_state 0x3, 0
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat08
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat08
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat08
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat08
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    dml_set_guitarist_next_state 0x3, 1
+    call drum_live_pat10
+    dml_event06 0
+    dml_set_guitarist_next_state 0x3, 2
+    call drum_live_pat08
+    dml_set_guitarist_next_state 0x3, 0
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat10
+    call drum_live_pat13
+    call drum_live_pat13
+    call drum_live_pat13
+    call drum_live_pat13
+    dml_event06 1
+    call drum_live_pat08
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    dml_set_disable_excitement TRUE
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    call drum_live_pat00
+    dml_set_guitarist_next_state 0x3, 1
+    call drum_live_pat00
+    dml_event06 0
+    dml_set_guitarist_next_state 0x3, 2
+    call drum_live_pat08
+    dml_set_enable_boredom FALSE
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+return
+
+
+.end

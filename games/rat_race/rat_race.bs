@@ -15,7 +15,7 @@ script script_rat_race_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_rat_race_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -36,7 +36,7 @@ script script_rat_race_skipped_practice_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_rat_race_skipped_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -129,7 +129,7 @@ script rat_race_sub_08a1b5f0
     rat_race_event02 2
     beat_anim
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     run gameplay_set_tutorial scene_rat_race_skipped_practice
     beat_anim
     rest 24
@@ -765,7 +765,7 @@ script script_rat_race_main
     rest 24
     rest 24
     rest 24
-    enable_pause 0
+    enable_pause_menu FALSE
 return
 
 
@@ -970,7 +970,7 @@ script script_rat_race_practice
 script script_rat_race_skipped_practice
     rat_race_event0F 0
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     goto script_rat_race_main
 
 .end

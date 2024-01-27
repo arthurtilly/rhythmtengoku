@@ -74,9 +74,9 @@ typedef void (*RhythmToysPlayFunc)(u32 button);
 // Engine Definition Data:
 extern struct DrumTechNote *cat_machine_1_drum_seq_table[];
 extern struct DrumTechNote *cat_machine_2_drum_seq_table[];
-extern struct SequenceData *cat_machine_meow_sfx_table[];
-extern struct SequenceData **rap_machine_sfx_pool[];
-extern struct SequenceData *const *love_machine_sfx_table[];
+extern struct SongHeader *cat_machine_meow_sfx_table[];
+extern struct SongHeader **rap_machine_sfx_pool[];
+extern struct SongHeader *const *love_machine_sfx_table[];
 extern struct RhythmToysSpriteData *rhythm_toys_sprite_table[];
 extern struct RhythmToysDemo *rhythm_toys_demo_table[];
 extern struct CompressedGraphics *rhythm_toys_buffered_textures[];

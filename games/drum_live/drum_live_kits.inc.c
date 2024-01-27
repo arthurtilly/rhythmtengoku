@@ -32,7 +32,7 @@ struct DrumTechPhrase D_089e078c = {
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025c4c,
+    /* On-Play  */ drum_live_kit_play_bass_l,
     /* Param.   */ 0
 };
 
@@ -42,7 +42,7 @@ struct DrumTechPhrase D_089e07a0 = {
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025c8c,
+    /* On-Play  */ drum_live_kit_play_bass_r,
     /* Param.   */ 0
 };
 
@@ -52,7 +52,7 @@ struct DrumTechPhrase D_089e07b4 = {
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025cd0,
+    /* On-Play  */ drum_live_kit_play_snare_l,
     /* Param.   */ 0
 };
 
@@ -62,7 +62,7 @@ struct DrumTechPhrase D_089e07c8 = {
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025d34,
+    /* On-Play  */ drum_live_kit_play_snare_r,
     /* Param.   */ 0
 };
 
@@ -72,7 +72,7 @@ struct DrumTechPhrase D_089e07dc = {
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025d98,
+    /* On-Play  */ drum_live_kit_play_tom_unused,
     /* Param.   */ 0
 };
 
@@ -82,7 +82,7 @@ struct DrumTechPhrase D_089e07f0 = {
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025d9c,
+    /* On-Play  */ drum_live_kit_play_tom,
     /* Param.   */ 0
 };
 
@@ -92,7 +92,7 @@ struct DrumTechPhrase D_089e0804 = {
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025e00,
+    /* On-Play  */ drum_live_kit_play_hihat,
     /* Param.   */ 0
 };
 
@@ -102,7 +102,7 @@ struct DrumTechPhrase D_089e0818 = {
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025e74,
+    /* On-Play  */ drum_live_kit_play_splash,
     /* Param.   */ 0
 };
 
@@ -112,7 +112,7 @@ struct DrumTechPhrase D_089e082c = {
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025ed8,
+    /* On-Play  */ drum_live_kit_play_crash,
     /* Param.   */ 0
 };
 
@@ -122,7 +122,7 @@ struct DrumTechPhrase D_089e0840 = {
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
     /* Sequence */ D_089e076c,
-    /* On-Play  */ func_08025c48,
+    /* On-Play  */ drum_live_kit_play_roll,
     /* Param.   */ 1
 };
 
@@ -173,7 +173,7 @@ struct DrumTechPhrase D_089e089c = {
     /* Volume   */ 0x90,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025c4c,
+    /* On-Play  */ drum_live_kit_play_bass_l,
     /* Param.   */ 0
 };
 
@@ -183,7 +183,7 @@ struct DrumTechPhrase D_089e08b0 = {
     /* Volume   */ 0x90,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025c8c,
+    /* On-Play  */ drum_live_kit_play_bass_r,
     /* Param.   */ 0
 };
 
@@ -193,7 +193,7 @@ struct DrumTechPhrase D_089e08c4 = {
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025cd0,
+    /* On-Play  */ drum_live_kit_play_snare_l,
     /* Param.   */ 0
 };
 
@@ -203,7 +203,7 @@ struct DrumTechPhrase D_089e08d8 = {
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025d34,
+    /* On-Play  */ drum_live_kit_play_snare_r,
     /* Param.   */ 0
 };
 
@@ -213,7 +213,7 @@ struct DrumTechPhrase D_089e08ec = {
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025d9c,
+    /* On-Play  */ drum_live_kit_play_tom,
     /* Param.   */ 0
 };
 
@@ -223,7 +223,7 @@ struct DrumTechPhrase D_089e0900 = {
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025e00,
+    /* On-Play  */ drum_live_kit_play_hihat,
     /* Param.   */ 0
 };
 
@@ -233,7 +233,7 @@ struct DrumTechPhrase D_089e0914 = {
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025e74,
+    /* On-Play  */ drum_live_kit_play_splash,
     /* Param.   */ 0
 };
 
@@ -243,7 +243,7 @@ struct DrumTechPhrase D_089e0928 = {
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
     /* Sequence */ NULL,
-    /* On-Play  */ func_08025ed8,
+    /* On-Play  */ drum_live_kit_play_crash,
     /* Param.   */ 0
 };
 
@@ -253,7 +253,7 @@ struct DrumTechPhrase D_089e093c = {
     /* Volume   */ 0xf0,
     /* Pitch    */ 0,
     /* Sequence */ D_089e087c,
-    /* On-Play  */ func_08025c48,
+    /* On-Play  */ drum_live_kit_play_roll,
     /* Param.   */ 1
 };
 

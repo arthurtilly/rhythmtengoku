@@ -1,5 +1,5 @@
 // [D_089e2ef8] Unknown Sound Effect List
-struct SequenceData *D_089e2ef8[] = {
+struct SongHeader *D_089e2ef8[] = {
     &s_open_HH_seqData,
     NULL
 };

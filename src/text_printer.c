@@ -496,7 +496,7 @@ s32 func_0800a1d4(u32 totalLines, u32 id) {
         x += (totalLines * 2) / 3;
     }
 
-    return ((x + 31) / 32) * 2; // surely this can be simplified..?
+    return ((x + 31) / 32) * 2;
 }
 
 
@@ -1234,9 +1234,9 @@ void func_0800ae88(struct Listbox *listbox) {
 
 // Create New Listbox
 struct Listbox *create_new_listbox(
-        u16 memID, u32 maxLines, u32 maxWidth, u32 arg3, u32 arg4, u32 palette,
+        u16 memID, u32 maxLines, u32 maxWidth, u32 arg3, u32 selectedPalette, u32 unselectedPalette,
         u32 colors, s32 x, s32 y, u32 z, u32 lineSpacing, u32 selectionItem,
-        s32 totalItems, struct Animation *selectionAnim, u32 arg14, u32 selMaxLine,
+        s32 totalItems, struct Animation *selectionAnim, u32 selMinLine, u32 selMaxLine,
         u32 selectionLine, const char *getString(), s16 getSprite()
     ) {
 
@@ -1254,13 +1254,13 @@ struct Listbox *create_new_listbox(
     text_printer_set_x_y_controller(listbox->printer, &listbox->textX, &listbox->textY);
     text_printer_set_x_y(listbox->printer, x, y);
     text_printer_set_layer(listbox->printer, z);
-    text_printer_set_palette(listbox->printer, palette);
+    text_printer_set_palette(listbox->printer, unselectedPalette);
     text_printer_set_colors(listbox->printer, colors);
     text_printer_set_line_spacing(listbox->printer, lineSpacing);
     text_printer_run_func_on_finish(listbox->printer, func_0800ae88, (s32)listbox);
     listbox->maxLines = maxLines;
-    listbox->unk12 = arg4;
-    listbox->palette = palette;
+    listbox->unk12 = selectedPalette;
+    listbox->palette = unselectedPalette;
     listbox->colors = colors;
     listbox->x = x;
     listbox->y = y;
@@ -1274,7 +1274,7 @@ struct Listbox *create_new_listbox(
     listbox->textY = 0;
     listbox->selItem = selectionItem;
     listbox->totalItems = totalItems;
-    listbox->selMinLine = arg14;
+    listbox->selMinLine = selMinLine;
     listbox->selMaxLine = selMaxLine;
     listbox->selLine = selectionLine;
     listbox->getString = getString;
@@ -1291,7 +1291,7 @@ struct Listbox *create_new_listbox(
     listbox->onScroll = NULL;
     listbox->onFinish = NULL;
 
-    line = selectionItem - selectionLine - arg14;
+    line = selectionItem - selectionLine - selMinLine;
 
     for (i = 0; i < maxLines; i++) {
         if ((line >= 0) && (line < totalItems)) {

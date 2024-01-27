@@ -163,14 +163,25 @@ extern Palette drum_samurai_band_bg_pal[];
 
 /* DRUM LIVE - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08c47038;
-extern struct CompressedGraphics D_08c47dc4;
-extern struct CompressedGraphics D_08c45f10;
-extern struct CompressedGraphics D_08c47930;
-extern struct CompressedGraphics D_08c47ed4;
-extern struct CompressedGraphics D_08c4356c;
-extern struct CompressedGraphics D_08c439d0;
-extern struct CompressedGraphics D_08c4241c;
-extern struct CompressedGraphics D_08bd7c30;
-extern struct CompressedGraphics D_08bd8060;
-extern struct CompressedGraphics D_08bd6c44;
+extern struct CompressedGraphics D_08c47038; // Drum Girls - BG Textures
+extern struct CompressedGraphics D_08c47dc4; // Drum Girls - BG Map
+extern struct CompressedGraphics D_08c45f10; // Drum Girls - OBJ Textures
+extern struct CompressedGraphics D_08c47930; // Crowd - BG Textures
+extern struct CompressedGraphics D_08c47ed4; // Crowd - BG Map 0
+extern struct CompressedGraphics D_08c47fdc; // Crowd - BG Map 1
+extern struct CompressedGraphics D_08c480e4; // Crowd - BG Map 2
+extern struct CompressedGraphics D_08c481f4; // Crowd - BG Map 3
+extern struct CompressedGraphics D_08c48328; // Crowd - BG Map 4
+extern struct CompressedGraphics D_08c48458; // Crowd - BG Map 5
+extern struct CompressedGraphics D_08c485a4; // Crowd - BG Map 6
+extern struct CompressedGraphics D_08c486f4; // Crowd - BG Map 7
+extern struct CompressedGraphics D_08c48874; // Crowd - BG Map 8
+extern struct CompressedGraphics D_08c489fc; // Crowd - BG Map 9
+extern struct CompressedGraphics D_08c48b84; // Crowd - BG Map 10
+extern struct CompressedGraphics D_08c48cfc; // Crowd - BG Map 11
+extern struct CompressedGraphics D_08c4356c; // Drum Boys - BG Textures
+extern struct CompressedGraphics D_08c439d0; // Drum Boys - BG Map
+extern struct CompressedGraphics D_08c4241c; // Drum Boys - OBJ Textures
+extern struct CompressedGraphics D_08bd7c30; // Drum Samurai Band - BG Textures
+extern struct CompressedGraphics D_08bd8060; // Drum Samurai Band - BG Map
+extern struct CompressedGraphics D_08bd6c44; // Drum Samurai Band - OBJ Textures

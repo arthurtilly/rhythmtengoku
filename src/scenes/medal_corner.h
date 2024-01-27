@@ -93,7 +93,7 @@ struct MedalCornerLevel {
 
 struct MedalCornerMenu {
     u8 levelCount;
-    struct SequenceData *bgm;
+    struct SongHeader *bgm;
     struct GraphicsTable *gfx;
     struct MedalCornerLevel *levels;
 };
