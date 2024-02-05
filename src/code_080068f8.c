@@ -28,8 +28,8 @@ struct unk_struct_08006bb4_init *func_080067a4(u16 arg0, u16 arg1, struct Bitmap
     struct unk_struct_08006bb4_init *temp_r7;
     struct struct_080067a4_1_sub *temp_r4;
 
-    temp_r7 = (struct unk_struct_08006bb4_init *)mem_heap_alloc_id(arg0, sizeof(struct unk_struct_08006bb4_init));
-    temp_r7->unk10 = (struct tenU16s *)mem_heap_alloc_id(arg0, sizeof(struct tenU16s));
+    temp_r7 = mem_heap_alloc_id(arg0, sizeof(struct unk_struct_08006bb4_init));
+    temp_r7->unk10 = mem_heap_alloc_id(arg0, sizeof(struct tenU16s));
     temp_r7->unk14 = func_08006328(arg0, arg6->unk0, arg6->unk1);
     temp_r7->unk8 = func_08006328(arg0, arg6->unk0 + 2, arg6->unk1 + 2);
     temp_r7->unk0 = arg2;

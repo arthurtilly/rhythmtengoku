@@ -58,7 +58,14 @@ void func_08005f34(struct struct_08005e54 *arg0, s32 arg1, s32 arg2, s32 arg3, s
     if (arg3 > 1) {
         while (arg4-- != 0) {
             for (i = arg3; i >= 8; temp_r2 += 8, i -= 8) {
-                temp_r2[0] = temp_r2[1] = temp_r2[2] = temp_r2[3] = temp_r2[4] = temp_r2[5] = temp_r2[6] = temp_r2[7] = arg5;
+                temp_r2[7] = arg5;
+                temp_r2[6] = arg5;
+                temp_r2[5] = arg5;
+                temp_r2[4] = arg5;
+                temp_r2[3] = arg5;
+                temp_r2[2] = arg5;
+                temp_r2[1] = arg5;
+                temp_r2[0] = arg5;
             }
             for (i; i != 0; temp_r2++, i--) {
                 temp_r2[0] = arg5;
