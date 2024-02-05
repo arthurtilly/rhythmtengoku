@@ -29,7 +29,7 @@ struct unk_struct_08006bb4_init *func_080067a4(u16 arg0, u16 arg1, struct Bitmap
     struct struct_080067a4_1_sub *temp_r4;
 
     temp_r7 = mem_heap_alloc_id(arg0, sizeof(struct unk_struct_08006bb4_init));
-    temp_r7->unk10 = mem_heap_alloc_id(arg0, sizeof(struct tenU16s));
+    temp_r7->unk10 = mem_heap_alloc_id(arg0, 10 * sizeof(u16));
     temp_r7->unk14 = func_08006328(arg0, arg6->unk0, arg6->unk1);
     temp_r7->unk8 = func_08006328(arg0, arg6->unk0 + 2, arg6->unk1 + 2);
     temp_r7->unk0 = arg2;
@@ -45,7 +45,7 @@ struct unk_struct_08006bb4_init *func_080067a4(u16 arg0, u16 arg1, struct Bitmap
     if (arg7 != NULL) {
         func_0800620c(arg7, arg8, arg9, arg6->unk0, arg6->unk1, temp_r7->unk14, 0, 0);
     } else {
-        func_08005ee4(temp_r7->unk14, temp_r7->unk10->unk8);
+        func_08005ee4(temp_r7->unk14, temp_r7->unk10[4]);
     }
     temp_r7->unk1E = 0;
     if (arg6->unk1C != NULL) {
@@ -132,7 +132,7 @@ u32 func_08006ac0(struct unk_struct_08006bb4_init *arg0) {
 
 void func_08006ac8(struct unk_struct_08006bb4_init *arg0, s16 arg1, s16 arg2) {
     if ((arg0->unkC == arg1) && (arg0->unkE == arg2)) {
-            return;
+        return;
     }
     
     switch (arg0->unk1C_0) {

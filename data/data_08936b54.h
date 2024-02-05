@@ -24,18 +24,6 @@ extern struct TaskMethods D_08936c8c;
 extern struct TaskMethods D_08936c9c;
 
 // ?
-struct tenU16s {
-    u16 unk0;
-    u16 unk2;
-    u16 unk4;
-    u16 unk6;
-    u16 unk8;
-    u16 unkA;
-    u16 unkC;
-    u16 unkE;
-    u16 unk10;
-    u16 unk12;
-};
 struct unk_struct_08006bb4_init {
     struct BitmapFontBG *unk0;
     union {
@@ -45,7 +33,7 @@ struct unk_struct_08006bb4_init {
     struct struct_08005e54 *unk8;
     s16 unkC;
     s16 unkE;
-    struct tenU16s *unk10;
+    u16 *unk10;
     struct struct_08005e54 *unk14;
     struct struct_080067a4_1 *unk18;
     u32 unk1C_0:12;
