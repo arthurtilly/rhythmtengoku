@@ -67,8 +67,8 @@ extern struct CompressedGraphics *rap_men_buffered_textures[]; // Buffered Textu
 extern struct GraphicsTable *rap_men_gfx_tables[]; // Graphics Table Index
 extern u8 rapping_anim_map[];
 extern u8 rapping_anim_durations[];
-extern struct SequenceData *rap_men_cue_hit_sfx[2][2];
-extern struct SequenceData *rap_men_cue_miss_sfx[2];
+extern struct SongHeader *rap_men_cue_hit_sfx[2][2];
+extern struct SongHeader *rap_men_cue_miss_sfx[2];
 
 
 // Functions:

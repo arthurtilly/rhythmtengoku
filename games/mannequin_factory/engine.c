@@ -69,7 +69,7 @@ struct GraphicsTable mannequin_gfx_table[] = {
 
 
 // [D_089df404] ?
-struct SequenceData *D_089df404[] = {
+struct SongHeader *D_089df404[] = {
     /* 0x00 */ &s_SD7_seqData,
     /* 0x01 */ &s_f_conveyer_hit_seqData,
     /* 0x02 */ &s_tom_M_seqData,

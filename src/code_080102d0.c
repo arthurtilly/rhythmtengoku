@@ -9,7 +9,7 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 
 // [func_080102d0] Get Music Base Tempo
-u32 get_music_base_tempo(struct SequenceData *seqData) {
+u32 get_music_base_tempo(struct SongHeader *seqData) {
     struct TempoTable *seqTempo = sound_tempo_table;
 
     while (seqTempo->sequenceData != NULL) {

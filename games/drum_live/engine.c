@@ -115,7 +115,7 @@ Palette *drum_live_bg_palettes[] = {
 };
 
 // [D_089e06b0] Bit Masks/Fields
-u16 D_089e06b0[] = {
+u16 drum_live_color_masks[] = {
     /* 0x00 */ 0x0000,
     /* 0x01 */ 0x7C00,
     /* 0x02 */ 0x001F,
@@ -126,56 +126,81 @@ u16 D_089e06b0[] = {
     /* 0x07 */ 0x7FFF
 };
 
-// [D_089e06c0] ?
-u8 D_089e06c0[] = {
-    /* 0x00 */ 1,
-    /* 0x01 */ 2,
-    /* 0x02 */ 4,
-    /* 0x03 */ 6
+// [D_089e06c0] Flashing Light BRG Targets
+u8 drum_live_brg_targets[] = {
+    /* 0x00 */ (1 << 0),
+    /* 0x01 */ (1 << 1),
+    /* 0x02 */ (1 << 2),
+    /* 0x03 */ (1 << 2) | (1 << 1)
 };
 
-// [D_089e06c4] ?
-u16 D_089e06c4[] = {
-    0x1400, 0x3000, 0x7ED4, 0x68C4,
-    0x7FDC, 0x68C4, 0x06C4, 0x189E
+// [D_089e06c4] Crowd BG Map Beat Anim (excitement <= 0)
+BgMapAnim D_089e06c4[] = {
+    BG_ANIM_SET_DELAY(INT_TO_FIXED(20)),
+    BG_ANIM_WRITE_COMP(&D_08c47ed4),
+    BG_ANIM_WRITE_COMP(&D_08c47fdc),
+    BG_ANIM_GOTO(D_089e06c4)
 };
 
-// [D_089e06d4] ?
-u16 D_089e06d4[] = {
-    0x0500, 0x3000, 0x80E4, 0x68C4,
-    0x7FDC, 0x68C4, 0x7ED4, 0x68C4,
-    0x06C4, 0x189E
+// [D_089e06d4] Crowd BG Map Beat Anim (excitement == 1)
+BgMapAnim D_089e06d4[] = {
+    BG_ANIM_SET_DELAY(INT_TO_FIXED(5)),
+    BG_ANIM_WRITE_COMP(&D_08c480e4),
+    BG_ANIM_WRITE_COMP(&D_08c47fdc),
+    BG_ANIM_WRITE_COMP(&D_08c47ed4),
+    BG_ANIM_GOTO(D_089e06c4)
 };
 
-// [D_089e06e8] ?
-u16 D_089e06e8[] = {
-    0x0500, 0x3000, 0x81F4, 0x68C4,
-    0x80E4, 0x68C4, 0x7FDC, 0x68C4,
-    0x7ED4, 0x68C4, 0x06C4, 0x189E,
-    0x1400, 0x3000, 0x8458, 0x68C4,
-    0x8328, 0x68C4, 0x0700, 0x189E
+// [D_089e06e8] Crowd BG Map Beat Anim (excitement == 2)
+BgMapAnim D_089e06e8[] = {
+    BG_ANIM_SET_DELAY(INT_TO_FIXED(5)),
+    BG_ANIM_WRITE_COMP(&D_08c481f4),
+    BG_ANIM_WRITE_COMP(&D_08c480e4),
+    BG_ANIM_WRITE_COMP(&D_08c47fdc),
+    BG_ANIM_WRITE_COMP(&D_08c47ed4),
+    BG_ANIM_GOTO(D_089e06c4)
 };
 
-// [D_089e0710] ?
-u16 D_089e0710[] = {
-    0x0500, 0x3000, 0x86F4, 0x68C4,
-    0x85A4, 0x68C4, 0x8458, 0x68C4,
-    0x2800, 0x3000, 0x8328, 0x68C4,
-    0x0700, 0x189E, 0x1400, 0x3000,
-    0x89FC, 0x68C4, 0x8874, 0x68C4,
-    0x072C, 0x189E
+// [D_089e0700] Crowd BG Map Beat Anim
+BgMapAnim D_089e0700[] = {
+    BG_ANIM_SET_DELAY(INT_TO_FIXED(20)),
+    BG_ANIM_WRITE_COMP(&D_08c48458),
+    BG_ANIM_WRITE_COMP(&D_08c48328),
+    BG_ANIM_GOTO(D_089e0700)
 };
 
-// [D_089e073c] ?
-u16 D_089e073c[] = {
-    0x0500, 0x3000, 0x8CFC, 0x68C4,
-    0x8B84, 0x68C4, 0x89FC, 0x68C4,
-    0x2800, 0x3000, 0x8874, 0x68C4,
-    0x072C, 0x189E
+// [D_089e0710] Crowd BG Map Beat Anim (excitement == 3)
+BgMapAnim D_089e0710[] = {
+    BG_ANIM_SET_DELAY(INT_TO_FIXED(5)),
+    BG_ANIM_WRITE_COMP(&D_08c486f4),
+    BG_ANIM_WRITE_COMP(&D_08c485a4),
+    BG_ANIM_WRITE_COMP(&D_08c48458),
+    BG_ANIM_SET_DELAY(INT_TO_FIXED(40)),
+    BG_ANIM_WRITE_COMP(&D_08c48328),
+    BG_ANIM_GOTO(D_089e0700)
+};
+
+// [D_089e072c] Crowd BG Map Beat Anim
+BgMapAnim D_089e072c[] = {
+    BG_ANIM_SET_DELAY(INT_TO_FIXED(20)),
+    BG_ANIM_WRITE_COMP(&D_08c489fc),
+    BG_ANIM_WRITE_COMP(&D_08c48874),
+    BG_ANIM_GOTO(D_089e072c)
+};
+
+// [D_089e073c] Crowd BG Map Beat Anim (excitement >= 4)
+BgMapAnim D_089e073c[] = {
+    BG_ANIM_SET_DELAY(INT_TO_FIXED(5)),
+    BG_ANIM_WRITE_COMP(&D_08c48cfc),
+    BG_ANIM_WRITE_COMP(&D_08c48b84),
+    BG_ANIM_WRITE_COMP(&D_08c489fc),
+    BG_ANIM_SET_DELAY(INT_TO_FIXED(40)),
+    BG_ANIM_WRITE_COMP(&D_08c48874),
+    BG_ANIM_GOTO(D_089e072c)
 };
 
 // [D_089e0758] Crowd BG Map Data
-u16 *D_089e0758[] = {
+BgMapAnim *drum_live_crowd_bg_maps[] = {
     /* 0x00 */ D_089e06c4,
     /* 0x01 */ D_089e06d4,
     /* 0x02 */ D_089e06e8,
@@ -332,16 +357,22 @@ struct GraphicsTable *drum_live_gfx_tables[] = {
 };
 
 // [D_089e0ab0] ?
-struct Vector2 D_089e0ab0[] = {
-    /* 0x00 */ {   0,   0 },
-    /* 0x01 */ {   0,   0 },
-    /* 0x02 */ {   0,   0 },
-    /* 0x03 */ {   0,   0 },
-    /* 0x04 */ {   0,   0 },
-    /* 0x05 */ {   0,   0 },
-    /* 0x06 */ { -56,   8 },
-    /* 0x07 */ { 112,  -8 },
-    /* 0x08 */ {  -8, -36 },
+struct Vector2 drum_live_performer_sprite_offsets[3][3] = {
+    /* DRUM_GIRLS_LIVE */ {
+        /* DRUMMER   */ {   0,   0 },
+        /* BASSIST   */ {   0,   0 },
+        /* GUITARIST */ {   0,   0 },
+    },
+    /* DRUM_BOYS_LIVE */ {
+        /* DRUMMER   */ {   0,   0 },
+        /* BASSIST   */ {   0,   0 },
+        /* GUITARIST */ {   0,   0 },
+    },
+    /* DRUM_SAMURAI_BAND_LIVE */ {
+        /* DRUMMER   */ { -56,   8 },
+        /* BASSIST   */ { 112,  -8 },
+        /* GUITARIST */ {  -8, -36 },
+    }
 };
 
 // [D_089e0ad4] Guitarist Animation IDs - Head
@@ -394,10 +425,9 @@ u8 drum_live_guitarist_anim_map_jump[] = {
 
 // [D_089e0ae4] Drum Kit ID Map
 u8 drum_live_kit_map[] = {
-    /* 0x00 */ 0,
-    /* 0x01 */ 0,
-    /* 0x02 */ 1,
-    /* 0x03 */ 0
+    /* DRUM_GIRLS */ 0,
+    /* DRUM_BOYS  */ 0,
+    /* DRUM_BAND  */ 1
 };
 
 
@@ -573,16 +603,16 @@ EngineEvent drum_live_common_events[] = {
 
 // [D_089e0c94] Engine Events
 EngineEvent drum_live_engine_events[] = {
-    /* 0x00 */ func_080268cc,
-    /* 0x01 */ func_08026968,
-    /* 0x02 */ func_08025a98,
-    /* 0x03 */ func_08025ad4,
-    /* 0x04 */ func_08025ae8,
-    /* 0x05 */ func_08025748,
-    /* 0x06 */ func_08025a2c,
-    /* 0x07 */ func_08025a58,
-    /* 0x08 */ func_080269e8,
-    /* 0x09 */ func_08025bcc,
+    /* 0x00 */ drum_live_set_guitarist_next_state,
+    /* 0x01 */ drum_live_set_adjust_mode_tempo,
+    /* 0x02 */ drum_live_script_clear_input_def,
+    /* 0x03 */ drum_live_script_define_cool_inputs,
+    /* 0x04 */ drum_live_script_define_lame_inputs,
+    /* 0x05 */ drum_live_set_next_flash_type,
+    /* 0x06 */ drum_live_set_next_beat_light_style,
+    /* 0x07 */ drum_live_script_play_applause,
+    /* 0x08 */ drum_live_set_enable_boredom,
+    /* 0x09 */ drum_live_set_disable_excitement,
     /* 0x0A */ drum_live_engine_event_stub
 };
 

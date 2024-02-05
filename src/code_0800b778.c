@@ -10,7 +10,7 @@
 #include "src/task_pool.h"
 #include "src/memory_heap.h"
 #include "src/code_08007468.h"
-#include "src/lib_08049144.h"
+#include "src/midi/midi.h"
 #include "src/lib_0804ca80.h"
 
 // Could use better split
@@ -473,7 +473,7 @@ void func_0800bebc(u32 arg) {
 
 
 // Play Music
-u32 scene_change_music(struct SequenceData *music, u32 override, s32 soundPlayer) {
+u32 scene_change_music(struct SongHeader *music, u32 override, s32 soundPlayer) {
     if ((D_030053c0.musicPlayer != NULL) && override) {
         stop_soundplayer(D_030053c0.musicPlayer);
     }
@@ -483,9 +483,9 @@ u32 scene_change_music(struct SequenceData *music, u32 override, s32 soundPlayer
         return;
     }
 
-    D_03005b3c = LFO_MODE_DISABLED;
-    func_08049be4();
-    func_08049b70(0);
+    gMidiLFOMode = LFO_MODE_DISABLED;
+    midi_equalizer_reset();
+    midi_equalizer_set_position(0);
     D_030053c0.musicPlayer = (soundPlayer < 0) ? play_sound(music) : play_sound_in_player(soundPlayer, music);
     D_030053c0.musicBaseBPM = get_music_base_tempo(music);
     update_beatscript_tempo();
@@ -497,31 +497,31 @@ u32 scene_change_music(struct SequenceData *music, u32 override, s32 soundPlayer
 
 
 // Play Music (Override Existing)
-void scene_set_music(struct SequenceData *music) {
+void scene_set_music(struct SongHeader *music) {
     scene_change_music(music, TRUE, -1);
 }
 
 
 // Play Music (No Override)
-void scene_play_music(struct SequenceData *music) {
+void scene_play_music(struct SongHeader *music) {
     scene_change_music(music, FALSE, -1);
 }
 
 
 // Play Music in Given SoundPlayer (Override)
-void scene_set_music_with_soundplayer(struct SequenceData *music, s32 soundPlayer) {
+void scene_set_music_with_soundplayer(struct SongHeader *music, s32 soundPlayer) {
     scene_change_music(music, TRUE, soundPlayer);
 }
 
 
 // Play Music in Given SoundPlayer (No Override)
-void scene_play_music_with_soundplayer(struct SequenceData *music, s32 soundPlayer) {
+void scene_play_music_with_soundplayer(struct SongHeader *music, s32 soundPlayer) {
     scene_change_music(music, FALSE, soundPlayer);
 }
 
 
 // Play Music (override, use predefined SoundPlayer ID)
-void scene_set_music_player_by_sound(struct SequenceData *music) {
+void scene_set_music_player_by_sound(struct SongHeader *music) {
     struct SoundPlayer *player = get_soundplayer_by_sound(music);
 
     if (player == NULL) {
@@ -682,8 +682,8 @@ void scene_set_soundplayer_panning(struct SoundPlayer *player, s16 panning) {
 
 
 // Play Randomly-Selected Music
-struct SoundPlayer *scene_set_random_music(struct SequenceData **musicPool) {
-    struct SequenceData *music;
+struct SoundPlayer *scene_set_random_music(struct SongHeader **musicPool) {
+    struct SongHeader *music;
     u32 total;
 
     if (musicPool == NULL) {
@@ -699,12 +699,12 @@ struct SoundPlayer *scene_set_random_music(struct SequenceData **musicPool) {
     music = musicPool[agb_random(total)];
     scene_set_music(music);
 
-    return D_08aa4460[music->soundPlayer].soundPlayer;
+    return sound_player_table[music->soundPlayer].soundPlayer;
 }
 
 
 // Play Sound Effect to Sprite Animation Speed and Music Pitch
-struct SoundPlayer *scene_play_sound_to_tempo_and_pitch(struct SequenceData *sfx) {
+struct SoundPlayer *scene_play_sound_to_tempo_and_pitch(struct SongHeader *sfx) {
     struct SoundPlayer *player;
 
     player = play_sound(sfx);
@@ -716,7 +716,7 @@ struct SoundPlayer *scene_play_sound_to_tempo_and_pitch(struct SequenceData *sfx
 
 
 // Play Sound Effect to Sprite Animation Speed
-struct SoundPlayer *scene_play_sound_to_tempo(struct SequenceData *sfx) {
+struct SoundPlayer *scene_play_sound_to_tempo(struct SongHeader *sfx) {
     struct SoundPlayer *player;
 
     player = play_sound(sfx);
@@ -727,8 +727,8 @@ struct SoundPlayer *scene_play_sound_to_tempo(struct SequenceData *sfx) {
 
 
 // Play Randomly-Selected Sound Effect
-struct SoundPlayer *scene_play_random_sound(struct SequenceData **sfxPool) {
-    struct SequenceData *sfx;
+struct SoundPlayer *scene_play_random_sound(struct SongHeader **sfxPool) {
+    struct SongHeader *sfx;
     u32 total;
 
     if (sfxPool == NULL) {
@@ -747,8 +747,8 @@ struct SoundPlayer *scene_play_random_sound(struct SequenceData **sfxPool) {
 
 
 // Play Randomly-Selected Sound Effect to Sprite Animation Speed and Music Pitch
-struct SoundPlayer *scene_play_random_sound_to_tempo_and_pitch(struct SequenceData **sfxPool) {
-    struct SequenceData *sfx;
+struct SoundPlayer *scene_play_random_sound_to_tempo_and_pitch(struct SongHeader **sfxPool) {
+    struct SongHeader *sfx;
     u32 total;
 
     if (sfxPool == NULL) {
@@ -767,8 +767,8 @@ struct SoundPlayer *scene_play_random_sound_to_tempo_and_pitch(struct SequenceDa
 
 
 // Play Randomly-Selected Sound Effect to Sprite Animation Speed
-struct SoundPlayer *scene_play_random_sound_to_tempo(struct SequenceData **sfxPool) {
-    struct SequenceData *sfx;
+struct SoundPlayer *scene_play_random_sound_to_tempo(struct SongHeader **sfxPool) {
+    struct SongHeader *sfx;
     u32 total;
 
     if (sfxPool == NULL) {

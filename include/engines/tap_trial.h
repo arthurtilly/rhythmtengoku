@@ -67,7 +67,7 @@ struct TapTrialAction {
     s8 playbackArg3;
     u16 playbackArg4;
     u8 duration;
-    struct SequenceData *sfx;
+    struct SongHeader *sfx;
     u16 sfxVolume;
     s16 sfxPitch;
 };

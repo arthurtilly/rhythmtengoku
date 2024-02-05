@@ -157,7 +157,7 @@ const char D_0805a0c8[] = ".";
 const char D_0805a0cc[] = " “_";
 
 // [D_089e178c] Rank SFX
-struct SequenceData *drum_lessons_rank_sfx[] = {
+struct SongHeader *drum_lessons_rank_sfx[] = {
     /* RANK_0 */ NULL,
     /* RANK_C */ &s_f_lesson_c_seqData,
     /* RANK_B */ &s_f_lesson_b_seqData,

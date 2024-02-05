@@ -19,7 +19,7 @@ script script_remix_2_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_remix_2_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -205,7 +205,7 @@ script script_remix_2_main
     set_music_volume 250
     samurai_slice_event09 -57
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     set_game_fade_in_time 0
     samurai_slice_event09 -56
     rest 6
@@ -628,7 +628,7 @@ script script_remix_2_main
     bon_odori_darken_screen 24
     beat_anim
     rest 12
-    run func_08047e78, s_bon_dondon1_1_seqData
+    run remix2_sync_bon_vocal, s_bon_dondon1_1_seqData
     rest 12
     mute_music_track MIDI_TRACK_5
     bon_odori_animate_all 3
@@ -723,7 +723,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     bon_odori_start_input_check
-    run func_08047e78, s_bon_dondon1_2_seqData
+    run remix2_sync_bon_vocal, s_bon_dondon1_2_seqData
     bon_odori_lyrics_set_curr_line 1
     bon_odori_lyrics_curr_line_start_highlight 60
     spawn_cue CUE_FORWARD_CLAP
@@ -995,7 +995,7 @@ script script_remix_2_main
     bon_odori_darken_screen 24
     beat_anim
     rest 12
-    run func_08047e78, s_bon_dondon1_1_seqData
+    run remix2_sync_bon_vocal, s_bon_dondon1_1_seqData
     rest 12
     mute_music_track MIDI_TRACK_5
     bon_odori_animate_all 3
@@ -1089,7 +1089,7 @@ script script_remix_2_main
     rest 24
     rest 24
     rest 24
-    enable_pause 0
+    enable_pause_menu FALSE
     rest 24
     rat_race_event11 0
 return

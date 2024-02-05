@@ -14,7 +14,7 @@ script script_drum_lesson_hi_tech_2_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_drum_lesson_hi_tech_2_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -685,24 +685,24 @@ script script_drum_lesson_hi_tech_2_main
     dms_event16 0
     rest 12
     rest 24
-    run func_08048264, D_08a437b4
+    run drum_lesson_script_import_pattern, D_08a437b4
     call drum_lessons_sub_08a7d7a0
-    run func_08048264, D_08a437c4
+    run drum_lesson_script_import_pattern, D_08a437c4
     call drum_lessons_sub_08a7d7a0
-    run func_08048264, D_08a437d4
+    run drum_lesson_script_import_pattern, D_08a437d4
     call drum_lessons_sub_08a7d7a0
-    run func_08048264, D_08a437e4
+    run drum_lesson_script_import_pattern, D_08a437e4
     call drum_lessons_sub_08a7d7a0
-    run func_08048264, D_08a437f4
+    run drum_lesson_script_import_pattern, D_08a437f4
     call drum_lessons_sub_08a7d7a0
-    run func_08048264, D_08a43804
+    run drum_lesson_script_import_pattern, D_08a43804
     call drum_lessons_sub_08a7d7a0
-    run func_08048264, D_08a43814
+    run drum_lesson_script_import_pattern, D_08a43814
     call drum_lessons_sub_08a7d7a0
-    run func_08048264, D_08a43824
+    run drum_lesson_script_import_pattern, D_08a43824
     call drum_lessons_sub_08a7d7a0
     assess_inputs 1
-    run func_08048264, D_08a43834
+    run drum_lesson_script_import_pattern, D_08a43834
     call drum_lessons_sub_08a7d7a0
     dms_show_dialogue 1
     dms_set_teacher_exp 4

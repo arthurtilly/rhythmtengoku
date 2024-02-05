@@ -693,7 +693,7 @@ void sick_beats_fork_callback(u32 arg0, u32 arg1, struct AffineSprite *sprite) {
 }
 
 // Process Cue
-struct AffineSprite *sick_beats_process_cue(struct SickBeatsCue *info, struct Animation *anim, struct SequenceData *seqData) {
+struct AffineSprite *sick_beats_process_cue(struct SickBeatsCue *info, struct Animation *anim, struct SongHeader *seqData) {
     s16 virusEffectSprite;
     struct SickBeatsVirus *virus = &gSickBeats->virus;
     struct AffineSprite *baseVirusAfSprite = info->virusSprite;

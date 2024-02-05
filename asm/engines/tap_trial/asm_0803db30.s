@@ -141,7 +141,7 @@ branch_0803dc2c: \n\
 /* 0803dc38 */ LDR R0, [R6, 0xC] \n\
 /* 0803dc3a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803dc3c */ BEQ branch_0803dc92 \n\
-/* 0803dc3e */ LDR R2, =D_08aa4460 \n\
+/* 0803dc3e */ LDR R2, =sound_player_table \n\
 /* 0803dc40 */ LDRB R1, [R0, 0x4] \n\
 /* 0803dc42 */ LSLS R1, R1, 0x1B \n\
 /* 0803dc44 */ LSRS R1, R1, 0x1B \n\

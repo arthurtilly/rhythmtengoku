@@ -5,16 +5,16 @@
 @ Load Data
 .macro load_drum_live_labels
     @ Game Events
-    .set EVENT_00,      0x00
+    .set SET_GUITARIST_NEXT_STATE,  0x00
     .set EVENT_01,      0x01
-    .set EVENT_02,      0x02
-    .set EVENT_03,      0x03
-    .set EVENT_04,      0x04
+    .set CLEAR_INPUT_DEF,       0x02
+    .set DEFINE_COOL_INPUTS,    0x03
+    .set DEFINE_LAME_INPUTS,    0x04
     .set EVENT_05,      0x05
     .set EVENT_06,      0x06
     .set EVENT_07,      0x07
-    .set EVENT_08,      0x08
-    .set EVENT_09,      0x09
+    .set SET_ENABLE_BOREDOM,        0x08
+    .set SET_DISABLE_EXCITEMENT,    0x09
 
     @ Cues
     .set CUE_LIVE_00,    0x00
@@ -23,6 +23,11 @@
     .set CUE_LIVE_03,    0x03
     .set CUE_LIVE_04,    0x04
     .set CUE_LIVE_05,    0x05
+
+    @ Versions
+    .set ENGINE_VER_DRUM_GIRLS_LIVE,    0
+    .set ENGINE_VER_DRUM_BOYS_LIVE,     1
+    .set ENGINE_VER_DRUM_BAND_LIVE,     2
 .endm
 
 
@@ -54,9 +59,9 @@
 .endm
 
 
-@ [Event 0x00] ?
-.macro dml_event00 args
-    drum_live_event EVENT_00, \args
+@ [Event 0x00] Set Guitarist Next State
+.macro dml_set_guitarist_next_state mask, state
+    drum_live_event SET_GUITARIST_NEXT_STATE, (((\state) << 2) | ((\mask) & 3))
 .endm
 
 @ [Event 0x01] ?
@@ -64,19 +69,19 @@
     drum_live_event EVENT_01, \args
 .endm
 
-@ [Event 0x02] ?
-.macro dml_event02 args
-    drum_live_event EVENT_02, \args
+@ [Event 0x02] Clear "Cool"/"Lame" Input Definitions
+.macro dml_clear_input_def
+    drum_live_event CLEAR_INPUT_DEF, 0
 .endm
 
-@ [Event 0x03] ?
-.macro dml_event03 args
-    drum_live_event EVENT_03, \args
+@ [Event 0x03] Define "Cool" Inputs
+.macro dml_define_cool_inputs index, keys
+    drum_live_event DEFINE_COOL_INPUTS, (((\keys) << 8) | ((\index) & 0xFF))
 .endm
 
-@ [Event 0x04] ?
-.macro dml_event04 args
-    drum_live_event EVENT_04, \args
+@ [Event 0x04] Define "Lame" Inputs
+.macro dml_define_lame_inputs index, keys
+    drum_live_event DEFINE_LAME_INPUTS, (((\keys) << 8) | ((\index) & 0xFF))
 .endm
 
 @ [Event 0x05] ?
@@ -94,14 +99,14 @@
     drum_live_event EVENT_07, \args
 .endm
 
-@ [Event 0x08] ?
-.macro dml_event08 args
-    drum_live_event EVENT_08, \args
+@ [Event 0x08] Set Enable Boredom Timer
+.macro dml_set_enable_boredom enable
+    drum_live_event SET_ENABLE_BOREDOM, \enable
 .endm
 
-@ [Event 0x09] ?
-.macro dml_event09 args
-    drum_live_event EVENT_09, \args
+@ [Event 0x09] Set Disable Excitement Changes
+.macro dml_set_disable_excitement args
+    drum_live_event SET_DISABLE_EXCITEMENT, \args
 .endm
 
 

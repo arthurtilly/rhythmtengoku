@@ -174,10 +174,10 @@ extern void text_printer_set_shadow_colors(struct TextPrinter *textPrinter, s32 
 extern s32 listbox_get_y(struct Listbox *listbox);
 extern void func_0800ae3c(struct Listbox *listbox, u32 palette);
 extern void func_0800ae88(struct Listbox *listbox);
-extern struct Listbox *create_new_listbox(u16 memID, u32 maxLines, u32 maxWidth, u32 arg3, u32 arg4, u32 palette,
-                                          u32 colors, s32 x, s32 y, u32 z, u32 lineSpacing, u32 selectionItem,
-                                          s32 totalItems, struct Animation *selectionAnim, u32 arg14, u32 selMaxLine,
-                                          u32 selectionLine, const char *getString(), s16 getSprite());
+extern struct Listbox *create_new_listbox(u16 memID, u32 maxLines, u32 maxWidth, u32 arg3, u32 selectedPalette,
+                                            u32 unselectedPalette, u32 colors, s32 x, s32 y, u32 z, u32 lineSpacing,
+                                            u32 selectedItem, s32 totalItems, struct Animation *selectionAnim, u32 selMinLine,
+                                            u32 selMaxLine, u32 selectionLine, const char *getString(), s16 getSprite());
 extern void update_listbox(struct Listbox *listbox);
 extern void delete_listbox(struct Listbox *listbox);
 extern struct TextPrinter *listbox_get_text_printer(struct Listbox *listbox);

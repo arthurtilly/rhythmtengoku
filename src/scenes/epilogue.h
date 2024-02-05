@@ -14,7 +14,7 @@ struct EpilogueSceneData {
     struct BitmapFontOBJ *objFont;
     u32 inputsEnabled;
     const struct GraphicsTable *gfxTable;
-    struct SequenceData *jingle;
+    struct SongHeader *jingle;
 };
 
 
@@ -22,7 +22,7 @@ struct EpilogueSceneData {
 extern union SceneObject epilogue_scene_objects[];
 extern struct CompressedGraphics *epilogue_buffered_textures[];
 extern struct Beatscript epilogue_end_script[];
-extern struct SequenceData *epilogue_jingles[];
+extern struct SongHeader *epilogue_jingles[];
 
 
 // FUNCTIONS

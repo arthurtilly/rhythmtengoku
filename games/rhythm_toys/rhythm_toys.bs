@@ -14,7 +14,7 @@ script script_cat_machine_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_cat_machine_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -36,7 +36,7 @@ script script_love_machine_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_love_machine_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -58,7 +58,7 @@ script script_rap_machine_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_rap_machine_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK

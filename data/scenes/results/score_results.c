@@ -66,7 +66,7 @@ u16 score_results_default_thresholds[] = {
 
 
 // [D_089d7854] Score Result SFX
-struct SequenceData *score_results_reveal_sfx[] = {
+struct SongHeader *score_results_reveal_sfx[] = {
     /* Best */ &s_jingle_hi_level_seqData,
     /* High */ &s_fanfare_drum1_seqData,
     /* OK   */ &s_fanfare_drum2_seqData,

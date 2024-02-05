@@ -15,7 +15,7 @@ script script_snappy_trio_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_snappy_trio_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -110,7 +110,7 @@ script script_snappy_trio_main
     set_tempo 108
     set_music_volume 200
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     play_music s_tebyoushi_dexy_bgm_seqData
     start_perfect_campaign
@@ -548,7 +548,7 @@ script script_snappy_trio_main
     rest 24
     rest 24
     rest 24
-    enable_pause 0
+    enable_pause_menu FALSE
 return
 
 .end

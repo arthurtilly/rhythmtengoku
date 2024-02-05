@@ -132,7 +132,7 @@
 #define SOUNDCNT_DMG_SOUND4_PLAYING   (1 << 3) // Read only
 #define SOUNDCNT_SOUND_CIRCUIT_ENABLE (1 << 7) // Saves battery when disabled
 
-#define REG_SOUNDCNT_X    *(volatile u8*)(IORAMBase + 0x84)
+#define REG_SOUNDCNT_X    *(volatile u16*)(IORAMBase + 0x84)
 
 
 

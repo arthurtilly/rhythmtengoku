@@ -57,7 +57,7 @@ struct MarchingOrdersCue {
 };
 
 struct MarchingSfxData {
-    struct SequenceData *sound;
+    struct SongHeader *sound;
     u16 volume;
     s16 pitch;
 };

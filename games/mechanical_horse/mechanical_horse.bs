@@ -14,7 +14,7 @@ script script_mechanical_horse_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_mechanical_horse_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -85,7 +85,7 @@ script script_mechanical_horse_main
     enable_play_inputs 0
     mechanical_horse_event02 D_0805c684
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     enable_play_inputs 1
     mechanical_horse_event02 D_0805c69c
@@ -371,7 +371,7 @@ script script_mechanical_horse_main
         run beatscript_enable_loops, 0
     loop_end
     assess_inputs 0
-    enable_pause 0
+    enable_pause_menu FALSE
     mechanical_horse_event03 1
     mechanical_horse_event04 0
     mechanical_horse_event02 D_0805c75c
@@ -385,7 +385,7 @@ script script_mechanical_horse_main
     rest 12
     rest 12
     run gameplay_enable_tutorial, 0
-    enable_pause 0
+    enable_pause_menu FALSE
 return
 
 .end

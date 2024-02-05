@@ -21,7 +21,7 @@ struct CompressedGraphics *epilogue_buffered_textures[] = {
 asm(".include \"data/scenes/epilogue/ending_script.inc\"");
 
 // [D_089d7b64] Epilogue Jingles
-struct SequenceData *epilogue_jingles[] = {
+struct SongHeader *epilogue_jingles[] = {
     /* Try Again */ &s_epilogue_fan2_seqData,
     /* OK        */ &s_epilogue_fan2_seqData,
     /* Superb    */ &s_epilogue_fan1_seqData

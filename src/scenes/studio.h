@@ -174,7 +174,7 @@ struct StudioSceneData {
     u8 warningOption;
     void (*warningEvent)(s32 event, s32 arg);
     s32 warningEventArg;
-    struct SequenceData *warningSfx;
+    struct SongHeader *warningSfx;
     s16 warningAdvIcon;
     struct TextPrinter *warningPrinter;
 
@@ -211,7 +211,7 @@ extern struct Scene D_089d49d4; // Studio Drumming - Drumming
 extern void studio_warning_show(void);
 extern void studio_warning_init(void);
 extern void studio_warning_update(void);
-extern void studio_warning_create(u32 options, const char *dialogue, void eventFunc(s32, s32), s32 eventArg, struct SequenceData *sfx);
+extern void studio_warning_create(u32 options, const char *dialogue, void eventFunc(s32, s32), s32 eventArg, struct SongHeader *sfx);
 extern void studio_warning_remove(void);
 
 extern void unlock_default_studio_songs(void);

@@ -221,7 +221,7 @@ u8 space_gramps_anim_map[] = {
 };
 
 // [D_089e6e9c] Sound Effects for Dancer Actions
-struct SequenceData *space_dancer_sounds[] = {
+struct SongHeader *space_dancer_sounds[] = {
     /* 0x00 */ NULL,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,

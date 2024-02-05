@@ -193,7 +193,7 @@ extern void sick_beats_cue_spawn(struct Cue *, struct SickBeatsCue *, u32 unused
 extern u32  sick_beats_cue_update(struct Cue *, struct SickBeatsCue *, u32 runningTime, u32 duration); // Cue - Update
 extern void sick_beats_cue_despawn(struct Cue *, struct SickBeatsCue *); // Cue - Despawn
 extern void sick_beats_fork_callback(u32, u32, struct AffineSprite *); // Fork Sprite End Callback
-extern struct AffineSprite *sick_beats_process_cue(struct SickBeatsCue *, struct Animation *, struct SequenceData *); // Process Cue
+extern struct AffineSprite *sick_beats_process_cue(struct SickBeatsCue *, struct Animation *, struct SongHeader *); // Process Cue
 extern void sick_beats_cue_hit(struct Cue *, struct SickBeatsCue *, u32 pressed, u32 released); // Cue - Hit
 extern void sick_beats_cue_barely(struct Cue *, struct SickBeatsCue *, u32 pressed, u32 released); // Cue - Barely
 extern void sick_beats_cue_miss(struct Cue *, struct SickBeatsCue *); // Cue - Miss

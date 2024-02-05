@@ -19,7 +19,7 @@ script script_remix_5_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_remix_5_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -121,7 +121,7 @@ script script_remix_5_main
     print_text_s D_0806a2f4
     rest 24
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     bouncy_road_set_bounce_height 192
     play_music s_wish_bgm_seqData
     rest 24
@@ -849,7 +849,7 @@ script script_remix_5_main
     rest 24
     rest 24
     rest 24
-    enable_pause 0
+    enable_pause_menu FALSE
 return
 
 .end

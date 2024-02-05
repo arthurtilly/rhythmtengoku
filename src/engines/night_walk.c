@@ -34,6 +34,7 @@ enum BridgeTypesEnum {
 
 
 static struct DrumTechController *D_03001568;
+static s32 D_0300156c; // Unused, Unknown Location
 
 
 // Init. Play-Yan
@@ -465,7 +466,7 @@ void update_drumtech_timers(void) {
     for (i = 0; i < ARRAY_COUNT(D_03001568->soundTimers); i++) {
         if (D_03001568->soundTimers[i] > 0) {
             if (--D_03001568->soundTimers[i] == 0) {
-                stop_soundplayer(D_08aa4460[i].soundPlayer);
+                stop_soundplayer(sound_player_table[i].soundPlayer);
             }
         }
     }
@@ -612,7 +613,7 @@ void play_drumtech_kit_no_anim(const struct DrumTechKit *drumKit, u32 inputs) {
 
 // Update DrumTech Open/Close Hi-Hat
 void update_drumtech_open_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 released) {
-    struct SequenceData *const *sounds = D_089e2ef8;
+    struct SongHeader *const *sounds = D_089e2ef8;
     s16 hiHatSprite = D_03001568->hiHatSprite;
 
     if (inputs & DPAD_UP) {
@@ -744,7 +745,7 @@ void stop_drumtech(void) {
 
     for (i = 0; i < ARRAY_COUNT(D_03001568->soundTimers); i++) {
         if (D_03001568->soundTimers[i] != 0) {
-            stop_soundplayer(D_08aa4460[i].soundPlayer);
+            stop_soundplayer(sound_player_table[i].soundPlayer);
         }
     }
 }

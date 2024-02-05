@@ -15,7 +15,7 @@ script script_marching_orders_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_marching_orders_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -36,7 +36,7 @@ script script_marching_orders_skipped_practice_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_marching_orders_skipped_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -217,13 +217,13 @@ script script_marching_orders_main
     rest 24
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
-    enable_pause 0
+    enable_pause_menu FALSE
 return
 
 
 script script_marching_orders_practice
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     assess_inputs 0
     marching_orders_event02 0
     set_tempo 135
@@ -394,7 +394,7 @@ script script_marching_orders_skipped_practice
     set_game_fade_in_time 0
     set_tempo 120
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     goto script_marching_orders_main
 

@@ -103,7 +103,7 @@ interrupt_handler_infinite_loop:
 .section .rodata
 
 glabel interrupt_handler_jtbl_rom
-/* 0804f300 */ .word func_08049144 @ INTERRUPT_DMA2
+/* 0804f300 */ .word midi_interrupt_dma2 @ INTERRUPT_DMA2
 /* 0804f304 */ .word func_08001380 @ INTERRUPT_VBLANK
 /* 0804f308 */ .word func_080091a4 @ INTERRUPT_HBLANK
 /* 0804f30c */ .word func_08009268 @ INTERRUPT_VCOUNT

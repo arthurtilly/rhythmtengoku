@@ -23,7 +23,7 @@ script script_remix_8_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_remix_8_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -123,7 +123,7 @@ script script_remix_8_main
     set_music_volume 256
     start_perfect_campaign
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     play_music L8_pat_intro_seqData
     call marching_orders_sub_08a83848
@@ -795,7 +795,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
-    enable_pause 0
+    enable_pause_menu FALSE
 return
 
 .end

@@ -15,7 +15,7 @@ script script_toss_boys_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_toss_boys_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -36,7 +36,7 @@ script script_toss_boys_skipped_practice_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_toss_boys_skipped_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -948,7 +948,7 @@ script script_toss_boys_main
     rest 24
     rest 24
     rest 24
-    enable_pause 0
+    enable_pause_menu FALSE
     rest 24
 return
 
@@ -957,7 +957,7 @@ script script_toss_boys_practice
     assess_inputs 0
     print_text_s D_0805d7b4
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     run gameplay_set_tutorial scene_toss_boys_skipped_practice
     rest 24
     rest 24
@@ -1605,7 +1605,7 @@ script script_toss_boys_practice
 script script_toss_boys_skipped_practice
     set_tempo 120
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     goto script_toss_boys_main
 

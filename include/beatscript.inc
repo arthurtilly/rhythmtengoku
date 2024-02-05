@@ -53,7 +53,7 @@
 
 
 @ [RIQ] Enable Pause Menu
-.macro enable_pause enable
+.macro enable_pause_menu enable
     run func_0801db04, \enable
 .endm
 

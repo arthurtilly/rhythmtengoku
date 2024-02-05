@@ -1,230 +1,298 @@
 #pragma once
 
-#define INSTRUMENT_PCM_PITCHED 0x41
-#define INSTRUMENT_PCM_UNPITCHED 0x46
-#define INSTRUMENT_PSG 0x50
-#define INSTRUMENT_SUBBANK_SINGLE_KEY 0x52
-#define INSTRUMENT_SUBBANK_MULTI_KEY 0x53
-
-#define PSG_PULSE_CHANNEL_1 0
-#define PSG_PULSE_CHANNEL_2 1
-#define PSG_WAVE_CHANNEL 2
-#define PSG_NOISE_CHANNEL 3
+enum PsgChannelsEnum {
+    /* 00 */ PSG_PULSE_CHANNEL_1,
+    /* 01 */ PSG_PULSE_CHANNEL_2,
+    /* 02 */ PSG_WAVE_CHANNEL,
+    /* 03 */ PSG_NOISE_CHANNEL,
+    /* -- */ TOTAL_PSG_CHANNELS
+};
 
 enum SoundPlayersEnum {
-    MUSIC_PLAYER_0,
-    MUSIC_PLAYER_1,
-    MUSIC_PLAYER_2,
-    SFX_PLAYER_0,
-    SFX_PLAYER_1,
-    SFX_PLAYER_2,
-    SFX_PLAYER_3,
-    SFX_PLAYER_4,
-    SFX_PLAYER_5,
-    SFX_PLAYER_6,
-    SFX_PLAYER_7,
-    SFX_PLAYER_8,
-    SFX_PLAYER_9,
-    DEFAULT_SOUND_PLAYER = 0xFF
+    /* 00 */ MUSIC_PLAYER_0,
+    /* 01 */ MUSIC_PLAYER_1,
+    /* 02 */ MUSIC_PLAYER_2,
+    /* 03 */ SFX_PLAYER_0,
+    /* 04 */ SFX_PLAYER_1,
+    /* 05 */ SFX_PLAYER_2,
+    /* 06 */ SFX_PLAYER_3,
+    /* 07 */ SFX_PLAYER_4,
+    /* 08 */ SFX_PLAYER_5,
+    /* 09 */ SFX_PLAYER_6,
+    /* 10 */ SFX_PLAYER_7,
+    /* 11 */ SFX_PLAYER_8,
+    /* 12 */ SFX_PLAYER_9,
+    /* -1 */ DEFAULT_SOUND_PLAYER = 0xFF
 };
 
 enum MidiTracksEnum {
-    MIDI_TRACK_0,
-    MIDI_TRACK_1,
-    MIDI_TRACK_2,
-    MIDI_TRACK_3,
-    MIDI_TRACK_4,
-    MIDI_TRACK_5,
-    MIDI_TRACK_6,
-    MIDI_TRACK_7,
-    MIDI_TRACK_8,
-    MIDI_TRACK_9,
-    MIDI_TRACK_10,
-    MIDI_TRACK_11,
-    MIDI_TRACK_12,
-    MIDI_TRACK_13,
-    MIDI_TRACK_14,
-    MIDI_TRACK_15
+    MIDI_TRACK_0    = (1 << 0),
+    MIDI_TRACK_1    = (1 << 1),
+    MIDI_TRACK_2    = (1 << 2),
+    MIDI_TRACK_3    = (1 << 3),
+    MIDI_TRACK_4    = (1 << 4),
+    MIDI_TRACK_5    = (1 << 5),
+    MIDI_TRACK_6    = (1 << 6),
+    MIDI_TRACK_7    = (1 << 7),
+    MIDI_TRACK_8    = (1 << 8),
+    MIDI_TRACK_9    = (1 << 9),
+    MIDI_TRACK_10   = (1 << 10),
+    MIDI_TRACK_11   = (1 << 11),
+    MIDI_TRACK_12   = (1 << 12),
+    MIDI_TRACK_13   = (1 << 13),
+    MIDI_TRACK_14   = (1 << 14),
+    MIDI_TRACK_15   = (1 << 15)
 };
 
 enum DirectSoundModesEnum {
-    DIRECTSOUND_MODE_STEREO,
-    DIRECTSOUND_MODE_MONO1,
-    DIRECTSOUND_MODE_MONO2
+    /* 00 */ DIRECTSOUND_MODE_STEREO,
+    /* 01 */ DIRECTSOUND_MODE_MONO1,
+    /* 02 */ DIRECTSOUND_MODE_MONO2
 };
 
 enum InstrumentBanksEnum {
-	INST_BANK_UNUSED_0,
-	INST_BANK_UNUSED_1,
-	INST_BANK_UNUSED_2,
-	INST_BANK_UNUSED_3,
-	INST_BANK_UNUSED_4,
-	INST_BANK_54,
-	INST_BANK_UNUSED_5,
-	INST_BANK_UNUSED_7,
-	INST_BANK_UNUSED_8,
-	INST_BANK_UNUSED_9,
-	INST_BANK_UNUSED_10,
-	INST_BANK_UNUSED_11,
-	INST_BANK_UNUSED_12,
-	INST_BANK_UNUSED_13,
-	INST_BANK_UNUSED_14,
-	INST_BANK_UNUSED_15,
-	INST_BANK_UNUSED_16,
-	INST_BANK_55,
-	INST_BANK_1,
-	INST_BANK_2,
-	INST_BANK_3,
-	INST_BANK_4,
-	INST_BANK_5,
-	INST_BANK_6,
-	INST_BANK_7,
-	INST_BANK_8,
-	INST_BANK_9,
-	INST_BANK_10,
-	INST_BANK_11,
-	INST_BANK_12,
-	INST_BANK_13,
-	INST_BANK_14,
-	INST_BANK_15,
-	INST_BANK_16,
-	INST_BANK_17,
-	INST_BANK_UNUSED_35,
-	INST_BANK_UNUSED_36,
-	INST_BANK_UNUSED_37,
-	INST_BANK_UNUSED_38,
-	INST_BANK_UNUSED_39,
-	INST_BANK_47,
-	INST_BANK_49,
-	INST_BANK_50,
-	INST_BANK_48,
-	INST_BANK_UNUSED_44,
-	INST_BANK_51,
-	INST_BANK_52,
-	INST_BANK_53,
-	INST_BANK_UNUSED_48,
-	INST_BANK_UNUSED_49,
-	INST_BANK_18,
-	INST_BANK_19,
-	INST_BANK_20,
-	INST_BANK_21,
-	INST_BANK_22,
-	INST_BANK_23,
-	INST_BANK_24,
-	INST_BANK_25,
-	INST_BANK_26,
-	INST_BANK_27,
-	INST_BANK_28,
-	INST_BANK_29,
-	INST_BANK_30,
-	INST_BANK_31,
-	INST_BANK_32,
-	INST_BANK_33,
-	INST_BANK_34,
-	INST_BANK_35,
-	INST_BANK_36,
-	INST_BANK_37,
-	INST_BANK_38,
-	INST_BANK_39,
-	INST_BANK_40,
-	INST_BANK_41,
-	INST_BANK_42,
-	INST_BANK_43,
-	INST_BANK_44,
-	INST_BANK_45,
-	INST_BANK_46,
-	INST_BANK_UNUSED_79,
-	INST_BANK_UNUSED_80,
-	INST_BANK_UNUSED_81,
-	INST_BANK_UNUSED_82,
-	INST_BANK_UNUSED_83,
-	INST_BANK_UNUSED_84,
-	INST_BANK_UNUSED_85,
-	INST_BANK_UNUSED_86,
-	INST_BANK_UNUSED_87,
-	INST_BANK_UNUSED_88,
-	INST_BANK_UNUSED_89,
-	INST_BANK_UNUSED_90,
-	INST_BANK_UNUSED_91,
-	INST_BANK_UNUSED_92,
-	INST_BANK_UNUSED_93,
-	INST_BANK_UNUSED_94,
-	INST_BANK_UNUSED_95,
-	INST_BANK_UNUSED_96,
-	INST_BANK_UNUSED_97,
-	INST_BANK_UNUSED_98,
-	INST_BANK_UNUSED_99,
-	INST_BANK_56,
-	INST_BANK_57,
-	INST_BANK_58,
-	INST_BANK_59,
-	INST_BANK_60,
-	INST_BANK_61,
-	INST_BANK_UNUSED_106,
-	INST_BANK_UNUSED_107,
-	INST_BANK_UNUSED_108,
-	INST_BANK_UNUSED_109,
-	INST_BANK_62,
-	INST_BANK_63
+	/* 000 */ INST_BANK_UNUSED_0,
+	/* 001 */ INST_BANK_UNUSED_1,
+	/* 002 */ INST_BANK_UNUSED_2,
+	/* 003 */ INST_BANK_UNUSED_3,
+	/* 004 */ INST_BANK_UNUSED_4,
+	/* 005 */ INST_BANK_54,
+	/* 006 */ INST_BANK_UNUSED_5,
+	/* 007 */ INST_BANK_UNUSED_7,
+	/* 008 */ INST_BANK_UNUSED_8,
+	/* 009 */ INST_BANK_UNUSED_9,
+	/* 010 */ INST_BANK_UNUSED_10,
+	/* 011 */ INST_BANK_UNUSED_11,
+	/* 012 */ INST_BANK_UNUSED_12,
+	/* 013 */ INST_BANK_UNUSED_13,
+	/* 014 */ INST_BANK_UNUSED_14,
+	/* 015 */ INST_BANK_UNUSED_15,
+	/* 016 */ INST_BANK_UNUSED_16,
+	/* 017 */ INST_BANK_55,
+	/* 018 */ INST_BANK_1,
+	/* 019 */ INST_BANK_2,
+	/* 020 */ INST_BANK_3,
+	/* 021 */ INST_BANK_4,
+	/* 022 */ INST_BANK_5,
+	/* 023 */ INST_BANK_6,
+	/* 024 */ INST_BANK_7,
+	/* 025 */ INST_BANK_8,
+	/* 026 */ INST_BANK_9,
+	/* 027 */ INST_BANK_10,
+	/* 028 */ INST_BANK_11,
+	/* 029 */ INST_BANK_12,
+	/* 030 */ INST_BANK_13,
+	/* 031 */ INST_BANK_14,
+	/* 032 */ INST_BANK_15,
+	/* 033 */ INST_BANK_16,
+	/* 034 */ INST_BANK_17,
+	/* 035 */ INST_BANK_UNUSED_35,
+	/* 036 */ INST_BANK_UNUSED_36,
+	/* 037 */ INST_BANK_UNUSED_37,
+	/* 038 */ INST_BANK_UNUSED_38,
+	/* 039 */ INST_BANK_UNUSED_39,
+	/* 040 */ INST_BANK_47,
+	/* 041 */ INST_BANK_49,
+	/* 042 */ INST_BANK_50,
+	/* 043 */ INST_BANK_48,
+	/* 044 */ INST_BANK_UNUSED_44,
+	/* 045 */ INST_BANK_51,
+	/* 046 */ INST_BANK_52,
+	/* 047 */ INST_BANK_53,
+	/* 048 */ INST_BANK_UNUSED_48,
+	/* 049 */ INST_BANK_UNUSED_49,
+	/* 050 */ INST_BANK_18,
+	/* 051 */ INST_BANK_19,
+	/* 052 */ INST_BANK_20,
+	/* 053 */ INST_BANK_21,
+	/* 054 */ INST_BANK_22,
+	/* 055 */ INST_BANK_23,
+	/* 056 */ INST_BANK_24,
+	/* 057 */ INST_BANK_25,
+	/* 058 */ INST_BANK_26,
+	/* 059 */ INST_BANK_27,
+	/* 060 */ INST_BANK_28,
+	/* 061 */ INST_BANK_29,
+	/* 062 */ INST_BANK_30,
+	/* 063 */ INST_BANK_31,
+	/* 064 */ INST_BANK_32,
+	/* 065 */ INST_BANK_33,
+	/* 066 */ INST_BANK_34,
+	/* 067 */ INST_BANK_35,
+	/* 068 */ INST_BANK_36,
+	/* 069 */ INST_BANK_37,
+	/* 070 */ INST_BANK_38,
+	/* 071 */ INST_BANK_39,
+	/* 072 */ INST_BANK_40,
+	/* 073 */ INST_BANK_41,
+	/* 074 */ INST_BANK_42,
+	/* 075 */ INST_BANK_43,
+	/* 076 */ INST_BANK_44,
+	/* 077 */ INST_BANK_45,
+	/* 078 */ INST_BANK_46,
+	/* 079 */ INST_BANK_UNUSED_79,
+	/* 080 */ INST_BANK_UNUSED_80,
+	/* 081 */ INST_BANK_UNUSED_81,
+	/* 082 */ INST_BANK_UNUSED_82,
+	/* 083 */ INST_BANK_UNUSED_83,
+	/* 084 */ INST_BANK_UNUSED_84,
+	/* 085 */ INST_BANK_UNUSED_85,
+	/* 086 */ INST_BANK_UNUSED_86,
+	/* 087 */ INST_BANK_UNUSED_87,
+	/* 088 */ INST_BANK_UNUSED_88,
+	/* 089 */ INST_BANK_UNUSED_89,
+	/* 090 */ INST_BANK_UNUSED_90,
+	/* 091 */ INST_BANK_UNUSED_91,
+	/* 092 */ INST_BANK_UNUSED_92,
+	/* 093 */ INST_BANK_UNUSED_93,
+	/* 094 */ INST_BANK_UNUSED_94,
+	/* 095 */ INST_BANK_UNUSED_95,
+	/* 096 */ INST_BANK_UNUSED_96,
+	/* 097 */ INST_BANK_UNUSED_97,
+	/* 098 */ INST_BANK_UNUSED_98,
+	/* 099 */ INST_BANK_UNUSED_99,
+	/* 100 */ INST_BANK_56,
+	/* 101 */ INST_BANK_57,
+	/* 102 */ INST_BANK_58,
+	/* 103 */ INST_BANK_59,
+	/* 104 */ INST_BANK_60,
+	/* 105 */ INST_BANK_61,
+	/* 106 */ INST_BANK_UNUSED_106,
+	/* 107 */ INST_BANK_UNUSED_107,
+	/* 108 */ INST_BANK_UNUSED_108,
+	/* 109 */ INST_BANK_UNUSED_109,
+	/* 110 */ INST_BANK_62,
+	/* 111 */ INST_BANK_63
 };
 
+
+/* INSTRUMENT DATA STRUCTURES */
+
+
+// Sample Data (known in M4A as "WaveData")
+    // Contains information from header and sampler data sections of standard
+    // audio file formats.
+    //
+    // Both 'loopStart' and 'loopEnd' must be set to 0 for there to be no loop.
 struct SampleData {
-	u32 length;
-	u32 sampleRate;
-	u32 pitch;
-	u32 loopStart;
-	u32 loopEnd;
-	const u32 *romAddress;
+	u32 length;     // Waveform length, in bytes.
+	u32 sampleRate; // Base samplerate, in Hertz.
+	u32 pitch;      // Sample base MIDI key.
+	u32 loopStart;  // Sample loop start offset, in bytes.
+	u32 loopEnd;    // Sample loop end offset, in bytes.
+	const u32 *waveform; // Waveform address.
 };
 
-struct InstrumentHeader {
-	u8 type;
-	u8 unk1;
-	u16 unk2;
+// Instrument Data (known in M4A as "ToneData")
+    // Contains information akin to standard MIDI sound bank file formats,
+    // and up to 128 may appear (directly) in each bank.
+union Instrument {
+    u8 *type;
+    struct InstrumentPCM *pcm;
+    struct InstrumentPSG *psg;
+    struct InstrumentSubRhythm *rhy;
+    struct InstrumentSubSplit *spl;
 };
 
+// PCM Instrument Data
+    // Contains note playback information for PCM sampled instruments.
+    //
+    // The type can be either PCM_ALIGNED ('A') or PCM_FIXED ('F'). The former
+    // allows the tone to play at a variety of keys/pitches. The latter
+    // forces the tone to output its samples to the PCM buffer at a 1:1 rate,
+    // which may have unintended results if the waveform samplerate does not
+    // match the global output samplerate (13379Hz by default).
+    //
+    // The 'key' and 'panning' fields provide default values to use only when
+    // called as part of a percussion bank.
 struct InstrumentPCM {
-	struct InstrumentHeader header;
-	struct SampleData *sample;
-	u32 unk8;
-	u32 unkC;
-	u32 unk10;
-	u32 unk14;
-	u32 unk18;
-	u32 unk1C;
+	u8 type;        // Tone type (common). Always either PCM_ALIGNED or PCM_FIXED.
+	u8 key:7;       // Default MIDI key, if part of a percussion bank.
+    u8 fastRead:1;  // If TRUE, use Fast-Resample PCM read method.
+	s16 panning;    // Default MIDI panning, if part of a percussion bank.
+	struct SampleData *sample;  // Sampling data.
+	s32 initial;    // Q16.16 ADSR initial envelope value.
+	s32 sustain;    // Q16.16 ADSR envelope level during SUSTAIN stage.
+	s32 attack;     // Q16.16 ADSR inc. during ATTACK stage.
+	s32 decay;      // Q16.16 ADSR dec. during DECAY stage.
+	s32 fade;       // Q16.16 ADSR dec. during SUSTAIN stage.
+	s32 release;    // Q16.16 ADSR dec. during RELEASE stage.
 };
 
+// PSG Instrument Data
+    // Contains note playback information for instruments output through the
+    // CGB sound channels.
+    //
+    // The type can be either PSG ('P') or PSG_ALT ('Q'). There is no functional
+    // difference between these two types, and the latter is never used in
+    // Rhythm Tengoku.
+    //
+    // The 'key' and 'panning' fields provide default values to use only when
+    // called as part of a percussion bank.
 struct InstrumentPSG {
-	struct InstrumentHeader header;
-	void *waveChannel;
-	u32 unk8;
-	u32 unkC;
-	u32 unk10;
-	u32 unk14;
-	u32 unk18;
-	u32 unk1C;
-	u8 channel;
-	u8 unk21;
-	u8 unk22;
+	u8 type;        // Tone type (common). Always either PSG or PSG_ALT.
+	u8 key;         // Base MIDI key, if part of a percussion bank.
+	s16 panning;    // Base MIDI panning, if part of a percussion bank.
+	u32 *wavetable; // 4-bit waveform (32 samples), for the WAVE channel.
+	s32 initial;    // Q16.16 ADSR initial envelope value.
+	s32 sustain;    // Q16.16 ADSR envelope level during SUSTAIN stage.
+	s32 attack;     // Q16.16 ADSR inc. during ATTACK stage.
+	s32 decay;      // Q16.16 ADSR dec. during DECAY stage.
+	s32 fade;       // Q16.16 ADSR dec. during SUSTAIN stage.
+	s32 release;    // Q16.16 ADSR dec. during RELEASE stage.
+	u32 channel:2;  // Target CGB sound channel.
+	u32 length:8;   // Note length (inserted directly into the relevant sound register).
+	u32 sweep:7;    // Sweep parameters (all, inserted directly into REG_SOUND1CNT_L).
+    u32 dutyTone:2; // Duty cycle, for PULSE channels.
+    u32 dutyNoise:13; // Duty cycle, for the NOISE channel.
 };
 
-struct InstrumentSubbankSingleKey {
-	struct InstrumentHeader header;
-	void *subbank;
+// Percussion Bank Data
+    // Contains an instrument bank and the base MIDI key which instrument
+    // mapping starts on.
+    //
+    // The type can only be SUB_RHYTHM ('R'). The label "rhythm" originates
+    // from M4A.
+    //
+    // Unintended playback or crashes may occur if the instrument is made to
+    // perform a note lower than its base key. Additionally, if the requested
+    // instrument within the sub-bank is another sub-bank instrument, playback
+    // will be denied entirely.
+struct InstrumentSubRhythm {
+	u32 type:8;         // Tone type (common). Always SUB_RHYTHM.
+	u32 baseKey:24;     // Base MIDI key where instrument mapping starts.
+	union Instrument *subBank;  // Instrument sub-bank.
 };
 
-struct InstrumentSubbankMultiKey {
-	struct InstrumentHeader header;
-	void *unk4;
-	void *subbank;
+// Multi-Instrument Data
+    // Contains an instrument bank, an array of key-instrument mappings,
+    // and the base MIDI key which key-instrument mapping starts on.
+    //
+    // The type can only be SUB_SPLIT ('S'). The label "split" originates
+    // from M4A.
+    //
+    // Unintended playback or crashes may occur if the instrument is made to
+    // perform a note lower than its base key, and/or if the key split table
+    // requests an out-of-range instrument. Additionally, if the requested
+    // instrument within the sub-bank is another sub-bank instrument, playback
+    // will be denied entirely.
+struct InstrumentSubSplit {
+    u32 type:8;         // Tone type (common). Always SUB_SPLIT.
+	u32 baseKey:24;     // Base MIDI key where key-instrument mapping starts.
+	u8 *keySplitTable;  // Key-instrument mapping table.
+	union Instrument *subBank;  // Instrument sub-bank.
 };
 
-typedef struct InstrumentHeader *InstrumentBank[];
-
-union Instrument;
-
-struct SequenceData {
-    const u8 *romAddress;
+// Song Header (name from M4A)
+    // The main sound file to be referenced throughout a project using the
+    // MIDI library. Contains the primary playback information for a music
+    // sequence.
+    //
+    // The 'songNum' field is a holdover from M4A, though it is still used when
+    // determining the default SoundPlayer to play this song with, despite the
+    // presence of a 'soundPlayer' field here (which is never read).
+struct SongHeader {
+    const u8 *midiSequence;
     u32 soundPlayer:5;
     u32 soundBank:10;
     u32 volume:7;
@@ -234,196 +302,242 @@ struct SequenceData {
     u32 songNum;
 };
 
-/* MIDI PLAYER DEVICES */
 
+/* MEMORY STRUCTURES */
+
+
+// MIDI Channel
+    // Strongly resembling the MIDI Channel of General MIDI specifications,
+    // containing runtime instrument playback memory. Some fields are
+    // modifiable but serve no purpose in the library.
+    //
+    // Despite General MIDI separating MIDI Channels from MIDI Tracks, the
+    // library always uses the Track ID wherever the Channel ID would be
+    // requested.
 struct MidiChannel {
-    u32 unk0_b0:1;      // ??? [default = 0]
-    u32 unk0_b1:1;      // ??? [default = 0]
-    u32 instPatch:7;    // Instrument Patch Number [mEvnt_C; default = 0]
-    u32 bankSelect:14;  // Bank Select? [mCtrl_00; mCtrl_20; default = 0]
-    u32 volume:7;       // Channel Volume [mCtrl_07; default = 0x64]
-    u32 filterEQ:1;     // Compression? Dampen? [mCtrl_48; default = 0]
-    u32 stereo:1;       // Offset/Split Stereo Effect [mCtrl_4B; default = 0]
-    u32 panning:7;      // Channel Panning [mCtrl_0A; default = 0x40]
-    u32 expression:7;   // Expression [mCtrl_0B; default = 0x7f]
-    u32 modDepth:7;     // Modulation Depth [mCtrl_01; default = 0]
-    u32 unk4_b21:7;     // ??? [default = 0]
-    u32 modType:2;      // Modulation Type [default = 0] { 0 = Pitch; 1 = Volume (Tremolo); 2 = Panning }
-    u32 unk4_b30:2;     // ??? (might be unused) [no default]
-    u32 pitchWheel:14;  // Pitch Wheel [mEvnt_E; default = 0x2000]
-    u32 volumeWheel:8;  // Volume Wheel? [no default]
-    u32 priority:10;    // Priority [mCtrl_20; default = 0]
-    u8  unkC;           // ??? [default = 1]
-    s8  modResult;      // Modulation Result [mCtrl_01; default = 0]
-    u8  unkE;
-    u8  modRange;       // Pitch Wheel Range [mCtrl_14; default = 2]
-    u16 modSpeed;       // Modulation Counter Increment [mCtrl_15; default = 0x3C00]
-    u16 modCount;       // Modulation Counter (ticks Up) [mCtrl_15; default = 0]
-    u8  modDelay;       // Modulation Delay Time [mCtrl_1A; default = 0]
-    u8  modDelayCount;  // Modulation Delay Counter (ticks down) [mCtrl_1A; default = 0]
-    u16 rndmPitchFloor; // Random Pitch Minimum [mCtrl_52; default = 0x100]
-    u16 rndmPitchRange; // Random Pitch Range [mCtrl_52; default = 0]
-    u16 rndmPitch;      // Random Pitch Result [mCtrl_52; default = 0x100]
-    u8  unk1C;          // [default = 0]
-    u8  unk1D;          // [default = 0]
-    u8  unk1E;          // [default = 0]
+    u32 disabled:1;     // Disable channel.
+    u32 fixedPitch:1;   // Disable pitch modulation.
+    u32 instPatch:7;    // Instrument patch number (0-127).
+    u32 bankSelect:14;  // Target bank (unused - MIDI specification only).
+    u32 volume:7;       // Volume level (0-127).
+    u32 filterEQ:1;     // Apply EQ filter to output.
+    u32 phaseStereo:1;  // Apply stereo phase effect.
+    u32 panning:7;      // Panning level (0-64-127).
+    u32 expression:7;   // Expression level (0-127).
+    u32 modDepth:7;     // Modulation depth.
+    u32 unk4_b21:7;     // Unknown modifiable value (defaults to 0).
+    u32 modType:2;      // Modulation target (defaults to PITCH).
+    u32 unk4_b30:2;     // Unused
+    u32 pitchWheel:14;  // 14-bit signed pitch envelope.
+    u32 volumeWheel:8;  // 8-bit unsigned volume envelope.
+    u32 priority:10;    // Priority.
+    u8  modRange;       // Modulation range.
+    s8  modResult;      // Modulation value.
+    u8  unkE;           // Unused
+    u8  pitchRange;     // Pitch wheel range, in octaves (defaults to 2).
+    u16 modSpeed;       // Q8.8 modulation counter increment (defaults to 60.0).
+    u16 modCount;       // Q8.8 modulation counter, ticking up.
+    u8  modDelay;       // Modulation base delay time, in frames.
+    u8  modDelayCount;  // Modulation delay clock, ticking down to 0.
+    u16 randomPitchFloor;   // Q8.8 random base pitch - minimum.
+    u16 randomPitchRange;   // Q8.8 random base pitch - range.
+    u16 randomPitchResult;  // Q8.8 random base pitch - value.
+    u8  keyModDepth;        // Random key modulation - max offset.
+    u8  keyModInterval;     // Random key modulation - interval.
+    u8  keyModCount;        // Random key modulation - clock.
 };
 
+// MIDI Channel Bus
+    // Manages MIDI Channel output for all given tracks for a SoundPlayer,
+    // including allocation of playback to output Sound Channels.
 struct MidiBus {
-    u8  busVolume;
-    u8  trackVolume;
-    u16 trackSelect;
-    s8  key;
-    s8  panning;
-    s16 pitch;
-    u16 unk8;
-    const u16 *tuningTable;
-    const union Instrument *soundBank;
-    u32 totalChannels:5;
-    u32 priority:27;
-    struct MidiChannel *midiChannel;
-    s8  unk1C[12];
+    u8  volumeA;            // Primary volume level.
+    u8  volumeB;            // Secondary volume level.
+    u16 volumeTrackMap;     // Bitmask mapping of MIDI Tracks to primary or secondary volume levels.
+    s8  key;                // Output MIDI key offset.
+    s8  panning;            // Output panning offset.
+    s16 pitch;              // Q8.8 output pitch offset.
+    u16 unk8;               // Q8.8 unknown modifiable value (defaults to 20.0).
+    u16 *tuningTable;       // MIDI key frequency table.
+    union Instrument *soundBank;     // Instrument bank.
+    u32 totalChannels:5;             // Total number of MidiChannels controlled by this MidiBus.
+    u32 priority:27;                 // Priority value.
+    struct MidiChannel *midiChannel; // Child MIDI Channels.
+    s8  keyModScale[12];             // Offsets for each key in an octave for randomised key modulation.
 };
 
+// MIDI Track Stream/Reader
+    // Reads instructions from a specific MIDI Track.
+    //
+    // Despite General MIDI specifications, each of these streams has a respective
+    // MIDI Channel which it will always provide instructions for.
 struct MidiTrackStream {
-    u32 active_curr:1;  // Active State (Current)
-    u32 active_loop:1;  // Active State (At Loop Start)
-    u32 command_curr:8; // Command (Current)
-    u32 command_loop:8; // Command (At Loop Start)
-    u32 inLoop:1;       // Reader is within MIDI loop region (note: label may not be accurate). [default = 0]
-    u8 *stream_start;   // Stream Position: Track Start
-    u8 *stream_curr;    // Stream Position: Current
-    u32 unkC;           // ?? ( = initial deltaTime << 8)
-    u8 *stream_loop;    // Stream Position: Loop Start
-    u32 unk14;          // ?? (may be unused?)
-    u32 runningTime;    // Time until next instruction? (already parsed from variable-length quantity)
+    u32 active:1;           // TRUE if active.
+    u32 activeAtLoop:1;     // TRUE if active at Loop Start.
+    u32 command:8;          // Buffered MIDI instruction.
+    u32 commandAtLoop:8;    // Buffered MIDI instruction at Loop Start.
+    u32 withinLoop:1;       // TRUE if this stream has been updated for the loop region.
+    const u8 *startPos;     // Track start position.
+    const u8 *currentPos;   // Current position.
+    u32 clocksThisFrame;    // Clocks passed this frame.
+    const u8 *loopStartPos; // Loop Start position.
+    u32 unused;             // Unused value.
+    u32 clocksPassed;       // Clocks passed in total.
 };
 
+// MIDI Player
+    // The primary structure for sound playback. A convention seems to exist
+    // where sound play/start functions must return a pointer to the SoundPlayer
+    // which is now playing it.
+    //
+    // Rhythm Tengoku operates 13 of these in total:
+    //  - 1 for primary BGM (15 tracks).
+    //  - 2 for secondary BGM (12 tracks each).
+    //  - 10 for SFX (5 tracks each).
 struct SoundPlayer {
-    u32 nTracksMax:5;   // Maximum number of MIDI Tracks this SoundPlayer is able to process.
-    u32 nTracksUsed:5;  // Total number of MIDI Tracks used by the given MIDI.
-    u32 inLoop:1;       // Channel is currently within MIDI loop region. [default = 0]
-    u32 isPaused:1;     // Paused State { 0 = Unpaused; 1 = Paused }
-    u32 midiTempo:9;    // Current MIDI Tempo, in Beats Per Minute (BPM).
-    u32 playerType:1;   // ??? (set on startup. can prevent loading tracks if set to 1) { 0 = Music/Ambience Channel; 1 = Sound Effect Channel }
-    u32 unk0_b22:5;     // (indeterminate split; may be unused entirely)
-    u32 volumeFadeType:3; // Type of currently-active Volume Fade { 0 = None; 1 = Fade-In; 2 = Fade-Out & Close; 3 = Fade-Out & Pause }
-    struct MidiBus *midiBus;             // MIDI: Bus with effects for all MIDI Channels.
-    struct MidiTrackStream *midiReader;  // MIDI: Multiple structures which each keep track of a MIDI Track being processed.
-    struct SequenceData *sequence; // SequenceData: Currently-loaded Sound Sequence.
-    u32 deltaTime;              // MIDI: Ticks Per Frame, using internal assumption of 60fps [default = 1]
-    const char *loopStartSym;   // MIDI: Label char denoting "Loop Start". [always D_08A865D4, '[']
-    const char *loopEndSym;     // MIDI: Label char denoting "Loop End". [always D_08A865D8, ']']
-    u8  loopStartSymSize;   // MIDI: Value of soundplayer_get_loop_sym_size(D_08a865a4). [1]
-    u8  loopEndSymSize;     // MIDI: Value of soundplayer_get_loop_sym_size(D_08a865a8). [1]
-    u16 midiQuarterNote;    // MIDI: Value denoting 1 beat. [effectively always 0x18]
-    u16 channelGain;    // Channel Gain (Volume) Envelope. [Q8.8]
-    u16 trackGain;      // Gain Envelope for a selection of MIDI Tracks. [Q8.8]
-    u16 trackSelect;    // Selection of MIDI Tracks to apply Gain Envelope.
-    u16 speedMulti;     // Speed Multiplier Envelope. [Q8.8]
-    u16 volumeFadeEnv;  // Volume Multiplier Envelope used for fade-out and mute effects. [Q1.15]
-    u16 volumeFadeSpd;  // Higher values for faster fade-out. Is set to 1 when track is muted instantly. [default = 0]
-    u8  playerVolume;   // SequenceData: Volume
-    s8  midiController4E;   // ??: [default = 64]
-    s8  midiController4F;   // ??: [default = 64]
-    s8  midiController50;   // ??: [default = 64]
-    s8  midiController51;   // ??: [default = 64]
-    u32 unk34;      // ??: (is set to midiReader->deltaTime upon hitting a loop start marker) [default = 0]
+    u32 totalTracks:5;      // Maximum MIDI Tracks this SoundPlayer can process.
+    u32 usedTracks:5;       // Total MIDI Tracks used by the current MIDI, no higher than the maximum.
+    u32 withinLoop:1;       // Set to TRUE upon passing the Loop Start marker.
+    u32 isPaused:1;         // Set to TRUE when paused.
+    u32 midiTempo:9;        // Current MIDI tempo, in Beats Per Minute.
+    u32 priorityEnabled:1;  // If TRUE, priority values will be checked before playing a new sound.
+    u32 unused:5;           // Unused.
+    u32 volumeFadeType:3;   // Current volume fade effect type.
+    struct MidiBus *midiBus;            // Effect and playback manager for all MIDI Channels.
+    struct MidiTrackStream *midiReader; // Array of MIDI Track streams.
+    struct SongHeader *song;    // Current loaded SongHeader.
+    u32 clocksPerFrame;         // Q24.8 MIDI clocks passed each frame, assuming 60FPS.
+    const char *loopStartSym;   // String denoting Loop Start marker ("[").
+    const char *loopEndSym;     // String denoting Loop End marker ("]").
+    u8  loopStartSymLen;        // Length of the Loop Start marker string (1).
+    u8  loopEndSymLen;          // Length of the Loop End marker string (1).
+    u16 midiQuarterNote;        // Number of MIDI clocks per quarter note, as defined by the MIDI.
+    u16 volumeA;            // Q8.8 primary volume envelope.
+    u16 volumeB;            // Q8.8 secondary volume envelope.
+    u16 volumeTrackMap;     // Bitmask mapping of MIDI Tracks to primary or secondary volume envelopes.
+    u16 playerSpeed;        // Q8.8 playback speed envelope.
+    u16 volumeFadeEnv;      // Q1.15 volume fade envelope.
+    u16 volumeFadeSpd;      // Q1.15 volume fade increment per frame.
+    u8  songVolume;         // Base volume, as specified by the SongHeader.
+    s8  rvb1Wet;            // 64 + RVB1.
+    s8  rvb2Phase;          // 64 + RVB2.
+    s8  rvb3Decay;          // 64 + RVB3.
+    s8  rvb4LowCut;         // 64 + RVB4.
+    u32 clocksPassedAtLoop; // Clocks passed upon reaching the Loop Start marker.
 };
 
 // Sound Channel
+    // Instrument/note playback controller, functioning as a virtual instrument.
+    //
+    // Four of these are especially reserved for CGB sound channel playback,
+    // while the total number of those used for PCM sampled instruments may be
+    // specified at compile-time (the default is 12). Each of the PCM sampled
+    // Sound Channels has a respective SampleStream for buffered waveform output.
 struct SoundChannel {
-    u32 active:1;
-    u32 key:7; // MIDI Key
-    u32 velocity:7; // MIDI Velocity
-    u32 frequency:17;
-    union {
-        struct InstrumentPCM *pcm;
-        struct InstrumentPSG *psg;
-    } instrument;
-    struct MidiBus *midiBus;
-    struct MidiChannel *midiChannel;
-    u16 unk10;
-    u16 unk12;
-    s16 unk14;
-    u16 priority:15;
-    u16 unk17_b7:1;
-    s16 panning;
-    struct BufferADSR {
-        u32 stage:8;
-        u32 envelope:24;
-    } adsr;
+    u32 active:1;       // TRUE if currently outputting a note.
+    u32 key:7;          // MIDI key (0-127).
+    u32 velocity:7;     // MIDI velocity (0-127).
+    u32 frequency:17;   // Frequency, in hertz.
+    union Instrument instrument;        // Current instrument.
+    struct MidiBus *midiBus;            // Source channel bus.
+    struct MidiChannel *midiChannel;    // Source MIDI Channel.
+    u16 pitchDecFreq;   // Difference between the current frequency and the lowest frequency within range, in hertz.
+    u16 pitchIncFreq;   // Difference between the highest frequency within range and the current frequency, in hertz.
+    s16 modStepFreq;    // Frequency of a modulation output step, in hertz.
+    u16 priority:15;    // Priority value.
+    u16 justStarted:1;  // Set to TRUE between initialisation and the first update.
+    s16 panning;        // Panning value.
+    struct AdsrEnvelope {
+        u32 stage:8;        // Current stage (starts on ATTACK).
+        u32 envelope:24;    // Volume envelope.
+    } adsr;             // ADSR controller.
 };
 
-// DirectSound Sample Reader/Stream
+// DirectSound Sample Stream
+    // Reads and writes PCM sampled data to the PCM buffer.
 struct SampleStream {
-    u8 active:1;
-    u8 unk0_b1:1;
-    u8 unk0_b2:1;  // ?? ( = instPCM->unk1_b7)
-    u8 useEQ:1;    // Use Filter EQ
-    u8 volume;  // Volume: Main
-    s8 volumeL; // Volume: Left
-    s8 volumeR; // Volume: Right
-    const u32 *sample;  // Sample - Stream
-    u32 length;         // Sample - Length << 14
-    u32 position;       // Sample - Stream Position << 14
-    u32 loopStart;      // Sample - Loop Start << 14
-    u32 loopEnd;        // Sample - Loop End << 14
-    u32 frequency;  // Frequency Envelope
-    u32 unk1C;  // ?? (samplerate-related)
+    u8 active:1;        // TRUE if the stream is outputting samples.
+    u8 hasFrequency:1;  // TRUE if sample output rate is not 1.0.
+    u8 fastRead:1;      // If TRUE, use Fast-Resample PCM read method.
+    u8 equalize:1;      // Apply EQ filter.
+    u8 volume;          // Volume envelope.
+    s8 leftBias;        // Stereo left bias.
+    s8 rightBias;       // Stereo right bias.
+    const u32 *sample;  // PCM wave address.
+    u32 length;         // Q18.14 sample length.
+    u32 position;       // Q18.14 stream position.
+    u32 loopStart;      // Q18.14 loop start offset.
+    u32 loopEnd;        // Q18.14 loop end offset.
+    u32 frequency;      // Q18.14 sample output rate.
+    u32 rate;           // uh... something that helps convert note frequency to 13379Hz
 };
 
+// Low-Frequency Oscillator Mode
+    // DISABLED - LFO will not update nor apply to any MIDI Channels.
+    // KEYPRESS - LFO will reset when a note is played by any of the caller MIDI Channels.
+    // CONSTANT - LFO will run continuously until the mode is changed.
 enum LfoModesEnum {
     LFO_MODE_DISABLED,
     LFO_MODE_KEYPRESS,
     LFO_MODE_CONSTANT
 };
+extern u8 gMidiLFOMode;
 
-// Low-Frequency Oscillator (used for an Auto-Wah)
-struct LFO {
-    u8  preDelay;   // Pre-Delay Time
-    u8  attack;     // Attack Time
-    u16 rate;       // Rate
-    u8  offset;     // Offset
-    u8  duration;   // Range
-    u8  stage;      // Current Envelope Stage { 0..3 }
-    s8  output;     // Output
-    u32 ticks;      // Running Time
-};
+// Low-Frequency Oscillator
+    // General-purpose customizable oscillator. Used for an auto-wah effect in
+    // the MIDI library.
+    //
+    // The oscillator uses MIDI clocks as time units, and assumes a rate of 24
+    // MIDI clocks per quarter note. The clock rate is synchronized with the
+    // caller SoundPlayer.
+extern struct LFO {
+    u8  delay;      // Initial delay upon trigger, in MIDI clocks.
+    u8  attack;     // Time to reach maximum amplitude (after initial delay), in MIDI clocks.
+    u16 rate;       // Q0.16 oscillation speed, in cycles per MIDI clock.
+    u8  offset;     // Q0.8 cycle offset.
+    u8  endPos;     // Q0.8 max cycle position before stopping entirely.
+    u8  stage;      // Current state.
+    s8  output;     // Q0.8 output multiplier.
+    u32 clocks;     // Q24.8 running time, in MIDI clocks.
+} gMidiLFO;
 
-// [D_03005b30] LFO - Low-Frequency Oscillator
-extern struct LFO D_03005b30;
 
-// [D_03005b3c] LFO - Mode { 0 = Disabled; 1 = Note Triggered; 2 = Constant }
-extern u8 D_03005b3c;
+/* SONG & SOUNDPLAYER DATA STRUCTURES */
 
-// [D_08aa06f8] Song Table
-extern struct SoundTable {
-    struct SequenceData *sound;
-    u16 player;
-} D_08aa06f8[];
 
-// [D_08aa4324] SoundPlayer List
-extern struct SoundPlayer *D_08aa4324[];
+// Song Table (from M4A)
+    // Pointless but still used holdover from M4A. Song headers include an index
+    // for this table, which is used to retrieve the song header (again) and its
+    // default sound player.
+extern struct SongTable {
+    struct SongHeader *song;    // Sound file.
+    u16 player;                 // SoundPlayer index.
+} song_header_table[];
 
-// [D_08aa4358] SoundPlayer Init. Table
+// Sound Player List
+    // Pointers to all Sound Players in order, for quick iteration.
+extern struct SoundPlayer *sound_players[];
+
+// Sound Player Initialisation Table
+    // Initialisation data for Sound Players, including allocated memory addresses.
 extern struct SoundPlayerInitTable {
     u16 id:5;
-    u16 trackCount:5;
-    u16 playerType:6; // 0 for Music, 1 for SFX
+    u16 totalTracks:5;
+    u16 priorityEnabled:6;
     struct MidiChannel *midiChannels;
     struct MidiBus *midiBus;
     struct MidiTrackStream *trackStreams;
     struct SoundPlayer *soundPlayer;
-} D_08aa4358[];
+} sound_player_init_table[];
 
-// [D_08aa445c] SoundPlayer Count
-extern u8 D_08aa445c;
+// Total Number of Sound Players
+extern u8 sound_player_count;
 
-// [D_08aa4460] SoundPlayer Table
+// Sound Player Table
+    // Data table for Sound Players in order, for more complex iteration.
 extern struct SoundPlayerTable {
     struct SoundPlayer *soundPlayer;
-    u32 null4; // unused
-    u16 trackCount;
-    u16 playerType;
-} D_08aa4460[];
+    u32 unused;
+    u16 totalTracks;
+    u16 priorityEnabled;
+} sound_player_table[];

@@ -15,7 +15,7 @@ script script_sick_beats_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_sick_beats_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -186,7 +186,7 @@ script script_sick_beats_main
     play_music s_hitmegeton1_bgm_seqData
     beat_anim
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     beat_anim
     rest 24
     beat_anim
@@ -466,7 +466,7 @@ script script_sick_beats_main
     assess_perfect_inputs 0
     beat_anim
     rest 24
-    enable_pause 0
+    enable_pause_menu FALSE
     beat_anim
     rest 24
 return

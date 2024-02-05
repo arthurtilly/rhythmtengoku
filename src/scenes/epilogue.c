@@ -58,7 +58,7 @@ void epilogue_scene_start(void *sVar, s32 dArg) {
 
     if ((levelData != NULL) && (levelData->epilogueGfx != NULL)) {
         if (levelData == &level_data_table[LEVEL_LIVE_MENU]) {
-            rank = func_08026b18();
+            rank = drum_live_get_result_rank();
         } else {
             switch (D_030046a8->data.recentLevelState) {
                 case LEVEL_STATE_CLEARED:

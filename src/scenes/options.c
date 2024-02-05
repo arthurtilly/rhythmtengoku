@@ -155,7 +155,7 @@ void options_scene_update_main(void) {
                 gOptionsMenu->soundMode ^= 1;
                 func_0804d8f8(D_03005380, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0, 1, 0x7F, 0);
                 D_030046a8->data.unk294[8] = gOptionsMenu->soundMode;
-                func_080029d8(gOptionsMenu->soundMode);
+                set_sound_mode(gOptionsMenu->soundMode);
                 write_game_save_data();
             } else {
                 gOptionsMenu->warningCursorPos = OPTIONS_WARNING_NO;
@@ -268,7 +268,7 @@ void options_scene_stop(void *sVar, s32 dArg) {
     if (gOptionsMenu->clearDataOnExit) {
         clear_save_data();
         flush_save_buffer_to_sram();
-        func_080029d8(D_030046a8->data.unk294[8]);
+        set_sound_mode(D_030046a8->data.unk294[8]);
         init_scene_static_var();
     }
 }

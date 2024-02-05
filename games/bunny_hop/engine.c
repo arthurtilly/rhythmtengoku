@@ -112,7 +112,7 @@ struct GraphicsTable *bunny_hop_gfx_tables[] = {
 
 
 // [D_089e5fcc] BGM Harmony
-struct SequenceData *bunny_hop_bgm_harmony_parts[] = {
+struct SongHeader *bunny_hop_bgm_harmony_parts[] = {
     /* 0x00 */ &s_rabbit_c7_seqData,
     /* 0x01 */ &s_rabbit_c7_brass_seqData,
     /* 0x02 */ &s_rabbit_f7_seqData,
@@ -137,7 +137,7 @@ struct SequenceData *bunny_hop_bgm_harmony_parts[] = {
 };
 
 // [D_089e6020] BGM Drum Fills
-struct SequenceData *bunny_hop_bgm_drum_fills[] = {
+struct SongHeader *bunny_hop_bgm_drum_fills[] = {
     /* 0x00 */ &s_rabbit_fill_1_seqData,
     /* 0x01 */ &s_rabbit_fill_2_seqData,
     /* 0x02 */ &s_rabbit_fill_3_seqData,

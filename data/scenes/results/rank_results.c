@@ -39,14 +39,14 @@ struct CompressedGraphics *rank_results_buffered_textures[] = {
 };
 
 // [D_089d7688] Rank SFX
-struct SequenceData *rank_results_sfx[] = {
+struct SongHeader *rank_results_sfx[] = {
     /* Try Again */ &s_f_result_bad_seqData,
     /* OK        */ &s_f_result_normal_seqData,
     /* Superb    */ &s_jingle_hi_level_seqData
 };
 
 // [D_089d7694] Rank BGM
-struct SequenceData *rank_results_bgm[] = {
+struct SongHeader *rank_results_bgm[] = {
     /* Try Again */ &s_kekka_bgm_bad_seqData,
     /* OK        */ &s_kekka_bgm_common_seqData,
     /* Superb    */ &s_kekka_bgm_good_seqData

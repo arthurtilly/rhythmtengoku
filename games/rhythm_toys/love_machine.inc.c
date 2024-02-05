@@ -2,7 +2,7 @@
 
 
 // Sound Effect Pool
-struct SequenceData *const love_machine_sfx_pool_right[] = {
+struct SongHeader *const love_machine_sfx_pool_right[] = {
     &s_heat_v_anataga_seqData,
     &s_heat_v_anatatara_seqData,
     &s_heat_v_kimiga_seqData,
@@ -10,7 +10,7 @@ struct SequenceData *const love_machine_sfx_pool_right[] = {
 };
 
 // Sound Effect Pool
-struct SequenceData *const love_machine_sfx_pool_left[] = {
+struct SongHeader *const love_machine_sfx_pool_left[] = {
     &s_heat_v_jituhane_seqData,
     &s_heat_v_watasine_seqData,
     &s_heat_v_watasitara_seqData,
@@ -18,7 +18,7 @@ struct SequenceData *const love_machine_sfx_pool_left[] = {
 };
 
 // Sound Effect Pool
-struct SequenceData *const love_machine_sfx_pool_down[] = {
+struct SongHeader *const love_machine_sfx_pool_down[] = {
     &s_heat_v_okubyo_seqData,
     &s_heat_v_majime_seqData,
     &s_heat_v_kouitta_seqData,
@@ -26,7 +26,7 @@ struct SequenceData *const love_machine_sfx_pool_down[] = {
 };
 
 // Sound Effect Pool
-struct SequenceData *const love_machine_sfx_pool_up[] = {
+struct SongHeader *const love_machine_sfx_pool_up[] = {
     &s_heat_v_doji_seqData,
     &s_heat_v_sugoi_seqData,
     &s_heat_v_koumietemo_seqData,
@@ -34,7 +34,7 @@ struct SequenceData *const love_machine_sfx_pool_up[] = {
 };
 
 // Sound Effect Pool
-struct SequenceData *const love_machine_sfx_pool_b[] = {
+struct SongHeader *const love_machine_sfx_pool_b[] = {
     &s_heat_v_demo_seqData,
     &s_heat_v_yappari_seqData,
     &s_heat_v_dakedo_seqData,
@@ -42,7 +42,7 @@ struct SequenceData *const love_machine_sfx_pool_b[] = {
 };
 
 // Sound Effect Pool
-struct SequenceData *const love_machine_sfx_pool_a[] = {
+struct SongHeader *const love_machine_sfx_pool_a[] = {
     &s_heat_v_suki_seqData,
     &s_heat_v_kirai_seqData,
     &s_heat_v_seki_seqData,
@@ -50,7 +50,7 @@ struct SequenceData *const love_machine_sfx_pool_a[] = {
 };
 
 // [D_089e9b04] Confession Machine SFX Pool Table
-struct SequenceData *const *love_machine_sfx_table[] = {
+struct SongHeader *const *love_machine_sfx_table[] = {
     /* A */ love_machine_sfx_pool_a,
     /* B */ love_machine_sfx_pool_b,
     /* U */ love_machine_sfx_pool_up,

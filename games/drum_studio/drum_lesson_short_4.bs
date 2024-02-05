@@ -14,7 +14,7 @@ script script_drum_lesson_short_4_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_drum_lesson_short_4_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -239,11 +239,11 @@ script script_drum_lesson_short_4_main
     dms_event09 1
     rest 24
     dms_event02 1
-    run func_08048264, D_08a41230
+    run drum_lesson_script_import_pattern, D_08a41230
     call drum_lessons_sub_08a7d7a0
-    run func_08048264, D_08a41240
+    run drum_lesson_script_import_pattern, D_08a41240
     call drum_lessons_sub_08a7d7a0
-    run func_08048264, D_08a41250
+    run drum_lesson_script_import_pattern, D_08a41250
     call drum_lessons_sub_08a7d7a0
     dms_show_dialogue 1
     dms_set_dialogue_text D_0805f9cc
@@ -261,12 +261,12 @@ script script_drum_lesson_short_4_main
     dms_event15 0
     dms_event16 0
     rest 12
-    run func_08048264, D_08a41260
+    run drum_lesson_script_import_pattern, D_08a41260
     call drum_lessons_sub_08a7d7a0
-    run func_08048264, D_08a41270
+    run drum_lesson_script_import_pattern, D_08a41270
     call drum_lessons_sub_08a7d7a0
     assess_inputs 1
-    run func_08048264, D_08a41280
+    run drum_lesson_script_import_pattern, D_08a41280
     call drum_lessons_sub_08a7d7a0
     dms_show_dialogue 1
     dms_set_teacher_exp 4

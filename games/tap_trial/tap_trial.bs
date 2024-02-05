@@ -15,7 +15,7 @@ script script_tap_trial_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_tap_trial_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -36,7 +36,7 @@ script script_tap_trial_skipped_practice_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_tap_trial_skipped_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -396,7 +396,7 @@ script script_tap_trial_main
     assess_perfect_inputs 0
     rest 24
     rest 24
-    enable_pause 0
+    enable_pause_menu FALSE
     rest 24
 return
 
@@ -405,7 +405,7 @@ script script_tap_trial_practice
     set_tempo 120
     print_text_f D_0805c348
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     run gameplay_set_tutorial scene_tap_trial_skipped_practice
     rest 24
@@ -490,7 +490,7 @@ script script_tap_trial_skipped_practice
     set_game_fade_in_time 0
     set_tempo 120
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     goto script_tap_trial_main
 

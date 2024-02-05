@@ -14,7 +14,7 @@ script script_mannequin_factory_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_mannequin_factory_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -35,7 +35,7 @@ script script_mannequin_factory_skipped_practice_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_mannequin_factory_main
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -53,7 +53,7 @@ define_gameplay_scene scene_mannequin_factory_skipped_practice, script_mannequin
 script script_mannequin_factory_game_over
     mod_tempo 120, 24
     run scene_stop_music, 0
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     rest 24
     rest 24
@@ -77,7 +77,7 @@ script script_mannequin_factory_practice
     set_music_volume 156
     mannequin_factory_event04 script_mannequin_factory_game_over
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     run gameplay_display_skip_icon, 1
     run gameplay_set_tutorial scene_mannequin_factory_skipped_practice
     rest 24
@@ -417,7 +417,7 @@ script script_mannequin_factory_main
     set_music_volume 156
     mannequin_factory_event04 script_mannequin_factory_game_over
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     play_music s_renshu_bgm1_seqData
     rest 6

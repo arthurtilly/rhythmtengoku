@@ -15,7 +15,7 @@ script script_power_calligraphy_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_power_calligraphy_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -36,7 +36,7 @@ script script_power_calligraphy_skipped_practice_entry
     enable_play_inputs 1
     assess_inputs 1
     call script_power_calligraphy_skipped_practice
-    enable_pause 0
+    enable_pause_menu FALSE
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
@@ -276,7 +276,7 @@ script script_power_calligraphy_main
     rest 96
     power_calligraphy_event0B 4
     rest 216
-    enable_pause 0
+    enable_pause_menu FALSE
     rest 24
 return
 
@@ -286,7 +286,7 @@ script script_power_calligraphy_practice
     set_music_volume 256
     assess_inputs 0
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     play_music s_mario2_seqData
     print_text_f D_0805d300
@@ -348,7 +348,7 @@ script script_power_calligraphy_practice
 script script_power_calligraphy_skipped_practice
     set_tempo 120
     rest 24
-    enable_pause 1
+    enable_pause_menu TRUE
     rest 24
     goto script_power_calligraphy_main
 
