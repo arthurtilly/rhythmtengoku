@@ -72,7 +72,7 @@ branch_0802db1e: \n\
 /* 0802db88 */ ASRS R2, R2, 0x10 \n\
 /* 0802db8a */ LSLS R3, R3, 0x8 \n\
 /* 0802db8c */ ASRS R3, R3, 0x10 \n\
-/* 0802db8e */ BL func_0804d5d4 \n\
+/* 0802db8e */ BL sprite_set_x_y \n\
 /* 0802db92 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 0802db94 */ LDR R0, [R7] \n\
 /* 0802db96 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
@@ -156,7 +156,7 @@ branch_0802dc06: \n\
 /* 0802dc1e */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0802dc20 */ LDRSH R1, [R1, R4] \n\
 /* 0802dc22 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802dc24 */ BL func_0804d770 \n\
+/* 0802dc24 */ BL sprite_set_visible \n\
  \n\
 branch_0802dc28: \n\
 /* 0802dc28 */ ADDS R5, 0x1C @ Add 0x1C to R5 \n\

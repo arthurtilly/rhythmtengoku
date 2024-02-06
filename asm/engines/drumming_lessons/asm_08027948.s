@@ -11,7 +11,7 @@ thumb_func_start func_08027948 \n\
 /* 08027952 */ ASRS R1, R1, 0x10 \n\
 /* 08027954 */ MOVS R2, 0xC0 @ Set R2 to 0xC0 \n\
 /* 08027956 */ LSLS R2, R2, 0x2 \n\
-/* 08027958 */ BL func_0804d890 \n\
+/* 08027958 */ BL sprite_set_base_tile \n\
 /* 0802795c */ POP {R0} \n\
 /* 0802795e */ BX R0 \n\
 \n\

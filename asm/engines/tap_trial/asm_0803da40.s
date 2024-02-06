@@ -47,7 +47,7 @@ thumb_func_start tap_trial_play_girl_action \n\
 /* 0803da94 */ STR R4, [SP, 0x4] \n\
 /* 0803da96 */ LDRH R4, [R6, 0x6] \n\
 /* 0803da98 */ STR R4, [SP, 0x8] \n\
-/* 0803da9a */ BL func_0804d8f8 \n\
+/* 0803da9a */ BL sprite_set_anim \n\
  \n\
 branch_0803da9e: \n\
 /* 0803da9e */ CMP R7, 0xA @ Compare R7 and 0xA \n\

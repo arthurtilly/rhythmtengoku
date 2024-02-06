@@ -481,14 +481,14 @@ void debug_menu_render_table(s32 targetPage, s32 targetRow) {
         for (i = 0; i < 8; i++) {
             if (gDebugMenu->textLines[i] > -1) {
                 delete_bmp_font_obj_text_anim(gDebugMenu->objFont, gDebugMenu->textLines[i]);
-                func_0804d504(D_03005380, gDebugMenu->textLines[i]);
+                sprite_delete(D_03005380, gDebugMenu->textLines[i]);
                 gDebugMenu->textLines[i] = -1;
             }
         }
 
         for (j = 0, i = (targetPage * 8); (i < (targetPage * 8) + 8) && (i < gDebugMenu->totalEntries); j++, i++) {
             textAnim = bmp_font_obj_print_l(gDebugMenu->objFont, debug_menu_entry_table[i].label, 1, 0);
-            gDebugMenu->textLines[j] = func_0804d160(D_03005380, textAnim->frames, 0, 32, (j * 16) + 32, 0x800, 0, 0, 0);
+            gDebugMenu->textLines[j] = sprite_create(D_03005380, textAnim->frames, 0, 32, (j * 16) + 32, 0x800, 0, 0, 0);
         }
 
         delete_bmp_font_obj_text_anim(gDebugMenu->objFont, gDebugMenu->counter);
@@ -497,7 +497,7 @@ void debug_menu_render_table(s32 targetPage, s32 targetRow) {
         strcat(string, "^");
         strncat(string, &debug_menu_counter_digits[(totalPages + 1) * 2], 2);
         textAnim = bmp_font_obj_print_r(gDebugMenu->objFont, string, 1, 4);
-        func_0804d8f8(D_03005380, gDebugMenu->counter, textAnim->frames, 0, 0, 0, 0);
+        sprite_set_anim(D_03005380, gDebugMenu->counter, textAnim->frames, 0, 0, 0, 0);
     }
 
     gDebugMenu->page = targetPage;
@@ -505,10 +505,10 @@ void debug_menu_render_table(s32 targetPage, s32 targetRow) {
 
     for (i = 0; i < 8; i++) {
         if (gDebugMenu->textLines[i] > -1) {
-            func_0804d8c4(D_03005380, gDebugMenu->textLines[i], 0);
+            sprite_set_base_palette(D_03005380, gDebugMenu->textLines[i], 0);
         }
     }
 
-    func_0804d8c4(D_03005380, gDebugMenu->textLines[gDebugMenu->row], 7);
-    func_0804d5d4(D_03005380, gDebugMenu->cursor, 16, (gDebugMenu->row * 16) + 32);
+    sprite_set_base_palette(D_03005380, gDebugMenu->textLines[gDebugMenu->row], 7);
+    sprite_set_x_y(D_03005380, gDebugMenu->cursor, 16, (gDebugMenu->row * 16) + 32);
 }

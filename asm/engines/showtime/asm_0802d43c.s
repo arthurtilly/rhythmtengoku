@@ -85,7 +85,7 @@ branch_0802d4b4: \n\
 branch_0802d4d0: \n\
 /* 0802d4d0 */ LDRSH R1, [R2, R3] \n\
 /* 0802d4d2 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0802d4d4 */ BL func_0804d770 \n\
+/* 0802d4d4 */ BL sprite_set_visible \n\
 /* 0802d4d8 */ B branch_0802d7f2 \n\
 \n\
 .ltorg \n\
@@ -142,7 +142,7 @@ jump_0802d4e4: \n\
 /* 0802d54e */ ASRS R2, R2, 0x10 \n\
 /* 0802d550 */ LSLS R3, R5, 0x10 \n\
 /* 0802d552 */ ASRS R3, R3, 0x10 \n\
-/* 0802d554 */ BL func_0804d5d4 \n\
+/* 0802d554 */ BL sprite_set_x_y \n\
 /* 0802d558 */ LDR R1, =gCurrentEngineData \n\
 /* 0802d55a */ LDR R0, [R1] \n\
 /* 0802d55c */ MOVS R2, 0xBE @ Set R2 to 0xBE \n\
@@ -228,7 +228,7 @@ branch_0802d5dc: \n\
 /* 0802d602 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802d604 */ LDRSH R1, [R1, R2] \n\
 /* 0802d606 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802d608 */ BL func_0804d770 \n\
+/* 0802d608 */ BL sprite_set_visible \n\
 /* 0802d60c */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 0802d60e */ LDR R0, [R3] \n\
 /* 0802d610 */ LDR R2, =gCurrentEngineData \n\
@@ -239,7 +239,7 @@ branch_0802d5dc: \n\
 /* 0802d61a */ LDRSH R1, [R1, R3] \n\
 /* 0802d61c */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0802d61e */ MOVS R3, 0x74 @ Set R3 to 0x74 \n\
-/* 0802d620 */ BL func_0804d5d4 \n\
+/* 0802d620 */ BL sprite_set_x_y \n\
 /* 0802d624 */ LDR R0, =s_esa_catch_seqData \n\
 /* 0802d626 */ BL play_sound \n\
  \n\
@@ -323,7 +323,7 @@ jump_0802d688: \n\
 /* 0802d6c0 */ ASRS R2, R2, 0x10 \n\
 /* 0802d6c2 */ LSLS R3, R5, 0x10 \n\
 /* 0802d6c4 */ ASRS R3, R3, 0x10 \n\
-/* 0802d6c6 */ BL func_0804d5d4 \n\
+/* 0802d6c6 */ BL sprite_set_x_y \n\
 /* 0802d6ca */ MOVS R0, 0x8 @ Set R0 to 0x8 \n\
 /* 0802d6cc */ NEGS R0, R0 @ Set R0 to -R0 \n\
 /* 0802d6ce */ CMP R8, R0 @ Compare R8 and R0 \n\
@@ -351,7 +351,7 @@ branch_0802d6d4: \n\
 /* 0802d6f6 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0802d6f8 */ LDRSH R1, [R1, R3] \n\
 /* 0802d6fa */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802d6fc */ BL func_0804d770 \n\
+/* 0802d6fc */ BL sprite_set_visible \n\
 /* 0802d700 */ LDR R0, [R4] \n\
 /* 0802d702 */ LDR R1, [R6] \n\
 /* 0802d704 */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\
@@ -362,7 +362,7 @@ branch_0802d6d4: \n\
 /* 0802d70e */ LDRSH R1, [R1, R3] \n\
 /* 0802d710 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0802d712 */ MOVS R3, 0x74 @ Set R3 to 0x74 \n\
-/* 0802d714 */ BL func_0804d5d4 \n\
+/* 0802d714 */ BL sprite_set_x_y \n\
 /* 0802d718 */ B branch_0802d7f2 \n\
 \n\
 .ltorg \n\
@@ -418,7 +418,7 @@ jump_0802d720: \n\
 /* 0802d788 */ ASRS R2, R2, 0x10 \n\
 /* 0802d78a */ LSLS R3, R5, 0x10 \n\
 /* 0802d78c */ ASRS R3, R3, 0x10 \n\
-/* 0802d78e */ BL func_0804d5d4 \n\
+/* 0802d78e */ BL sprite_set_x_y \n\
 /* 0802d792 */ CMP R5, 0xC7 @ Compare R5 and 0xC7 \n\
 /* 0802d794 */ BLE branch_0802d7f2 \n\
 /* 0802d796 */ MOV R0, R9 @ Set R0 to R9 \n\
@@ -442,7 +442,7 @@ jump_0802d720: \n\
 /* 0802d7ba */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0802d7bc */ LDRSH R1, [R1, R3] \n\
 /* 0802d7be */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802d7c0 */ BL func_0804d770 \n\
+/* 0802d7c0 */ BL sprite_set_visible \n\
 /* 0802d7c4 */ LDR R0, [R4] \n\
 /* 0802d7c6 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 0802d7c8 */ LDR R1, [R2] \n\
@@ -454,7 +454,7 @@ jump_0802d720: \n\
 /* 0802d7d4 */ LDRSH R1, [R1, R2] \n\
 /* 0802d7d6 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0802d7d8 */ MOVS R3, 0x74 @ Set R3 to 0x74 \n\
-/* 0802d7da */ BL func_0804d5d4 \n\
+/* 0802d7da */ BL sprite_set_x_y \n\
 /* 0802d7de */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 0802d7e0 */ LDR R0, [R3] \n\
 /* 0802d7e2 */ MOVS R1, 0xF2 @ Set R1 to 0xF2 \n\

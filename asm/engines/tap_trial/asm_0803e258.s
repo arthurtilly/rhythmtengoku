@@ -15,7 +15,7 @@ thumb_func_start func_0803e258 \n\
 /* 0803e26a */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 0803e26c */ LDRSH R1, [R1, R2] \n\
 /* 0803e26e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803e270 */ BL func_0804d770 \n\
+/* 0803e270 */ BL sprite_set_visible \n\
 /* 0803e274 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803e276 */ BL scene_hide_bg_layer \n\
 /* 0803e27a */ B branch_0803e2ce \n\
@@ -46,13 +46,13 @@ branch_0803e284: \n\
 /* 0803e2b0 */ STR R2, [SP, 0x8] \n\
 /* 0803e2b2 */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
 /* 0803e2b4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803e2b6 */ BL func_0804d8f8 \n\
+/* 0803e2b6 */ BL sprite_set_anim \n\
 /* 0803e2ba */ LDR R0, [R5] \n\
 /* 0803e2bc */ LDR R1, [R4] \n\
 /* 0803e2be */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 0803e2c0 */ LDRSH R1, [R1, R2] \n\
 /* 0803e2c2 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803e2c4 */ BL func_0804d770 \n\
+/* 0803e2c4 */ BL sprite_set_visible \n\
 /* 0803e2c8 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803e2ca */ BL scene_show_bg_layer \n\
  \n\

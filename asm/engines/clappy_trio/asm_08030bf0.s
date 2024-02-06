@@ -13,7 +13,7 @@ thumb_func_start func_08030bf0 \n\
 /* 08030bfe */ LDRSH R1, [R1, R3] \n\
 /* 08030c00 */ LSLS R2, R2, 0x10 \n\
 /* 08030c02 */ LSRS R2, R2, 0x10 \n\
-/* 08030c04 */ BL func_0804d770 \n\
+/* 08030c04 */ BL sprite_set_visible \n\
 /* 08030c08 */ POP {R0} \n\
 /* 08030c0a */ BX R0 \n\
 \n\

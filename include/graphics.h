@@ -157,13 +157,6 @@ extern struct GraphicsBuffer {
 
 extern struct SpriteHandler *D_03005380; // gSpriteHandler
 
-struct SpritePlaybackData {
-    struct Animation *anim;
-    s8 animFrame;
-    u8 unk5;
-    u8 loopFrame;
-};
-
 
   //  //  //  SCENE GRAPHICS  //  //  //
 

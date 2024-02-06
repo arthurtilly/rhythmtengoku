@@ -123,7 +123,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 0803756a */ STR R4, [SP, 0x10] \n\
 /* 0803756c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803756e */ MOVS R3, 0x32 @ Set R3 to 0x32 \n\
-/* 08037570 */ BL func_0804d160 \n\
+/* 08037570 */ BL sprite_create \n\
 /* 08037574 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08037576 */ STRH R0, [R1, 0x8] \n\
 /* 08037578 */ LDR R0, [R5] \n\
@@ -139,7 +139,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 0803758c */ STR R4, [SP, 0x10] \n\
 /* 0803758e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037590 */ MOVS R3, 0x32 @ Set R3 to 0x32 \n\
-/* 08037592 */ BL func_0804d160 \n\
+/* 08037592 */ BL sprite_create \n\
 /* 08037596 */ STRH R0, [R7, 0x2] \n\
 /* 08037598 */ LDR R0, [R5] \n\
 /* 0803759a */ LDR R1, =anim_quiz_show_host_press_button_r \n\
@@ -154,7 +154,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 080375ac */ STR R4, [SP, 0x10] \n\
 /* 080375ae */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080375b0 */ MOVS R3, 0x4C @ Set R3 to 0x4C \n\
-/* 080375b2 */ BL func_0804d160 \n\
+/* 080375b2 */ BL sprite_create \n\
 /* 080375b6 */ STRH R0, [R7, 0x4] \n\
 /* 080375b8 */ LDR R0, [R5] \n\
 /* 080375ba */ LDR R1, =anim_quiz_show_host_press_button_l \n\
@@ -169,7 +169,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 080375cc */ STR R4, [SP, 0x10] \n\
 /* 080375ce */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080375d0 */ MOVS R3, 0x32 @ Set R3 to 0x32 \n\
-/* 080375d2 */ BL func_0804d160 \n\
+/* 080375d2 */ BL sprite_create \n\
 /* 080375d6 */ STRH R0, [R7, 0x6] \n\
 /* 080375d8 */ LDR R0, [R5] \n\
 /* 080375da */ LDR R1, =anim_quiz_show_button_host_l \n\
@@ -184,7 +184,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 080375ec */ STR R4, [SP, 0x10] \n\
 /* 080375ee */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080375f0 */ MOVS R3, 0x3B @ Set R3 to 0x3B \n\
-/* 080375f2 */ BL func_0804d160 \n\
+/* 080375f2 */ BL sprite_create \n\
 /* 080375f6 */ STRH R0, [R7, 0x8] \n\
 /* 080375f8 */ LDR R0, [R5] \n\
 /* 080375fa */ LDR R1, =anim_quiz_show_button_host_r \n\
@@ -199,7 +199,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 0803760c */ STR R4, [SP, 0x10] \n\
 /* 0803760e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037610 */ MOVS R3, 0x3A @ Set R3 to 0x3A \n\
-/* 08037612 */ BL func_0804d160 \n\
+/* 08037612 */ BL sprite_create \n\
 /* 08037616 */ STRH R0, [R7, 0xA] \n\
 /* 08037618 */ LDR R0, [R5] \n\
 /* 0803761a */ MOVS R1, 0x86 @ Set R1 to 0x86 \n\
@@ -212,7 +212,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 08037628 */ LDR R1, =anim_quiz_show_podium_num \n\
 /* 0803762a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803762c */ MOVS R3, 0x4D @ Set R3 to 0x4D \n\
-/* 0803762e */ BL func_0804d160 \n\
+/* 0803762e */ BL sprite_create \n\
 /* 08037632 */ STRH R0, [R7, 0xC] \n\
 /* 08037634 */ LDR R0, [R5] \n\
 /* 08037636 */ MOVS R1, 0x89 @ Set R1 to 0x89 \n\
@@ -225,7 +225,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 08037644 */ LDR R1, =anim_quiz_show_podium_num \n\
 /* 08037646 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037648 */ MOVS R3, 0x3D @ Set R3 to 0x3D \n\
-/* 0803764a */ BL func_0804d160 \n\
+/* 0803764a */ BL sprite_create \n\
 /* 0803764e */ STRH R0, [R7, 0xE] \n\
 /* 08037650 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08037652 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
@@ -238,7 +238,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 08037662 */ STR R4, [SP, 0x4] \n\
 /* 08037664 */ STR R4, [SP, 0x8] \n\
 /* 08037666 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08037668 */ BL func_0804d8f8 \n\
+/* 08037668 */ BL sprite_set_anim \n\
 /* 0803766c */ LDR R0, [R5] \n\
 /* 0803766e */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08037670 */ LDRSH R1, [R7, R2] \n\
@@ -247,7 +247,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 08037676 */ STR R4, [SP, 0x4] \n\
 /* 08037678 */ STR R4, [SP, 0x8] \n\
 /* 0803767a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803767c */ BL func_0804d8f8 \n\
+/* 0803767c */ BL sprite_set_anim \n\
 /* 08037680 */ LDR R0, =gCurrentEngineData \n\
 /* 08037682 */ LDR R0, [R0] \n\
 /* 08037684 */ MOV R8, R0 @ Set R8 to R0 \n\
@@ -267,7 +267,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 080376a0 */ STR R4, [SP, 0x10] \n\
 /* 080376a2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080376a4 */ MOVS R3, 0xB6 @ Set R3 to 0xB6 \n\
-/* 080376a6 */ BL func_0804d160 \n\
+/* 080376a6 */ BL sprite_create \n\
 /* 080376aa */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080376ac */ STRH R0, [R1, 0x1C] \n\
 /* 080376ae */ LDR R0, [R5] \n\
@@ -283,7 +283,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 080376c2 */ STR R4, [SP, 0x10] \n\
 /* 080376c4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080376c6 */ MOVS R3, 0xB6 @ Set R3 to 0xB6 \n\
-/* 080376c8 */ BL func_0804d160 \n\
+/* 080376c8 */ BL sprite_create \n\
 /* 080376cc */ STRH R0, [R7, 0x2] \n\
 /* 080376ce */ LDR R0, [R5] \n\
 /* 080376d0 */ LDR R1, =anim_quiz_show_player_press_button_r \n\
@@ -298,7 +298,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 080376e2 */ STR R4, [SP, 0x10] \n\
 /* 080376e4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080376e6 */ MOVS R3, 0xB9 @ Set R3 to 0xB9 \n\
-/* 080376e8 */ BL func_0804d160 \n\
+/* 080376e8 */ BL sprite_create \n\
 /* 080376ec */ STRH R0, [R7, 0x4] \n\
 /* 080376ee */ LDR R0, [R5] \n\
 /* 080376f0 */ LDR R1, =anim_quiz_show_player_press_button_l \n\
@@ -313,7 +313,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 08037702 */ STR R4, [SP, 0x10] \n\
 /* 08037704 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037706 */ MOVS R3, 0xA5 @ Set R3 to 0xA5 \n\
-/* 08037708 */ BL func_0804d160 \n\
+/* 08037708 */ BL sprite_create \n\
 /* 0803770c */ STRH R0, [R7, 0x6] \n\
 /* 0803770e */ LDR R0, [R5] \n\
 /* 08037710 */ LDR R1, =anim_quiz_show_button_player_l \n\
@@ -328,7 +328,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 08037722 */ STR R4, [SP, 0x10] \n\
 /* 08037724 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037726 */ MOVS R3, 0xA8 @ Set R3 to 0xA8 \n\
-/* 08037728 */ BL func_0804d160 \n\
+/* 08037728 */ BL sprite_create \n\
 /* 0803772c */ STRH R0, [R7, 0x8] \n\
 /* 0803772e */ LDR R0, [R5] \n\
 /* 08037730 */ LDR R1, =anim_quiz_show_button_player_r \n\
@@ -343,7 +343,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 08037742 */ STR R4, [SP, 0x10] \n\
 /* 08037744 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037746 */ MOVS R3, 0xA8 @ Set R3 to 0xA8 \n\
-/* 08037748 */ BL func_0804d160 \n\
+/* 08037748 */ BL sprite_create \n\
 /* 0803774c */ STRH R0, [R7, 0xA] \n\
 /* 0803774e */ LDR R0, [R5] \n\
 /* 08037750 */ MOVS R1, 0x89 @ Set R1 to 0x89 \n\
@@ -356,7 +356,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 0803775e */ LDR R1, =anim_quiz_show_podium_num \n\
 /* 08037760 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037762 */ MOVS R3, 0xA9 @ Set R3 to 0xA9 \n\
-/* 08037764 */ BL func_0804d160 \n\
+/* 08037764 */ BL sprite_create \n\
 /* 08037768 */ STRH R0, [R7, 0xC] \n\
 /* 0803776a */ LDR R0, [R5] \n\
 /* 0803776c */ MOVS R1, 0x86 @ Set R1 to 0x86 \n\
@@ -369,7 +369,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 0803777a */ LDR R1, =anim_quiz_show_podium_num \n\
 /* 0803777c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803777e */ MOVS R3, 0x99 @ Set R3 to 0x99 \n\
-/* 08037780 */ BL func_0804d160 \n\
+/* 08037780 */ BL sprite_create \n\
 /* 08037784 */ STRH R0, [R7, 0xE] \n\
 /* 08037786 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08037788 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
@@ -382,7 +382,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 08037798 */ STR R4, [SP, 0x4] \n\
 /* 0803779a */ STR R4, [SP, 0x8] \n\
 /* 0803779c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803779e */ BL func_0804d8f8 \n\
+/* 0803779e */ BL sprite_set_anim \n\
 /* 080377a2 */ LDR R0, [R5] \n\
 /* 080377a4 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 080377a6 */ LDRSH R1, [R7, R2] \n\
@@ -391,7 +391,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 080377ac */ STR R4, [SP, 0x4] \n\
 /* 080377ae */ STR R4, [SP, 0x8] \n\
 /* 080377b0 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080377b2 */ BL func_0804d8f8 \n\
+/* 080377b2 */ BL sprite_set_anim \n\
 /* 080377b6 */ BL func_080372e8 \n\
 /* 080377ba */ MOVS R0, 0xF1 @ Set R0 to 0xF1 \n\
 /* 080377bc */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\

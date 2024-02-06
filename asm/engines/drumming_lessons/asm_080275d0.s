@@ -14,7 +14,7 @@ thumb_func_start func_080275d0 \n\
 /* 080275e0 */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
 /* 080275e2 */ LDRSH R1, [R1, R2] \n\
 /* 080275e4 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 080275e6 */ BL func_0804d770 \n\
+/* 080275e6 */ BL sprite_set_visible \n\
 /* 080275ea */ POP {R0} \n\
 /* 080275ec */ BX R0 \n\
 \n\

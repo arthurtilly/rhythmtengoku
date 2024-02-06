@@ -64,7 +64,7 @@ branch_0800e7b4: \n\
 /* 0800e7cc */ STR R1, [SP, 0x10] \n\
 /* 0800e7ce */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 0800e7d0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0800e7d2 */ BL func_0804d160 \n\
+/* 0800e7d2 */ BL sprite_create \n\
 /* 0800e7d6 */ LDR R1, [R4, 0xC] \n\
 /* 0800e7d8 */ STRH R0, [R1] \n\
  \n\

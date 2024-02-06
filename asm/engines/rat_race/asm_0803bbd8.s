@@ -17,7 +17,7 @@ thumb_func_start func_0803bbd8 \n\
 /* 0803bbee */ LSLS R2, R2, 0x8 \n\
 /* 0803bbf0 */ ASRS R2, R2, 0x10 \n\
 /* 0803bbf2 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
-/* 0803bbf4 */ BL func_0804d614 \n\
+/* 0803bbf4 */ BL sprite_set_x \n\
 /* 0803bbf8 */ POP {R4} \n\
 /* 0803bbfa */ POP {R0} \n\
 /* 0803bbfc */ BX R0 \n\

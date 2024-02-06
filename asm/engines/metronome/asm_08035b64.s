@@ -13,7 +13,7 @@ thumb_func_start metronome_cue_hit \n\
 /* 08035b74 */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 08035b76 */ LDRSH R1, [R1, R2] \n\
 /* 08035b78 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08035b7a */ BL func_0804cebc \n\
+/* 08035b7a */ BL sprite_set_anim_cel \n\
 /* 08035b7e */ ADDS R4, 0x5 @ Add 0x5 to R4 \n\
 /* 08035b80 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08035b82 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
@@ -26,7 +26,7 @@ thumb_func_start metronome_cue_hit \n\
 /* 08035b92 */ LDRSH R1, [R1, R3] \n\
 /* 08035b94 */ LSLS R2, R2, 0x18 \n\
 /* 08035b96 */ ASRS R2, R2, 0x18 \n\
-/* 08035b98 */ BL func_0804cebc \n\
+/* 08035b98 */ BL sprite_set_anim_cel \n\
 /* 08035b9c */ LDR R0, =s_metro_hit_seqData \n\
 /* 08035b9e */ BL play_sound \n\
 /* 08035ba2 */ LDR R0, =s_metro_hato_seqData \n\

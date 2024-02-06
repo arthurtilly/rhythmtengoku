@@ -26,7 +26,7 @@ branch_080334fc: \n\
 /* 08033510 */ STR R3, [SP, 0x4] \n\
 /* 08033512 */ STR R4, [SP, 0x8] \n\
 /* 08033514 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
-/* 08033516 */ BL func_0804d8f8 \n\
+/* 08033516 */ BL sprite_set_anim \n\
 /* 0803351a */ B branch_08033544 \n\
 \n\
 .ltorg \n\
@@ -44,7 +44,7 @@ branch_08033528: \n\
 /* 0803353a */ STR R3, [SP, 0x4] \n\
 /* 0803353c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803353e */ STR R3, [SP, 0x8] \n\
-/* 08033540 */ BL func_0804d8f8 \n\
+/* 08033540 */ BL sprite_set_anim \n\
  \n\
 branch_08033544: \n\
 /* 08033544 */ ADD SP, 0xC \n\

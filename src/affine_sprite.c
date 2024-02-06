@@ -34,7 +34,7 @@ void update_affine_sprite(struct AffineSprite *affineData) {
             y += FIXED_TO_INT(affineData->offsetDistance * sins2(offsetAngleLowPrec));
         }
     }
-    func_0804d5d4(D_03005380, affineData->sprite, x, y);
+    sprite_set_x_y(D_03005380, affineData->sprite, x, y);
 
     // It seems that the "index" may refer to a Rotation/Scaling Parameter Group (buffered at D_03000340)
     if (index >= 0) {
@@ -82,7 +82,7 @@ struct AffineSprite *create_affine_sprite(struct Animation *anim, s8 arg1, s16 x
     s8 index;
 
     // Create standard sprite.
-    sprite = func_0804d160(D_03005380, anim, arg1, x, y, z, arg7, arg8, arg9);
+    sprite = sprite_create(D_03005380, anim, arg1, x, y, z, arg7, arg8, arg9);
     if (sprite < 0) return NULL;
 
     // Generate offset from D_03000368 in words. (?)
@@ -124,7 +124,7 @@ struct AffineSprite *create_default_affine_sprite(struct Animation *anim, s8 arg
     struct AffineSprite *affineData;
     s16 sprite;
 
-    sprite = func_0804d160(D_03005380, anim, arg1, x, y, layer, arg5, arg6, arg7);
+    sprite = sprite_create(D_03005380, anim, arg1, x, y, layer, arg5, arg6, arg7);
     if (sprite < 0) return NULL;
 
     affineData = scene_mem_heap_alloc(sizeof(struct AffineSprite));
@@ -154,7 +154,7 @@ struct AffineSprite *create_default_affine_sprite(struct Animation *anim, s8 arg
 void delete_affine_sprite(struct AffineSprite *affineData) {
     if (affineData == NULL) return;
 
-    func_0804d504(D_03005380, affineData->sprite);
+    sprite_delete(D_03005380, affineData->sprite);
     if (affineData->index >= 0) func_080021b8(affineData->index);
     mem_heap_dealloc(affineData);
 }
@@ -216,7 +216,7 @@ void affine_sprite_set_x_y_z(struct AffineSprite *affineData, s16 x, s16 y, u16 
 
     affineData->x = x;
     affineData->y = y;
-    func_0804d67c(D_03005380, affineData->sprite, layer);
+    sprite_set_z(D_03005380, affineData->sprite, layer);
     update_affine_sprite(affineData);
 }
 
@@ -249,7 +249,7 @@ void affine_sprite_set_y(struct AffineSprite *affineData, s16 y) {
 void affine_sprite_set_z(struct AffineSprite *affineData, u16 layer) {
     if (affineData == NULL) return;
 
-    func_0804d67c(D_03005380, affineData->sprite, layer);
+    sprite_set_z(D_03005380, affineData->sprite, layer);
 }
 
 // [func_0800fe44] AFFINE SPRITE - Set Scaling & Rotation
@@ -360,52 +360,52 @@ void affine_sprite_enable_render_updates(struct AffineSprite *affineData, u32 ch
 }
 
 // [func_0800ffc0] AFFINE SPRITE - Set Current Animation Frame
-void affine_sprite_set_anim_frame(struct AffineSprite *affineData, u32 frame) {
+void affine_sprite_set_anim_cel(struct AffineSprite *affineData, u32 frame) {
     if (affineData == NULL) return;
 
-    func_0804cebc(D_03005380, affineData->sprite, frame);
+    sprite_set_anim_cel(D_03005380, affineData->sprite, frame);
 }
 
-// [func_0800ffe4] AFFINE SPRITE - func_0804ced0()
+// [func_0800ffe4] AFFINE SPRITE - sprite_set_anim_progress()
 void func_0800ffe4(struct AffineSprite *affineData, u8 arg) {
     if (affineData == NULL) return;
 
-    func_0804ced0(D_03005380, affineData->sprite, arg);
+    sprite_set_anim_progress(D_03005380, affineData->sprite, arg);
 }
 
 // [func_08010008] AFFINE SPRITE - Animate?
 void affine_sprite_set_playback(struct AffineSprite *affineData, u32 arg1, u32 arg2, u32 arg3) {
     if (affineData == NULL) return;
 
-    func_0804dae0(D_03005380, affineData->sprite, arg1, arg2, arg3);
+    sprite_set_playback(D_03005380, affineData->sprite, arg1, arg2, arg3);
 }
 
 // [func_08010040] AFFINE SPRITE - Start Animation
 void affine_sprite_play_anim(struct AffineSprite *affineData, u32 start) {
     if (affineData == NULL) return;
 
-    func_0804d770(D_03005380, affineData->sprite, start);
+    sprite_set_visible(D_03005380, affineData->sprite, start);
 }
 
 // [func_08010064] AFFINE SPRITE - Set Animation
 void affine_sprite_change_anim(struct AffineSprite *affineData, struct Animation *anim, u32 arg2, u32 arg3, u32 arg4, u32 arg5) {
     if (affineData == NULL) return;
 
-    func_0804d8f8(D_03005380, affineData->sprite, anim, arg2, arg3, arg4, arg5);
+    sprite_set_anim(D_03005380, affineData->sprite, anim, arg2, arg3, arg4, arg5);
 }
 
 // [func_080100a8] AFFINE SPRITE - Set Palette
-void affine_sprite_set_palette(struct AffineSprite *affineData, u32 paletteID) {
+void affine_sprite_set_base_palette(struct AffineSprite *affineData, u32 paletteID) {
     if (affineData == NULL) return;
 
-    func_0804d8c4(D_03005380, affineData->sprite, paletteID);
+    sprite_set_base_palette(D_03005380, affineData->sprite, paletteID);
 }
 
-// [func_080100cc] AFFINE SPRITE - func_0804d890()
+// [func_080100cc] AFFINE SPRITE - sprite_set_base_tile()
 void func_080100cc(struct AffineSprite *affineData, u32 arg) {
     if (affineData == NULL) return;
 
-    func_0804d890(D_03005380, affineData->sprite, arg);
+    sprite_set_base_tile(D_03005380, affineData->sprite, arg);
 }
 
 // [func_080100f0] AFFINE SPRITE - func_0804ddb0(..., 4)
@@ -429,60 +429,60 @@ u32 affine_sprite_get_base_sprite_z(struct AffineSprite *affineData) {
     return func_0804ddb0(D_03005380, affineData->sprite, 6);
 }
 
-// [func_08010150] AFFINE SPRITE - func_0804da20()
+// [func_08010150] AFFINE SPRITE - sprite_set_enable_updates()
 void func_08010150(struct AffineSprite *affineData, u16 arg) {
     if (affineData == NULL) return;
 
-    func_0804da20(D_03005380, affineData->sprite, arg);
+    sprite_set_enable_updates(D_03005380, affineData->sprite, arg);
 }
 
-// [func_08010174] AFFINE SPRITE - func_0804dcb8()
+// [func_08010174] AFFINE SPRITE - sprite_set_anim_speed()
 void func_08010174(struct AffineSprite *affineData, u16 speed) {
     if (affineData == NULL) return;
 
-    func_0804dcb8(D_03005380, affineData->sprite, speed);
+    sprite_set_anim_speed(D_03005380, affineData->sprite, speed);
 }
 
 // [func_08010198] AFFINE SPRITE - Get Current Frame
 s8 affine_sprite_get_current_frame(struct AffineSprite *affineData) {
     if (affineData == NULL) return;
 
-    return func_0804d6cc(D_03005380, affineData->sprite);
+    return sprite_get_anim_cel(D_03005380, affineData->sprite);
 }
 
-// [func_080101b8] AFFINE SPRITE - func_0804d708()
+// [func_080101b8] AFFINE SPRITE - sprite_get_anim_progress()
 u8 func_080101b8(struct AffineSprite *affineData) {
     if (affineData == NULL) return;
 
-    return func_0804d708(D_03005380, affineData->sprite);
+    return sprite_get_anim_progress(D_03005380, affineData->sprite);
 }
 
-// [func_080101d8] AFFINE SPRITE - func_0804d7b4()
+// [func_080101d8] AFFINE SPRITE - sprite_attr_set()
 void func_080101d8(struct AffineSprite *affineData, u32 arg) {
     if (affineData == NULL) return;
 
-    func_0804d7b4(D_03005380, affineData->sprite, arg);
+    sprite_attr_set(D_03005380, affineData->sprite, arg);
 }
 
-// [func_080101f8] AFFINE SPRITE - func_0804d7e8()
+// [func_080101f8] AFFINE SPRITE - sprite_attr_orr()
 void func_080101f8(struct AffineSprite *affineData, u32 arg) {
     if (affineData == NULL) return;
 
-    func_0804d7e8(D_03005380, affineData->sprite, arg);
+    sprite_attr_orr(D_03005380, affineData->sprite, arg);
 }
 
-// [func_08010218] AFFINE SPRITE - func_0804d820()
+// [func_08010218] AFFINE SPRITE - sprite_attr_and()
 void func_08010218(struct AffineSprite *affineData, u32 arg) {
     if (affineData == NULL) return;
 
-    func_0804d820(D_03005380, affineData->sprite, arg);
+    sprite_attr_and(D_03005380, affineData->sprite, arg);
 }
 
-// [func_08010238] AFFINE SPRITE - func_0804daa8()
+// [func_08010238] AFFINE SPRITE - sprite_set_callback()
 void func_08010238(struct AffineSprite *affineData, void *arg1, u32 arg2) {
     if (affineData == NULL) return;
 
-    func_0804daa8(D_03005380, affineData->sprite, arg1, arg2);
+    sprite_set_callback(D_03005380, affineData->sprite, arg1, arg2);
 }
 
 // [func_08010260] AFFINE SPRITE - func_0804df4c()
@@ -503,5 +503,5 @@ u32 affine_sprite_get_total_frames(struct AffineSprite *affineData) {
 void affine_sprite_set_x_y_controllers(struct AffineSprite *affineData, s16 *xSrc, s16 *ySrc) {
     if (affineData == NULL) return;
 
-    func_0804db44(D_03005380, affineData->sprite, xSrc, ySrc);
+    sprite_set_origin_x_y(D_03005380, affineData->sprite, xSrc, ySrc);
 }

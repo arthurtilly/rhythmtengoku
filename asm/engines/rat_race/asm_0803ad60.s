@@ -121,7 +121,7 @@ jump_0803ae18: \n\
 /* 0803ae46 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803ae48 */ LDRSH R1, [R1, R2] \n\
 /* 0803ae4a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803ae4c */ BL func_0804d770 \n\
+/* 0803ae4c */ BL sprite_set_visible \n\
  \n\
 branch_0803ae50: \n\
 /* 0803ae50 */ LDR R2, [R4] \n\

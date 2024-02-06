@@ -21,12 +21,12 @@ thumb_func_start func_08027518 \n\
 /* 08027536 */ STR R3, [SP, 0x4] \n\
 /* 08027538 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0802753a */ STR R3, [SP, 0x8] \n\
-/* 0802753c */ BL func_0804d8f8 \n\
+/* 0802753c */ BL sprite_set_anim \n\
 /* 08027540 */ LDR R0, [R5] \n\
 /* 08027542 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08027544 */ LDRSH R1, [R4, R2] \n\
 /* 08027546 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08027548 */ BL func_0804cebc \n\
+/* 08027548 */ BL sprite_set_anim_cel \n\
 /* 0802754c */ ADD SP, 0xC \n\
 /* 0802754e */ POP {R4, R5} \n\
 /* 08027550 */ POP {R0} \n\

@@ -32,14 +32,14 @@ thumb_func_start showtime_common_beat_animation \n\
 /* 0802c0fc */ STR R3, [SP, 0x4] \n\
 /* 0802c0fe */ STR R6, [SP, 0x8] \n\
 /* 0802c100 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0802c102 */ BL func_0804d8f8 \n\
+/* 0802c102 */ BL sprite_set_anim \n\
 /* 0802c106 */ LDR R0, [R4] \n\
 /* 0802c108 */ LDR R1, [R7] \n\
 /* 0802c10a */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
 /* 0802c10c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802c10e */ LDRSH R1, [R1, R2] \n\
 /* 0802c110 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802c112 */ BL func_0804cebc \n\
+/* 0802c112 */ BL sprite_set_anim_cel \n\
 /* 0802c116 */ LDR R6, [R4] \n\
 /* 0802c118 */ LDR R0, [R7] \n\
 /* 0802c11a */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
@@ -54,7 +54,7 @@ thumb_func_start showtime_common_beat_animation \n\
 /* 0802c130 */ LSRS R2, R2, 0x10 \n\
 /* 0802c132 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0802c134 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0802c136 */ BL func_0804dcb8 \n\
+/* 0802c136 */ BL sprite_set_anim_speed \n\
  \n\
 branch_0802c13a: \n\
 /* 0802c13a */ ADD SP, 0xC \n\

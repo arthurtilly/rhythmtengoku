@@ -68,22 +68,22 @@ void score_results_scene_start(void *sVar, s32 dArg) {
     score_results_scene_init_gfx1();
 
     score = results_calculate_final_score();
-    func_0804d160(D_03005380, anim_score_results_dec_num, (score % 10), 196, 114, 0, 0, 0, 0);
+    sprite_create(D_03005380, anim_score_results_dec_num, (score % 10), 196, 114, 0, 0, 0, 0);
 
     n = score / 10;
-    func_0804d160(D_03005380, anim_score_results_num, (n % 10), 152, 80, 0, 0, 0, 0);
+    sprite_create(D_03005380, anim_score_results_num, (n % 10), 152, 80, 0, 0, 0, 0);
 
     n /= 10;
     if (n != 0) {
-        func_0804d160(D_03005380, anim_score_results_num, (n % 10), 96, 80, 0, 0, 0, 0);
+        sprite_create(D_03005380, anim_score_results_num, (n % 10), 96, 80, 0, 0, 0, 0);
     }
 
     n /= 10;
     if (n != 0) {
-        func_0804d160(D_03005380, anim_score_results_num, (n % 10), 40, 80, 0, 0, 0, 0);
+        sprite_create(D_03005380, anim_score_results_num, (n % 10), 40, 80, 0, 0, 0, 0);
     }
 
-    func_0804d160(D_03005380, anim_score_results_points_label, 0, 200, 136, 0, 0, 0, 0);
+    sprite_create(D_03005380, anim_score_results_points_label, 0, 200, 136, 0, 0, 0, 0);
 
     thresholds = (sGradeThresholds != NULL) ? sGradeThresholds : score_results_default_thresholds;
     comments = (sGradeComments != NULL) ? sGradeComments : score_results_default_comments;
@@ -94,8 +94,8 @@ void score_results_scene_start(void *sVar, s32 dArg) {
     gResults->scoreGrade = result;
 
     textAnim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, 16, TEXT_PRINTER_FONT_SMALL, comments[result], TEXT_ANCHOR_BOTTOM_CENTER, 0, 0x100);
-    textSprite = func_0804d160(D_03005380, textAnim, 0, 120, 152, 0, 0, 0, 0);
-    func_0804d8c4(D_03005380, textSprite, 15);
+    textSprite = sprite_create(D_03005380, textAnim, 0, 120, 152, 0, 0, 0, 0);
+    sprite_set_base_palette(D_03005380, textSprite, 15);
 
     gResults->inputsEnabled = FALSE;
 }

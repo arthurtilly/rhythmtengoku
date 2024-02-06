@@ -35,7 +35,7 @@ branch_08037c12: \n\
 /* 08037c28 */ STR R3, [SP, 0x4] \n\
 /* 08037c2a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08037c2c */ STR R3, [SP, 0x8] \n\
-/* 08037c2e */ BL func_0804d8f8 \n\
+/* 08037c2e */ BL sprite_set_anim \n\
 /* 08037c32 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08037c34 */ BNE branch_08037c4c \n\
 /* 08037c36 */ LDR R0, =gCurrentEngineData \n\
@@ -56,7 +56,7 @@ branch_08037c52: \n\
 /* 08037c56 */ LSLS R1, R1, 0x10 \n\
 /* 08037c58 */ ASRS R1, R1, 0x10 \n\
 /* 08037c5a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08037c5c */ BL func_0804cebc \n\
+/* 08037c5c */ BL sprite_set_anim_cel \n\
 /* 08037c60 */ LDR R0, [R4] \n\
 /* 08037c62 */ LDR R4, =gCurrentEngineData \n\
 /* 08037c64 */ LDR R2, [R4] \n\
@@ -74,7 +74,7 @@ branch_08037c52: \n\
 /* 08037c7c */ STR R3, [SP, 0x4] \n\
 /* 08037c7e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08037c80 */ STR R3, [SP, 0x8] \n\
-/* 08037c82 */ BL func_0804d8f8 \n\
+/* 08037c82 */ BL sprite_set_anim \n\
 /* 08037c86 */ LDR R0, [R4] \n\
 /* 08037c88 */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
 /* 08037c8a */ LDRSH R0, [R0, R1] \n\

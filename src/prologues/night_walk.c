@@ -48,9 +48,9 @@ void night_walk_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_night_walk_prologue_title, 0, 110, 120, 0, 0, 0x7f, 0);
-    gPrologueEngineData->playYanSprite = func_0804d160(D_03005380, anim_night_walk_prologue_play_yan, 0, 60, 120, 0, 0, 0x7f, 0);
-    gPrologueEngineData->balloonsSprite = func_0804d160(D_03005380, anim_night_walk_prologue_balloons, 0, 60, 120, 0, 1, 0, 0);
+    gPrologueEngineData->textSprite = sprite_create(D_03005380, anim_night_walk_prologue_title, 0, 110, 120, 0, 0, 0x7f, 0);
+    gPrologueEngineData->playYanSprite = sprite_create(D_03005380, anim_night_walk_prologue_play_yan, 0, 60, 120, 0, 0, 0x7f, 0);
+    gPrologueEngineData->balloonsSprite = sprite_create(D_03005380, anim_night_walk_prologue_balloons, 0, 60, 120, 0, 1, 0, 0);
 }
 
 
@@ -73,10 +73,10 @@ void night_walk_prologue_engine_stop(void) {
 void func_080458ec(u32 event) {
     switch (event) {
         case 0: // Event 0 - Play Animation (Play-yan)
-            func_0804dae0(D_03005380, gPrologueEngineData->playYanSprite, 1, 0x7f, 0);
+            sprite_set_playback(D_03005380, gPrologueEngineData->playYanSprite, 1, 0x7f, 0);
             break;
         case 1: // Event 1 - Play Animation (Text)
-            func_0804dae0(D_03005380, gPrologueEngineData->textSprite, 1, 0x7f, 0);
+            sprite_set_playback(D_03005380, gPrologueEngineData->textSprite, 1, 0x7f, 0);
             break;
     }
 }

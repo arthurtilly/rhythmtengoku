@@ -32,7 +32,7 @@ thumb_func_start func_0803a350 \n\
 /* 0803a388 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803a38a */ STR R3, [SP, 0x4] \n\
 /* 0803a38c */ STR R3, [SP, 0x8] \n\
-/* 0803a38e */ BL func_0804d8f8 \n\
+/* 0803a38e */ BL sprite_set_anim \n\
 /* 0803a392 */ LDR R0, [R4] \n\
 /* 0803a394 */ LDR R1, [R5] \n\
 /* 0803a396 */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
@@ -42,7 +42,7 @@ thumb_func_start func_0803a350 \n\
 /* 0803a39e */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 0803a3a0 */ STR R3, [SP] \n\
 /* 0803a3a2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803a3a4 */ BL func_0804dae0 \n\
+/* 0803a3a4 */ BL sprite_set_playback \n\
  \n\
 branch_0803a3a8: \n\
 /* 0803a3a8 */ ADD SP, 0xC \n\

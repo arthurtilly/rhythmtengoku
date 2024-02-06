@@ -95,8 +95,8 @@ void epilogue_scene_start(void *sVar, s32 dArg) {
         s16 sprite;
 
         anim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, 30, 0, text, 1, 0, 0x100);
-        sprite = func_0804d160(D_03005380, anim, 0, 120, 140, 0, 0, 0, 0);
-        func_0804d8c4(D_03005380, sprite, 4);
+        sprite = sprite_create(D_03005380, anim, 0, 120, 140, 0, 0, 0, 0);
+        sprite_set_base_palette(D_03005380, sprite, 4);
     }
 
     gEpilogue->objFont = scene_create_obj_font_printer(0x300, 4);

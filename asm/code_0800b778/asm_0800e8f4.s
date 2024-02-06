@@ -15,7 +15,7 @@ thumb_func_start func_0800e8f4 \n\
 /* 0800e906 */ ASRS R4, R4, 0x10 \n\
 /* 0800e908 */ LDR R2, =func_0800e8d8 \n\
 /* 0800e90a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800e90c */ BL func_0804daa8 \n\
+/* 0800e90c */ BL sprite_set_callback \n\
 /* 0800e910 */ LDR R0, [R5] \n\
 /* 0800e912 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0800e914 */ BL func_0804df6c \n\
@@ -30,7 +30,7 @@ branch_0800e924: \n\
 /* 0800e92a */ ASRS R1, R1, 0x10 \n\
 /* 0800e92c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800e92e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800e930 */ BL func_0804daa8 \n\
+/* 0800e930 */ BL sprite_set_callback \n\
  \n\
 branch_0800e934: \n\
 /* 0800e934 */ POP {R4, R5} \n\

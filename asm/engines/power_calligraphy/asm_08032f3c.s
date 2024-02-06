@@ -56,7 +56,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 08032faa */ STR R2, [SP, 0xC] \n\
 /* 08032fac */ STR R2, [SP, 0x10] \n\
 /* 08032fae */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 08032fb0 */ BL func_0804d160 \n\
+/* 08032fb0 */ BL sprite_create \n\
 /* 08032fb4 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08032fb6 */ LDR R1, [R2] \n\
 /* 08032fb8 */ STRH R0, [R1, 0x36] \n\
@@ -65,7 +65,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 08032fbe */ LDRSH R1, [R1, R2] \n\
 /* 08032fc0 */ MOVS R2, 0xB4 @ Set R2 to 0xB4 \n\
 /* 08032fc2 */ MOVS R3, 0x64 @ Set R3 to 0x64 \n\
-/* 08032fc4 */ BL func_0804d5d4 \n\
+/* 08032fc4 */ BL sprite_set_x_y \n\
 /* 08032fc8 */ LDR R0, [R5] \n\
 /* 08032fca */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08032fcc */ LDR R1, [R2] \n\
@@ -76,7 +76,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 08032fd6 */ MOV R9, R2 @ Set R9 to R2 \n\
 /* 08032fd8 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 08032fda */ MOV R3, R9 @ Set R3 to R9 \n\
-/* 08032fdc */ BL func_0804db44 \n\
+/* 08032fdc */ BL sprite_set_origin_x_y \n\
 /* 08032fe0 */ LDR R0, [R5] \n\
 /* 08032fe2 */ LDR R1, =anim_power_calligraphy_brush_charge_effect \n\
 /* 08032fe4 */ MOV R2, R10 @ Set R2 to R10 \n\
@@ -91,7 +91,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 08032ff6 */ STR R2, [SP, 0x10] \n\
 /* 08032ff8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08032ffa */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 08032ffc */ BL func_0804d160 \n\
+/* 08032ffc */ BL sprite_create \n\
 /* 08033000 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08033002 */ LDR R1, [R2] \n\
 /* 08033004 */ STRH R0, [R1, 0x38] \n\
@@ -100,7 +100,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 0803300a */ LDRSH R1, [R1, R2] \n\
 /* 0803300c */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0803300e */ MOV R3, R9 @ Set R3 to R9 \n\
-/* 08033010 */ BL func_0804db44 \n\
+/* 08033010 */ BL sprite_set_origin_x_y \n\
 /* 08033014 */ LDR R0, [R5] \n\
 /* 08033016 */ LDR R6, =anim_power_calligraphy_kokoro \n\
 /* 08033018 */ MOVS R1, 0x54 @ Set R1 to 0x54 \n\
@@ -118,7 +118,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 08033030 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 08033032 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08033034 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08033036 */ BL func_0804d160 \n\
+/* 08033036 */ BL sprite_create \n\
 /* 0803303a */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0803303c */ LDR R1, [R2] \n\
 /* 0803303e */ STRH R0, [R1, 0x2] \n\
@@ -127,7 +127,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 08033044 */ LDRSH R1, [R1, R2] \n\
 /* 08033046 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 08033048 */ MOV R3, R9 @ Set R3 to R9 \n\
-/* 0803304a */ BL func_0804db44 \n\
+/* 0803304a */ BL sprite_set_origin_x_y \n\
 /* 0803304e */ LDR R0, [R5] \n\
 /* 08033050 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 08033052 */ STR R1, [SP] \n\
@@ -140,7 +140,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 08033060 */ STR R7, [SP, 0x10] \n\
 /* 08033062 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 08033064 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08033066 */ BL func_0804d160 \n\
+/* 08033066 */ BL sprite_create \n\
 /* 0803306a */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0803306c */ LDR R1, [R2] \n\
 /* 0803306e */ STRH R0, [R1, 0x4] \n\
@@ -150,7 +150,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 08033076 */ SUBS R2, R4, 0x4 @ Set R2 to R4 - 0x4 \n\
 /* 08033078 */ SUBS R4, 0x2 @ Subtract 0x2 from R4 \n\
 /* 0803307a */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 0803307c */ BL func_0804db44 \n\
+/* 0803307c */ BL sprite_set_origin_x_y \n\
 /* 08033080 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08033082 */ LDR R1, [R0] \n\
 /* 08033084 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
@@ -186,7 +186,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 080330c0 */ STR R2, [SP, 0xC] \n\
 /* 080330c2 */ STR R7, [SP, 0x10] \n\
 /* 080330c4 */ MOVS R3, 0xF0 @ Set R3 to 0xF0 \n\
-/* 080330c6 */ BL func_0804d160 \n\
+/* 080330c6 */ BL sprite_create \n\
 /* 080330ca */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 080330cc */ LDR R1, [R2] \n\
 /* 080330ce */ MOVS R2, 0xD6 @ Set R2 to 0xD6 \n\

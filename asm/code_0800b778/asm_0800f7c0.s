@@ -55,14 +55,14 @@ branch_0800f7f2: \n\
 /* 0800f822 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 0800f824 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800f826 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800f828 */ BL func_0804d160 \n\
+/* 0800f828 */ BL sprite_create \n\
 /* 0800f82c */ STRH R0, [R5] \n\
 /* 0800f82e */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0800f830 */ LDR R0, [R2] \n\
 /* 0800f832 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800f834 */ LDRSH R1, [R5, R2] \n\
 /* 0800f836 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0800f838 */ BL func_0804d770 \n\
+/* 0800f838 */ BL sprite_set_visible \n\
 /* 0800f83c */ LDR R0, [SP, 0x18] \n\
 /* 0800f83e */ STR R0, [R5, 0x4] \n\
 /* 0800f840 */ LDR R1, [SP, 0x40] \n\

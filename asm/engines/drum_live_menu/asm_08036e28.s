@@ -54,19 +54,19 @@ branch_08036e66: \n\
 /* 08036e86 */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 08036e88 */ LDRSH R1, [R1, R2] \n\
 /* 08036e8a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08036e8c */ BL func_0804d770 \n\
+/* 08036e8c */ BL sprite_set_visible \n\
 /* 08036e90 */ LDR R0, [R4] \n\
 /* 08036e92 */ LDR R1, [R5] \n\
 /* 08036e94 */ MOVS R2, 0x16 @ Set R2 to 0x16 \n\
 /* 08036e96 */ LDRSH R1, [R1, R2] \n\
 /* 08036e98 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08036e9a */ BL func_0804d770 \n\
+/* 08036e9a */ BL sprite_set_visible \n\
 /* 08036e9e */ LDR R0, [R4] \n\
 /* 08036ea0 */ LDR R1, [R5] \n\
 /* 08036ea2 */ MOVS R2, 0x18 @ Set R2 to 0x18 \n\
 /* 08036ea4 */ LDRSH R1, [R1, R2] \n\
 /* 08036ea6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08036ea8 */ BL func_0804d770 \n\
+/* 08036ea8 */ BL sprite_set_visible \n\
  \n\
 branch_08036eac: \n\
 /* 08036eac */ POP {R4, R5} \n\

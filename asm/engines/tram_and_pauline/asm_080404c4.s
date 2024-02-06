@@ -140,7 +140,7 @@ branch_080405c6: \n\
 /* 080405ce */ MOVS R2, 0x2C @ Set R2 to 0x2C \n\
 /* 080405d0 */ LDRSH R1, [R1, R2] \n\
 /* 080405d2 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 080405d4 */ BL func_0804cebc \n\
+/* 080405d4 */ BL sprite_set_anim_cel \n\
 /* 080405d8 */ B branch_0804070e \n\
 \n\
 .ltorg \n\
@@ -153,7 +153,7 @@ branch_080405e0: \n\
 /* 080405e8 */ MOVS R2, 0x2C @ Set R2 to 0x2C \n\
 /* 080405ea */ LDRSH R1, [R1, R2] \n\
 /* 080405ec */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080405ee */ BL func_0804cebc \n\
+/* 080405ee */ BL sprite_set_anim_cel \n\
 /* 080405f2 */ B branch_0804070e \n\
 \n\
 .ltorg \n\
@@ -212,7 +212,7 @@ branch_0804065a: \n\
 /* 08040662 */ MOVS R2, 0x2C @ Set R2 to 0x2C \n\
 /* 08040664 */ LDRSH R1, [R1, R2] \n\
 /* 08040666 */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
-/* 08040668 */ BL func_0804cebc \n\
+/* 08040668 */ BL sprite_set_anim_cel \n\
 /* 0804066c */ B branch_0804070e \n\
 \n\
 .ltorg \n\
@@ -237,7 +237,7 @@ branch_08040692: \n\
 /* 08040692 */ MOVS R2, 0x2C @ Set R2 to 0x2C \n\
 /* 08040694 */ LDRSH R1, [R1, R2] \n\
 /* 08040696 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 08040698 */ BL func_0804cebc \n\
+/* 08040698 */ BL sprite_set_anim_cel \n\
 /* 0804069c */ B branch_0804070e \n\
 \n\
 .ltorg \n\
@@ -262,7 +262,7 @@ branch_080406be: \n\
 /* 080406be */ MOVS R2, 0x2C @ Set R2 to 0x2C \n\
 /* 080406c0 */ LDRSH R1, [R1, R2] \n\
 /* 080406c2 */ MOVS R2, 0x3 @ Set R2 to 0x3 \n\
-/* 080406c4 */ BL func_0804cebc \n\
+/* 080406c4 */ BL sprite_set_anim_cel \n\
 /* 080406c8 */ B branch_0804070e \n\
 \n\
 .ltorg \n\
@@ -285,7 +285,7 @@ branch_080406ea: \n\
 /* 080406ea */ MOVS R2, 0x2C @ Set R2 to 0x2C \n\
 /* 080406ec */ LDRSH R1, [R1, R2] \n\
 /* 080406ee */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
-/* 080406f0 */ BL func_0804cebc \n\
+/* 080406f0 */ BL sprite_set_anim_cel \n\
 /* 080406f4 */ B branch_0804070e \n\
 \n\
 .ltorg \n\
@@ -298,7 +298,7 @@ branch_080406fc: \n\
 /* 08040704 */ MOVS R2, 0x2C @ Set R2 to 0x2C \n\
 /* 08040706 */ LDRSH R1, [R1, R2] \n\
 /* 08040708 */ MOVS R2, 0x3 @ Set R2 to 0x3 \n\
-/* 0804070a */ BL func_0804cebc \n\
+/* 0804070a */ BL sprite_set_anim_cel \n\
  \n\
 branch_0804070e: \n\
 /* 0804070e */ POP {R4-R7} \n\

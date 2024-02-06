@@ -60,7 +60,7 @@ branch_08035b0e: \n\
 /* 08035b16 */ LDRSH R1, [R2, R3] \n\
 /* 08035b18 */ ADDS R2, 0x2F @ Add 0x2F to R2 \n\
 /* 08035b1a */ LDRB R2, [R2] \n\
-/* 08035b1c */ BL func_0804d770 \n\
+/* 08035b1c */ BL sprite_set_visible \n\
 /* 08035b20 */ POP {R4-R6} \n\
 /* 08035b22 */ POP {R0} \n\
 /* 08035b24 */ BX R0 \n\

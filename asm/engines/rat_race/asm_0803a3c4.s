@@ -31,14 +31,14 @@ branch_0803a3d4: \n\
 /* 0803a3f2 */ LDRSH R1, [R3, R6] \n\
 /* 0803a3f4 */ LSLS R2, R2, 0x10 \n\
 /* 0803a3f6 */ ASRS R2, R2, 0x10 \n\
-/* 0803a3f8 */ BL func_0804d614 \n\
+/* 0803a3f8 */ BL sprite_set_x \n\
 /* 0803a3fc */ LDR R0, [R4] \n\
 /* 0803a3fe */ LDR R2, [R5] \n\
 /* 0803a400 */ MOVS R3, 0x12 @ Set R3 to 0x12 \n\
 /* 0803a402 */ LDRSH R1, [R2, R3] \n\
 /* 0803a404 */ MOVS R6, 0xC @ Set R6 to 0xC \n\
 /* 0803a406 */ LDRSH R2, [R2, R6] \n\
-/* 0803a408 */ BL func_0804d614 \n\
+/* 0803a408 */ BL sprite_set_x \n\
 /* 0803a40c */ POP {R4-R6} \n\
 /* 0803a40e */ POP {R0} \n\
 /* 0803a410 */ BX R0 \n\

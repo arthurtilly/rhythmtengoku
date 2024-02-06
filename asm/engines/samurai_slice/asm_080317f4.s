@@ -39,7 +39,7 @@ branch_0803182a: \n\
 /* 08031838 */ STR R0, [SP, 0x8] \n\
 /* 0803183a */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 0803183c */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
-/* 0803183e */ BL func_0804d8f8 \n\
+/* 0803183e */ BL sprite_set_anim \n\
 /* 08031842 */ LDR R0, =D_03005380 \n\
 /* 08031844 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08031846 */ LDR R0, [R0] \n\
@@ -49,7 +49,7 @@ branch_0803182a: \n\
 /* 0803184e */ LDRSH R1, [R1, R2] \n\
 /* 08031850 */ LDR R2, =func_080316ec \n\
 /* 08031852 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08031854 */ BL func_0804daa8 \n\
+/* 08031854 */ BL sprite_set_callback \n\
 /* 08031858 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0803185a */ LDR R5, [R3] \n\
 /* 0803185c */ LDR R0, [R7] \n\
@@ -64,7 +64,7 @@ branch_0803182a: \n\
 /* 08031872 */ LSRS R2, R2, 0x10 \n\
 /* 08031874 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08031876 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08031878 */ BL func_0804dcb8 \n\
+/* 08031878 */ BL sprite_set_anim_speed \n\
 /* 0803187c */ LDR R0, [R7] \n\
 /* 0803187e */ STRB R6, [R0, 0xE] \n\
 /* 08031880 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
@@ -85,7 +85,7 @@ branch_0803182a: \n\
 /* 080318a0 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080318a2 */ LDRSH R1, [R1, R3] \n\
 /* 080318a4 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 080318a6 */ BL func_0804d770 \n\
+/* 080318a6 */ BL sprite_set_visible \n\
 /* 080318aa */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 080318ac */ LDR R3, [R0] \n\
 /* 080318ae */ LDR R0, [R7] \n\
@@ -103,7 +103,7 @@ branch_080318c2: \n\
 /* 080318c2 */ LSLS R2, R0, 0x18 \n\
 /* 080318c4 */ ASRS R2, R2, 0x18 \n\
 /* 080318c6 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
-/* 080318c8 */ BL func_0804d8c4 \n\
+/* 080318c8 */ BL sprite_set_base_palette \n\
 /* 080318cc */ LDR R3, [R7] \n\
 /* 080318ce */ MOVS R0, 0xEE @ Set R0 to 0xEE \n\
 /* 080318d0 */ LSLS R0, R0, 0x1 \n\
@@ -129,7 +129,7 @@ branch_080318e4: \n\
 /* 080318f4 */ LDRSH R1, [R1, R3] \n\
 /* 080318f6 */ LSLS R2, R2, 0x8 \n\
 /* 080318f8 */ ASRS R2, R2, 0x10 \n\
-/* 080318fa */ BL func_0804d648 \n\
+/* 080318fa */ BL sprite_set_y \n\
 /* 080318fe */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08031900 */ LDR R5, [R0] \n\
 /* 08031902 */ LDR R0, [R7] \n\
@@ -145,7 +145,7 @@ branch_080318e4: \n\
 /* 0803191a */ LSRS R2, R2, 0x10 \n\
 /* 0803191c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0803191e */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08031920 */ BL func_0804dcb8 \n\
+/* 08031920 */ BL sprite_set_anim_speed \n\
  \n\
 branch_08031924: \n\
 /* 08031924 */ ADD SP, 0xC \n\

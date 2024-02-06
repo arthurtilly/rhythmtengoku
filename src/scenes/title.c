@@ -17,14 +17,14 @@ void title_logo_set_bubble_pos(s32 id) {
     yOfs = FIXED_POINT_MUL(bubble->bounceDistance, sins2(bubble->bounceAngle));
     x = bubble->centerX + FIXED_TO_INT(xOfs);
     y = bubble->centerY + FIXED_TO_INT(yOfs) + rise;
-    func_0804d5d4(D_03005380, bubble->letter, x, y);
+    sprite_set_x_y(D_03005380, bubble->letter, x, y);
 
     xB = xOfs * 15;
     yB = yOfs * 15;
     x = bubble->centerX + FIXED_TO_INT(xB >> 5);
     y = bubble->centerY + FIXED_TO_INT(yB >> 5) + rise;
-    func_0804d5d4(D_03005380, bubble->inner, x, y);
-    func_0804d5d4(D_03005380, bubble->outer, x, y);
+    sprite_set_x_y(D_03005380, bubble->inner, x, y);
+    sprite_set_x_y(D_03005380, bubble->outer, x, y);
 }
 
 
@@ -37,9 +37,9 @@ void title_logo_init(void) {
         struct TitleLogoCharData *letter = &title_logo_char_data[i];
 
         bubble->active = FALSE;
-        bubble->letter = func_0804d160(D_03005380, letter->anim, 0, letter->x, letter->y, 0x4800, 0, 0, 0x8000);
-        bubble->inner = func_0804d160(D_03005380, anim_title_logo_bubble_inner, 0, letter->x, letter->y, 0x4801, 0, 0, 0x8000);
-        bubble->outer = func_0804d160(D_03005380, anim_title_logo_bubble_outer, 0, letter->x, letter->y, 0x4802, 0, 0, 0x8000);
+        bubble->letter = sprite_create(D_03005380, letter->anim, 0, letter->x, letter->y, 0x4800, 0, 0, 0x8000);
+        bubble->inner = sprite_create(D_03005380, anim_title_logo_bubble_inner, 0, letter->x, letter->y, 0x4801, 0, 0, 0x8000);
+        bubble->outer = sprite_create(D_03005380, anim_title_logo_bubble_outer, 0, letter->x, letter->y, 0x4802, 0, 0, 0x8000);
         bubble->centerX = letter->x;
         bubble->centerY = letter->y;
         bubble->riseDistance = (agb_random(20) - 10) + 160;
@@ -64,9 +64,9 @@ void title_logo_appear(void) {
         struct LogoBubble *bubble = &gTitle->logoBubbles[i];
 
         bubble->active = TRUE;
-        func_0804d770(D_03005380, bubble->letter, TRUE);
-        func_0804d770(D_03005380, bubble->inner, TRUE);
-        func_0804d770(D_03005380, bubble->outer, TRUE);
+        sprite_set_visible(D_03005380, bubble->letter, TRUE);
+        sprite_set_visible(D_03005380, bubble->inner, TRUE);
+        sprite_set_visible(D_03005380, bubble->outer, TRUE);
     }
 }
 
@@ -165,8 +165,8 @@ void title_scene_start(void *sVar, s32 dArg) {
     func_08007324(FALSE);
     func_080073f0();
 
-    gTitle->directiveText = func_0804d160(D_03005380, anim_title_text, 0, 120, 132, 0x800, 1, 0x7f, 0x8000);
-    gTitle->stars = func_0804d160(D_03005380, anim_title_stars_appear, 0, 120, 64, 0x4864, 1, 0x7f, 0x8000);
+    gTitle->directiveText = sprite_create(D_03005380, anim_title_text, 0, 120, 132, 0x800, 1, 0x7f, 0x8000);
+    gTitle->stars = sprite_create(D_03005380, anim_title_stars_appear, 0, 120, 64, 0x4864, 1, 0x7f, 0x8000);
     textPrinter = text_printer_create_new(get_current_mem_id(), 1, 240, 32);
     text_printer_set_x_y(textPrinter, 0, 8);
     text_printer_set_layer(textPrinter, 0);
@@ -187,8 +187,8 @@ void title_scene_start(void *sVar, s32 dArg) {
 
 // Finish Intro (Script Function)
 void title_scene_complete_intro(void) {
-    func_0804d770(D_03005380, gTitle->directiveText, TRUE);
-    func_0804d8f8(D_03005380, gTitle->stars, anim_title_stars_spin, 0, 1, 0, 0);
+    sprite_set_visible(D_03005380, gTitle->directiveText, TRUE);
+    sprite_set_anim(D_03005380, gTitle->stars, anim_title_stars_spin, 0, 1, 0, 0);
     gTitle->titleIsDisplayed = TRUE;
 }
 
@@ -196,12 +196,12 @@ void title_scene_complete_intro(void) {
 // Beat Animation (Script Function)
 void title_scene_beat_anim(void) {
     if (!gTitle->titleIsDisplayed) {
-        s32 frame = func_0804d6cc(D_03005380, gTitle->stars);
-        func_0804cebc(D_03005380, gTitle->stars, frame + 1);
-        func_0804d770(D_03005380, gTitle->stars, TRUE);
+        s32 frame = sprite_get_anim_cel(D_03005380, gTitle->stars);
+        sprite_set_anim_cel(D_03005380, gTitle->stars, frame + 1);
+        sprite_set_visible(D_03005380, gTitle->stars, TRUE);
     }
 
-    func_0804cebc(D_03005380, gTitle->directiveText, 0);
+    sprite_set_anim_cel(D_03005380, gTitle->directiveText, 0);
     title_logo_bounce_all();
 }
 

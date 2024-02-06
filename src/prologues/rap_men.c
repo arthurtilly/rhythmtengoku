@@ -48,7 +48,7 @@ void rap_men_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_rap_men_prologue_title, 0, 190, 40, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = sprite_create(D_03005380, anim_rap_men_prologue_title, 0, 190, 40, 0, 0, 0x7f, 0);
 }
 
 
@@ -69,5 +69,5 @@ void rap_men_prologue_engine_stop(void) {
 
 // [func_08047034] Event 0 - Play Animation (Text)
 void func_08047034(void) {
-    func_0804dae0(D_03005380, gPrologueEngineData->textSprite, 1, 0x7f, 0);
+    sprite_set_playback(D_03005380, gPrologueEngineData->textSprite, 1, 0x7f, 0);
 }

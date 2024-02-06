@@ -29,7 +29,7 @@ branch_0803c228: \n\
 /* 0803c238 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803c23a */ LDRSH R1, [R1, R2] \n\
 /* 0803c23c */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803c23e */ BL func_0804d770 \n\
+/* 0803c23e */ BL sprite_set_visible \n\
 /* 0803c242 */ ADDS R4, 0x1 @ Add 0x1 to R4 \n\
 /* 0803c244 */ LDR R0, [R5] \n\
 /* 0803c246 */ MOVS R3, 0xB6 @ Set R3 to 0xB6 \n\

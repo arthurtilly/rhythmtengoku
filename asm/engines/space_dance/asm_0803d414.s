@@ -27,7 +27,7 @@ thumb_func_start func_0803d414 \n\
 /* 0803d440 */ STR R4, [SP, 0x4] \n\
 /* 0803d442 */ STR R4, [SP, 0x8] \n\
 /* 0803d444 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803d446 */ BL func_0804d8f8 \n\
+/* 0803d446 */ BL sprite_set_anim \n\
  \n\
 branch_0803d44a: \n\
 /* 0803d44a */ ADD SP, 0xC \n\

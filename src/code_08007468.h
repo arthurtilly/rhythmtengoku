@@ -19,7 +19,7 @@ extern s32 (*math_sqrt)(s32);
 
 /* GRAPHICS UTIL */
 extern void get_sprite_xy(s16 sprite, s16 *xReq, s16 *yReq);
-extern void assign_sprite_affine_param(s16 sprite, s8 affineParam);
+extern void assign_sprite_affine_param(s16 sprite, s8 affineIndex);
 extern void set_affine_scale_rotation(s8 affineParam, s16 scale, s16 rotation);
 extern void set_affine_stretch_rotation(s8 affineParam, s16 xScale, s16 yScale, s16 rotation);
 extern struct SpriteMover_Indefinite *start_sprite_motion_task_indefinite(struct SpriteMover_Indefinite_Inputs *inputs);

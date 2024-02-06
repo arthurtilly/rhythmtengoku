@@ -15,7 +15,7 @@ thumb_func_start space_dance_common_display_text \n\
 /* 0803d9b2 */ MOVS R2, 0x1E @ Set R2 to 0x1E \n\
 /* 0803d9b4 */ LDRSH R1, [R1, R2] \n\
 /* 0803d9b6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803d9b8 */ BL func_0804d770 \n\
+/* 0803d9b8 */ BL sprite_set_visible \n\
 /* 0803d9bc */ B branch_0803da0a \n\
 \n\
 .ltorg \n\
@@ -43,13 +43,13 @@ branch_0803d9c8: \n\
 /* 0803d9f2 */ STR R3, [SP] \n\
 /* 0803d9f4 */ STR R3, [SP, 0x4] \n\
 /* 0803d9f6 */ STR R3, [SP, 0x8] \n\
-/* 0803d9f8 */ BL func_0804d8f8 \n\
+/* 0803d9f8 */ BL sprite_set_anim \n\
 /* 0803d9fc */ LDR R0, [R5] \n\
 /* 0803d9fe */ LDR R1, [R4] \n\
 /* 0803da00 */ MOVS R2, 0x1E @ Set R2 to 0x1E \n\
 /* 0803da02 */ LDRSH R1, [R1, R2] \n\
 /* 0803da04 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803da06 */ BL func_0804d770 \n\
+/* 0803da06 */ BL sprite_set_visible \n\
  \n\
 branch_0803da0a: \n\
 /* 0803da0a */ ADD SP, 0xC \n\

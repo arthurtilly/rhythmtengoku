@@ -26,7 +26,7 @@ thumb_func_start space_dance_cue_hit \n\
 /* 0803d61e */ STR R1, [SP, 0x8] \n\
 /* 0803d620 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803d622 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803d624 */ BL func_0804d8f8 \n\
+/* 0803d624 */ BL sprite_set_anim \n\
 /* 0803d628 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
 /* 0803d62a */ BL ticks_to_frames \n\
 /* 0803d62e */ LDR R1, [R5] \n\

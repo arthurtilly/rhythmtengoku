@@ -42,7 +42,7 @@ void bon_odori_init_donpans(void) {
 
     for (i = 0; i < BON_ODORI_DONPAN_AMOUNT; i++) {
         anim = bon_odori_get_donpan_anim(DONPAN_ANIM_BEAT, i);
-        gBonOdori->donpanSprites[i] = func_0804d160(D_03005380, anim, 0x7f, x, y, z, 1, 0x7f, 0);
+        gBonOdori->donpanSprites[i] = sprite_create(D_03005380, anim, 0x7f, x, y, z, 1, 0x7f, 0);
         gBonOdori->donpanAnimTimers[i] = 0;
         x += 53;
     }
@@ -62,7 +62,7 @@ struct Animation *bon_odori_get_donpan_anim(u32 animation, u32 donpan) {
 // [func_08020778] Set Donpan Animation
 void bon_odori_set_donpan_anim(u32 animation, u32 donpan) {
     struct Animation *anim = bon_odori_get_donpan_anim(animation, donpan);
-    func_0804d8f8(D_03005380, gBonOdori->donpanSprites[donpan], anim, 0, 1, 0x7f, 0);
+    sprite_set_anim(D_03005380, gBonOdori->donpanSprites[donpan], anim, 0, 1, 0x7f, 0);
     gBonOdori->donpanAnimTimers[donpan] = ticks_to_frames(bon_odori_anim_durations[animation]);
 }
 
@@ -162,7 +162,7 @@ void bon_odori_engine_start(u32 ver) {
 
     gBonOdori->lyricsY = 0;
     gBonOdori->lyricsX = 0;
-    gBonOdori->yaguraSprite = func_0804d160(D_03005380, bon_odori_get_anim(BON_ODORI_ANIM_YAGURA_BEAT), 0x7f, 120, 72, 0x8800, 1, 0x7f, 0);
+    gBonOdori->yaguraSprite = sprite_create(D_03005380, bon_odori_get_anim(BON_ODORI_ANIM_YAGURA_BEAT), 0x7f, 120, 72, 0x8800, 1, 0x7f, 0);
     gBonOdori->yaguraFrownTimer = 0;
     gBonOdori->yaguraNoticedMistake = FALSE;
     bon_odori_init_donpans();
@@ -189,8 +189,8 @@ void bon_odori_lyrics_display_line(const char *text, u32 line, u32 hAlign) {
 
     if (lyricObj->textSprite >= 0) {
         bmp_font_obj_delete_printed_anim(gBonOdori->unk4, lyricObj->anim);
-        func_0804d504(D_03005380, lyricObj->textSprite);
-        func_0804d504(D_03005380, lyricObj->highlightSprite);
+        sprite_delete(D_03005380, lyricObj->textSprite);
+        sprite_delete(D_03005380, lyricObj->highlightSprite);
         lyricObj->textSprite = -1;
     }
 
@@ -212,12 +212,12 @@ void bon_odori_lyrics_display_line(const char *text, u32 line, u32 hAlign) {
         x = bon_odori_text_x_offsets[hAlign];
         y = (line * 24) + 32;
 
-        lyricObj->textSprite = func_0804d160(D_03005380, textAnim->frames, 0, x, y, 0x4100, 0, 0, 0);
-        func_0804d8c4(D_03005380, lyricObj->textSprite, BON_LYRICS_NORMAL_PALETTE);
-        func_0804db44(D_03005380, lyricObj->textSprite, &gBonOdori->lyricsX, &gBonOdori->lyricsY);
+        lyricObj->textSprite = sprite_create(D_03005380, textAnim->frames, 0, x, y, 0x4100, 0, 0, 0);
+        sprite_set_base_palette(D_03005380, lyricObj->textSprite, BON_LYRICS_NORMAL_PALETTE);
+        sprite_set_origin_x_y(D_03005380, lyricObj->textSprite, &gBonOdori->lyricsX, &gBonOdori->lyricsY);
 
-        lyricObj->highlightSprite = func_0804d294(D_03005380, textAnim->frames, 0, x, y, 0x4100, 0, 0, 0x8000, 8);
-        func_0804db44(D_03005380, lyricObj->highlightSprite, &gBonOdori->lyricsX, &gBonOdori->lyricsY);
+        lyricObj->highlightSprite = sprite_create_w_attr(D_03005380, textAnim->frames, 0, x, y, 0x4100, 0, 0, 0x8000, 8);
+        sprite_set_origin_x_y(D_03005380, lyricObj->highlightSprite, &gBonOdori->lyricsX, &gBonOdori->lyricsY);
 
         lyricObj->anim = textAnim->frames;
         lyricObj->width = func_0804ddb0(D_03005380, lyricObj->textSprite, 24);
@@ -273,8 +273,8 @@ void bon_odori_lyrics_finish_highlight(u32 line) {
 
     func_0800c604(0);
     lyricObj = &gBonOdori->lyrics[line];
-    func_0804d770(D_03005380, lyricObj->highlightSprite, FALSE);
-    func_0804d8c4(D_03005380, lyricObj->textSprite, BON_LYRICS_HIGHLIGHT_PALETTE);
+    sprite_set_visible(D_03005380, lyricObj->highlightSprite, FALSE);
+    sprite_set_base_palette(D_03005380, lyricObj->textSprite, BON_LYRICS_HIGHLIGHT_PALETTE);
 }
 
 
@@ -288,7 +288,7 @@ void bon_odori_lyrics_start_highlight(u32 duration) {
 
     if (lyricObj->textSprite < 0) return;
 
-    func_0804d770(D_03005380, lyricObj->highlightSprite, TRUE);
+    sprite_set_visible(D_03005380, lyricObj->highlightSprite, TRUE);
 
     initX = -lyricObj->leftEdge;
     targetX = initX - lyricObj->width;
@@ -447,17 +447,17 @@ void bon_odori_common_beat_animation(u32 arg) {
             if ((i < (BON_ODORI_DONPAN_AMOUNT - 1)) && (gBonOdori->donpanEmoteTimer != 0)) {
                 anim = bon_odori_get_donpan_anim(gBonOdori->donpanEmoteAnim, i);
             }
-            func_0804d8f8(D_03005380, gBonOdori->donpanSprites[i], anim, 0, 1, 0x7f, 0);
+            sprite_set_anim(D_03005380, gBonOdori->donpanSprites[i], anim, 0, 1, 0x7f, 0);
         }
     }
 
     if (gBonOdori->yaguraFrownTimer == 0) {
         if (gBonOdori->yaguraNoticedMistake) {
-            func_0804d8f8(D_03005380, gBonOdori->yaguraSprite, bon_odori_get_anim(BON_ODORI_ANIM_YAGURA_FROWN), 0, 1, 0x7f, 0);
+            sprite_set_anim(D_03005380, gBonOdori->yaguraSprite, bon_odori_get_anim(BON_ODORI_ANIM_YAGURA_FROWN), 0, 1, 0x7f, 0);
             gBonOdori->yaguraFrownTimer = ticks_to_frames(0x24);
             gBonOdori->yaguraNoticedMistake = FALSE;
         } else {
-            func_0804d8f8(D_03005380, gBonOdori->yaguraSprite, bon_odori_get_anim(BON_ODORI_ANIM_YAGURA_BEAT), 0, 1, 0x7f, 0);
+            sprite_set_anim(D_03005380, gBonOdori->yaguraSprite, bon_odori_get_anim(BON_ODORI_ANIM_YAGURA_BEAT), 0, 1, 0x7f, 0);
         }
     }
 

@@ -20,7 +20,7 @@ thumb_func_start func_0800f89c \n\
 /* 0800f8b8 */ BLT branch_0800f8ca \n\
 /* 0800f8ba */ LDR R0, =D_03005380 \n\
 /* 0800f8bc */ LDR R0, [R0] \n\
-/* 0800f8be */ BL func_0804d504 \n\
+/* 0800f8be */ BL sprite_delete \n\
 /* 0800f8c2 */ LDR R0, [R5, 0x50] \n\
 /* 0800f8c4 */ ADDS R0, R4, R0 @ Set R0 to R4 + R0 \n\
 /* 0800f8c6 */ LDR R1, =0xffff \n\

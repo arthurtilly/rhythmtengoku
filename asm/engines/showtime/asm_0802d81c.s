@@ -76,7 +76,7 @@ branch_0802d89c: \n\
 /* 0802d89e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802d8a0 */ LDRSH R1, [R1, R2] \n\
 /* 0802d8a2 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0802d8a4 */ BL func_0804d770 \n\
+/* 0802d8a4 */ BL sprite_set_visible \n\
 /* 0802d8a8 */ B branch_0802d8b6 \n\
 \n\
 .ltorg \n\

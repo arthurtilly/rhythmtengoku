@@ -36,7 +36,7 @@ branch_080224c8: \n\
 /* 080224e0 */ LDR R1, =anim_mannequin_head \n\
 /* 080224e2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080224e4 */ MOVS R3, 0x68 @ Set R3 to 0x68 \n\
-/* 080224e6 */ BL func_0804d160 \n\
+/* 080224e6 */ BL sprite_create \n\
 /* 080224ea */ STRH R0, [R4, 0x2] \n\
 /* 080224ec */ LDR R0, [R6] \n\
 /* 080224ee */ STR R7, [SP] \n\
@@ -49,7 +49,7 @@ branch_080224c8: \n\
 /* 080224fc */ LDR R1, =anim_mannequin_eye_l \n\
 /* 080224fe */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08022500 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 08022502 */ BL func_0804d160 \n\
+/* 08022502 */ BL sprite_create \n\
 /* 08022506 */ STRH R0, [R4, 0x6] \n\
 /* 08022508 */ LDR R0, [R6] \n\
 /* 0802250a */ STR R7, [SP] \n\
@@ -62,7 +62,7 @@ branch_080224c8: \n\
 /* 08022518 */ LDR R1, =anim_mannequin_eye_r \n\
 /* 0802251a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802251c */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 0802251e */ BL func_0804d160 \n\
+/* 0802251e */ BL sprite_create \n\
 /* 08022522 */ STRH R0, [R4, 0x4] \n\
 /* 08022524 */ LDR R0, [R6] \n\
 /* 08022526 */ STR R7, [SP] \n\
@@ -76,23 +76,23 @@ branch_080224c8: \n\
 /* 08022536 */ LDR R1, =anim_mannequin_dash_effect \n\
 /* 08022538 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802253a */ MOVS R3, 0xC8 @ Set R3 to 0xC8 \n\
-/* 0802253c */ BL func_0804d160 \n\
+/* 0802253c */ BL sprite_create \n\
 /* 08022540 */ STRH R0, [R4, 0x8] \n\
 /* 08022542 */ LDR R0, [R6] \n\
 /* 08022544 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08022546 */ LDRSH R1, [R4, R2] \n\
 /* 08022548 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
-/* 0802254a */ BL func_0804d648 \n\
+/* 0802254a */ BL sprite_set_y \n\
 /* 0802254e */ LDR R0, [R6] \n\
 /* 08022550 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08022552 */ LDRSH R1, [R4, R2] \n\
 /* 08022554 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
-/* 08022556 */ BL func_0804d648 \n\
+/* 08022556 */ BL sprite_set_y \n\
 /* 0802255a */ LDR R0, [R6] \n\
 /* 0802255c */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 0802255e */ LDRSH R1, [R4, R2] \n\
 /* 08022560 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
-/* 08022562 */ BL func_0804d648 \n\
+/* 08022562 */ BL sprite_set_y \n\
 /* 08022566 */ STRH R5, [R4, 0x12] \n\
 /* 08022568 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
 /* 0802256a */ ADD R9, R0 @ Add R0 to R9 \n\

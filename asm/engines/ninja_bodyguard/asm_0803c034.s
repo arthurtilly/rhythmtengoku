@@ -31,7 +31,7 @@ branch_0803c04c: \n\
 /* 0803c062 */ STR R2, [SP] \n\
 /* 0803c064 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803c066 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
-/* 0803c068 */ BL func_0804dae0 \n\
+/* 0803c068 */ BL sprite_set_playback \n\
 /* 0803c06c */ ADDS R4, 0x1 @ Add 0x1 to R4 \n\
 /* 0803c06e */ LDR R0, [R5] \n\
 /* 0803c070 */ MOVS R3, 0xB6 @ Set R3 to 0xB6 \n\

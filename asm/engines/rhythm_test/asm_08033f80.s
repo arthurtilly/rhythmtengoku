@@ -28,14 +28,14 @@ branch_08033fa2: \n\
 /* 08033faa */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 08033fac */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08033fae */ LDRSH R1, [R1, R2] \n\
-/* 08033fb0 */ BL func_0804d504 \n\
+/* 08033fb0 */ BL sprite_delete \n\
 /* 08033fb4 */ LDR R0, [R7] \n\
 /* 08033fb6 */ LDR R1, [R6] \n\
 /* 08033fb8 */ ADDS R1, 0x4E @ Add 0x4E to R1 \n\
 /* 08033fba */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 08033fbc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08033fbe */ LDRSH R1, [R1, R2] \n\
-/* 08033fc0 */ BL func_0804d504 \n\
+/* 08033fc0 */ BL sprite_delete \n\
 /* 08033fc4 */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\
 /* 08033fc6 */ LDR R0, [R6] \n\
 /* 08033fc8 */ LDRH R0, [R0, 0xC] \n\
@@ -53,7 +53,7 @@ branch_08033fd0: \n\
 /* 08033fdc */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08033fde */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08033fe0 */ LDRSH R1, [R1, R2] \n\
-/* 08033fe2 */ BL func_0804d504 \n\
+/* 08033fe2 */ BL sprite_delete \n\
 /* 08033fe6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08033fe8 */ BL func_08033e00 \n\
 /* 08033fec */ BL func_0803397c \n\

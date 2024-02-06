@@ -21,7 +21,7 @@ thumb_func_start power_calligraphy_common_init_tutorial \n\
 /* 0803391e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08033920 */ LDRSH R1, [R1, R2] \n\
 /* 08033922 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 08033924 */ BL func_0804d770 \n\
+/* 08033924 */ BL sprite_set_visible \n\
 /* 08033928 */ B branch_08033952 \n\
 \n\
 .ltorg \n\
@@ -39,7 +39,7 @@ branch_08033934: \n\
 /* 08033948 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803394a */ LDRSH R1, [R1, R2] \n\
 /* 0803394c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803394e */ BL func_0804d770 \n\
+/* 0803394e */ BL sprite_set_visible \n\
  \n\
 branch_08033952: \n\
 /* 08033952 */ POP {R4} \n\

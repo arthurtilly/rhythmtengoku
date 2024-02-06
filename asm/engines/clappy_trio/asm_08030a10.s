@@ -22,7 +22,7 @@ thumb_func_start clappy_trio_input_event \n\
 /* 08030a32 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08030a34 */ STR R3, [SP, 0x8] \n\
 /* 08030a36 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
-/* 08030a38 */ BL func_0804d8f8 \n\
+/* 08030a38 */ BL sprite_set_anim \n\
 /* 08030a3c */ LDR R0, =s_witch_donats_seqData \n\
 /* 08030a3e */ BL play_sound \n\
 /* 08030a42 */ STRB R5, [R4, 0x8] \n\

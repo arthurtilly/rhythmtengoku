@@ -55,7 +55,7 @@ branch_0803d3b6: \n\
 /* 0803d3e0 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
 /* 0803d3e2 */ STR R3, [SP, 0x4] \n\
 /* 0803d3e4 */ STR R4, [SP, 0x8] \n\
-/* 0803d3e6 */ BL func_0804d8f8 \n\
+/* 0803d3e6 */ BL sprite_set_anim \n\
  \n\
 branch_0803d3ea: \n\
 /* 0803d3ea */ ADD SP, 0xC \n\

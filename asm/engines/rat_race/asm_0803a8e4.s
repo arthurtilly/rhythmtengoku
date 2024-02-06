@@ -102,7 +102,7 @@ branch_0803a9b2: \n\
  \n\
 branch_0803a9be: \n\
 /* 0803a9be */ ASRS R2, R2, 0x18 \n\
-/* 0803a9c0 */ BL func_0804cebc \n\
+/* 0803a9c0 */ BL sprite_set_anim_cel \n\
 /* 0803a9c4 */ B branch_0803a9ee \n\
 \n\
 .ltorg \n\
@@ -138,7 +138,7 @@ branch_0803a9ee: \n\
 /* 0803aa04 */ ADDS R2, 0x44 @ Add 0x44 to R2 \n\
 /* 0803aa06 */ LSLS R2, R2, 0x10 \n\
 /* 0803aa08 */ ASRS R2, R2, 0x10 \n\
-/* 0803aa0a */ BL func_0804d648 \n\
+/* 0803aa0a */ BL sprite_set_y \n\
 /* 0803aa0e */ LDR R0, [R5] \n\
 /* 0803aa10 */ LDR R2, [R4] \n\
 /* 0803aa12 */ ADDS R1, R2, 0x0 @ Set R1 to R2 + 0x0 \n\
@@ -151,7 +151,7 @@ branch_0803a9ee: \n\
 /* 0803aa20 */ ADDS R2, 0x44 @ Add 0x44 to R2 \n\
 /* 0803aa22 */ LSLS R2, R2, 0x10 \n\
 /* 0803aa24 */ ASRS R2, R2, 0x10 \n\
-/* 0803aa26 */ BL func_0804d648 \n\
+/* 0803aa26 */ BL sprite_set_y \n\
 /* 0803aa2a */ LDR R4, [R4] \n\
 /* 0803aa2c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803aa2e */ ADDS R0, 0xD3 @ Add 0xD3 to R0 \n\

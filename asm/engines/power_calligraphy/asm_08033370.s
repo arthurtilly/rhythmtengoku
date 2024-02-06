@@ -38,7 +38,7 @@ thumb_func_start func_08033370 \n\
 /* 080333b2 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 080333b4 */ LDRSH R1, [R1, R2] \n\
 /* 080333b6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080333b8 */ BL func_0804d770 \n\
+/* 080333b8 */ BL sprite_set_visible \n\
 /* 080333bc */ B branch_080333d6 \n\
 \n\
 .ltorg \n\

@@ -53,7 +53,7 @@ branch_080232c2: \n\
 /* 080232d6 */ LDR R1, =anim_mannequin_score_num \n\
 /* 080232d8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080232da */ MOVS R3, 0x58 @ Set R3 to 0x58 \n\
-/* 080232dc */ BL func_0804d160 \n\
+/* 080232dc */ BL sprite_create \n\
 /* 080232e0 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 080232e2 */ LDR R1, [R2] \n\
 /* 080232e4 */ LSLS R4, R5, 0x1 \n\
@@ -68,7 +68,7 @@ branch_080232c2: \n\
 /* 080232f6 */ SUBS R2, R2, R3 @ Set R2 to R2 - R3 \n\
 /* 080232f8 */ LSLS R2, R2, 0x10 \n\
 /* 080232fa */ ASRS R2, R2, 0x10 \n\
-/* 080232fc */ BL func_0804d614 \n\
+/* 080232fc */ BL sprite_set_x \n\
 /* 08023300 */ LDR R0, [R6] \n\
 /* 08023302 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08023304 */ LDR R1, [R2] \n\
@@ -78,7 +78,7 @@ branch_080232c2: \n\
 /* 0802330c */ LDRSH R1, [R1, R3] \n\
 /* 0802330e */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 08023310 */ LSRS R2, R3, 0x10 \n\
-/* 08023312 */ BL func_0804d770 \n\
+/* 08023312 */ BL sprite_set_visible \n\
 /* 08023316 */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\
 /* 08023318 */ CMP R5, 0x3 @ Compare R5 and 0x3 \n\
 /* 0802331a */ BLS branch_080232c2 \n\
@@ -103,7 +103,7 @@ branch_08023328: \n\
 /* 0802333c */ LDR R1, =anim_mannequin_high_score_num \n\
 /* 0802333e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08023340 */ MOVS R3, 0x60 @ Set R3 to 0x60 \n\
-/* 08023342 */ BL func_0804d160 \n\
+/* 08023342 */ BL sprite_create \n\
 /* 08023346 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08023348 */ LDR R1, [R2] \n\
 /* 0802334a */ LSLS R4, R5, 0x1 \n\
@@ -118,7 +118,7 @@ branch_08023328: \n\
 /* 0802335c */ SUBS R2, R2, R3 @ Set R2 to R2 - R3 \n\
 /* 0802335e */ LSLS R2, R2, 0x10 \n\
 /* 08023360 */ ASRS R2, R2, 0x10 \n\
-/* 08023362 */ BL func_0804d614 \n\
+/* 08023362 */ BL sprite_set_x \n\
 /* 08023366 */ LDR R0, [R6] \n\
 /* 08023368 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0802336a */ LDR R1, [R2] \n\
@@ -128,7 +128,7 @@ branch_08023328: \n\
 /* 08023372 */ LDRSH R1, [R1, R3] \n\
 /* 08023374 */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 08023376 */ LSRS R2, R3, 0x10 \n\
-/* 08023378 */ BL func_0804d770 \n\
+/* 08023378 */ BL sprite_set_visible \n\
 /* 0802337c */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\
 /* 0802337e */ CMP R5, 0x3 @ Compare R5 and 0x3 \n\
 /* 08023380 */ BLS branch_08023328 \n\

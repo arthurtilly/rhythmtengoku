@@ -58,8 +58,8 @@ void rank_results_scene_start(void *sVar, s32 dArg) {
     dma3_fill(0, COMMENT_TILESET_BASE, 0x4000, 0x20, 0x200);
     gResults->currentLine = 0;
 
-    gResults->placeholderIcon = func_0804d160(D_03005380, anim_rank_results_header_placeholder, 0, RANK_HEADER_ICON_X, RANK_HEADER_Y, 0x800, 0, 0, 0x8000);
-    gResults->resultIcon = func_0804d160(D_03005380, anim_rank_results_icon, 0, RANK_RESULT_ICON_X, RANK_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
+    gResults->placeholderIcon = sprite_create(D_03005380, anim_rank_results_header_placeholder, 0, RANK_HEADER_ICON_X, RANK_HEADER_Y, 0x800, 0, 0, 0x8000);
+    gResults->resultIcon = sprite_create(D_03005380, anim_rank_results_icon, 0, RANK_RESULT_ICON_X, RANK_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
     rank_results_scene_init_gfx1();
     gMidiLFOMode = LFO_MODE_DISABLED;
     gResults->inputsEnabled = FALSE;
@@ -100,29 +100,29 @@ void rank_results_display_header(void) {
     s32 sprite, width;
 
     if (score_handler->headerText == NULL) {
-        func_0804d770(D_03005380, gResults->placeholderIcon, TRUE);
+        sprite_set_visible(D_03005380, gResults->placeholderIcon, TRUE);
         return;
     }
 
     anim = results_get_comment_anim(score_handler->headerText, TEXT_ANCHOR_BOTTOM_LEFT, 0);
-    sprite = func_0804d160(D_03005380, anim, 0, RANK_HEADER_BOX_X, RANK_HEADER_Y, 0x800, 0, 0, 0);
-    func_0804d8c4(D_03005380, sprite, RANK_HEADER_PALETTE);
+    sprite = sprite_create(D_03005380, anim, 0, RANK_HEADER_BOX_X, RANK_HEADER_Y, 0x800, 0, 0, 0);
+    sprite_set_base_palette(D_03005380, sprite, RANK_HEADER_PALETTE);
     width = func_0804ddb0(D_03005380, sprite, 24);
-    func_0804d160(D_03005380, anim_rank_results_header_box, 0, SCREEN_CENTER_X, RANK_HEADER_Y, 0x864, 0, 0, 0);
-    func_0804d160(D_03005380, anim_rank_results_header_box_mask, 0, SCREEN_CENTER_X + width, RANK_HEADER_Y, 0x850, 0, 0, 0);
+    sprite_create(D_03005380, anim_rank_results_header_box, 0, SCREEN_CENTER_X, RANK_HEADER_Y, 0x864, 0, 0, 0);
+    sprite_create(D_03005380, anim_rank_results_header_box_mask, 0, SCREEN_CENTER_X + width, RANK_HEADER_Y, 0x850, 0, 0, 0);
 }
 
 
 // Display Result Icon (Script Event)
 void rank_results_display_rank(void) {
-    func_0804d770(D_03005380, gResults->resultIcon, TRUE);
+    sprite_set_visible(D_03005380, gResults->resultIcon, TRUE);
 
     if (gResults->medalObtained) {
-        func_0804d160(D_03005380, anim_rank_results_medal_get, 0, 180, 140, 0x700, 1, 0, 0);
+        sprite_create(D_03005380, anim_rank_results_medal_get, 0, 180, 140, 0x700, 1, 0, 0);
     }
 
     if (gResults->stillJustOK) {
-        func_0804d160(D_03005380, anim_rank_results_comment_append, 0, 180, 140, 0x700, 1, 0, 0);
+        sprite_create(D_03005380, anim_rank_results_comment_append, 0, 180, 140, 0x700, 1, 0, 0);
     }
 
     play_sound_in_player(SFX_PLAYER_2, rank_results_sfx[gResults->finalResultLevel]);
@@ -157,13 +157,13 @@ void rank_results_append_encouragement(void) {
     for (i = 0; i < totalComments; i++) {
         s32 y = func_0804ddb0(D_03005380, commentSprites[i], 5);
 
-        func_0804d648(D_03005380, commentSprites[i], y - 10);
+        sprite_set_y(D_03005380, commentSprites[i], y - 10);
     }
 
     for (i = totalNegativeComments; i < totalComments; i++) {
-        func_0804d770(D_03005380, commentSprites[i], TRUE);
+        sprite_set_visible(D_03005380, commentSprites[i], TRUE);
     }
 
     play_sound(&s_f_result_mes_add_seqData);
-    func_0804d160(D_03005380, anim_rank_results_supportive_bubble, 0, RANK_RESULT_ICON_BUT_X, RANK_RESULT_ICON_BUT_Y, 0, 0, 0, 0);
+    sprite_create(D_03005380, anim_rank_results_supportive_bubble, 0, RANK_RESULT_ICON_BUT_X, RANK_RESULT_ICON_BUT_Y, 0, 0, 0, 0);
 }

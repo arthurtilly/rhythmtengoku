@@ -28,12 +28,12 @@ thumb_func_start quiz_show_input_event \n\
 /* 08037eac */ STR R3, [SP, 0x4] \n\
 /* 08037eae */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08037eb0 */ STR R3, [SP, 0x8] \n\
-/* 08037eb2 */ BL func_0804d8f8 \n\
+/* 08037eb2 */ BL sprite_set_anim \n\
 /* 08037eb6 */ LDR R0, [R4] \n\
 /* 08037eb8 */ MOVS R4, 0xA @ Set R4 to 0xA \n\
 /* 08037eba */ LDRSH R1, [R5, R4] \n\
 /* 08037ebc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08037ebe */ BL func_0804cebc \n\
+/* 08037ebe */ BL sprite_set_anim_cel \n\
 /* 08037ec2 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 08037ec4 */ NEGS R1, R1 @ Set R1 to -R1 \n\
 /* 08037ec6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
@@ -56,12 +56,12 @@ branch_08037ed2: \n\
 /* 08037ee8 */ STR R3, [SP, 0x4] \n\
 /* 08037eea */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08037eec */ STR R3, [SP, 0x8] \n\
-/* 08037eee */ BL func_0804d8f8 \n\
+/* 08037eee */ BL sprite_set_anim \n\
 /* 08037ef2 */ LDR R0, [R4] \n\
 /* 08037ef4 */ MOVS R4, 0x8 @ Set R4 to 0x8 \n\
 /* 08037ef6 */ LDRSH R1, [R5, R4] \n\
 /* 08037ef8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08037efa */ BL func_0804cebc \n\
+/* 08037efa */ BL sprite_set_anim_cel \n\
 /* 08037efe */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 08037f00 */ NEGS R1, R1 @ Set R1 to -R1 \n\
 /* 08037f02 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
@@ -87,7 +87,7 @@ branch_08037f0e: \n\
 /* 08037f2a */ STR R3, [SP, 0x4] \n\
 /* 08037f2c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08037f2e */ STR R3, [SP, 0x8] \n\
-/* 08037f30 */ BL func_0804d8f8 \n\
+/* 08037f30 */ BL sprite_set_anim \n\
 /* 08037f34 */ ADD SP, 0xC \n\
 /* 08037f36 */ POP {R3} \n\
 /* 08037f38 */ MOV R8, R3 @ Set R8 to R3 \n\

@@ -41,23 +41,23 @@ branch_08038bb2: \n\
 /* 08038bde */ LDRSH R1, [R5, R2] \n\
 /* 08038be0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08038be2 */ MOVS R3, 0xC0 @ Set R3 to 0xC0 \n\
-/* 08038be4 */ BL func_0804d5d4 \n\
+/* 08038be4 */ BL sprite_set_x_y \n\
 /* 08038be8 */ LDR R0, [R4] \n\
 /* 08038bea */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08038bec */ LDRSH R1, [R5, R2] \n\
 /* 08038bee */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08038bf0 */ BL func_0804d770 \n\
+/* 08038bf0 */ BL sprite_set_visible \n\
 /* 08038bf4 */ LDR R0, [R4] \n\
 /* 08038bf6 */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
 /* 08038bf8 */ LDRSH R1, [R5, R2] \n\
 /* 08038bfa */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08038bfc */ MOVS R3, 0xC0 @ Set R3 to 0xC0 \n\
-/* 08038bfe */ BL func_0804d5d4 \n\
+/* 08038bfe */ BL sprite_set_x_y \n\
 /* 08038c02 */ LDR R0, [R4] \n\
 /* 08038c04 */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
 /* 08038c06 */ LDRSH R1, [R5, R2] \n\
 /* 08038c08 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08038c0a */ BL func_0804d770 \n\
+/* 08038c0a */ BL sprite_set_visible \n\
 /* 08038c0e */ B branch_08038ccc \n\
 \n\
 .ltorg \n\
@@ -106,7 +106,7 @@ branch_08038c40: \n\
 /* 08038c68 */ SUBS R3, R3, R4 @ Set R3 to R3 - R4 \n\
 /* 08038c6a */ LSLS R3, R3, 0x8 \n\
 /* 08038c6c */ ASRS R3, R3, 0x10 \n\
-/* 08038c6e */ BL func_0804d5d4 \n\
+/* 08038c6e */ BL sprite_set_x_y \n\
  \n\
 branch_08038c72: \n\
 /* 08038c72 */ LDRH R2, [R5, 0x18] \n\
@@ -158,7 +158,7 @@ branch_08038ca0: \n\
 /* 08038cc2 */ ADDS R3, R3, R4 @ Set R3 to R3 + R4 \n\
 /* 08038cc4 */ LSLS R3, R3, 0x8 \n\
 /* 08038cc6 */ ASRS R3, R3, 0x10 \n\
-/* 08038cc8 */ BL func_0804d5d4 \n\
+/* 08038cc8 */ BL sprite_set_x_y \n\
  \n\
 branch_08038ccc: \n\
 /* 08038ccc */ POP {R4-R6} \n\

@@ -51,7 +51,7 @@ branch_08030842: \n\
 /* 08030858 */ STR R3, [SP, 0x4] \n\
 /* 0803085a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803085c */ STR R3, [SP, 0x8] \n\
-/* 0803085e */ BL func_0804d8f8 \n\
+/* 0803085e */ BL sprite_set_anim \n\
 /* 08030862 */ LDR R0, =gCurrentEngineData \n\
 /* 08030864 */ LDR R0, [R0] \n\
 /* 08030866 */ LDRH R0, [R0, 0x18] \n\

@@ -23,7 +23,7 @@ branch_08022cfe: \n\
 /* 08022d06 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 08022d08 */ LDRSH R1, [R1, R2] \n\
 /* 08022d0a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08022d0c */ BL func_0804cebc \n\
+/* 08022d0c */ BL sprite_set_anim_cel \n\
 /* 08022d10 */ LDR R0, [R5] \n\
 /* 08022d12 */ LDR R1, [R4] \n\
 /* 08022d14 */ B branch_08022d28 \n\
@@ -40,7 +40,7 @@ branch_08022d28: \n\
 /* 08022d28 */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08022d2a */ LDRSH R1, [R1, R2] \n\
 /* 08022d2c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08022d2e */ BL func_0804cebc \n\
+/* 08022d2e */ BL sprite_set_anim_cel \n\
 /* 08022d32 */ B branch_08022daa \n\
 \n\
 .ltorg \n\
@@ -53,19 +53,19 @@ branch_08022d3c: \n\
 /* 08022d44 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08022d46 */ LDRSH R1, [R1, R2] \n\
 /* 08022d48 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08022d4a */ BL func_0804cebc \n\
+/* 08022d4a */ BL sprite_set_anim_cel \n\
 /* 08022d4e */ LDR R0, [R5] \n\
 /* 08022d50 */ LDR R1, [R4] \n\
 /* 08022d52 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08022d54 */ LDRSH R1, [R1, R2] \n\
 /* 08022d56 */ LDR R2, =0x0000480a \n\
-/* 08022d58 */ BL func_0804d67c \n\
+/* 08022d58 */ BL sprite_set_z \n\
 /* 08022d5c */ LDR R0, [R5] \n\
 /* 08022d5e */ LDR R1, [R4] \n\
 /* 08022d60 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08022d62 */ LDRSH R1, [R1, R2] \n\
 /* 08022d64 */ LDR R2, =0x000047f6 \n\
-/* 08022d66 */ BL func_0804d67c \n\
+/* 08022d66 */ BL sprite_set_z \n\
 /* 08022d6a */ B branch_08022daa \n\
 \n\
 .ltorg \n\
@@ -78,19 +78,19 @@ branch_08022d7c: \n\
 /* 08022d84 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08022d86 */ LDRSH R1, [R1, R2] \n\
 /* 08022d88 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08022d8a */ BL func_0804cebc \n\
+/* 08022d8a */ BL sprite_set_anim_cel \n\
 /* 08022d8e */ LDR R0, [R5] \n\
 /* 08022d90 */ LDR R1, [R4] \n\
 /* 08022d92 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08022d94 */ LDRSH R1, [R1, R2] \n\
 /* 08022d96 */ LDR R2, =0x000047f6 \n\
-/* 08022d98 */ BL func_0804d67c \n\
+/* 08022d98 */ BL sprite_set_z \n\
 /* 08022d9c */ LDR R0, [R5] \n\
 /* 08022d9e */ LDR R1, [R4] \n\
 /* 08022da0 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08022da2 */ LDRSH R1, [R1, R2] \n\
 /* 08022da4 */ LDR R2, =0x0000480a \n\
-/* 08022da6 */ BL func_0804d67c \n\
+/* 08022da6 */ BL sprite_set_z \n\
  \n\
 branch_08022daa: \n\
 /* 08022daa */ LDR R5, =gCurrentEngineData \n\

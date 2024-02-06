@@ -74,7 +74,7 @@ thumb_func_start samurai_slice_engine_start \n\
 /* 08030d4a */ STR R4, [SP, 0x10] \n\
 /* 08030d4c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08030d4e */ MOVS R3, 0x3C @ Set R3 to 0x3C \n\
-/* 08030d50 */ BL func_0804d160 \n\
+/* 08030d50 */ BL sprite_create \n\
 /* 08030d54 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08030d56 */ LDR R1, [R2] \n\
 /* 08030d58 */ ADDS R1, 0x8A @ Add 0x8A to R1 \n\
@@ -95,7 +95,7 @@ thumb_func_start samurai_slice_engine_start \n\
 /* 08030d78 */ STR R4, [SP, 0x10] \n\
 /* 08030d7a */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 08030d7c */ MOVS R3, 0xE @ Set R3 to 0xE \n\
-/* 08030d7e */ BL func_0804d160 \n\
+/* 08030d7e */ BL sprite_create \n\
 /* 08030d82 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08030d84 */ LDR R1, [R2] \n\
 /* 08030d86 */ STRH R0, [R1, 0xC] \n\
@@ -113,7 +113,7 @@ thumb_func_start samurai_slice_engine_start \n\
 /* 08030d9e */ STR R4, [SP, 0x10] \n\
 /* 08030da0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08030da2 */ MOVS R3, 0x14 @ Set R3 to 0x14 \n\
-/* 08030da4 */ BL func_0804d160 \n\
+/* 08030da4 */ BL sprite_create \n\
 /* 08030da8 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08030daa */ LDR R1, [R2] \n\
 /* 08030dac */ MOVS R4, 0xED @ Set R4 to 0xED \n\
@@ -124,7 +124,7 @@ thumb_func_start samurai_slice_engine_start \n\
 /* 08030db6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08030db8 */ LDRSH R1, [R1, R2] \n\
 /* 08030dba */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08030dbc */ BL func_0804d770 \n\
+/* 08030dbc */ BL sprite_set_visible \n\
 /* 08030dc0 */ MOV R4, R10 @ Set R4 to R10 \n\
 /* 08030dc2 */ LDR R0, [R4] \n\
 /* 08030dc4 */ MOVS R1, 0xEE @ Set R1 to 0xEE \n\
@@ -157,7 +157,7 @@ branch_08030dd0: \n\
 /* 08030dfa */ STR R2, [SP, 0xC] \n\
 /* 08030dfc */ STR R3, [SP, 0x10] \n\
 /* 08030dfe */ MOVS R3, 0x4A @ Set R3 to 0x4A \n\
-/* 08030e00 */ BL func_0804d160 \n\
+/* 08030e00 */ BL sprite_create \n\
 /* 08030e04 */ LDR R1, =gCurrentEngineData \n\
 /* 08030e06 */ LDR R1, [R1] \n\
 /* 08030e08 */ ADDS R1, 0x8C @ Add 0x8C to R1 \n\
@@ -166,7 +166,7 @@ branch_08030dd0: \n\
 /* 08030e0e */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08030e10 */ LDRSH R1, [R1, R4] \n\
 /* 08030e12 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08030e14 */ BL func_0804d770 \n\
+/* 08030e14 */ BL sprite_set_visible \n\
 /* 08030e18 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
  \n\
 branch_08030e1a: \n\

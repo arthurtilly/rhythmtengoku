@@ -52,7 +52,7 @@ thumb_func_start ninja_bodyguard_engine_start \n\
 /* 0803cc56 */ STR R2, [SP, 0x10] \n\
 /* 0803cc58 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803cc5a */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 0803cc5c */ BL func_0804d160 \n\
+/* 0803cc5c */ BL sprite_create \n\
 /* 0803cc60 */ LDR R1, [R6] \n\
 /* 0803cc62 */ MOVS R2, 0xBB @ Set R2 to 0xBB \n\
 /* 0803cc64 */ LSLS R2, R2, 0x2 \n\
@@ -63,7 +63,7 @@ thumb_func_start ninja_bodyguard_engine_start \n\
 /* 0803cc6e */ LDRSH R1, [R1, R2] \n\
 /* 0803cc70 */ MOVS R2, 0x64 @ Set R2 to 0x64 \n\
 /* 0803cc72 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 0803cc74 */ BL func_0804d5d4 \n\
+/* 0803cc74 */ BL sprite_set_x_y \n\
 /* 0803cc78 */ LDR R0, [R6] \n\
 /* 0803cc7a */ LDR R1, =0x2ee \n\
 /* 0803cc7c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

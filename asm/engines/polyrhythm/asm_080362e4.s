@@ -39,7 +39,7 @@ branch_08036306: \n\
 /* 08036322 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
 /* 08036324 */ STR R3, [SP, 0x4] \n\
 /* 08036326 */ STR R7, [SP, 0x8] \n\
-/* 08036328 */ BL func_0804d8f8 \n\
+/* 08036328 */ BL sprite_set_anim \n\
 /* 0803632c */ LDRB R1, [R4] \n\
 /* 0803632e */ MOVS R2, 0x39 @ Set R2 to 0x39 \n\
 /* 08036330 */ NEGS R2, R2 @ Set R2 to -R2 \n\

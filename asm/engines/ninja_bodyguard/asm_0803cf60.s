@@ -31,7 +31,7 @@ branch_0803cf78: \n\
 /* 0803cf90 */ STR R3, [SP, 0x4] \n\
 /* 0803cf92 */ STR R6, [SP, 0x8] \n\
 /* 0803cf94 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803cf96 */ BL func_0804d8f8 \n\
+/* 0803cf96 */ BL sprite_set_anim \n\
 /* 0803cf9a */ MOVS R0, 0xF0 @ Set R0 to 0xF0 \n\
 /* 0803cf9c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803cf9e */ BL gameplay_set_input_buttons \n\
@@ -62,7 +62,7 @@ branch_0803cfb8: \n\
 /* 0803cfd0 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803cfd2 */ STR R5, [SP, 0x8] \n\
 /* 0803cfd4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803cfd6 */ BL func_0804d8f8 \n\
+/* 0803cfd6 */ BL sprite_set_anim \n\
 /* 0803cfda */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803cfdc */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803cfde */ BL gameplay_set_input_buttons \n\
@@ -76,7 +76,7 @@ branch_0803cfb8: \n\
 /* 0803cff0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
  \n\
 branch_0803cff2: \n\
-/* 0803cff2 */ BL func_0804cebc \n\
+/* 0803cff2 */ BL sprite_set_anim_cel \n\
 /* 0803cff6 */ LDR R0, [R7] \n\
 /* 0803cff8 */ STRB R5, [R0, 0x6] \n\
  \n\

@@ -111,7 +111,7 @@ branch_0804216c: \n\
 /* 08042178 */ LDR R2, [R2, 0x24] \n\
 /* 0804217a */ LSLS R2, R2, 0x8 \n\
 /* 0804217c */ ASRS R2, R2, 0x10 \n\
-/* 0804217e */ BL func_0804d614 \n\
+/* 0804217e */ BL sprite_set_x \n\
 /* 08042182 */ LDR R0, [R5] \n\
 /* 08042184 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08042186 */ LDR R2, [R1] \n\
@@ -120,7 +120,7 @@ branch_0804216c: \n\
 /* 0804218c */ LDR R2, [R2, 0x24] \n\
 /* 0804218e */ LSLS R2, R2, 0x8 \n\
 /* 08042190 */ ASRS R2, R2, 0x10 \n\
-/* 08042192 */ BL func_0804d614 \n\
+/* 08042192 */ BL sprite_set_x \n\
 /* 08042196 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08042198 */ LDR R1, [R0] \n\
 /* 0804219a */ ADDS R1, 0x20 @ Add 0x20 to R1 \n\
@@ -140,7 +140,7 @@ branch_0804216c: \n\
 /* 080421b6 */ LDR R0, [R5] \n\
 /* 080421b8 */ MOVS R2, 0x1C @ Set R2 to 0x1C \n\
 /* 080421ba */ LDRSH R1, [R1, R2] \n\
-/* 080421bc */ BL func_0804d6cc \n\
+/* 080421bc */ BL sprite_get_anim_cel \n\
 /* 080421c0 */ LSLS R0, R0, 0x18 \n\
 /* 080421c2 */ ASRS R0, R0, 0x18 \n\
 /* 080421c4 */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
@@ -159,7 +159,7 @@ branch_0804216c: \n\
 /* 080421e0 */ MOVS R3, 0x1C @ Set R3 to 0x1C \n\
 /* 080421e2 */ LDRSH R1, [R1, R3] \n\
 /* 080421e4 */ MOVS R2, 0x3 @ Set R2 to 0x3 \n\
-/* 080421e6 */ BL func_0804cebc \n\
+/* 080421e6 */ BL sprite_set_anim_cel \n\
  \n\
 branch_080421ea: \n\
 /* 080421ea */ LDR R5, =gCurrentEngineData \n\
@@ -177,7 +177,7 @@ branch_080421ea: \n\
 /* 08042202 */ LDR R0, [R6] \n\
 /* 08042204 */ MOVS R3, 0x1C @ Set R3 to 0x1C \n\
 /* 08042206 */ LDRSH R1, [R1, R3] \n\
-/* 08042208 */ BL func_0804d6cc \n\
+/* 08042208 */ BL sprite_get_anim_cel \n\
 /* 0804220c */ LSLS R0, R0, 0x18 \n\
 /* 0804220e */ ASRS R0, R0, 0x18 \n\
 /* 08042210 */ CMP R0, 0x3 @ Compare R0 and 0x3 \n\
@@ -194,7 +194,7 @@ branch_080421ea: \n\
 /* 08042228 */ MOVS R2, 0x1C @ Set R2 to 0x1C \n\
 /* 0804222a */ LDRSH R1, [R1, R2] \n\
 /* 0804222c */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 0804222e */ BL func_0804cebc \n\
+/* 0804222e */ BL sprite_set_anim_cel \n\
  \n\
 branch_08042232: \n\
 /* 08042232 */ LDR R5, =gCurrentEngineData \n\
@@ -241,7 +241,7 @@ branch_08042278: \n\
 /* 08042294 */ LDR R0, [R6] \n\
 /* 08042296 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 08042298 */ LDRSH R1, [R1, R3] \n\
-/* 0804229a */ BL func_0804d6cc \n\
+/* 0804229a */ BL sprite_get_anim_cel \n\
 /* 0804229e */ LSLS R0, R0, 0x18 \n\
 /* 080422a0 */ ASRS R0, R0, 0x18 \n\
 /* 080422a2 */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
@@ -257,7 +257,7 @@ branch_08042278: \n\
 /* 080422b8 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 080422ba */ LDRSH R1, [R1, R2] \n\
 /* 080422bc */ MOVS R2, 0x3 @ Set R2 to 0x3 \n\
-/* 080422be */ BL func_0804cebc \n\
+/* 080422be */ BL sprite_set_anim_cel \n\
  \n\
 branch_080422c2: \n\
 /* 080422c2 */ LDR R5, =gCurrentEngineData \n\
@@ -275,7 +275,7 @@ branch_080422c2: \n\
 /* 080422da */ LDR R0, [R6] \n\
 /* 080422dc */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 080422de */ LDRSH R1, [R1, R2] \n\
-/* 080422e0 */ BL func_0804d6cc \n\
+/* 080422e0 */ BL sprite_get_anim_cel \n\
 /* 080422e4 */ LSLS R0, R0, 0x18 \n\
 /* 080422e6 */ ASRS R0, R0, 0x18 \n\
 /* 080422e8 */ CMP R0, 0x3 @ Compare R0 and 0x3 \n\
@@ -291,7 +291,7 @@ branch_080422c2: \n\
 /* 080422fe */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 08042300 */ LDRSH R1, [R1, R3] \n\
 /* 08042302 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 08042304 */ BL func_0804cebc \n\
+/* 08042304 */ BL sprite_set_anim_cel \n\
  \n\
 branch_08042308: \n\
 /* 08042308 */ POP {R3, R4} \n\

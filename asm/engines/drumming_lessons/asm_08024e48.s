@@ -32,7 +32,7 @@ branch_08024e68: \n\
 /* 08024e74 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08024e76 */ LDRSH R1, [R1, R2] \n\
 /* 08024e78 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08024e7a */ BL func_0804cebc \n\
+/* 08024e7a */ BL sprite_set_anim_cel \n\
 /* 08024e7e */ B branch_08024ec0 \n\
 \n\
 .ltorg \n\
@@ -46,7 +46,7 @@ branch_08024e84: \n\
 /* 08024e8e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08024e90 */ LDRSH R1, [R1, R2] \n\
 /* 08024e92 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08024e94 */ BL func_0804cebc \n\
+/* 08024e94 */ BL sprite_set_anim_cel \n\
 /* 08024e98 */ LDR R0, [R4] \n\
 /* 08024e9a */ LDR R1, [R5] \n\
 /* 08024e9c */ MOVS R2, 0xE6 @ Set R2 to 0xE6 \n\
@@ -55,7 +55,7 @@ branch_08024e84: \n\
 /* 08024ea2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08024ea4 */ LDRSH R1, [R1, R2] \n\
 /* 08024ea6 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 08024ea8 */ BL func_0804cebc \n\
+/* 08024ea8 */ BL sprite_set_anim_cel \n\
 /* 08024eac */ LDR R0, [R4] \n\
 /* 08024eae */ LDR R1, [R5] \n\
 /* 08024eb0 */ MOVS R2, 0xE8 @ Set R2 to 0xE8 \n\
@@ -64,7 +64,7 @@ branch_08024e84: \n\
 /* 08024eb6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08024eb8 */ LDRSH R1, [R1, R2] \n\
 /* 08024eba */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
-/* 08024ebc */ BL func_0804cebc \n\
+/* 08024ebc */ BL sprite_set_anim_cel \n\
  \n\
 branch_08024ec0: \n\
 /* 08024ec0 */ POP {R4, R5} \n\

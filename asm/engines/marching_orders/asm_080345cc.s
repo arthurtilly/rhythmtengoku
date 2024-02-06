@@ -31,7 +31,7 @@ thumb_func_start func_080345cc \n\
 /* 08034602 */ LDR R0, [R3] \n\
 /* 08034604 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08034606 */ LDRSH R1, [R5, R2] \n\
-/* 08034608 */ BL func_0804d6cc \n\
+/* 08034608 */ BL sprite_get_anim_cel \n\
 /* 0803460c */ LSLS R0, R0, 0x18 \n\
 /* 0803460e */ ASRS R3, R0, 0x18 \n\
 /* 08034610 */ LDR R2, =D_089e5368 \n\
@@ -79,13 +79,13 @@ branch_08034654: \n\
 /* 0803466e */ NEGS R2, R2 @ Set R2 to -R2 \n\
 /* 08034670 */ STR R6, [SP] \n\
 /* 08034672 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08034674 */ BL func_0804dae0 \n\
+/* 08034674 */ BL sprite_set_playback \n\
 /* 08034678 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0803467a */ LDR R0, [R1] \n\
 /* 0803467c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803467e */ LDRSH R1, [R5, R2] \n\
 /* 08034680 */ MOVS R2, 0x3 @ Set R2 to 0x3 \n\
-/* 08034682 */ BL func_0804cebc \n\
+/* 08034682 */ BL sprite_set_anim_cel \n\
  \n\
 branch_08034686: \n\
 /* 08034686 */ LDR R0, =D_03005380 \n\
@@ -97,7 +97,7 @@ branch_08034686: \n\
 /* 08034692 */ ASRS R2, R2, 0x10 \n\
 /* 08034694 */ LSLS R3, R7, 0x10 \n\
 /* 08034696 */ ASRS R3, R3, 0x10 \n\
-/* 08034698 */ BL func_0804d5d4 \n\
+/* 08034698 */ BL sprite_set_x_y \n\
  \n\
 branch_0803469c: \n\
 /* 0803469c */ ADD SP, 0x4 \n\

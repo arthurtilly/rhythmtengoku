@@ -59,7 +59,7 @@ branch_0803bfae: \n\
 /* 0803bfda */ LSLS R4, R4, 0x10 \n\
 /* 0803bfdc */ LSRS R4, R4, 0x10 \n\
 /* 0803bfde */ STR R4, [SP] \n\
-/* 0803bfe0 */ BL func_0804d55c \n\
+/* 0803bfe0 */ BL sprite_set_x_y_z \n\
 /* 0803bfe4 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
 /* 0803bfe6 */ BL ninja_get_anim \n\
 /* 0803bfea */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
@@ -75,7 +75,7 @@ branch_0803bfae: \n\
 /* 0803bffe */ STR R3, [SP] \n\
 /* 0803c000 */ STR R3, [SP, 0x4] \n\
 /* 0803c002 */ STR R3, [SP, 0x8] \n\
-/* 0803c004 */ BL func_0804d8f8 \n\
+/* 0803c004 */ BL sprite_set_anim \n\
 /* 0803c008 */ MOVS R0, 0x10 @ Set R0 to 0x10 \n\
 /* 0803c00a */ ADD R8, R0 @ Add R0 to R8 \n\
 /* 0803c00c */ ADDS R6, 0x1 @ Add 0x1 to R6 \n\

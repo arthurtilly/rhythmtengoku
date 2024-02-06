@@ -66,7 +66,7 @@ branch_080396f4: \n\
 /* 0803970a */ SUBS R3, R3, R4 @ Set R3 to R3 - R4 \n\
 /* 0803970c */ LSLS R3, R3, 0x8 \n\
 /* 0803970e */ ASRS R3, R3, 0x10 \n\
-/* 08039710 */ BL func_0804d5d4 \n\
+/* 08039710 */ BL sprite_set_x_y \n\
 /* 08039714 */ ADDS R0, R6, 0x1 @ Set R0 to R6 + 0x1 \n\
 /* 08039716 */ LSLS R0, R0, 0x18 \n\
 /* 08039718 */ LSRS R6, R0, 0x18 \n\

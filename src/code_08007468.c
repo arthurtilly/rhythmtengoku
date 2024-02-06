@@ -21,8 +21,8 @@ void get_sprite_xy(s16 sprite, s16 *xReq, s16 *yReq) {
 
 
 // Set Sprite Affine Param.
-void assign_sprite_affine_param(s16 sprite, s8 affineParam) {
-    func_0804dc10(D_03005380, sprite, affineParam, func_08002520(affineParam));
+void assign_sprite_affine_param(s16 sprite, s8 affineIndex) {
+    sprite_set_affine_params(D_03005380, sprite, affineIndex, func_08002520(affineIndex));
 }
 
 
@@ -53,7 +53,7 @@ struct SpriteMover_Indefinite *start_sprite_motion_task_indefinite(struct Sprite
     task->velX = inputs->velX;
     task->velY = inputs->velY;
 
-    func_0804d5d4(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
+    sprite_set_x_y(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
     return task;
 }
 
@@ -63,7 +63,7 @@ u32 update_sprite_motion_task_indefinite(struct SpriteMover_Indefinite *task) {
     task->posX += task->velX;
     task->posY += task->velY;
 
-    func_0804d5d4(D_03005380, task->sprite, FIXED_TO_INT(task->posX), FIXED_TO_INT(task->posY));
+    sprite_set_x_y(D_03005380, task->sprite, FIXED_TO_INT(task->posX), FIXED_TO_INT(task->posY));
     return FALSE;
 }
 
@@ -84,7 +84,7 @@ struct SpriteMover_Decelerate *start_sprite_motion_task_decelerate(struct Sprite
     task->dy = INT_TO_FIXED(inputs->startY - inputs->destY);
     task->multiplier = inputs->multiplier;
 
-    func_0804d5d4(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
+    sprite_set_x_y(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
     return task;
 }
 
@@ -109,7 +109,7 @@ u32 update_sprite_motion_task_decelerate(struct SpriteMover_Decelerate *task) {
     task->dx = dx;
     task->dy = dy;
 
-    func_0804d5d4(D_03005380, task->sprite, FIXED_TO_INT(dx) + task->destX, FIXED_TO_INT(dy) + task->destY);
+    sprite_set_x_y(D_03005380, task->sprite, FIXED_TO_INT(dx) + task->destX, FIXED_TO_INT(dy) + task->destY);
 
     if ((dx | dy) == 0) {
         return TRUE;
@@ -138,7 +138,7 @@ struct SpriteMover_Accelerate *start_sprite_motion_task_accelerate(struct Sprite
     task->velocity = inputs->velocity;
     task->acceleration = inputs->acceleration;
 
-    func_0804d5d4(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
+    sprite_set_x_y(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
     return task;
 }
 
@@ -173,7 +173,7 @@ u32 update_sprite_motion_task_accelerate(struct SpriteMover_Accelerate *task) {
         y = task->startY + lerp(0, task->dy, distTravelled, totalDist);
     }
 
-    func_0804d5d4(D_03005380, task->sprite, x, y);
+    sprite_set_x_y(D_03005380, task->sprite, x, y);
     return reachedEnd;
 }
 
@@ -195,7 +195,7 @@ struct SpriteMover_TimedLinear *start_sprite_motion_task_lerp(struct SpriteMover
     task->totalFrames = inputs->totalFrames;
     task->framesPassed = 0;
 
-    func_0804d5d4(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
+    sprite_set_x_y(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
     return task;
 }
 
@@ -208,7 +208,7 @@ u32 update_sprite_motion_task_lerp(struct SpriteMover_TimedLinear *task) {
     s16 x = task->startX + lerp(0, task->dx, framesPassed, totalFrames);
     s16 y = task->startY + lerp(0, task->dy, framesPassed, totalFrames);
 
-    func_0804d5d4(D_03005380, task->sprite, x, y);
+    sprite_set_x_y(D_03005380, task->sprite, x, y);
     return reachedEnd;
 }
 
@@ -222,7 +222,7 @@ u32 update_sprite_motion_task_sine_osc(struct SpriteMover_SineOsc *task) {
     u16 xPos = FIXED_TO_INT(offset * coss2(task->angle)) + task->baseXPos;
     u16 yPos = FIXED_TO_INT(offset * sins2(task->angle)) + task->baseYPos;
 
-    func_0804d5d4(D_03005380, task->sprite, xPos, yPos);
+    sprite_set_x_y(D_03005380, task->sprite, xPos, yPos);
 
     return (++task->framesPassed > task->totalFrames);
 }
@@ -260,7 +260,7 @@ u32 update_sprite_motion_task_sine_vel(struct SpriteMover_SineVel *task) {
     u16 xPos = task->startXPos + FIXED_TO_INT(task->dx * func_080019a4(temp_r5));
     u16 yPos = task->startYPos + FIXED_TO_INT(task->dy * func_080019a4(temp_r5));
 
-    func_0804d5d4(D_03005380, task->sprite, xPos, yPos);
+    sprite_set_x_y(D_03005380, task->sprite, xPos, yPos);
 
     return (++task->framesPassed > task->totalFrames);
 }
@@ -301,7 +301,7 @@ u32 update_sprite_motion_task_sine_wave(struct SpriteMover_SineWave *task) {
     s16 x = task->startX + lerp(0, task->dx, framesPassed, totalFrames);
     s16 y = task->startY + lerp(0, task->dy, framesPassed, totalFrames) - FIXED_TO_INT(func_080019a4(temp_r8) * task->amplitude);
 
-    func_0804d5d4(D_03005380, task->sprite, x, y);
+    sprite_set_x_y(D_03005380, task->sprite, x, y);
     return reachedEnd;
 }
 
@@ -324,7 +324,7 @@ struct SpriteMover_SineWave *start_sprite_motion_task_sine_wave(struct SpriteMov
     task->framesPassed = 0;
     task->totalFrames = inputs->totalFrames;
 
-    func_0804d5d4(D_03005380, task->sprite, task->startX, task->startY);
+    sprite_set_x_y(D_03005380, task->sprite, task->startX, task->startY);
     return task;
 }
 
@@ -342,7 +342,7 @@ void delete_bmp_font_obj_text_anim(struct BitmapFontOBJ *bmpFontOBJ, s16 sprite)
 // Delete Text and Sprite Generated by BitmapFontOBJ
 void delete_bmp_font_obj_text_sprite(struct BitmapFontOBJ *bmpFontOBJ, s16 sprite) {
     delete_bmp_font_obj_text_anim(bmpFontOBJ, sprite);
-    func_0804d504(D_03005380, sprite);
+    sprite_delete(D_03005380, sprite);
 }
 
 

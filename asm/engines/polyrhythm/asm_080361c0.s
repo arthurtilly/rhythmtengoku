@@ -47,7 +47,7 @@ thumb_func_start polyrhythm_spawn_piston \n\
 /* 08036212 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08036214 */ STR R3, [SP, 0x8] \n\
 /* 08036216 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
-/* 08036218 */ BL func_0804d8f8 \n\
+/* 08036218 */ BL sprite_set_anim \n\
 /* 0803621c */ LDR R0, =polyrhythm_block_appear_sfx \n\
 /* 0803621e */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 08036220 */ LDR R0, [R4] \n\

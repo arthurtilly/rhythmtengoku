@@ -15,7 +15,7 @@ thumb_func_start func_0803c2f4 \n\
 /* 0803c30a */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 0803c30c */ LDRSH R1, [R1, R2] \n\
 /* 0803c30e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803c310 */ BL func_0804d770 \n\
+/* 0803c310 */ BL sprite_set_visible \n\
 /* 0803c314 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
  \n\
 branch_0803c316: \n\
@@ -29,7 +29,7 @@ branch_0803c316: \n\
 /* 0803c324 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803c326 */ LDRSH R1, [R1, R2] \n\
 /* 0803c328 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803c32a */ BL func_0804d770 \n\
+/* 0803c32a */ BL sprite_set_visible \n\
 /* 0803c32e */ ADDS R4, 0x1 @ Add 0x1 to R4 \n\
 /* 0803c330 */ CMP R4, 0xF @ Compare R4 and 0xF \n\
 /* 0803c332 */ BLS branch_0803c316 \n\
@@ -62,7 +62,7 @@ branch_0803c33e: \n\
 /* 0803c366 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803c368 */ LDRSH R1, [R1, R2] \n\
 /* 0803c36a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803c36c */ BL func_0804d770 \n\
+/* 0803c36c */ BL sprite_set_visible \n\
 /* 0803c370 */ LDR R0, [R4] \n\
 /* 0803c372 */ LDR R1, [R5] \n\
 /* 0803c374 */ LDR R2, =0x2d2 \n\
@@ -70,7 +70,7 @@ branch_0803c33e: \n\
 /* 0803c378 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803c37a */ LDRSH R1, [R1, R2] \n\
 /* 0803c37c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803c37e */ BL func_0804d770 \n\
+/* 0803c37e */ BL sprite_set_visible \n\
 /* 0803c382 */ LDR R0, [R4] \n\
 /* 0803c384 */ LDR R1, [R5] \n\
 /* 0803c386 */ MOVS R2, 0xB5 @ Set R2 to 0xB5 \n\
@@ -79,7 +79,7 @@ branch_0803c33e: \n\
 /* 0803c38c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803c38e */ LDRSH R1, [R1, R2] \n\
 /* 0803c390 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803c392 */ BL func_0804d770 \n\
+/* 0803c392 */ BL sprite_set_visible \n\
 /* 0803c396 */ LDR R0, [R4] \n\
 /* 0803c398 */ LDR R1, [R5] \n\
 /* 0803c39a */ MOVS R2, 0xBB @ Set R2 to 0xBB \n\
@@ -88,7 +88,7 @@ branch_0803c33e: \n\
 /* 0803c3a0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803c3a2 */ LDRSH R1, [R1, R2] \n\
 /* 0803c3a4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803c3a6 */ BL func_0804d770 \n\
+/* 0803c3a6 */ BL sprite_set_visible \n\
 /* 0803c3aa */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803c3ac */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803c3ae */ BL gameplay_set_input_buttons \n\

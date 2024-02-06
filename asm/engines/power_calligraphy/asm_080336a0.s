@@ -26,7 +26,7 @@ thumb_func_start func_080336a0 \n\
 /* 080336c8 */ STR R3, [SP, 0xC] \n\
 /* 080336ca */ STR R3, [SP, 0x10] \n\
 /* 080336cc */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 080336ce */ BL func_0804d160 \n\
+/* 080336ce */ BL sprite_create \n\
 /* 080336d2 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080336d4 */ LSLS R1, R1, 0x10 \n\
 /* 080336d6 */ LDR R0, [R4] \n\
@@ -34,7 +34,7 @@ thumb_func_start func_080336a0 \n\
 /* 080336da */ ASRS R1, R1, 0x10 \n\
 /* 080336dc */ LDR R2, =(D_03004b10 + 0x14) \n\
 /* 080336de */ ADDS R3, R2, 0x2 @ Set R3 to R2 + 0x2 \n\
-/* 080336e0 */ BL func_0804db44 \n\
+/* 080336e0 */ BL sprite_set_origin_x_y \n\
 /* 080336e4 */ LDR R0, =gCurrentEngineData \n\
 /* 080336e6 */ LDR R0, [R0] \n\
 /* 080336e8 */ LDRB R1, [R0, 0xB] \n\

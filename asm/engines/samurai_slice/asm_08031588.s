@@ -25,7 +25,7 @@ thumb_func_start samurai_slice_cue_barely \n\
 /* 080315ae */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080315b0 */ LDRSH R1, [R1, R2] \n\
 /* 080315b2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080315b4 */ BL func_0804d770 \n\
+/* 080315b4 */ BL sprite_set_visible \n\
 /* 080315b8 */ LDR R0, [R4] \n\
 /* 080315ba */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080315bc */ LDRSH R1, [R6, R3] \n\
@@ -135,12 +135,12 @@ branch_0803168a: \n\
 /* 08031694 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08031696 */ LDRSH R1, [R6, R2] \n\
 /* 08031698 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803169a */ BL func_0804d770 \n\
+/* 0803169a */ BL sprite_set_visible \n\
 /* 0803169e */ LDR R0, [R4] \n\
 /* 080316a0 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 080316a2 */ LDRSH R1, [R6, R3] \n\
 /* 080316a4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080316a6 */ BL func_0804d770 \n\
+/* 080316a6 */ BL sprite_set_visible \n\
 /* 080316aa */ LDR R1, =gCurrentEngineData \n\
 /* 080316ac */ LDR R0, [R1] \n\
 /* 080316ae */ ADDS R0, 0x78 @ Add 0x78 to R0 \n\

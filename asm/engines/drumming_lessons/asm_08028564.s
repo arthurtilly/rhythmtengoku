@@ -22,25 +22,25 @@ thumb_func_start func_08028564 \n\
 /* 08028584 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
 /* 08028586 */ STR R6, [SP, 0x8] \n\
 /* 08028588 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0802858a */ BL func_0804d8f8 \n\
+/* 0802858a */ BL sprite_set_anim \n\
 /* 0802858e */ LDR R0, [R5] \n\
 /* 08028590 */ MOVS R2, 0x1C @ Set R2 to 0x1C \n\
 /* 08028592 */ LDRSH R1, [R4, R2] \n\
 /* 08028594 */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
 /* 08028596 */ MOVS R3, 0x64 @ Set R3 to 0x64 \n\
-/* 08028598 */ BL func_0804d5d4 \n\
+/* 08028598 */ BL sprite_set_x_y \n\
 /* 0802859c */ LDR R0, [R5] \n\
 /* 0802859e */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 080285a0 */ LDRSH R1, [R4, R2] \n\
 /* 080285a2 */ STR R6, [SP] \n\
 /* 080285a4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080285a6 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080285a8 */ BL func_0804dae0 \n\
+/* 080285a8 */ BL sprite_set_playback \n\
 /* 080285ac */ LDR R0, [R5] \n\
 /* 080285ae */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 080285b0 */ LDRSH R1, [R4, R2] \n\
 /* 080285b2 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
-/* 080285b4 */ BL func_0804cebc \n\
+/* 080285b4 */ BL sprite_set_anim_cel \n\
 /* 080285b8 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
 /* 080285ba */ STRH R0, [R4, 0x26] \n\
 /* 080285bc */ MOVS R0, 0x64 @ Set R0 to 0x64 \n\

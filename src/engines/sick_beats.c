@@ -23,9 +23,9 @@ void sick_beats_init_particles(void) {
     if (gSickBeats->version != ENGINE_VER_SICK_BEATS_ENDLESS) {
         return;
     }
-    gSickBeats->particleSprites[0] = func_0804d160(D_03005380, anim_sick_beats_endless_particle, 0, 64, 64, 0x800, 0, 0, 0x8000);
+    gSickBeats->particleSprites[0] = sprite_create(D_03005380, anim_sick_beats_endless_particle, 0, 64, 64, 0x800, 0, 0, 0x8000);
     for (i = 1; i < SICK_BEATS_PARTICLE_AMOUNT; i++) { // Copy particles
-        gSickBeats->particleSprites[i] = func_0804d3cc(D_03005380, gSickBeats->particleSprites[0]);
+        gSickBeats->particleSprites[i] = sprite_clone(D_03005380, gSickBeats->particleSprites[0]);
     }
 
     for (i = 0; i < SICK_BEATS_PARTICLE_AMOUNT; i++) {
@@ -47,7 +47,7 @@ void sick_beats_update_particles(void) {
         if (gSickBeats->particleCounters[i]) {
             gSickBeats->particleCounters[i] -= 1;
             if (!gSickBeats->particleCounters[i]) {
-                func_0804d770(D_03005380, gSickBeats->particleSprites[i], 0);
+                sprite_set_visible(D_03005380, gSickBeats->particleSprites[i], 0);
             }
         }
     }
@@ -103,17 +103,17 @@ void sick_beats_init_counters(void) {
         counter = &gSickBeats->scoreCounters[i];
         
         if (i == SICK_BEATS_SCORE_CURRENT) {
-            counter->counterSprite = func_0804d160(D_03005380, anim_sick_beats_score_counter, 0, 214, 40, 0x8f00, 0, 0, 0);
+            counter->counterSprite = sprite_create(D_03005380, anim_sick_beats_score_counter, 0, 214, 40, 0x8f00, 0, 0, 0);
             x = 214;
             y = 40;
         } else {
-            counter->counterSprite = func_0804d160(D_03005380, anim_sick_beats_high_score_counter, 0, 214, 16, 0x8f00, 0, 0, 0);
+            counter->counterSprite = sprite_create(D_03005380, anim_sick_beats_high_score_counter, 0, 214, 16, 0x8f00, 0, 0, 0);
             x = 214;
             y = 16;
         }
 
         for (j = 0; j < ARRAY_COUNT(counter->digitSprite); j++) {
-            counter->digitSprite[j] = func_0804d160(D_03005380, anim_sick_beats_score_num, 0, x - 5 * j, y, 0x8f00, 0, 0, 0);
+            counter->digitSprite[j] = sprite_create(D_03005380, anim_sick_beats_score_num, 0, x - 5 * j, y, 0x8f00, 0, 0, 0);
         }
     }
     gSickBeats->unk21C = 0;
@@ -126,7 +126,7 @@ void sick_beats_draw_score(u32 type) {
     u32 value = scoreCounters->value;
 
     for (i = 0; i < ARRAY_COUNT(scoreCounters->digitSprite); i++) {
-        func_0804cebc(D_03005380, scoreCounters->digitSprite[i], value % 10);
+        sprite_set_anim_cel(D_03005380, scoreCounters->digitSprite[i], value % 10);
         value /= 10;
     }
 }
@@ -275,7 +275,7 @@ void sick_beats_set_virus_palette(u32 palette) {
 void sick_beats_init_forks(void) {
     struct SickBeatsForks *forks = &gSickBeats->forks;
 
-    forks->launcher = func_0804d160(D_03005380, anim_fork_launcher, 0, 104, 60, 0x4800, 1, 0x7f, 0);
+    forks->launcher = sprite_create(D_03005380, anim_fork_launcher, 0, 104, 60, 0x4800, 1, 0x7f, 0);
     forks->spriteUp = create_affine_sprite(anim_fork_hit_none2, 0, 104, 60, 0x4800, INT_TO_FIXED(1), 
                                         INT_TO_FIXED(-2), 1, 0x7f, 0, FALSE); // facing up
     forks->spriteDown = create_affine_sprite(anim_fork_hit_none2, 0, 104, 60, 0x4800, INT_TO_FIXED(1), 
@@ -298,25 +298,25 @@ void sick_beats_update_forks(void) {
     if (forks->counterUp) {
         forks->counterUp--;
         buttons = DPAD_LEFT | DPAD_RIGHT | DPAD_DOWN;
-        affine_sprite_set_anim_frame(forks->spriteUp, 0);
+        affine_sprite_set_anim_cel(forks->spriteUp, 0);
         affine_sprite_play_anim(forks->spriteUp, 0);
     }
     if (forks->counterDown) {
         forks->counterDown--;
         buttons &= ~(DPAD_DOWN);
-        affine_sprite_set_anim_frame(forks->spriteDown, 0);
+        affine_sprite_set_anim_cel(forks->spriteDown, 0);
         affine_sprite_play_anim(forks->spriteDown, 0);
     }
     if (forks->counterLeft) {
         forks->counterLeft--;
         buttons &= ~(DPAD_LEFT);
-        affine_sprite_set_anim_frame(forks->spriteLeft, 0);
+        affine_sprite_set_anim_cel(forks->spriteLeft, 0);
         affine_sprite_play_anim(forks->spriteLeft, 0);
     }
     if (forks->counterRight) {
         forks->counterRight--;
         buttons &= ~(DPAD_RIGHT);
-        affine_sprite_set_anim_frame(forks->spriteRight, 0);
+        affine_sprite_set_anim_cel(forks->spriteRight, 0);
         affine_sprite_play_anim(forks->spriteRight, 0);
     }
     
@@ -340,14 +340,14 @@ void sick_beats_set_fork_counter(u32 input) {
     if (input & DPAD_RIGHT) {
         forks->counterRight = forkCounter;
     } 
-    func_0804cebc(D_03005380, forks->launcher, 0);
+    sprite_set_anim_cel(D_03005380, forks->launcher, 0);
 }
 
 // Init Yellow Microbe
 void sick_beats_init_yellow_microbe(void) {
     struct SickBeatsYellowMicrobe *yellowMicrobe = &gSickBeats->yellowMicrobe;
 
-    yellowMicrobe->sprite = func_0804d160(D_03005380, anim_yellow_microbe_beat, 0, 174, 138, 0x8900, 1, 0x7f, 0);
+    yellowMicrobe->sprite = sprite_create(D_03005380, anim_yellow_microbe_beat, 0, 174, 138, 0x8900, 1, 0x7f, 0);
     yellowMicrobe->state = SICK_BEATS_MICROBE_STATE_BEAT;
 }
 
@@ -382,8 +382,8 @@ void sick_beats_update_yellow_microbe(void) {
             case SICK_BEATS_MICROBE_STATE_VIRUS:
                 if (yellowMicrobe->isHurt) {
                     if (gSickBeats->microbeWasHurt) {
-                        func_0804dae0(D_03005380, yellowMicrobe->sprite, 1, 0, 0);
-                        func_0804daa8(D_03005380, yellowMicrobe->sprite, 0, 0);
+                        sprite_set_playback(D_03005380, yellowMicrobe->sprite, 1, 0, 0);
+                        sprite_set_callback(D_03005380, yellowMicrobe->sprite, 0, 0);
                         yellowMicrobe->isHurt = FALSE;
                     } else {
                         sick_beats_set_yellow_microbe_state(SICK_BEATS_MICROBE_STATE_RETURN);
@@ -409,11 +409,11 @@ void sick_beats_yellow_microbe_callback(u32 arg0, u32 arg1, u8 *isHurt) {
 void sick_beats_set_yellow_microbe_state(u32 state) {
     struct SickBeatsYellowMicrobe *yellowMicrobe = &gSickBeats->yellowMicrobe;
     if (state == SICK_BEATS_MICROBE_STATE_BEAT) {
-        func_0804d8f8(D_03005380, yellowMicrobe->sprite, sick_beats_microbe_event_anim[SICK_BEATS_MICROBE_STATE_BEAT], 0, 1, 0x1b, 0);
-        func_0804daa8(D_03005380, yellowMicrobe->sprite, 0, 0);
+        sprite_set_anim(D_03005380, yellowMicrobe->sprite, sick_beats_microbe_event_anim[SICK_BEATS_MICROBE_STATE_BEAT], 0, 1, 0x1b, 0);
+        sprite_set_callback(D_03005380, yellowMicrobe->sprite, 0, 0);
     } else {
-        func_0804d8f8(D_03005380, yellowMicrobe->sprite, sick_beats_microbe_event_anim[state], 0, 1, 0, 4);
-        func_0804daa8(D_03005380, yellowMicrobe->sprite, sick_beats_yellow_microbe_callback, (u32)&yellowMicrobe->isHurt);
+        sprite_set_anim(D_03005380, yellowMicrobe->sprite, sick_beats_microbe_event_anim[state], 0, 1, 0, 4);
+        sprite_set_callback(D_03005380, yellowMicrobe->sprite, sick_beats_yellow_microbe_callback, (u32)&yellowMicrobe->isHurt);
     }
 
     yellowMicrobe->state = state;
@@ -455,8 +455,8 @@ void sick_beats_engine_start(u32 version) {
     sick_beats_init_yellow_microbe();
     sick_beats_init_forks();
     sick_beats_init_virus();
-    gSickBeats->doctorSprite = func_0804d160(D_03005380, anim_virus_doctor_beat, 0, 17, 155, 0x800, 1, 0x7f, 0);
-    gSickBeats->radioSprite = func_0804d160(D_03005380, anim_sick_beats_radio, 0, 17, 155, 0x810, 1, 0x7f, 0);
+    gSickBeats->doctorSprite = sprite_create(D_03005380, anim_virus_doctor_beat, 0, 17, 155, 0x800, 1, 0x7f, 0);
+    gSickBeats->radioSprite = sprite_create(D_03005380, anim_sick_beats_radio, 0, 17, 155, 0x810, 1, 0x7f, 0);
     gSickBeats->doctorCurrentState = SICK_BEATS_DOCTOR_STATE_BEAT;
     gSickBeats->doctorNextState = SICK_BEATS_DOCTOR_STATE_INVALID;
     gSickBeats->unk1F2 = 0;
@@ -524,7 +524,7 @@ void sick_beats_set_game_over_beatscript(struct Beatscript *beatscript) {
 
 // Engine Event 0x05 (Endless Game Over)
 void sick_beats_endless_play_game_over(void) {
-    func_0804d160(D_03005380, anim_sick_beats_game_over, 0, 120, 80, 0x400, 1, 0, 0);
+    sprite_create(D_03005380, anim_sick_beats_game_over, 0, 120, 80, 0x400, 1, 0, 0);
     gSickBeats->gameOverCounter = 20;
     D_030046a8->data.unk294[2] = gSickBeats->scoreCounters[SICK_BEATS_SCORE_HIGH].value; // high score
 }
@@ -570,7 +570,7 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
                                             act->playbackArg1, act->playbackArg2, act->playbackArg3);
     }
     func_080101f8(info->virusSprite, act->unkC);
-    affine_sprite_set_palette(info->virusSprite, info->virusPalette);
+    affine_sprite_set_base_palette(info->virusSprite, info->virusPalette);
     if (info->virusState == SICK_BEATS_VIRUS_STATE_ENTER_TUBE) {
         virus->exists[info->currentVirus] = TRUE;
     } else if (!virus->exists[info->currentVirus]) {
@@ -710,30 +710,30 @@ struct AffineSprite *sick_beats_process_cue(struct SickBeatsCue *info, struct An
             palette = 8;
         }
         anim = anim_fork_hit_tough_virus;
-        virusEffectSprite = func_0804d160(D_03005380, anim_tough_virus_hit_effect, 0, virusX, virusY, 0x87ff, 1, 0, 3);
-        func_0804d8c4(D_03005380, virusEffectSprite, info->virusPalette);
+        virusEffectSprite = sprite_create(D_03005380, anim_tough_virus_hit_effect, 0, virusX, virusY, 0x87ff, 1, 0, 3);
+        sprite_set_base_palette(D_03005380, virusEffectSprite, info->virusPalette);
     }
     
     virusEffectSprite = -1;
     switch (info->virusState) {
         case SICK_BEATS_VIRUS_STATE_UP_DASH_VULN:
             nextVirusAfSprite = create_affine_sprite(anim, 0, virusX, virusY, 0x8800, INT_TO_FIXED(1), INT_TO_FIXED(0), 1, 0x7f, 4, 0);
-            virusEffectSprite = func_0804d160(D_03005380, anim_virus_dash_up_half, 0, virusX, virusY, 0x8800, 1, 0, 3);
+            virusEffectSprite = sprite_create(D_03005380, anim_virus_dash_up_half, 0, virusX, virusY, 0x8800, 1, 0, 3);
             sick_beats_set_fork_counter(DPAD_RIGHT);
             break;
         case SICK_BEATS_VIRUS_STATE_LEFT_DASH_VULN:
             nextVirusAfSprite = create_affine_sprite(anim, 0, virusX, virusY, 0x8800, INT_TO_FIXED(1), INT_TO_FIXED(-2), 1, 0x7f, 4, 0);
-            virusEffectSprite = func_0804d160(D_03005380, anim_virus_dash_left_half, 0, virusX, virusY, 0x8800, 1, 0, 3);
+            virusEffectSprite = sprite_create(D_03005380, anim_virus_dash_left_half, 0, virusX, virusY, 0x8800, 1, 0, 3);
             sick_beats_set_fork_counter(DPAD_UP);
             break;
         case SICK_BEATS_VIRUS_STATE_DOWN_DASH_VULN:
             nextVirusAfSprite = create_affine_sprite(anim, 0, virusX, virusY, 0x8800, INT_TO_FIXED(1), INT_TO_FIXED(4), 1, 0x7f, 4, 0);
-            virusEffectSprite = func_0804d294(D_03005380, anim_virus_dash_up_half, 0, virusX, virusY, 0x8800, 1, 0, 3, 0x2000);
+            virusEffectSprite = sprite_create_w_attr(D_03005380, anim_virus_dash_up_half, 0, virusX, virusY, 0x8800, 1, 0, 3, 0x2000);
             sick_beats_set_fork_counter(DPAD_LEFT);
             break;
         case SICK_BEATS_VIRUS_STATE_RIGHT_DASH_VULN:
             nextVirusAfSprite = create_affine_sprite(anim, 0, virusX, virusY, 0x8800, INT_TO_FIXED(1), INT_TO_FIXED(2), 1, 0x7f, 4, 0);
-            virusEffectSprite = func_0804d294(D_03005380, anim_virus_dash_left_half, 0, virusX, virusY, 0x8800, 1, 0, 3, 0x1000);
+            virusEffectSprite = sprite_create_w_attr(D_03005380, anim_virus_dash_left_half, 0, virusX, virusY, 0x8800, 1, 0, 3, 0x1000);
             sick_beats_set_fork_counter(DPAD_DOWN);
             break;
         default:
@@ -742,11 +742,11 @@ struct AffineSprite *sick_beats_process_cue(struct SickBeatsCue *info, struct An
     }
     
     if (virusEffectSprite > -1) {
-        func_0804d8c4(D_03005380, virusEffectSprite, info->virusPalette);
+        sprite_set_base_palette(D_03005380, virusEffectSprite, info->virusPalette);
     }
     if (nextVirusAfSprite) {
         func_08010238(nextVirusAfSprite, sick_beats_fork_callback, (u32)nextVirusAfSprite);
-        affine_sprite_set_palette(nextVirusAfSprite, palette);
+        affine_sprite_set_base_palette(nextVirusAfSprite, palette);
         func_08010174(nextVirusAfSprite, (u32)INT_TO_FIXED(get_beatscript_tempo()) / 125);
         affine_sprite_play_anim(baseVirusAfSprite, 0);
         if (--info->hitAmount) {
@@ -846,7 +846,7 @@ void sick_beats_common_beat_animation(void) {
     struct SickBeatsYellowMicrobe *yellowMicrobe = &gSickBeats->yellowMicrobe;
     
     if (gSickBeats->unk1F2 == 0) {
-        func_0804d8f8(D_03005380, gSickBeats->doctorSprite, sick_beats_doctor_anim[gSickBeats->doctorCurrentState], 0, 1, 0x7f, 0);
+        sprite_set_anim(D_03005380, gSickBeats->doctorSprite, sick_beats_doctor_anim[gSickBeats->doctorCurrentState], 0, 1, 0x7f, 0);
     }
     gSickBeats->unk1F2++;
     if (gSickBeats->unk1F2 >= D_089e92f0[gSickBeats->doctorCurrentState]) {
@@ -855,9 +855,9 @@ void sick_beats_common_beat_animation(void) {
     }
     gSickBeats->doctorBeatCounter = ticks_to_frames(12);
     if (yellowMicrobe->state == SICK_BEATS_MICROBE_STATE_BEAT) {
-        func_0804cebc(D_03005380, yellowMicrobe->sprite, 0);
+        sprite_set_anim_cel(D_03005380, yellowMicrobe->sprite, 0);
     }
-    func_0804cebc(D_03005380, gSickBeats->radioSprite, 1);
+    sprite_set_anim_cel(D_03005380, gSickBeats->radioSprite, 1);
 }
 
 // Common Event 1 (Display Text, Unimplemented)

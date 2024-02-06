@@ -75,7 +75,7 @@ thumb_func_start func_08041ddc \n\
 /* 08041e68 */ LDR R2, [R2] \n\
 /* 08041e6a */ LSLS R2, R2, 0x8 \n\
 /* 08041e6c */ ASRS R2, R2, 0x10 \n\
-/* 08041e6e */ BL func_0804d648 \n\
+/* 08041e6e */ BL sprite_set_y \n\
 /* 08041e72 */ LDR R2, [R5] \n\
 /* 08041e74 */ LDRB R0, [R2, 0x7] \n\
 /* 08041e76 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\

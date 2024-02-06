@@ -29,7 +29,7 @@ thumb_func_start power_calligraphy_common_display_text \n\
 /* 08033866 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08033868 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803386a */ LDRSH R1, [R1, R2] \n\
-/* 0803386c */ BL func_0804d504 \n\
+/* 0803386c */ BL sprite_delete \n\
 /* 08033870 */ LDR R0, [R6] \n\
 /* 08033872 */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
 /* 08033874 */ ADDS R1, R0, R2 @ Set R1 to R0 + R2 \n\
@@ -73,7 +73,7 @@ branch_0803387a: \n\
 /* 080338c2 */ ADDS R1, R2, 0x0 @ Set R1 to R2 + 0x0 \n\
 /* 080338c4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080338c6 */ MOVS R3, 0x80 @ Set R3 to 0x80 \n\
-/* 080338c8 */ BL func_0804d160 \n\
+/* 080338c8 */ BL sprite_create \n\
 /* 080338cc */ LDR R1, [R6] \n\
 /* 080338ce */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\
 /* 080338d0 */ STRH R0, [R1] \n\
@@ -81,7 +81,7 @@ branch_0803387a: \n\
 /* 080338d4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080338d6 */ LDRSH R1, [R1, R2] \n\
 /* 080338d8 */ MOVS R2, 0x9 @ Set R2 to 0x9 \n\
-/* 080338da */ BL func_0804d8c4 \n\
+/* 080338da */ BL sprite_set_base_palette \n\
  \n\
 branch_080338de: \n\
 /* 080338de */ ADD SP, 0x14 \n\

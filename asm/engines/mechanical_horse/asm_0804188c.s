@@ -16,7 +16,7 @@ thumb_func_start func_0804188c \n\
 /* 080418a0 */ LDR R0, [R5] \n\
 /* 080418a2 */ MOVS R2, 0x34 @ Set R2 to 0x34 \n\
 /* 080418a4 */ LDRSH R1, [R1, R2] \n\
-/* 080418a6 */ BL func_0804d6cc \n\
+/* 080418a6 */ BL sprite_get_anim_cel \n\
 /* 080418aa */ LSLS R0, R0, 0x18 \n\
 /* 080418ac */ ASRS R0, R0, 0x18 \n\
 /* 080418ae */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
@@ -40,7 +40,7 @@ thumb_func_start func_0804188c \n\
 /* 080418d2 */ STR R3, [SP] \n\
 /* 080418d4 */ STR R3, [SP, 0x4] \n\
 /* 080418d6 */ STR R3, [SP, 0x8] \n\
-/* 080418d8 */ BL func_0804d8f8 \n\
+/* 080418d8 */ BL sprite_set_anim \n\
 /* 080418dc */ B branch_0804192e \n\
 \n\
 .ltorg \n\
@@ -52,7 +52,7 @@ branch_080418ec: \n\
 /* 080418f2 */ LDR R0, [R5] \n\
 /* 080418f4 */ MOVS R2, 0x34 @ Set R2 to 0x34 \n\
 /* 080418f6 */ LDRSH R1, [R1, R2] \n\
-/* 080418f8 */ BL func_0804d6cc \n\
+/* 080418f8 */ BL sprite_get_anim_cel \n\
 /* 080418fc */ LSLS R0, R0, 0x18 \n\
 /* 080418fe */ ASRS R0, R0, 0x18 \n\
 /* 08041900 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
@@ -76,7 +76,7 @@ branch_080418ec: \n\
 /* 08041924 */ STR R3, [SP] \n\
 /* 08041926 */ STR R3, [SP, 0x4] \n\
 /* 08041928 */ STR R3, [SP, 0x8] \n\
-/* 0804192a */ BL func_0804d8f8 \n\
+/* 0804192a */ BL sprite_set_anim \n\
  \n\
 branch_0804192e: \n\
 /* 0804192e */ ADD SP, 0xC \n\

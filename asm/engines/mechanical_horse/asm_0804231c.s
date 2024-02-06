@@ -78,7 +78,7 @@ branch_08042336: \n\
 /* 080423a8 */ LDR R2, [R2] \n\
 /* 080423aa */ LSLS R2, R2, 0x8 \n\
 /* 080423ac */ ASRS R2, R2, 0x10 \n\
-/* 080423ae */ BL func_0804d648 \n\
+/* 080423ae */ BL sprite_set_y \n\
 /* 080423b2 */ B branch_0804241a \n\
 \n\
 .ltorg \n\
@@ -125,7 +125,7 @@ branch_080423f8: \n\
 /* 08042410 */ LDR R2, [R2] \n\
 /* 08042412 */ LSLS R2, R2, 0x8 \n\
 /* 08042414 */ ASRS R2, R2, 0x10 \n\
-/* 08042416 */ BL func_0804d648 \n\
+/* 08042416 */ BL sprite_set_y \n\
  \n\
 branch_0804241a: \n\
 /* 0804241a */ ADDS R0, R7, 0x1 @ Set R0 to R7 + 0x1 \n\

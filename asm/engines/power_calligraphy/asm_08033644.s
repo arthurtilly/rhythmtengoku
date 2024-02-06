@@ -32,7 +32,7 @@ thumb_func_start power_calligraphy_engine_update \n\
 /* 08033682 */ LSLS R3, R3, 0x10 \n\
 /* 08033684 */ ASRS R3, R3, 0x10 \n\
 /* 08033686 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 08033688 */ BL func_0804d5d4 \n\
+/* 08033688 */ BL sprite_set_x_y \n\
 /* 0803368c */ POP {R4-R6} \n\
 /* 0803368e */ POP {R0} \n\
 /* 08033690 */ BX R0 \n\

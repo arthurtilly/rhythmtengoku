@@ -21,18 +21,18 @@ thumb_func_start func_080284a4 \n\
 /* 080284c2 */ STR R3, [SP, 0x4] \n\
 /* 080284c4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080284c6 */ STR R3, [SP, 0x8] \n\
-/* 080284c8 */ BL func_0804d8f8 \n\
+/* 080284c8 */ BL sprite_set_anim \n\
 /* 080284cc */ LDR R0, [R5] \n\
 /* 080284ce */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 080284d0 */ LDRSH R1, [R4, R2] \n\
 /* 080284d2 */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
 /* 080284d4 */ MOVS R3, 0x64 @ Set R3 to 0x64 \n\
-/* 080284d6 */ BL func_0804d5d4 \n\
+/* 080284d6 */ BL sprite_set_x_y \n\
 /* 080284da */ LDR R0, [R5] \n\
 /* 080284dc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080284de */ LDRSH R1, [R4, R2] \n\
 /* 080284e0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080284e2 */ BL func_0804cebc \n\
+/* 080284e2 */ BL sprite_set_anim_cel \n\
 /* 080284e6 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
 /* 080284e8 */ STRH R0, [R4, 0x2A] \n\
 /* 080284ea */ MOVS R0, 0x64 @ Set R0 to 0x64 \n\

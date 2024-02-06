@@ -82,12 +82,12 @@ branch_080367ba: \n\
 /* 080367fa */ LSRS R2, R2, 0x10 \n\
 /* 080367fc */ STR R2, [SP] \n\
 /* 080367fe */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 08036800 */ BL func_0804d55c \n\
+/* 08036800 */ BL sprite_set_x_y_z \n\
 /* 08036804 */ LDR R0, [R5] \n\
 /* 08036806 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08036808 */ LDRSH R1, [R6, R2] \n\
 /* 0803680a */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803680c */ BL func_0804d770 \n\
+/* 0803680c */ BL sprite_set_visible \n\
 /* 08036810 */ LDR R0, [R6, 0x30] \n\
 /* 08036812 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 08036814 */ STR R0, [R6, 0x30] \n\

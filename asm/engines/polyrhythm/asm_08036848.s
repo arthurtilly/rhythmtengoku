@@ -67,7 +67,7 @@ branch_080368b4: \n\
 /* 080368c4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080368c6 */ STR R2, [SP] \n\
 /* 080368c8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080368ca */ BL func_0804dae0 \n\
+/* 080368ca */ BL sprite_set_playback \n\
  \n\
 branch_080368ce: \n\
 /* 080368ce */ LDR R0, [R6, 0x2C] \n\
@@ -127,12 +127,12 @@ branch_080368fc: \n\
 /* 0803693e */ LSRS R2, R2, 0x10 \n\
 /* 08036940 */ STR R2, [SP] \n\
 /* 08036942 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 08036944 */ BL func_0804d55c \n\
+/* 08036944 */ BL sprite_set_x_y_z \n\
 /* 08036948 */ LDR R0, [R5] \n\
 /* 0803694a */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 0803694c */ LDRSH R1, [R6, R2] \n\
 /* 0803694e */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 08036950 */ BL func_0804d770 \n\
+/* 08036950 */ BL sprite_set_visible \n\
 /* 08036954 */ LDR R0, [R6, 0x30] \n\
 /* 08036956 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 08036958 */ STR R0, [R6, 0x30] \n\

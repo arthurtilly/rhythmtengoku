@@ -51,7 +51,7 @@ void showtime_engine_start(u32 version) {
     func_0802d96c();
     gShowtime->unk0 = scene_create_obj_font_printer(0x340, 2);
     textAnim = bmp_font_obj_print_c(gShowtime->unk0, D_0805a3cc, 0, 0);
-    gShowtime->unk4 = func_0804d160(D_03005380, textAnim->frames, 0, 120, 56, 0, 0, 0, 0);
+    gShowtime->unk4 = sprite_create(D_03005380, textAnim->frames, 0, 120, 56, 0, 0, 0, 0);
     gameplay_set_input_buttons(A_BUTTON, 0);
     func_0802c23c();    
     func_0802d104();
@@ -197,8 +197,8 @@ void func_0802c1f0(u32 unused, s16 sprite, u32 arg2) {
             break;
         case 1:
             gShowtime->unk8[arg2].unk4 = 0;
-        func_0804cebc(D_03005380, sprite, 3);
-        func_0804dcb8(D_03005380, sprite, 0);
+        sprite_set_anim_cel(D_03005380, sprite, 3);
+        sprite_set_anim_speed(D_03005380, sprite, 0);
     }
 }
 
@@ -210,20 +210,20 @@ void func_0802c23c() {
         gShowtime->unk8[i].unk4 = 0;
 
         if (gShowtime->version != SHOWTIME_VER_REMIX_3) {
-            gShowtime->unk8[i].sprite = func_0804d160(D_03005380, anim_showtime_block, 0, 64, 64, 0x4800, 1, 0, 4);
+            gShowtime->unk8[i].sprite = sprite_create(D_03005380, anim_showtime_block, 0, 64, 64, 0x4800, 1, 0, 4);
         } else {
-            gShowtime->unk8[i].sprite = func_0804d160(D_03005380, anim_showtime_block_pink, 0, 64, 64, 0x4800, 1, 0, 4);
+            gShowtime->unk8[i].sprite = sprite_create(D_03005380, anim_showtime_block_pink, 0, 64, 64, 0x4800, 1, 0, 4);
         }
 
         gShowtime->unk8[i].unk8 = 0;
 
-        func_0804daa8(D_03005380, gShowtime->unk8[i].sprite, &func_0802c1f0, i);
-        func_0804cebc(D_03005380, gShowtime->unk8[i].sprite, 3);
-        func_0804dcb8(D_03005380, gShowtime->unk8[i].sprite, 0);
+        sprite_set_callback(D_03005380, gShowtime->unk8[i].sprite, &func_0802c1f0, i);
+        sprite_set_anim_cel(D_03005380, gShowtime->unk8[i].sprite, 3);
+        sprite_set_anim_speed(D_03005380, gShowtime->unk8[i].sprite, 0);
     }
 
-    func_0804d5d4(D_03005380, gShowtime->unk8[0].sprite, 200, 128);
-    func_0804d5d4(D_03005380, gShowtime->unk8[1].sprite, 184, 144);
+    sprite_set_x_y(D_03005380, gShowtime->unk8[0].sprite, 200, 128);
+    sprite_set_x_y(D_03005380, gShowtime->unk8[1].sprite, 184, 144);
 }
 
 
@@ -313,8 +313,8 @@ void func_0802d0b8() {
 
 
 void func_0802d0dc(u32 arg0, s16 sprite) {
-    func_0804cebc(D_03005380, sprite, 8);
-    func_0804dcb8(D_03005380, sprite, 0);
+    sprite_set_anim_cel(D_03005380, sprite, 8);
+    sprite_set_anim_speed(D_03005380, sprite, 0);
 }
 
 
@@ -346,7 +346,7 @@ void func_0802d8bc(u32 arg) {
             gShowtime->unk174[i].unk4 = 4;
             gShowtime->unk174[i].unkC = arg;
             gShowtime->unk174[i].unk8 = 0;
-            func_0804d770(D_03005380, gShowtime->unk174[i].sprite, TRUE);
+            sprite_set_visible(D_03005380, gShowtime->unk174[i].sprite, TRUE);
             return;
         }
     }

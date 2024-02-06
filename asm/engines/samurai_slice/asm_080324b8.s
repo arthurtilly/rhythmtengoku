@@ -22,7 +22,7 @@ thumb_func_start func_080324b8 \n\
 /* 080324da */ STR R4, [SP, 0x10] \n\
 /* 080324dc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080324de */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 080324e0 */ BL func_0804d160 \n\
+/* 080324e0 */ BL sprite_create \n\
 /* 080324e4 */ STRH R0, [R5] \n\
 /* 080324e6 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080324e8 */ LDRSH R0, [R5, R1] \n\
@@ -33,7 +33,7 @@ thumb_func_start func_080324b8 \n\
 /* 080324f4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080324f6 */ LDRSH R1, [R5, R2] \n\
 /* 080324f8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080324fa */ BL func_0804d770 \n\
+/* 080324fa */ BL sprite_set_visible \n\
 /* 080324fe */ ADD SP, 0x14 \n\
 /* 08032500 */ POP {R4-R6} \n\
 /* 08032502 */ POP {R0} \n\

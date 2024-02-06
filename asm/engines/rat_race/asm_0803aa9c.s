@@ -71,7 +71,7 @@ branch_0803ab00: \n\
 /* 0803ab1e */ STR R5, [SP, 0x8] \n\
 /* 0803ab20 */ LDR R2, =anim_rat_cheer_full \n\
 /* 0803ab22 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803ab24 */ BL func_0804d8f8 \n\
+/* 0803ab24 */ BL sprite_set_anim \n\
 /* 0803ab28 */ ADDS R0, R4, 0x1 @ Set R0 to R4 + 0x1 \n\
 /* 0803ab2a */ LSLS R0, R0, 0x18 \n\
 /* 0803ab2c */ LSRS R4, R0, 0x18 \n\
@@ -114,7 +114,7 @@ branch_0803ab40: \n\
 /* 0803ab76 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
 /* 0803ab78 */ LSLS R2, R2, 0x8 \n\
 /* 0803ab7a */ ASRS R2, R2, 0x10 \n\
-/* 0803ab7c */ BL func_0804d614 \n\
+/* 0803ab7c */ BL sprite_set_x \n\
  \n\
 branch_0803ab80: \n\
 /* 0803ab80 */ ADD SP, 0xC \n\

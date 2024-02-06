@@ -1133,7 +1133,7 @@ void import_scene_object(struct SpriteHandler *spriteHandler, struct BitmapFontO
 
             data = object.sprite;
             poolID = data->poolID;
-            sprite = func_0804d294(spriteHandler, data->anim,
+            sprite = sprite_create_w_attr(spriteHandler, data->anim,
                 data->unk8, data->x, data->y, data->z,
                 data->unk10, data->unk11, data->unk12, data->unk14);
             break;
@@ -1145,7 +1145,7 @@ void import_scene_object(struct SpriteHandler *spriteHandler, struct BitmapFontO
 
             data = object.spriteVecXY;
             poolID = data->poolID;
-            sprite = func_0804d294(spriteHandler, data->anim,
+            sprite = sprite_create_w_attr(spriteHandler, data->anim,
                 data->unk8, data->pos->x, data->pos->y, data->z,
                 data->unk12, data->unk13, data->unk14, data->unk18);
             break;
@@ -1197,10 +1197,10 @@ void import_scene_object(struct SpriteHandler *spriteHandler, struct BitmapFontO
                 textAnim = (struct PrintedTextAnim *)wobblyAnim;
             }
 
-            sprite = func_0804d294(spriteHandler, textAnim->frames, 0, data->x, data->y, data->z, 1, 0, 0, data->unk14);
+            sprite = sprite_create_w_attr(spriteHandler, textAnim->frames, 0, data->x, data->y, data->z, 1, 0, 0, data->unk14);
 
             if (!data->display) {
-                func_0804d770(spriteHandler, sprite, FALSE);
+                sprite_set_visible(spriteHandler, sprite, FALSE);
             }
             break;
         }
@@ -1300,7 +1300,7 @@ void delete_all_scene_objects(struct SpriteHandler *spriteHandler, struct Bitmap
 
                 data = objects->sprite;
                 if (data->poolID >= 0) {
-                    func_0804d504(spriteHandler, spritePool[data->poolID]);
+                    sprite_delete(spriteHandler, spritePool[data->poolID]);
                     spritePool[data->poolID] = -1;
                 }
                 break;
@@ -1311,7 +1311,7 @@ void delete_all_scene_objects(struct SpriteHandler *spriteHandler, struct Bitmap
 
                 data = objects->spriteVecXY;
                 if (data->poolID >= 0) {
-                    func_0804d504(spriteHandler, spritePool[data->poolID]);
+                    sprite_delete(spriteHandler, spritePool[data->poolID]);
                     spritePool[data->poolID] = -1;
                 }
                 break;
@@ -1329,7 +1329,7 @@ void delete_all_scene_objects(struct SpriteHandler *spriteHandler, struct Bitmap
                 if (data->poolID >= 0) {
                     sprite = spritePool[data->poolID];
                     bmp_font_obj_delete_printed_anim(bitmapFontOBJ, (struct Animation *)func_0804ddb0(spriteHandler, sprite, 7));
-                    func_0804d504(spriteHandler, sprite);
+                    sprite_delete(spriteHandler, sprite);
                     spritePool[data->poolID] = -1;
                 }
                 break;
@@ -1353,7 +1353,7 @@ void display_all_scene_objects(struct SpriteHandler *spriteHandler, struct Bitma
 
                 data = objects->sprite;
                 if (data->poolID >= 0) {
-                    func_0804d770(spriteHandler, spritePool[data->poolID], show);
+                    sprite_set_visible(spriteHandler, spritePool[data->poolID], show);
                 }
                 break;
             }
@@ -1363,7 +1363,7 @@ void display_all_scene_objects(struct SpriteHandler *spriteHandler, struct Bitma
 
                 data = objects->spriteVecXY;
                 if (data->poolID >= 0) {
-                    func_0804d770(spriteHandler, spritePool[data->poolID], show);
+                    sprite_set_visible(spriteHandler, spritePool[data->poolID], show);
                 }
                 break;
             }
@@ -1377,7 +1377,7 @@ void display_all_scene_objects(struct SpriteHandler *spriteHandler, struct Bitma
 
                 data = objects->text;
                 if (data->poolID >= 0) {
-                    func_0804d770(spriteHandler, spritePool[data->poolID], show);
+                    sprite_set_visible(spriteHandler, spritePool[data->poolID], show);
                 }
                 break;
             }

@@ -43,7 +43,7 @@ thumb_func_start samurai_slice_engine_update \n\
 /* 08030fac */ LSRS R2, R2, 0x10 \n\
 /* 08030fae */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 08030fb0 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08030fb2 */ BL func_0804dcb8 \n\
+/* 08030fb2 */ BL sprite_set_anim_speed \n\
 /* 08030fb6 */ LDR R5, [R5] \n\
 /* 08030fb8 */ LDR R0, [R7] \n\
 /* 08030fba */ MOVS R2, 0xED @ Set R2 to 0xED \n\
@@ -60,7 +60,7 @@ thumb_func_start samurai_slice_engine_update \n\
 /* 08030fd4 */ LSRS R2, R2, 0x10 \n\
 /* 08030fd6 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08030fd8 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08030fda */ BL func_0804dcb8 \n\
+/* 08030fda */ BL sprite_set_anim_speed \n\
 /* 08030fde */ B branch_08030ffe \n\
 \n\
 .ltorg \n\
@@ -124,7 +124,7 @@ jump_08031038: \n\
 /* 0803105e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08031060 */ LDRSH R1, [R1, R2] \n\
 /* 08031062 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08031064 */ BL func_0804d770 \n\
+/* 08031064 */ BL sprite_set_visible \n\
  \n\
 branch_08031068: \n\
 /* 08031068 */ LDR R0, =D_03005380 \n\
@@ -139,7 +139,7 @@ branch_08031068: \n\
 /* 0803107a */ LDR R2, [R2] \n\
 /* 0803107c */ LSLS R2, R2, 0x8 \n\
 /* 0803107e */ ASRS R2, R2, 0x10 \n\
-/* 08031080 */ BL func_0804d648 \n\
+/* 08031080 */ BL sprite_set_y \n\
 /* 08031084 */ B branch_08031128 \n\
 \n\
 .ltorg \n\
@@ -184,7 +184,7 @@ branch_080310dc: \n\
 /* 080310de */ STR R3, [SP] \n\
 /* 080310e0 */ STR R3, [SP, 0x4] \n\
 /* 080310e2 */ STR R3, [SP, 0x8] \n\
-/* 080310e4 */ BL func_0804d8f8 \n\
+/* 080310e4 */ BL sprite_set_anim \n\
 /* 080310e8 */ B branch_08031128 \n\
 \n\
 .ltorg \n\
@@ -210,7 +210,7 @@ jump_080310f8: \n\
 /* 0803111e */ STR R3, [SP, 0x4] \n\
 /* 08031120 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08031122 */ STR R3, [SP, 0x8] \n\
-/* 08031124 */ BL func_0804d8f8 \n\
+/* 08031124 */ BL sprite_set_anim \n\
  \n\
 branch_08031128: \n\
 /* 08031128 */ ADD SP, 0xC \n\

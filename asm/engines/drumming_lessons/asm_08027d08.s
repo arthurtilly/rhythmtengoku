@@ -55,7 +55,7 @@ branch_08027d58: \n\
 /* 08027d76 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08027d78 */ LDRSH R1, [R1, R2] \n\
 /* 08027d7a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08027d7c */ BL func_0804d770 \n\
+/* 08027d7c */ BL sprite_set_visible \n\
 /* 08027d80 */ LDR R0, [R4] \n\
 /* 08027d82 */ LDR R3, =0x00000566 \n\
 /* 08027d84 */ ADDS R0, R0, R3 @ Set R0 to R0 + R3 \n\
@@ -83,7 +83,7 @@ branch_08027da0: \n\
 /* 08027db6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08027db8 */ LDRSH R1, [R1, R2] \n\
 /* 08027dba */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 08027dbc */ BL func_0804d770 \n\
+/* 08027dbc */ BL sprite_set_visible \n\
 /* 08027dc0 */ BL get_beatscript_tempo \n\
 /* 08027dc4 */ LDR R1, [R4] \n\
 /* 08027dc6 */ LDR R3, =0x00000566 \n\

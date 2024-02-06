@@ -79,7 +79,7 @@ branch_0803f9fe: \n\
 /* 0803fa32 */ STR R4, [SP, 0x4] \n\
 /* 0803fa34 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0803fa36 */ STR R4, [SP, 0x8] \n\
-/* 0803fa38 */ BL func_0804d8f8 \n\
+/* 0803fa38 */ BL sprite_set_anim \n\
 /* 0803fa3c */ MOVS R0, 0xC @ Set R0 to 0xC \n\
 /* 0803fa3e */ BL ticks_to_frames \n\
 /* 0803fa42 */ LDR R1, [R5] \n\

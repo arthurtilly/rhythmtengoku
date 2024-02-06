@@ -41,7 +41,7 @@ branch_080317a6: \n\
 /* 080317b6 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 080317b8 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 080317ba */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
-/* 080317bc */ BL func_0804d8f8 \n\
+/* 080317bc */ BL sprite_set_anim \n\
 /* 080317c0 */ ADD SP, 0xC \n\
 /* 080317c2 */ POP {R4, R5} \n\
 /* 080317c4 */ POP {R0} \n\

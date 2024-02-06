@@ -41,7 +41,7 @@ branch_0803acac: \n\
 /* 0803acdc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803acde */ LDRSH R1, [R1, R2] \n\
 /* 0803ace0 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803ace2 */ BL func_0804d770 \n\
+/* 0803ace2 */ BL sprite_set_visible \n\
 /* 0803ace6 */ B branch_0803ad06 \n\
 \n\
 .ltorg \n\
@@ -87,7 +87,7 @@ branch_0803ad2a: \n\
 /* 0803ad36 */ LDRSH R1, [R1, R2] \n\
 /* 0803ad38 */ LSLS R2, R5, 0x18 \n\
 /* 0803ad3a */ ASRS R2, R2, 0x18 \n\
-/* 0803ad3c */ BL func_0804cebc \n\
+/* 0803ad3c */ BL sprite_set_anim_cel \n\
  \n\
 branch_0803ad40: \n\
 /* 0803ad40 */ POP {R4-R7} \n\

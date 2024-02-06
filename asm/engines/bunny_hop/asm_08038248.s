@@ -39,7 +39,7 @@ thumb_func_start func_08038248 \n\
 /* 0803828e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08038290 */ STR R3, [SP, 0x4] \n\
 /* 08038292 */ STR R3, [SP, 0x8] \n\
-/* 08038294 */ BL func_0804d8f8 \n\
+/* 08038294 */ BL sprite_set_anim \n\
 /* 08038298 */ ADD SP, 0xC \n\
 /* 0803829a */ POP {R3} \n\
 /* 0803829c */ MOV R8, R3 @ Set R8 to R3 \n\

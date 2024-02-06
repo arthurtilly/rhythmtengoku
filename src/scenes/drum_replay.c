@@ -159,17 +159,17 @@ struct DrumReplaySaveGraph *create_new_replay_memory_graph(u32 memID, struct Dru
     }
 
     graph = mem_heap_alloc_id(memID, 0x1C);
-    graph->outerEdges = func_0804d160(D_03005380, anim_studio_mem_chart_borders, 0, 128, 156, 0x800, 0, 0, 0x8000);
-    func_0804d890(D_03005380, graph->outerEdges, baseTile);
-    func_0804d8c4(D_03005380, graph->outerEdges, basePalette);
-    graph->dataBack = func_0804d160(D_03005380, anim_studio_mem_chart_data, 0, 0, 156, 0x800, 0, 0, 0x8000);
-    func_0804d890(D_03005380, graph->dataBack, baseTile);
-    func_0804d8c4(D_03005380, graph->dataBack, basePalette);
+    graph->outerEdges = sprite_create(D_03005380, anim_studio_mem_chart_borders, 0, 128, 156, 0x800, 0, 0, 0x8000);
+    sprite_set_base_tile(D_03005380, graph->outerEdges, baseTile);
+    sprite_set_base_palette(D_03005380, graph->outerEdges, basePalette);
+    graph->dataBack = sprite_create(D_03005380, anim_studio_mem_chart_data, 0, 0, 156, 0x800, 0, 0, 0x8000);
+    sprite_set_base_tile(D_03005380, graph->dataBack, baseTile);
+    sprite_set_base_palette(D_03005380, graph->dataBack, basePalette);
 
     for (i = 0; i < 10; i++) {
-        graph->dataBars[i] = func_0804d160(D_03005380, anim_studio_mem_chart_data, 0, 0, 156, 0x800, 0, 0, 0x8000);
-        func_0804d890(D_03005380, graph->dataBars[i], baseTile);
-        func_0804d8c4(D_03005380, graph->dataBars[i], basePalette + i + 1);
+        graph->dataBars[i] = sprite_create(D_03005380, anim_studio_mem_chart_data, 0, 0, 156, 0x800, 0, 0, 0x8000);
+        sprite_set_base_tile(D_03005380, graph->dataBars[i], baseTile);
+        sprite_set_base_palette(D_03005380, graph->dataBars[i], basePalette + i + 1);
     }
 
     graph->replaysAlloc = allocator;
@@ -189,10 +189,10 @@ void update_replay_memory_graph_data_bars(struct DrumReplaySaveGraph *graph) {
     for (i = 0; i < 10; i++) {
         get_saved_replay_block_data(allocator, i, &baseBlock, &totalBlocks);
         if (totalBlocks != 0) {
-            func_0804d614(D_03005380, graph->dataBars[i], (baseBlock * 4) + 128);
-            func_0804cebc(D_03005380, graph->dataBars[i], totalBlocks);
+            sprite_set_x(D_03005380, graph->dataBars[i], (baseBlock * 4) + 128);
+            sprite_set_anim_cel(D_03005380, graph->dataBars[i], totalBlocks);
         } else {
-            func_0804cebc(D_03005380, graph->dataBars[i], 0);
+            sprite_set_anim_cel(D_03005380, graph->dataBars[i], 0);
         }
 
         if (backBaseBlock < baseBlock + totalBlocks) {
@@ -202,10 +202,10 @@ void update_replay_memory_graph_data_bars(struct DrumReplaySaveGraph *graph) {
 
     backFrame = REPLAY_BLOCK_TOTAL - backBaseBlock;
     if (backFrame != 0) {
-        func_0804d614(D_03005380, graph->dataBack, (backBaseBlock * 4) + 128);
-        func_0804cebc(D_03005380, graph->dataBack, backFrame);
+        sprite_set_x(D_03005380, graph->dataBack, (backBaseBlock * 4) + 128);
+        sprite_set_anim_cel(D_03005380, graph->dataBack, backFrame);
     } else {
-        func_0804cebc(D_03005380, graph->dataBack, 0);
+        sprite_set_anim_cel(D_03005380, graph->dataBack, 0);
     }
 }
 
@@ -215,10 +215,10 @@ void show_replay_memory_graph(struct DrumReplaySaveGraph *graph, u32 show) {
     struct DrumReplaySaveGraph *chart = graph; // probably the result of some list macro
     u32 i;
 
-    func_0804d770(D_03005380, graph->outerEdges, show);
-    func_0804d770(D_03005380, graph->dataBack, show);
+    sprite_set_visible(D_03005380, graph->outerEdges, show);
+    sprite_set_visible(D_03005380, graph->dataBack, show);
 
     for (i = 0; i < 10; i++) {
-        func_0804d770(D_03005380, chart->dataBars[i], show);
+        sprite_set_visible(D_03005380, chart->dataBars[i], show);
     }
 }

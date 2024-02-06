@@ -126,7 +126,7 @@ void data_check_print_line(u32 line, u32 palette, const char *string) {
 
     if (sprite >= 0) {
         anim = (void *)func_0804ddb0(D_03005380, sprite, 7);
-        func_0804d504(D_03005380, sprite);
+        sprite_delete(D_03005380, sprite);
         text_printer_delete_anim(anim);
     }
 
@@ -135,8 +135,8 @@ void data_check_print_line(u32 line, u32 palette, const char *string) {
     dma3_fill(0, tileset, 0x800, 0x20, 0x200);
 
     anim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, tileY, TEXT_PRINTER_FONT_SMALL, string, TEXT_ANCHOR_BOTTOM_LEFT, 0, 256);
-    sprite = func_0804d160(D_03005380, anim, 0, 8, (line * 16) + 8, 0, 0, 0, 0);
-    func_0804d8c4(D_03005380, sprite, palette + 8);
+    sprite = sprite_create(D_03005380, anim, 0, 8, (line * 16) + 8, 0, 0, 0, 0);
+    sprite_set_base_palette(D_03005380, sprite, palette + 8);
     gDataCheck->textLineSprites[line] = sprite;
 }
 

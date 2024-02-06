@@ -30,7 +30,7 @@ branch_08040a26: \n\
 /* 08040a4c */ ADDS R3, R3, R4 @ Set R3 to R3 + R4 \n\
 /* 08040a4e */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08040a50 */ LDRSH R3, [R3, R4] \n\
-/* 08040a52 */ BL func_0804d5d4 \n\
+/* 08040a52 */ BL sprite_set_x_y \n\
 /* 08040a56 */ ADDS R0, R5, 0x1 @ Set R0 to R5 + 0x1 \n\
 /* 08040a58 */ LSLS R0, R0, 0x18 \n\
 /* 08040a5a */ LSRS R5, R0, 0x18 \n\

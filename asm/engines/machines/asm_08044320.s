@@ -36,14 +36,14 @@ branch_0804434a: \n\
 /* 0804435a */ STR R6, [SP] \n\
 /* 0804435c */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0804435e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08044360 */ BL func_0804dae0 \n\
+/* 08044360 */ BL sprite_set_playback \n\
 /* 08044364 */ LDR R0, [R5] \n\
 /* 08044366 */ LDR R1, [R7] \n\
 /* 08044368 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 0804436a */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0804436c */ LDRSH R1, [R1, R4] \n\
 /* 0804436e */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 08044370 */ BL func_0804cebc \n\
+/* 08044370 */ BL sprite_set_anim_cel \n\
 /* 08044374 */ LDR R0, [R7] \n\
 /* 08044376 */ ADD R0, R8 @ Add R8 to R0 \n\
 /* 08044378 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\

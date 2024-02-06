@@ -31,7 +31,7 @@ branch_0803ce3c: \n\
 /* 0803ce54 */ STR R3, [SP, 0x4] \n\
 /* 0803ce56 */ STR R6, [SP, 0x8] \n\
 /* 0803ce58 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803ce5a */ BL func_0804d8f8 \n\
+/* 0803ce5a */ BL sprite_set_anim \n\
 /* 0803ce5e */ MOVS R0, 0xF0 @ Set R0 to 0xF0 \n\
 /* 0803ce60 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803ce62 */ BL gameplay_set_input_buttons \n\
@@ -43,7 +43,7 @@ branch_0803ce3c: \n\
 /* 0803ce70 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803ce72 */ LDRSH R1, [R1, R3] \n\
 /* 0803ce74 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803ce76 */ BL func_0804cebc \n\
+/* 0803ce76 */ BL sprite_set_anim_cel \n\
 /* 0803ce7a */ LDR R0, [R7] \n\
 /* 0803ce7c */ STRB R5, [R0, 0x6] \n\
 /* 0803ce7e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
@@ -67,7 +67,7 @@ branch_0803ce8c: \n\
 /* 0803cea4 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803cea6 */ STR R5, [SP, 0x8] \n\
 /* 0803cea8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803ceaa */ BL func_0804d8f8 \n\
+/* 0803ceaa */ BL sprite_set_anim \n\
 /* 0803ceae */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803ceb0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803ceb2 */ BL gameplay_set_input_buttons \n\
@@ -79,7 +79,7 @@ branch_0803ce8c: \n\
 /* 0803cec0 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803cec2 */ LDRSH R1, [R1, R3] \n\
 /* 0803cec4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803cec6 */ BL func_0804cebc \n\
+/* 0803cec6 */ BL sprite_set_anim_cel \n\
 /* 0803ceca */ LDR R0, [R7] \n\
 /* 0803cecc */ STRB R5, [R0, 0x6] \n\
 /* 0803cece */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

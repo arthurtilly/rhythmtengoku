@@ -24,14 +24,14 @@ thumb_func_start func_080320c8 \n\
 /* 080320ec */ ASRS R2, R2, 0x10 \n\
 /* 080320ee */ LSLS R3, R3, 0x8 \n\
 /* 080320f0 */ ASRS R3, R3, 0x10 \n\
-/* 080320f2 */ BL func_0804d5d4 \n\
+/* 080320f2 */ BL sprite_set_x_y \n\
 /* 080320f6 */ LDR R0, [R5] \n\
 /* 080320f8 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 080320fa */ LDRSH R1, [R6, R2] \n\
 /* 080320fc */ LDR R2, [R6, 0x8] \n\
 /* 080320fe */ LSLS R2, R2, 0x8 \n\
 /* 08032100 */ ASRS R2, R2, 0x10 \n\
-/* 08032102 */ BL func_0804d614 \n\
+/* 08032102 */ BL sprite_set_x \n\
 /* 08032106 */ LDR R0, [R6, 0x8] \n\
 /* 08032108 */ ASRS R0, R0, 0x8 \n\
 /* 0803210a */ CMP R0, 0x30 @ Compare R0 and 0x30 \n\
@@ -57,14 +57,14 @@ thumb_func_start func_080320c8 \n\
 /* 08032134 */ STR R2, [SP, 0x8] \n\
 /* 08032136 */ ADDS R2, R3, 0x0 @ Set R2 to R3 + 0x0 \n\
 /* 08032138 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803213a */ BL func_0804d8f8 \n\
+/* 0803213a */ BL sprite_set_anim \n\
 /* 0803213e */ LDR R0, [R5] \n\
 /* 08032140 */ LDR R1, [R4] \n\
 /* 08032142 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08032144 */ LDRSH R1, [R1, R2] \n\
 /* 08032146 */ LDR R2, =func_08032070 \n\
 /* 08032148 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803214a */ BL func_0804daa8 \n\
+/* 0803214a */ BL sprite_set_callback \n\
 /* 0803214e */ LDR R5, [R5] \n\
 /* 08032150 */ LDR R0, [R4] \n\
 /* 08032152 */ MOVS R1, 0xC @ Set R1 to 0xC \n\
@@ -78,7 +78,7 @@ thumb_func_start func_080320c8 \n\
 /* 08032166 */ LSRS R2, R2, 0x10 \n\
 /* 08032168 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0803216a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0803216c */ BL func_0804dcb8 \n\
+/* 0803216c */ BL sprite_set_anim_speed \n\
 /* 08032170 */ LDR R0, =s_iai_yarare_seqData \n\
 /* 08032172 */ BL play_sound \n\
 /* 08032176 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
@@ -97,12 +97,12 @@ branch_0803217e: \n\
 /* 0803218e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08032190 */ LDRSH R1, [R6, R2] \n\
 /* 08032192 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08032194 */ BL func_0804d770 \n\
+/* 08032194 */ BL sprite_set_visible \n\
 /* 08032198 */ LDR R0, [R4] \n\
 /* 0803219a */ MOVS R4, 0x2 @ Set R4 to 0x2 \n\
 /* 0803219c */ LDRSH R1, [R6, R4] \n\
 /* 0803219e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080321a0 */ BL func_0804d770 \n\
+/* 080321a0 */ BL sprite_set_visible \n\
 /* 080321a4 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080321a6 */ STRB R0, [R6, 0x4] \n\
  \n\

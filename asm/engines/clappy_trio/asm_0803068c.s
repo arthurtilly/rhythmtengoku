@@ -31,7 +31,7 @@ thumb_func_start func_0803068c \n\
 /* 080306c0 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 080306c2 */ STR R5, [SP, 0x8] \n\
 /* 080306c4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080306c6 */ BL func_0804d8f8 \n\
+/* 080306c6 */ BL sprite_set_anim \n\
 /* 080306ca */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080306cc */ BL clappy_trio_get_anim \n\
 /* 080306d0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
@@ -44,7 +44,7 @@ thumb_func_start func_0803068c \n\
 /* 080306de */ STR R6, [SP, 0x4] \n\
 /* 080306e0 */ STR R5, [SP, 0x8] \n\
 /* 080306e2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080306e4 */ BL func_0804d8f8 \n\
+/* 080306e4 */ BL sprite_set_anim \n\
 /* 080306e8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080306ea */ BL clappy_trio_get_anim \n\
 /* 080306ee */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
@@ -57,7 +57,7 @@ thumb_func_start func_0803068c \n\
 /* 080306fc */ STR R6, [SP, 0x4] \n\
 /* 080306fe */ STR R5, [SP, 0x8] \n\
 /* 08030700 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08030702 */ BL func_0804d8f8 \n\
+/* 08030702 */ BL sprite_set_anim \n\
 /* 08030706 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08030708 */ BL clappy_trio_get_anim \n\
 /* 0803070c */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
@@ -70,7 +70,7 @@ thumb_func_start func_0803068c \n\
 /* 0803071a */ STR R6, [SP, 0x4] \n\
 /* 0803071c */ STR R5, [SP, 0x8] \n\
 /* 0803071e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08030720 */ BL func_0804d8f8 \n\
+/* 08030720 */ BL sprite_set_anim \n\
 /* 08030724 */ MOV R0, R10 @ Set R0 to R10 \n\
 /* 08030726 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08030728 */ BNE branch_08030730 \n\

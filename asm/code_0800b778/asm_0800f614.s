@@ -97,7 +97,7 @@ branch_0800f6b8: \n\
 /* 0800f6c0 */ LDR R0, =D_03005380 \n\
 /* 0800f6c2 */ LDR R0, [R0] \n\
 /* 0800f6c4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0800f6c6 */ BL func_0804d770 \n\
+/* 0800f6c6 */ BL sprite_set_visible \n\
  \n\
 branch_0800f6ca: \n\
 /* 0800f6ca */ ADDS R6, 0x30 @ Add 0x30 to R6 \n\
@@ -142,7 +142,7 @@ branch_0800f6e8: \n\
 /* 0800f716 */ LSRS R1, R1, 0x10 \n\
 /* 0800f718 */ STR R1, [SP] \n\
 /* 0800f71a */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
-/* 0800f71c */ BL func_0804d55c \n\
+/* 0800f71c */ BL sprite_set_x_y_z \n\
 /* 0800f720 */ LDR R2, =D_03005380 \n\
 /* 0800f722 */ LDR R5, [R2] \n\
 /* 0800f724 */ MOV R0, R10 @ Set R0 to R10 \n\
@@ -154,7 +154,7 @@ branch_0800f6e8: \n\
 /* 0800f732 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0800f734 */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
 /* 0800f736 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 0800f738 */ BL func_0804dc10 \n\
+/* 0800f738 */ BL sprite_set_affine_params \n\
 /* 0800f73c */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0800f73e */ LDRSH R1, [R6, R2] \n\
 /* 0800f740 */ MOVS R2, 0x24 @ Set R2 to 0x24 \n\
@@ -192,7 +192,7 @@ branch_0800f778: \n\
 /* 0800f77e */ LDR R0, [R2] \n\
 /* 0800f780 */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
 /* 0800f782 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0800f784 */ BL func_0804d770 \n\
+/* 0800f784 */ BL sprite_set_visible \n\
 /* 0800f788 */ B branch_0800f79c \n\
 \n\
 .ltorg \n\
@@ -202,7 +202,7 @@ branch_0800f790: \n\
 /* 0800f792 */ LDR R0, [R1] \n\
 /* 0800f794 */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
 /* 0800f796 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0800f798 */ BL func_0804d770 \n\
+/* 0800f798 */ BL sprite_set_visible \n\
  \n\
 branch_0800f79c: \n\
 /* 0800f79c */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\

@@ -23,7 +23,7 @@ thumb_func_start func_0803bd0c \n\
 /* 0803bd2e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803bd30 */ LDRSH R1, [R4, R2] \n\
 /* 0803bd32 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803bd34 */ BL func_0804d770 \n\
+/* 0803bd34 */ BL sprite_set_visible \n\
  \n\
 branch_0803bd38: \n\
 /* 0803bd38 */ LDR R0, =D_03005380 \n\
@@ -33,7 +33,7 @@ branch_0803bd38: \n\
 /* 0803bd40 */ LDR R2, [R4, 0x4] \n\
 /* 0803bd42 */ LSLS R2, R2, 0x8 \n\
 /* 0803bd44 */ ASRS R2, R2, 0x10 \n\
-/* 0803bd46 */ BL func_0804d614 \n\
+/* 0803bd46 */ BL sprite_set_x \n\
 /* 0803bd4a */ POP {R4} \n\
 /* 0803bd4c */ POP {R0} \n\
 /* 0803bd4e */ BX R0 \n\

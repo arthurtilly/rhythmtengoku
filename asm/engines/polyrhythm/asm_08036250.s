@@ -36,7 +36,7 @@ branch_08036266: \n\
 /* 08036288 */ STR R3, [SP, 0x4] \n\
 /* 0803628a */ STR R3, [SP, 0x8] \n\
 /* 0803628c */ MOVS R3, 0x3 @ Set R3 to 0x3 \n\
-/* 0803628e */ BL func_0804d8f8 \n\
+/* 0803628e */ BL sprite_set_anim \n\
 /* 08036292 */ LDRB R0, [R4] \n\
 /* 08036294 */ MOVS R2, 0x39 @ Set R2 to 0x39 \n\
 /* 08036296 */ NEGS R2, R2 @ Set R2 to -R2 \n\

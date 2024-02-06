@@ -15,7 +15,7 @@ thumb_func_start func_0803a2a8 \n\
 /* 0803a2ba */ LDR R0, [R5] \n\
 /* 0803a2bc */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 0803a2be */ LDRSH R1, [R1, R2] \n\
-/* 0803a2c0 */ BL func_0804d6cc \n\
+/* 0803a2c0 */ BL sprite_get_anim_cel \n\
 /* 0803a2c4 */ LSLS R0, R0, 0x18 \n\
 /* 0803a2c6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803a2c8 */ BNE branch_0803a2fe \n\
@@ -47,7 +47,7 @@ branch_0803a2ea: \n\
 /* 0803a2f4 */ STR R0, [SP, 0x8] \n\
 /* 0803a2f6 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 0803a2f8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803a2fa */ BL func_0804d8f8 \n\
+/* 0803a2fa */ BL sprite_set_anim \n\
  \n\
 branch_0803a2fe: \n\
 /* 0803a2fe */ LDR R5, =D_03005380 \n\
@@ -60,20 +60,20 @@ branch_0803a2fe: \n\
 /* 0803a30c */ STR R2, [SP] \n\
 /* 0803a30e */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803a310 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
-/* 0803a312 */ BL func_0804dae0 \n\
+/* 0803a312 */ BL sprite_set_playback \n\
 /* 0803a316 */ LDR R0, [R5] \n\
 /* 0803a318 */ LDR R1, [R4] \n\
 /* 0803a31a */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 0803a31c */ LDRSH R1, [R1, R2] \n\
 /* 0803a31e */ LDR R2, =func_0803a230 \n\
 /* 0803a320 */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
-/* 0803a322 */ BL func_0804daa8 \n\
+/* 0803a322 */ BL sprite_set_callback \n\
 /* 0803a326 */ LDR R0, [R5] \n\
 /* 0803a328 */ LDR R1, [R4] \n\
 /* 0803a32a */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 0803a32c */ LDRSH R1, [R1, R2] \n\
 /* 0803a32e */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803a330 */ BL func_0804d770 \n\
+/* 0803a330 */ BL sprite_set_visible \n\
  \n\
 branch_0803a334: \n\
 /* 0803a334 */ ADD SP, 0xC \n\

@@ -19,7 +19,7 @@ thumb_func_start func_08023164 \n\
 /* 0802317e */ STR R2, [SP, 0xC] \n\
 /* 08023180 */ STR R2, [SP, 0x10] \n\
 /* 08023182 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08023184 */ BL func_0804d160 \n\
+/* 08023184 */ BL sprite_create \n\
 /* 08023188 */ LDR R2, =gCurrentEngineData \n\
 /* 0802318a */ LDR R0, [R2] \n\
 /* 0802318c */ LDR R1, =0x00000414 \n\

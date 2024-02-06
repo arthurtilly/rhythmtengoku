@@ -15,7 +15,7 @@ thumb_func_start func_0803709c \n\
 /* 080370ae */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080370b0 */ LDRSH R1, [R1, R2] \n\
 /* 080370b2 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
-/* 080370b4 */ BL func_0804cebc \n\
+/* 080370b4 */ BL sprite_set_anim_cel \n\
 /* 080370b8 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080370ba */ LDR R0, [R1] \n\
 /* 080370bc */ LDR R1, [R7] \n\
@@ -23,7 +23,7 @@ thumb_func_start func_0803709c \n\
 /* 080370c0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080370c2 */ LDRSH R1, [R1, R2] \n\
 /* 080370c4 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
-/* 080370c6 */ BL func_0804cebc \n\
+/* 080370c6 */ BL sprite_set_anim_cel \n\
 /* 080370ca */ LDR R0, [R7] \n\
 /* 080370cc */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080370ce */ ADDS R1, 0x4A @ Add 0x4A to R1 \n\
@@ -41,7 +41,7 @@ thumb_func_start func_0803709c \n\
 /* 080370e8 */ ASRS R2, R2, 0x18 \n\
 /* 080370ea */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 080370ec */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 080370ee */ BL func_0804cebc \n\
+/* 080370ee */ BL sprite_set_anim_cel \n\
 /* 080370f2 */ CMP R6, 0x9 @ Compare R6 and 0x9 \n\
 /* 080370f4 */ BLS branch_08037118 \n\
 /* 080370f6 */ MOV R0, R8 @ Set R0 to R8 \n\
@@ -58,7 +58,7 @@ thumb_func_start func_0803709c \n\
 /* 0803710e */ ASRS R2, R2, 0x18 \n\
 /* 08037110 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08037112 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08037114 */ BL func_0804cebc \n\
+/* 08037114 */ BL sprite_set_anim_cel \n\
  \n\
 branch_08037118: \n\
 /* 08037118 */ LDR R0, [R7] \n\
@@ -78,7 +78,7 @@ branch_08037118: \n\
 /* 08037136 */ ASRS R2, R2, 0x18 \n\
 /* 08037138 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0803713a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0803713c */ BL func_0804cebc \n\
+/* 0803713c */ BL sprite_set_anim_cel \n\
 /* 08037140 */ CMP R6, 0x9 @ Compare R6 and 0x9 \n\
 /* 08037142 */ BLS branch_08037166 \n\
 /* 08037144 */ MOV R2, R8 @ Set R2 to R8 \n\
@@ -95,7 +95,7 @@ branch_08037118: \n\
 /* 0803715c */ ASRS R2, R2, 0x18 \n\
 /* 0803715e */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08037160 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08037162 */ BL func_0804cebc \n\
+/* 08037162 */ BL sprite_set_anim_cel \n\
  \n\
 branch_08037166: \n\
 /* 08037166 */ POP {R3} \n\

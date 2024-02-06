@@ -45,7 +45,7 @@ void spaceball_update_stars_x_y(void) {
         scale = fast_divsi3(INT_TO_FIXED(256.0), star->z - gSpaceball->zoom);
         x = FIXED_TO_INT(star->x * scale);
         y = FIXED_TO_INT(star->y * scale);
-        func_0804d5d4(D_03005380, sprite, x + SCREEN_CENTER_X, y + SCREEN_CENTER_Y);
+        sprite_set_x_y(D_03005380, sprite, x + SCREEN_CENTER_X, y + SCREEN_CENTER_Y);
     }
 }
 
@@ -134,7 +134,7 @@ void spaceball_update_graphics(void) {
 
     // Update Stars
     if (gSpaceball->currentStar < SPACEBALL_STAR_AMOUNT) {
-        gSpaceball->starSprite[gSpaceball->currentStar] = func_0804d160(D_03005380, anim_spaceball_bg_star, 0, 0, 0, 0xc800, 1, 0, 0);
+        gSpaceball->starSprite[gSpaceball->currentStar] = sprite_create(D_03005380, anim_spaceball_bg_star, 0, 0, 0, 0xc800, 1, 0, 0);
         spaceball_reset_star(gSpaceball->currentStar);
         gSpaceball->currentStar++;
     } else {
@@ -228,7 +228,7 @@ void spaceball_engine_event_stub(void) {
 // ENGINE Func_00 - Pitcher Prepare
 void spaceball_prepare_pitcher(void) {
     affine_sprite_set_playback(gSpaceball->pitcher.sprite, 0, 0, 0);
-    affine_sprite_set_anim_frame(gSpaceball->pitcher.sprite, 0);
+    affine_sprite_set_anim_cel(gSpaceball->pitcher.sprite, 0);
 }
 
 
@@ -239,7 +239,7 @@ void spaceball_update_batter_swing(struct SpaceballBatter *batter) {
     batter->swingTimer--;
     if (batter->swingTimer == 0) {
         affine_sprite_set_playback(batter->sprite, 0, 0, 0);
-        affine_sprite_set_anim_frame(batter->sprite, 0);
+        affine_sprite_set_anim_cel(batter->sprite, 0);
         gameplay_set_input_buttons(A_BUTTON, 0);
     }
 }
@@ -321,7 +321,7 @@ void spaceball_cue_spawn(struct Cue *cue, struct SpaceballCue *cueInfo, u32 arcT
     spaceball_update_entity(cueInfo->sprite, -50, 40, cueInfo->z);
     cueInfo->missed = FALSE;
     affine_sprite_set_playback(gSpaceball->pitcher.sprite, 1, 0x7f, 0);
-    affine_sprite_set_anim_frame(gSpaceball->pitcher.sprite, 1);
+    affine_sprite_set_anim_cel(gSpaceball->pitcher.sprite, 1);
 }
 
 
@@ -331,9 +331,9 @@ u32 spaceball_cue_update_launch(struct Cue *cue, struct SpaceballCue *cueInfo, u
 
     if (runningTime > cueInfo->endTime) {
         play_sound(&s_f_batter_ball_land_seqData);
-        affine_sprite_set_anim_frame(gSpaceball->poofR.sprite, 0);
+        affine_sprite_set_anim_cel(gSpaceball->poofR.sprite, 0);
         affine_sprite_play_anim(gSpaceball->poofR.sprite, TRUE);
-        affine_sprite_set_anim_frame(gSpaceball->poofL.sprite, 0);
+        affine_sprite_set_anim_cel(gSpaceball->poofL.sprite, 0);
         affine_sprite_play_anim(gSpaceball->poofL.sprite, TRUE);
         if (!cueInfo->missed) {
             gameplay_add_cue_result(gameplay_get_cue_marking_criteria(cue), 2, 0);
@@ -410,7 +410,7 @@ void spaceball_cue_hit(struct Cue *cue, struct SpaceballCue *cueInfo, u32 presse
     struct SpaceballBatter *batter = &gSpaceball->batter;
 
     affine_sprite_set_playback(batter->sprite, 1, 0x7f, 0);
-    affine_sprite_set_anim_frame(batter->sprite, 1);
+    affine_sprite_set_anim_cel(batter->sprite, 1);
     batter->swingTimer = ticks_to_frames(0x0A);
     cueInfo->rotationSpeed = 8;
     cueInfo->state = SPACEBALL_CUE_STATE_HIT;
@@ -422,7 +422,7 @@ void spaceball_cue_barely(struct Cue *cue, struct SpaceballCue *cueInfo, u32 pre
     struct SpaceballBatter *batter = &gSpaceball->batter;
 
     affine_sprite_set_playback(batter->sprite, 1, 0x7f, 0);
-    affine_sprite_set_anim_frame(batter->sprite, 1);
+    affine_sprite_set_anim_cel(batter->sprite, 1);
     batter->swingTimer = ticks_to_frames(0x0A);
     cueInfo->xSpeed = (gameplay_get_last_hit_offset() < 0) ? -3 : 3;
     cueInfo->rotationSpeed = -8;
@@ -444,7 +444,7 @@ void spaceball_input_event(u32 pressed, u32 released) {
     struct SpaceballBatter *batter = &gSpaceball->batter;
 
     affine_sprite_set_playback(batter->sprite, 1, 0x7f, 0);
-    affine_sprite_set_anim_frame(batter->sprite, 1);
+    affine_sprite_set_anim_cel(batter->sprite, 1);
     batter->swingTimer = ticks_to_frames(0x0A);
     gameplay_set_input_buttons(0, 0);
 }

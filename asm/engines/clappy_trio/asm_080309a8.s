@@ -22,7 +22,7 @@ thumb_func_start clappy_trio_cue_barely \n\
 /* 080309ca */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080309cc */ STR R3, [SP, 0x8] \n\
 /* 080309ce */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
-/* 080309d0 */ BL func_0804d8f8 \n\
+/* 080309d0 */ BL sprite_set_anim \n\
 /* 080309d4 */ LDR R0, =s_tebyoushi_pati_seqData \n\
 /* 080309d6 */ BL play_sound \n\
 /* 080309da */ BL beatscript_enable_loops \n\

@@ -54,7 +54,7 @@ branch_0803b950: \n\
 /* 0803b978 */ STR R3, [SP, 0x4] \n\
 /* 0803b97a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803b97c */ STR R3, [SP, 0x8] \n\
-/* 0803b97e */ BL func_0804d8f8 \n\
+/* 0803b97e */ BL sprite_set_anim \n\
 /* 0803b982 */ B branch_0803b9ec \n\
 \n\
 .ltorg \n\
@@ -70,7 +70,7 @@ branch_0803b990: \n\
 /* 0803b99e */ STR R3, [SP, 0x4] \n\
 /* 0803b9a0 */ STR R4, [SP, 0x8] \n\
 /* 0803b9a2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803b9a4 */ BL func_0804d8f8 \n\
+/* 0803b9a4 */ BL sprite_set_anim \n\
 /* 0803b9a8 */ LDR R0, =s_f_rat_slip_seqData \n\
 /* 0803b9aa */ BL play_sound \n\
 /* 0803b9ae */ B branch_0803b9ec \n\
@@ -91,13 +91,13 @@ branch_0803b9bc: \n\
 /* 0803b9d0 */ STR R2, [SP] \n\
 /* 0803b9d2 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803b9d4 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
-/* 0803b9d6 */ BL func_0804dae0 \n\
+/* 0803b9d6 */ BL sprite_set_playback \n\
 /* 0803b9da */ LDR R0, [R4] \n\
 /* 0803b9dc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803b9de */ LDRSH R1, [R5, R2] \n\
 /* 0803b9e0 */ LDR R2, =func_0803aef4 \n\
 /* 0803b9e2 */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
-/* 0803b9e4 */ BL func_0804daa8 \n\
+/* 0803b9e4 */ BL sprite_set_callback \n\
 /* 0803b9e8 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803b9ea */ STRB R0, [R5, 0xC] \n\
  \n\

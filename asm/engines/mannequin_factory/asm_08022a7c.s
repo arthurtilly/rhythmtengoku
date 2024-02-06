@@ -26,19 +26,19 @@ branch_08022a92: \n\
 /* 08022aa0 */ LDRSH R1, [R4, R2] \n\
 /* 08022aa2 */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08022aa4 */ LDRSB R2, [R4, R2] \n\
-/* 08022aa6 */ BL func_0804cebc \n\
+/* 08022aa6 */ BL sprite_set_anim_cel \n\
 /* 08022aaa */ LDR R0, [R5] \n\
 /* 08022aac */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08022aae */ LDRSH R1, [R4, R2] \n\
 /* 08022ab0 */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08022ab2 */ LDRSB R2, [R4, R2] \n\
-/* 08022ab4 */ BL func_0804cebc \n\
+/* 08022ab4 */ BL sprite_set_anim_cel \n\
 /* 08022ab8 */ LDR R0, [R5] \n\
 /* 08022aba */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08022abc */ LDRSH R1, [R4, R2] \n\
 /* 08022abe */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08022ac0 */ LDRSB R2, [R4, R2] \n\
-/* 08022ac2 */ BL func_0804cebc \n\
+/* 08022ac2 */ BL sprite_set_anim_cel \n\
 /* 08022ac6 */ LDR R2, =anim_mannequin_slap_effect_l \n\
 /* 08022ac8 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08022aca */ BGE branch_08022ace \n\
@@ -59,7 +59,7 @@ branch_08022ace: \n\
 /* 08022ae4 */ ADDS R1, R2, 0x0 @ Set R1 to R2 + 0x0 \n\
 /* 08022ae6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08022ae8 */ MOVS R3, 0x48 @ Set R3 to 0x48 \n\
-/* 08022aea */ BL func_0804d160 \n\
+/* 08022aea */ BL sprite_create \n\
 /* 08022aee */ MOVS R0, 0xC0 @ Set R0 to 0xC0 \n\
 /* 08022af0 */ LSLS R0, R0, 0x2 \n\
 /* 08022af2 */ STRH R0, [R4, 0x12] \n\

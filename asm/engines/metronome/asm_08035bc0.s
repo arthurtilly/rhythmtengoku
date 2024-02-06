@@ -18,7 +18,7 @@ thumb_func_start metronome_cue_barely \n\
 /* 08035bdc */ LDRSH R1, [R1, R3] \n\
 /* 08035bde */ LSLS R2, R2, 0x18 \n\
 /* 08035be0 */ ASRS R2, R2, 0x18 \n\
-/* 08035be2 */ BL func_0804cebc \n\
+/* 08035be2 */ BL sprite_set_anim_cel \n\
 /* 08035be6 */ POP {R0} \n\
 /* 08035be8 */ BX R0 \n\
 \n\

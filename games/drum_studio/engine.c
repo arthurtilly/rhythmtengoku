@@ -347,16 +347,16 @@ struct Vector2 D_089e2b78[] = {
 // [D_089e2b98] ?
 struct SpritePlaybackData D_089e2b98[] = {
     /* 0x00 */ {
-        /* anim */ anim_drum_student_head,
-        /* unk4 */ 0x7f,
-        /* unk5 */ 1,
-        /* unk6 */ 0x7f,
+        /* Animation  */ anim_drum_student_head,
+        /* Start Cel  */ 0x7f,
+        /* Direction  */ 1,
+        /* Loop Start */ 0x7f,
     },
     /* 0x01 */ {
-        /* anim */ anim_drum_student_happy,
-        /* unk4 */ 0,
-        /* unk5 */ 1,
-        /* unk6 */ 0x7f,
+        /* Animation  */ anim_drum_student_happy,
+        /* Start Cel  */ 0,
+        /* Direction  */ 1,
+        /* Loop Start */ 0x7f,
     }
 };
 

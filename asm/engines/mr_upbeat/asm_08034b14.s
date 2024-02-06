@@ -17,7 +17,7 @@ thumb_func_start func_08034b14 \n\
 /* 08034b2a */ STR R2, [SP, 0xC] \n\
 /* 08034b2c */ STR R2, [SP, 0x10] \n\
 /* 08034b2e */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
-/* 08034b30 */ BL func_0804d160 \n\
+/* 08034b30 */ BL sprite_create \n\
 /* 08034b34 */ LDR R1, =gCurrentEngineData \n\
 /* 08034b36 */ LDR R1, [R1] \n\
 /* 08034b38 */ ADDS R1, 0x40 @ Add 0x40 to R1 \n\
@@ -40,7 +40,7 @@ branch_08034b40: \n\
 /* 08034b56 */ LDR R1, =anim_metronome_score_num \n\
 /* 08034b58 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08034b5a */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
-/* 08034b5c */ BL func_0804d160 \n\
+/* 08034b5c */ BL sprite_create \n\
 /* 08034b60 */ LDR R1, =gCurrentEngineData \n\
 /* 08034b62 */ LDR R1, [R1] \n\
 /* 08034b64 */ LSLS R2, R4, 0x1 \n\
@@ -68,7 +68,7 @@ branch_08034b76: \n\
 /* 08034b8c */ LDR R1, =anim_mr_upbeat_high_score_num \n\
 /* 08034b8e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08034b90 */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
-/* 08034b92 */ BL func_0804d160 \n\
+/* 08034b92 */ BL sprite_create \n\
 /* 08034b96 */ LDR R5, =gCurrentEngineData \n\
 /* 08034b98 */ LDR R3, [R5] \n\
 /* 08034b9a */ LSLS R2, R4, 0x1 \n\

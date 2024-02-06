@@ -73,9 +73,9 @@ void reading_scene_start(void *sVar, s32 dArg) {
 
     gReading->pageState = PAGE_STATE_IDLE;
     gReading->pagePosY = 0;
-    gReading->iconPrev = func_0804d160(D_03005380, anim_reading_icon_prev, 0, 0, 0, 0x4864, 0, 0, 0x8000);
-    gReading->iconNext = func_0804d160(D_03005380, anim_reading_icon_next, 0, 0, 0, 0x4864, 0, 0, 0x8000);
-    func_0804d160(D_03005380, anim_reading_title_bar, 0, 120, 0, 0x48C8, 0, 0, 0);
+    gReading->iconPrev = sprite_create(D_03005380, anim_reading_icon_prev, 0, 0, 0, 0x4864, 0, 0, 0x8000);
+    gReading->iconNext = sprite_create(D_03005380, anim_reading_icon_next, 0, 0, 0, 0x4864, 0, 0, 0x8000);
+    sprite_create(D_03005380, anim_reading_title_bar, 0, 120, 0, 0x48C8, 0, 0, 0);
     gReading->currentPage = 0;
 
     titlePrinter = text_printer_create_new(get_current_mem_id(), 1, 232, 32);
@@ -101,8 +101,8 @@ void reading_scene_start(void *sVar, s32 dArg) {
 // Update UI
 void reading_scene_update_page(void) {
     if (!text_printer_is_busy(gReading->printer)) {
-        func_0804d770(D_03005380, gReading->iconPrev, gReading->currentPage != 0);
-        func_0804d770(D_03005380, gReading->iconNext, text_printer_get_text(gReading->printer) != NULL);
+        sprite_set_visible(D_03005380, gReading->iconPrev, gReading->currentPage != 0);
+        sprite_set_visible(D_03005380, gReading->iconNext, text_printer_get_text(gReading->printer) != NULL);
     }
 
     if (gReading->pageState == PAGE_STATE_IDLE) {

@@ -131,7 +131,7 @@ branch_0803f28c: \n\
 /* 0803f2ee */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
 /* 0803f2f0 */ LDRSH R1, [R2, R6] \n\
 /* 0803f2f2 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803f2f4 */ BL func_0804d770 \n\
+/* 0803f2f4 */ BL sprite_set_visible \n\
 /* 0803f2f8 */ LDR R0, [R4] \n\
 /* 0803f2fa */ LDR R1, [R7] \n\
 /* 0803f2fc */ MOVS R7, 0xD9 @ Set R7 to 0xD9 \n\
@@ -140,7 +140,7 @@ branch_0803f28c: \n\
 /* 0803f302 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803f304 */ LDRSH R1, [R1, R2] \n\
 /* 0803f306 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803f308 */ BL func_0804cebc \n\
+/* 0803f308 */ BL sprite_set_anim_cel \n\
 /* 0803f30c */ LDR R0, =s_f_toss_ball_seqData \n\
 /* 0803f30e */ BL play_sound \n\
 /* 0803f312 */ LDR R0, =toss_boys_arrow_anim_ids \n\
@@ -164,14 +164,14 @@ branch_0803f28c: \n\
 /* 0803f338 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 0803f33a */ STR R3, [SP, 0x8] \n\
 /* 0803f33c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803f33e */ BL func_0804d8f8 \n\
+/* 0803f33e */ BL sprite_set_anim \n\
 /* 0803f342 */ LDR R0, [R4] \n\
 /* 0803f344 */ LDR R1, [R6] \n\
 /* 0803f346 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
 /* 0803f348 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803f34a */ LDRSH R1, [R1, R2] \n\
 /* 0803f34c */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803f34e */ BL func_0804d770 \n\
+/* 0803f34e */ BL sprite_set_visible \n\
 /* 0803f352 */ BL func_0803e908 \n\
  \n\
 branch_0803f356: \n\

@@ -36,7 +36,7 @@ branch_08032c10: \n\
 /* 08032c30 */ LDR R1, =anim_power_calligraphy_ink_dot \n\
 /* 08032c32 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08032c34 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 08032c36 */ BL func_0804d160 \n\
+/* 08032c36 */ BL sprite_create \n\
 /* 08032c3a */ STRH R0, [R4] \n\
 /* 08032c3c */ LDR R0, [R5] \n\
 /* 08032c3e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -44,12 +44,12 @@ branch_08032c10: \n\
 /* 08032c42 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08032c44 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08032c46 */ ADDS R3, 0x2 @ Add 0x2 to R3 \n\
-/* 08032c48 */ BL func_0804db44 \n\
+/* 08032c48 */ BL sprite_set_origin_x_y \n\
 /* 08032c4c */ LDR R0, [R5] \n\
 /* 08032c4e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08032c50 */ LDRSH R1, [R4, R2] \n\
 /* 08032c52 */ MOVS R2, 0xC8 @ Set R2 to 0xC8 \n\
-/* 08032c54 */ BL func_0804dcb8 \n\
+/* 08032c54 */ BL sprite_set_anim_speed \n\
 /* 08032c58 */ ADDS R6, 0xC @ Add 0xC to R6 \n\
 /* 08032c5a */ ADDS R7, 0x1 @ Add 0x1 to R7 \n\
 /* 08032c5c */ CMP R7, 0x1D @ Compare R7 and 0x1D \n\

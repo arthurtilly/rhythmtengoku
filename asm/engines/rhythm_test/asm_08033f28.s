@@ -16,7 +16,7 @@ thumb_func_start func_08033f28 \n\
 /* 08033f3c */ LDRSH R1, [R1, R2] \n\
 /* 08033f3e */ LSLS R2, R5, 0x18 \n\
 /* 08033f40 */ ASRS R2, R2, 0x18 \n\
-/* 08033f42 */ BL func_0804cebc \n\
+/* 08033f42 */ BL sprite_set_anim_cel \n\
 /* 08033f46 */ LDR R0, [R4] \n\
 /* 08033f48 */ LDR R1, [R6] \n\
 /* 08033f4a */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
@@ -24,7 +24,7 @@ thumb_func_start func_08033f28 \n\
 /* 08033f4e */ NEGS R2, R5 @ Set R2 to -R5 \n\
 /* 08033f50 */ ORRS R2, R5 @ Set R2 to R2 | R5 \n\
 /* 08033f52 */ LSRS R2, R2, 0x1F \n\
-/* 08033f54 */ BL func_0804cebc \n\
+/* 08033f54 */ BL sprite_set_anim_cel \n\
 /* 08033f58 */ LDR R0, =s_f_machine_click_seqData \n\
 /* 08033f5a */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08033f5c */ LSLS R2, R2, 0x4 \n\

@@ -87,14 +87,14 @@ thumb_func_start clappy_trio_engine_start \n\
 /* 08030646 */ STR R2, [SP, 0x10] \n\
 /* 08030648 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803064a */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 0803064c */ BL func_0804d160 \n\
+/* 0803064c */ BL sprite_create \n\
 /* 08030650 */ LDR R1, [R4] \n\
 /* 08030652 */ STRH R0, [R1, 0x12] \n\
 /* 08030654 */ LDR R0, [R5] \n\
 /* 08030656 */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 08030658 */ LDRSH R1, [R1, R2] \n\
 /* 0803065a */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
-/* 0803065c */ BL func_0804d648 \n\
+/* 0803065c */ BL sprite_set_y \n\
 /* 08030660 */ LDR R0, [R4] \n\
 /* 08030662 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08030664 */ STRB R3, [R0, 0x10] \n\

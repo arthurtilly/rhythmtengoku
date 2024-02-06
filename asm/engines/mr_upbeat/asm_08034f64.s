@@ -28,14 +28,14 @@ thumb_func_start func_08034f64 \n\
 /* 08034f90 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08034f92 */ STR R5, [SP, 0x10] \n\
 /* 08034f94 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 08034f96 */ BL func_0804d160 \n\
+/* 08034f96 */ BL sprite_create \n\
 /* 08034f9a */ STRH R0, [R4, 0x4] \n\
 /* 08034f9c */ LDR R0, [R6] \n\
 /* 08034f9e */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08034fa0 */ LDRSH R1, [R4, R2] \n\
 /* 08034fa2 */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
 /* 08034fa4 */ MOVS R3, 0x50 @ Set R3 to 0x50 \n\
-/* 08034fa6 */ BL func_0804d5d4 \n\
+/* 08034fa6 */ BL sprite_set_x_y \n\
 /* 08034faa */ LDR R0, [R6] \n\
 /* 08034fac */ LDR R1, =anim_mr_upbeat_shadow \n\
 /* 08034fae */ MOVS R2, 0x50 @ Set R2 to 0x50 \n\
@@ -47,7 +47,7 @@ thumb_func_start func_08034f64 \n\
 /* 08034fba */ STR R5, [SP, 0x10] \n\
 /* 08034fbc */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 08034fbe */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08034fc0 */ BL func_0804d160 \n\
+/* 08034fc0 */ BL sprite_create \n\
 /* 08034fc4 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08034fc6 */ STRH R0, [R1, 0x2] \n\
 /* 08034fc8 */ MOV R2, R9 @ Set R2 to R9 \n\

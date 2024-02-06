@@ -136,13 +136,13 @@ branch_0803b104: \n\
 /* 0803b11a */ STR R2, [SP, 0x8] \n\
 /* 0803b11c */ LDR R2, =anim_rat_angry_run_r \n\
 /* 0803b11e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803b120 */ BL func_0804d8f8 \n\
+/* 0803b120 */ BL sprite_set_anim \n\
 /* 0803b124 */ LDR R0, [R7] \n\
 /* 0803b126 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803b128 */ LDRSH R1, [R4, R3] \n\
 /* 0803b12a */ LDR R2, =func_0803aef4 \n\
 /* 0803b12c */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 0803b12e */ BL func_0804daa8 \n\
+/* 0803b12e */ BL sprite_set_callback \n\
 /* 0803b132 */ STRB R6, [R4, 0xC] \n\
 /* 0803b134 */ B branch_0803b188 \n\
 \n\
@@ -161,7 +161,7 @@ branch_0803b140: \n\
  \n\
 branch_0803b152: \n\
 /* 0803b152 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803b154 */ BL func_0804d8f8 \n\
+/* 0803b154 */ BL sprite_set_anim \n\
 /* 0803b158 */ B branch_0803b188 \n\
 \n\
 .ltorg \n\
@@ -187,7 +187,7 @@ branch_0803b16c: \n\
 /* 0803b17e */ STR R6, [SP, 0x8] \n\
 /* 0803b180 */ LDR R2, =anim_rat_prepare_dash \n\
 /* 0803b182 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803b184 */ BL func_0804d8f8 \n\
+/* 0803b184 */ BL sprite_set_anim \n\
  \n\
 branch_0803b188: \n\
 /* 0803b188 */ MOV R0, R10 @ Set R0 to R10 \n\

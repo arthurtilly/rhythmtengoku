@@ -40,7 +40,7 @@ branch_08022f84: \n\
 /* 08022f92 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 08022f94 */ LDRSH R1, [R1, R2] \n\
 /* 08022f96 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08022f98 */ BL func_0804d770 \n\
+/* 08022f98 */ BL sprite_set_visible \n\
  \n\
 branch_08022f9c: \n\
 /* 08022f9c */ ADDS R4, 0x14 @ Add 0x14 to R4 \n\

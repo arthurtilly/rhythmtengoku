@@ -21,7 +21,7 @@ thumb_func_start func_08024bfc \n\
 /* 08024c1a */ LSLS R1, R3, 0x10 \n\
 /* 08024c1c */ ASRS R1, R1, 0x10 \n\
 /* 08024c1e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08024c20 */ BL func_0804d770 \n\
+/* 08024c20 */ BL sprite_set_visible \n\
  \n\
 branch_08024c24: \n\
 /* 08024c24 */ POP {R0} \n\

@@ -66,7 +66,7 @@ branch_08032ab6: \n\
 /* 08032ace */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08032ad0 */ STR R3, [SP, 0x8] \n\
 /* 08032ad2 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
-/* 08032ad4 */ BL func_0804d8f8 \n\
+/* 08032ad4 */ BL sprite_set_anim \n\
 /* 08032ad8 */ ADDS R4, 0x8 @ Add 0x8 to R4 \n\
 /* 08032ada */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\
 /* 08032adc */ CMP R5, 0x5 @ Compare R5 and 0x5 \n\
@@ -111,7 +111,7 @@ branch_08032b0c: \n\
 /* 08032b24 */ STR R3, [SP, 0x4] \n\
 /* 08032b26 */ STR R3, [SP, 0x8] \n\
 /* 08032b28 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08032b2a */ BL func_0804d8f8 \n\
+/* 08032b2a */ BL sprite_set_anim \n\
 /* 08032b2e */ ADDS R4, 0x8 @ Add 0x8 to R4 \n\
 /* 08032b30 */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\
 /* 08032b32 */ CMP R5, 0x5 @ Compare R5 and 0x5 \n\
@@ -154,7 +154,7 @@ branch_08032b62: \n\
 /* 08032b7a */ STR R3, [SP, 0x4] \n\
 /* 08032b7c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08032b7e */ STR R3, [SP, 0x8] \n\
-/* 08032b80 */ BL func_0804d8f8 \n\
+/* 08032b80 */ BL sprite_set_anim \n\
 /* 08032b84 */ ADDS R4, 0x8 @ Add 0x8 to R4 \n\
 /* 08032b86 */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\
 /* 08032b88 */ CMP R5, 0x5 @ Compare R5 and 0x5 \n\
@@ -197,7 +197,7 @@ branch_08032bb4: \n\
 /* 08032bca */ STR R3, [SP, 0x4] \n\
 /* 08032bcc */ STR R3, [SP, 0x8] \n\
 /* 08032bce */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08032bd0 */ BL func_0804d8f8 \n\
+/* 08032bd0 */ BL sprite_set_anim \n\
 /* 08032bd4 */ ADDS R4, 0x8 @ Add 0x8 to R4 \n\
 /* 08032bd6 */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\
 /* 08032bd8 */ CMP R5, 0x5 @ Compare R5 and 0x5 \n\

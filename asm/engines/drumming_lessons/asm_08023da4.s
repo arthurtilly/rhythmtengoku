@@ -14,17 +14,17 @@ thumb_func_start func_08023da4 \n\
 /* 08023db4 */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08023db6 */ LDRSH R1, [R5, R2] \n\
 /* 08023db8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08023dba */ BL func_0804cebc \n\
+/* 08023dba */ BL sprite_set_anim_cel \n\
 /* 08023dbe */ LDR R0, [R4] \n\
 /* 08023dc0 */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 08023dc2 */ LDRSH R1, [R5, R2] \n\
 /* 08023dc4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08023dc6 */ BL func_0804cebc \n\
+/* 08023dc6 */ BL sprite_set_anim_cel \n\
 /* 08023dca */ LDR R0, [R4] \n\
 /* 08023dcc */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08023dce */ LDRSH R1, [R5, R2] \n\
 /* 08023dd0 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
-/* 08023dd2 */ BL func_0804cebc \n\
+/* 08023dd2 */ BL sprite_set_anim_cel \n\
 /* 08023dd6 */ MOVS R1, 0x12 @ Set R1 to 0x12 \n\
 /* 08023dd8 */ LDRSH R0, [R5, R1] \n\
 /* 08023dda */ LDR R2, =0x00000376 \n\

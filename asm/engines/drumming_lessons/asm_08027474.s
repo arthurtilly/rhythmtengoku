@@ -22,19 +22,19 @@ thumb_func_start func_08027474 \n\
 /* 08027494 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
 /* 08027496 */ STR R6, [SP, 0x8] \n\
 /* 08027498 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0802749a */ BL func_0804d8f8 \n\
+/* 0802749a */ BL sprite_set_anim \n\
 /* 0802749e */ LDR R0, [R5] \n\
 /* 080274a0 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 080274a2 */ LDRSH R1, [R4, R2] \n\
 /* 080274a4 */ STR R6, [SP] \n\
 /* 080274a6 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 080274a8 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
-/* 080274aa */ BL func_0804dae0 \n\
+/* 080274aa */ BL sprite_set_playback \n\
 /* 080274ae */ LDR R0, [R5] \n\
 /* 080274b0 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 080274b2 */ LDRSH R1, [R4, R2] \n\
 /* 080274b4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080274b6 */ BL func_0804cebc \n\
+/* 080274b6 */ BL sprite_set_anim_cel \n\
 /* 080274ba */ ADD SP, 0xC \n\
 /* 080274bc */ POP {R4-R6} \n\
 /* 080274be */ POP {R0} \n\

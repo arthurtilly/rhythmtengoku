@@ -63,7 +63,7 @@ branch_08032ce8: \n\
 /* 08032d02 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08032d04 */ LDRSH R1, [R4, R2] \n\
 /* 08032d06 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08032d08 */ BL func_0804cebc \n\
+/* 08032d08 */ BL sprite_set_anim_cel \n\
 /* 08032d0c */ ADDS R5, 0xC @ Add 0xC to R5 \n\
 /* 08032d0e */ ADDS R6, 0x1 @ Add 0x1 to R6 \n\
 /* 08032d10 */ CMP R6, 0x1D @ Compare R6 and 0x1D \n\

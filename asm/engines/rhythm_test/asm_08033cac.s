@@ -80,7 +80,7 @@ thumb_func_start rhythm_test_engine_start \n\
 /* 08033d56 */ STR R2, [SP, 0x10] \n\
 /* 08033d58 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08033d5a */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08033d5c */ BL func_0804d160 \n\
+/* 08033d5c */ BL sprite_create \n\
 /* 08033d60 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08033d62 */ LDR R1, [R2] \n\
 /* 08033d64 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
@@ -100,7 +100,7 @@ thumb_func_start rhythm_test_engine_start \n\
 /* 08033d80 */ STR R2, [SP, 0x10] \n\
 /* 08033d82 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08033d84 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08033d86 */ BL func_0804d160 \n\
+/* 08033d86 */ BL sprite_create \n\
 /* 08033d8a */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08033d8c */ LDR R1, [R2] \n\
 /* 08033d8e */ STRH R0, [R1, 0x6] \n\
@@ -118,7 +118,7 @@ thumb_func_start rhythm_test_engine_start \n\
 /* 08033da6 */ STR R2, [SP, 0x10] \n\
 /* 08033da8 */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08033daa */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08033dac */ BL func_0804d160 \n\
+/* 08033dac */ BL sprite_create \n\
 /* 08033db0 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08033db2 */ LDR R1, [R2] \n\
 /* 08033db4 */ STRH R0, [R1, 0xA] \n\

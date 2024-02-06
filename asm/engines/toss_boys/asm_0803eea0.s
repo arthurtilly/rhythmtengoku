@@ -77,7 +77,7 @@ branch_0803eeb6: \n\
 /* 0803ef2c */ STR R2, [SP, 0x4] \n\
 /* 0803ef2e */ STR R5, [SP, 0x8] \n\
 /* 0803ef30 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 0803ef32 */ BL func_0804d8f8 \n\
+/* 0803ef32 */ BL sprite_set_anim \n\
  \n\
 branch_0803ef36: \n\
 /* 0803ef36 */ ADDS R7, 0x1 @ Add 0x1 to R7 \n\

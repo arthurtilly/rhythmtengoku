@@ -69,7 +69,7 @@ thumb_func_start func_0802372c \n\
 /* 080237b2 */ STR R6, [SP, 0xC] \n\
 /* 080237b4 */ STR R6, [SP, 0x10] \n\
 /* 080237b6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080237b8 */ BL func_0804d160 \n\
+/* 080237b8 */ BL sprite_create \n\
 /* 080237bc */ STRH R0, [R5] \n\
 /* 080237be */ LDR R1, [R7] \n\
 /* 080237c0 */ LDRB R0, [R1, 0x1] \n\

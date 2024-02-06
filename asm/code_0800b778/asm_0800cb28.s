@@ -1682,7 +1682,7 @@ jump_0800d87e: \n\
 /* 0800d89e */ STR R4, [SP, 0x4] \n\
 /* 0800d8a0 */ STR R5, [SP, 0x8] \n\
 /* 0800d8a2 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 0800d8a4 */ BL func_0804d8f8 \n\
+/* 0800d8a4 */ BL sprite_set_anim \n\
 /* 0800d8a8 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1697,7 +1697,7 @@ jump_0800d8b0: \n\
 /* 0800d8bc */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0800d8be */ LSLS R2, R3, 0x18 \n\
 /* 0800d8c0 */ ASRS R2, R2, 0x18 \n\
-/* 0800d8c2 */ BL func_0804cebc \n\
+/* 0800d8c2 */ BL sprite_set_anim_cel \n\
 /* 0800d8c6 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1718,7 +1718,7 @@ jump_0800d8cc: \n\
 /* 0800d8e4 */ ASRS R2, R2, 0x1C \n\
 /* 0800d8e6 */ ASRS R3, R3, 0x18 \n\
 /* 0800d8e8 */ STR R4, [SP] \n\
-/* 0800d8ea */ BL func_0804dae0 \n\
+/* 0800d8ea */ BL sprite_set_playback \n\
 /* 0800d8ee */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1747,7 +1747,7 @@ jump_0800d8f4: \n\
 /* 0800d91c */ LSLS R3, R3, 0x10 \n\
 /* 0800d91e */ ASRS R3, R3, 0x10 \n\
 /* 0800d920 */ STR R6, [SP] \n\
-/* 0800d922 */ BL func_0804d55c \n\
+/* 0800d922 */ BL sprite_set_x_y_z \n\
 /* 0800d926 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1776,7 +1776,7 @@ jump_0800d930: \n\
 /* 0800d95a */ LDRSH R2, [R5, R3] \n\
 /* 0800d95c */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0800d95e */ LDRSH R3, [R4, R5] \n\
-/* 0800d960 */ BL func_0804d5d4 \n\
+/* 0800d960 */ BL sprite_set_x_y \n\
 /* 0800d964 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1852,7 +1852,7 @@ branch_0800d9b8: \n\
 /* 0800d9e4 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0800d9e6 */ LDRSH R3, [R6, R1] \n\
 /* 0800d9e8 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800d9ea */ BL func_0804d5d4 \n\
+/* 0800d9ea */ BL sprite_set_x_y \n\
 /* 0800d9ee */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1875,7 +1875,7 @@ jump_0800d9f4: \n\
  \n\
 branch_0800da12: \n\
 /* 0800da12 */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
-/* 0800da14 */ BL func_0804d67c \n\
+/* 0800da14 */ BL sprite_set_z \n\
 /* 0800da18 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1890,7 +1890,7 @@ jump_0800da20: \n\
 /* 0800da2c */ LDR R0, [R0] \n\
 /* 0800da2e */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0800da30 */ LDRSH R1, [R1, R4] \n\
-/* 0800da32 */ BL func_0804d770 \n\
+/* 0800da32 */ BL sprite_set_visible \n\
 /* 0800da36 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1907,7 +1907,7 @@ jump_0800da3c: \n\
 /* 0800da4c */ LDRSH R2, [R6, R3] \n\
 /* 0800da4e */ MOVS R4, 0x2 @ Set R4 to 0x2 \n\
 /* 0800da50 */ LDRSH R3, [R6, R4] \n\
-/* 0800da52 */ BL func_0804d5d4 \n\
+/* 0800da52 */ BL sprite_set_x_y \n\
 /* 0800da56 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1922,7 +1922,7 @@ jump_0800da5c: \n\
 /* 0800da68 */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0800da6a */ LSLS R2, R6, 0x18 \n\
 /* 0800da6c */ ASRS R2, R2, 0x18 \n\
-/* 0800da6e */ BL func_0804d8c4 \n\
+/* 0800da6e */ BL sprite_set_base_palette \n\
 /* 0800da72 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1937,7 +1937,7 @@ jump_0800da78: \n\
 /* 0800da84 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0800da86 */ LSLS R2, R3, 0x10 \n\
 /* 0800da88 */ ASRS R2, R2, 0x10 \n\
-/* 0800da8a */ BL func_0804d890 \n\
+/* 0800da8a */ BL sprite_set_base_tile \n\
 /* 0800da8e */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1960,7 +1960,7 @@ branch_0800daa8: \n\
 /* 0800daac */ LSLS R1, R4, 0x10 \n\
 /* 0800daae */ ASRS R1, R1, 0x10 \n\
 /* 0800dab0 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 0800dab2 */ BL func_0804d7b4 \n\
+/* 0800dab2 */ BL sprite_attr_set \n\
 /* 0800dab6 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1971,7 +1971,7 @@ branch_0800dabc: \n\
 /* 0800dac0 */ LSLS R1, R4, 0x10 \n\
 /* 0800dac2 */ ASRS R1, R1, 0x10 \n\
 /* 0800dac4 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 0800dac6 */ BL func_0804d7e8 \n\
+/* 0800dac6 */ BL sprite_attr_orr \n\
 /* 0800daca */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1982,7 +1982,7 @@ branch_0800dad0: \n\
 /* 0800dad4 */ LSLS R1, R4, 0x10 \n\
 /* 0800dad6 */ ASRS R1, R1, 0x10 \n\
 /* 0800dad8 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 0800dada */ BL func_0804d858 \n\
+/* 0800dada */ BL sprite_attr_bic \n\
 /* 0800dade */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1997,7 +1997,7 @@ jump_0800dae4: \n\
 /* 0800daf0 */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 0800daf2 */ LSLS R2, R5, 0x10 \n\
 /* 0800daf4 */ LSRS R2, R2, 0x10 \n\
-/* 0800daf6 */ BL func_0804da20 \n\
+/* 0800daf6 */ BL sprite_set_enable_updates \n\
 /* 0800dafa */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2024,7 +2024,7 @@ branch_0800db10: \n\
 /* 0800db20 */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
 /* 0800db22 */ LSLS R2, R2, 0x8 \n\
 /* 0800db24 */ LSRS R2, R2, 0x10 \n\
-/* 0800db26 */ BL func_0804dcb8 \n\
+/* 0800db26 */ BL sprite_set_anim_speed \n\
 /* 0800db2a */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2040,7 +2040,7 @@ branch_0800db34: \n\
 /* 0800db44 */ LSRS R2, R2, 0x10 \n\
 /* 0800db46 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0800db48 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800db4a */ BL func_0804dcb8 \n\
+/* 0800db4a */ BL sprite_set_anim_speed \n\
 /* 0800db4e */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2347,7 +2347,7 @@ jump_0800dd80: \n\
 /* 0800dda0 */ BEQ branch_0800ddb0 \n\
 /* 0800dda2 */ LDR R0, [R5] \n\
 /* 0800dda4 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800dda6 */ BL func_0804d504 \n\
+/* 0800dda6 */ BL sprite_delete \n\
 /* 0800ddaa */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2356,7 +2356,7 @@ branch_0800ddb0: \n\
 /* 0800ddb0 */ LDR R0, [R5] \n\
 /* 0800ddb2 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0800ddb4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0800ddb6 */ BL func_0804d770 \n\
+/* 0800ddb6 */ BL sprite_set_visible \n\
 /* 0800ddba */ LDR R0, [R5] \n\
 /* 0800ddbc */ LDR R2, =D_089ccbc0 \n\
 /* 0800ddbe */ STR R7, [SP] \n\
@@ -2364,7 +2364,7 @@ branch_0800ddb0: \n\
 /* 0800ddc2 */ STR R7, [SP, 0x8] \n\
 /* 0800ddc4 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0800ddc6 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800ddc8 */ BL func_0804d8f8 \n\
+/* 0800ddc8 */ BL sprite_set_anim \n\
 /* 0800ddcc */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2480,7 +2480,7 @@ jump_0800de90: \n\
 /* 0800deb8 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0800deba */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
 /* 0800debc */ MOV R3, R8 @ Set R3 to R8 \n\
-/* 0800debe */ BL func_0804daa8 \n\
+/* 0800debe */ BL sprite_set_callback \n\
 /* 0800dec2 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2492,7 +2492,7 @@ branch_0800decc: \n\
 /* 0800ded2 */ ASRS R1, R1, 0x10 \n\
 /* 0800ded4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800ded6 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800ded8 */ BL func_0804daa8 \n\
+/* 0800ded8 */ BL sprite_set_callback \n\
 /* 0800dedc */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2519,7 +2519,7 @@ jump_0800defc: \n\
 /* 0800df06 */ LDR R0, [R0] \n\
 /* 0800df08 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0800df0a */ LDRSH R1, [R1, R5] \n\
-/* 0800df0c */ BL func_0804d504 \n\
+/* 0800df0c */ BL sprite_delete \n\
 /* 0800df10 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2593,7 +2593,7 @@ jump_0800df7e: \n\
 /* 0800df94 */ ADDS R2, R3, R4 @ Set R2 to R3 + R4 \n\
 /* 0800df96 */ ADDS R4, 0x2 @ Add 0x2 to R4 \n\
 /* 0800df98 */ ADDS R3, R3, R4 @ Set R3 to R3 + R4 \n\
-/* 0800df9a */ BL func_0804db44 \n\
+/* 0800df9a */ BL sprite_set_origin_x_y \n\
  \n\
 branch_0800df9e: \n\
 /* 0800df9e */ ADD SP, 0x54 \n\

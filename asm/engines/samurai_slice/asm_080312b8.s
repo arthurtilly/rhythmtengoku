@@ -159,12 +159,12 @@ branch_080313f2: \n\
 /* 080313f6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080313f8 */ LDRSH R1, [R5, R2] \n\
 /* 080313fa */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080313fc */ BL func_0804d770 \n\
+/* 080313fc */ BL sprite_set_visible \n\
 /* 08031400 */ LDR R0, [R4] \n\
 /* 08031402 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08031404 */ LDRSH R1, [R5, R2] \n\
 /* 08031406 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08031408 */ BL func_0804d770 \n\
+/* 08031408 */ BL sprite_set_visible \n\
 /* 0803140c */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803140e */ STRB R0, [R5, 0x4] \n\
 /* 08031410 */ LDR R0, =gCurrentEngineData \n\
@@ -331,14 +331,14 @@ branch_0803153e: \n\
 /* 0803155c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803155e */ LDRSH R1, [R1, R2] \n\
 /* 08031560 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08031562 */ BL func_0804cebc \n\
+/* 08031562 */ BL sprite_set_anim_cel \n\
 /* 08031566 */ LDR R0, [R4] \n\
 /* 08031568 */ LDR R1, [R5] \n\
 /* 0803156a */ ADDS R1, 0x8C @ Add 0x8C to R1 \n\
 /* 0803156c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803156e */ LDRSH R1, [R1, R2] \n\
 /* 08031570 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 08031572 */ BL func_0804d770 \n\
+/* 08031572 */ BL sprite_set_visible \n\
  \n\
 branch_08031576: \n\
 /* 08031576 */ POP {R4-R6} \n\

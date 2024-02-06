@@ -34,7 +34,7 @@ branch_0802c426: \n\
 /* 0802c440 */ LDR R1, =anim_showtime_penguin_beat \n\
 /* 0802c442 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802c444 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 0802c446 */ BL func_0804d160 \n\
+/* 0802c446 */ BL sprite_create \n\
 /* 0802c44a */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0802c44c */ LDR R1, [R2] \n\
 /* 0802c44e */ ADDS R2, R1, R4 @ Set R2 to R1 + R4 \n\
@@ -55,7 +55,7 @@ branch_0802c426: \n\
 /* 0802c46c */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0802c46e */ LDRSH R1, [R2, R3] \n\
 /* 0802c470 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802c472 */ BL func_0804d770 \n\
+/* 0802c472 */ BL sprite_set_visible \n\
 /* 0802c476 */ LDR R0, [R7] \n\
 /* 0802c478 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0802c47a */ LDR R1, [R2] \n\
@@ -65,7 +65,7 @@ branch_0802c426: \n\
 /* 0802c482 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0802c484 */ LSLS R2, R2, 0x1 \n\
 /* 0802c486 */ MOVS R3, 0x50 @ Set R3 to 0x50 \n\
-/* 0802c488 */ BL func_0804d5d4 \n\
+/* 0802c488 */ BL sprite_set_x_y \n\
 /* 0802c48c */ ADDS R4, 0x28 @ Add 0x28 to R4 \n\
 /* 0802c48e */ SUBS R6, 0x1 @ Subtract 0x1 from R6 \n\
 /* 0802c490 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\

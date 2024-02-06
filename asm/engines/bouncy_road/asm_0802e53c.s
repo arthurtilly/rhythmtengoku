@@ -25,7 +25,7 @@ branch_0802e554: \n\
 /* 0802e560 */ LDR R0, [R4] \n\
 /* 0802e562 */ LDR R0, [R0, 0x34] \n\
 /* 0802e564 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0802e566 */ BL affine_sprite_set_anim_frame \n\
+/* 0802e566 */ BL affine_sprite_set_anim_cel \n\
  \n\
 branch_0802e56a: \n\
 /* 0802e56a */ LDRH R1, [R5] \n\
@@ -36,7 +36,7 @@ branch_0802e56a: \n\
 /* 0802e574 */ LDR R0, [R4] \n\
 /* 0802e576 */ LDR R0, [R0, 0x38] \n\
 /* 0802e578 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0802e57a */ BL affine_sprite_set_anim_frame \n\
+/* 0802e57a */ BL affine_sprite_set_anim_cel \n\
  \n\
 branch_0802e57e: \n\
 /* 0802e57e */ POP {R4, R5} \n\

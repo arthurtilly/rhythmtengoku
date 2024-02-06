@@ -44,7 +44,7 @@ branch_0803d2e8: \n\
 /* 0803d308 */ STR R3, [SP, 0x4] \n\
 /* 0803d30a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803d30c */ STR R3, [SP, 0x8] \n\
-/* 0803d30e */ BL func_0804d8f8 \n\
+/* 0803d30e */ BL sprite_set_anim \n\
 /* 0803d312 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
 /* 0803d314 */ BL ticks_to_frames \n\
 /* 0803d318 */ LDR R1, [R7] \n\
@@ -80,7 +80,7 @@ branch_0803d320: \n\
 /* 0803d352 */ STR R3, [SP, 0x4] \n\
 /* 0803d354 */ STR R4, [SP, 0x8] \n\
 /* 0803d356 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803d358 */ BL func_0804d8f8 \n\
+/* 0803d358 */ BL sprite_set_anim \n\
 /* 0803d35c */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
 /* 0803d35e */ BL ticks_to_frames \n\
 /* 0803d362 */ LDR R1, [R5] \n\

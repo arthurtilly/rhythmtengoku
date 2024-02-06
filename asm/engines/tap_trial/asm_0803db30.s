@@ -54,7 +54,7 @@ branch_0803db64: \n\
 /* 0803db8e */ STR R4, [SP, 0x4] \n\
 /* 0803db90 */ LDRH R4, [R6, 0x6] \n\
 /* 0803db92 */ STR R4, [SP, 0x8] \n\
-/* 0803db94 */ BL func_0804d8f8 \n\
+/* 0803db94 */ BL sprite_set_anim \n\
 /* 0803db98 */ ADDS R7, 0x1 @ Add 0x1 to R7 \n\
 /* 0803db9a */ CMP R7, 0x1 @ Compare R7 and 0x1 \n\
 /* 0803db9c */ BLS branch_0803db64 \n\

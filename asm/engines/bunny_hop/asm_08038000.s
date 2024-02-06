@@ -65,7 +65,7 @@ thumb_func_start bunny_hop_engine_start \n\
 /* 08038084 */ STR R4, [SP, 0x10] \n\
 /* 08038086 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08038088 */ MOVS R3, 0x50 @ Set R3 to 0x50 \n\
-/* 0803808a */ BL func_0804d160 \n\
+/* 0803808a */ BL sprite_create \n\
 /* 0803808e */ LDR R1, [R6] \n\
 /* 08038090 */ MOVS R3, 0xBA @ Set R3 to 0xBA \n\
 /* 08038092 */ LSLS R3, R3, 0x1 \n\
@@ -175,7 +175,7 @@ branch_0803812e: \n\
 /* 08038160 */ STR R2, [SP, 0xC] \n\
 /* 08038162 */ STR R2, [SP, 0x10] \n\
 /* 08038164 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 08038166 */ BL func_0804d160 \n\
+/* 08038166 */ BL sprite_create \n\
 /* 0803816a */ LDR R2, [R6] \n\
 /* 0803816c */ MOVS R3, 0xBC @ Set R3 to 0xBC \n\
 /* 0803816e */ LSLS R3, R3, 0x1 \n\
@@ -189,7 +189,7 @@ branch_0803812e: \n\
 /* 0803817e */ LSLS R3, R3, 0x8 \n\
 /* 08038180 */ ASRS R3, R3, 0x10 \n\
 /* 08038182 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
-/* 08038184 */ BL func_0804d5d4 \n\
+/* 08038184 */ BL sprite_set_x_y \n\
 /* 08038188 */ LDR R0, [R6] \n\
 /* 0803818a */ LDRB R0, [R0] \n\
 /* 0803818c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

@@ -27,14 +27,14 @@ thumb_func_start func_080443c0 \n\
 /* 080443ea */ STR R6, [SP] \n\
 /* 080443ec */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080443ee */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080443f0 */ BL func_0804dae0 \n\
+/* 080443f0 */ BL sprite_set_playback \n\
 /* 080443f4 */ LDR R0, [R4] \n\
 /* 080443f6 */ LDR R1, [R7] \n\
 /* 080443f8 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
 /* 080443fa */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080443fc */ LDRSH R1, [R1, R2] \n\
 /* 080443fe */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08044400 */ BL func_0804cebc \n\
+/* 08044400 */ BL sprite_set_anim_cel \n\
 /* 08044404 */ BL stop_drumtech \n\
 /* 08044408 */ LDR R0, [R7] \n\
 /* 0804440a */ LDR R1, =0x362 \n\

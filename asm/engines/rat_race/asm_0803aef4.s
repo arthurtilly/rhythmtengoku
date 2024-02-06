@@ -40,7 +40,7 @@ jump_0803af30: \n\
 /* 0803af3e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803af40 */ STR R3, [SP, 0x4] \n\
 /* 0803af42 */ STR R3, [SP, 0x8] \n\
-/* 0803af44 */ BL func_0804d8f8 \n\
+/* 0803af44 */ BL sprite_set_anim \n\
 /* 0803af48 */ STRB R4, [R7, 0x4] \n\
 /* 0803af4a */ B branch_0803b022 \n\
 \n\
@@ -57,7 +57,7 @@ jump_0803af54: \n\
 /* 0803af64 */ STR R3, [SP, 0x4] \n\
 /* 0803af66 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803af68 */ STR R3, [SP, 0x8] \n\
-/* 0803af6a */ BL func_0804d8f8 \n\
+/* 0803af6a */ BL sprite_set_anim \n\
 /* 0803af6e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803af70 */ B branch_0803b020 \n\
 \n\
@@ -83,12 +83,12 @@ branch_0803af8e: \n\
 /* 0803af9a */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 0803af9c */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0803af9e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803afa0 */ BL func_0804d8f8 \n\
+/* 0803afa0 */ BL sprite_set_anim \n\
 /* 0803afa4 */ LDR R0, [R6] \n\
 /* 0803afa6 */ LDR R2, =func_0803aef4 \n\
 /* 0803afa8 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0803afaa */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
-/* 0803afac */ BL func_0804daa8 \n\
+/* 0803afac */ BL sprite_set_callback \n\
 /* 0803afb0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803afb2 */ STRB R0, [R7, 0xC] \n\
 /* 0803afb4 */ STRB R4, [R7, 0x4] \n\
@@ -109,12 +109,12 @@ jump_0803afc8: \n\
 /* 0803afdc */ STR R1, [SP, 0x8] \n\
 /* 0803afde */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803afe0 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803afe2 */ BL func_0804d8f8 \n\
+/* 0803afe2 */ BL sprite_set_anim \n\
 /* 0803afe6 */ LDR R0, [R5] \n\
 /* 0803afe8 */ LDR R2, =func_0803aef4 \n\
 /* 0803afea */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803afec */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
-/* 0803afee */ BL func_0804daa8 \n\
+/* 0803afee */ BL sprite_set_callback \n\
 /* 0803aff2 */ STRB R6, [R7, 0xC] \n\
 /* 0803aff4 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803aff6 */ B branch_0803b020 \n\
@@ -132,7 +132,7 @@ jump_0803b004: \n\
 /* 0803b014 */ STR R3, [SP, 0x4] \n\
 /* 0803b016 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803b018 */ STR R3, [SP, 0x8] \n\
-/* 0803b01a */ BL func_0804d8f8 \n\
+/* 0803b01a */ BL sprite_set_anim \n\
 /* 0803b01e */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
  \n\
 branch_0803b020: \n\

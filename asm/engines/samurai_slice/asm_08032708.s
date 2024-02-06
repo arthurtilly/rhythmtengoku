@@ -50,7 +50,7 @@ branch_0803273e: \n\
 /* 08032754 */ ASRS R2, R2, 0x10 \n\
 /* 08032756 */ LSLS R3, R3, 0x8 \n\
 /* 08032758 */ ASRS R3, R3, 0x10 \n\
-/* 0803275a */ BL func_0804d5d4 \n\
+/* 0803275a */ BL sprite_set_x_y \n\
 /* 0803275e */ LDRB R0, [R4, 0x1E] \n\
 /* 08032760 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08032762 */ BEQ branch_0803277c \n\
@@ -78,7 +78,7 @@ branch_0803277c: \n\
 /* 0803278c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803278e */ LDRSH R1, [R4, R2] \n\
 /* 08032790 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08032792 */ BL func_0804d770 \n\
+/* 08032792 */ BL sprite_set_visible \n\
  \n\
 branch_08032796: \n\
 /* 08032796 */ POP {R4-R6} \n\

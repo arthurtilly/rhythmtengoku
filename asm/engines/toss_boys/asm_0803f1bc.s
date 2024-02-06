@@ -13,7 +13,7 @@ thumb_func_start func_0803f1bc \n\
 /* 0803f1ca */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803f1cc */ LDRSH R1, [R1, R2] \n\
 /* 0803f1ce */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803f1d0 */ BL func_0804d770 \n\
+/* 0803f1d0 */ BL sprite_set_visible \n\
 /* 0803f1d4 */ LDR R0, [R4] \n\
 /* 0803f1d6 */ MOVS R1, 0xDC @ Set R1 to 0xDC \n\
 /* 0803f1d8 */ LSLS R1, R1, 0x2 \n\

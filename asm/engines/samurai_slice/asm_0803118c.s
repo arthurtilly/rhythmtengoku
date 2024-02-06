@@ -14,7 +14,7 @@ thumb_func_start func_0803118c \n\
 /* 0803119c */ LDRSH R1, [R1, R3] \n\
 /* 0803119e */ LSLS R2, R2, 0x10 \n\
 /* 080311a0 */ ASRS R2, R2, 0x10 \n\
-/* 080311a2 */ BL func_0804d614 \n\
+/* 080311a2 */ BL sprite_set_x \n\
 /* 080311a6 */ POP {R0} \n\
 /* 080311a8 */ BX R0 \n\
 \n\

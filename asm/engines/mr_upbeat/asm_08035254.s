@@ -30,7 +30,7 @@ thumb_func_start mr_upbeat_engine_start \n\
 /* 0803528e */ STR R2, [SP, 0x10] \n\
 /* 08035290 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08035292 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08035294 */ BL func_0804d160 \n\
+/* 08035294 */ BL sprite_create \n\
 /* 08035298 */ LDR R1, [R4] \n\
 /* 0803529a */ STRH R0, [R1, 0x34] \n\
 /* 0803529c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

@@ -26,7 +26,7 @@ thumb_func_start func_08027c90 \n\
 /* 08027cb8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08027cba */ LDRSH R1, [R1, R2] \n\
 /* 08027cbc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08027cbe */ BL func_0804d770 \n\
+/* 08027cbe */ BL sprite_set_visible \n\
 /* 08027cc2 */ LDR R0, [R5] \n\
 /* 08027cc4 */ LDR R1, =0x00000566 \n\
 /* 08027cc6 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

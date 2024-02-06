@@ -25,7 +25,7 @@ thumb_func_start func_0803e908 \n\
 /* 0803e92e */ STR R3, [SP, 0x4] \n\
 /* 0803e930 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803e932 */ STR R3, [SP, 0x8] \n\
-/* 0803e934 */ BL func_0804d8f8 \n\
+/* 0803e934 */ BL sprite_set_anim \n\
 /* 0803e938 */ MOVS R0, 0x3C @ Set R0 to 0x3C \n\
 /* 0803e93a */ BL ticks_to_frames \n\
 /* 0803e93e */ LDR R1, [R4] \n\

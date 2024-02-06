@@ -21,7 +21,7 @@ thumb_func_start func_08042020 \n\
 /* 0804203e */ STR R4, [SP, 0x4] \n\
 /* 08042040 */ STR R4, [SP, 0x8] \n\
 /* 08042042 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08042044 */ BL func_0804d8f8 \n\
+/* 08042044 */ BL sprite_set_anim \n\
 /* 08042048 */ LDR R0, [R6] \n\
 /* 0804204a */ LDR R1, [R5] \n\
 /* 0804204c */ MOVS R2, 0x34 @ Set R2 to 0x34 \n\
@@ -31,7 +31,7 @@ thumb_func_start func_08042020 \n\
 /* 08042054 */ STR R4, [SP, 0x4] \n\
 /* 08042056 */ STR R4, [SP, 0x8] \n\
 /* 08042058 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0804205a */ BL func_0804d8f8 \n\
+/* 0804205a */ BL sprite_set_anim \n\
 /* 0804205e */ LDR R0, [R5] \n\
 /* 08042060 */ LDR R1, =0x2ea \n\
 /* 08042062 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

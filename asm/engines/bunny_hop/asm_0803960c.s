@@ -33,7 +33,7 @@ branch_08039630: \n\
 /* 08039642 */ STR R2, [SP, 0x10] \n\
 /* 08039644 */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
 /* 08039646 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 08039648 */ BL func_0804d160 \n\
+/* 08039648 */ BL sprite_create \n\
 /* 0803964c */ STRH R0, [R5] \n\
 /* 0803964e */ LSLS R0, R7, 0x1 \n\
 /* 08039650 */ ADDS R0, R0, R7 @ Set R0 to R0 + R7 \n\
@@ -57,7 +57,7 @@ branch_08039630: \n\
 /* 08039676 */ ASRS R2, R2, 0x10 \n\
 /* 08039678 */ LSLS R3, R3, 0x8 \n\
 /* 0803967a */ ASRS R3, R3, 0x10 \n\
-/* 0803967c */ BL func_0804d5d4 \n\
+/* 0803967c */ BL sprite_set_x_y \n\
 /* 08039680 */ ADD SP, 0x14 \n\
 /* 08039682 */ POP {R4-R7} \n\
 /* 08039684 */ POP {R0} \n\

@@ -56,7 +56,7 @@ thumb_func_start metronome_engine_start \n\
 /* 080354f2 */ STR R4, [SP, 0x10] \n\
 /* 080354f4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080354f6 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 080354f8 */ BL func_0804d160 \n\
+/* 080354f8 */ BL sprite_create \n\
 /* 080354fc */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 080354fe */ LDR R1, [R2] \n\
 /* 08035500 */ STRH R0, [R1, 0xE] \n\
@@ -70,7 +70,7 @@ thumb_func_start metronome_engine_start \n\
 /* 08035510 */ STR R4, [SP, 0x10] \n\
 /* 08035512 */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
 /* 08035514 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08035516 */ BL func_0804d160 \n\
+/* 08035516 */ BL sprite_create \n\
 /* 0803551a */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 0803551c */ LDR R1, [R2] \n\
 /* 0803551e */ STRH R0, [R1, 0x10] \n\
@@ -86,7 +86,7 @@ thumb_func_start metronome_engine_start \n\
 /* 08035532 */ STR R4, [SP, 0x10] \n\
 /* 08035534 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08035536 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08035538 */ BL func_0804d160 \n\
+/* 08035538 */ BL sprite_create \n\
 /* 0803553c */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 0803553e */ LDR R1, [R2] \n\
 /* 08035540 */ STRH R0, [R1, 0x12] \n\
@@ -104,7 +104,7 @@ thumb_func_start metronome_engine_start \n\
 /* 08035558 */ STR R2, [SP, 0x10] \n\
 /* 0803555a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803555c */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
-/* 0803555e */ BL func_0804d160 \n\
+/* 0803555e */ BL sprite_create \n\
 /* 08035562 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08035564 */ LDR R1, [R2] \n\
 /* 08035566 */ STRH R0, [R1, 0x14] \n\
@@ -126,7 +126,7 @@ branch_08035568: \n\
 /* 08035582 */ LDR R1, =anim_metronome_score_num \n\
 /* 08035584 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08035586 */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
-/* 08035588 */ BL func_0804d160 \n\
+/* 08035588 */ BL sprite_create \n\
 /* 0803558c */ LDR R7, =gCurrentEngineData \n\
 /* 0803558e */ LDR R1, [R7] \n\
 /* 08035590 */ LSLS R2, R4, 0x1 \n\
@@ -149,7 +149,7 @@ branch_08035568: \n\
 /* 080355b2 */ STR R6, [SP, 0x10] \n\
 /* 080355b4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080355b6 */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 080355b8 */ BL func_0804d160 \n\
+/* 080355b8 */ BL sprite_create \n\
 /* 080355bc */ LDR R1, [R7] \n\
 /* 080355be */ STRH R0, [R1, 0x1C] \n\
 /* 080355c0 */ LDR R0, [R5] \n\
@@ -162,7 +162,7 @@ branch_08035568: \n\
 /* 080355ce */ STR R6, [SP, 0x10] \n\
 /* 080355d0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080355d2 */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 080355d4 */ BL func_0804d160 \n\
+/* 080355d4 */ BL sprite_create \n\
 /* 080355d8 */ LDR R1, [R7] \n\
 /* 080355da */ STRH R0, [R1, 0x1E] \n\
 /* 080355dc */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
@@ -217,7 +217,7 @@ branch_080355e2: \n\
 /* 08035640 */ ADDS R1, R2, 0x0 @ Set R1 to R2 + 0x0 \n\
 /* 08035642 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08035644 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08035646 */ BL func_0804d160 \n\
+/* 08035646 */ BL sprite_create \n\
 /* 0803564a */ LDR R7, =gCurrentEngineData \n\
 /* 0803564c */ LDR R1, [R7] \n\
 /* 0803564e */ STRH R0, [R1, 0x22] \n\
@@ -225,7 +225,7 @@ branch_080355e2: \n\
 /* 08035652 */ MOVS R2, 0x22 @ Set R2 to 0x22 \n\
 /* 08035654 */ LDRSH R1, [R1, R2] \n\
 /* 08035656 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 08035658 */ BL func_0804d8c4 \n\
+/* 08035658 */ BL sprite_set_base_palette \n\
 /* 0803565c */ BL get_current_mem_id \n\
 /* 08035660 */ LDR R1, =D_0805a6c0 \n\
 /* 08035662 */ STR R1, [SP] \n\
@@ -253,14 +253,14 @@ branch_080355e2: \n\
 /* 08035690 */ ADDS R1, R2, 0x0 @ Set R1 to R2 + 0x0 \n\
 /* 08035692 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08035694 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 08035696 */ BL func_0804d160 \n\
+/* 08035696 */ BL sprite_create \n\
 /* 0803569a */ LDR R1, [R7] \n\
 /* 0803569c */ STRH R0, [R1, 0x24] \n\
 /* 0803569e */ LDR R0, [R6] \n\
 /* 080356a0 */ MOVS R2, 0x24 @ Set R2 to 0x24 \n\
 /* 080356a2 */ LDRSH R1, [R1, R2] \n\
 /* 080356a4 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 080356a6 */ BL func_0804d8c4 \n\
+/* 080356a6 */ BL sprite_set_base_palette \n\
 /* 080356aa */ BL get_current_mem_id \n\
 /* 080356ae */ LDR R1, =D_0805a6c8 \n\
 /* 080356b0 */ STR R1, [SP] \n\
@@ -287,14 +287,14 @@ branch_080355e2: \n\
 /* 080356dc */ ADDS R1, R2, 0x0 @ Set R1 to R2 + 0x0 \n\
 /* 080356de */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080356e0 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 080356e2 */ BL func_0804d160 \n\
+/* 080356e2 */ BL sprite_create \n\
 /* 080356e6 */ LDR R1, [R7] \n\
 /* 080356e8 */ STRH R0, [R1, 0x26] \n\
 /* 080356ea */ LDR R0, [R6] \n\
 /* 080356ec */ MOVS R2, 0x26 @ Set R2 to 0x26 \n\
 /* 080356ee */ LDRSH R1, [R1, R2] \n\
 /* 080356f0 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 080356f2 */ BL func_0804d8c4 \n\
+/* 080356f2 */ BL sprite_set_base_palette \n\
 /* 080356f6 */ LDR R0, [R7] \n\
 /* 080356f8 */ STRH R4, [R0, 0x28] \n\
 /* 080356fa */ ADDS R0, 0x2A @ Add 0x2A to R0 \n\

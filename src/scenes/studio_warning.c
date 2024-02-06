@@ -9,14 +9,14 @@
 // Warning Notice - On-Finish Function
 void studio_warning_show(void) {
     scene_show_bg_layer(BG_LAYER_0);
-    func_0804d770(D_03005380, gStudio->warningAdvIcon, TRUE);
+    sprite_set_visible(D_03005380, gStudio->warningAdvIcon, TRUE);
     gStudio->warningIsRendering = FALSE;
 }
 
 
 // Warning Notice - Init.
 void studio_warning_init(void) {
-    gStudio->warningAdvIcon = func_0804d160(D_03005380, anim_studio_warning_options_y, 0, 120, 120, 0x800, 1, 0, 0x8000);
+    gStudio->warningAdvIcon = sprite_create(D_03005380, anim_studio_warning_options_y, 0, 120, 120, 0x800, 1, 0, 0x8000);
     gStudio->warningPrinter = text_printer_create_new(get_current_mem_id(), 2, 160, 10);
     text_printer_set_x_y(gStudio->warningPrinter, 40, 84);
     text_printer_set_layer(gStudio->warningPrinter, 0x800);
@@ -50,7 +50,7 @@ void studio_warning_update(void) {
             if (D_03004afc & DPAD_RIGHT) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cursor1_seqData);
                 gStudio->warningOption = STUDIO_WARNING_OPT_N;
-                func_0804d8f8(D_03005380, gStudio->warningAdvIcon, anim_studio_warning_options_n, 0, 1, 0, 0);
+                sprite_set_anim(D_03005380, gStudio->warningAdvIcon, anim_studio_warning_options_n, 0, 1, 0, 0);
             } else if (D_03004afc & A_BUTTON) {
                 play_sound_in_player(MUSIC_PLAYER_2, gStudio->warningSfx);
                 event = 1;
@@ -64,7 +64,7 @@ void studio_warning_update(void) {
             if (D_03004afc & DPAD_LEFT) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cursor1_seqData);
                 gStudio->warningOption = STUDIO_WARNING_OPT_Y;
-                func_0804d8f8(D_03005380, gStudio->warningAdvIcon, anim_studio_warning_options_y, 0, 1, 0, 0);
+                sprite_set_anim(D_03005380, gStudio->warningAdvIcon, anim_studio_warning_options_y, 0, 1, 0, 0);
             } else if (D_03004afc & A_BUTTON) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
                 event = 2;
@@ -89,15 +89,15 @@ void studio_warning_update(void) {
 void studio_warning_create(u32 options, const char *dialogue, void eventFunc(s32, s32), s32 eventArg, struct SongHeader *sfx) {
     switch (options) {
         case STUDIO_WARNING_OPT_DISMISS:
-            func_0804d8f8(D_03005380, gStudio->warningAdvIcon, anim_studio_text_adv_icon, 0, 1, 0, 0);
+            sprite_set_anim(D_03005380, gStudio->warningAdvIcon, anim_studio_text_adv_icon, 0, 1, 0, 0);
             break;
 
         case STUDIO_WARNING_OPT_Y:
-            func_0804d8f8(D_03005380, gStudio->warningAdvIcon, anim_studio_warning_options_y, 0, 1, 0, 0);
+            sprite_set_anim(D_03005380, gStudio->warningAdvIcon, anim_studio_warning_options_y, 0, 1, 0, 0);
             break;
 
         case STUDIO_WARNING_OPT_N:
-            func_0804d8f8(D_03005380, gStudio->warningAdvIcon, anim_studio_warning_options_n, 0, 1, 0, 0);
+            sprite_set_anim(D_03005380, gStudio->warningAdvIcon, anim_studio_warning_options_n, 0, 1, 0, 0);
             break;
     }
 
@@ -116,7 +116,7 @@ void studio_warning_create(u32 options, const char *dialogue, void eventFunc(s32
 void studio_warning_remove(void) {
     text_printer_clear(gStudio->warningPrinter);
     scene_hide_bg_layer(BG_LAYER_0);
-    func_0804d770(D_03005380, gStudio->warningAdvIcon, FALSE);
+    sprite_set_visible(D_03005380, gStudio->warningAdvIcon, FALSE);
     gStudio->warningIsActive = FALSE;
     gStudio->warningIsRendering = FALSE;
 }

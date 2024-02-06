@@ -243,7 +243,7 @@ branch_0804e360: \n\
 /* 0804e374 */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 0804e376 */ ASRS R1, R3, 0x10 \n\
 /* 0804e378 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0804e37a */ BL func_0804cd1c \n\
+/* 0804e37a */ BL sprite_update_anim_cel \n\
 /* 0804e37e */ LDRB R1, [R4, 0x1] \n\
 /* 0804e380 */ MOVS R0, 0x40 @ Set R0 to 0x40 \n\
 /* 0804e382 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\

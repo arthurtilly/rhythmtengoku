@@ -49,7 +49,7 @@ branch_0802ce94: \n\
 /* 0802cebe */ STR R4, [SP, 0x4] \n\
 /* 0802cec0 */ STR R4, [SP, 0x8] \n\
 /* 0802cec2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0802cec4 */ BL func_0804d8f8 \n\
+/* 0802cec4 */ BL sprite_set_anim \n\
 /* 0802cec8 */ LDR R0, [R7] \n\
 /* 0802ceca */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 0802cecc */ LDR R1, [R2] \n\
@@ -57,7 +57,7 @@ branch_0802ce94: \n\
 /* 0802ced0 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0802ced2 */ LDRSH R1, [R1, R3] \n\
 /* 0802ced4 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0802ced6 */ BL func_0804d770 \n\
+/* 0802ced6 */ BL sprite_set_visible \n\
 /* 0802ceda */ MOV R0, R10 @ Set R0 to R10 \n\
 /* 0802cedc */ LDR R1, [R0] \n\
 /* 0802cede */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
@@ -69,7 +69,7 @@ branch_0802ce94: \n\
 /* 0802ceea */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0802ceec */ LDRSH R1, [R1, R2] \n\
 /* 0802ceee */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802cef0 */ BL func_0804d8c4 \n\
+/* 0802cef0 */ BL sprite_set_base_palette \n\
 /* 0802cef4 */ CMP R5, 0x3 @ Compare R5 and 0x3 \n\
 /* 0802cef6 */ BEQ branch_0802cf30 \n\
 /* 0802cef8 */ CMP R5, 0x3 @ Compare R5 and 0x3 \n\
@@ -93,7 +93,7 @@ branch_0802cf16: \n\
 /* 0802cf1e */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0802cf20 */ LDRSH R1, [R1, R2] \n\
 /* 0802cf22 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 0802cf24 */ BL func_0804d8c4 \n\
+/* 0802cf24 */ BL sprite_set_base_palette \n\
 /* 0802cf28 */ B branch_0802cf44 \n\
  \n\
 branch_0802cf2a: \n\
@@ -109,7 +109,7 @@ branch_0802cf30: \n\
 /* 0802cf3a */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0802cf3c */ LDRSH R1, [R1, R2] \n\
 /* 0802cf3e */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 0802cf40 */ BL func_0804d8c4 \n\
+/* 0802cf40 */ BL sprite_set_base_palette \n\
  \n\
 branch_0802cf44: \n\
 /* 0802cf44 */ LDR R0, =D_03005380 \n\
@@ -120,7 +120,7 @@ branch_0802cf44: \n\
 /* 0802cf4e */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0802cf50 */ LDRSH R1, [R1, R2] \n\
 /* 0802cf52 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802cf54 */ BL func_0804dcb8 \n\
+/* 0802cf54 */ BL sprite_set_anim_speed \n\
 /* 0802cf58 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0802cf5a */ LDR R0, [R3] \n\
 /* 0802cf5c */ ADDS R0, 0x44 @ Add 0x44 to R0 \n\

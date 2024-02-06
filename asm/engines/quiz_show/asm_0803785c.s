@@ -28,7 +28,7 @@ thumb_func_start func_0803785c \n\
 /* 0803788c */ ASRS R2, R2, 0x18 \n\
 /* 0803788e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08037890 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 08037892 */ BL func_0804cebc \n\
+/* 08037892 */ BL sprite_set_anim_cel \n\
 /* 08037896 */ LDR R4, [R6] \n\
 /* 08037898 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0803789a */ MOVS R1, 0xE @ Set R1 to 0xE \n\
@@ -41,7 +41,7 @@ thumb_func_start func_0803785c \n\
 /* 080378aa */ ASRS R2, R2, 0x18 \n\
 /* 080378ac */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 080378ae */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 080378b0 */ BL func_0804cebc \n\
+/* 080378b0 */ BL sprite_set_anim_cel \n\
 /* 080378b4 */ MOVS R2, 0x96 @ Set R2 to 0x96 \n\
 /* 080378b6 */ LSLS R2, R2, 0x1 \n\
 /* 080378b8 */ MOV R0, R10 @ Set R0 to R10 \n\

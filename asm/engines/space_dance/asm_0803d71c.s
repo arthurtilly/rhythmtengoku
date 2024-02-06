@@ -29,7 +29,7 @@ thumb_func_start space_dance_cue_miss \n\
 /* 0803d74c */ MOV R8, R3 @ Set R8 to R3 \n\
 /* 0803d74e */ STR R3, [SP, 0x8] \n\
 /* 0803d750 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0803d752 */ BL func_0804d8f8 \n\
+/* 0803d752 */ BL sprite_set_anim \n\
 /* 0803d756 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
 /* 0803d758 */ BL ticks_to_frames \n\
 /* 0803d75c */ LDR R1, [R6] \n\
@@ -56,7 +56,7 @@ thumb_func_start space_dance_cue_miss \n\
 /* 0803d788 */ STR R2, [SP, 0x10] \n\
 /* 0803d78a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d78c */ MOVS R3, 0xC8 @ Set R3 to 0xC8 \n\
-/* 0803d78e */ BL func_0804d160 \n\
+/* 0803d78e */ BL sprite_create \n\
 /* 0803d792 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803d794 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803d796 */ BL gameplay_set_input_buttons \n\

@@ -21,7 +21,7 @@ thumb_func_start func_08038d18 \n\
 /* 08038d38 */ STR R1, [SP, 0x8] \n\
 /* 08038d3a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08038d3c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08038d3e */ BL func_0804d8f8 \n\
+/* 08038d3e */ BL sprite_set_anim \n\
 /* 08038d42 */ ADD SP, 0xC \n\
 /* 08038d44 */ POP {R4} \n\
 /* 08038d46 */ POP {R0} \n\

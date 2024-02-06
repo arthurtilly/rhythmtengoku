@@ -59,7 +59,7 @@ branch_08022406: \n\
 /* 08022432 */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 08022434 */ STR R2, [SP, 0x10] \n\
 /* 08022436 */ MOVS R3, 0xA8 @ Set R3 to 0xA8 \n\
-/* 08022438 */ BL func_0804d160 \n\
+/* 08022438 */ BL sprite_create \n\
 /* 0802243c */ STRH R0, [R6, 0x2] \n\
 /* 0802243e */ LDR R4, [R4] \n\
 /* 08022440 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
@@ -75,7 +75,7 @@ branch_08022406: \n\
 /* 08022456 */ LSRS R2, R2, 0x10 \n\
 /* 08022458 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802245a */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 0802245c */ BL func_0804dcb8 \n\
+/* 0802245c */ BL sprite_set_anim_speed \n\
 /* 08022460 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08022462 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08022464 */ CMP R1, 0x1 @ Compare R1 and 0x1 \n\

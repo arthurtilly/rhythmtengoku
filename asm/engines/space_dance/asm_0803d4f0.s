@@ -31,7 +31,7 @@ thumb_func_start func_0803d4f0 \n\
 /* 0803d524 */ MOVS R2, 0x3 @ Set R2 to 0x3 \n\
 /* 0803d526 */ STR R2, [SP, 0x10] \n\
 /* 0803d528 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803d52a */ BL func_0804d160 \n\
+/* 0803d52a */ BL sprite_create \n\
 /* 0803d52e */ LDR R1, [R5] \n\
 /* 0803d530 */ LDRH R0, [R1, 0x30] \n\
 /* 0803d532 */ SUBS R0, 0x18 @ Subtract 0x18 from R0 \n\
@@ -43,7 +43,7 @@ thumb_func_start func_0803d4f0 \n\
 /* 0803d53e */ MOVS R2, 0x2E @ Set R2 to 0x2E \n\
 /* 0803d540 */ LDRSH R1, [R1, R2] \n\
 /* 0803d542 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803d544 */ BL func_0804d770 \n\
+/* 0803d544 */ BL sprite_set_visible \n\
 /* 0803d548 */ LDR R0, [R4] \n\
 /* 0803d54a */ LDR R3, [R5] \n\
 /* 0803d54c */ MOVS R4, 0x2E @ Set R4 to 0x2E \n\
@@ -52,7 +52,7 @@ thumb_func_start func_0803d4f0 \n\
 /* 0803d552 */ LDRSH R2, [R3, R6] \n\
 /* 0803d554 */ MOVS R4, 0x32 @ Set R4 to 0x32 \n\
 /* 0803d556 */ LDRSH R3, [R3, R4] \n\
-/* 0803d558 */ BL func_0804d5d4 \n\
+/* 0803d558 */ BL sprite_set_x_y \n\
 /* 0803d55c */ LDR R2, [R5] \n\
 /* 0803d55e */ MOVS R6, 0x30 @ Set R6 to 0x30 \n\
 /* 0803d560 */ LDRSH R1, [R2, R6] \n\

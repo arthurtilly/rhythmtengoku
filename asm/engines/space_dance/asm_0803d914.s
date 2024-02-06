@@ -32,7 +32,7 @@ branch_0803d91c: \n\
 /* 0803d946 */ STR R3, [SP, 0x4] \n\
 /* 0803d948 */ STR R5, [SP, 0x8] \n\
 /* 0803d94a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803d94c */ BL func_0804d8f8 \n\
+/* 0803d94c */ BL sprite_set_anim \n\
  \n\
 branch_0803d950: \n\
 /* 0803d950 */ ADDS R6, 0x1 @ Add 0x1 to R6 \n\
@@ -63,7 +63,7 @@ branch_0803d950: \n\
 /* 0803d984 */ STR R3, [SP, 0x4] \n\
 /* 0803d986 */ STR R4, [SP, 0x8] \n\
 /* 0803d988 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803d98a */ BL func_0804d8f8 \n\
+/* 0803d98a */ BL sprite_set_anim \n\
  \n\
 branch_0803d98e: \n\
 /* 0803d98e */ ADD SP, 0xC \n\

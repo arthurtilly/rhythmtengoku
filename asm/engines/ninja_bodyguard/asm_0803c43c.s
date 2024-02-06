@@ -24,7 +24,7 @@ thumb_func_start func_0803c43c \n\
 /* 0803c462 */ STR R2, [SP, 0x10] \n\
 /* 0803c464 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803c466 */ MOVS R3, 0x64 @ Set R3 to 0x64 \n\
-/* 0803c468 */ BL func_0804d160 \n\
+/* 0803c468 */ BL sprite_create \n\
 /* 0803c46c */ LDR R1, =gCurrentEngineData \n\
 /* 0803c46e */ LDR R1, [R1] \n\
 /* 0803c470 */ STRH R0, [R1, 0x4] \n\
@@ -48,7 +48,7 @@ branch_0803c474: \n\
 /* 0803c492 */ STR R2, [SP, 0x10] \n\
 /* 0803c494 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803c496 */ MOVS R3, 0x85 @ Set R3 to 0x85 \n\
-/* 0803c498 */ BL func_0804d160 \n\
+/* 0803c498 */ BL sprite_create \n\
 /* 0803c49c */ LDR R1, =gCurrentEngineData \n\
 /* 0803c49e */ LDR R3, [R1] \n\
 /* 0803c4a0 */ LSLS R2, R4, 0x1 \n\

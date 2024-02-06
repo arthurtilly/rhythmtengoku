@@ -42,7 +42,7 @@ branch_08044784: \n\
 /* 080447a0 */ STR R3, [SP, 0x4] \n\
 /* 080447a2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080447a4 */ STR R3, [SP, 0x8] \n\
-/* 080447a6 */ BL func_0804d8f8 \n\
+/* 080447a6 */ BL sprite_set_anim \n\
 /* 080447aa */ LDR R0, [R4] \n\
 /* 080447ac */ LDR R4, =gCurrentEngineData \n\
 /* 080447ae */ LDR R1, [R4] \n\
@@ -54,7 +54,7 @@ branch_08044784: \n\
 /* 080447ba */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080447bc */ LDRSH R1, [R1, R2] \n\
 /* 080447be */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080447c0 */ BL func_0804cebc \n\
+/* 080447c0 */ BL sprite_set_anim_cel \n\
 /* 080447c4 */ LDR R1, =rhythm_toys_play_func_table \n\
 /* 080447c6 */ LDR R0, [R4] \n\
 /* 080447c8 */ LDRB R0, [R0] \n\

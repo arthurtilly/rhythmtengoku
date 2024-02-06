@@ -22,7 +22,7 @@ thumb_func_start clappy_trio_cue_hit \n\
 /* 08030916 */ STR R3, [SP, 0x4] \n\
 /* 08030918 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803091a */ STR R3, [SP, 0x8] \n\
-/* 0803091c */ BL func_0804d8f8 \n\
+/* 0803091c */ BL sprite_set_anim \n\
 /* 08030920 */ LDR R0, =s_HC_seqData \n\
 /* 08030922 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08030924 */ LSLS R1, R1, 0x1 \n\

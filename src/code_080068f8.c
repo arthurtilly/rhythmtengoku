@@ -313,15 +313,15 @@ void func_08007394(const void *palette, u32 indexOfs, u32 total) {
 
 // Init. Sprite Library for Internal Library Graphics Buffer
 void func_080073b8(void) {
-    func_0804ca80(mem_heap_alloc, mem_heap_dealloc);
-    func_0804ca94(mem_heap_alloc_id);
-    D_03005380 = func_0804caa0(0x80, D_03004b10.oam, 100, 0);
+    sprite_lib_set_mem_alloc(mem_heap_alloc, mem_heap_dealloc);
+    sprite_lib_set_mem_alloc_id(mem_heap_alloc_id);
+    D_03005380 = sprite_handler_create(0x80, D_03004b10.oam, 100, 0);
 }
 
 
 // Init. OAM Buffer
 void func_080073f0(void) {
-    func_0804cbcc(D_03005380);
+    sprite_handler_reset(D_03005380);
     func_080020ec(0x20, D_03004b10.oam);
 }
 

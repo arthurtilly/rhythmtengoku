@@ -552,8 +552,8 @@ endstruct
 @ [0x86] (Global Scene Sprite) Show/Hide
 @ [0x87] (Global Scene Sprite) Set XY (Vector2)
 @ [0x88] (Global Scene Sprite) Set Palette
-@ [0x89] (Global Scene Sprite) func_0804d890()
-@ [0x8A] (Global Scene Sprite) func_0804da20()
+@ [0x89] (Global Scene Sprite) sprite_set_base_tile()
+@ [0x8A] (Global Scene Sprite) sprite_set_enable_updates()
 @ [0x8B] (Global Scene Sprite) Set Playback Speed
 @ [0x8C] (Global Scene Sprite) Indefinite Linear Motion
 @ [0x8D] ?

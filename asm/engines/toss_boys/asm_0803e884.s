@@ -18,7 +18,7 @@ thumb_func_start func_0803e884 \n\
 /* 0803e89c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803e89e */ LDRSH R1, [R1, R2] \n\
 /* 0803e8a0 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803e8a2 */ BL func_0804d770 \n\
+/* 0803e8a2 */ BL sprite_set_visible \n\
  \n\
 branch_0803e8a6: \n\
 /* 0803e8a6 */ POP {R0} \n\

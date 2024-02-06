@@ -32,7 +32,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023a4c */ STR R4, [SP, 0x10] \n\
 /* 08023a4e */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08023a50 */ MOVS R3, 0x2C @ Set R3 to 0x2C \n\
-/* 08023a52 */ BL func_0804d160 \n\
+/* 08023a52 */ BL sprite_create \n\
 /* 08023a56 */ STRH R0, [R7] \n\
 /* 08023a58 */ LSLS R0, R0, 0x10 \n\
 /* 08023a5a */ ASRS R0, R0, 0x10 \n\
@@ -50,7 +50,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023a74 */ STR R4, [SP, 0x10] \n\
 /* 08023a76 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08023a78 */ MOVS R3, 0x27 @ Set R3 to 0x27 \n\
-/* 08023a7a */ BL func_0804d160 \n\
+/* 08023a7a */ BL sprite_create \n\
 /* 08023a7e */ STRH R0, [R7, 0x2] \n\
 /* 08023a80 */ LSLS R0, R0, 0x10 \n\
 /* 08023a82 */ ASRS R0, R0, 0x10 \n\
@@ -67,7 +67,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023a9a */ STR R4, [SP, 0x10] \n\
 /* 08023a9c */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08023a9e */ MOVS R3, 0x31 @ Set R3 to 0x31 \n\
-/* 08023aa0 */ BL func_0804d160 \n\
+/* 08023aa0 */ BL sprite_create \n\
 /* 08023aa4 */ STRH R0, [R7, 0x4] \n\
 /* 08023aa6 */ LSLS R0, R0, 0x10 \n\
 /* 08023aa8 */ ASRS R0, R0, 0x10 \n\
@@ -84,7 +84,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023ac0 */ STR R4, [SP, 0x10] \n\
 /* 08023ac2 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08023ac4 */ MOVS R3, 0x2C @ Set R3 to 0x2C \n\
-/* 08023ac6 */ BL func_0804d160 \n\
+/* 08023ac6 */ BL sprite_create \n\
 /* 08023aca */ STRH R0, [R7, 0x6] \n\
 /* 08023acc */ LSLS R0, R0, 0x10 \n\
 /* 08023ace */ ASRS R0, R0, 0x10 \n\
@@ -107,7 +107,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023af2 */ STR R4, [SP, 0x10] \n\
 /* 08023af4 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08023af6 */ MOVS R3, 0x60 @ Set R3 to 0x60 \n\
-/* 08023af8 */ BL func_0804d160 \n\
+/* 08023af8 */ BL sprite_create \n\
 /* 08023afc */ STRH R0, [R7] \n\
 /* 08023afe */ LSLS R0, R0, 0x10 \n\
 /* 08023b00 */ ASRS R0, R0, 0x10 \n\
@@ -124,7 +124,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023b18 */ STR R4, [SP, 0x10] \n\
 /* 08023b1a */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08023b1c */ MOVS R3, 0x60 @ Set R3 to 0x60 \n\
-/* 08023b1e */ BL func_0804d160 \n\
+/* 08023b1e */ BL sprite_create \n\
 /* 08023b22 */ STRH R0, [R7, 0x2] \n\
 /* 08023b24 */ LSLS R0, R0, 0x10 \n\
 /* 08023b26 */ ASRS R0, R0, 0x10 \n\
@@ -141,7 +141,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023b3e */ STR R4, [SP, 0x10] \n\
 /* 08023b40 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08023b42 */ MOVS R3, 0x60 @ Set R3 to 0x60 \n\
-/* 08023b44 */ BL func_0804d160 \n\
+/* 08023b44 */ BL sprite_create \n\
 /* 08023b48 */ STRH R0, [R7, 0x4] \n\
 /* 08023b4a */ LSLS R0, R0, 0x10 \n\
 /* 08023b4c */ ASRS R0, R0, 0x10 \n\
@@ -158,7 +158,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023b64 */ STR R4, [SP, 0x10] \n\
 /* 08023b66 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08023b68 */ MOVS R3, 0x60 @ Set R3 to 0x60 \n\
-/* 08023b6a */ BL func_0804d160 \n\
+/* 08023b6a */ BL sprite_create \n\
 /* 08023b6e */ STRH R0, [R7, 0x6] \n\
 /* 08023b70 */ LSLS R0, R0, 0x10 \n\
 /* 08023b72 */ ASRS R0, R0, 0x10 \n\

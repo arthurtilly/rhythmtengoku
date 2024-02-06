@@ -54,9 +54,9 @@ write_int_sram_fast_code = 0x030043f8;
 
 /* Sprite Library */
 D_03004428 = 0x03004428;
-D_0300442c = 0x0300442c;
-D_03004430 = 0x03004430;
-D_03004434 = 0x03004434;
+sSpriteMemAlloc = 0x0300442c;
+sSpriteMemDealloc = 0x03004430;
+sSpriteMemAllocId = 0x03004434;
 
 /* lib_0804e564 */
 D_03004438 = 0x03004438;

@@ -73,7 +73,7 @@ branch_0803d11a: \n\
 /* 0803d13c */ STR R5, [SP, 0x10] \n\
 /* 0803d13e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d140 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 0803d142 */ BL func_0804d160 \n\
+/* 0803d142 */ BL sprite_create \n\
 /* 0803d146 */ LDR R1, [R6] \n\
 /* 0803d148 */ STRH R0, [R1, 0x1E] \n\
 /* 0803d14a */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
@@ -106,7 +106,7 @@ branch_0803d158: \n\
 /* 0803d17e */ STR R2, [SP, 0x10] \n\
 /* 0803d180 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d182 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
-/* 0803d184 */ BL func_0804d160 \n\
+/* 0803d184 */ BL sprite_create \n\
 /* 0803d188 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803d18a */ LSLS R1, R1, 0x10 \n\
 /* 0803d18c */ LSRS R1, R1, 0x10 \n\
@@ -122,7 +122,7 @@ branch_0803d158: \n\
 /* 0803d1a0 */ ASRS R1, R1, 0x10 \n\
 /* 0803d1a2 */ ASRS R2, R7, 0x10 \n\
 /* 0803d1a4 */ MOVS R3, 0x88 @ Set R3 to 0x88 \n\
-/* 0803d1a6 */ BL func_0804d5d4 \n\
+/* 0803d1a6 */ BL sprite_set_x_y \n\
 /* 0803d1aa */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0803d1ac */ LDR R0, [R3] \n\
 /* 0803d1ae */ ADDS R0, 0xE @ Add 0xE to R0 \n\
@@ -151,7 +151,7 @@ branch_0803d158: \n\
 /* 0803d1de */ STR R5, [SP, 0x10] \n\
 /* 0803d1e0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d1e2 */ MOVS R3, 0xC8 @ Set R3 to 0xC8 \n\
-/* 0803d1e4 */ BL func_0804d160 \n\
+/* 0803d1e4 */ BL sprite_create \n\
 /* 0803d1e8 */ LDR R4, =gCurrentEngineData \n\
 /* 0803d1ea */ LDR R1, [R4] \n\
 /* 0803d1ec */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -172,14 +172,14 @@ branch_0803d158: \n\
 /* 0803d20c */ STR R5, [SP, 0x10] \n\
 /* 0803d20e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d210 */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
-/* 0803d212 */ BL func_0804d160 \n\
+/* 0803d212 */ BL sprite_create \n\
 /* 0803d216 */ LDR R1, [R4] \n\
 /* 0803d218 */ STRH R0, [R1, 0x16] \n\
 /* 0803d21a */ LDR R0, [R6] \n\
 /* 0803d21c */ MOVS R3, 0x16 @ Set R3 to 0x16 \n\
 /* 0803d21e */ LDRSH R1, [R1, R3] \n\
 /* 0803d220 */ MOVS R2, 0x88 @ Set R2 to 0x88 \n\
-/* 0803d222 */ BL func_0804d648 \n\
+/* 0803d222 */ BL sprite_set_y \n\
 /* 0803d226 */ LDR R0, [R4] \n\
 /* 0803d228 */ STRH R5, [R0, 0x18] \n\
 /* 0803d22a */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -211,7 +211,7 @@ branch_0803d158: \n\
 /* 0803d260 */ STR R2, [SP, 0x10] \n\
 /* 0803d262 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d264 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
-/* 0803d266 */ BL func_0804d160 \n\
+/* 0803d266 */ BL sprite_create \n\
 /* 0803d26a */ LDR R1, [R4] \n\
 /* 0803d26c */ STRH R0, [R1, 0x2E] \n\
 /* 0803d26e */ ADDS R1, 0x34 @ Add 0x34 to R1 \n\

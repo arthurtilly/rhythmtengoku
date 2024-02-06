@@ -20,7 +20,7 @@ thumb_func_start func_0803c5f8 \n\
 /* 0803c616 */ STR R3, [SP, 0x4] \n\
 /* 0803c618 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803c61a */ STR R3, [SP, 0x8] \n\
-/* 0803c61c */ BL func_0804d8f8 \n\
+/* 0803c61c */ BL sprite_set_anim \n\
 /* 0803c620 */ LDR R0, =s_ninja_kamae_seqData \n\
 /* 0803c622 */ BL play_sound \n\
 /* 0803c626 */ ADD SP, 0xC \n\

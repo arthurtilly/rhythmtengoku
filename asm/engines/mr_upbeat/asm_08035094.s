@@ -53,7 +53,7 @@ branch_080350c8: \n\
 /* 080350e0 */ STR R3, [SP, 0x4] \n\
 /* 080350e2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080350e4 */ STR R3, [SP, 0x8] \n\
-/* 080350e6 */ BL func_0804d8f8 \n\
+/* 080350e6 */ BL sprite_set_anim \n\
 /* 080350ea */ LDRB R0, [R5, 0x5] \n\
 /* 080350ec */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 080350ee */ ADDS R0, 0x20 @ Add 0x20 to R0 \n\
@@ -71,12 +71,12 @@ branch_080350c8: \n\
 /* 08035106 */ MOVS R3, 0x80 @ Set R3 to 0x80 \n\
 /* 08035108 */ LSLS R3, R3, 0x5 \n\
 /* 0803510a */ ANDS R2, R3 @ Set R2 to R2 & R3 \n\
-/* 0803510c */ BL func_0804d7b4 \n\
+/* 0803510c */ BL sprite_attr_set \n\
 /* 08035110 */ LDR R0, [R4] \n\
 /* 08035112 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08035114 */ LDRSH R1, [R5, R2] \n\
 /* 08035116 */ MOVS R2, 0x3 @ Set R2 to 0x3 \n\
-/* 08035118 */ BL func_0804cebc \n\
+/* 08035118 */ BL sprite_set_anim_cel \n\
 /* 0803511c */ LDR R0, =s_f_shuji_v_ouch_seqData \n\
 /* 0803511e */ BL play_sound \n\
 /* 08035122 */ MOVS R0, 0xC @ Set R0 to 0xC \n\

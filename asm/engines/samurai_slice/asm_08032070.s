@@ -20,17 +20,17 @@ thumb_func_start func_08032070 \n\
 /* 0803208e */ STR R1, [SP, 0x8] \n\
 /* 08032090 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08032092 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
-/* 08032094 */ BL func_0804d8f8 \n\
+/* 08032094 */ BL sprite_set_anim \n\
 /* 08032098 */ LDR R0, [R5] \n\
 /* 0803209a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803209c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803209e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080320a0 */ BL func_0804daa8 \n\
+/* 080320a0 */ BL sprite_set_callback \n\
 /* 080320a4 */ LDR R0, [R5] \n\
 /* 080320a6 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080320a8 */ LSLS R2, R2, 0x1 \n\
 /* 080320aa */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 080320ac */ BL func_0804dcb8 \n\
+/* 080320ac */ BL sprite_set_anim_speed \n\
 /* 080320b0 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080320b2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080320b4 */ BL gameplay_set_input_buttons \n\

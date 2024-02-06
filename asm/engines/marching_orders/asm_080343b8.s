@@ -164,7 +164,7 @@ branch_080344be: \n\
 /* 080344d4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080344d6 */ STR R2, [SP, 0x8] \n\
 /* 080344d8 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 080344da */ BL func_0804d8f8 \n\
+/* 080344da */ BL sprite_set_anim \n\
  \n\
 branch_080344de: \n\
 /* 080344de */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
@@ -181,7 +181,7 @@ branch_080344de: \n\
 /* 080344f4 */ STR R2, [SP, 0x8] \n\
 /* 080344f6 */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
 /* 080344f8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080344fa */ BL func_0804d8f8 \n\
+/* 080344fa */ BL sprite_set_anim \n\
  \n\
 branch_080344fe: \n\
 /* 080344fe */ LDR R0, =gCurrentEngineData \n\
@@ -194,7 +194,7 @@ branch_080344fe: \n\
 /* 0803450c */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 0803450e */ LDRSH R1, [R5, R2] \n\
 /* 08034510 */ MOV R2, R9 @ Set R2 to R9 \n\
-/* 08034512 */ BL func_0804d770 \n\
+/* 08034512 */ BL sprite_set_visible \n\
  \n\
 branch_08034516: \n\
 /* 08034516 */ STRB R7, [R5, 0x4] \n\

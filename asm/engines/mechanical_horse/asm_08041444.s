@@ -99,7 +99,7 @@ branch_080414e4: \n\
 /* 080414f8 */ LDRB R2, [R2, 0x7] \n\
 /* 080414fa */ LSLS R2, R2, 0x18 \n\
 /* 080414fc */ ASRS R2, R2, 0x18 \n\
-/* 080414fe */ BL func_0804cebc \n\
+/* 080414fe */ BL sprite_set_anim_cel \n\
 /* 08041502 */ LDR R0, [R5] \n\
 /* 08041504 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 08041506 */ LDRB R1, [R0, 0x7] \n\
@@ -138,7 +138,7 @@ branch_08041534: \n\
 /* 08041544 */ LDRB R2, [R2] \n\
 /* 08041546 */ LSLS R2, R2, 0x18 \n\
 /* 08041548 */ ASRS R2, R2, 0x18 \n\
-/* 0804154a */ BL func_0804cebc \n\
+/* 0804154a */ BL sprite_set_anim_cel \n\
 /* 0804154e */ LDR R0, [R5] \n\
 /* 08041550 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 08041552 */ ADDS R0, 0x37 @ Add 0x37 to R0 \n\

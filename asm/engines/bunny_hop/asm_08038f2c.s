@@ -34,7 +34,7 @@ thumb_func_start func_08038f2c \n\
 /* 08038f64 */ STR R3, [SP, 0x10] \n\
 /* 08038f66 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08038f68 */ MOVS R3, 0xC4 @ Set R3 to 0xC4 \n\
-/* 08038f6a */ BL func_0804d160 \n\
+/* 08038f6a */ BL sprite_create \n\
 /* 08038f6e */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08038f70 */ STRH R0, [R6, 0x4] \n\
 /* 08038f72 */ BL scene_affine_group_alloc \n\
@@ -56,7 +56,7 @@ thumb_func_start func_08038f2c \n\
 /* 08038f96 */ LDR R3, [R4, 0x8] \n\
 /* 08038f98 */ LSLS R3, R3, 0x8 \n\
 /* 08038f9a */ ASRS R3, R3, 0x10 \n\
-/* 08038f9c */ BL func_0804d5d4 \n\
+/* 08038f9c */ BL sprite_set_x_y \n\
 /* 08038fa0 */ ADD SP, 0x14 \n\
 /* 08038fa2 */ POP {R3} \n\
 /* 08038fa4 */ MOV R8, R3 @ Set R8 to R3 \n\

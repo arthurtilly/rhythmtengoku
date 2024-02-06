@@ -81,14 +81,14 @@ branch_08036cf2: \n\
 /* 08036d06 */ STR R5, [SP, 0x10] \n\
 /* 08036d08 */ LDR R1, =anim_drum_live_menu_poster \n\
 /* 08036d0a */ MOVS R3, 0x8 @ Set R3 to 0x8 \n\
-/* 08036d0c */ BL func_0804d160 \n\
+/* 08036d0c */ BL sprite_create \n\
 /* 08036d10 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08036d12 */ LDR R0, [R7] \n\
 /* 08036d14 */ LSLS R1, R1, 0x10 \n\
 /* 08036d16 */ ASRS R1, R1, 0x10 \n\
 /* 08036d18 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08036d1a */ LDR R3, =(D_03004b10 + 0x12) \n\
-/* 08036d1c */ BL func_0804db44 \n\
+/* 08036d1c */ BL sprite_set_origin_x_y \n\
 /* 08036d20 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08036d22 */ LSLS R0, R0, 0x11 \n\
 /* 08036d24 */ ADDS R6, R6, R0 @ Set R6 to R6 + R0 \n\
@@ -115,7 +115,7 @@ branch_08036cf2: \n\
 /* 08036d4e */ STR R2, [SP, 0x10] \n\
 /* 08036d50 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08036d52 */ MOVS R3, 0x2C @ Set R3 to 0x2C \n\
-/* 08036d54 */ BL func_0804d160 \n\
+/* 08036d54 */ BL sprite_create \n\
 /* 08036d58 */ LDR R4, =gCurrentEngineData \n\
 /* 08036d5a */ LDR R1, [R4] \n\
 /* 08036d5c */ STRH R0, [R1, 0x16] \n\
@@ -131,7 +131,7 @@ branch_08036cf2: \n\
 /* 08036d70 */ STR R2, [SP, 0x10] \n\
 /* 08036d72 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08036d74 */ MOVS R3, 0x2C @ Set R3 to 0x2C \n\
-/* 08036d76 */ BL func_0804d160 \n\
+/* 08036d76 */ BL sprite_create \n\
 /* 08036d7a */ LDR R3, [R4] \n\
 /* 08036d7c */ STRH R0, [R3, 0x18] \n\
 /* 08036d7e */ LDR R0, [R5] \n\
@@ -139,14 +139,14 @@ branch_08036cf2: \n\
 /* 08036d82 */ LDRSH R1, [R3, R2] \n\
 /* 08036d84 */ ADDS R3, 0x14 @ Add 0x14 to R3 \n\
 /* 08036d86 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08036d88 */ BL func_0804db44 \n\
+/* 08036d88 */ BL sprite_set_origin_x_y \n\
 /* 08036d8c */ LDR R0, [R5] \n\
 /* 08036d8e */ LDR R3, [R4] \n\
 /* 08036d90 */ MOVS R2, 0x18 @ Set R2 to 0x18 \n\
 /* 08036d92 */ LDRSH R1, [R3, R2] \n\
 /* 08036d94 */ ADDS R3, 0x14 @ Add 0x14 to R3 \n\
 /* 08036d96 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08036d98 */ BL func_0804db44 \n\
+/* 08036d98 */ BL sprite_set_origin_x_y \n\
 /* 08036d9c */ LDR R0, [R5] \n\
 /* 08036d9e */ LDR R1, =anim_drum_live_menu_start_icon \n\
 /* 08036da0 */ MOVS R2, 0xA0 @ Set R2 to 0xA0 \n\
@@ -160,7 +160,7 @@ branch_08036cf2: \n\
 /* 08036db0 */ STR R2, [SP, 0x10] \n\
 /* 08036db2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08036db4 */ MOVS R3, 0xF0 @ Set R3 to 0xF0 \n\
-/* 08036db6 */ BL func_0804d160 \n\
+/* 08036db6 */ BL sprite_create \n\
 /* 08036dba */ LDR R1, [R4] \n\
 /* 08036dbc */ STRH R0, [R1, 0x1A] \n\
 /* 08036dbe */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

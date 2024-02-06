@@ -13,7 +13,7 @@ thumb_func_start func_080357c4 \n\
 /* 080357d2 */ MOVS R2, 0xE @ Set R2 to 0xE \n\
 /* 080357d4 */ LDRSH R1, [R1, R2] \n\
 /* 080357d6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080357d8 */ BL func_0804cebc \n\
+/* 080357d8 */ BL sprite_set_anim_cel \n\
 /* 080357dc */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 080357de */ BEQ branch_080357e6 \n\
 /* 080357e0 */ LDR R0, =s_metro_count1_seqData \n\

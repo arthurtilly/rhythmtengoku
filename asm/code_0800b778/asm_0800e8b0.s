@@ -14,7 +14,7 @@ thumb_func_start func_0800e8b0 \n\
 /* 0800e8c0 */ LDRSH R1, [R0, R3] \n\
 /* 0800e8c2 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0800e8c4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0800e8c6 */ BL func_0804d770 \n\
+/* 0800e8c6 */ BL sprite_set_visible \n\
 /* 0800e8ca */ POP {R0} \n\
 /* 0800e8cc */ BX R0 \n\
 \n\

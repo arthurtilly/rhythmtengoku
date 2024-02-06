@@ -77,13 +77,13 @@ void debug_menu_scene_start(void *sVar, s32 dArg) {
     debug_menu_scene_init_gfx1();
 
     textAnim = bmp_font_obj_print_l(gDebugMenu->objFont, "シーケンス　テスト", 1, 6); // Sequence Test
-    func_0804d160(D_03005380, textAnim->frames, 0, 0, 8, 0x800, 0, 0, 0);
+    sprite_create(D_03005380, textAnim->frames, 0, 0, 8, 0x800, 0, 0, 0);
 
     textAnim = bmp_font_obj_print_l(gDebugMenu->objFont, "＊", 1, 7);
-    gDebugMenu->cursor = func_0804d160(D_03005380, textAnim->frames, 0, 0, 0, 0x800, 0, 0, 0);
+    gDebugMenu->cursor = sprite_create(D_03005380, textAnim->frames, 0, 0, 0, 0x800, 0, 0, 0);
 
     textAnim = bmp_font_obj_print_r(gDebugMenu->objFont, "１／１", 1, 4);
-    gDebugMenu->counter = func_0804d160(D_03005380, textAnim->frames, 0, 240, 8, 0x800, 0, 0, 0);
+    gDebugMenu->counter = sprite_create(D_03005380, textAnim->frames, 0, 240, 8, 0x800, 0, 0, 0);
 
     gDebugMenu->page = -1;
     gDebugMenu->row = 0;

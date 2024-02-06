@@ -283,14 +283,14 @@ void results_render_skills(struct ResultsSkillData *data) {
         }
 
         textAnim = bmp_font_obj_print_r(gResults->objFont, data[i].descPool[agb_random(total)], 1, 7);
-        func_0804d160(D_03005380, textAnim->frames, 0, 176, y, 0x4800, 1, 0, 0);
+        sprite_create(D_03005380, textAnim->frames, 0, 176, y, 0x4800, 1, 0, 0);
 
         grade = score_handler->skillScores[i] = clamp_int32(data[i].measure(), RESULTS_GRADE_D, RESULTS_GRADE_S);
         scoreSum += data[i].weight * grade;
         weightSum += data[i].weight;
 
         textAnim = bmp_font_obj_print_l(gResults->objFont, results_letter_ranks[grade], 1, 7);
-        func_0804d160(D_03005380, textAnim->frames, 0, 192, y, 0x4800, 1, 0, 0);
+        sprite_create(D_03005380, textAnim->frames, 0, 192, y, 0x4800, 1, 0, 0);
 
         y += 16;
     }
@@ -545,7 +545,7 @@ void results_render_skill_screen(void) {
     u32 badInputScore, score, level;
 
     textAnim = bmp_font_obj_print_c(gResults->objFont, ":1" "＊＊＊＊" ":0" "　　さいてん　　" ":1" "＊＊＊＊", 0, 7);
-    func_0804d160(D_03005380, textAnim->frames, 0, 120, 16, 0x4800, 1, 0, 0);
+    sprite_create(D_03005380, textAnim->frames, 0, 120, 16, 0x4800, 1, 0, 0);
 
     results_tracker_calculate_skill_averages();
     badInputScore = (inputs->totalMisses * 10) + (inputs->totalBarelies * 3);
@@ -589,7 +589,7 @@ void results_render_skill_screen(void) {
     strcat(scoreString, numString);
 
     textAnim = bmp_font_obj_print_r(gResults->objFont, scoreString, 0, 0);
-    func_0804d160(D_03005380, textAnim->frames, 0, 204, 144, 0x4800, 0, 0, 0);
+    sprite_create(D_03005380, textAnim->frames, 0, 204, 144, 0x4800, 0, 0, 0);
 }
 
 
@@ -664,8 +664,8 @@ u32 results_get_negative_comments(void) {
         strcpy(commentsText, results_try_again_comment_pool[clamp_int32(i, 0, 2)]);
         strcat(commentsText, comments[i]);
         anim = results_get_comment_anim(commentsText, TEXT_ANCHOR_BOTTOM_LEFT, 3);
-        sprite = func_0804d160(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
-        func_0804d8c4(D_03005380, sprite, COMMENT_PALETTE);
+        sprite = sprite_create(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
+        sprite_set_base_palette(D_03005380, sprite, COMMENT_PALETTE);
         commentSprites[i] = sprite;
     }
 
@@ -756,8 +756,8 @@ s24_8 results_get_positive_comments(void) {
             palette = COMMENT_PALETTE;
         }
 
-        sprite = func_0804d160(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
-        func_0804d8c4(D_03005380, sprite, palette);
+        sprite = sprite_create(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
+        sprite_set_base_palette(D_03005380, sprite, palette);
         commentSprites[totalPassed] = sprite;
 
         totalPassed++;
@@ -766,7 +766,7 @@ s24_8 results_get_positive_comments(void) {
         }
 
         if (gResults->totalNegativeComments) {
-            func_0804d770(D_03005380, commentSprites[0], FALSE);
+            sprite_set_visible(D_03005380, commentSprites[0], FALSE);
             break;
         }
     }
@@ -831,20 +831,20 @@ void results_render_comments(void) {
         y = SCREEN_CENTER_Y - ((totalNegativeComments - 1) * (RANK_COMMENT_LINE_SPACING / 2));
 
         for (i = 0; i < totalNegativeComments; i++) {
-            func_0804d5d4(D_03005380, commentSprites[i], SCREEN_CENTER_X - (negativeCommentWidth / 2), y);
+            sprite_set_x_y(D_03005380, commentSprites[i], SCREEN_CENTER_X - (negativeCommentWidth / 2), y);
             y += RANK_COMMENT_LINE_SPACING;
         }
         y += RANK_EXTRA_COMMENT_MARGIN;
 
         for (i = totalNegativeComments; i < totalComments; i++) {
-            func_0804d5d4(D_03005380, commentSprites[i], SCREEN_CENTER_X + (totalWidth / 2), y);
+            sprite_set_x_y(D_03005380, commentSprites[i], SCREEN_CENTER_X + (totalWidth / 2), y);
             y += RANK_COMMENT_LINE_SPACING;
         }
     } else {
         y = SCREEN_CENTER_Y - ((totalComments - 1) * (RANK_COMMENT_LINE_SPACING / 2));
 
         for (i = totalNegativeComments; i < totalComments; i++) {
-            func_0804d5d4(D_03005380, commentSprites[i], SCREEN_CENTER_X - (totalWidth / 2), y);
+            sprite_set_x_y(D_03005380, commentSprites[i], SCREEN_CENTER_X - (totalWidth / 2), y);
             y += RANK_COMMENT_LINE_SPACING;
         }
     }
@@ -877,7 +877,7 @@ void results_publish_comments(void) {
 
     if (totalCriteriaFailed != 0) {
         gResults->finalResultLevel = RESULTS_RANK_TRY_AGAIN;
-        func_0804cebc(D_03005380, gResults->resultIcon, RESULT_ICON_TRY_AGAIN);
+        sprite_set_anim_cel(D_03005380, gResults->resultIcon, RESULT_ICON_TRY_AGAIN);
         results_save_to_cart(LEVEL_STATE_NULL);
         return;
     }
@@ -891,13 +891,13 @@ void results_publish_comments(void) {
 
     if (averageCriteriaSucceeded == INT_TO_FIXED(0.0)) {
         textAnim = results_get_comment_anim(results_ok_comment_pool[agb_random(4)], TEXT_ANCHOR_BOTTOM_CENTER, 3);
-        textSprite = func_0804d160(D_03005380, textAnim, 0, SCREEN_CENTER_X, SCREEN_CENTER_Y, 0x800, 0, 0, 0);
-        func_0804d8c4(D_03005380, textSprite, COMMENT_PALETTE);
+        textSprite = sprite_create(D_03005380, textAnim, 0, SCREEN_CENTER_X, SCREEN_CENTER_Y, 0x800, 0, 0, 0);
+        sprite_set_base_palette(D_03005380, textSprite, COMMENT_PALETTE);
     }
 
     if (averageCriteriaSucceeded == INT_TO_FIXED(1.0)) {
         gResults->finalResultLevel = RESULTS_RANK_SUPERB;
-        func_0804cebc(D_03005380, gResults->resultIcon, RESULT_ICON_SUPERB);
+        sprite_set_anim_cel(D_03005380, gResults->resultIcon, RESULT_ICON_SUPERB);
         results_save_to_cart(LEVEL_STATE_HAS_MEDAL);
 
         previousResult = get_level_state_from_grid_xy(D_030046a8->data.recentLevelX, D_030046a8->data.recentLevelY);
@@ -908,7 +908,7 @@ void results_publish_comments(void) {
 
     else {
         gResults->finalResultLevel = RESULTS_RANK_OK;
-        func_0804cebc(D_03005380, gResults->resultIcon, RESULT_ICON_OK);
+        sprite_set_anim_cel(D_03005380, gResults->resultIcon, RESULT_ICON_OK);
         results_save_to_cart(LEVEL_STATE_CLEARED);
 
         if (averageCriteriaSucceeded != 0) {

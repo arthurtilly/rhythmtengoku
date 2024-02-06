@@ -37,14 +37,14 @@ jump_0802291c: \n\
 /* 0802291e */ LDR R0, [R6] \n\
 /* 08022920 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08022922 */ LDRSH R1, [R5, R2] \n\
-/* 08022924 */ BL func_0804d3cc \n\
+/* 08022924 */ BL sprite_clone \n\
 /* 08022928 */ LDR R1, [R6] \n\
 /* 0802292a */ LSLS R0, R0, 0x10 \n\
 /* 0802292c */ ASRS R4, R0, 0x10 \n\
 /* 0802292e */ LDR R2, =0x0000485a \n\
 /* 08022930 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 08022932 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08022934 */ BL func_0804d67c \n\
+/* 08022934 */ BL sprite_set_z \n\
 /* 08022938 */ LDR R0, [R6] \n\
 /* 0802293a */ LDR R2, =anim_mannequin_ng_effect \n\
 /* 0802293c */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -55,7 +55,7 @@ jump_0802291c: \n\
 /* 08022946 */ STR R1, [SP, 0x8] \n\
 /* 08022948 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0802294a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0802294c */ BL func_0804d8f8 \n\
+/* 0802294c */ BL sprite_set_anim \n\
 /* 08022950 */ LDR R0, =gCurrentEngineData \n\
 /* 08022952 */ LDR R0, [R0] \n\
 /* 08022954 */ LDRB R0, [R0] \n\
@@ -73,7 +73,7 @@ branch_0802297c: \n\
 /* 0802297c */ LDR R0, [R6] \n\
 /* 0802297e */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08022980 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
-/* 08022982 */ BL func_0804dcb8 \n\
+/* 08022982 */ BL sprite_set_anim_speed \n\
 /* 08022986 */ BL func_0802310c \n\
 /* 0802298a */ B branch_080229b0 \n\
 \n\

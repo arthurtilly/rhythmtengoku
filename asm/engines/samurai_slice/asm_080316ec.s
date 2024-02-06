@@ -41,7 +41,7 @@ branch_08031726: \n\
 /* 08031734 */ STR R0, [SP, 0x8] \n\
 /* 08031736 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 08031738 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
-/* 0803173a */ BL func_0804d8f8 \n\
+/* 0803173a */ BL sprite_set_anim \n\
 /* 0803173e */ LDR R5, =D_03005380 \n\
 /* 08031740 */ LDR R0, [R5] \n\
 /* 08031742 */ LSLS R4, R4, 0x10 \n\
@@ -49,12 +49,12 @@ branch_08031726: \n\
 /* 08031746 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08031748 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803174a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803174c */ BL func_0804daa8 \n\
+/* 0803174c */ BL sprite_set_callback \n\
 /* 08031750 */ LDR R0, [R5] \n\
 /* 08031752 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08031754 */ LSLS R2, R2, 0x1 \n\
 /* 08031756 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08031758 */ BL func_0804dcb8 \n\
+/* 08031758 */ BL sprite_set_anim_speed \n\
 /* 0803175c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803175e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08031760 */ BL gameplay_set_input_buttons \n\

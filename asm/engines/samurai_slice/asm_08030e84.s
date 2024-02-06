@@ -38,7 +38,7 @@ branch_08030eba: \n\
 /* 08030ec2 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08030ec4 */ LDRSH R1, [R1, R2] \n\
 /* 08030ec6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08030ec8 */ BL func_0804cebc \n\
+/* 08030ec8 */ BL sprite_set_anim_cel \n\
 /* 08030ecc */ LDR R0, [R5] \n\
 /* 08030ece */ LDR R1, [R4] \n\
 /* 08030ed0 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
@@ -47,7 +47,7 @@ branch_08030eba: \n\
 /* 08030ed6 */ STR R2, [SP] \n\
 /* 08030ed8 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 08030eda */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
-/* 08030edc */ BL func_0804dae0 \n\
+/* 08030edc */ BL sprite_set_playback \n\
  \n\
 branch_08030ee0: \n\
 /* 08030ee0 */ ADD SP, 0x4 \n\

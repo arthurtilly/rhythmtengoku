@@ -103,7 +103,7 @@ branch_0802ddb8: \n\
 /* 0802de46 */ LSLS R2, R2, 0x1 \n\
 /* 0802de48 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0802de4a */ LDRB R1, [R1] \n\
-/* 0802de4c */ BL affine_sprite_set_palette \n\
+/* 0802de4c */ BL affine_sprite_set_base_palette \n\
  \n\
 branch_0802de50: \n\
 /* 0802de50 */ POP {R3, R4} \n\
