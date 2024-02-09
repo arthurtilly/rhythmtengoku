@@ -49,7 +49,7 @@ thumb_func_start func_0803c834 \n\
 /* 0803c88e */ BL affine_sprite_set_rotation \n\
 /* 0803c892 */ LDR R0, [R5] \n\
 /* 0803c894 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0803c896 */ BL affine_sprite_play_anim \n\
+/* 0803c896 */ BL affine_sprite_set_visible \n\
 /* 0803c89a */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0803c89c */ LDR R0, [R1] \n\
 /* 0803c89e */ MOV R2, R8 @ Set R2 to R8 \n\

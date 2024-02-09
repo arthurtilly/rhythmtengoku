@@ -22,7 +22,7 @@ thumb_func_start func_0803be88 \n\
 /* 0803beaa */ ADDS R0, R2, R1 @ Set R0 to R2 + R1 \n\
 /* 0803beac */ LDR R0, [R0] \n\
 /* 0803beae */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0803beb0 */ BL affine_sprite_play_anim \n\
+/* 0803beb0 */ BL affine_sprite_set_visible \n\
 /* 0803beb4 */ BL func_0803be44 \n\
 /* 0803beb8 */ POP {R4} \n\
 /* 0803beba */ POP {R0} \n\

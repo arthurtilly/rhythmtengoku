@@ -142,8 +142,8 @@ struct Sprite {
     s16 baseTile;       // Base Tile Offset
     u8 basePalette;     // Base Palette Offset
     s8 callbackCel;     // Animation Cel Which Triggers the Callback Function
-    s16 zLinkNext;      // ID of Sprite with Next-Lowest Z Value
-    s16 zLinkPrev;      // ID of Sprite with Next-Highest Z Value
+    s16 zLinkPrev;      // ID of Sprite with Next-Lowest Z Value
+    s16 zLinkNext;      // ID of Sprite with Next-Highest Z Value
     s8_8 currentCelTime; // Time Left for Current Animation Cel
     void (*callbackFunc)(struct SpriteHandler *, s16, u32, ...); // Callback Function
     u32 callbackArg;    // Callback Argument
@@ -160,10 +160,10 @@ struct SpriteHandler { // Size = 0x28
     u16 spriteAmount;   // Sprite Limit (100)
     u32 *oamBuffer;         // OAM buffer
     struct Sprite *sprites; // Sprites
-    s16 zLinkLast;  // ID of Sprite with Lowest Z Value
-    s16 zLinkFirst; // ID of Sprite with Highest Z Value
-    s16 unk10; // Next Free Sprite ID
-    s16 unk12;
+    s16 zLinkStart; // ID of Sprite with Lowest Z Value
+    s16 zLinkEnd;   // ID of Sprite with Highest Z Value
+    s16 nextAllocID; // Next Free Sprite ID
+    s16 lastAllocID; // End of the Sprite Linked List
     u16 xPos; // Global Sprite X Offset
     u16 yPos; // Global Sprite Y Offset
     u16 totalCycles; // OAM Buffer Direction
@@ -219,9 +219,9 @@ extern s16  sprite_handler_alloc_id(struct SpriteHandler *);
 extern void sprite_handler_dealloc_id(struct SpriteHandler *, s16 id);
 extern u8   sprite_anim_get_cel_total(struct Animation *anim);
 extern u16  sprite_get_anim_duration(struct Animation *anim);
-extern s16  sprite_create(struct SpriteHandler *, struct Animation *anim, s8 cel,
+extern s16  sprite_create(struct SpriteHandler *, struct Animation *anim, s8 startCel,
                                             s16 x, s16 y, u16 z, s8 animDirection, s8 loopCel, u16 loopType);
-extern s16  sprite_create_w_attr(struct SpriteHandler *, struct Animation *anim, s8 cel,
+extern s16  sprite_create_w_attr(struct SpriteHandler *, struct Animation *anim, s8 startCel,
                                             s16 x, s16 y, u16 z, s8 animDirection, s8 loopCel, u16 loopType, u32 attrs);
 extern s16  sprite_clone(struct SpriteHandler *, s16 id);
 extern void sprite_copy(struct SpriteHandler *, s16 id, s16 src);

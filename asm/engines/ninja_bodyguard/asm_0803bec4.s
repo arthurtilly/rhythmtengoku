@@ -35,7 +35,7 @@ thumb_func_start func_0803bec4 \n\
 /* 0803bf00 */ ADDS R0, R2, R1 @ Set R0 to R2 + R1 \n\
 /* 0803bf02 */ LDR R0, [R0] \n\
 /* 0803bf04 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803bf06 */ BL affine_sprite_play_anim \n\
+/* 0803bf06 */ BL affine_sprite_set_visible \n\
  \n\
 branch_0803bf0a: \n\
 /* 0803bf0a */ POP {R4, R5} \n\

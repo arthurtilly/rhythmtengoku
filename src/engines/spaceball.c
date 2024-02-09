@@ -94,11 +94,11 @@ void spaceball_update_batter(struct AffineSprite *sprite, s32 x, s32 y, s32 z, s
 
     if (scale > INT_TO_FIXED(0.5)) {
         affine_sprite_set_scale(sprite, scale);
-        affine_sprite_change_anim(sprite, animClose, -1, 1, 0x7f, 0);
+        affine_sprite_set_anim(sprite, animClose, -1, 1, 0x7f, 0);
     } else {
         scale = fast_divsi3(INT_TO_FIXED(512.0), z);
         affine_sprite_set_scale(sprite, scale);
-        affine_sprite_change_anim(sprite, animFar, -1, 1, 0x7f, 0);
+        affine_sprite_set_anim(sprite, animFar, -1, 1, 0x7f, 0);
     }
 }
 
@@ -199,7 +199,7 @@ void spaceball_engine_start(u32 ver) {
     gSpaceball->umpire.x = 0;
     gSpaceball->umpire.y = 9;
     gSpaceball->umpire.z = 0;
-    affine_sprite_play_anim(gSpaceball->umpire.sprite, TRUE);
+    affine_sprite_set_visible(gSpaceball->umpire.sprite, TRUE);
 
     gSpaceball->poofR.sprite = create_affine_sprite(anim_spaceball_poof, 2, 154, 132, 0x4864, INT_TO_FIXED(1.0), 0, 1, 0, 0x8002, TRUE);
     gSpaceball->poofR.x = 34;
@@ -281,9 +281,9 @@ void spaceball_set_ball_type(u32 index) {
 void spaceball_open_ufo(u32 show) {
     struct AffineSprite *sprite = gSpaceball->umpire.sprite;
     if (show) {
-        affine_sprite_change_anim(sprite, anim_spaceball_ufo_open, 0, 1, 1, 0);
+        affine_sprite_set_anim(sprite, anim_spaceball_ufo_open, 0, 1, 1, 0);
     } else {
-        affine_sprite_change_anim(sprite, anim_spaceball_ufo_sway, 0, 1, 2, 0);
+        affine_sprite_set_anim(sprite, anim_spaceball_ufo_sway, 0, 1, 2, 0);
     }
 }
 
@@ -332,9 +332,9 @@ u32 spaceball_cue_update_launch(struct Cue *cue, struct SpaceballCue *cueInfo, u
     if (runningTime > cueInfo->endTime) {
         play_sound(&s_f_batter_ball_land_seqData);
         affine_sprite_set_anim_cel(gSpaceball->poofR.sprite, 0);
-        affine_sprite_play_anim(gSpaceball->poofR.sprite, TRUE);
+        affine_sprite_set_visible(gSpaceball->poofR.sprite, TRUE);
         affine_sprite_set_anim_cel(gSpaceball->poofL.sprite, 0);
-        affine_sprite_play_anim(gSpaceball->poofL.sprite, TRUE);
+        affine_sprite_set_visible(gSpaceball->poofL.sprite, TRUE);
         if (!cueInfo->missed) {
             gameplay_add_cue_result(gameplay_get_cue_marking_criteria(cue), 2, 0);
         }

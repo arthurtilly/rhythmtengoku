@@ -39,7 +39,7 @@ branch_0802e05e: \n\
 /* 0802e066 */ STRB R1, [R2, 0x4] \n\
 /* 0802e068 */ LDR R0, [R2] \n\
 /* 0802e06a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0802e06c */ BL affine_sprite_play_anim \n\
+/* 0802e06c */ BL affine_sprite_set_visible \n\
 /* 0802e070 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
  \n\
 branch_0802e072: \n\

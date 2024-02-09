@@ -85,7 +85,7 @@ void wizards_waltz_engine_start(u32 version) {
         gWizardsWaltz->sparkle[i].state = SPARKLE_STATE_HIDDEN;
         sprite = create_affine_sprite(anim_wizard_sparkle, 0, 0, 0, 0, INT_TO_FIXED(0.5), 0, 1, 0, 0, 0);
         gWizardsWaltz->sparkle[i].sprite = sprite;
-        affine_sprite_play_anim(sprite, 0);
+        affine_sprite_set_visible(sprite, 0);
     }
 
     // Set default state.
@@ -125,16 +125,16 @@ void wizards_waltz_engine_update(void) {
     if (D_03004afc & A_BUTTON) {
         gWizardsWaltz->wizard.state = WIZARD_STATE_CASTING_MAGIC;
         // Play animation: "wizard_magic"
-        affine_sprite_change_anim(gWizardsWaltz->wizard.sprite, anim_wizard_cast_spell, 0, 1, 0x7f, 0);
+        affine_sprite_set_anim(gWizardsWaltz->wizard.sprite, anim_wizard_cast_spell, 0, 1, 0x7f, 0);
         // Play sound.
         play_sound(&s_witch_furu_seqData);
     }
 
     // If the Wizard is "using magic" and animation frame data is exhausted (>6):
     if (gWizardsWaltz->wizard.state == WIZARD_STATE_CASTING_MAGIC) {
-        if (affine_sprite_get_current_frame(gWizardsWaltz->wizard.sprite) > 6) {
+        if (affine_sprite_get_anim_cel(gWizardsWaltz->wizard.sprite) > 6) {
             gWizardsWaltz->wizard.state = WIZARD_STATE_FLYING;
-            affine_sprite_change_anim(gWizardsWaltz->wizard.sprite, anim_wizard_fly, 0, 1, 0, 0);
+            affine_sprite_set_anim(gWizardsWaltz->wizard.sprite, anim_wizard_fly, 0, 1, 0, 0);
         }
     }
 
@@ -175,13 +175,13 @@ void wizards_waltz_engine_update(void) {
                 gWizardsWaltz->sparkle[i].z = gWizardsWaltz->wizard.z;
                 gWizardsWaltz->sparkle[i].state = SPARKLE_STATE_ACTIVE;
                 gWizardsWaltz->sparkle[i].time = 0;
-                affine_sprite_play_anim(gWizardsWaltz->sparkle[i].sprite, 1);
+                affine_sprite_set_visible(gWizardsWaltz->sparkle[i].sprite, 1);
             } else {
                 gWizardsWaltz->sparkle[i].y = ((gWizardsWaltz->sparkle[i].y << 8) + 0x100) >> 8;
                 gWizardsWaltz->sparkle[i].time++;
                 if (gWizardsWaltz->sparkle[i].time > 15) {
                     gWizardsWaltz->sparkle[i].state = SPARKLE_STATE_HIDDEN;
-                    affine_sprite_play_anim(gWizardsWaltz->sparkle[i].sprite, 0);
+                    affine_sprite_set_visible(gWizardsWaltz->sparkle[i].sprite, 0);
                 }
             }
             wizards_waltz_set_sprite_pos(gWizardsWaltz->sparkle[i].sprite, gWizardsWaltz->sparkle[i].x,
@@ -263,7 +263,7 @@ void wizards_waltz_cue_despawn(struct Cue *cue, struct WizardsWaltzCue *info) {
 
 // Cue - Hit
 void wizards_waltz_cue_hit(struct Cue *cue, struct WizardsWaltzCue *info, u32 pressed, u32 released) {
-    affine_sprite_change_anim(info->sprite, anim_wizards_waltz_sprout_grow, 0, 1, 0x7f, 0);
+    affine_sprite_set_anim(info->sprite, anim_wizards_waltz_sprout_grow, 0, 1, 0x7f, 0);
 
     // Cycle through frames of "girl_happy" if isTutorial flag is not set.
     if (!gWizardsWaltz->isTutorial) {
@@ -271,7 +271,7 @@ void wizards_waltz_cue_hit(struct Cue *cue, struct WizardsWaltzCue *info, u32 pr
         if (gWizardsWaltz->flowerCount <= 5) {
             gWizardsWaltz->flowerCount++;
         }
-        affine_sprite_change_anim(gWizardsWaltz->girl.sprite, anim_wizards_waltz_girl_happy, gWizardsWaltz->flowerCount, 0, 0, 0);
+        affine_sprite_set_anim(gWizardsWaltz->girl.sprite, anim_wizards_waltz_girl_happy, gWizardsWaltz->flowerCount, 0, 0, 0);
     }
 }
 
@@ -286,7 +286,7 @@ void wizards_waltz_cue_barely(struct Cue *cue, struct WizardsWaltzCue *info, u32
         flip ^= TRUE;
     }
 
-    affine_sprite_change_anim(info->sprite, anim_wizards_waltz_sprout_eaten, 0, 1, 0x7f, 0);
+    affine_sprite_set_anim(info->sprite, anim_wizards_waltz_sprout_eaten, 0, 1, 0x7f, 0);
     affine_sprite_set_flip_h(info->sprite, flip);
 
     // Cycle through frames of "girl_sad" if isTutorial flag is not set.
@@ -295,7 +295,7 @@ void wizards_waltz_cue_barely(struct Cue *cue, struct WizardsWaltzCue *info, u32
         if (gWizardsWaltz->flowerCount) {
             gWizardsWaltz->flowerCount--;
         }
-        affine_sprite_change_anim(gWizardsWaltz->girl.sprite, anim_wizards_waltz_girl_upset, gWizardsWaltz->flowerCount, 0, 0, 0);
+        affine_sprite_set_anim(gWizardsWaltz->girl.sprite, anim_wizards_waltz_girl_upset, gWizardsWaltz->flowerCount, 0, 0, 0);
     }
 
     beatscript_enable_loops();

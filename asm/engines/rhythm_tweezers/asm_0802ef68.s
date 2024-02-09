@@ -112,7 +112,7 @@ branch_0802f012: \n\
 /* 0802f03e */ STR R3, [SP] \n\
 /* 0802f040 */ STR R3, [SP, 0x4] \n\
 /* 0802f042 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802f044 */ BL affine_sprite_change_anim \n\
+/* 0802f044 */ BL affine_sprite_set_anim \n\
 /* 0802f048 */ LDR R0, [R5, 0x4] \n\
 /* 0802f04a */ LDR R1, =0xfffffe00 \n\
 /* 0802f04c */ BL affine_sprite_set_rotation \n\
@@ -123,10 +123,10 @@ branch_0802f012: \n\
 /* 0802f058 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802f05a */ STR R2, [SP, 0x4] \n\
 /* 0802f05c */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
-/* 0802f05e */ BL affine_sprite_change_anim \n\
+/* 0802f05e */ BL affine_sprite_set_anim \n\
 /* 0802f062 */ LDR R0, [R6, 0x4] \n\
 /* 0802f064 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0802f066 */ BL affine_sprite_play_anim \n\
+/* 0802f066 */ BL affine_sprite_set_visible \n\
 /* 0802f06a */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0802f06c */ STRB R0, [R7, 0x5] \n\
 /* 0802f06e */ LDRB R1, [R5, 0x1] \n\
@@ -183,13 +183,13 @@ branch_0802f0c4: \n\
 /* 0802f0dc */ STR R4, [SP, 0x4] \n\
 /* 0802f0de */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802f0e0 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
-/* 0802f0e2 */ BL affine_sprite_change_anim \n\
+/* 0802f0e2 */ BL affine_sprite_set_anim \n\
 /* 0802f0e6 */ LDR R0, [R5, 0x4] \n\
 /* 0802f0e8 */ LDR R1, =0xfffffe00 \n\
 /* 0802f0ea */ BL affine_sprite_set_rotation \n\
 /* 0802f0ee */ LDR R0, [R7] \n\
 /* 0802f0f0 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0802f0f2 */ BL affine_sprite_play_anim \n\
+/* 0802f0f2 */ BL affine_sprite_set_visible \n\
 /* 0802f0f6 */ LDRB R1, [R5, 0x1] \n\
 /* 0802f0f8 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 0802f0fa */ NEGS R0, R0 @ Set R0 to -R0 \n\

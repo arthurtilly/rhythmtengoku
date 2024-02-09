@@ -25,7 +25,7 @@ thumb_func_start func_0803be04 \n\
 /* 0803be2c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0803be2e */ LDR R0, [R0] \n\
 /* 0803be30 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803be32 */ BL affine_sprite_play_anim \n\
+/* 0803be32 */ BL affine_sprite_set_visible \n\
  \n\
 branch_0803be36: \n\
 /* 0803be36 */ ADD SP, 0xC \n\

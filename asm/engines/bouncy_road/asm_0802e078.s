@@ -14,7 +14,7 @@ thumb_func_start func_0802e078 \n\
 /* 0802e088 */ BCC branch_0802e0dc \n\
 /* 0802e08a */ LDR R0, [R5] \n\
 /* 0802e08c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0802e08e */ BL affine_sprite_play_anim \n\
+/* 0802e08e */ BL affine_sprite_set_visible \n\
 /* 0802e092 */ LDRB R1, [R5, 0x4] \n\
 /* 0802e094 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0802e096 */ NEGS R0, R0 @ Set R0 to -R0 \n\
@@ -197,7 +197,7 @@ branch_0802e1ba: \n\
 /* 0802e1f4 */ BL affine_sprite_set_scale \n\
 /* 0802e1f8 */ LDR R0, [R5] \n\
 /* 0802e1fa */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0802e1fc */ BL affine_sprite_play_anim \n\
+/* 0802e1fc */ BL affine_sprite_set_visible \n\
  \n\
 branch_0802e200: \n\
 /* 0802e200 */ ADD SP, 0x20 \n\

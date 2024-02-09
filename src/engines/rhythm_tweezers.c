@@ -157,7 +157,7 @@ void rhythm_tweezers_spawn_falling_hair(u32 arg0) {
     affine_sprite_set_y(hair->sprite, 0x10);
     affine_sprite_set_orbit_angle(hair->sprite, tweezers->rotation);
     affine_sprite_set_rotation(hair->sprite, hair->rotation);
-    affine_sprite_play_anim(hair->sprite, 1);
+    affine_sprite_set_visible(hair->sprite, 1);
 
     hair->fallDistance = 0;
     hair->fallSpeed = 0;
@@ -234,8 +234,8 @@ void rhythm_tweezers_update_tweezers(void) {
     }
 
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) {
-        temp = affine_sprite_get_current_frame(tweezers->sprite);
-        if (temp == affine_sprite_get_total_frames(tweezers->sprite) - 2) {
+        temp = affine_sprite_get_anim_cel(tweezers->sprite);
+        if (temp == affine_sprite_get_total_cels(tweezers->sprite) - 2) {
             rhythm_tweezers_spawn_falling_hair(tweezers->heldHair - 1);
             tweezers->heldHair = TWEEZERS_HELD_HAIR_NONE;
         }
@@ -372,7 +372,7 @@ void rhythm_tweezers_cue_spawn(struct Cue *cue, struct RhythmTweezersCue *info, 
     affine_sprite_rotate_with_orbit(info->sprite, TRUE);
 
     affine_sprite_set_orbit(info->sprite, rotation, 76);
-    affine_sprite_set_x_y_controllers(info->sprite, &gRhythmTweezers->screenHorizontalPosition, &D_03004b10.BG_OFS[BG_LAYER_1].y);
+    affine_sprite_set_origin_x_y(info->sprite, &gRhythmTweezers->screenHorizontalPosition, &D_03004b10.BG_OFS[BG_LAYER_1].y);
 
     info->isLongHair = isLongHair;
     info->finished = FALSE;
@@ -414,8 +414,8 @@ void rhythm_tweezers_cue_hit_short(struct Cue *cue, struct RhythmTweezersCue *in
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezers->vegetable;
     u32 temp;
 
-    affine_sprite_change_anim(info->sprite, anim_rhythm_tweezers_hair_stubble, 0, 0, 0, 0);
-    affine_sprite_change_anim(tweezers->sprite, anim_tweezers_pluck_hit, 0, 1, 0x7f, 0);
+    affine_sprite_set_anim(info->sprite, anim_rhythm_tweezers_hair_stubble, 0, 0, 0, 0);
+    affine_sprite_set_anim(tweezers->sprite, anim_tweezers_pluck_hit, 0, 1, 0x7f, 0);
     D_03004b10.BG_OFS[BG_LAYER_1].y = 2;
 
     if (tweezers->heldHair) rhythm_tweezers_spawn_falling_hair(tweezers->heldHair - 1);
@@ -439,8 +439,8 @@ void rhythm_tweezers_cue_hit_long(struct Cue *cue, struct RhythmTweezersCue *inf
 
     gameplay_ignore_this_cue_result();
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) rhythm_tweezers_spawn_falling_hair(tweezers->heldHair - 1);
-    affine_sprite_play_anim(tweezers->sprite, 0);
-    affine_sprite_change_anim(info->sprite, anim_tweezers_pull, 0, 0, 0, 0);
+    affine_sprite_set_visible(tweezers->sprite, 0);
+    affine_sprite_set_anim(info->sprite, anim_tweezers_pull, 0, 0, 0, 0);
 
     info->rotation = tweezers->rotation;
     tweezers->isPulling = TRUE;
@@ -459,8 +459,8 @@ void rhythm_tweezers_cue_barely_short(struct Cue *cue, struct RhythmTweezersCue 
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezers->tweezers;
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezers->vegetable;
 
-    affine_sprite_change_anim(info->sprite, anim_rhythm_tweezers_hair_stubble, 0, 1, 0x7f, 0);
-    affine_sprite_change_anim(tweezers->sprite, anim_tweezers_pluck_barely, 0, 1, 0x7f, 0);
+    affine_sprite_set_anim(info->sprite, anim_rhythm_tweezers_hair_stubble, 0, 1, 0x7f, 0);
+    affine_sprite_set_anim(tweezers->sprite, anim_tweezers_pluck_barely, 0, 1, 0x7f, 0);
 
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) rhythm_tweezers_spawn_falling_hair(tweezers->heldHair - 1);
     tweezers->heldHair = TWEEZERS_HELD_HAIR_BARELY;
@@ -482,7 +482,7 @@ void rhythm_tweezers_cue_miss(struct Cue *cue, struct RhythmTweezersCue *info) {
 void rhythm_tweezers_input_event(u32 pressed, u32 released) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezers->tweezers;
 
-    affine_sprite_change_anim(tweezers->sprite, anim_tweezers_pluck_miss, 0, 1, 0x7f, 0);
+    affine_sprite_set_anim(tweezers->sprite, anim_tweezers_pluck_miss, 0, 1, 0x7f, 0);
 
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) {
         rhythm_tweezers_spawn_falling_hair(tweezers->heldHair - 1);

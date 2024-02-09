@@ -4,67 +4,69 @@
 #include "graphics.h"
 
 struct AffineSprite {
-    s16 sprite;      // Sprite ID
-    s8  index;       // Affine Param. Group ID
-    u8  doubleSize;  // "Double-Size" Flag
-    s16 scaleX;      // Horizontal Scale
-    s16 scaleY;      // Vertical Scale
-    s16 rotation;    // Rotation
-    s16 x;           // X Coordinate
-    s16 y;           // Y Coordinate
+    s16 sprite;         // Sprite ID
+    s8  affineID;       // Affine Param. Group ID
+    u8  doubleSize;     // "Double-Size" Flag
+    s16 scaleX;         // Horizontal Scale
+    s16 scaleY;         // Vertical Scale
+    s16 rotation;       // Rotation
+    s16 x;              // X Coordinate
+    s16 y;              // Y Coordinate
     s16 offsetDistance; // Distance from Centre
     s16 offsetAngle;    // Angle from Centre
     u8  rotateWithOffset:1;     // "Rotate With Offset Angle" Flag
     u8  highAnglePrecision:1;   // "High Angle Precision" Flag (if FALSE: 0x100 = 360 degrees; if TRUE: 0x800 = 360 degrees)
-    u8  flipHorizontal:1;   // "Flip Horizontal" Flag
-    u8  flipVertical:1;     // "Flip Vertical" Flag
-    u8  ignoreUpdates:1;    // "Ignore Updates" Flag (if TRUE: any changes to the above are stored but not rendered)
+    u8  flipHorizontal:1;       // "Flip Horizontal" Flag
+    u8  flipVertical:1;         // "Flip Vertical" Flag
+    u8  ignoreUpdates:1;        // "Ignore Updates" Flag (if TRUE: any changes to the above are stored but not rendered)
 };
 
 
-extern void update_affine_sprite(struct AffineSprite *);           // [func_0800f904] AFFINE SPRITE - Update
-extern struct AffineSprite *create_affine_sprite(struct Animation *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32); // [func_0800fa6c] AFFINE SPRITE - Create New
-extern struct AffineSprite *create_default_affine_sprite(struct Animation *, s8, s16, s16, u16, s8, s8, u16); // [func_0800fba0] AFFINE SPRITE - Create New (with Default Parameters)
-extern void delete_affine_sprite(struct AffineSprite *);           // [func_0800fc70] AFFINE SPRITE - Delete
-extern void affine_sprite_set_param_id(struct AffineSprite *, u32);      // [func_0800fca0] AFFINE SPRITE - Set/Remove Index
-extern void affine_sprite_use_precise_angles(struct AffineSprite *, u32);      // [func_0800fd14] AFFINE SPRITE - Set "High Angle Precision" Flag
-extern void affine_sprite_set_double_size(struct AffineSprite *, u32);      // [func_0800fd60] AFFINE SPRITE - Set "Double-Size" Flag
-extern s16  affine_sprite_get_base_sprite(struct AffineSprite *);           // [func_0800fd90] AFFINE SPRITE - Get Sprite
-extern void affine_sprite_set_x_y_z(struct AffineSprite *, s16 x, s16 y, u16 z); // [func_0800fda4] AFFINE SPRITE - Set X/Y and Layer
-extern void affine_sprite_set_x_y(struct AffineSprite *, s16 x, s16 y); // [func_0800fddc] AFFINE SPRITE - Set X/Y
-extern void affine_sprite_set_x(struct AffineSprite *, s16 x);      // [func_0800fdf8] AFFINE SPRITE - Set X
-extern void affine_sprite_set_y(struct AffineSprite *, s16 y);      // [func_0800fe0c] AFFINE SPRITE - Set Y
-extern void affine_sprite_set_z(struct AffineSprite *, u16 z);      // [func_0800fe20] AFFINE SPRITE - Set Layer
-extern void affine_sprite_set_scale_and_rotation(struct AffineSprite *, s16 scale, s16 rotation); // [func_0800fe44] AFFINE SPRITE - Set Scaling & Rotation
-extern void affine_sprite_set_scale(struct AffineSprite *, s16 scale);      // [func_0800fe60] AFFINE SPRITE - Set Scaling
-extern void affine_sprite_set_scale_x_y(struct AffineSprite *, s16 scaleX, s16 scaleY); // [func_0800fe78] AFFINE SPRITE - Set Scaling
-extern void affine_sprite_set_rotation(struct AffineSprite *, s16 rotation);      // [func_0800fe94] AFFINE SPRITE - Set Rotation
-extern void affine_sprite_set_orbit_distance(struct AffineSprite *, s16 distance);      // [func_0800fea8] AFFINE SPRITE - Set Offset Distance from Centre
-extern void affine_sprite_set_orbit_angle(struct AffineSprite *, s16 angle);      // [func_0800febc] AFFINE SPRITE - Set Offset Angle from Centre
-extern void affine_sprite_set_orbit(struct AffineSprite *, s16 angle, s16 distance); // [func_0800fed0] AFFINE SPRITE - Set Offset from Centre
-extern void affine_sprite_rotate_with_orbit(struct AffineSprite *, u32);      // [func_0800feec] AFFINE SPRITE - Set "Rotate Around Centre" Flag
-extern void affine_sprite_set_flip_h_v(struct AffineSprite *, u32, u32); // [func_0800ff10] AFFINE SPRITE - Set Horizontal & Vertical Flip
-extern void affine_sprite_set_flip_h(struct AffineSprite *, u32);      // [func_0800ff44] AFFINE SPRITE - Set Horizontal Flip
-extern void affine_sprite_set_flip_v(struct AffineSprite *, u32);      // [func_0800ff68] AFFINE SPRITE - Set Vertical Flip
-extern void affine_sprite_enable_render_updates(struct AffineSprite *, u32);      // [func_0800ff8c] AFFINE SPRITE - Set "Ignore Updates" Flag (Inverted)
-extern void affine_sprite_set_anim_cel(struct AffineSprite *, u32);      // [func_0800ffc0] AFFINE SPRITE - Set Current Animation Frame
-extern void func_0800ffe4(struct AffineSprite *, u8);       // [func_0800ffe4] AFFINE SPRITE - Set Animation Progress
-extern void affine_sprite_set_playback(struct AffineSprite *, u32, u32, u32); // [func_08010008] AFFINE SPRITE - Animate?
-extern void affine_sprite_play_anim(struct AffineSprite *, u32);      // [func_08010040] AFFINE SPRITE - Start Animation
-extern void affine_sprite_change_anim(struct AffineSprite *, struct Animation *, u32, u32, u32, u32); // [func_08010064] AFFINE SPRITE - Set Animation
-extern void affine_sprite_set_base_palette(struct AffineSprite *, u32);      // [func_080100a8] AFFINE SPRITE - Set Palette
-extern void func_080100cc(struct AffineSprite *, u32);      // [func_080100cc] AFFINE SPRITE - sprite_set_base_tile()
-extern u32  affine_sprite_get_base_sprite_x(struct AffineSprite *);           // [func_080100f0] AFFINE SPRITE - sprite_get_data(..., 4)
-extern u32  affine_sprite_get_base_sprite_y(struct AffineSprite *);           // [func_08010110] AFFINE SPRITE - sprite_get_data(..., 5)
-extern u32  affine_sprite_get_base_sprite_z(struct AffineSprite *);           // [func_08010130] AFFINE SPRITE - sprite_get_data(..., 6)
-extern void func_08010150(struct AffineSprite *, u16);      // [func_08010150] AFFINE SPRITE - Set Enable Updates
-extern void func_08010174(struct AffineSprite *, u16);      // [func_08010174] AFFINE SPRITE - Set Animation Speed
-extern s8   affine_sprite_get_current_frame(struct AffineSprite *);           // [func_08010198] AFFINE SPRITE - Get Current Frame
-extern u8   func_080101b8(struct AffineSprite *);           // [func_080101b8] AFFINE SPRITE - Get Animation Progress
-extern void func_080101d8(struct AffineSprite *, u32);      // [func_080101d8] AFFINE SPRITE - sprite_attr_set()
-extern void func_080101f8(struct AffineSprite *, u32);      // [func_080101f8] AFFINE SPRITE - sprite_attr_orr()
-extern void func_08010218(struct AffineSprite *, u32);      // [func_08010218] AFFINE SPRITE - sprite_attr_and()
-extern void func_08010238(struct AffineSprite *, void *, u32);  // [func_08010238] AFFINE SPRITE - sprite_set_callback()
-extern void func_08010260(struct AffineSprite *, s8);       // [func_08010260] AFFINE SPRITE - sprite_set_callback_cel()
-extern u32  affine_sprite_get_total_frames(struct AffineSprite *);           // [func_08010288] AFFINE SPRITE - sprite_get_data(..., 2)
-extern void affine_sprite_set_x_y_controllers(struct AffineSprite *, s16 *, s16 *); // [func_080102a8] AFFINE SPRITE - Set X & Y Data Source
+extern void update_affine_sprite(struct AffineSprite *);
+extern struct AffineSprite *create_affine_sprite(struct Animation *anim, s8 startCel, s16 x, s16 y, u16 z, s16 scale,
+                                                    s16 rotation, s8 animDirection, s8 loopCel, u16 loopType, u32 doubleSize);
+extern struct AffineSprite *create_default_affine_sprite(struct Animation *anim, s8 startCel, s16 x, s16 y, u16 z,
+                                                            s8 animDirection, s8 loopCel, u16 loopType);
+extern void delete_affine_sprite(struct AffineSprite *);
+extern void affine_sprite_set_param_id(struct AffineSprite *, u32 setIndex);
+extern void affine_sprite_set_angle_size(struct AffineSprite *, u32 highPrecision);
+extern void affine_sprite_set_double_size(struct AffineSprite *, u32 doubleSize);
+extern s16  affine_sprite_get_base_sprite(struct AffineSprite *);
+extern void affine_sprite_set_x_y_z(struct AffineSprite *, s16 x, s16 y, u16 z);
+extern void affine_sprite_set_x_y(struct AffineSprite *, s16 x, s16 y);
+extern void affine_sprite_set_x(struct AffineSprite *, s16 x);
+extern void affine_sprite_set_y(struct AffineSprite *, s16 y);
+extern void affine_sprite_set_z(struct AffineSprite *, u16 z);
+extern void affine_sprite_set_scale_and_rotation(struct AffineSprite *, s16 scale, s16 rotation);
+extern void affine_sprite_set_scale(struct AffineSprite *, s16 scale);
+extern void affine_sprite_set_scale_x_y(struct AffineSprite *, s16 scaleX, s16 scaleY);
+extern void affine_sprite_set_rotation(struct AffineSprite *, s16 rotation);
+extern void affine_sprite_set_orbit_distance(struct AffineSprite *, s16 distance);
+extern void affine_sprite_set_orbit_angle(struct AffineSprite *, s16 angle);
+extern void affine_sprite_set_orbit(struct AffineSprite *, s16 angle, s16 distance);
+extern void affine_sprite_rotate_with_orbit(struct AffineSprite *, u32 rotate);
+extern void affine_sprite_set_flip_h_v(struct AffineSprite *, u32 flipHorizontal, u32 flipVertical);
+extern void affine_sprite_set_flip_h(struct AffineSprite *, u32 flip);
+extern void affine_sprite_set_flip_v(struct AffineSprite *, u32 flip);
+extern void affine_sprite_enable_render_updates(struct AffineSprite *, u32 checkUpdates);
+extern void affine_sprite_set_anim_cel(struct AffineSprite *, u32 cel);
+extern void affine_sprite_set_anim_progress(struct AffineSprite *, u8 progress);
+extern void affine_sprite_set_playback(struct AffineSprite *, u32 direction, u32 loopCel, u32 playbackType);
+extern void affine_sprite_set_visible(struct AffineSprite *, u32 isVisible);
+extern void affine_sprite_set_anim(struct AffineSprite *, struct Animation *anim, u32 startCel, u32 direction, u32 loopCel, u32 playbackType);
+extern void affine_sprite_set_base_palette(struct AffineSprite *, u32 basePalette);
+extern void affine_sprite_set_base_tile(struct AffineSprite *, u32 baseTile);
+extern u32  affine_sprite_get_base_sprite_x(struct AffineSprite *);
+extern u32  affine_sprite_get_base_sprite_y(struct AffineSprite *);
+extern u32  affine_sprite_get_base_sprite_z(struct AffineSprite *);
+extern void affine_sprite_set_base_sprite_enable_updates(struct AffineSprite *, u16 canUpdate);
+extern void affine_sprite_set_anim_speed(struct AffineSprite *, u8_8 speed);
+extern s8   affine_sprite_get_anim_cel(struct AffineSprite *);
+extern u8   affine_sprite_get_anim_progress(struct AffineSprite *);
+extern void affine_sprite_set_attr(struct AffineSprite *, u32 attr);
+extern void affine_sprite_orr_attr(struct AffineSprite *, u32 attr);
+extern void affine_sprite_and_attr(struct AffineSprite *, u32 attr);
+extern void affine_sprite_set_callback(struct AffineSprite *, void *func, u32 arg);
+extern void affine_sprite_set_callback_cel(struct AffineSprite *, s8 cel);
+extern u32  affine_sprite_get_total_cels(struct AffineSprite *);
+extern void affine_sprite_set_origin_x_y(struct AffineSprite *, s16 *xOrigin, s16 *yOrigin);

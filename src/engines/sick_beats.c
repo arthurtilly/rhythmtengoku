@@ -291,33 +291,33 @@ void sick_beats_update_forks(void) {
     struct SickBeatsForks *forks = &gSickBeats->forks;
     u16 buttons = DPAD_LEFT | DPAD_RIGHT | DPAD_UP | DPAD_DOWN;
 
-    affine_sprite_play_anim(forks->spriteUp, 1);
-    affine_sprite_play_anim(forks->spriteDown, 1);
-    affine_sprite_play_anim(forks->spriteLeft, 1);
-    affine_sprite_play_anim(forks->spriteRight, 1);
+    affine_sprite_set_visible(forks->spriteUp, 1);
+    affine_sprite_set_visible(forks->spriteDown, 1);
+    affine_sprite_set_visible(forks->spriteLeft, 1);
+    affine_sprite_set_visible(forks->spriteRight, 1);
     if (forks->counterUp) {
         forks->counterUp--;
         buttons = DPAD_LEFT | DPAD_RIGHT | DPAD_DOWN;
         affine_sprite_set_anim_cel(forks->spriteUp, 0);
-        affine_sprite_play_anim(forks->spriteUp, 0);
+        affine_sprite_set_visible(forks->spriteUp, 0);
     }
     if (forks->counterDown) {
         forks->counterDown--;
         buttons &= ~(DPAD_DOWN);
         affine_sprite_set_anim_cel(forks->spriteDown, 0);
-        affine_sprite_play_anim(forks->spriteDown, 0);
+        affine_sprite_set_visible(forks->spriteDown, 0);
     }
     if (forks->counterLeft) {
         forks->counterLeft--;
         buttons &= ~(DPAD_LEFT);
         affine_sprite_set_anim_cel(forks->spriteLeft, 0);
-        affine_sprite_play_anim(forks->spriteLeft, 0);
+        affine_sprite_set_visible(forks->spriteLeft, 0);
     }
     if (forks->counterRight) {
         forks->counterRight--;
         buttons &= ~(DPAD_RIGHT);
         affine_sprite_set_anim_cel(forks->spriteRight, 0);
-        affine_sprite_play_anim(forks->spriteRight, 0);
+        affine_sprite_set_visible(forks->spriteRight, 0);
     }
     
     gameplay_set_input_buttons(buttons, 0);
@@ -569,12 +569,12 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
         info->virusSprite = create_default_affine_sprite(act->anim, 0, act->x, act->y, 0x8800, 
                                             act->playbackArg1, act->playbackArg2, act->playbackArg3);
     }
-    func_080101f8(info->virusSprite, act->unkC);
+    affine_sprite_orr_attr(info->virusSprite, act->unkC);
     affine_sprite_set_base_palette(info->virusSprite, info->virusPalette);
     if (info->virusState == SICK_BEATS_VIRUS_STATE_ENTER_TUBE) {
         virus->exists[info->currentVirus] = TRUE;
     } else if (!virus->exists[info->currentVirus]) {
-        affine_sprite_play_anim(info->virusSprite, 0);
+        affine_sprite_set_visible(info->virusSprite, 0);
         isVirusHit = TRUE;
     }
     info->isVirusHitOnce = FALSE;
@@ -745,10 +745,10 @@ struct AffineSprite *sick_beats_process_cue(struct SickBeatsCue *info, struct An
         sprite_set_base_palette(D_03005380, virusEffectSprite, info->virusPalette);
     }
     if (nextVirusAfSprite) {
-        func_08010238(nextVirusAfSprite, sick_beats_fork_callback, (u32)nextVirusAfSprite);
+        affine_sprite_set_callback(nextVirusAfSprite, sick_beats_fork_callback, (u32)nextVirusAfSprite);
         affine_sprite_set_base_palette(nextVirusAfSprite, palette);
-        func_08010174(nextVirusAfSprite, (u32)INT_TO_FIXED(get_beatscript_tempo()) / 125);
-        affine_sprite_play_anim(baseVirusAfSprite, 0);
+        affine_sprite_set_anim_speed(nextVirusAfSprite, (u32)INT_TO_FIXED(get_beatscript_tempo()) / 125);
+        affine_sprite_set_visible(baseVirusAfSprite, 0);
         if (--info->hitAmount) {
             struct SickBeatsVirusData *virusData = sick_beats_get_virus_data(info->currentVirus);
             virusData->hitsRequired--;
@@ -799,7 +799,7 @@ void sick_beats_cue_miss(struct Cue *cue, struct SickBeatsCue *info) {
         case SICK_BEATS_VIRUS_STATE_DOWN_DASH_VULN:
             if (!info->unk0_b5) {
                 info->unk0_b5 = TRUE;
-                affine_sprite_play_anim(info->virusSprite, 1);
+                affine_sprite_set_visible(info->virusSprite, 1);
             }
             break;
     }
@@ -835,7 +835,7 @@ void sick_beats_input_event(u32 pressed, u32 released) {
     }
     forkSprite = create_affine_sprite(anim_fork_hit_none1, 0, posX, posY, 0x8800, INT_TO_FIXED(1), rotation, 1, 0x7f, 4, 1);
     if (forkSprite) {
-        func_08010238(forkSprite, sick_beats_fork_callback, (u32)forkSprite);
+        affine_sprite_set_callback(forkSprite, sick_beats_fork_callback, (u32)forkSprite);
     }
     gameplay_add_cue_result(0, 3, 0);
     play_sound(&s_virus_fork_seqData);

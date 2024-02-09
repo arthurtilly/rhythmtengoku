@@ -105,20 +105,20 @@ void sprite_handler_reset(struct SpriteHandler *handler) {
         sprites[i].visible = FALSE;
         sprites[i].allocated = FALSE;
     }
-    handler->zLinkFirst = -1;
-    handler->zLinkLast = -1;
+    handler->zLinkEnd = -1;
+    handler->zLinkStart = -1;
 
-    sprites[0].zLinkNext = -1;
-    sprites[0].zLinkPrev = 1;
+    sprites[0].zLinkPrev = -1;
+    sprites[0].zLinkNext = 1;
     for (i = 1; i < spriteAmount - 1; i++) {
-        sprites[i].zLinkNext = i - 1;
-        sprites[i].zLinkPrev = i + 1;
+        sprites[i].zLinkPrev = i - 1;
+        sprites[i].zLinkNext = i + 1;
     }
-    sprites[i].zLinkNext = i - 1;
-    sprites[i].zLinkPrev = -1;
+    sprites[i].zLinkPrev = i - 1;
+    sprites[i].zLinkNext = -1;
 
-    handler->unk10 = 0;
-    handler->unk12 = i;
+    handler->nextAllocID = 0;
+    handler->lastAllocID = i;
     handler->paused = FALSE;
     handler->xPos = 0;
     handler->yPos = 0;
@@ -311,75 +311,75 @@ void sprite_set_anim_progress(struct SpriteHandler *handler, s16 id, u8 progress
 // Update Z Depth
 void sprite_update_z_link(struct SpriteHandler *handler, s16 id) {
     struct Sprite *sprites = handler->sprites;
-    s16 lowermost = handler->zLinkLast;
-    s16 uppermost = handler->zLinkFirst;
+    s16 start = handler->zLinkStart;
+    s16 end = handler->zLinkEnd;
     u16 zDepth = sprites[id].zDepth;
-    s16 next = handler->zLinkFirst;
-    s16 prev;
+    s16 prev = handler->zLinkEnd;
+    s16 next;
 
-    while ((next != -1) && (zDepth < sprites[next].zDepth)) {
-        next = sprites[next].zLinkNext;
+    while ((prev != -1) && (zDepth < sprites[prev].zDepth)) {
+        prev = sprites[prev].zLinkPrev;
     }
 
-    if (next >= 0) {
-        prev = sprites[next].zLinkPrev;
-        sprites[next].zLinkPrev = id;
-        sprites[id].zLinkNext = next;
+    if (prev >= 0) {
+        next = sprites[prev].zLinkNext;
+        sprites[prev].zLinkNext = id;
         sprites[id].zLinkPrev = prev;
-        if (prev >= 0) {
-            sprites[prev].zLinkNext = id;
+        sprites[id].zLinkNext = next;
+        if (next >= 0) {
+            sprites[next].zLinkPrev = id;
         }
     } else {
-        next = lowermost;
-        if (next >= 0) {
-            sprites[next].zLinkNext = id;
-            sprites[id].zLinkPrev = next;
+        prev = start;
+        if (prev >= 0) {
+            sprites[prev].zLinkPrev = id;
+            sprites[id].zLinkNext = prev;
         } else {
-            sprites[id].zLinkPrev = -1;
+            sprites[id].zLinkNext = -1;
         }
-        sprites[id].zLinkNext = -1;
+        sprites[id].zLinkPrev = -1;
     }
 
-    if (sprites[id].zLinkNext == -1) {
-        do { lowermost = id; } while (0);
-    }
     if (sprites[id].zLinkPrev == -1) {
-        uppermost = id;
+        do { start = id; } while (0);
+    }
+    if (sprites[id].zLinkNext == -1) {
+        end = id;
     }
 
-    handler->zLinkLast = lowermost;
-    handler->zLinkFirst = uppermost;
+    handler->zLinkStart = start;
+    handler->zLinkEnd = end;
 }
 
 
 // Unlink Sprite
 void sprite_remove_z_link(struct SpriteHandler *handler, s16 id) {
     struct Sprite *sprites = handler->sprites;
-    s16 prev = sprites[id].zLinkPrev;
     s16 next = sprites[id].zLinkNext;
-
-    if (next >= 0) {
-        sprites[next].zLinkPrev = prev;
-    } else {
-        handler->zLinkLast = prev;
-    }
+    s16 prev = sprites[id].zLinkPrev;
 
     if (prev >= 0) {
         sprites[prev].zLinkNext = next;
     } else {
-        handler->zLinkFirst = next;
+        handler->zLinkStart = next;
+    }
+
+    if (next >= 0) {
+        sprites[next].zLinkPrev = prev;
+    } else {
+        handler->zLinkEnd = prev;
     }
 }
 
 
 // Allocate Next Free ID
 s16 sprite_handler_alloc_id(struct SpriteHandler *handler) {
-    s16 id = handler->unk10;
+    s16 id = handler->nextAllocID;
 
     if (id >= 0) {
-        handler->unk10 = handler->sprites[id].zLinkPrev;
-        if (handler->unk10 < 0) {
-            handler->unk12 = -1;
+        handler->nextAllocID = handler->sprites[id].zLinkNext;
+        if (handler->nextAllocID < 0) {
+            handler->lastAllocID = -1;
         }
     }
 
@@ -390,14 +390,14 @@ s16 sprite_handler_alloc_id(struct SpriteHandler *handler) {
 // Deallocate Sprite ID
 void sprite_handler_dealloc_id(struct SpriteHandler *handler, s16 id) {
     if (id >= 0) {
-        if (handler->unk12 >= 0) {
-            handler->sprites[handler->unk12].zLinkPrev = id;
+        if (handler->lastAllocID >= 0) {
+            handler->sprites[handler->lastAllocID].zLinkNext = id;
         } else {
-            handler->unk10 = id;
+            handler->nextAllocID = id;
         }
 
-        handler->sprites[id].zLinkPrev = -1;
-        handler->unk12 = id;
+        handler->sprites[id].zLinkNext = -1;
+        handler->lastAllocID = id;
     }
 }
 
@@ -428,7 +428,7 @@ u16 sprite_get_anim_duration(struct Animation *anim) {
 
 
 // Create New Sprite
-s16 sprite_create(struct SpriteHandler *handler, struct Animation *anim, s8 cel, s16 x, s16 y, u16 z,
+s16 sprite_create(struct SpriteHandler *handler, struct Animation *anim, s8 startCel, s16 x, s16 y, u16 z,
                                             s8 animDirection, s8 loopCel, u16 loopType) {
     struct Sprite *sprite;
     s16 id = sprite_handler_alloc_id(handler);
@@ -460,7 +460,7 @@ s16 sprite_create(struct SpriteHandler *handler, struct Animation *anim, s8 cel,
     sprite->memID = handler->memID;
     sprite->animationSpeed = INT_TO_FIXED(1.0);
     sprite_update_z_link(handler, id);
-    sprite_set_anim_cel(handler, id, cel);
+    sprite_set_anim_cel(handler, id, startCel);
     sprite->visible = ((loopType & 0x8000) == 0);
 
     return id;
@@ -468,7 +468,7 @@ s16 sprite_create(struct SpriteHandler *handler, struct Animation *anim, s8 cel,
 
 
 // Create New Sprite (w/ Attributes)
-s16 sprite_create_w_attr(struct SpriteHandler *handler, struct Animation *anim, s8 cel, s16 x, s16 y, u16 z,
+s16 sprite_create_w_attr(struct SpriteHandler *handler, struct Animation *anim, s8 startCel, s16 x, s16 y, u16 z,
                                                 s8 animDirection, s8 loopCel, u16 loopType, u32 attrs) {
     struct Sprite *sprite;
     s16 id = sprite_handler_alloc_id(handler);
@@ -500,7 +500,7 @@ s16 sprite_create_w_attr(struct SpriteHandler *handler, struct Animation *anim, 
     sprite->memID = handler->memID;
     sprite->animationSpeed = INT_TO_FIXED(1.0);
     sprite_update_z_link(handler, id);
-    sprite_set_anim_cel(handler, id, cel);
+    sprite_set_anim_cel(handler, id, startCel);
     sprite->visible = ((loopType & 0x8000) == 0);
 
     return id;
@@ -526,14 +526,14 @@ s16 sprite_clone(struct SpriteHandler *handler, s16 id) {
     srcSprite = &handler->sprites[id];
     DmaCopy32(3, srcSprite, destSprite, sizeof(struct Sprite));
     destSprite->memID = handler->memID;
-    destSprite->zLinkNext = id;
-    destSprite->zLinkPrev = srcSprite->zLinkPrev;
-    srcSprite->zLinkPrev = destID;
+    destSprite->zLinkPrev = id;
+    destSprite->zLinkNext = srcSprite->zLinkNext;
+    srcSprite->zLinkNext = destID;
 
-    if (destSprite->zLinkPrev == -1) {
-        handler->zLinkFirst = destID;
+    if (destSprite->zLinkNext == -1) {
+        handler->zLinkEnd = destID;
     } else {
-        handler->sprites[destSprite->zLinkPrev].zLinkNext = destID;
+        handler->sprites[destSprite->zLinkNext].zLinkPrev = destID;
     }
 
     return destID;
@@ -1129,12 +1129,10 @@ s32 sprite_get_data(struct SpriteHandler *handler, s16 id, u32 requestedDataType
 void sprite_set_callback_cel(struct SpriteHandler *handler, s16 id, s8 cel) {
     struct Sprite *sprite;
 
-    if (id < 0) {
-        return;
+    if (id >= 0) {
+        sprite = &handler->sprites[id];
+        sprite->callbackCel = cel;
     }
-
-    sprite = &handler->sprites[id];
-    sprite->callbackCel = cel;
 }
 
 
@@ -1146,10 +1144,10 @@ void sprite_run_callback_every_cel(struct SpriteHandler *handler, s16 id) {
 
 // Set Values by Mem. ID
 void sprite_id_set_data(struct SpriteHandler *handler, u16 memID, u32 targetDataType, u32 arg) {
-    s16 spriteID = handler->zLinkLast;
+    s16 spriteID = handler->zLinkStart;
 
     while (spriteID >= 0) {
-        s16 nextID = handler->sprites[spriteID].zLinkPrev;
+        s16 nextID = handler->sprites[spriteID].zLinkNext;
 
         if (handler->sprites[spriteID].memID == memID) {
             switch (targetDataType) {
@@ -1308,7 +1306,7 @@ s32 sprite_handler_get_total_active(struct SpriteHandler *handler) {
     s32 id;
 
     sprites = handler->sprites;
-    for (id = handler->zLinkLast; id != -1; id = sprites[id].zLinkPrev) {
+    for (id = handler->zLinkStart; id != -1; id = sprites[id].zLinkNext) {
         total++;
     }
 
@@ -1323,7 +1321,7 @@ s32 sprite_handler_get_total_active_id(struct SpriteHandler *handler, u16 memID)
     s32 id;
 
     sprites = handler->sprites;
-    for (id = handler->zLinkLast; id != -1; id = sprites[id].zLinkPrev) {
+    for (id = handler->zLinkStart; id != -1; id = sprites[id].zLinkNext) {
         if (sprites[id].memID == memID) {
             total++;
         }
