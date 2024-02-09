@@ -451,7 +451,7 @@ branch_0802463a: \n\
  \n\
 .ltorg \n\
 branch_0802476c: \n\
-	BL func_0804e0c0 \n\
+	BL sprite_handler_get_mem_id \n\
 	ADDS R1, R0, 0x0 \n\
 	LDR R2, =D_03005380 \n\
 	LDR R0, [R2] \n\
@@ -459,7 +459,7 @@ branch_0802476c: \n\
 	LSRS R1, R1, 0x10 \n\
 	ADDS R2, R6, 0x0 \n\
 	ADDS R3, R4, 0x0 \n\
-	BL func_0804e188 \n\
+	BL sprite_id_set_origin_x_y \n\
 	LDR R1, =D_03005380 \n\
 	LDR R0, [R1] \n\
 	MOVS R2, 0x0 \n\

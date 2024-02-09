@@ -152,7 +152,7 @@ void night_walk_play_yan_fall(void) {
     struct PlayYan *playYan = &gNightWalk->playYan;
 
     playYan->state = PLAY_YAN_STATE_FALLING;
-    playYan->yOrigin = func_0804ddb0(D_03005380, playYan->sprite, 5);
+    playYan->yOrigin = sprite_get_data(D_03005380, playYan->sprite, 5);
     playYan->yDistance = 0;
     playYan->yVelocity = 0;
     play_sound(&s_f_drumtech_fall_seqData);
@@ -175,7 +175,7 @@ void night_walk_play_yan_get_wand(void) {
 
     playYan->state = PLAY_YAN_STATE_STAR_WAND;
     sprite_set_anim(D_03005380, playYan->sprite, anim_play_yan_star_wand, 0, 1, 0, 0);
-    playYan->yOrigin = func_0804ddb0(D_03005380, playYan->sprite, 5);
+    playYan->yOrigin = sprite_get_data(D_03005380, playYan->sprite, 5);
     playYan->yDistance = 0;
     playYan->yVelocity = 0;
 }
@@ -326,7 +326,7 @@ void night_walk_finish_star_expansion(s32 arg0, s16 sprite, struct Animation *an
 
     sprite_set_anim(D_03005380, sprite, anim, 0, 1, 0, 0);
     sprite_set_callback(D_03005380, sprite, NULL, 0);
-    frame = func_0804ddb0(D_03005380, sprite, 2);
+    frame = sprite_get_data(D_03005380, sprite, 2);
     sprite_set_anim_cel(D_03005380, sprite, agb_random(frame));
 }
 
@@ -1000,7 +1000,7 @@ void night_walk_cue_despawn(struct Cue *cue, struct NightWalkCue *info) {
         } else {
             sprite_set_anim(D_03005380, info->boxSprite, anim_night_walk_bridge_disappear, 0, 1, 0, 3);
         }
-        if (func_0804ddb0(D_03005380, info->boxSprite, 4) < 244) {
+        if (sprite_get_data(D_03005380, info->boxSprite, 4) < 244) {
             play_sound_in_player(SFX_PLAYER_4, &s_4beat_jiban_seqData);
         }
     } else {
@@ -1156,8 +1156,8 @@ void night_walk_cue_miss(struct Cue *cue, struct NightWalkCue *info) {
         }
     } else {
         info->playYanFellHere = TRUE;
-        x = func_0804ddb0(D_03005380, info->boxSprite, 4);
-        y = func_0804ddb0(D_03005380, info->boxSprite, 5);
+        x = sprite_get_data(D_03005380, info->boxSprite, 4);
+        y = sprite_get_data(D_03005380, info->boxSprite, 5);
         night_walk_play_yan_hold_on(x, y);
         gameplay_enable_cue_spawning(FALSE);
     }

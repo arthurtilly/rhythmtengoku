@@ -125,7 +125,7 @@ void data_check_print_line(u32 line, u32 palette, const char *string) {
     sprite = gDataCheck->textLineSprites[line];
 
     if (sprite >= 0) {
-        anim = (void *)func_0804ddb0(D_03005380, sprite, 7);
+        anim = (void *)sprite_get_data(D_03005380, sprite, 7);
         sprite_delete(D_03005380, sprite);
         text_printer_delete_anim(anim);
     }

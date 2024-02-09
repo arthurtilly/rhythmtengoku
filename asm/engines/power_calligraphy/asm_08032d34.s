@@ -66,21 +66,21 @@ branch_08032da4: \n\
 /* 08032da8 */ MOVS R3, 0x36 @ Set R3 to 0x36 \n\
 /* 08032daa */ LDRSH R1, [R2, R3] \n\
 /* 08032dac */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 08032dae */ BL func_0804ddb0 \n\
+/* 08032dae */ BL sprite_get_data \n\
 /* 08032db2 */ STR R0, [SP, 0x4] \n\
 /* 08032db4 */ LDR R0, [R4] \n\
 /* 08032db6 */ LDR R1, [R5] \n\
 /* 08032db8 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 08032dba */ LDRSH R1, [R1, R2] \n\
 /* 08032dbc */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
-/* 08032dbe */ BL func_0804ddb0 \n\
+/* 08032dbe */ BL sprite_get_data \n\
 /* 08032dc2 */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 08032dc4 */ LDR R0, [R4] \n\
 /* 08032dc6 */ LDR R1, [R5] \n\
 /* 08032dc8 */ MOVS R3, 0x36 @ Set R3 to 0x36 \n\
 /* 08032dca */ LDRSH R1, [R1, R3] \n\
 /* 08032dcc */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
-/* 08032dce */ BL func_0804ddb0 \n\
+/* 08032dce */ BL sprite_get_data \n\
 /* 08032dd2 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08032dd4 */ MOVS R5, 0x10 @ Set R5 to 0x10 \n\
 /* 08032dd6 */ ADD R10, R5 @ Add R5 to R10 \n\

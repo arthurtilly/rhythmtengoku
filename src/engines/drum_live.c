@@ -504,8 +504,8 @@ void drum_live_init_gfx1(void) {
 // Offset Performer Sprite X/Y Position by Vector Table
 void drum_live_offset_sprite_pos(s16 sprite, u32 performer) {
     struct Vector2 *offset = &drum_live_performer_sprite_offsets[gDrumLive->version][performer];
-    s32 x = func_0804ddb0(D_03005380, sprite, 4);
-    s32 y = func_0804ddb0(D_03005380, sprite, 5);
+    s32 x = sprite_get_data(D_03005380, sprite, 4);
+    s32 y = sprite_get_data(D_03005380, sprite, 5);
 
     sprite_set_x_y(D_03005380, sprite, x + offset->x, y + offset->y);
 }
@@ -584,7 +584,7 @@ void drum_live_engine_start(u32 version) {
     guitarist->timeUntilNextState = 0;
 
     // Init. Modes and Icons
-    func_0804e188(D_03005380, get_current_mem_id(), NULL, &D_03004b10.BG_OFS[BG_LAYER_1].y);
+    sprite_id_set_origin_x_y(D_03005380, get_current_mem_id(), NULL, &D_03004b10.BG_OFS[BG_LAYER_1].y);
     gDrumLive->adjustModeTempo = 0;
     gDrumLive->adjustModeEnabled = TRUE;
     gDrumLive->adjustModeIcon = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_ADJUST_MODE_ICON), gDrumLive->adjustModeEnabled, 120, 154, 0, 0, 0, 0x8000);
@@ -640,14 +640,14 @@ void drum_live_set_guitarist_state(u32 id, u32 state) {
 
         case LIVE_GUITARIST_STATE_JUMP:
             sprite_set_anim(D_03005380, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_jump[id]), 0, 1, 0x7F, 0);
-            x = func_0804ddb0(D_03005380, guitarist->body, 4);
-            y = func_0804ddb0(D_03005380, guitarist->body, 5);
+            x = sprite_get_data(D_03005380, guitarist->body, 4);
+            y = sprite_get_data(D_03005380, guitarist->body, 5);
             scene_move_sprite_sine_wave(guitarist->body, x, y, 16, ticks_to_frames(24));
             break;
 
         case LIVE_GUITARIST_STATE_HALF_CROUCH:
             sprite_set_anim(D_03005380, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_crouch[id]), 0, -1, 0, 0);
-            frame = func_0804ddb0(D_03005380, guitarist->body, 2);
+            frame = sprite_get_data(D_03005380, guitarist->body, 2);
             sprite_set_anim_cel(D_03005380, guitarist->body, frame - 1);
             break;
     }

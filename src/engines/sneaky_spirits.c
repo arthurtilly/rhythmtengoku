@@ -364,7 +364,7 @@ void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 
         targetY = 68;
     }
 
-    totalFrames = (u16) func_0804ddb0(D_03005380, gSneakySpirits->ghostHit, 2);
+    totalFrames = (u16) sprite_get_data(D_03005380, gSneakySpirits->ghostHit, 2);
     sprite_set_anim_cel(D_03005380, gSneakySpirits->ghostHit, agb_random(totalFrames));
     sprite_set_visible(D_03005380, gSneakySpirits->ghostHit, 1);
     task = scene_set_sprite_motion_lerp(gSneakySpirits->ghostHit, 100, 76, targetX, targetY, duration);

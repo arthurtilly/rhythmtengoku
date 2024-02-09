@@ -23,7 +23,7 @@ thumb_func_start samurai_slice_cue_hit \n\
 /* 080312da */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080312dc */ LDRSH R1, [R5, R2] \n\
 /* 080312de */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 080312e0 */ BL func_0804ddb0 \n\
+/* 080312e0 */ BL sprite_get_data \n\
 /* 080312e4 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080312e6 */ LDR R0, =anim_small_demon_hop \n\
 /* 080312e8 */ CMP R1, R0 @ Check R1 - R0 \n\

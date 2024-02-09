@@ -42,7 +42,7 @@ thumb_func_start func_080320c8 \n\
 /* 08032114 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08032116 */ LDRSH R1, [R1, R2] \n\
 /* 08032118 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 0803211a */ BL func_0804ddb0 \n\
+/* 0803211a */ BL sprite_get_data \n\
 /* 0803211e */ LDR R3, =anim_samurai_hurt \n\
 /* 08032120 */ CMP R0, R3 @ Check R0 - R3 \n\
 /* 08032122 */ BEQ branch_0803217e \n\

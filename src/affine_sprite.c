@@ -408,25 +408,25 @@ void func_080100cc(struct AffineSprite *affineData, u32 arg) {
     sprite_set_base_tile(D_03005380, affineData->sprite, arg);
 }
 
-// [func_080100f0] AFFINE SPRITE - func_0804ddb0(..., 4)
+// [func_080100f0] AFFINE SPRITE - sprite_get_data(..., 4)
 u32 affine_sprite_get_base_sprite_x(struct AffineSprite *affineData) {
     if (affineData == NULL) return;
 
-    return func_0804ddb0(D_03005380, affineData->sprite, 4);
+    return sprite_get_data(D_03005380, affineData->sprite, 4);
 }
 
-// [func_08010110] AFFINE SPRITE - func_0804ddb0(..., 5)
+// [func_08010110] AFFINE SPRITE - sprite_get_data(..., 5)
 u32 affine_sprite_get_base_sprite_y(struct AffineSprite *affineData) {
     if (affineData == NULL) return;
 
-    return func_0804ddb0(D_03005380, affineData->sprite, 5);
+    return sprite_get_data(D_03005380, affineData->sprite, 5);
 }
 
-// [func_08010130] AFFINE SPRITE - func_0804ddb0(..., 6)
+// [func_08010130] AFFINE SPRITE - sprite_get_data(..., 6)
 u32 affine_sprite_get_base_sprite_z(struct AffineSprite *affineData) {
     if (affineData == NULL) return;
 
-    return func_0804ddb0(D_03005380, affineData->sprite, 6);
+    return sprite_get_data(D_03005380, affineData->sprite, 6);
 }
 
 // [func_08010150] AFFINE SPRITE - sprite_set_enable_updates()
@@ -485,18 +485,18 @@ void func_08010238(struct AffineSprite *affineData, void *arg1, u32 arg2) {
     sprite_set_callback(D_03005380, affineData->sprite, arg1, arg2);
 }
 
-// [func_08010260] AFFINE SPRITE - func_0804df4c()
+// [func_08010260] AFFINE SPRITE - sprite_set_callback_cel()
 void func_08010260(struct AffineSprite *affineData, s8 arg) {
     if (affineData == NULL) return;
 
-    func_0804df4c(D_03005380, affineData->sprite, arg);
+    sprite_set_callback_cel(D_03005380, affineData->sprite, arg);
 }
 
-// [func_08010288] AFFINE SPRITE - func_0804ddb0(..., 2)
+// [func_08010288] AFFINE SPRITE - sprite_get_data(..., 2)
 u32 affine_sprite_get_total_frames(struct AffineSprite *affineData) {
     if (affineData == NULL) return;
 
-    return func_0804ddb0(D_03005380, affineData->sprite, 2);
+    return sprite_get_data(D_03005380, affineData->sprite, 2);
 }
 
 // [func_080102a8] AFFINE SPRITE - Set X & Y Data Source

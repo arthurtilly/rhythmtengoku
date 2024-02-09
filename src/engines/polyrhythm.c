@@ -244,8 +244,8 @@ void polyrhythm_display_arrow(u32 lane, s32 blockID) {
 
     if (blockID >= 0) {
         block = &gPolyrhythm->lanes[lane][blockID];
-        x = func_0804ddb0(D_03005380, block->sprite, 4);
-        y = func_0804ddb0(D_03005380, block->sprite, 5);
+        x = sprite_get_data(D_03005380, block->sprite, 4);
+        y = sprite_get_data(D_03005380, block->sprite, 5);
         z = polyrhythm_get_block_z(lane, blockID) - 5;
         sprite_set_x_y_z(D_03005380, arrowSprite, x, y, z);
         sprite_set_visible(D_03005380, arrowSprite, TRUE);
@@ -387,7 +387,7 @@ void func_08036630(struct PolyrhythmRod *rod) {
 
     prevYOffset = rod->yOffset;
     prevHorizontal = rod->horizontal;
-    prevZ = func_0804ddb0(D_03005380, rod->sprite, 6);
+    prevZ = sprite_get_data(D_03005380, rod->sprite, 6);
 
     rod->horizontal = (rod->stopped) ? prevHorizontal : func_08036604(rod);
     rod->yOffset = func_080365c8(rod, rod->horizontal);
@@ -456,9 +456,9 @@ void polyrhythm_update_rods(void) {
             if (rod->stopped) {
                 rod->timeUntilExplosion--;
                 if (rod->timeUntilExplosion == 0) {
-                    x = func_0804ddb0(D_03005380, rod->sprite, 4);
-                    y = func_0804ddb0(D_03005380, rod->sprite, 5);
-                    z = func_0804ddb0(D_03005380, rod->sprite, 6);
+                    x = sprite_get_data(D_03005380, rod->sprite, 4);
+                    y = sprite_get_data(D_03005380, rod->sprite, 5);
+                    z = sprite_get_data(D_03005380, rod->sprite, 6);
                     sprite_create(D_03005380, anim_polyrhythm_rod_explode, 0, x, y, z, 1, 0, 3);
                     sprite_set_visible(D_03005380, rod->sprite, FALSE);
                     rod->active = FALSE;

@@ -125,7 +125,7 @@ void func_0801d98c(void) {
 
     for (i = 0; i < 2;) {
         i++;
-        func_0804e0c4(D_03005380, i);
+        sprite_id_delete(D_03005380, i);
         func_0800222c(i);
         task_pool_force_cancel_id(i);
         mem_heap_dealloc_with_id(i);
@@ -148,7 +148,7 @@ u32 func_0801d9d0(void) {
     }
 
     pause_all_soundplayers(TRUE);
-    func_0804e1bc(D_03005380, 1);
+    sprite_handler_set_global_pause(D_03005380, TRUE);
     for (i = 0; i < 2; i++) {
         task_pool_pause_id(i+1, TRUE);
     }
@@ -169,7 +169,7 @@ void func_0801da48(void) {
     switch (gPauseMenu.data->update()) {
         case PAUSE_MENU_SELECTION_CONTINUE:
             pause_all_soundplayers(FALSE);
-            func_0804e1bc(D_03005380, 0);
+            sprite_handler_set_global_pause(D_03005380, FALSE);
             for (i = 0; i < 2; i++) {
                 task_pool_pause_id(i+1, FALSE);
             }
@@ -520,7 +520,7 @@ void soft_reset_scene_stop(void *endParam) {
 // Start
 void soft_reset_scene_start(void *initParam) {
     func_080013e8(NULL);
-    func_0804e1bc(D_03005380, 1);
+    sprite_handler_set_global_pause(D_03005380, TRUE);
     gSoftReset->state = 0;
 }
 

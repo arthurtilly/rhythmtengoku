@@ -12,7 +12,7 @@ thumb_func_start func_080335e8 \n\
 /* 080335f4 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 080335f6 */ LDRSH R1, [R1, R2] \n\
 /* 080335f8 */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
-/* 080335fa */ BL func_0804ddb0 \n\
+/* 080335fa */ BL sprite_get_data \n\
 /* 080335fe */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08033600 */ LDR R0, [R5] \n\
 /* 08033602 */ LDR R1, [R4] \n\

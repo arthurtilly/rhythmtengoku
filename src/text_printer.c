@@ -826,7 +826,7 @@ void text_printer_clear(struct TextPrinter *textPrinter) {
     for (i = 0; i < textPrinter->totalLines; i++) {
         sprite = textPrinter->lineSprites[i];
         if (sprite >= 0) {
-            text_printer_delete_anim((void *)func_0804ddb0(D_03005380, sprite, 7));
+            text_printer_delete_anim((void *)sprite_get_data(D_03005380, sprite, 7));
             sprite_delete(D_03005380, sprite);
             textPrinter->lineSprites[i] = -1;
         }
@@ -927,7 +927,7 @@ void func_0800aac0(struct TextPrinter *textPrinter, s32 lineIndex, const char *s
     if ((printer->mode == TEXT_PRINTER_MODE_STATIC_TABLE) && (line < printer->totalLines)) {
         lineSprite = printer->lineSprites[line];
         if (lineSprite >= 0) {
-            text_printer_delete_anim((void *)func_0804ddb0(D_03005380, lineSprite, 7));
+            text_printer_delete_anim((void *)sprite_get_data(D_03005380, lineSprite, 7));
             sprite_delete(D_03005380, lineSprite);
             printer->lineSprites[line] = -1;
         }

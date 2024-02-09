@@ -72,7 +72,7 @@ branch_08033264: \n\
 /* 08033268 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 0803326a */ LDRSH R1, [R1, R2] \n\
 /* 0803326c */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 0803326e */ BL func_0804ddb0 \n\
+/* 0803326e */ BL sprite_get_data \n\
 /* 08033272 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08033274 */ LDR R0, [R4] \n\
 /* 08033276 */ LDR R1, [R6] \n\

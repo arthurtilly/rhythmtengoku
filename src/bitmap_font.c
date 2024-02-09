@@ -1328,7 +1328,7 @@ void delete_all_scene_objects(struct SpriteHandler *spriteHandler, struct Bitmap
                 data = objects->text;
                 if (data->poolID >= 0) {
                     sprite = spritePool[data->poolID];
-                    bmp_font_obj_delete_printed_anim(bitmapFontOBJ, (struct Animation *)func_0804ddb0(spriteHandler, sprite, 7));
+                    bmp_font_obj_delete_printed_anim(bitmapFontOBJ, (struct Animation *)sprite_get_data(spriteHandler, sprite, 7));
                     sprite_delete(spriteHandler, sprite);
                     spritePool[data->poolID] = -1;
                 }

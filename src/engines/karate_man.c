@@ -602,7 +602,7 @@ void karate_common_beat_animation(void) {
     
     karate_update_bg_palette();
     if ((s16)karateMan->joe.isNotBeat == 1) {
-        temp = (u32)func_0804ddb0(D_03005380, joe->sprite, 2); // should be u16?
+        temp = (u32)sprite_get_data(D_03005380, joe->sprite, 2); // should be u16?
         currentEntity = sprite_get_anim_cel(D_03005380, joe->sprite);
         if (currentEntity < temp - 4) { // Return if current entity is less than ??
             return;

@@ -15,8 +15,8 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 // Get Sprite XY
 void get_sprite_xy(s16 sprite, s16 *xReq, s16 *yReq) {
-    *xReq = func_0804ddb0(D_03005380, sprite, 4);
-    *yReq = func_0804ddb0(D_03005380, sprite, 5);
+    *xReq = sprite_get_data(D_03005380, sprite, 4);
+    *yReq = sprite_get_data(D_03005380, sprite, 5);
 }
 
 
@@ -335,7 +335,7 @@ void delete_bmp_font_obj_text_anim(struct BitmapFontOBJ *bmpFontOBJ, s16 sprite)
         return;
     }
 
-    bmp_font_obj_delete_printed_anim(bmpFontOBJ, (struct Animation *)func_0804ddb0(D_03005380, sprite, 7));
+    bmp_font_obj_delete_printed_anim(bmpFontOBJ, (struct Animation *)sprite_get_data(D_03005380, sprite, 7));
 }
 
 

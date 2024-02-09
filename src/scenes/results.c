@@ -809,7 +809,7 @@ void results_render_comments(void) {
 
     negativeCommentWidth = 0;
     for (i = 0; i < totalNegativeComments; i++) {
-        u32 width = func_0804ddb0(D_03005380, commentSprites[i], 24);
+        u32 width = sprite_get_data(D_03005380, commentSprites[i], 24);
 
         if (negativeCommentWidth < width)
             negativeCommentWidth = width;
@@ -817,7 +817,7 @@ void results_render_comments(void) {
 
     positiveCommentWidth = 0;
     for (i = totalNegativeComments; i < totalComments; i++) {
-        u32 width = func_0804ddb0(D_03005380, commentSprites[i], 24);
+        u32 width = sprite_get_data(D_03005380, commentSprites[i], 24);
 
         if (positiveCommentWidth < width)
             positiveCommentWidth = width;

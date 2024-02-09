@@ -14,14 +14,14 @@ thumb_func_start power_calligraphy_engine_update \n\
 /* 0803365a */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 0803365c */ LDRSH R1, [R1, R2] \n\
 /* 0803365e */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 08033660 */ BL func_0804ddb0 \n\
+/* 08033660 */ BL sprite_get_data \n\
 /* 08033664 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08033666 */ LDR R0, [R6] \n\
 /* 08033668 */ LDR R1, [R5] \n\
 /* 0803366a */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 0803366c */ LDRSH R1, [R1, R2] \n\
 /* 0803366e */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
-/* 08033670 */ BL func_0804ddb0 \n\
+/* 08033670 */ BL sprite_get_data \n\
 /* 08033674 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 08033676 */ LDR R0, [R6] \n\
 /* 08033678 */ LDR R1, [R5] \n\

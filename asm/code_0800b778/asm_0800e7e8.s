@@ -16,7 +16,7 @@ thumb_func_start func_0800e7e8 \n\
 /* 0800e7fc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800e7fe */ LDRSH R1, [R1, R2] \n\
 /* 0800e800 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 0800e802 */ BL func_0804ddb0 \n\
+/* 0800e802 */ BL sprite_get_data \n\
 /* 0800e806 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0800e808 */ LDR R0, [R4] \n\
 /* 0800e80a */ LDR R1, [R6, 0xC] \n\

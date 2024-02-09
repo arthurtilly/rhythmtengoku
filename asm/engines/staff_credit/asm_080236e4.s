@@ -18,7 +18,7 @@ thumb_func_start func_080236e4 \n\
 /* 080236fc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080236fe */ LDRSH R1, [R5, R2] \n\
 /* 08023700 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 08023702 */ BL func_0804ddb0 \n\
+/* 08023702 */ BL sprite_get_data \n\
 /* 08023706 */ BL text_printer_delete_anim \n\
 /* 0802370a */ LDR R0, [R4] \n\
 /* 0802370c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

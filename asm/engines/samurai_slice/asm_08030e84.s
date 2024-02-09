@@ -18,7 +18,7 @@ thumb_func_start func_08030e84 \n\
 /* 08030e9c */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08030e9e */ LDRSH R1, [R1, R2] \n\
 /* 08030ea0 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 08030ea2 */ BL func_0804ddb0 \n\
+/* 08030ea2 */ BL sprite_get_data \n\
 /* 08030ea6 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08030ea8 */ LDR R0, =anim_samurai_beat_2 \n\
 /* 08030eaa */ CMP R1, R0 @ Check R1 - R0 \n\

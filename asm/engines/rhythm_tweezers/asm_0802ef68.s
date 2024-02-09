@@ -55,7 +55,7 @@ branch_0802ef9e: \n\
 /* 0802efc8 */ ASRS R1, R1, 0x10 \n\
 /* 0802efca */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802efcc */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
-/* 0802efce */ BL func_0804ddb0 \n\
+/* 0802efce */ BL sprite_get_data \n\
 /* 0802efd2 */ SUBS R0, 0x1 @ Subtract 0x1 from R0 \n\
 /* 0802efd4 */ LDRH R1, [R5, 0x2C] \n\
 /* 0802efd6 */ MULS R0, R1 @ Multiply R0 by R1 \n\

@@ -220,7 +220,7 @@ void bon_odori_lyrics_display_line(const char *text, u32 line, u32 hAlign) {
         sprite_set_origin_x_y(D_03005380, lyricObj->highlightSprite, &gBonOdori->lyricsX, &gBonOdori->lyricsY);
 
         lyricObj->anim = textAnim->frames;
-        lyricObj->width = func_0804ddb0(D_03005380, lyricObj->textSprite, 24);
+        lyricObj->width = sprite_get_data(D_03005380, lyricObj->textSprite, 24);
 
         switch (hAlign) {
             case BON_LYRICS_ALIGNMENT_CENTRE:

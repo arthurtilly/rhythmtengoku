@@ -84,7 +84,7 @@ branch_0803dacc: \n\
 /* 0803dada */ ASRS R5, R5, 0x10 \n\
 /* 0803dadc */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0803dade */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 0803dae0 */ BL func_0804ddb0 \n\
+/* 0803dae0 */ BL sprite_get_data \n\
 /* 0803dae4 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803dae6 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
 /* 0803dae8 */ BL ticks_to_frames \n\

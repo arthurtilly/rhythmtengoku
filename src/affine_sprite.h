@@ -54,9 +54,9 @@ extern void affine_sprite_play_anim(struct AffineSprite *, u32);      // [func_0
 extern void affine_sprite_change_anim(struct AffineSprite *, struct Animation *, u32, u32, u32, u32); // [func_08010064] AFFINE SPRITE - Set Animation
 extern void affine_sprite_set_base_palette(struct AffineSprite *, u32);      // [func_080100a8] AFFINE SPRITE - Set Palette
 extern void func_080100cc(struct AffineSprite *, u32);      // [func_080100cc] AFFINE SPRITE - sprite_set_base_tile()
-extern u32  affine_sprite_get_base_sprite_x(struct AffineSprite *);           // [func_080100f0] AFFINE SPRITE - func_0804ddb0(..., 4)
-extern u32  affine_sprite_get_base_sprite_y(struct AffineSprite *);           // [func_08010110] AFFINE SPRITE - func_0804ddb0(..., 5)
-extern u32  affine_sprite_get_base_sprite_z(struct AffineSprite *);           // [func_08010130] AFFINE SPRITE - func_0804ddb0(..., 6)
+extern u32  affine_sprite_get_base_sprite_x(struct AffineSprite *);           // [func_080100f0] AFFINE SPRITE - sprite_get_data(..., 4)
+extern u32  affine_sprite_get_base_sprite_y(struct AffineSprite *);           // [func_08010110] AFFINE SPRITE - sprite_get_data(..., 5)
+extern u32  affine_sprite_get_base_sprite_z(struct AffineSprite *);           // [func_08010130] AFFINE SPRITE - sprite_get_data(..., 6)
 extern void func_08010150(struct AffineSprite *, u16);      // [func_08010150] AFFINE SPRITE - Set Enable Updates
 extern void func_08010174(struct AffineSprite *, u16);      // [func_08010174] AFFINE SPRITE - Set Animation Speed
 extern s8   affine_sprite_get_current_frame(struct AffineSprite *);           // [func_08010198] AFFINE SPRITE - Get Current Frame
@@ -65,6 +65,6 @@ extern void func_080101d8(struct AffineSprite *, u32);      // [func_080101d8] A
 extern void func_080101f8(struct AffineSprite *, u32);      // [func_080101f8] AFFINE SPRITE - sprite_attr_orr()
 extern void func_08010218(struct AffineSprite *, u32);      // [func_08010218] AFFINE SPRITE - sprite_attr_and()
 extern void func_08010238(struct AffineSprite *, void *, u32);  // [func_08010238] AFFINE SPRITE - sprite_set_callback()
-extern void func_08010260(struct AffineSprite *, s8);       // [func_08010260] AFFINE SPRITE - func_0804df4c()
-extern u32  affine_sprite_get_total_frames(struct AffineSprite *);           // [func_08010288] AFFINE SPRITE - func_0804ddb0(..., 2)
+extern void func_08010260(struct AffineSprite *, s8);       // [func_08010260] AFFINE SPRITE - sprite_set_callback_cel()
+extern u32  affine_sprite_get_total_frames(struct AffineSprite *);           // [func_08010288] AFFINE SPRITE - sprite_get_data(..., 2)
 extern void affine_sprite_set_x_y_controllers(struct AffineSprite *, s16 *, s16 *); // [func_080102a8] AFFINE SPRITE - Set X & Y Data Source

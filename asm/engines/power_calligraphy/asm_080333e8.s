@@ -22,7 +22,7 @@ branch_080333f8: \n\
 /* 08033404 */ LDRSH R5, [R1, R2] \n\
 /* 08033406 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08033408 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 0803340a */ BL func_0804ddb0 \n\
+/* 0803340a */ BL sprite_get_data \n\
 /* 0803340e */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08033410 */ LDR R0, [R7] \n\
 /* 08033412 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\

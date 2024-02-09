@@ -108,7 +108,7 @@ branch_0803dbe4: \n\
 /* 0803dbf2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803dbf4 */ LDRSH R1, [R1, R2] \n\
 /* 0803dbf6 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 0803dbf8 */ BL func_0804ddb0 \n\
+/* 0803dbf8 */ BL sprite_get_data \n\
 /* 0803dbfc */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803dbfe */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
 /* 0803dc00 */ BL ticks_to_frames \n\

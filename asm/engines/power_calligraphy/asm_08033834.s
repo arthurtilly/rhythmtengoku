@@ -20,7 +20,7 @@ thumb_func_start power_calligraphy_common_display_text \n\
 /* 08033850 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08033852 */ LDRSH R1, [R1, R2] \n\
 /* 08033854 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 08033856 */ BL func_0804ddb0 \n\
+/* 08033856 */ BL sprite_get_data \n\
 /* 0803385a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803385c */ BL text_printer_delete_anim \n\
 /* 08033860 */ LDR R0, [R4] \n\

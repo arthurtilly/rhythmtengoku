@@ -164,10 +164,10 @@ struct SpriteHandler { // Size = 0x28
     s16 zLinkFirst; // ID of Sprite with Highest Z Value
     s16 unk10; // Next Free Sprite ID
     s16 unk12;
-    u16 unk14; // Global X Adjustment
-    u16 unk16; // Global Y Adjustment
+    u16 xPos; // Global Sprite X Offset
+    u16 yPos; // Global Sprite Y Offset
     u16 totalCycles; // OAM Buffer Direction
-    u16 unk1A; // Sprite Pause Flag
+    u16 paused; // Global Sprite Pause Flag
     u16 memID; // Current Memory ID
     u16 unk1E; // Unknown Unused Counter
     u16 unk20;
@@ -237,7 +237,7 @@ extern void sprite_set_visible(struct SpriteHandler *, s16 id, u16 isVisible);
 extern void sprite_attr_set(struct SpriteHandler *, s16 id, u32 attr);
 extern void sprite_attr_orr(struct SpriteHandler *, s16 id, u32 attr);
 extern void sprite_attr_and(struct SpriteHandler *, s16 id, u32 attr);
-extern void sprite_attr_bic(struct SpriteHandler *, s16 id ,u32 attr);
+extern void sprite_attr_bic(struct SpriteHandler *, s16 id, u32 attr);
 extern void sprite_set_base_tile(struct SpriteHandler *, s16 id, s16 baseTile);
 extern void sprite_set_base_palette(struct SpriteHandler *, s16 id, s8 basePalette);
 extern void sprite_set_anim(struct SpriteHandler *, s16 id, struct Animation *anim, s8 startCel, s8 direction, s8 loopCel, u16 playbackType);
@@ -251,31 +251,31 @@ extern void sprite_set_origin_x(struct SpriteHandler *, s16 id, s16 *xOrigin);
 extern void sprite_set_origin_y(struct SpriteHandler *, s16 id, s16 *yOrigin);
 extern void sprite_set_affine_params(struct SpriteHandler *, s16 id, s32 affineIndex, s16 *affineParams);
 extern void func_0804dc8c(struct SpriteHandler *, s16 id, u32 args); // Set Affine & Double Size Flags
-extern void sprite_set_anim_speed(struct SpriteHandler *, s16 id, u8_8 speed); // Set Animation Speed
-extern u32  func_0804dcd8(u16 *, u32); // Get Sprite Dimensions { Left, Right, Top, Bottom, Width, Height }
-extern s32  func_0804ddb0(struct SpriteHandler *, s16, u32); // Get Sprite Data { 20+ = func_0804dcd8() }
-extern void func_0804df4c(struct SpriteHandler *, s16, s8); // Set Callback Frame
-extern void func_0804df6c(struct SpriteHandler *, s16); // Set Special Callback Frame
-extern void func_0804df80(struct SpriteHandler *, u16, u32, u32); // Set Values by Mem. ID
-extern u16  func_0804e0a0(struct SpriteHandler *);
-extern void func_0804e0bc(struct SpriteHandler *, u16); // Set Current Memory ID
-extern u16  func_0804e0c0(struct SpriteHandler *); // Get Current Memory ID
-extern void func_0804e0c4(struct SpriteHandler *, u16); // Disable Sprite by Mem. ID
-extern void func_0804e0d8(struct SpriteHandler *, u16, u16); // Show/Display Sprite by Mem. ID
-extern void func_0804e0f0(struct SpriteHandler *, u16, u16); // Set Update Flag by Mem. ID
-extern void func_0804e108(struct SpriteHandler *, u16, u32); // Set Attributes by Mem. ID
-extern void func_0804e11c(struct SpriteHandler *, u16, u32); // OR Attributes by Mem. ID
-extern void func_0804e130(struct SpriteHandler *, u16, u32); // AND Attributes by Mem. ID
-extern void func_0804e144(struct SpriteHandler *, u16, u32); // CLEAR Attributes by Mem. ID
-extern void func_0804e158(struct SpriteHandler *, u16, s16); // Set Tile Number by Mem. ID
-extern void func_0804e170(struct SpriteHandler *, u16, s8); // Set Palette by Mem. ID
-extern void func_0804e188(struct SpriteHandler *, u16 memID, s16 *xController, s16 *yController); // Set X & Y Data Source by Mem. ID
-extern void func_0804e1a4(struct SpriteHandler *, u16, u16); // Set Animation Speed by Mem. ID
-extern void func_0804e1bc(struct SpriteHandler *, u16); // Set Pause Sprite Flag
-extern void func_0804e1c0(struct SpriteHandler *, u16, u16); // Set Global X/Y Adjustment
-// extern ? func_0804e1c8(?); // Update Sprite Library
-extern s32 func_0804e3b0(struct SpriteHandler *); // Get Amount of ?? Sprites
-extern s32 func_0804e3e0(struct SpriteHandler *, u16); // Get Amount of ?? Sprites with Mem. ID
+extern void sprite_set_anim_speed(struct SpriteHandler *, s16 id, u8_8 speed);
+extern u32  sprite_get_cel_dimensions(u16 *cel, u32 requestedDataType);
+extern s32  sprite_get_data(struct SpriteHandler *, s16 id, u32 requestedDataType);
+extern void sprite_set_callback_cel(struct SpriteHandler *, s16 id, s8 cel);
+extern void sprite_run_callback_every_cel(struct SpriteHandler *, s16 id);
+extern void sprite_id_set_data(struct SpriteHandler *, u16 memID, u32 targetDataType, u32 arg);
+extern u16  func_0804e0a0(struct SpriteHandler *); // Increment Unknown Counter
+extern void sprite_handler_set_mem_id(struct SpriteHandler *, u16 memID);
+extern u16  sprite_handler_get_mem_id(struct SpriteHandler *);
+extern void sprite_id_delete(struct SpriteHandler *, u16 memID);
+extern void sprite_id_set_visible(struct SpriteHandler *, u16 memID, u16 isVisible);
+extern void sprite_id_set_enable_updates(struct SpriteHandler *, u16 memID, u16 canUpdate);
+extern void sprite_id_set_attr(struct SpriteHandler *, u16 memID, u32 attr);
+extern void sprite_id_orr_attr(struct SpriteHandler *, u16 memID, u32 attr);
+extern void sprite_id_and_attr(struct SpriteHandler *, u16 memID, u32 attr);
+extern void sprite_id_bic_attr(struct SpriteHandler *, u16 memID, u32 attr);
+extern void sprite_id_set_base_tile(struct SpriteHandler *, u16 memID, s16 baseTile);
+extern void sprite_id_set_base_palette(struct SpriteHandler *, u16 memID, s8 basePalette);
+extern void sprite_id_set_origin_x_y(struct SpriteHandler *, u16 memID, s16 *xOrigin, s16 *yOrigin);
+extern void sprite_id_set_anim_speed(struct SpriteHandler *, u16 memID, u8_8 speed);
+extern void sprite_handler_set_global_pause(struct SpriteHandler *, u16 isPaused);
+extern void sprite_handler_set_global_x_y(struct SpriteHandler *, u16 x, u16 y);
+// extern void func_0804e1c8(struct SpriteHandler *); // Update Sprite Library
+extern s32 sprite_handler_get_total_active(struct SpriteHandler *);
+extern s32 sprite_handler_get_total_active_id(struct SpriteHandler *, u16 memID);
 
 // ARM
 extern u32 func_0804e418(struct struct_0804cb88 *);

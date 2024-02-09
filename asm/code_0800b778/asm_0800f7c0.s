@@ -36,14 +36,14 @@ branch_0800f7f2: \n\
 /* 0800f7f8 */ BGE branch_0800f86c \n\
 /* 0800f7fa */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800f7fc */ LDR R0, [R1] \n\
-/* 0800f7fe */ BL func_0804e0c0 \n\
+/* 0800f7fe */ BL sprite_handler_get_mem_id \n\
 /* 0800f802 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0800f804 */ LSLS R4, R4, 0x10 \n\
 /* 0800f806 */ LSRS R4, R4, 0x10 \n\
 /* 0800f808 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0800f80a */ LDR R0, [R2] \n\
 /* 0800f80c */ LDRH R1, [R7] \n\
-/* 0800f80e */ BL func_0804e0bc \n\
+/* 0800f80e */ BL sprite_handler_set_mem_id \n\
 /* 0800f812 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800f814 */ LDR R0, [R1] \n\
 /* 0800f816 */ STR R6, [SP] \n\
@@ -79,7 +79,7 @@ branch_0800f7f2: \n\
 /* 0800f856 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800f858 */ LDR R0, [R1] \n\
 /* 0800f85a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800f85c */ BL func_0804e0bc \n\
+/* 0800f85c */ BL sprite_handler_set_mem_id \n\
 /* 0800f860 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 0800f862 */ LSLS R0, R2, 0x10 \n\
 /* 0800f864 */ ASRS R0, R0, 0x10 \n\

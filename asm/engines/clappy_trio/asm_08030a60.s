@@ -84,7 +84,7 @@ branch_08030aa4: \n\
 /* 08030af6 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08030af8 */ LDRSH R1, [R6, R2] \n\
 /* 08030afa */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 08030afc */ BL func_0804ddb0 \n\
+/* 08030afc */ BL sprite_get_data \n\
 /* 08030b00 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08030b02 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 08030b04 */ BL clappy_trio_get_anim \n\
@@ -95,7 +95,7 @@ branch_08030aa4: \n\
 /* 08030b10 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08030b12 */ LDRSH R1, [R6, R2] \n\
 /* 08030b14 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
-/* 08030b16 */ BL func_0804ddb0 \n\
+/* 08030b16 */ BL sprite_get_data \n\
 /* 08030b1a */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08030b1c */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08030b1e */ LDR R0, [R1] \n\

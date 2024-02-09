@@ -18,7 +18,7 @@ thumb_func_start func_0800e8f4 \n\
 /* 0800e90c */ BL sprite_set_callback \n\
 /* 0800e910 */ LDR R0, [R5] \n\
 /* 0800e912 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800e914 */ BL func_0804df6c \n\
+/* 0800e914 */ BL sprite_run_callback_every_cel \n\
 /* 0800e918 */ B branch_0800e934 \n\
 \n\
 .ltorg \n\

@@ -28,7 +28,7 @@ branch_0803acac: \n\
 /* 0803acc0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803acc2 */ LDRSH R1, [R1, R2] \n\
 /* 0803acc4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803acc6 */ BL func_0804ddb0 \n\
+/* 0803acc6 */ BL sprite_get_data \n\
 /* 0803acca */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803accc */ BNE branch_0803acf4 \n\
 /* 0803acce */ LDR R0, [R6] \n\

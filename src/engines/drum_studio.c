@@ -657,7 +657,7 @@ void drum_studio_engine_start(u32 version) {
     player->coffeeSteam = sprite_create(D_03005380, anim_drum_student_coffee_steam, 0, 99, 82, 0x47eb, 1, 0, 0x8000);
     player->xController = 56;
     player->yController = -8;
-    func_0804e188(D_03005380, get_current_mem_id(), &player->xController, &player->yController);
+    sprite_id_set_origin_x_y(D_03005380, get_current_mem_id(), &player->xController, &player->yController);
     player->headPosX = 120;
     player->headPosY = 100;
     player->leftArmPosX = 102;

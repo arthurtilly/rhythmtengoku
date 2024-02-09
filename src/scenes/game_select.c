@@ -1804,7 +1804,7 @@ void game_select_delete_info_pane_sprite(s16 *ptr) {
         return;
     }
 
-    text_printer_delete_anim((void *)func_0804ddb0(D_03005380, sprite, 7));
+    text_printer_delete_anim((void *)sprite_get_data(D_03005380, sprite, 7));
     sprite_delete(D_03005380, sprite);
     *ptr = -1;
 }

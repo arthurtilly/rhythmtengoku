@@ -107,7 +107,7 @@ void rank_results_display_header(void) {
     anim = results_get_comment_anim(score_handler->headerText, TEXT_ANCHOR_BOTTOM_LEFT, 0);
     sprite = sprite_create(D_03005380, anim, 0, RANK_HEADER_BOX_X, RANK_HEADER_Y, 0x800, 0, 0, 0);
     sprite_set_base_palette(D_03005380, sprite, RANK_HEADER_PALETTE);
-    width = func_0804ddb0(D_03005380, sprite, 24);
+    width = sprite_get_data(D_03005380, sprite, 24);
     sprite_create(D_03005380, anim_rank_results_header_box, 0, SCREEN_CENTER_X, RANK_HEADER_Y, 0x864, 0, 0, 0);
     sprite_create(D_03005380, anim_rank_results_header_box_mask, 0, SCREEN_CENTER_X + width, RANK_HEADER_Y, 0x850, 0, 0, 0);
 }
@@ -155,7 +155,7 @@ void rank_results_append_encouragement(void) {
     }
 
     for (i = 0; i < totalComments; i++) {
-        s32 y = func_0804ddb0(D_03005380, commentSprites[i], 5);
+        s32 y = sprite_get_data(D_03005380, commentSprites[i], 5);
 
         sprite_set_y(D_03005380, commentSprites[i], y - 10);
     }

@@ -15,14 +15,14 @@ thumb_func_start func_080345cc \n\
 /* 080345de */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080345e0 */ LDRSH R1, [R5, R2] \n\
 /* 080345e2 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 080345e4 */ BL func_0804ddb0 \n\
+/* 080345e4 */ BL sprite_get_data \n\
 /* 080345e8 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080345ea */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 080345ec */ LDR R0, [R3] \n\
 /* 080345ee */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080345f0 */ LDRSH R1, [R5, R2] \n\
 /* 080345f2 */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
-/* 080345f4 */ BL func_0804ddb0 \n\
+/* 080345f4 */ BL sprite_get_data \n\
 /* 080345f8 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 080345fa */ LDRH R0, [R5, 0x6] \n\
 /* 080345fc */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

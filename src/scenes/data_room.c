@@ -68,8 +68,8 @@ void dataroom_listbox_update(void) {
         }
     }
 
-    x = func_0804ddb0(D_03005380, baseLine, 4);
-    z = func_0804ddb0(D_03005380, baseLine, 6);
+    x = sprite_get_data(D_03005380, baseLine, 4);
+    z = sprite_get_data(D_03005380, baseLine, 6);
 
     for (i = 0; i < 8; i++) {
         s16 sprite = sprite_clone(D_03005380, baseLine);

@@ -269,7 +269,7 @@ void update_active_beatscript_scene(void) {
                 }
 
                 if (!thread->unk0_b7) {
-                    func_0804e0c4(D_03005380, memID);
+                    sprite_id_delete(D_03005380, memID);
                     func_0800222c(memID);
                     mem_heap_dealloc_with_id(memID);
                     task_pool_force_cancel_id(memID);
@@ -402,7 +402,7 @@ void stop_beatscript_scene(void) {
                 subScene->stopFunc(&D_030053c0.localVariables[i], subScene->stopParam);
             }
 
-            func_0804e0c4(D_03005380, memID);
+            sprite_id_delete(D_03005380, memID);
             func_0800222c(memID);
             mem_heap_dealloc_with_id(memID);
             task_pool_force_cancel_id(memID);
@@ -818,7 +818,7 @@ u32 get_current_mem_id() {
 // Set Current Memory ID / SubScene
 void set_current_mem_id(u32 memID) {
     D_03001310 = memID;
-    func_0804e0bc(D_03005380, memID);
+    sprite_handler_set_mem_id(D_03005380, memID);
 }
 
 
@@ -1281,8 +1281,8 @@ s16 beatscript_stream_get_sprite_for_motion(s16 *spritePool, s16 args, s16 *dest
     }
 
     sprite = spritePool[args & ~(1 << 6)];
-    x = func_0804ddb0(D_03005380, sprite, 4);
-    y = func_0804ddb0(D_03005380, sprite, 5);
+    x = sprite_get_data(D_03005380, sprite, 4);
+    y = sprite_get_data(D_03005380, sprite, 5);
     relativeDest = args & (1 << 6);
 
     if (*destX == 0x7FFF) {

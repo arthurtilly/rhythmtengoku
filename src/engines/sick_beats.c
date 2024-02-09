@@ -33,7 +33,7 @@ void sick_beats_init_particles(void) {
     }
     gSickBeats->particleCurrent = 0;
     gSickBeats->particlePitch = 1;
-    gSickBeats->particleCels = func_0804ddb0(D_03005380, gSickBeats->particleSprites[0], 2);
+    gSickBeats->particleCels = sprite_get_data(D_03005380, gSickBeats->particleSprites[0], 2);
 }
 
 // Update Particles

@@ -150,7 +150,7 @@ jump_0803108c: \n\
 /* 08031092 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08031094 */ LDRSH R1, [R1, R2] \n\
 /* 08031096 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 08031098 */ BL func_0804ddb0 \n\
+/* 08031098 */ BL sprite_get_data \n\
 /* 0803109c */ LDR R1, =anim_samurai_beat_3 \n\
 /* 0803109e */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 080310a0 */ BNE branch_08031128 \n\
@@ -169,7 +169,7 @@ jump_080310bc: \n\
 /* 080310c2 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 080310c4 */ LDRSH R1, [R1, R2] \n\
 /* 080310c6 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 080310c8 */ BL func_0804ddb0 \n\
+/* 080310c8 */ BL sprite_get_data \n\
 /* 080310cc */ LDR R1, =anim_samurai_beat_2 \n\
 /* 080310ce */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 080310d0 */ BNE branch_08031128 \n\
@@ -195,7 +195,7 @@ jump_080310f8: \n\
 /* 080310fe */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08031100 */ LDRSH R1, [R1, R2] \n\
 /* 08031102 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 08031104 */ BL func_0804ddb0 \n\
+/* 08031104 */ BL sprite_get_data \n\
 /* 08031108 */ LDR R1, =anim_samurai_beat_1 \n\
 /* 0803110a */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 0803110c */ BNE branch_08031128 \n\

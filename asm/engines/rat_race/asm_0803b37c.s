@@ -471,7 +471,7 @@ branch_0803b738: \n\
 /* 0803b770 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803b772 */ LDRSH R1, [R7, R3] \n\
 /* 0803b774 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 0803b776 */ BL func_0804ddb0 \n\
+/* 0803b776 */ BL sprite_get_data \n\
 /* 0803b77a */ LDR R1, =anim_rat_angry_run_r \n\
 /* 0803b77c */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 0803b77e */ BNE branch_0803b7b0 \n\

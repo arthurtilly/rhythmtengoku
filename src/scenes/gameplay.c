@@ -231,7 +231,7 @@ void gameplay_set_current_engine(const struct GameEngine *engine, u32 version) {
         if (gGameplay->gameEngineData != NULL) {
             mem_heap_dealloc(gGameplay->gameEngineData);
         }
-        func_0804e0c4(D_03005380, get_current_mem_id());
+        sprite_id_delete(D_03005380, get_current_mem_id());
         func_0800222c(get_current_mem_id());
         task_pool_force_cancel_id(get_current_mem_id());
         mem_heap_dealloc_with_id(get_current_mem_id());
@@ -430,7 +430,7 @@ void gameplay_display_skip_icon(u32 corner) {
 
 // [func_08017514] Skip Tutorial
 void gameplay_skip_tutorial(void) {
-    func_0804e0f0(D_03005380, get_current_mem_id(), 1);
+    sprite_id_set_enable_updates(D_03005380, get_current_mem_id(), 1);
     task_pool_pause_id(get_current_mem_id(), TRUE);
     set_pause_beatscript_scene(FALSE);
     func_0801d968(D_089cfda4);
@@ -578,7 +578,7 @@ void gameplay_set_mercy_count(u32 total) {
 void gameplay_stop_scene(void) {
     struct Scene *tempScene;
 
-    func_0804e0c4(D_03005380, 16);
+    sprite_id_delete(D_03005380, 16);
     gameplay_reset_cues(); // Reset Cues
     if (gGameplay->gameEngine->closeFunc != NULL) {
         gGameplay->gameEngine->closeFunc();
@@ -1181,8 +1181,8 @@ void gameplay_get_previous_cue_info(struct Cue *cue, struct Cue **prev, void **i
 void gameplay_init_overlay(void) {
     u32 memID;
 
-    memID = func_0804e0c0(D_03005380);
-    func_0804e0bc(D_03005380, 16);
+    memID = sprite_handler_get_mem_id(D_03005380);
+    sprite_handler_set_mem_id(D_03005380, 16);
     gGameplay->pauseSprite = sprite_create(D_03005380, anim_gameplay_pause_title, 0, 120, 80, 0, 1, 0, 0x8000);
     gGameplay->pauseOptionsSprite = sprite_create(D_03005380, anim_gameplay_pause_option1, 0, 120, 80, 0, 1, 0, 0x8000);
     gGameplay->skipTutorialSprite = sprite_create(D_03005380, anim_gameplay_skip_icon, 0, 120, 80, 0, 0, 0, 0x8000);
@@ -1190,9 +1190,9 @@ void gameplay_init_overlay(void) {
     gGameplay->perfectSprite = sprite_create(D_03005380, anim_gameplay_perfect_icon, 0, 230, 10, 0x5A, 1, 0x7f, 0x8000);
     sprite_set_paused(D_03005380, gGameplay->pauseSprite, 1);
     sprite_set_paused(D_03005380, gGameplay->pauseOptionsSprite, 1);
-    func_0804e158(D_03005380, 16, 960);
-    func_0804e170(D_03005380, 16, 14);
-    func_0804e0bc(D_03005380, memID);
+    sprite_id_set_base_tile(D_03005380, 16, 960);
+    sprite_id_set_base_palette(D_03005380, 16, 14);
+    sprite_handler_set_mem_id(D_03005380, memID);
 }
 
 

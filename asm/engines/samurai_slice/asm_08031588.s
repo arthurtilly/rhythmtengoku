@@ -30,7 +30,7 @@ thumb_func_start samurai_slice_cue_barely \n\
 /* 080315ba */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080315bc */ LDRSH R1, [R6, R3] \n\
 /* 080315be */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 080315c0 */ BL func_0804ddb0 \n\
+/* 080315c0 */ BL sprite_get_data \n\
 /* 080315c4 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080315c6 */ LDR R0, =anim_small_demon_hop \n\
 /* 080315c8 */ CMP R1, R0 @ Check R1 - R0 \n\

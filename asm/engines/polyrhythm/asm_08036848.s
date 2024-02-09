@@ -14,7 +14,7 @@ thumb_func_start func_08036848 \n\
 /* 08036858 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 0803685a */ LDRSH R1, [R6, R2] \n\
 /* 0803685c */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
-/* 0803685e */ BL func_0804ddb0 \n\
+/* 0803685e */ BL sprite_get_data \n\
 /* 08036862 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08036864 */ LDRB R0, [R6, 0x1] \n\
 /* 08036866 */ LSLS R0, R0, 0x1F \n\
