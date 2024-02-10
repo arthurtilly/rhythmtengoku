@@ -45,7 +45,7 @@ enum SpritePlaybackType {
     /* 04 */ SPRITE_PLAYBACK_NORMAL_CALLBACK,
 };
 
-// Which dimension to return from that function.
+// Which dimension to return from sprite_get_cel_dimensions().
 enum SpriteDimensionRequest {
     /* 00 */ SPRITE_DIMENSION_LEFT,
     /* 01 */ SPRITE_DIMENSION_RIGHT,
@@ -55,7 +55,7 @@ enum SpriteDimensionRequest {
     /* 05 */ SPRITE_DIMENSION_HEIGHT,
 };
 
-// Which value to return from that other function.
+// Which value to return from sprite_get_data().
 enum SpriteDataRequest {
     /* 00 */ SPRITE_DATA_VISIBLE,
     /* 01 */ SPRITE_DATA_PLAYBACK_TYPE,
@@ -85,7 +85,7 @@ enum SpriteDataRequest {
     /* 25 */ SPRITE_DATA_DIMENSION_HEIGHT,
 };
 
-// Which value to set with that other, other function.
+// Which value to set with sprite_id_set_data().
 enum SpriteValueSetRequest {
     /* 00 */ SPRITE_ACT_DELETE,
     /* 01 */ SPRITE_ACT_SET_VISIBLE,
@@ -279,3 +279,31 @@ extern s32 sprite_handler_get_total_active_id(struct SpriteHandler *, u16 memID)
 
 // ARM
 extern u32 func_0804e418(struct struct_0804cb88 *);
+
+// Macro
+#define sprite_get_visible(handler, id)             sprite_get_data(handler, id, SPRITE_DATA_VISIBLE)
+#define sprite_get_playback_type(handler, id)       sprite_get_data(handler, id, SPRITE_DATA_PLAYBACK_TYPE)
+#define sprite_get_total_cels(handler, id)          sprite_get_data(handler, id, SPRITE_DATA_TOTAL_CELS)
+#define sprite_get_update_flag(handler, id)         sprite_get_data(handler, id, SPRITE_DATA_UPDATE_FLAG)
+#define sprite_get_x(handler, id)                   sprite_get_data(handler, id, SPRITE_DATA_X_POS)
+#define sprite_get_y(handler, id)                   sprite_get_data(handler, id, SPRITE_DATA_Y_POS)
+#define sprite_get_z(handler, id)                   sprite_get_data(handler, id, SPRITE_DATA_Z_DEPTH)
+#define sprite_get_anim(handler, id)                ((struct Animation *)sprite_get_data(handler, id, SPRITE_DATA_ANIMATION))
+#define sprite_get_current_cel_time(handler, id)    sprite_get_data(handler, id, SPRITE_DATA_CURRENT_CEL_TIME_LEFT)
+#define sprite_get_current_cel(handler, id)         sprite_get_data(handler, id, SPRITE_DATA_CURRENT_CEL)
+#define sprite_get_anim_direction(handler, id)      sprite_get_data(handler, id, SPRITE_DATA_CEL_INC)
+#define sprite_get_loop_cel(handler, id)            sprite_get_data(handler, id, SPRITE_DATA_LOOP_CEL)
+#define sprite_get_attr(handler, id)                sprite_get_data(handler, id, SPRITE_DATA_ATTRS10)
+#define sprite_get_base_tile(handler, id)           sprite_get_data(handler, id, SPRITE_DATA_BASE_TILE)
+#define sprite_get_callback_func(handler, id)       ((void *)sprite_get_data(handler, id, SPRITE_DATA_CALLBACK_FUNC))
+#define sprite_get_callback_arg(handler, id)        sprite_get_data(handler, id, SPRITE_DATA_CALLBACK_ARG)
+#define sprite_get_mem_id(handler, id)              sprite_get_data(handler, id, SPRITE_DATA_MEM_ID)
+#define sprite_get_origin_x(handler, id)            ((s16 *)sprite_get_data(handler, id, SPRITE_DATA_ORIGIN_X))
+#define sprite_get_origin_y(handler, id)            ((s16 *)sprite_get_data(handler, id, SPRITE_DATA_ORIGIN_Y))
+#define sprite_get_anim_speed(handler, id)          sprite_get_data(handler, id, SPRITE_DATA_ANIM_SPEED)
+#define sprite_get_left_edge(handler, id)           sprite_get_data(handler, id, SPRITE_DATA_DIMENSION_LEFT)
+#define sprite_get_right_edge(handler, id)          sprite_get_data(handler, id, SPRITE_DATA_DIMENSION_RIGHT)
+#define sprite_get_top_edge(handler, id)            sprite_get_data(handler, id, SPRITE_DATA_DIMENSION_TOP)
+#define sprite_get_bottom_edge(handler, id)         sprite_get_data(handler, id, SPRITE_DATA_DIMENSION_BOTTOM)
+#define sprite_get_width(handler, id)               sprite_get_data(handler, id, SPRITE_DATA_DIMENSION_WIDTH)
+#define sprite_get_height(handler, id)              sprite_get_data(handler, id, SPRITE_DATA_DIMENSION_HEIGHT)
