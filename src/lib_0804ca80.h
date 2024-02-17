@@ -133,7 +133,7 @@ struct Sprite {
     u16 paused:1;       // Pause Flag
     s16 xPos;           // X Position
     s16 yPos;           // Y Position
-    u16 zDepth;         // Z-Depth (i.e. the "Layer", where lower z-depths are rendered on top of higher ones)
+    u16 zDepth;         // Z-Depth (the "Layer", where lower z-depths are rendered on top of higher ones)
     struct Animation *animation; // Animation
     s8 currentCel;      // Current Animation Cel
     s8 celInc;          // Animation Direction { 1, 0, -1 }
@@ -160,20 +160,20 @@ struct SpriteHandler { // Size = 0x28
     u16 spriteAmount;   // Sprite Limit (100)
     u32 *oamBuffer;         // OAM buffer
     struct Sprite *sprites; // Sprites
-    s16 zLinkStart; // ID of Sprite with Lowest Z Value
-    s16 zLinkEnd;   // ID of Sprite with Highest Z Value
-    s16 nextAllocID; // Next Free Sprite ID
-    s16 lastAllocID; // End of the Sprite Linked List
-    u16 xPos; // Global Sprite X Offset
-    u16 yPos; // Global Sprite Y Offset
-    u16 totalCycles; // OAM Buffer Direction
-    u16 paused; // Global Sprite Pause Flag
-    u16 memID; // Current Memory ID
-    u16 unk1E; // Unknown Unused Counter
+    s16 zLinkStart;     // ID of Sprite with Lowest Z Value
+    s16 zLinkEnd;       // ID of Sprite with Highest Z Value
+    s16 nextAllocID;    // Next Free Sprite ID
+    s16 lastAllocID;    // End of the Sprite Linked List
+    u16 xPos;           // Global Sprite X Offset
+    u16 yPos;           // Global Sprite Y Offset
+    u16 totalCycles;    // OAM Buffer Direction
+    u16 paused;         // Global Sprite Pause Flag
+    u16 memID;          // Current Memory ID
+    u16 unk1E;          // Unknown Unused Counter
     u16 unk20;
-    u32 unk22_b0:4; // Error Type
-    u16 unk24; // Error Memory ID
-    u16 unk26; // Failed Action
+    u32 unk22_b0:4;     // Error Type
+    u16 unk24;          // Error Memory ID
+    u16 unk26;          // Failed Action
 };
 
 struct SpritePlaybackData {
