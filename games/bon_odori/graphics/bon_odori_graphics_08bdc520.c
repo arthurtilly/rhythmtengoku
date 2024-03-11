@@ -1,0 +1,23 @@
+#include "global.h"
+#include "graphics.h"
+
+// // //  D_08BDC520  // // //
+
+// [D_08BDC500] D_08BDC520 Data
+u16 D_08bdc520_data[] = {
+	0xc001, 0xc000, 0xc001, 0xc000
+};
+
+// [D_08BDC508] D_08BDC520 RLE Data
+u8 D_08bdc520_rledata[] = {
+	0x1, 0x0, 0x0, 0x0, 0x0, 0x3, 0x1, 0x3f, 0x1, 0x0, 0x0, 0x0, 0xc2, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7, 0x0
+};
+
+// [D_08BDC520] D_08BDC520 Graphics
+struct CompressedGraphics D_08bdc520 = {
+	/* Data */				{.raw = D_08bdc520_data},
+	/* RLE Data */			D_08bdc520_rledata,
+	/* RLE Size */			0x8,
+	/* RLE Offset */		0x1000,
+	/* Double Compressed */	FALSE,
+};
