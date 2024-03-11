@@ -455,12 +455,12 @@ void drum_studio_start_monitor1(void) {
     gDrumStudio->unk3F0 = id;
     gDrumStudio->bg2PosX = gDrumStudio->bg2PosY = 0;
     gDrumStudio->bg3PosX = gDrumStudio->bg3PosY = 0;
-    gDrumStudio->bg2VelX = D_089e17a0[id].bg2VelX;
-    gDrumStudio->bg2VelY = D_089e17a0[id].bg2VelY;
-    gDrumStudio->bg3VelX = D_089e17a0[id].bg3VelX;
-    gDrumStudio->bg3VelY = D_089e17a0[id].bg3VelY;
-    task = func_08002ee0(get_current_mem_id(), D_089e17a0[id].gfxTable, 0x2000);
-    run_func_after_task(task, drum_studio_start_monitor2, (s32)D_089e17a0[id].palette);
+    gDrumStudio->bg2VelX = drum_studio_bg_table[id].bg2VelX;
+    gDrumStudio->bg2VelY = drum_studio_bg_table[id].bg2VelY;
+    gDrumStudio->bg3VelX = drum_studio_bg_table[id].bg3VelX;
+    gDrumStudio->bg3VelY = drum_studio_bg_table[id].bg3VelY;
+    task = func_08002ee0(get_current_mem_id(), drum_studio_bg_table[id].gfxTable, 0x2000);
+    run_func_after_task(task, drum_studio_start_monitor2, (s32)drum_studio_bg_table[id].palette);
 }
 
 
@@ -487,7 +487,7 @@ void drum_studio_stop_monitor1(void) {
         return;
     }
 
-    palette = D_089e17a0[gDrumStudio->unk3F0].palette;
+    palette = drum_studio_bg_table[gDrumStudio->unk3F0].palette;
     task = func_08002050(get_current_mem_id(), 0x20, 4, &palette[0][0], drum_lessons_bg_screen_pal[0][0], BG_PALETTE_BUFFER(0));
     run_func_after_task(task, drum_studio_stop_monitor2, 0);
     gDrumStudio->unk3F0 = -1;

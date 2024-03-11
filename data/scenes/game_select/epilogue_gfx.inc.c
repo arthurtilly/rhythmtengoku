@@ -1,3 +1,24 @@
+// TODO: Use this macro for all of these.
+#define INLINE_GFX_TABLE(tiles, map, palette) (struct GraphicsTable[]) {    \
+        /* BG Tileset */ {                                                  \
+            /* Src.  */ &tiles,                                             \
+            /* Dest. */ BG_TILESET_BASE(0),                                 \
+            /* Size  */ COMPRESSED_GFX_SOURCE                               \
+        },                                                                  \
+        /* BG Map */ {                                                      \
+            /* Src.  */ &map,                                               \
+            /* Dest. */ BG_MAP_BASE(0xE800),                                \
+            /* Size  */ COMPRESSED_GFX_SOURCE                               \
+        },                                                                  \
+        /* BG Palette */ {                                                  \
+            /* Src.  */ palette,                                            \
+            /* Dest. */ BG_PALETTE_BUFFER(0),                               \
+            /* Size  */ 0x140                                               \
+        },                                                                  \
+        END_OF_GRAPHICS_TABLE                                               \
+    }
+
+
 // [D_089ce0b0] Karate Man
 const struct GraphicsTable *epilogue_karate_man_gfx_tables[] = {
     /* TRY AGAIN */ (struct GraphicsTable[]) {

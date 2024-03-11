@@ -187,7 +187,7 @@ extern struct Vector2 drum_lessons_accuracy_light_positions[]; // Accuracy Meter
 extern struct Animation *drum_lessons_rank_anim[];
 extern const char *drum_lessons_rank_text[];
 extern struct SongHeader *drum_lessons_rank_sfx[];
-extern struct DrumStudioMonitorData D_089e17a0[];
+extern struct DrumStudioMonitorData drum_studio_bg_table[];
 extern DrumPlayFunc D_089e2988[];
 extern struct DrumTechKit *drum_studio_kits[];
 extern struct CompressedGraphics *drum_studio_buffered_textures[];
