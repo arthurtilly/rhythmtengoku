@@ -610,9 +610,9 @@ void drum_studio_init_gfx2(void) {
     if (gDrumStudio->version == ENGINE_VER_DRUM_LESSONS) {
         gfxTable = drum_lessons_gfx_table;
     }
+
     task = func_08002ee0(get_current_mem_id(), gfxTable, 0x2000);
     run_func_after_task(task, drum_studio_init_gfx3, 0);
-
 }
 
 
@@ -972,36 +972,36 @@ void drum_studio_update_monitor(void) {
 // Update (Main Drumming State)
 void drum_studio_update_inputs(void) {
     const struct DrumTechKit *drumKit = drum_studio_kits[gDrumStudio->playerDrumKitID];
-    u16 r4, pressed, released;
+    u16 current, pressed, released;
 
     switch (gDrumStudio->unk3CD) {
         case 0:
-            r4 = D_03004ac0;
+            current = D_03004ac0;
             pressed = 0;
             released = 0;
             break;
         case 1:
-            r4 = D_03004ac0;
+            current = D_03004ac0;
             pressed = D_03004afc;
             released = D_03004b00;
             break;
         case 2:
-            r4 = D_03004ac0;
+            current = D_03004ac0;
             pressed = D_03004afc;
             released = D_03004b00;
             break;
         case 3:
-            r4 = D_030046b8;
+            current = D_030046b8;
             pressed = D_03005378;
             released = D_030046b4;
             break;
     }
 
-    r4 &= gDrumStudio->drummingButtons;
+    current &= gDrumStudio->drummingButtons;
     pressed &= gDrumStudio->drummingButtons;
     released &= gDrumStudio->drummingButtons;
     play_drumtech_kit_w_anim(drumKit, pressed);
-    update_drumtech_hihat(drumKit, r4, pressed, released);
+    update_drumtech_hihat(drumKit, current, pressed, released);
 }
 
 
@@ -1023,7 +1023,8 @@ void drum_studio_show_save_options(void) {
     if (gDrumStudio->version == ENGINE_VER_DRUM_STUDIO_PLAY) {
         if (!drum_studio_cannot_save_replay()) {
             set_pause_beatscript_scene(TRUE);
-            text_printer_set_string(gDrumStudio->replayTextPrinter, D_0805a3a0);
+            text_printer_set_string(gDrumStudio->replayTextPrinter, "今の演奏データですが、\n"
+                                                                    "セーブしときますか？");
             gDrumStudio->saveOptionsDelayTime = (gDrumStudio->replayData->songID == STUDIO_SONG_SILENCE) ? 15 : 60;
             gDrumStudio->state = DRUM_STUDIO_STATE_SAVING_REPLAY;
         }

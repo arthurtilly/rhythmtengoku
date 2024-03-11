@@ -76,15 +76,15 @@ u32 func_0804cb88(struct struct_0804cb88 *drawData) {
     u32 (*drawFunc)(struct struct_0804cb88 *);
     u32 i;
 
-    drawData->objTotal = drawData->cel[0];
+    drawData->objTotal = drawData->src[0];
     if (drawData->objTotal == 0) {
        return 0;
     }
 
-    drawData->cel++;
-    drawData->unk8 = 0;
-    if (drawData->unkC < 0) {
-        drawData->cel += ((drawData->objTotal - 1) * 3);
+    drawData->src++;
+    drawData->objCount = 0;
+    if (drawData->srcInc < 0) {
+        drawData->src += ((drawData->objTotal - 1) * 3);
     }
 
     drawFunc = func_0804e418;

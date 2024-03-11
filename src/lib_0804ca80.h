@@ -108,19 +108,19 @@ struct OamCel {
 };
 
 struct struct_0804cb88 {
-    const u16 *cel; // Current Cel
-    u32 *dest;    // OAM Buffer
-    u8 unk8;      // ?
-    u8 objTotal;  // Total OAM
-    u16 xPos;     // X
-    s8 unkC;      // ?
-    s8 unkD;      // ?
-    u16 yPos;     // Y
-    u32 unk10;    // Attributes 1 & 0
-    u32 attr2;    // Attribute 2
-    s16 unk18[4]; // Affine Params
-    u8 unk20[24]; // OAM Dimension
-    u32 unk38;    // OAMOBJ Limit
+    const u16 *src; // Current Cel
+    u32 *dest;      // OAM Buffer
+    u8 objCount;    // Number of OAM Currently Drawn
+    u8 objTotal;    // Total OAM in Cel
+    u16 xPos;       // X Offset
+    s8 srcInc;      // Source Increment (in bytes)
+    s8 destInc;     // Buffer Increment (in bytes)
+    u16 yPos;       // Y Offset
+    u32 attr10;     // OAM Attributes 1 & 0
+    u32 attr2;      // OAM Attribute 2
+    s16 affine[4];  // Affine Params
+    u8 objDim[24];  // OAM Dimension
+    u32 objLimit;   // OAM Limit
 };
 
 struct SpriteHandler;

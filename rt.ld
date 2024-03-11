@@ -354,6 +354,7 @@ SECTIONS {
         # Rodata section of engines. Some of these are likely rodata sections of src/ files
         build/games/sneaky_spirits/engine.c.o(.rodata);
         build/games/drum_studio/engine.c.o(.rodata);
+        build/src/engines/drum_studio.c.o(.rodata);
         build/games/showtime/engine.c.o(.rodata);
         build/games/fireworks/engine.c.o(.rodata);
         build/games/samurai_slice/engine.c.o(.rodata);
