@@ -2582,7 +2582,7 @@ Palette epilogue_rat_race_bg_pal[] = {
 };
 
 // [D_088ffa0c] BG Palette
-Palette epilogue_remix_1_bg_pal[] = {
+Palette epilogue_remix1_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x080808),
@@ -2604,7 +2604,7 @@ Palette epilogue_remix_1_bg_pal[] = {
 };
 
 // [D_088ffa2c] BG Palette
-Palette epilogue_remix_2_bg_pal[] = {
+Palette epilogue_remix2_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000078),
         /* 01 */ TO_RGB555(0x584008),
@@ -2662,7 +2662,7 @@ Palette epilogue_remix_2_bg_pal[] = {
 };
 
 // [D_088ffa8c] BG Palette
-Palette epilogue_remix_3_bg_pal[] = {
+Palette epilogue_remix3_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -2684,7 +2684,7 @@ Palette epilogue_remix_3_bg_pal[] = {
 };
 
 // [D_088ffaac] BG Palette
-Palette epilogue_remix_4_bg_pal[] = {
+Palette epilogue_remix4_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xA0A0A0),
         /* 01 */ TO_RGB555(0x000000),
@@ -2742,7 +2742,7 @@ Palette epilogue_remix_4_bg_pal[] = {
 };
 
 // [D_088ffb0c] BG Palette
-Palette epilogue_remix_5_bg_pal[] = {
+Palette epilogue_remix5_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -2764,7 +2764,7 @@ Palette epilogue_remix_5_bg_pal[] = {
 };
 
 // [D_088ffb2c] BG Palette
-Palette epilogue_remix_6_bg_pal[] = {
+Palette epilogue_remix6_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xD0F8D0),
         /* 01 */ TO_RGB555(0x000000),
@@ -2822,7 +2822,7 @@ Palette epilogue_remix_6_bg_pal[] = {
 };
 
 // [D_088ffb8c] BG Palette
-Palette epilogue_remix_7_bg_pal[] = {
+Palette epilogue_remix7_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x200050),
         /* 01 */ TO_RGB555(0x000000),
@@ -2880,7 +2880,7 @@ Palette epilogue_remix_7_bg_pal[] = {
 };
 
 // [D_088ffbec] BG Palette
-Palette epilogue_remix_8_bg_pal[] = {
+Palette epilogue_remix8_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x6838C0),
         /* 01 */ TO_RGB555(0x000000),

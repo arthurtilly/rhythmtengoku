@@ -153,49 +153,49 @@ extern struct CompressedGraphics D_08ca66dc;
 extern struct CompressedGraphics D_08ca69c8;
 extern struct CompressedGraphics D_08ca6868;
 extern struct CompressedGraphics D_08ca676c;
-extern Palette epilogue_remix_1_bg_pal[];
+extern Palette epilogue_remix1_bg_pal[];
 
 extern struct CompressedGraphics D_08ca7cbc;
 extern struct CompressedGraphics D_08ca82dc;
 extern struct CompressedGraphics D_08ca80c0;
 extern struct CompressedGraphics D_08ca7ecc;
-extern Palette epilogue_remix_2_bg_pal[];
+extern Palette epilogue_remix2_bg_pal[];
 
 extern struct CompressedGraphics D_08ca94f0;
 extern struct CompressedGraphics D_08ca9afc;
 extern struct CompressedGraphics D_08ca98f8;
 extern struct CompressedGraphics D_08ca96e4;
-extern Palette epilogue_remix_3_bg_pal[];
+extern Palette epilogue_remix3_bg_pal[];
 
 extern struct CompressedGraphics D_08caaf8c;
 extern struct CompressedGraphics D_08cab5bc;
 extern struct CompressedGraphics D_08cab3ac;
 extern struct CompressedGraphics D_08cab1a8;
-extern Palette epilogue_remix_4_bg_pal[];
+extern Palette epilogue_remix4_bg_pal[];
 
 extern struct CompressedGraphics D_08cac550;
 extern struct CompressedGraphics D_08cac908;
 extern struct CompressedGraphics D_08cac7e0;
 extern struct CompressedGraphics D_08cac6ac;
-extern Palette epilogue_remix_5_bg_pal[];
+extern Palette epilogue_remix5_bg_pal[];
 
 extern struct CompressedGraphics D_08cad9f4;
 extern struct CompressedGraphics D_08cadff0;
 extern struct CompressedGraphics D_08caddf8;
 extern struct CompressedGraphics D_08cadbe0;
-extern Palette epilogue_remix_6_bg_pal[];
+extern Palette epilogue_remix6_bg_pal[];
 
 extern struct CompressedGraphics D_08caf878;
 extern struct CompressedGraphics D_08cafce8;
 extern struct CompressedGraphics D_08cafb68;
 extern struct CompressedGraphics D_08caf9f4;
-extern Palette epilogue_remix_7_bg_pal[];
+extern Palette epilogue_remix7_bg_pal[];
 
 extern struct CompressedGraphics D_08cb14f8;
 extern struct CompressedGraphics D_08cb1b08;
 extern struct CompressedGraphics D_08cb18ec;
 extern struct CompressedGraphics D_08cb16f0;
-extern Palette epilogue_remix_8_bg_pal[];
+extern Palette epilogue_remix8_bg_pal[];
 
 extern struct CompressedGraphics D_08cb28a4;
 extern struct CompressedGraphics D_08cb2ccc;
