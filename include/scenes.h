@@ -136,7 +136,6 @@ extern struct Scene D_089d6534;
 extern struct Scene D_089d3a6c;
 extern struct Scene D_089d3984;
 extern struct Scene D_089d2f98;
-extern struct Scene D_089d2940;
 extern struct Scene D_089d2670;
 extern struct Scene D_089d6d74;
 

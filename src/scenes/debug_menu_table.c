@@ -252,7 +252,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ハナビ"
     },
     /* Metronome */ {
-        /* Scene */ &D_089d2940,
+        /* Scene */ &scene_metronome,
         /* Label */ "メトロノーム"
     },
     /* Bunny Hop */ {
