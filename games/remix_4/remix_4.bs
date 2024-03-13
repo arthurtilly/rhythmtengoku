@@ -121,31 +121,31 @@ text text_remix_4_honto_desu_ka
     .asciz ".b:1ほんとです:0か？"
 endtext
 
-text D_08a53568
+text text_remix_4_wakarimasu_ka
     .asciz ".b:1わかります:0か？"
 endtext
 
-text D_08a53580
+text text_remix_4_oishii_kamo_ne
     .asciz ".9:1おいしい　かも:0ネ"
 endtext
 
-text D_08a53598
+text text_remix_4_herushii_kamo_ne
     .asciz ".9:1ヘルシー　かも:0ネ"
 endtext
 
-text D_08a535b0
+text text_remix_4_ore_no_sei_kamo_ne
     .asciz ".9:1オレの　せいかも:0ネ"
 endtext
 
-text D_08a535cc
+text text_remix_4_sore_mo_sou_kamo_ne
     .asciz ".9:1それもそう　かも:0ネ"
 endtext
 
-text D_08a535e8
+text text_remix_4_tanoshii_kamo_ne
     .asciz ".9:1たのしい　かも:0ネ"
 endtext
 
-text D_08a53600
+text text_remix_4_oyatsu_wa_saikou
     .asciz ".a:1おやつは　:0サイコー！！"
 endtext
 
@@ -153,19 +153,19 @@ text text_remix_4_kibun_wa_saikou
     .asciz ".a:1きぶんは　:0サイコー！！"
 endtext
 
-text D_08a53640
+text text_remix_4_ore_tte_saikou
     .asciz ".a:1オレって　:0サイコー！！"
 endtext
 
-text D_08a53660
+text text_remix_4_kimi_tte_saikou
     .asciz ".a:1キミって　:0サイコー！！"
 endtext
 
-text D_08a53680
+text text_remix_4_oyatsu_ga_nai_yo
     .asciz ".a:1おやつが　:0ナイヨー！！"
 endtext
 
-text D_08a536a0
+text text_remix_4_ore_shiranai_yo
     .asciz ".a:1オレ、　しらない:0ヨー！！"
 endtext
 

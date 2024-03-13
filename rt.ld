@@ -1153,7 +1153,6 @@ SECTIONS {
         build/games/bon_odori/bon_odori.bs.o(.script.main);
         build/games/tap_trial/tap_trial_2.bs.o(.script.main);
         build/games/clappy_trio/snappy_trio.bs.o(.script.main);
-        build/bin/bindata_08a4b3ac.bin.o(.rodata*);
         build/games/rap_men/rap_women.bs.o(.script.main);
         build/bin/bindata_08a4d8e4.bin.o(.rodata*);
         build/games/remix_2/remix_2.bs.o(.script.main);

@@ -178,11 +178,11 @@ sb_stop
 
 @ Remix 6 - Rap Men Text
 
-text D_08a6b218
+text text_remix_6_honto_desu_ka
     .asciz ".b:1ほんとです:0か？"
 endtext
 
-text D_08a6b230
+text text_remix_6_kimi_tte_saikou
     .asciz ".a:1キミって　:0サイコー！！"
 endtext
 
@@ -958,7 +958,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    print_text_f D_08a6b230
+    print_text_f text_remix_6_kimi_tte_saikou
     run remix6_sync_rap_vocal, s_rap_kimitte_saiko_seqData
     rap_men_animate_rapper 2
     beat_anim
@@ -981,7 +981,7 @@ script script_remix_6_main
     run remix6_sync_rap_vocal, s_rap_honto_desuka_seqData
     rap_men_animate_rapper 4
     rest 8
-    print_text_f D_08a6b218
+    print_text_f text_remix_6_honto_desu_ka
     beat_anim
     rest 24
     rest 24
