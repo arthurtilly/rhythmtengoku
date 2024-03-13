@@ -65,6 +65,7 @@ extern struct Scene scene_marching_orders;
 extern struct Scene scene_marching_orders_2;
 extern struct Scene scene_wizards_waltz;
 extern struct Scene scene_bunny_hop;
+extern struct Scene scene_metronome;
 extern struct Scene scene_fireworks;
 extern struct Scene scene_power_calligraphy;
 extern struct Scene scene_power_calligraphy;
