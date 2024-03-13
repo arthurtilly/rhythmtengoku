@@ -75,63 +75,63 @@ return
 .section .script.main
 @ Rap Men - Text
 
-text D_08a385f8
+text text_rap_men_sanji_desu_ka
     .asciz ".b:1ＰＭ３：００　です:0か？"
 endtext
 
-text D_08a38618
+text text_rap_men_oyatsu_desu_ka
     .asciz ".b:1おやつ　です:0か？"
 endtext
 
-text D_08a38630
+text text_rap_men_honto_desu_ka
     .asciz ".b:1ほんとです:0か？"
 endtext
 
-text D_08a38648
+text text_rap_men_wakarimasu_ka
     .asciz ".b:1わかります:0か？"
 endtext
 
-text D_08a38660
+text text_rap_men_oishii_kamo_ne
     .asciz ".9:1おいしい　かも:0ネ"
 endtext
 
-text D_08a38678
+text text_rap_men_herushii_kamo_ne
     .asciz ".9:1ヘルシー　かも:0ネ"
 endtext
 
-text D_08a38690
+text text_rap_men_ore_no_sei_kamo_ne
     .asciz ".9:1オレの　せいかも:0ネ"
 endtext
 
-text D_08a386ac
+text text_rap_men_sore_mo_sou_kamo_ne
     .asciz ".9:1それもそう　かも:0ネ"
 endtext
 
-text D_08a386c8
+text text_rap_men_tanoshii_kamo_ne
     .asciz ".9:1たのしい　かも:0ネ"
 endtext
 
-text D_08a386e0
+text text_rap_men_oyatsu_wa_saikou
     .asciz ".a:1おやつは　:0サイコー！！"
 endtext
 
-text D_08a38700
+text text_rap_men_kibun_wa_saikou
     .asciz ".a:1きぶんは　:0サイコー！！"
 endtext
 
-text D_08a38720
+text text_rap_men_ore_tte_saikou
     .asciz ".a:1オレって　:0サイコー！！"
 endtext
 
-text D_08a38740
+text text_rap_men_kimi_tte_saikou
     .asciz ".a:1キミって　:0サイコー！！"
 endtext
 
-text D_08a38760
+text text_rap_men_oyatsu_ga_nai_yo
     .asciz ".a:1おやつが　:0ナイヨー！！"
 endtext
 
-text D_08a38780
+text text_rap_men_ore_shiranai_yo
     .asciz ".a:1オレ、　しらない:0ヨー！！"
 endtext
 
@@ -248,7 +248,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 0
-    print_text_f D_08a385f8
+    print_text_f text_rap_men_sanji_desu_ka
     play_sfx s_rap_15ji_desuka_seqData
     rap_men_animate_rapper 0
     beat_anim
@@ -280,7 +280,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 0
-    print_text_f D_08a38618
+    print_text_f text_rap_men_oyatsu_desu_ka
     play_sfx s_rap_oyatu_desuka_seqData
     rap_men_animate_rapper 0
     beat_anim
@@ -312,7 +312,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 0
-    print_text_f D_08a385f8
+    print_text_f text_rap_men_sanji_desu_ka
     play_sfx s_rap_15ji_desuka_seqData
     rap_men_animate_rapper 0
     beat_anim
@@ -335,7 +335,7 @@ script script_rap_men_main
     play_sfx s_rap_honto_desuka_seqData
     rap_men_animate_rapper 4
     rest 8
-    print_text_f D_08a38630
+    print_text_f text_rap_men_honto_desu_ka
     set_marking_criteria 0
     beat_anim
     rest 24
@@ -370,7 +370,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 1
-    print_text_f D_08a38660
+    print_text_f text_rap_men_oishii_kamo_ne
     play_sfx s_rap_oisi_kamone_seqData
     rap_men_animate_rapper 4
     beat_anim
@@ -408,7 +408,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 1
-    print_text_f D_08a38678
+    print_text_f text_rap_men_herushii_kamo_ne
     play_sfx s_rap_herusi_kamone_seqData
     rap_men_animate_rapper 4
     beat_anim
@@ -452,7 +452,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 0
-    print_text_f D_08a38618
+    print_text_f text_rap_men_oyatsu_desu_ka
     play_sfx s_rap_oyatu_desuka_seqData
     rap_men_animate_rapper 0
     beat_anim
@@ -472,7 +472,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 1
-    print_text_f D_08a38660
+    print_text_f text_rap_men_oishii_kamo_ne
     play_sfx s_rap_oisi_kamone_seqData
     rap_men_animate_rapper 4
     beat_anim
@@ -495,7 +495,7 @@ script script_rap_men_main
     play_sfx s_rap_honto_desuka_seqData
     rap_men_animate_rapper 4
     rest 8
-    print_text_f D_08a38630
+    print_text_f text_rap_men_honto_desu_ka
     set_marking_criteria 0
     beat_anim
     rest 24
@@ -515,7 +515,7 @@ script script_rap_men_main
     play_sfx s_rap_herusi_kamone_seqData
     rest 6
     set_marking_criteria 1
-    print_text_f D_08a38678
+    print_text_f text_rap_men_herushii_kamo_ne
     play_sfx s_rap_herusi_kamone_seqData
     rap_men_animate_rapper 4
     beat_anim
@@ -535,7 +535,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 2
-    print_text_f D_08a386e0
+    print_text_f text_rap_men_oyatsu_wa_saikou
     play_sfx s_rap_oyatuha_saiko_seqData
     rap_men_animate_rapper 2
     beat_anim
@@ -555,7 +555,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 2
-    print_text_f D_08a38700
+    print_text_f text_rap_men_kibun_wa_saikou
     play_sfx s_rap_kibunha_saiko_seqData
     rap_men_animate_rapper 2
     beat_anim
@@ -575,7 +575,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 2
-    print_text_f D_08a38720
+    print_text_f text_rap_men_ore_tte_saikou
     play_sfx s_rap_orette_saiko_seqData
     rap_men_animate_rapper 2
     beat_anim
@@ -598,7 +598,7 @@ script script_rap_men_main
     play_sfx s_rap_honto_desuka_seqData
     rap_men_animate_rapper 4
     rest 8
-    print_text_f D_08a38630
+    print_text_f text_rap_men_honto_desu_ka
     set_marking_criteria 0
     beat_anim
     rest 24
@@ -615,7 +615,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 2
-    print_text_f D_08a38740
+    print_text_f text_rap_men_kimi_tte_saikou
     play_sfx s_rap_kimitte_saiko_seqData
     rap_men_animate_rapper 2
     beat_anim
@@ -647,7 +647,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 2
-    print_text_f D_08a38740
+    print_text_f text_rap_men_kimi_tte_saikou
     play_sfx s_rap_kimitte_saiko_seqData
     rap_men_animate_rapper 2
     beat_anim
@@ -679,7 +679,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 2
-    print_text_f D_08a38760
+    print_text_f text_rap_men_oyatsu_ga_nai_yo
     play_sfx s_rap_oyatuga_naiyo_seqData
     rap_men_animate_rapper 0
     beat_anim
@@ -699,7 +699,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 1
-    print_text_f D_08a38690
+    print_text_f text_rap_men_ore_no_sei_kamo_ne
     play_sfx s_rap_orenosei_kamone_seqData
     rap_men_animate_rapper 4
     beat_anim
@@ -719,7 +719,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 2
-    print_text_f D_08a38780
+    print_text_f text_rap_men_ore_shiranai_yo
     play_sfx s_rap_oresira_naiyo_seqData
     rap_men_animate_rapper 0
     beat_anim
@@ -739,7 +739,7 @@ script script_rap_men_main
     rest 24
     rest 24
     set_marking_criteria 1
-    print_text_f D_08a386ac
+    print_text_f text_rap_men_sore_mo_sou_kamo_ne
     play_sfx s_rap_soremoso_kamone_seqData
     rap_men_animate_rapper 4
     beat_anim
