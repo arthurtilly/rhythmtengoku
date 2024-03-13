@@ -857,7 +857,7 @@ SECTIONS {
         build/games/rat_race/rat_race.bs.o(.script.entry);
         build/games/power_calligraphy/power_calligraphy.bs.o(.script.entry);
         build/games/drum_live/drum_girls_live_unused.bs.o(.script.entry);
-        build/bin/bindata_089d2fb4.bin.o(.rodata*);
+        build/games/drum_intro/drum_intro_unused.bs.o(.script.entry);
         build/games/toss_boys/toss_boys_2.bs.o(.script.entry);
         build/games/toss_boys/toss_boys.bs.o(.script.entry);
         build/bin/bindata_089d3360.bin.o(.rodata*);
@@ -1115,7 +1115,7 @@ SECTIONS {
         build/games/rat_race/rat_race.bs.o(.script.main);
         build/games/power_calligraphy/power_calligraphy.bs.o(.script.main);
         build/games/drum_live/drum_girls_live_unused.bs.o(.script.main);
-        build/bin/bindata_08a21294.bin.o(.rodata*);
+        build/games/drum_intro/drum_intro_unused.bs.o(.script.main);
         build/games/toss_boys/toss_boys_2.bs.o(.script.main);
         build/games/toss_boys/toss_boys.bs.o(.script.main);
         build/bin/bindata_08a2b91c.bin.o(.rodata*);
