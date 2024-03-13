@@ -870,7 +870,7 @@ SECTIONS {
         build/games/drum_intro/drum_intro_unused_3.bs.o(.script.entry);
         build/games/rap_men/rap_men.bs.o(.script.entry);
         build/games/quiz_show/quiz_show.bs.o(.script.entry);
-        build/games/rhythm_test/rhythm_test.bs.o(.script.entry);
+        build/games/rhythm_test/rhythm_test_click.bs.o(.script.entry);
         build/bin/bindata_089d4480.bin.o(.rodata*);
         build/games/drum_studio/drum_lesson_short_1.bs.o(.script.entry);
         build/games/drum_studio/drum_lesson_short_4.bs.o(.script.entry);
@@ -1130,7 +1130,7 @@ SECTIONS {
         build/games/drum_intro/drum_intro_unused_3.bs.o(.script.main);
         build/games/rap_men/rap_men.bs.o(.script.main);
         build/games/quiz_show/quiz_show.bs.o(.script.main);
-        build/games/rhythm_test/rhythm_test.bs.o(.script.main);
+        build/games/rhythm_test/rhythm_test_click.bs.o(.script.main);
         build/bin/bindata_08a3e700.bin.o(.rodata*);
         build/games/drum_studio/drum_lesson_short_1.bs.o(.script.main);
         build/games/drum_studio/drum_lesson_short_4.bs.o(.script.main);
