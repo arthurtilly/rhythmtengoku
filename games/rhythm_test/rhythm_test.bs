@@ -1,0 +1,190 @@
+.include "include/beatscript.inc"
+.include "games/rhythm_test/macros.inc"
+
+
+
+.section .script.entry
+@ Rhythm Test - Script Entry Point
+
+script script_rhythm_test_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_rhythm_test
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_rhythm_test_main
+    enable_pause_menu 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rhythm_test, script_rhythm_test_entry
+
+
+
+.section .script.main
+@ Rhythm Test - Main Script
+
+script rhythm_test_sub_08a3dfe0
+    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    beat_anim
+    rest 12
+    play_sfx_sp s_f_machine_click_seqData, 96, 0
+    rest 12
+return
+
+
+script rhythm_test_sub_08a3e028
+    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    beat_anim
+    rest 12
+    play_sfx_sp s_f_machine_click_seqData, 96, 0
+    spawn_cue CUE_TEST_00
+    rest 12
+return
+
+
+script rhythm_test_sub_08a3e07c
+    play_sfx_sp s_f_machine_click_seqData, 256, 768
+    beat_anim
+    rest 12
+    print_text_s 0
+    play_sfx_sp s_f_machine_click_seqData, 96, 768
+    spawn_cue CUE_TEST_00
+    rest 12
+return
+
+
+script rhythm_test_sub_08a3e0dc_unused
+    spawn_cue CUE_TEST_00
+    beat_anim
+    rest 12
+    rest 12
+    play_sfx_sp s_metro_tin_seqData, 256, 0
+return
+
+
+script script_rhythm_test_main
+    set_tempo 120
+    assess_inputs 0
+    run gameplay_set_miss_punishment_duration, 0
+    print_text_s D_0805eed8
+    rest 24
+    rest 24
+    rhythm_test_event00 1
+    call rhythm_test_sub_08a3dfe0
+    call rhythm_test_sub_08a3dfe0
+    call rhythm_test_sub_08a3dfe0
+    call rhythm_test_sub_08a3dfe0
+    call rhythm_test_sub_08a3dfe0
+    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    beat_anim
+    rest 12
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops, 0
+        play_sfx_sp s_f_machine_click_seqData, 96, 0
+        spawn_cue CUE_TEST_00
+        rest 12
+        call rhythm_test_sub_08a3e028
+        call rhythm_test_sub_08a3e028
+        call rhythm_test_sub_08a3e028
+        play_sfx_sp s_f_machine_click_seqData, 256, 0
+        beat_anim
+        rest 12
+        run func_080175c4, 0
+    loop_end
+    print_text_s 0
+    play_sfx_sp s_f_machine_click_seqData, 96, 0
+    rest 12
+    rhythm_test_event00 2
+    call rhythm_test_sub_08a3dfe0
+    call rhythm_test_sub_08a3dfe0
+    call rhythm_test_sub_08a3dfe0
+    call rhythm_test_sub_08a3dfe0
+    call rhythm_test_sub_08a3dfe0
+    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    beat_anim
+    rest 12
+    rhythm_test_event02 12
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops, 0
+        play_sfx_sp s_f_machine_click_seqData, 96, 0
+        spawn_cue CUE_TEST_00
+        rest 12
+        call rhythm_test_sub_08a3e028
+        call rhythm_test_sub_08a3e028
+        call rhythm_test_sub_08a3e028
+        play_sfx_sp s_f_machine_click_seqData, 256, 0
+        beat_anim
+        rest 12
+        run func_080175c4, 0
+    loop_end
+    rhythm_test_event00 3
+    assess_inputs 1
+    rhythm_test_event01 1
+    play_sfx_sp s_f_machine_click_seqData, 96, 0
+    spawn_cue CUE_TEST_00
+    rest 12
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    print_text_s D_0805ef00
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    print_text_s 0
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    call rhythm_test_sub_08a3e028
+    print_text_s D_0805ef0c
+    call rhythm_test_sub_08a3e07c
+    print_text_s D_0805ef10
+    call rhythm_test_sub_08a3e07c
+    print_text_s D_0805ef14
+    call rhythm_test_sub_08a3e07c
+    rhythm_test_event00 4
+    play_sfx_sp s_metro_tin_seqData, 256, 0
+    beat_anim
+    rest 12
+    rest 12
+    assess_inputs 0
+    rest 24
+    rhythm_test_event02 64
+    play_music s_check_machine_seqData
+    rest 24
+    rest 24
+    rhythm_test_event03 0
+    rest 24
+    rest 24
+    rest 24
+    run gameplay_display_text_and_wait, 0
+    rest 24
+    run set_next_scene, scene_results_ver_score
+return
+
+.end
