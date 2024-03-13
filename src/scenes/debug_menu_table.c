@@ -212,11 +212,11 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ＲＩＱデータチェック"
     },
     /* Opening (B Type) */ {
-        /* Scene */ &D_089d3a6c,
+        /* Scene */ &scene_drum_samurai_opening_cutscene,
         /* Label */ "オープニング　（Ｂ　Ｔｙｐｅ）"
     },
     /* Opening (A Type) */ {
-        /* Scene */ &D_089d3984,
+        /* Scene */ &scene_drum_samurai_demo_cutscene,
         /* Label */ "オープニング　（Ａ　Ｔｙｐｅ）"
     },
     /* Tram & Pauline */ {
