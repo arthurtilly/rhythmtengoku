@@ -862,8 +862,8 @@ SECTIONS {
         build/games/toss_boys/toss_boys.bs.o(.script.entry);
         build/games/drum_intro/drum_intro_unused_2.bs.o(.script.entry);
         build/games/tram_and_pauline/tram_and_pauline.bs.o(.script.entry);
-        build/bin/bindata_089d36f4.bin.o(.rodata*);
-        build/bin/bindata_089d3984.bin.o(.rodata*);
+        build/games/drum_intro/tanuki_and_monkey.bs.o(.script.entry);
+        build/bin/bindata_089d38b8.bin.o(.rodata*);
         build/games/showtime/showtime.bs.o(.script.entry);
         build/games/space_dance/space_dance.bs.o(.script.entry);
         build/bin/bindata_089d3f10.bin.o(.rodata*);
@@ -1120,7 +1120,8 @@ SECTIONS {
         build/games/toss_boys/toss_boys.bs.o(.script.main);
         build/games/drum_intro/drum_intro_unused_2.bs.o(.script.main);
         build/games/tram_and_pauline/tram_and_pauline.bs.o(.script.main);
-        build/bin/bindata_08a2efe0.bin.o(.rodata*);
+        build/games/drum_intro/tanuki_and_monkey.bs.o(.script.main);
+        build/bin/bindata_08a321d4.bin.o(.rodata*);
         build/games/showtime/showtime.bs.o(.script.main);
         build/games/space_dance/space_dance.bs.o(.script.main);
         build/bin/bindata_08a36930.bin.o(.rodata*);
