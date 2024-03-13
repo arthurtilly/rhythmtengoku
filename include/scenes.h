@@ -65,7 +65,6 @@ extern struct Scene scene_marching_orders;
 extern struct Scene scene_marching_orders_2;
 extern struct Scene scene_wizards_waltz;
 extern struct Scene scene_bunny_hop;
-extern struct Scene scene_metronome;
 extern struct Scene scene_fireworks;
 extern struct Scene scene_power_calligraphy;
 extern struct Scene scene_power_calligraphy;
@@ -138,6 +137,7 @@ extern struct Scene D_089d3984;
 extern struct Scene D_089d2f98;
 extern struct Scene D_089d2670;
 extern struct Scene D_089d6d74;
+extern struct Scene scene_metronome;
 
 
 // Bitmap Fonts from WarioWare
