@@ -393,15 +393,15 @@ SECTIONS {
         build/games/rat_race/rat_race_text.c.o(.rodata);
         build/games/power_calligraphy/power_calligraphy_text.c.o(.rodata);
         build/games/drum_live/drum_live_text.c.o(.rodata);
-        build/games/drum_intro/drum_intro1_text.c.o(.rodata);
+        build/games/drum_intro/drum_intro_unused_text.c.o(.rodata);
         build/games/toss_boys/toss_boys_text.c.o(.rodata);
-        build/games/drum_intro/drum_intro2_text.c.o(.rodata);
+        build/games/drum_intro/drum_intro_unused_2_text.c.o(.rodata);
         build/games/tram_and_pauline/tram_pauline_text.c.o(.rodata);
         build/games/drum_intro/tanuki_and_monkey_text.c.o(.rodata);
-        build/games/drum_intro/drum_intro_final_text.c.o(.rodata);
+        build/games/drum_intro/drum_samurai_cutscene_text.c.o(.rodata);
         build/games/showtime/showtime_text.c.o(.rodata);
         build/games/space_dance/space_dance_text.c.o(.rodata);
-        build/games/drum_intro/drum_intro3_text.c.o(.rodata);
+        build/games/drum_intro/drum_intro_unused_3_text.c.o(.rodata);
         build/games/rap_men/rap_men_text.c.o(.rodata);
         build/games/quiz_show/quiz_show_text.c.o(.rodata);
         build/games/rhythm_test/rhythm_test_text.c.o(.rodata);
@@ -867,7 +867,7 @@ SECTIONS {
         build/games/drum_intro/drum_samurai_opening_cutscene.bs.o(.script.entry);
         build/games/showtime/showtime.bs.o(.script.entry);
         build/games/space_dance/space_dance.bs.o(.script.entry);
-        build/bin/bindata_089d3f10.bin.o(.rodata*);
+        build/games/drum_intro/drum_intro_unused_3.bs.o(.script.entry);
         build/games/rap_men/rap_men.bs.o(.script.entry);
         build/games/quiz_show/quiz_show.bs.o(.script.entry);
         build/bin/bindata_089d4398.bin.o(.rodata*);
@@ -1126,7 +1126,7 @@ SECTIONS {
         build/games/drum_intro/drum_samurai_opening_cutscene.bs.o(.script.main);
         build/games/showtime/showtime.bs.o(.script.main);
         build/games/space_dance/space_dance.bs.o(.script.main);
-        build/bin/bindata_08a36930.bin.o(.rodata*);
+        build/games/drum_intro/drum_intro_unused_3.bs.o(.script.main);
         build/games/rap_men/rap_men.bs.o(.script.main);
         build/games/quiz_show/quiz_show.bs.o(.script.main);
         build/bin/bindata_08a3dfe0.bin.o(.rodata*);

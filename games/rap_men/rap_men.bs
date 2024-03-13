@@ -73,6 +73,70 @@ return
 
 
 .section .script.main
+@ Rap Men - Text
+
+text D_08a385f8
+    .asciz ".b:1ＰＭ３：００　です:0か？"
+endtext
+
+text D_08a38618
+    .asciz ".b:1おやつ　です:0か？"
+endtext
+
+text D_08a38630
+    .asciz ".b:1ほんとです:0か？"
+endtext
+
+text D_08a38648
+    .asciz ".b:1わかります:0か？"
+endtext
+
+text D_08a38660
+    .asciz ".9:1おいしい　かも:0ネ"
+endtext
+
+text D_08a38678
+    .asciz ".9:1ヘルシー　かも:0ネ"
+endtext
+
+text D_08a38690
+    .asciz ".9:1オレの　せいかも:0ネ"
+endtext
+
+text D_08a386ac
+    .asciz ".9:1それもそう　かも:0ネ"
+endtext
+
+text D_08a386c8
+    .asciz ".9:1たのしい　かも:0ネ"
+endtext
+
+text D_08a386e0
+    .asciz ".a:1おやつは　:0サイコー！！"
+endtext
+
+text D_08a38700
+    .asciz ".a:1きぶんは　:0サイコー！！"
+endtext
+
+text D_08a38720
+    .asciz ".a:1オレって　:0サイコー！！"
+endtext
+
+text D_08a38740
+    .asciz ".a:1キミって　:0サイコー！！"
+endtext
+
+text D_08a38760
+    .asciz ".a:1おやつが　:0ナイヨー！！"
+endtext
+
+text D_08a38780
+    .asciz ".a:1オレ、　しらない:0ヨー！！"
+endtext
+
+
+
 @ Rap Men - Marking Criteria
 
 struct rap_men_marking_criteria_0
