@@ -154,7 +154,7 @@ script karate_man_sub_089edf88
     rest 24
     beat_anim
     rest 24
-    karate_man_print_textbox NULL
+    karate_man_clear_textbox
     beat_anim
     rest 24
     beat_anim
@@ -547,7 +547,7 @@ script script_karate_man_practice
     set_music_volume 150
     play_music s_renshu_bgm1_seqData
     assess_inputs 0
-    karate_man_enable_flow 0
+    karate_man_enable_flow FALSE
     rest 24
     enable_pause_menu TRUE
     rest 24
@@ -555,17 +555,17 @@ script script_karate_man_practice
     karate_man_print_textbox D_0805abec
     rest 12
     karate_man_wait_at_textbox
-    karate_man_print_textbox NULL
+    karate_man_clear_textbox
     rest 24
     karate_man_print_textbox D_0805ac0c
     rest 12
     karate_man_wait_at_textbox
-    karate_man_print_textbox NULL
+    karate_man_clear_textbox
     rest 24
     karate_man_print_textbox D_0805ac60
     rest 12
     karate_man_wait_at_textbox
-    karate_man_print_textbox NULL
+    karate_man_clear_textbox
     rest 24
     mod_music_volume 0, 96
     rest 24
@@ -582,19 +582,19 @@ script script_karate_man_practice
         rest 24
         rest 24
         rest 24
-        karate_man_exit_loop_if_all_hit 0
+        karate_man_exit_loop_if_all_hit
     loop_end
     karate_man_start_tutorial_loop 0
     rest 48
     karate_man_print_textbox D_0805aca0
     rest 12
     karate_man_wait_at_textbox
-    karate_man_print_textbox NULL
+    karate_man_clear_textbox
     rest 24
     karate_man_print_textbox D_0805acd8
     rest 12
     karate_man_wait_at_textbox
-    karate_man_print_textbox NULL
+    karate_man_clear_textbox
     rest 24
     karate_man_start_tutorial_loop 3
     rest 24
@@ -621,7 +621,7 @@ script script_karate_man_practice
         beat_anim
         rest 24
         rest 24
-        karate_man_exit_loop_if_all_hit 0
+        karate_man_exit_loop_if_all_hit
     loop_end
     rest 24
     karate_man_start_tutorial_loop 0
@@ -629,21 +629,21 @@ script script_karate_man_practice
     karate_man_print_textbox D_0805ad04
     rest 12
     karate_man_wait_at_textbox
-    karate_man_print_textbox NULL
+    karate_man_clear_textbox
     rest 24
     karate_man_print_textbox D_0805ad38
     rest 12
     karate_man_wait_at_textbox
-    karate_man_print_textbox NULL
+    karate_man_clear_textbox
     rest 24
     stop_tutorial
     karate_man_print_textbox D_0805ad80
     rest 12
     karate_man_wait_at_textbox
-    karate_man_print_textbox NULL
+    karate_man_clear_textbox
     rest 24
     rest 24
-    karate_man_enable_flow 1
+    karate_man_enable_flow TRUE
     rest 24
     goto script_karate_man_main
 

@@ -97,10 +97,12 @@
     fireworks_event SET_PATTERN_MODE, \mode
 .endm
 
+
 @ [Event 0x01] Play Count-In SFX (includes "Nuei!" but not "Tamaya~")
 .macro fireworks_play_sfx id
     fireworks_event PLAY_SOUND, \id
 .endm
+
 
 @ [Event 0x02] Set Default Firework Pattern
 .macro fireworks_set_default_pattern pattern

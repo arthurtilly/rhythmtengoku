@@ -786,7 +786,7 @@ script script_remix_8_main
     rest 24
     rest 24
     karate_man_stop_serious_next_hit
-    karate_man_use_the_face 1
+    karate_man_use_the_face TRUE
     spawn_cue CUE_POT
     rest 24
     play_music L8_pat_end_seqData
