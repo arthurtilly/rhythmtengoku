@@ -1181,14 +1181,11 @@ SECTIONS {
         build/games/drum_live/drum_band_snappy_trio.bs.o(.script.main);
         build/games/drum_live/drum_band_tap_trial_2.bs.o(.script.main);
         build/games/sneaky_spirits/subroutines.bs.o(.script.sub);
-        build/bin/bindata_08a7a20c.bin.o(.rodata*);
         build/games/drum_live/subroutines.bs.o(.script.sub);
         build/games/drum_studio/subroutines.bs.o(.script.sub);
         build/games/power_calligraphy/subroutines.bs.o(.script.sub);
-        build/bin/bindata_08a820e4.bin.o(.rodata*);
         build/games/marching_orders/subroutines.bs.o(.script.sub);
         build/games/space_dance/subroutines.bs.o(.script.sub);
-        build/bin/bindata_08a85a50.bin.o(.rodata*);
         build/games/tap_trial/subroutines.bs.o(.script.sub);
 
         build/data/lib_midi_data.c.o(.data);

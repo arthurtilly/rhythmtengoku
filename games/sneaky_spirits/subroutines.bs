@@ -249,4 +249,16 @@ script sneaky_spirits_2_sub_08a79fe4
     rest 24
 return
 
+
+script sneaky_spirits_sub_08a7a20c_unused
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+return
+
 .end
