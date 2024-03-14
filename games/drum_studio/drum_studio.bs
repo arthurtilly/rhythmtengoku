@@ -4,16 +4,16 @@
 
 
 .section .script.entry
-@ Drum Studio - Script Entry Point
+@ Drum Studio (Ver. 0) - Script Entry Point
 
-script script_drum_studio_entry
+script script_drum_studio_ver0_entry
     set_tempo 124
     rest 24
     rest 24
     load_drum_studio_ver0
     enable_play_inputs 1
     assess_inputs 1
-    call script_drum_studio_main
+    call script_drum_studio_ver0_main
     enable_pause_menu 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -22,7 +22,7 @@ script script_drum_studio_entry
     rest 24
 stop
 
-define_gameplay_scene scene_drum_studio, script_drum_studio_entry
+define_gameplay_scene scene_drum_studio_ver0, script_drum_studio_ver0_entry
 
 
 
@@ -48,10 +48,54 @@ define_gameplay_scene scene_drum_studio_drumming, script_drum_studio_drumming_en
 
 
 
+@ Drum Studio (Ver. 2) - Script Entry Point
+
+script script_drum_studio_ver2_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_studio_ver2
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_drum_studio_ver2_main
+    enable_pause_menu 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_studio_ver2, script_drum_studio_ver2_entry
+
+
+
+@ Drum Studio (Listening) - Script Entry Point
+
+script script_drum_studio_listening_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_studio_listen
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_drum_studio_listening_main
+    enable_pause_menu 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_studio_listening, script_drum_studio_listening_entry
+
+
+
 .section .script.main
 @ Drum Studio - Main Script
 
-script drum_studio_sub_08a40f00
+script script_drum_studio_main
     rest 24
     dms_event02 1
     loop_start
@@ -74,11 +118,19 @@ script drum_studio_sub_08a40f00
 return
 
 
-script script_drum_studio_main
-    goto drum_studio_sub_08a40f00
+script script_drum_studio_ver0_main
+    goto script_drum_studio_main
 
 
 script script_drum_studio_drumming_main
-    goto drum_studio_sub_08a40f00
+    goto script_drum_studio_main
+
+
+script script_drum_studio_ver2_main
+    goto script_drum_studio_main
+
+
+script script_drum_studio_listening_main
+    goto script_drum_studio_main
 
 .end
