@@ -13,10 +13,17 @@ u32 D_08c71908_window1[] = {
 	0x00f665f3
 };
 
+#if REV < 1
 // [D_08C71848] D_08C71908 Huffman Window 2
 u32 D_08c71908_window2[] = {
 	0x00470010
 };
+#else
+// [D_08C71848] D_08C71908 Huffman Window 2
+u32 D_08c71908_window2[] = {
+	0x00d20010
+};
+#endif
 
 // [D_08C7184C] D_08C71908 Huffman
 struct Huffman D_08c71908_huffman[] = {

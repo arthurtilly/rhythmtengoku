@@ -8,10 +8,17 @@ u16 D_08bdc118_huffmandata[] = {
 	0x2222, 0x0000
 };
 
+#if REV < 1
 // [D_08BDC0FC] D_08BDC118 Huffman Window 1
 u32 D_08bdc118_window1[] = {
 	0x00d2b53c
 };
+#else
+// [D_08BDC0FC] D_08BDC118 Huffman Window 1
+u32 D_08bdc118_window1[] = {
+	0x00d2b6dc
+};
+#endif
 
 // [D_08BDC100] D_08BDC118 Huffman Window 2
 u32 D_08bdc118_window2[] = {

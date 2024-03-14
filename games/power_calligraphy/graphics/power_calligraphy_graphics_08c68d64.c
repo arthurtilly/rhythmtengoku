@@ -8,6 +8,7 @@ u16 D_08c68d64_huffmandata[] = {
 	0x0000, 0xeeee, 0x0480, 0x8080, 0x8080, 0x8080, 0x8080, 0x0ff0, 0x8000, 0x0000
 };
 
+#if REV < 1
 // [D_08C68D40] D_08C68D64 Huffman Window 1
 u32 D_08c68d64_window1[] = {
 	0x00d1b1e4
@@ -17,6 +18,17 @@ u32 D_08c68d64_window1[] = {
 u32 D_08c68d64_window2[] = {
 	0x00d1b1f8
 };
+#else
+// [D_08C68D40] D_08C68D64 Huffman Window 1
+u32 D_08c68d64_window1[] = {
+	0x00d1b384
+};
+
+// [D_08C68D44] D_08C68D64 Huffman Window 2
+u32 D_08c68d64_window2[] = {
+	0x00d1b398
+};
+#endif
 
 // [D_08C68D48] D_08C68D64 Huffman
 struct Huffman D_08c68d64_huffman[] = {
