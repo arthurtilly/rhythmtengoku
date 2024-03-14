@@ -19,7 +19,7 @@ script script_scene_results_ver_rank
     rest 24
     run rank_results_play_bgm
     set_music_volume 50
-    mod_music_volume 0x100, (24 * 16)
+    mod_music_volume 256, 384
     run rank_results_append_encouragement
     scene_set_int INT8, 8, TRUE
     pause_scene

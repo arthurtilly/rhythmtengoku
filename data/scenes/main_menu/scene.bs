@@ -8,7 +8,7 @@ script script_scene_main_menu
     pause_scene
     scene_if_eq INT32, 0x1A, TRUE
         set_music_volume 70
-        mod_music_volume 0x100, 24
+        mod_music_volume 256, 24
         run scene_set_music_player_by_sound, s_manza_bgm_seqData
     end_if
     rest 12
