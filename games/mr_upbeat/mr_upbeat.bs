@@ -16,7 +16,7 @@ script script_mr_upbeat_entry
     call script_mr_upbeat_main
     enable_pause_menu FALSE
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -41,7 +41,7 @@ script script_mr_upbeat_game_over
     mr_upbeat_event05 0
     rest 24
     run gameplay_display_text_and_wait
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -49,34 +49,34 @@ stop
 
 
 script mr_upbeat_sub_08a56c60
-    play_sfx_sp s_intro_one_seqData, 384, 0
+    play_sfx_vol s_intro_one_seqData, 384
     rest 12
     mr_upbeat_event02 0
     rest 12
     rest 12
     mr_upbeat_event02 0
     rest 12
-    play_sfx_sp s_intro_two_seqData, 384, 0
+    play_sfx_vol s_intro_two_seqData, 384
     rest 12
     mr_upbeat_event02 0
     rest 12
     rest 12
     mr_upbeat_event02 0
-    play_sfx_sp s_intro_a_seqData, 256, 0
+    play_sfx_vol s_intro_a_seqData, 256
     print_text_s 0
     rest 12
-    play_sfx_sp s_intro_one_seqData, 384, 0
+    play_sfx_vol s_intro_one_seqData, 384
     rest 12
     mr_upbeat_event02 0
     rest 12
-    play_sfx_sp s_intro_two_seqData, 384, 0
+    play_sfx_vol s_intro_two_seqData, 384
     rest 12
     mr_upbeat_event02 0
     rest 12
-    play_sfx_sp s_intro_three_seqData, 384, 0
+    play_sfx_vol s_intro_three_seqData, 384
     rest 12
     mr_upbeat_event02 0
-    play_sfx_synced s_intro_four_seqData, 150, 384, 0
+    play_sfx_synced s_intro_four_seqData, 150, 384
     rest 12
     rest 12
     mr_upbeat_event02 0
@@ -251,7 +251,7 @@ script script_mr_upbeat_main
         run scene_stop_music, 0
         play_sfx s_metro_tin_seqData
         mr_upbeat_event03 0
-        switch_random INT8, 5
+        switch_random 5
             case 0
                 print_text_s D_080681fc
                 break

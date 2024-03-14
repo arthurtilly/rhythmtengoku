@@ -17,7 +17,7 @@ script script_karate_man_2_entry
     call script_karate_man_2_main
     enable_pause_menu FALSE
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -515,8 +515,7 @@ script script_karate_man_2_main
     rest 24
     print_text_f NULL
     rest 24
-    run agb_random, 3
-    switch INT8, FUNCTION_RESULT
+    switch_random 3
         case 0
             set_tempo 160
             break

@@ -17,7 +17,7 @@ script script_rap_men_entry
     call script_rap_men_practice
     enable_pause_menu FALSE
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -38,7 +38,7 @@ script script_rap_men_skipped_practice_entry
     call script_rap_men_skipped_practice
     enable_pause_menu FALSE
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -354,13 +354,13 @@ script script_rap_men_main
     beat_anim
     rest 24
     rap_men_animate_rapper 0
-    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
     beat_anim
     rest 24
     rap_men_animate_rapper 0
-    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
     beat_anim
@@ -392,13 +392,13 @@ script script_rap_men_main
     beat_anim
     rest 24
     rap_men_animate_rapper 0
-    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
     beat_anim
     rest 24
     rap_men_animate_rapper 0
-    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
     beat_anim
@@ -430,22 +430,22 @@ script script_rap_men_main
     beat_anim
     rest 24
     rap_men_animate_rapper 0
-    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
     beat_anim
     rest 24
     rap_men_animate_rapper 0
-    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
     beat_anim
     rest 12
     rest 6
-    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 6
     rap_men_animate_rapper 0
-    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
     beat_anim
@@ -941,7 +941,7 @@ script script_rap_men_practice
     run func_080175b0, 0
     loop_start
         run beatscript_disable_loops, 0
-        switch FUNC, func_080175d8
+        switch_loop_counter
             case 0
                 print_text_f D_0805ead0
                 break
@@ -1084,7 +1084,7 @@ script script_rap_men_practice
     run func_080175b0, 0
     loop_start
         run beatscript_disable_loops, 0
-        switch FUNC, func_080175d8
+        switch_loop_counter
             case 0
                 print_text_f D_0805eb94
                 break
@@ -1204,7 +1204,7 @@ script script_rap_men_practice
     run func_080175b0, 0
     loop_start
         run beatscript_disable_loops, 0
-            switch FUNC, func_080175d8
+            switch_loop_counter
             case 0
                 print_text_f D_0805ebf4
                 break

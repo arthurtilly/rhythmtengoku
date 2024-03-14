@@ -16,7 +16,7 @@ script script_drum_intro_unused_2_entry
     call script_drum_intro_unused_2_intro
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -37,7 +37,7 @@ script script_drum_intro_unused_2_skipped_intro_entry
     call script_drum_intro_unused_2_skipped_intro
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -126,14 +126,14 @@ script script_drum_intro_unused_2_main
     play_sfx s_intro_one_seqData
     dmi_event03 3
     rest 24
-    play_sfx_sp s_intro_two_seqData, 64, 0
+    play_sfx_vol s_intro_two_seqData, 64
     dmi_event03 3
     rest 23
-    play_sfx_sp s_intro_three_seqData, 96, 0
+    play_sfx_vol s_intro_three_seqData, 96
     dmi_event03 3
     rest 1
     rest 24
-    play_sfx_sp s_intro_uh_seqData, 160, 0
+    play_sfx_vol s_intro_uh_seqData, 160
     dmi_event03 3
     rest 0
     spawn_cue CUE_KICK
@@ -166,31 +166,31 @@ script script_drum_intro_unused_2_main
     play_sfx s_intro_one_seqData
     dmi_event03 3
     rest 24
-    play_sfx_sp s_intro_a_seqData, 32, -256
+    play_sfx_vol_pitch s_intro_a_seqData, 32, -256
     rest 24
-    play_sfx_sp s_intro_a_seqData, 48, 0
+    play_sfx_vol s_intro_a_seqData, 48
     rest 24
     play_sfx s_intro_two_seqData
     dmi_event03 3
     rest 24
-    play_sfx_sp s_intro_a_seqData, 32, -256
+    play_sfx_vol_pitch s_intro_a_seqData, 32, -256
     rest 24
-    play_sfx_sp s_intro_a_seqData, 48, 0
+    play_sfx_vol s_intro_a_seqData, 48
     rest 24
     play_sfx s_intro_one_seqData
     dmi_event03 3
     rest 24
-    play_sfx_sp s_intro_two_seqData, 160, 0
+    play_sfx_vol s_intro_two_seqData, 160
     dmi_event03 3
     rest 23
-    play_sfx_sp s_intro_three_seqData, 128, 0
+    play_sfx_vol s_intro_three_seqData, 128
     dmi_event03 3
     rest 1
     rest 24
-    play_sfx_sp s_intro_one_seqData, 160, 0
+    play_sfx_vol s_intro_one_seqData, 160
     dmi_event03 3
     rest 24
-    play_sfx_sp s_intro_two_seqData, 192, 0
+    play_sfx_vol s_intro_two_seqData, 192
     dmi_event03 3
     rest 24
     play_sfx s_intro_comeon_seqData

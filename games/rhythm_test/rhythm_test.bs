@@ -16,7 +16,7 @@ script script_rhythm_test_click_entry
     call script_rhythm_test_click_main
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -38,7 +38,7 @@ script script_rhythm_test_cue_entry
     call script_rhythm_test_cue_main
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -60,7 +60,7 @@ script script_rhythm_test_trick_entry
     call script_rhythm_test_trick_main
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -82,7 +82,7 @@ script script_rhythm_test_entry
     call script_rhythm_test_main
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -104,7 +104,7 @@ script script_rhythm_test_opening_entry
     call script_rhythm_test_opening_main
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -118,30 +118,30 @@ define_gameplay_scene scene_rhythm_test_opening, script_rhythm_test_opening_entr
 @ Rhythm Test (Click) - Main Script
 
 script rhythm_test_click_sub_08a3dfe0
-    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
-    play_sfx_sp s_f_machine_click_seqData, 96, 0
+    play_sfx_vol s_f_machine_click_seqData, 96
     rest 12
 return
 
 
 script rhythm_test_click_sub_08a3e028
-    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
-    play_sfx_sp s_f_machine_click_seqData, 96, 0
+    play_sfx_vol s_f_machine_click_seqData, 96
     spawn_cue CUE_TEST_00
     rest 12
 return
 
 
 script rhythm_test_click_sub_08a3e07c
-    play_sfx_sp s_f_machine_click_seqData, 256, 768
+    play_sfx_vol_pitch s_f_machine_click_seqData, 256, 768
     beat_anim
     rest 12
     print_text_s 0
-    play_sfx_sp s_f_machine_click_seqData, 96, 768
+    play_sfx_vol_pitch s_f_machine_click_seqData, 96, 768
     spawn_cue CUE_TEST_00
     rest 12
 return
@@ -152,7 +152,7 @@ script rhythm_test_click_sub_08a3e0dc_unused
     beat_anim
     rest 12
     rest 12
-    play_sfx_sp s_metro_tin_seqData, 256, 0
+    play_sfx_vol s_metro_tin_seqData, 256
 return
 
 
@@ -169,25 +169,25 @@ script script_rhythm_test_click_main
     call rhythm_test_click_sub_08a3dfe0
     call rhythm_test_click_sub_08a3dfe0
     call rhythm_test_click_sub_08a3dfe0
-    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
     run func_080175b0, 0
     loop_start
         run beatscript_disable_loops, 0
-        play_sfx_sp s_f_machine_click_seqData, 96, 0
+        play_sfx_vol s_f_machine_click_seqData, 96
         spawn_cue CUE_TEST_00
         rest 12
         call rhythm_test_click_sub_08a3e028
         call rhythm_test_click_sub_08a3e028
         call rhythm_test_click_sub_08a3e028
-        play_sfx_sp s_f_machine_click_seqData, 256, 0
+        play_sfx_vol s_f_machine_click_seqData, 256
         beat_anim
         rest 12
         run func_080175c4, 0
     loop_end
     print_text_s 0
-    play_sfx_sp s_f_machine_click_seqData, 96, 0
+    play_sfx_vol s_f_machine_click_seqData, 96
     rest 12
     rhythm_test_event00 2
     call rhythm_test_click_sub_08a3dfe0
@@ -195,20 +195,20 @@ script script_rhythm_test_click_main
     call rhythm_test_click_sub_08a3dfe0
     call rhythm_test_click_sub_08a3dfe0
     call rhythm_test_click_sub_08a3dfe0
-    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
     rhythm_test_event02 12
     run func_080175b0, 0
     loop_start
         run beatscript_disable_loops, 0
-        play_sfx_sp s_f_machine_click_seqData, 96, 0
+        play_sfx_vol s_f_machine_click_seqData, 96
         spawn_cue CUE_TEST_00
         rest 12
         call rhythm_test_click_sub_08a3e028
         call rhythm_test_click_sub_08a3e028
         call rhythm_test_click_sub_08a3e028
-        play_sfx_sp s_f_machine_click_seqData, 256, 0
+        play_sfx_vol s_f_machine_click_seqData, 256
         beat_anim
         rest 12
         run func_080175c4, 0
@@ -216,7 +216,7 @@ script script_rhythm_test_click_main
     rhythm_test_event00 3
     assess_inputs 1
     rhythm_test_event01 1
-    play_sfx_sp s_f_machine_click_seqData, 96, 0
+    play_sfx_vol s_f_machine_click_seqData, 96
     spawn_cue CUE_TEST_00
     rest 12
     call rhythm_test_click_sub_08a3e028
@@ -256,7 +256,7 @@ script script_rhythm_test_click_main
     print_text_s D_0805ef14
     call rhythm_test_click_sub_08a3e07c
     rhythm_test_event00 4
-    play_sfx_sp s_metro_tin_seqData, 256, 0
+    play_sfx_vol s_metro_tin_seqData, 256
     beat_anim
     rest 12
     rest 12
@@ -655,7 +655,7 @@ return
 @ Rhythm Test (Trick) - Main Script
 
 script rhythm_test_trick_sub_08a4002c
-    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
     rest 12
@@ -663,7 +663,7 @@ return
 
 
 script rhythm_test_trick_sub_08a40068
-    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
     spawn_cue CUE_TEST_00
@@ -672,7 +672,7 @@ return
 
 
 script rhythm_test_trick_sub_08a400b0_unused
-    play_sfx_sp s_f_machine_click_seqData, 256, 768
+    play_sfx_vol_pitch s_f_machine_click_seqData, 256, 768
     beat_anim
     rest 12
     print_text_s 0
@@ -686,7 +686,7 @@ script rhythm_test_trick_sub_08a40104_unused
     beat_anim
     rest 12
     rest 12
-    play_sfx_sp s_metro_tin_seqData, 256, 0
+    play_sfx_vol s_metro_tin_seqData, 256
 return
 
 
@@ -705,7 +705,7 @@ script script_rhythm_test_trick_main
     call rhythm_test_trick_sub_08a4002c
     call rhythm_test_trick_sub_08a4002c
     call rhythm_test_trick_sub_08a4002c
-    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
     run func_080175b0, 0
@@ -716,7 +716,7 @@ script script_rhythm_test_trick_main
         call rhythm_test_trick_sub_08a40068
         call rhythm_test_trick_sub_08a40068
         call rhythm_test_trick_sub_08a40068
-        play_sfx_sp s_f_machine_click_seqData, 256, 0
+        play_sfx_vol s_f_machine_click_seqData, 256
         beat_anim
         rest 12
         run func_080175c4, 0
@@ -727,7 +727,7 @@ script script_rhythm_test_trick_main
     call rhythm_test_trick_sub_08a4002c
     call rhythm_test_trick_sub_08a4002c
     call rhythm_test_trick_sub_08a4002c
-    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
     set_music_volume 256
@@ -740,7 +740,7 @@ script script_rhythm_test_trick_main
         call rhythm_test_trick_sub_08a40068
         call rhythm_test_trick_sub_08a40068
         call rhythm_test_trick_sub_08a40068
-        play_sfx_sp s_f_machine_click_seqData, 256, 0
+        play_sfx_vol s_f_machine_click_seqData, 256
         beat_anim
         rest 12
         run func_080175c4, 0
@@ -750,7 +750,7 @@ script script_rhythm_test_trick_main
     call rhythm_test_trick_sub_08a4002c
     call rhythm_test_trick_sub_08a4002c
     call rhythm_test_trick_sub_08a4002c
-    play_sfx_sp s_f_machine_click_seqData, 256, 0
+    play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
     run func_080175b0, 0
@@ -761,7 +761,7 @@ script script_rhythm_test_trick_main
         call rhythm_test_trick_sub_08a40068
         call rhythm_test_trick_sub_08a40068
         call rhythm_test_trick_sub_08a40068
-        play_sfx_sp s_f_machine_click_seqData, 256, 0
+        play_sfx_vol s_f_machine_click_seqData, 256
         beat_anim
         rest 12
         run func_080175c4, 0
@@ -909,7 +909,7 @@ script script_rhythm_test_trick_main
     rest 24
     run scene_stop_music, 0
     rhythm_test_event00 4
-    play_sfx_sp s_metro_tin_seqData, 256, 0
+    play_sfx_vol s_metro_tin_seqData, 256
     rest 24
     assess_inputs 0
     rhythm_test_event02 64
@@ -953,7 +953,7 @@ script rhythm_test_sub_08a40cb4
     print_text_s D_0805f0bc
     rest 12
     run gameplay_display_text_and_wait
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     rest 24
     call script_rhythm_test_click_main
     rhythm_test_event06 0
@@ -961,7 +961,7 @@ script rhythm_test_sub_08a40cb4
     print_text_s D_0805f0d0
     rest 12
     run gameplay_display_text_and_wait
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     rest 24
     call script_rhythm_test_cue_main
     rhythm_test_event06 0
@@ -969,7 +969,7 @@ script rhythm_test_sub_08a40cb4
     print_text_s D_0805f0ec
     rest 12
     run gameplay_display_text_and_wait
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     rest 24
     call script_rhythm_test_trick_main
     print_text_s D_0805f100

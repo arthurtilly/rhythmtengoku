@@ -41,7 +41,7 @@ script script_remix_6_entry
     call script_remix_6_main
     enable_pause_menu FALSE
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -468,7 +468,7 @@ script script_remix_6_main
     quiz_show_event01 -32
     assess_perfect_inputs 1
     quiz_show_event04 0
-    if_eq INT8, GLOBAL_VARIABLE, 0
+    if_globalvar_eq 0
         print_text_s D_0806a900
         quiz_show_event00 64
         quiz_show_event00 65

@@ -1337,7 +1337,7 @@ script script_studio_superb
 script script_studio_silence_loop
     rest 24
     dms_event06 0
-    if_eq INT8, FUNCTION_RESULT, TRUE
+    if_globalvar_eq TRUE
         return
     end_if
     goto script_studio_silence_loop

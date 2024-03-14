@@ -4,8 +4,8 @@
 
 @ Exit
 script script_scene_title_exit
-    scene_set_int INT8, 0, FALSE
-    fade_music_out TO_TEMPO, 48
+    scene_set_byte 0, FALSE
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     stop
@@ -71,7 +71,7 @@ script script_scene_title_main
     run func_08007324 TRUE
     fade_screen_in 12, BLACK
     rest 12
-    scene_set_int INT8, 0, TRUE
+    scene_set_byte 0, TRUE
     rest 24
     play_music s_title_bgm_seqData
     run title_scene_beat_anim

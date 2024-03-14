@@ -9,11 +9,11 @@ script script_scene_debug_menu
 
     run func_08007324 TRUE
     fade_screen_in 12, BLACK
-    scene_set_int INT8, 8, TRUE
+    scene_set_byte 8, TRUE
     pause_scene
 
-    scene_set_int INT8, 8, FALSE
-    fade_music_out TO_TEMPO, 48
+    scene_set_byte 8, FALSE
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     stop

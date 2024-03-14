@@ -21,7 +21,7 @@ script script_remix_5_entry
     call script_remix_5_main
     enable_pause_menu FALSE
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -136,7 +136,7 @@ script script_remix_5_main
     rest 24
     rest 24
     rest 24
-    mod_lcd_blend_from 0x3F42, TO_TEMPO, 96
+    mod_lcd_blend_from 0x3F42, 96
     rest 24
     rest 24
     rest 24
@@ -158,7 +158,7 @@ script script_remix_5_main
     bouncy_road_set_ball_palette 1
     bouncy_road_deploy_ball 24
     run scene_show_bg_layer, 2
-    mod_lcd_blend_to 0x3F42, TO_TEMPO, 96
+    mod_lcd_blend_to 0x3F42, 96
     rest 24
     rest 24
     rest 24
@@ -173,7 +173,7 @@ script script_remix_5_main
     rest 24
     run scene_hide_bg_layer, 1
     run scene_show_bg_layer, 3
-    mod_lcd_blend_from 0x3F48, TO_TEMPO, 96
+    mod_lcd_blend_from 0x3F48, 96
     rest 24
     rest 24
     rest 24
@@ -493,29 +493,29 @@ script script_remix_5_main
     load_fireworks_remix_5_bg1
     beat_anim
     rest 24
-    play_sfx_sp s_hanabi_wish1_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish1_seqData, 288
     beat_anim
     rest 24
     beat_anim
     rest 24
-    play_sfx_sp s_hanabi_wish2_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish2_seqData, 288
     beat_anim
     rest 24
     beat_anim
     rest 24
     spawn_cue CUE_NORMAL_FIREWORK
-    play_sfx_sp s_hanabi_wish1_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish1_seqData, 288
     beat_anim
     rest 24
-    play_sfx_sp s_hanabi_wish2_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish2_seqData, 288
     beat_anim
     rest 12
     rest 8
-    play_sfx_sp s_hanabi_wish3_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish3_seqData, 288
     rest 4
     beat_anim
     rest 24
-    play_sfx_sp s_hanabi_wish4_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish4_seqData, 288
     beat_anim
     rest 24
     beat_anim
@@ -614,18 +614,18 @@ script script_remix_5_main
     fireworks_set_pattern_mode 99
     fireworks_set_default_pattern 14
     spawn_cue CUE_NORMAL_FIREWORK
-    play_sfx_sp s_hanabi_wish1_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish1_seqData, 288
     beat_anim
     rest 24
-    play_sfx_sp s_hanabi_wish2_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish2_seqData, 288
     beat_anim
     rest 12
     rest 8
-    play_sfx_sp s_hanabi_wish3_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish3_seqData, 288
     rest 4
     beat_anim
     rest 24
-    play_sfx_sp s_hanabi_wish4_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish4_seqData, 288
     beat_anim
     rest 24
     beat_anim
@@ -724,18 +724,18 @@ script script_remix_5_main
     fireworks_set_pattern_mode 99
     fireworks_set_default_pattern 15
     spawn_cue CUE_NORMAL_FIREWORK
-    play_sfx_sp s_hanabi_wish1_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish1_seqData, 288
     beat_anim
     rest 24
-    play_sfx_sp s_hanabi_wish2_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish2_seqData, 288
     beat_anim
     rest 12
     rest 8
-    play_sfx_sp s_hanabi_wish3_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish3_seqData, 288
     rest 4
     beat_anim
     rest 24
-    play_sfx_sp s_hanabi_wish4_seqData, 288, 0
+    play_sfx_vol s_hanabi_wish4_seqData, 288
     beat_anim
     rest 24
     beat_anim

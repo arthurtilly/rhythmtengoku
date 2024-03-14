@@ -2,7 +2,6 @@
 
 @ Scene-global variable, most commonly set by function calls and read for conditional statements.
 .set GLOBAL_VARIABLE, (D_030053c0 + 0x24)
-.set FUNCTION_RESULT, GLOBAL_VARIABLE
 
 
 /* ------------------------ Extension Macros (Beatscript) ------------------------ */
@@ -36,18 +35,6 @@
     run set_pause_beatscript_scene, FALSE
 .endm
 
-
-@ [SCENE] Get Random Value
-.macro get_random range
-    run agb_random, \range
-.endm
-
-
-@ [GENERAL] Switch Statement with Random Value
-.macro switch_random type, range
-    get_random \range
-    switch \type, FUNCTION_RESULT
-.endm
 
 /* ------------------------ Extension Macros (Rhythm Tengoku) ------------------------ */
 

@@ -16,7 +16,7 @@ script script_drum_intro_unused_3_entry
     call script_drum_intro_unused_3_main
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -118,7 +118,7 @@ script script_drum_intro_unused_3_main
     loop_start
         run beatscript_disable_loops, 0
         dmi_event04 0
-        switch FUNC, func_080175d8
+        switch_loop_counter
             case 0
                 break
             default
@@ -258,7 +258,7 @@ script script_drum_intro_unused_3_main
     loop_start
         run beatscript_disable_loops, 0
         dmi_event04 0
-        switch FUNC, func_080175d8
+        switch_loop_counter
             case 0
                 break
             default
@@ -390,7 +390,7 @@ script script_drum_intro_unused_3_main
     loop_start
         run beatscript_disable_loops, 0
         dmi_event04 0
-        switch FUNC, func_080175d8
+        switch_loop_counter
             case 0
                 break
             default

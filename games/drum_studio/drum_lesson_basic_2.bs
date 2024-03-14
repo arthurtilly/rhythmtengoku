@@ -16,7 +16,7 @@ script script_drum_lesson_basic_2_entry
     call script_drum_lesson_basic_2_main
     enable_pause_menu FALSE
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24

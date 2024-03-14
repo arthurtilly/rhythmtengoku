@@ -17,7 +17,7 @@ script script_cosmic_dance_entry
     call script_cosmic_dance_main
     enable_pause_menu FALSE
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -168,7 +168,7 @@ script script_cosmic_dance_main
     space_dance_event01 0
     space_dance_event00 2
     play_sfx s_space_kou_down_seqData
-    add_music_in MUSIC_PLAYER_2, s_studio_bgm_seqData
+    add_music MUSIC_PLAYER_2, s_studio_bgm_seqData
     set_music_volume 40
     mod_music_volume 150, 144
     rest 24
@@ -176,8 +176,7 @@ script script_cosmic_dance_main
     space_dance_event04 1
     rest 24
     rest 24
-    run agb_random, 6
-    switch INT8, FUNCTION_RESULT
+    switch_random 6
         case 0
         case 1
         case 2
@@ -200,14 +199,14 @@ script script_cosmic_dance_main
     end_switch
     mod_music_volume 80, 72
     space_dance_event04 0
-    play_sfx_sp s_intro_one_seqData, 52, 0
+    play_sfx_vol s_intro_one_seqData, 52
     rest 24
-    play_sfx_sp s_intro_two_seqData, 60, 0
+    play_sfx_vol s_intro_two_seqData, 60
     rest 24
-    play_sfx_sp s_intro_three_seqData, 48, 0
+    play_sfx_vol s_intro_three_seqData, 48
     rest 22
     rest 2
-    play_sfx_sp s_intro_uh_seqData, 56, 0
+    play_sfx_vol s_intro_uh_seqData, 56
     rest 22
     rest 2
     rest 8
@@ -235,7 +234,7 @@ script script_cosmic_dance_main
     play_sfx s_space_kou_punch_seqData
     play_sfx s_space_ikeo_punch_seqData
     space_dance_event01 63720
-    mod_lcd_blend_to 0x442, TO_TEMPO, 24
+    mod_lcd_blend_to 0x442, 24
     run gameplay_set_reverb, 30
     rest 8
     set_marking_criteria 0
@@ -261,7 +260,7 @@ script script_cosmic_dance_main
     space_dance_event00 1
     play_sfx s_space_kou_punch_seqData
     space_dance_event01 63512
-    mod_lcd_blend_to 0x442, TO_TEMPO, 24
+    mod_lcd_blend_to 0x442, 24
     rest 8
     call cosmic_dance_sub_08a84fdc
     call cosmic_dance_sub_08a84fdc
@@ -277,7 +276,7 @@ script script_cosmic_dance_main
     space_dance_event00 5
     play_sfx s_space_kou_pa_seqData
     play_sfx s_space_ikeo_pa_seqData
-    mod_lcd_blend_from 0x442, TO_TEMPO, 24
+    mod_lcd_blend_from 0x442, 24
     rest 8
     space_dance_event00 4
     play_sfx s_space_kou_pa_seqData

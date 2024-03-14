@@ -10,10 +10,10 @@ script script_scene_warning
     rest 12
     rest 48
     run warning_scene_render_anim
-    scene_set_int INT8, 0, TRUE
+    scene_set_byte 0, TRUE
     pause_scene
 
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 12
     rest 12

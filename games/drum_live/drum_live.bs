@@ -16,7 +16,7 @@ script script_drum_live_entry
     call script_drum_live_menu
     enable_pause_menu FALSE
     enable_play_inputs FALSE
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -36,7 +36,7 @@ script script_drum_live_menu
     drum_live_menu_freeze_scene
 
     run gameplay_get_inter_engine_variable, 0
-    switch INT8, FUNCTION_RESULT
+    switch INT8, GLOBAL_VARIABLE
         case ENGINE_VER_DRUM_GIRLS_LIVE
             load_drum_girls_live
             break
@@ -54,7 +54,7 @@ script script_drum_live_menu
     rest 24
     enable_pause_menu TRUE
     run gameplay_get_inter_engine_variable, 0
-    switch INT8, FUNCTION_RESULT
+    switch INT8, GLOBAL_VARIABLE
         case ENGINE_VER_DRUM_GIRLS_LIVE
             call script_drum_girls_night_walk
             call script_drum_girls_space_dance

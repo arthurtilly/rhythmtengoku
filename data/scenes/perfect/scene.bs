@@ -10,11 +10,11 @@ script script_scene_perfect
     run func_08007324, TRUE
     play_music s_perfect_fan_seqData
     rest 12
-    scene_set_int INT8, 4, TRUE
+    scene_set_byte 4, TRUE
     pause_scene
 
-    scene_set_int INT8, 4, FALSE
-    fade_music_out TO_TEMPO, 48
+    scene_set_byte 4, FALSE
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     stop

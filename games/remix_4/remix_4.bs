@@ -21,7 +21,7 @@ script script_remix_4_entry
     call script_remix_4_main
     enable_pause_menu FALSE
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -379,7 +379,7 @@ script script_remix_4_main
     rest 12
     quiz_show_event01 -32
     quiz_show_event04 0
-    if_eq INT8, GLOBAL_VARIABLE, 0
+    if_globalvar_eq 0
         print_text_s D_08068118
         quiz_show_event00 64
         quiz_show_event00 65
@@ -929,8 +929,7 @@ script script_remix_4_main
     print_text_s 0
     set_music_volume 150
     rest 24
-    run agb_random, 4
-    switch INT8, FUNCTION_RESULT
+    switch_random 4
         case 0
             rest 24
             quiz_show_event02 0
@@ -1018,7 +1017,7 @@ script script_remix_4_main
     print_text_s D_0806815c
     run gameplay_display_text_and_wait
     quiz_show_event03 1
-    mod_lcd_blend_from 0x3F41, TO_TEMPO, 24
+    mod_lcd_blend_from 0x3F41, 24
     rest 24
     rest 24
     rest 24
@@ -1031,7 +1030,7 @@ script script_remix_4_main
     rest 24
     quiz_show_event03 0
     quiz_show_event04 0
-    if_eq INT8, GLOBAL_VARIABLE, 0
+    if_globalvar_eq 0
         print_text_s D_08068118
         quiz_show_event00 64
         quiz_show_event00 65

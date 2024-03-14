@@ -16,7 +16,7 @@ script script_drum_studio_ver0_entry
     call script_drum_studio_ver0_main
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -38,7 +38,7 @@ script script_drum_studio_drumming_entry
     call script_drum_studio_drumming_main
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -60,7 +60,7 @@ script script_drum_studio_ver2_entry
     call script_drum_studio_ver2_main
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -82,7 +82,7 @@ script script_drum_studio_listening_entry
     call script_drum_studio_listening_main
     enable_pause_menu 0
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -107,7 +107,7 @@ script script_drum_studio_main
         call_result
         dms_stop_bg_monitor
         dms_event01 0
-        if_eq INT8, GLOBAL_VARIABLE, 0
+        if_globalvar_eq 0
             run beatscript_disable_loops, 0
         end_if
     loop_end

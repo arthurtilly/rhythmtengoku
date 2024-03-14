@@ -17,7 +17,7 @@ script script_tap_trial_2_entry
     call script_tap_trial_2_main
     enable_pause_menu FALSE
     enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -231,7 +231,7 @@ script script_tap_trial_2_main
     call tap_trial_sub_08a85e88
     tap_trial_event0E -24
     tap_trial_event0D 2816
-    play_sfx_sp s_rabbit_jet_seqData, 384, 0
+    play_sfx_vol s_rabbit_jet_seqData, 384
     rest 24
     rest 24
     rest 24
