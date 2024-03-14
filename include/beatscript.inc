@@ -99,7 +99,7 @@
 
 @ [RIQ] Start Perfect Campaign
 .macro start_perfect_campaign
-    start_perfect_campaign
+    run gameplay_start_perfect_campaign
 .endm
 
 

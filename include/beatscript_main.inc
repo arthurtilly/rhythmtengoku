@@ -129,7 +129,7 @@ endstruct
 .endm
 
 .macro rest_beats beats
-    rest (beats * 24)
+    rest (\beats * 24)
 .endm
 
 
