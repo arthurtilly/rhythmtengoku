@@ -904,7 +904,6 @@ SECTIONS {
         build/games/mannequin_factory/mannequin_factory.bs.o(.script.entry);
         build/games/quiz_show/quiz_show_endless.bs.o(.script.entry);
         build/games/sick_beats/sick_beats_endless.bs.o(.script.entry);
-        build/bin/bindata_089d6ca8.bin.o(.rodata*);
         build/games/staff_credit/staff_credit.bs.o(.script.entry);
         build/games/drum_live/drum_live.bs.o(.script.entry);
         build/games/remix_3/remix_3.bs.o(.script.entry);
@@ -1164,7 +1163,7 @@ SECTIONS {
         build/games/mannequin_factory/mannequin_factory.bs.o(.script.main);
         build/games/quiz_show/quiz_show_endless.bs.o(.script.main);
         build/games/sick_beats/sick_beats_endless.bs.o(.script.main);
-        build/bin/bindata_08a5dd8c.bin.o(.rodata*);
+        build/games/staff_credit/staff_credit.bs.o(.script.main);
         build/games/drum_live/drum_live.bs.o(.script.menu);
         build/games/remix_3/remix_3.bs.o(.script.main);
         build/games/remix_7/remix_7.bs.o(.script.main);
