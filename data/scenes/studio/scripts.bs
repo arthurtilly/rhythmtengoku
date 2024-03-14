@@ -383,7 +383,7 @@ script script_studio_game_select_1
     rest 24
     rest 24
     rest 24
-    set_music_track_volume (~MIDI_TRACK_1), 0
+    mute_music_track (~MIDI_TRACK_1)
     rest 24
     rest 24
     rest 24
@@ -392,7 +392,7 @@ script script_studio_game_select_1
     rest 1
     rest 24
     rest 24
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     rest 24
     rest 24
     return
@@ -1124,11 +1124,11 @@ script script_studio_remix7
     play_music L2_pat01_seqData
     rest (24 * 16)
     rest (24 * 12)
-    set_music_track_volume MIDI_TRACK_5, 0
+    mute_music_track MIDI_TRACK_5
     rest 24
     run scene_stop_music
     rest 24
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     set_tempo 131
     play_music L3_intro_seqData
     rest 24
@@ -1141,7 +1141,7 @@ script script_studio_remix7
     run start_studio_mus_remix7_end
     rest 24
     rest 4
-    set_music_track_volume MIDI_TRACK_4, 0
+    mute_music_track MIDI_TRACK_4
     rest 4
     rest 8
     rest 8
@@ -1153,7 +1153,7 @@ script script_studio_remix7
     set_tempo 120
     run slow_studio_mus_remix7_end
     rest 24
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     run stop_studio_mus_remix7_end
     run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9)
     play_music L1_pat16_seqData

@@ -138,7 +138,7 @@ script script_drum_intro_unused_3_main
         print_text_s 0
         rest 24
         set_music_volume 156
-        .byte 0xac, 0x22, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
         dmi_event01 2
         rest 24
         dmi_event01 16
@@ -277,7 +277,7 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36930
         print_text_s 0
         rest 24
-        .byte 0xac, 0x22, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
         dmi_event01 256
         dmi_event01 2
         rest 24
@@ -409,7 +409,7 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36930
         print_text_s 0
         rest 24
-        .byte 0xac, 0x22, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
         dmi_event01 256
         dmi_event01 2
         rest 24
