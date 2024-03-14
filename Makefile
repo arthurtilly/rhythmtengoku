@@ -17,7 +17,6 @@ endif
 SHELL := /bin/bash
 
 CPP := $(CC) -E
-CPPFLAGS := -I tools/agbcc -I tools/agbcc/include -I . -iquote include -nostdinc -undef
 
 include $(DEVKITARM)/base_rules
 
@@ -26,7 +25,6 @@ OBJCOPY := $(CROSS)objcopy
 LD := $(CROSS)gcc
 AS := $(CROSS)as
 CC1 := tools/agbcc/bin/agbcc
-CFLAGS := -mthumb-interwork -Wparentheses -O2 -fhex-asm
 
 # Verbose toggle
 V := @
@@ -47,6 +45,16 @@ endef
 
 # Whether to build a byte-for-byte matching ROM
 NONMATCHING ?= 0
+
+# Revision to build
+REV ?= 0
+
+# Preprocessor defines
+DEFINES := REV=$(REV)
+C_DEFINES := $(foreach d,$(DEFINES),-D$(d))
+
+CFLAGS := -mthumb-interwork -Wparentheses -O2 -fhex-asm
+CPPFLAGS := -I tools/agbcc -I tools/agbcc/include -I . -iquote include -nostdinc -undef $(C_DEFINES)
 
 #---------------------------------------------------------------------------------
 

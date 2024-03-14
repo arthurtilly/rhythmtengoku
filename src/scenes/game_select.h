@@ -172,11 +172,13 @@ struct GameSelectSceneData {
     s16 medalPaneDigit2;
     u16 medalPaneFlickerTimer;
 
+#if REV < 1
     /* [0x4F0] Unused Forced Level Unlock */
     u8 unused4F0;
     s8 manualUnlockX;
     s8 manualUnlockY;
     u8 manualUnlockEnabled;
+#endif
 
     /* [0x4F4] Barista Level Unlock */
     u8 baristaLevelEventPending;

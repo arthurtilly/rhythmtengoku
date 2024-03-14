@@ -1705,9 +1705,11 @@ void game_select_update_level_events(void) {
     D_030046a8->data.gsCursorX = gGameSelect->cursorX;
     D_030046a8->data.gsCursorY = gGameSelect->cursorY;
 
+#if REV < 1
     if (gGameSelect->manualUnlockEnabled) {
         save_level_state_from_grid_xy(gGameSelect->manualUnlockX, gGameSelect->manualUnlockY, LEVEL_STATE_OPEN);
     }
+#endif
 
     write_game_save_data();
 
