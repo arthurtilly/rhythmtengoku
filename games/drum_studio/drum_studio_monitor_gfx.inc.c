@@ -2,38 +2,38 @@
 
 #define INLINE_BG_GFX_TABLE(tiles, bgMap2, bgMap3) (struct GraphicsTable[]) {   \
         /* BG Tileset */ {                                                      \
-            /* Src.  */ &tiles,                                                 \
+            /* Src.  */ tiles,                                                  \
             /* Dest. */ BG_TILESET_BASE(0x8000),                                \
             /* Size  */ COMPRESSED_GFX_SOURCE                                   \
         },                                                                      \
         /* BG Map */ {                                                          \
-            /* Src.  */ &bgMap2,                                                \
+            /* Src.  */ bgMap2,                                                 \
             /* Dest. */ BG_MAP_BASE(0xF000),                                    \
             /* Size  */ COMPRESSED_GFX_SOURCE                                   \
         },                                                                      \
         /* BG Map */ {                                                          \
-            /* Src.  */ &bgMap3,                                                \
+            /* Src.  */ bgMap3,                                                 \
             /* Dest. */ BG_MAP_BASE(0xF800),                                    \
             /* Size  */ COMPRESSED_GFX_SOURCE                                   \
         },                                                                      \
         END_OF_GRAPHICS_TABLE                                                   \
     }
 
-#define BG_GFX_TABLE_LINES          INLINE_BG_GFX_TABLE(D_08c71ed4, D_08c762e8, D_08c76300)
-#define BG_GFX_TABLE_STARS          INLINE_BG_GFX_TABLE(D_08c71340, D_08c745e0, D_08c74754)
-#define BG_GFX_TABLE_CLOUDS         INLINE_BG_GFX_TABLE(D_08c7069c, D_08c737a4, D_08c73978)
-#define BG_GFX_TABLE_FLOWERS        INLINE_BG_GFX_TABLE(D_08c71908, D_08c74ef8, D_08c75100)
-#define BG_GFX_TABLE_STATIONARY     INLINE_BG_GFX_TABLE(D_08c71c8c, D_08c756bc, D_08c758bc)
-#define BG_GFX_TABLE_SPARKLES       INLINE_BG_GFX_TABLE(D_08c70b4c, D_08c73ea4, D_08c7408c)
-#define BG_GFX_TABLE_FRUIT          INLINE_BG_GFX_TABLE(D_08c71b6c, D_08c7534c, D_08c75478)
-#define BG_GFX_TABLE_FISH           INLINE_BG_GFX_TABLE(D_08c71658, D_08c749d4, D_08c74bb0)
-#define BG_GFX_TABLE_JAPAN          INLINE_BG_GFX_TABLE(D_08c710e8, D_08c74210, D_08c74404)
-#define BG_GFX_TABLE_BEACH          INLINE_BG_GFX_TABLE(D_08c71e64, D_08c759cc, D_08c75ad0)
-#define BG_GFX_TABLE_HEARTS         INLINE_BG_GFX_TABLE(D_08c709a8, D_08c73b6c, D_08c73cf8)
-#define BG_GFX_TABLE_CIRCLES        INLINE_BG_GFX_TABLE(D_08c70580, D_08c73544, D_08c73618)
-#define BG_GFX_TABLE_CITY           INLINE_BG_GFX_TABLE(D_08c70490, D_08c72518, D_08c72634)
-#define BG_GFX_TABLE_CHECKERBOARD   INLINE_BG_GFX_TABLE(D_08c704e8, D_08c72e4c, D_08c7346c)
-#define BG_GFX_TABLE_SQUARES        INLINE_BG_GFX_TABLE(D_08c703a8, D_08c720a0, D_08c72400)
+#define BG_GFX_TABLE_LINES          INLINE_BG_GFX_TABLE(&D_08c71ed4, &D_08c762e8, &D_08c76300)
+#define BG_GFX_TABLE_STARS          INLINE_BG_GFX_TABLE(&D_08c71340, &D_08c745e0, &D_08c74754)
+#define BG_GFX_TABLE_CLOUDS         INLINE_BG_GFX_TABLE(&D_08c7069c, &D_08c737a4, &D_08c73978)
+#define BG_GFX_TABLE_FLOWERS        INLINE_BG_GFX_TABLE(&D_08c71908, &D_08c74ef8, &D_08c75100)
+#define BG_GFX_TABLE_STATIONARY     INLINE_BG_GFX_TABLE(&D_08c71c8c, &D_08c756bc, &D_08c758bc)
+#define BG_GFX_TABLE_SPARKLES       INLINE_BG_GFX_TABLE(&D_08c70b4c, &D_08c73ea4, &D_08c7408c)
+#define BG_GFX_TABLE_FRUIT          INLINE_BG_GFX_TABLE(&D_08c71b6c, &D_08c7534c, &D_08c75478)
+#define BG_GFX_TABLE_FISH           INLINE_BG_GFX_TABLE(&D_08c71658, &D_08c749d4, &D_08c74bb0)
+#define BG_GFX_TABLE_JAPAN          INLINE_BG_GFX_TABLE(&D_08c710e8, &D_08c74210, &D_08c74404)
+#define BG_GFX_TABLE_BEACH          INLINE_BG_GFX_TABLE(&D_08c71e64, &D_08c759cc, &D_08c75ad0)
+#define BG_GFX_TABLE_HEARTS         INLINE_BG_GFX_TABLE(&D_08c709a8, &D_08c73b6c, &D_08c73cf8)
+#define BG_GFX_TABLE_CIRCLES        INLINE_BG_GFX_TABLE(&D_08c70580, &D_08c73544, &D_08c73618)
+#define BG_GFX_TABLE_CITY           INLINE_BG_GFX_TABLE(&D_08c70490, &D_08c72518, &D_08c72634)
+#define BG_GFX_TABLE_CHECKERBOARD   INLINE_BG_GFX_TABLE(&D_08c704e8, &D_08c72e4c, &D_08c7346c)
+#define BG_GFX_TABLE_SQUARES        INLINE_BG_GFX_TABLE(&D_08c703a8, &D_08c720a0, &D_08c72400)
 
 
 // [D_089e17a0] Scrolling Background Data
