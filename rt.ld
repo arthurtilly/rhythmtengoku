@@ -896,7 +896,7 @@ SECTIONS {
         build/games/tap_trial/tap_trial_2.bs.o(.script.entry);
         build/games/clappy_trio/snappy_trio.bs.o(.script.entry);
         build/games/rap_men/rap_women.bs.o(.script.entry);
-        build/bin/bindata_089d645c.bin.o(.rodata*);
+        build/games/rap_men/rap_women_unused.bs.o(.script.entry);
         build/games/remix_2/remix_2.bs.o(.script.entry);
         build/games/remix_4/remix_4.bs.o(.script.entry);
         build/games/mr_upbeat/mr_upbeat.bs.o(.script.entry);
@@ -1156,7 +1156,7 @@ SECTIONS {
         build/games/tap_trial/tap_trial_2.bs.o(.script.main);
         build/games/clappy_trio/snappy_trio.bs.o(.script.main);
         build/games/rap_men/rap_women.bs.o(.script.main);
-        build/bin/bindata_08a4d8e4.bin.o(.rodata*);
+        build/games/rap_men/rap_women_unused.bs.o(.script.main);
         build/games/remix_2/remix_2.bs.o(.script.main);
         build/games/remix_4/remix_4.bs.o(.script.main);
         build/games/mr_upbeat/mr_upbeat.bs.o(.script.main);
