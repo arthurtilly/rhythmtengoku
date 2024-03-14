@@ -45,49 +45,58 @@
 
 
 @ [Event 0x00] Nothing
-.macro samurai_slice_stub_event noArgs
-    samurai_slice_event STUB_EVENT, \noArgs
+.macro samurai_slice_stub_event
+    samurai_slice_event STUB_EVENT, 0
 .endm
+
 
 @ [Event 0x01] ?
 .macro samurai_slice_event01 args
     samurai_slice_event EVENT_01, \args
 .endm
 
+
 @ [Event 0x02] ?
 .macro samurai_slice_event02 args
     samurai_slice_event EVENT_02, \args
 .endm
+
 
 @ [Event 0x03] ?
 .macro samurai_slice_event03 args
     samurai_slice_event EVENT_03, \args
 .endm
 
+
 @ [Event 0x04] ?
 .macro samurai_slice_event04 args
     samurai_slice_event EVENT_04, \args
 .endm
+
 
 @ [Event 0x05] ?
 .macro samurai_slice_event05 args
     samurai_slice_event EVENT_05, \args
 .endm
 
+
 @ [Event 0x06] ?
 .macro samurai_slice_event06 args
     samurai_slice_event EVENT_06, \args
 .endm
+
 
 @ [Event 0x07] ?
 .macro samurai_slice_event07 args
     samurai_slice_event EVENT_07, \args
 .endm
 
+
 @ [Event 0x08] ?
 .macro samurai_slice_event08 args
     samurai_slice_event EVENT_08, \args
 .endm
+
 
 @ [Event 0x09] ?
 .macro samurai_slice_event09 args

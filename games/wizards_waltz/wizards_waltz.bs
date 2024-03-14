@@ -110,7 +110,7 @@ script script_wizards_waltz_main
     set_music_volume 256
     play_music s_mitubati_seqData
     reset_music_track_volumes
-    wizards_waltz_enable_tutorial 0
+    wizards_waltz_tutorial_enabled FALSE
     rest 24
     enable_pause_menu TRUE
     rest 24
@@ -381,7 +381,7 @@ script script_wizards_waltz_practice
     import_marking_criteria wizards_waltz_marking_criteria
     forgive_x_misses 1
     assess_inputs 0
-    wizards_waltz_enable_tutorial 1
+    wizards_waltz_tutorial_enabled TRUE
     set_music_volume 256
     set_tempo 160
     play_music s_mitubati_seqData

@@ -247,7 +247,7 @@ script script_tap_trial_main
     set_marking_criteria 2
     beat_anim
     rest 24
-    tap_trial_event02 0
+    tap_trial_event02
     call tap_trial_sub_08a85de0
     call tap_trial_sub_08a85e10
     call tap_trial_sub_08a85e10
@@ -257,7 +257,7 @@ script script_tap_trial_main
     rest 24
     beat_anim
     rest 24
-    tap_trial_event05 0
+    tap_trial_event05
     set_marking_criteria 1
     call tap_trial_sub_08a85cf0
     call tap_trial_sub_08a85c78
@@ -322,12 +322,12 @@ script script_tap_trial_main
     call tap_trial_sub_08a85cf0
     call tap_trial_sub_08a85c78
     call tap_trial_sub_08a85c78
-    tap_trial_event02 0
+    tap_trial_event02
     set_marking_criteria 1
     call tap_trial_sub_08a85cf0
     tap_trial_event06 0
     call tap_trial_sub_08a85cf0
-    tap_trial_event05 0
+    tap_trial_event05
     set_marking_criteria 0
     call tap_trial_sub_08a85f00
     call tap_trial_sub_08a85c78
@@ -335,13 +335,13 @@ script script_tap_trial_main
     call tap_trial_sub_08a85cf0
     call tap_trial_sub_08a85c78
     set_marking_criteria 2
-    tap_trial_event02 0
+    tap_trial_event02
     call tap_trial_sub_08a85c78
     call tap_trial_sub_08a85f00
     call tap_trial_sub_08a85c78
     tap_trial_event06 1
     call tap_trial_sub_08a85de0
-    tap_trial_event05 0
+    tap_trial_event05
     set_marking_criteria 1
     call tap_trial_sub_08a85e10
     call tap_trial_sub_08a85e88
@@ -368,7 +368,7 @@ script script_tap_trial_main
     beat_anim
     rest 24
     set_marking_criteria 2
-    tap_trial_event02 0
+    tap_trial_event02
     call tap_trial_sub_08a85f00
     call tap_trial_sub_08a85cf0
     call tap_trial_sub_08a85c78
@@ -377,7 +377,7 @@ script script_tap_trial_main
     tap_trial_event06 2
     call tap_trial_sub_08a85c78
     tap_trial_event04 NULL
-    tap_trial_event05 0
+    tap_trial_event05
     set_marking_criteria 0
     call tap_trial_sub_08a85f00
     call tap_trial_sub_08a85c78

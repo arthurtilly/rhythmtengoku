@@ -81,7 +81,7 @@ endstruct
 script script_sneaky_spirits_2_main
     set_tempo 120
     start_perfect_campaign
-    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_wind_sfx_enabled TRUE
     set_music_volume 256
     mod_music_volume 128, 24
     rest 24
@@ -92,11 +92,11 @@ script script_sneaky_spirits_2_main
     rest 24
     rest 24
     rest 24
-    sneaky_spirits_spawn_bow 0
+    sneaky_spirits_spawn_bow
     rest 24
     rest 24
     rest 24
-    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_wind_sfx_enabled FALSE
     rest 24
     import_marking_criteria sneaky_spirits_2_marking_criteria
     set_results_header D_0805bc98

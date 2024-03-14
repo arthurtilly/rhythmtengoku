@@ -51,29 +51,34 @@
 
 
 @ [Event 0x00] Prepare Pitcher for Next Ball
-.macro spaceball_prep_pitcher noArgs
-    spaceball_event PREPARE_PITCHER, \noArgs
+.macro spaceball_prep_pitcher
+    spaceball_event PREPARE_PITCHER, 0
 .endm
 
+
 @ [Event 0x01] Exit Tutorial Loop if No Miss
-.macro spaceball_exit_loop_if_no_miss noArgs
-    spaceball_event EXIT_LOOP_IF_NO_MISS, \noArgs
+.macro spaceball_exit_loop_if_no_miss
+    spaceball_event EXIT_LOOP_IF_NO_MISS, 0
 .endm
+
 
 @ [Event 0x02] Set Camera Zoom
 .macro spaceball_zoom_camera zoom, time
     spaceball_event ZOOM_CAMERA, (((\zoom) << 16) | ((\time) & 0xFFFF))
 .endm
 
+
 @ [Event 0x03] Set Batter Sprite
 .macro spaceball_set_batter_sprite type
     spaceball_event SET_BATTER_SPRITE, \type
 .endm
 
+
 @ [Event 0x04] Set Umpire Animation
 .macro spaceball_set_ufo_anim anim
     spaceball_event SET_UFO_ANIM, \anim
 .endm
+
 
 @ [Event 0x05] Set Ball Sprite (applies to all balls after this command)
 .macro spaceball_set_ball_sprite type

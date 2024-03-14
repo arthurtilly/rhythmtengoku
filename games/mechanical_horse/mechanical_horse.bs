@@ -368,7 +368,7 @@ script script_mechanical_horse_main
         rest 12
         mechanical_horse_event07
         rest 12
-        run beatscript_enable_loops, 0
+        run beatscript_enable_loops
     loop_end
     assess_inputs 0
     enable_pause_menu FALSE

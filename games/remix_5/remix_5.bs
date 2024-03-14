@@ -243,7 +243,7 @@ script script_remix_5_main
     beat_anim
     rest 24
     rest 24
-    toss_boys_event01 393536
+    toss_boys_event01 0x60140
     beat_anim
     rest 24
     rest 24
@@ -410,7 +410,7 @@ script script_remix_5_main
     beat_anim
     rest 24
     rest 24
-    toss_boys_event01 393538
+    toss_boys_event01 0x60142
     beat_anim
     rest 24
     rest 24
@@ -744,10 +744,10 @@ script script_remix_5_main
 
     load_toss_boys_remix_5
     print_text_s D_0806a314
-    toss_boys_event08 0
+    toss_boys_event08
     beat_anim
     rest 24
-    toss_boys_event01 393538
+    toss_boys_event01 0x60142
     beat_anim
     rest 24
     rest 24
@@ -825,10 +825,10 @@ script script_remix_5_main
     load_toss_boys_remix_5
     run gameplay_set_text_y, 152
     print_text_s D_0806a370
-    toss_boys_event08 0
+    toss_boys_event08
     rest 24
     rest 24
-    toss_boys_event01 393538
+    toss_boys_event01 0x60142
     beat_anim
     rest 24
     rest 24

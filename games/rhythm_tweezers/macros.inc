@@ -81,42 +81,50 @@
     rhythm_tweezers_event SPAWN_TWEEZERS, 0
 .endm
 
+
 @ [Event 0x01] Start Hair Placement Cycle
-.macro rhythm_tweezers_start_hair_cycle noArgs
-    rhythm_tweezers_event START_HAIR_CYCLE, \noArgs
+.macro rhythm_tweezers_start_hair_cycle
+    rhythm_tweezers_event START_HAIR_CYCLE, 0
 .endm
+
 
 @ [Event 0x02] Scroll to Next Vegetable
 .macro rhythm_tweezers_scroll_veg scrollTime
     rhythm_tweezers_event SCROLL_VEG, \scrollTime
 .endm
 
+
 @ [Event 0x03] Set Next Vegetable Type
 .macro rhythm_tweezers_set_next_veg vegType
     rhythm_tweezers_event SET_NEXT_VEG, \vegType
 .endm
+
 
 @ [Event 0x04] Play Cash Register SFX
 .macro rhythm_tweezers_play_register_sfx
     rhythm_tweezers_event PLAY_REGISTER_SFX, 0
 .endm
 
+
 @ [Event 0x05] Hide Unused Tutorial Text Sprite
-.macro rhythm_tweezers_hide_tutorial_text noArgs
-    rhythm_tweezers_event HIDE_TUTORIAL_TEXT, \noArgs
+.macro rhythm_tweezers_hide_tutorial_text
+    rhythm_tweezers_event HIDE_TUTORIAL_TEXT, 0
 .endm
+
 
 @ [Event 0x06] Nothing (present in script, but its functionality seems to have been removed entirely)
-.macro rhythm_tweezers_removed_event noArgs
-    rhythm_tweezers_event REMOVED_EVENT, \noArgs
+.macro rhythm_tweezers_removed_event
+    rhythm_tweezers_event REMOVED_EVENT, 0
 .endm
+
 
 @ [Event 0x07] Show "No Peeking~!" Mask
-.macro rhythm_tweezers_show_veg_mask noArgs
-    rhythm_tweezers_event SHOW_MASK, \noArgs
+.macro rhythm_tweezers_show_veg_mask
+    rhythm_tweezers_event SHOW_MASK, 0
 .endm
 
+
 @ [Event 0x08] Hide "No Peeking~!" Mask
-.macro rhythm_tweezers_hide_veg_mask noArgs
-    rhythm_tweezers_event HIDE_MASK, \noArgs
+.macro rhythm_tweezers_hide_veg_mask
+    rhythm_tweezers_event HIDE_MASK, 0
 .endm

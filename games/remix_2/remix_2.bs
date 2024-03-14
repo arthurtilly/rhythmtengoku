@@ -436,7 +436,7 @@ script script_remix_2_main
     rest 24
 
     load_sneaky_spirits_remix
-    sneaky_spirits_spawn_bow 0
+    sneaky_spirits_spawn_bow
     beat_anim
     rest 24
     beat_anim
@@ -451,7 +451,7 @@ script script_remix_2_main
     sneaky_spirits_show_ghost 3
     beat_anim
     rest 24
-    sneaky_spirits_draw_bow 0
+    sneaky_spirits_draw_bow
     sneaky_spirits_show_ghost 4
     beat_anim
     rest 24
@@ -475,7 +475,7 @@ script script_remix_2_main
     sneaky_spirits_show_ghost 3
     beat_anim
     rest 24
-    sneaky_spirits_draw_bow 0
+    sneaky_spirits_draw_bow
     sneaky_spirits_show_ghost 4
     beat_anim
     rest 24
@@ -491,7 +491,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     play_music L2_pat11_seqData
-    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_wind_sfx_enabled TRUE
     sneaky_spirits_set_ghost_height 256
     sneaky_spirits_show_ghost 1
     beat_anim
@@ -504,7 +504,7 @@ script script_remix_2_main
     sneaky_spirits_show_ghost 3
     beat_anim
     rest 24
-    sneaky_spirits_draw_bow 0
+    sneaky_spirits_draw_bow
     sneaky_spirits_set_ghost_height 112
     sneaky_spirits_show_ghost 4
     beat_anim
@@ -519,12 +519,12 @@ script script_remix_2_main
     beat_anim
     rest 24
     sneaky_spirits_set_ghost_height 256
-    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_wind_sfx_enabled FALSE
     beat_anim
     rest 24
     beat_anim
     rest 24
-    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_wind_sfx_enabled TRUE
     sneaky_spirits_set_ghost_height 256
     sneaky_spirits_show_ghost 1
     beat_anim
@@ -537,7 +537,7 @@ script script_remix_2_main
     sneaky_spirits_show_ghost 3
     beat_anim
     rest 24
-    sneaky_spirits_draw_bow 0
+    sneaky_spirits_draw_bow
     sneaky_spirits_set_ghost_height 80
     sneaky_spirits_show_ghost 4
     beat_anim
@@ -552,7 +552,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     sneaky_spirits_set_ghost_height 256
-    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_wind_sfx_enabled FALSE
     beat_anim
     rest 24
     beat_anim
@@ -737,7 +737,7 @@ script script_remix_2_main
     set_game_fade_in_time 0
 
     load_rat_race
-    rat_race_event12 0
+    rat_race_event12
     play_music L2_pat11_seqData
     rest 24
     rest 24
@@ -1008,8 +1008,8 @@ script script_remix_2_main
     set_game_fade_in_time 0
 
     load_sneaky_spirits_remix
-    sneaky_spirits_spawn_bow 0
-    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_spawn_bow
+    sneaky_spirits_wind_sfx_enabled TRUE
     sneaky_spirits_set_ghost_height 256
     sneaky_spirits_show_ghost 0
     beat_anim
@@ -1026,7 +1026,7 @@ script script_remix_2_main
     sneaky_spirits_show_ghost 3
     beat_anim
     rest 24
-    sneaky_spirits_draw_bow 0
+    sneaky_spirits_draw_bow
     sneaky_spirits_set_ghost_height 128
     sneaky_spirits_show_ghost 4
     beat_anim
@@ -1041,13 +1041,13 @@ script script_remix_2_main
     beat_anim
     rest 24
     sneaky_spirits_set_ghost_height 256
-    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_wind_sfx_enabled FALSE
     beat_anim
     rest 24
     set_game_fade_in_time 20
 
     load_rat_race
-    rat_race_event12 0
+    rat_race_event12
     beat_anim
     rest 24
     beat_anim
@@ -1084,7 +1084,7 @@ script script_remix_2_main
     rest 24
     enable_pause_menu FALSE
     rest 24
-    rat_race_event11 0
+    rat_race_event11
 return
 
 .end

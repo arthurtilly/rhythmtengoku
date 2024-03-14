@@ -85,7 +85,7 @@ script script_spaceball_2_main
     assess_inputs 1
     set_tempo 105
     set_music_volume 240
-    spaceball_set_batter_sprite 2
+    spaceball_set_batter_sprite BATTER_PINK
     spaceball_zoom_camera 0xff00, 1
     start_perfect_campaign
     rest 24
@@ -100,81 +100,81 @@ script script_spaceball_2_main
     rest 12
     spaceball_zoom_camera 0xf000, 60
     rest 12
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 1
     spawn_cue CUE_HIGH
     rest 24
     rest 24
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xf800, 96
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xff00, 24
     set_marking_criteria 1
@@ -183,54 +183,54 @@ script script_spaceball_2_main
     rest 24
     spaceball_zoom_camera 0xf000, 48
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
-    spaceball_set_batter_sprite 1
+    spaceball_set_batter_sprite BATTER_RED
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 1
     spawn_cue CUE_HIGH
     rest 24
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     set_marking_criteria 1
     spawn_cue CUE_HIGH
     rest 24
     rest 24
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xf600, 18
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xfb00, 18
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xfed4, 42
     set_marking_criteria 1
@@ -264,7 +264,7 @@ script script_spaceball_2_main
     rest 24
     rest 24
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     spaceball_zoom_camera 0xff2e, 1
     rest 12
     spaceball_zoom_camera 0xff56, 1
@@ -277,150 +277,150 @@ script script_spaceball_2_main
     rest 6
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xff00, 6
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     set_tempo 150
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     set_tempo 160
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     set_tempo 165
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     set_tempo 170
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     set_tempo 175
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xf000, 864
     mod_music_volume 0, 768
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     run gameplay_set_reverb, 20
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     run gameplay_set_reverb, 30
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     run gameplay_set_reverb, 40
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     rest 24

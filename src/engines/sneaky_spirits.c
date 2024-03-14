@@ -90,7 +90,7 @@ void sneaky_spirits_update_rain(void) {
 
 
 // Set Rain Speed
-void sneaky_spirits_set_rain_speed(u32 slowMotion) {
+void sneaky_spirits_set_rain_slowmo(u32 slowMotion) {
     u32 i;
     u32 animSpeed;
     s16 sprite;
@@ -137,7 +137,7 @@ void sneaky_spirits_set_rain_speed(u32 slowMotion) {
 
 // Engine Event 06 (Set Rain Speed)
 void sneaky_spirits_event_set_rain_speed(u32 slowMotion) {
-    sneaky_spirits_set_rain_speed(slowMotion);
+    sneaky_spirits_set_rain_slowmo(slowMotion);
 }
 
 
@@ -243,7 +243,7 @@ void sneaky_spirits_draw_bow(void) {
 
 
 // Engine Event 04 (Play Wind/Rain SFX)
-void sneaky_spirits_enable_wind_sfx(u32 play) {
+void sneaky_spirits_wind_sfx_enabled(u32 play) {
     if (!play && (gSneakySpirits->rainChannel != NULL)) {
         set_soundplayer_volume(gSneakySpirits->rainChannel, 0);
         stop_soundplayer(gSneakySpirits->rainChannel);
@@ -337,7 +337,7 @@ void sneaky_spirits_stop_slow_motion(void) {
     func_0804d770(D_03005380, gSneakySpirits->ghostHit, 0);
     func_0804dae0(D_03005380, gSneakySpirits->door, -1, 0, 0);
     func_0804cebc(D_03005380, gSneakySpirits->door, 3);
-    sneaky_spirits_set_rain_speed(FALSE);
+    sneaky_spirits_set_rain_slowmo(FALSE);
     func_0804d8f8(D_03005380, gSneakySpirits->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
     func_0804dcb8(D_03005380, gSneakySpirits->ghostWalk, INT_TO_FIXED(get_beatscript_tempo()) / 100u);
 }
@@ -373,7 +373,7 @@ void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 
     func_0804dae0(D_03005380, gSneakySpirits->door, 1, 0x7f, 0);
     func_0804cebc(D_03005380, gSneakySpirits->door, 1);
 
-    sneaky_spirits_set_rain_speed(TRUE);
+    sneaky_spirits_set_rain_slowmo(TRUE);
 
     gSneakySpirits->arrowReady = FALSE;
     gameplay_set_input_buttons(0, 0);

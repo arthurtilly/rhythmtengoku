@@ -129,7 +129,7 @@ script script_space_dance_main
     start_perfect_campaign
     print_text_f D_0805e37c
     space_dance_event07 7
-    space_dance_event01 65280
+    space_dance_event01 -1, 0
     set_marking_criteria 0
     call space_dance_sub_08a848bc
     print_text_f NULL
@@ -141,44 +141,44 @@ script script_space_dance_main
     call space_dance_sub_08a84928
     call space_dance_sub_08a85588
     call space_dance_sub_08a850d8
-    space_dance_event01 65535
+    space_dance_event01 -1, -1
     call space_dance_sub_08a84928
     call space_dance_sub_08a84928
     call space_dance_sub_08a84928
     call space_dance_sub_08a85588
-    space_dance_event01 65281
+    space_dance_event01 -1, 1
     call space_dance_sub_08a84928
     call space_dance_sub_08a84928
     call space_dance_sub_08a84928
     call space_dance_sub_08a84928
-    space_dance_event05 1
+    space_dance_event05 TRUE
     call space_dance_sub_08a84928
     call space_dance_sub_08a85588
-    space_dance_event05 0
-    space_dance_event06 1
-    space_dance_event01 256
+    space_dance_event05 FALSE
+    space_dance_event06 TRUE
+    space_dance_event01 1, 0
     call space_dance_sub_08a84bec
     call space_dance_sub_08a84bec
-    space_dance_event01 65024
+    space_dance_event01 -2, 0
     set_marking_criteria 1
     call space_dance_sub_08a85588
-    space_dance_event05 1
+    space_dance_event05 TRUE
     call space_dance_sub_08a85774
-    space_dance_event05 0
+    space_dance_event05 FALSE
     call space_dance_sub_08a85588
-    space_dance_event05 1
+    space_dance_event05 TRUE
     call space_dance_sub_08a85774
-    space_dance_event05 0
-    space_dance_event01 256
+    space_dance_event05 FALSE
+    space_dance_event01 1, 0
     set_marking_criteria 0
     call space_dance_sub_08a84bec
     call space_dance_sub_08a84bec
-    space_dance_event01 65024
+    space_dance_event01 -2, 0
     set_marking_criteria 1
     call space_dance_sub_08a85588
-    space_dance_event05 1
+    space_dance_event05 TRUE
     call space_dance_sub_08a85774
-    space_dance_event05 0
+    space_dance_event05 FALSE
     call space_dance_sub_08a84b14
     call space_dance_sub_08a84b14
     set_marking_criteria 2
@@ -195,7 +195,7 @@ script script_space_dance_main
     space_dance_event00 0
     beat_anim
     rest 24
-    space_dance_event05 1
+    space_dance_event05 TRUE
     space_dance_event00 6
     play_sfx s_space_kou_lets_seqData
     spawn_cue CUE_SIT_DOWN
@@ -203,7 +203,7 @@ script script_space_dance_main
     rest 10
     play_sfx s_space_kou_sit_seqData
     rest 14
-    space_dance_event01 0
+    space_dance_event01 0, 0
     space_dance_event00 2
     play_sfx s_space_kou_down_seqData
     beat_anim
@@ -227,7 +227,7 @@ script script_space_dance_main
     space_dance_event00 1
     play_sfx s_space_kou_punch_seqData
     play_sfx s_space_ikeo_punch_seqData
-    space_dance_event01 63720
+    space_dance_event01 -8, -24
     run gameplay_set_reverb, 30
     rest 12
     set_marking_criteria 0
@@ -251,7 +251,7 @@ script script_space_dance_main
     rest 12
     space_dance_event00 1
     play_sfx s_space_kou_punch_seqData
-    space_dance_event01 63512
+    space_dance_event01 -8, 24
     rest 12
     call space_dance_sub_08a8566c
     call space_dance_sub_08a8566c
@@ -273,7 +273,7 @@ script script_space_dance_main
     beat_anim
     rest 24
     run gameplay_set_reverb, 0
-    space_dance_event01 65280
+    space_dance_event01 -1, 0
     call space_dance_sub_08a848bc
     call space_dance_sub_08a84928
     call space_dance_sub_08a848bc
@@ -298,8 +298,8 @@ script script_space_dance_main
     rest 12
     rest 24
     rest 12
-    space_dance_event01 0
-    space_dance_event03 0
+    space_dance_event01 0, 0
+    space_dance_event03
     assess_perfect_inputs 0
     beat_anim
     rest 12
@@ -315,8 +315,8 @@ script script_space_dance_practice
     set_tempo 120
     set_music_volume 90
     mod_music_volume 200, 96
-    space_dance_event05 0
-    space_dance_event06 0
+    space_dance_event05 FALSE
+    space_dance_event06 FALSE
     space_dance_event07 8
     play_music s_renshu_bgm1_seqData
     rest 6
@@ -455,8 +455,8 @@ script script_space_dance_skipped_practice
     rest 24
     enable_pause_menu TRUE
     rest 24
-    space_dance_event05 0
-    space_dance_event06 0
+    space_dance_event05 FALSE
+    space_dance_event06 FALSE
     goto script_space_dance_main
 
 .end

@@ -48,6 +48,7 @@
     rap_men_event ANIMATE_RAPPER, \animID
 .endm
 
+
 @ [Event 0x01] Enable Tutorial
 .macro rap_men_enable_tutorial enable
     rap_men_event ENABLE_TUTORIAL, \enable

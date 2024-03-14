@@ -325,7 +325,7 @@ script script_remix_8_main
     rest 24
     set_music_key 2
     play_music L8_pat05_seqData
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_8_SHORT
     rest 12
     rest 6
@@ -349,7 +349,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 24
     rest 24
     rest 24
@@ -373,7 +373,7 @@ script script_remix_8_main
     load_rhythm_tweezers
     rest 12
     play_music L8_pat06_seqData
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_8_LONG
     rest 24
     rest 6
@@ -397,7 +397,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 24
     rest 24
     rest 24
@@ -424,7 +424,7 @@ script script_remix_8_main
     load_rhythm_tweezers_turnip
     rest 12
     play_music L8_pat07_seqData
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_8_SHORT
     rest 12
     rest 6
@@ -445,7 +445,7 @@ script script_remix_8_main
     spawn_cue CUE_8_FAST
     rest 6
     rest 12
-    rhythm_tweezers_show_veg_mask 0
+    rhythm_tweezers_show_veg_mask
     rest 24
     rest 24
     rhythm_tweezers_spawn_tweezers
@@ -455,8 +455,8 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
-    rhythm_tweezers_hide_veg_mask 0
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_hide_veg_mask
+    rhythm_tweezers_removed_event
     rest 24
     rest 24
     rest 24
@@ -493,7 +493,7 @@ script script_remix_8_main
     load_rhythm_tweezers
     rest 12
     play_music L8_pat08_seqData
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_8_SHORT
     rest 12
     spawn_cue CUE_8_LONG
@@ -516,7 +516,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 24
     rest 24
     rest 24
@@ -542,10 +542,10 @@ script script_remix_8_main
     rest 12
 
     load_rhythm_tweezers_potato
-    rhythm_tweezers_show_veg_mask 0
+    rhythm_tweezers_show_veg_mask
     rest 12
     play_music L8_pat09_seqData
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_8_FAST
     rest 6
     spawn_cue CUE_8_FAST
@@ -575,8 +575,8 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
-    rhythm_tweezers_hide_veg_mask 0
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_hide_veg_mask
+    rhythm_tweezers_removed_event
     rest 24
     rest 24
     rest 24
@@ -609,7 +609,7 @@ script script_remix_8_main
     load_rhythm_tweezers_turnip
     rest 12
     play_music L8_pat10_seqData
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     rest 12
     spawn_cue CUE_8_FAST
     rest 6
@@ -624,7 +624,7 @@ script script_remix_8_main
     rest 6
     spawn_cue CUE_8_LONG
     rest 24
-    rhythm_tweezers_show_veg_mask 0
+    rhythm_tweezers_show_veg_mask
     rest 24
     rest 24
     rhythm_tweezers_spawn_tweezers
@@ -634,8 +634,8 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
-    rhythm_tweezers_hide_veg_mask 0
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_hide_veg_mask
+    rhythm_tweezers_removed_event
     rest 24
     rest 24
     rest 24
@@ -666,7 +666,7 @@ script script_remix_8_main
     load_rhythm_tweezers
     rest 12
     play_music L8_pat11_seqData
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_8_SHORT
     rest 12
     spawn_cue CUE_8_FAST
@@ -698,7 +698,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 24
     rest 24
     rest 24
@@ -732,10 +732,10 @@ script script_remix_8_main
     rest 12
 
     load_rhythm_tweezers_potato
-    rhythm_tweezers_show_veg_mask 0
+    rhythm_tweezers_show_veg_mask
     rest 12
     play_music L8_pat12_seqData
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     rest 8
     spawn_cue CUE_8_FAST
     rest 8
@@ -767,8 +767,8 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
-    rhythm_tweezers_hide_veg_mask 0
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_hide_veg_mask
+    rhythm_tweezers_removed_event
     rest 24
     rest 24
     rest 24

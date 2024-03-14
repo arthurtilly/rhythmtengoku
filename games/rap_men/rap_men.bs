@@ -234,7 +234,7 @@ script script_rap_men_main
     beat_anim
     rest 24
     rest 24
-    rap_men_enable_tutorial 0
+    rap_men_enable_tutorial FALSE
     beat_anim
     rest 24
     rest 24
@@ -250,15 +250,15 @@ script script_rap_men_main
     set_marking_criteria 0
     print_text_f text_rap_men_sanji_desu_ka
     play_sfx s_rap_15ji_desuka_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -282,15 +282,15 @@ script script_rap_men_main
     set_marking_criteria 0
     print_text_f text_rap_men_oyatsu_desu_ka
     play_sfx s_rap_oyatu_desuka_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -314,15 +314,15 @@ script script_rap_men_main
     set_marking_criteria 0
     print_text_f text_rap_men_sanji_desu_ka
     play_sfx s_rap_15ji_desuka_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -333,7 +333,7 @@ script script_rap_men_main
     rest 8
     rest 8
     play_sfx s_rap_honto_desuka_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     rest 8
     print_text_f text_rap_men_honto_desu_ka
     set_marking_criteria 0
@@ -353,13 +353,13 @@ script script_rap_men_main
     rest 24
     beat_anim
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
     beat_anim
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
@@ -372,11 +372,11 @@ script script_rap_men_main
     set_marking_criteria 1
     print_text_f text_rap_men_oishii_kamo_ne
     play_sfx s_rap_oisi_kamone_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
@@ -391,13 +391,13 @@ script script_rap_men_main
     rest 24
     beat_anim
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
     beat_anim
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
@@ -410,11 +410,11 @@ script script_rap_men_main
     set_marking_criteria 1
     print_text_f text_rap_men_herushii_kamo_ne
     play_sfx s_rap_herusi_kamone_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
@@ -429,13 +429,13 @@ script script_rap_men_main
     rest 24
     beat_anim
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
     beat_anim
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
@@ -444,7 +444,7 @@ script script_rap_men_main
     rest 6
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 6
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
@@ -454,15 +454,15 @@ script script_rap_men_main
     set_marking_criteria 0
     print_text_f text_rap_men_oyatsu_desu_ka
     play_sfx s_rap_oyatu_desuka_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -474,11 +474,11 @@ script script_rap_men_main
     set_marking_criteria 1
     print_text_f text_rap_men_oishii_kamo_ne
     play_sfx s_rap_oisi_kamone_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
@@ -493,7 +493,7 @@ script script_rap_men_main
     rest 8
     rest 8
     play_sfx s_rap_honto_desuka_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     rest 8
     print_text_f text_rap_men_honto_desu_ka
     set_marking_criteria 0
@@ -517,11 +517,11 @@ script script_rap_men_main
     set_marking_criteria 1
     print_text_f text_rap_men_herushii_kamo_ne
     play_sfx s_rap_herusi_kamone_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
@@ -537,11 +537,11 @@ script script_rap_men_main
     set_marking_criteria 2
     print_text_f text_rap_men_oyatsu_wa_saikou
     play_sfx s_rap_oyatuha_saiko_seqData
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -557,11 +557,11 @@ script script_rap_men_main
     set_marking_criteria 2
     print_text_f text_rap_men_kibun_wa_saikou
     play_sfx s_rap_kibunha_saiko_seqData
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -577,11 +577,11 @@ script script_rap_men_main
     set_marking_criteria 2
     print_text_f text_rap_men_ore_tte_saikou
     play_sfx s_rap_orette_saiko_seqData
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -596,7 +596,7 @@ script script_rap_men_main
     rest 8
     rest 8
     play_sfx s_rap_honto_desuka_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     rest 8
     print_text_f text_rap_men_honto_desu_ka
     set_marking_criteria 0
@@ -617,11 +617,11 @@ script script_rap_men_main
     set_marking_criteria 2
     print_text_f text_rap_men_kimi_tte_saikou
     play_sfx s_rap_kimitte_saiko_seqData
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -649,11 +649,11 @@ script script_rap_men_main
     set_marking_criteria 2
     print_text_f text_rap_men_kimi_tte_saikou
     play_sfx s_rap_kimitte_saiko_seqData
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -681,11 +681,11 @@ script script_rap_men_main
     set_marking_criteria 2
     print_text_f text_rap_men_oyatsu_ga_nai_yo
     play_sfx s_rap_oyatuga_naiyo_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -701,11 +701,11 @@ script script_rap_men_main
     set_marking_criteria 1
     print_text_f text_rap_men_ore_no_sei_kamo_ne
     play_sfx s_rap_orenosei_kamone_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
@@ -721,11 +721,11 @@ script script_rap_men_main
     set_marking_criteria 2
     print_text_f text_rap_men_ore_shiranai_yo
     play_sfx s_rap_oresira_naiyo_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -741,11 +741,11 @@ script script_rap_men_main
     set_marking_criteria 1
     print_text_f text_rap_men_sore_mo_sou_kamo_ne
     play_sfx s_rap_soremoso_kamone_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
@@ -761,7 +761,7 @@ script script_rap_men_main
     beat_anim
     rest 24
     play_sfx s_rap_yeah_seqData
-    rap_men_animate_rapper 1
+    rap_men_animate_rapper ANIM_KAMONE
     rest 24
     beat_anim
     rest 24
@@ -795,7 +795,7 @@ script script_rap_men_practice
     set_tempo 180
     set_music_volume 256
     assess_inputs 0
-    rap_men_enable_tutorial 1
+    rap_men_enable_tutorial TRUE
     rest 24
     enable_pause_menu TRUE
     rest 24
@@ -888,15 +888,15 @@ script script_rap_men_practice
     enable_play_inputs 0
     print_text_f NULL
     play_sfx s_rap_wakari_desuka_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -906,15 +906,15 @@ script script_rap_men_practice
     rest 24
     rest 24
     play_sfx s_rap_wakari_desuka_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -969,34 +969,15 @@ script script_rap_men_practice
         rest 24
         print_text_f NULL
         play_sfx s_rap_wakari_desuka_seqData
-        rap_men_animate_rapper 0
+        rap_men_animate_rapper ANIM_DESUKA
         beat_anim
         rest 24
         rest 24
-        rap_men_animate_rapper 0
+        rap_men_animate_rapper ANIM_DESUKA
         beat_anim
         rest 24
         rest 24
-        rap_men_animate_rapper 0
-        beat_anim
-        rest 24
-        spawn_cue CUE_UN
-        rest 24
-        print_text_f NULL
-        play_sfx s_intro_uh_seqData
-        beat_anim
-        rest 24
-        rest 24
-        play_sfx s_rap_wakari_desuka_seqData
-        rap_men_animate_rapper 0
-        beat_anim
-        rest 24
-        rest 24
-        rap_men_animate_rapper 0
-        beat_anim
-        rest 24
-        rest 24
-        rap_men_animate_rapper 0
+        rap_men_animate_rapper ANIM_DESUKA
         beat_anim
         rest 24
         spawn_cue CUE_UN
@@ -1007,15 +988,34 @@ script script_rap_men_practice
         rest 24
         rest 24
         play_sfx s_rap_wakari_desuka_seqData
-        rap_men_animate_rapper 0
+        rap_men_animate_rapper ANIM_DESUKA
         beat_anim
         rest 24
         rest 24
-        rap_men_animate_rapper 0
+        rap_men_animate_rapper ANIM_DESUKA
         beat_anim
         rest 24
         rest 24
-        rap_men_animate_rapper 0
+        rap_men_animate_rapper ANIM_DESUKA
+        beat_anim
+        rest 24
+        spawn_cue CUE_UN
+        rest 24
+        print_text_f NULL
+        play_sfx s_intro_uh_seqData
+        beat_anim
+        rest 24
+        rest 24
+        play_sfx s_rap_wakari_desuka_seqData
+        rap_men_animate_rapper ANIM_DESUKA
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper ANIM_DESUKA
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper ANIM_DESUKA
         beat_anim
         rest 24
         spawn_cue CUE_UN
@@ -1112,31 +1112,11 @@ script script_rap_men_practice
         rest 24
         print_text_f NULL
         play_sfx s_rap_tanosi_kamone_seqData
-        rap_men_animate_rapper 4
+        rap_men_animate_rapper ANIM_HONTO
         beat_anim
         rest 24
         rest 24
-        rap_men_animate_rapper 0
-        beat_anim
-        rest 24
-        rest 24
-        print_text_f NULL
-        spawn_cue CUE_UN
-        beat_anim
-        rest 24
-        play_sfx s_intro_uh_seqData
-        rest 24
-        spawn_cue CUE_UN
-        beat_anim
-        rest 24
-        play_sfx s_intro_uh_seqData
-        rest 24
-        play_sfx s_rap_tanosi_kamone_seqData
-        rap_men_animate_rapper 4
-        beat_anim
-        rest 24
-        rest 24
-        rap_men_animate_rapper 0
+        rap_men_animate_rapper ANIM_DESUKA
         beat_anim
         rest 24
         rest 24
@@ -1152,11 +1132,31 @@ script script_rap_men_practice
         play_sfx s_intro_uh_seqData
         rest 24
         play_sfx s_rap_tanosi_kamone_seqData
-        rap_men_animate_rapper 4
+        rap_men_animate_rapper ANIM_HONTO
         beat_anim
         rest 24
         rest 24
-        rap_men_animate_rapper 0
+        rap_men_animate_rapper ANIM_DESUKA
+        beat_anim
+        rest 24
+        rest 24
+        print_text_f NULL
+        spawn_cue CUE_UN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        spawn_cue CUE_UN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        play_sfx s_rap_tanosi_kamone_seqData
+        rap_men_animate_rapper ANIM_HONTO
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper ANIM_DESUKA
         beat_anim
         rest 24
         rest 24
@@ -1232,31 +1232,11 @@ script script_rap_men_practice
         rest 24
         print_text_f NULL
         play_sfx s_rap_kimitte_saiko_seqData
-        rap_men_animate_rapper 2
+        rap_men_animate_rapper ANIM_SAIKO
         beat_anim
         rest 24
         rest 24
-        rap_men_animate_rapper 2
-        beat_anim
-        rest 24
-        spawn_cue CUE_UN
-        rest 24
-        play_sfx s_intro_uh_seqData
-        print_text_f NULL
-        spawn_cue CUE_UUN
-        beat_anim
-        rest 24
-        play_sfx s_intro_uh_seqData
-        rest 24
-        beat_anim
-        rest 24
-        rest 24
-        play_sfx s_rap_kimitte_saiko_seqData
-        rap_men_animate_rapper 2
-        beat_anim
-        rest 24
-        rest 24
-        rap_men_animate_rapper 2
+        rap_men_animate_rapper ANIM_SAIKO
         beat_anim
         rest 24
         spawn_cue CUE_UN
@@ -1272,11 +1252,31 @@ script script_rap_men_practice
         rest 24
         rest 24
         play_sfx s_rap_kimitte_saiko_seqData
-        rap_men_animate_rapper 2
+        rap_men_animate_rapper ANIM_SAIKO
         beat_anim
         rest 24
         rest 24
-        rap_men_animate_rapper 2
+        rap_men_animate_rapper ANIM_SAIKO
+        beat_anim
+        rest 24
+        spawn_cue CUE_UN
+        rest 24
+        play_sfx s_intro_uh_seqData
+        print_text_f NULL
+        spawn_cue CUE_UUN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        play_sfx s_rap_kimitte_saiko_seqData
+        rap_men_animate_rapper ANIM_SAIKO
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper ANIM_SAIKO
         beat_anim
         rest 24
         spawn_cue CUE_UN
@@ -1314,7 +1314,7 @@ script script_rap_men_practice
 script script_rap_men_skipped_practice
     set_tempo 180
     set_music_volume 256
-    rap_men_enable_tutorial 0
+    rap_men_enable_tutorial FALSE
     rest 24
     enable_pause_menu TRUE
     rest 24

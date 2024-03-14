@@ -41,7 +41,7 @@ script script_sick_beats_endless_game_over
     rest 24
     rest 24
     rest 24
-    sick_beats_event05 0
+    sick_beats_event05
     play_sfx s_gameover_fan_seqData
     run set_pause_beatscript_scene, TRUE
     fade_music_out 48
@@ -165,9 +165,7 @@ script sick_beats_endless_sub_08a5a690
     rest 24
     run agb_random, 2
     if_globalvar_eq 0
-        sick_beats_set_hits_needed 1
-        sick_beats_set_virus_palette 0
-        sick_beats_spawn_virus sick_beats_endless_path_normal
+        sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
     end_if
     beat_anim
     rest 24
@@ -206,13 +204,9 @@ script sick_beats_endless_sub_08a5a690
     rest 24
     run agb_random, 2
     if_globalvar_eq 0
-        sick_beats_set_hits_needed 1
-        sick_beats_set_virus_palette 0
-        sick_beats_spawn_virus sick_beats_endless_path_normal
+        sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
     else
-        sick_beats_set_hits_needed 1
-        sick_beats_set_virus_palette 0
-        sick_beats_spawn_virus sick_beats_endless_path_skip_to_point_2
+        sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_2
     end_if
     beat_anim
     rest 24
@@ -378,23 +372,17 @@ script sick_beats_endless_sub_08a5b008
     rest 24
     run agb_random, 2
     if_globalvar_eq 0
-        sick_beats_set_hits_needed 1
-        sick_beats_set_virus_palette 0
-        sick_beats_spawn_virus sick_beats_endless_path_normal
+        sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
         beat_anim
         rest 24
         beat_anim
         rest 24
-        sick_beats_set_hits_needed 2
-        sick_beats_set_virus_palette 8
-        sick_beats_spawn_virus sick_beats_endless_path_normal
+        sick_beats_spawn_2_hit_virus sick_beats_endless_path_normal
         beat_anim
         rest 24
         beat_anim
         rest 24
-        sick_beats_set_hits_needed 1
-        sick_beats_set_virus_palette 0
-        sick_beats_spawn_virus sick_beats_endless_path_normal
+        sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
         beat_anim
         rest 24
         beat_anim
@@ -404,23 +392,17 @@ script sick_beats_endless_sub_08a5b008
         beat_anim
         rest 24
     else
-        sick_beats_set_hits_needed 1
-        sick_beats_set_virus_palette 0
-        sick_beats_spawn_virus sick_beats_endless_path_normal
+        sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
         beat_anim
         rest 24
         beat_anim
         rest 24
-        sick_beats_set_hits_needed 1
-        sick_beats_set_virus_palette 0
-        sick_beats_spawn_virus sick_beats_endless_path_normal
+        sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
         beat_anim
         rest 24
         beat_anim
         rest 24
-        sick_beats_set_hits_needed 2
-        sick_beats_set_virus_palette 8
-        sick_beats_spawn_virus sick_beats_endless_path_skip_to_point_2
+        sick_beats_spawn_2_hit_virus sick_beats_endless_path_skip_to_point_2
         beat_anim
         rest 24
         beat_anim
@@ -908,9 +890,9 @@ script script_sick_beats_endless_main
     set_music_volume 240
     play_music s_hitmegeton2_bgm_seqData
     call sick_beats_endless_sub_08a5a690
-    sick_beats_event06 0
+    sick_beats_event06
     call sick_beats_endless_sub_08a5b008
-    sick_beats_event06 0
+    sick_beats_event06
     call sick_beats_endless_sub_08a5bb84
     increase_speed 288, 94
     beat_anim
@@ -922,7 +904,7 @@ script script_sick_beats_endless_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_event06 0
+    sick_beats_event06
     play_music s_hitmegeton2_bgm_seqData
     run agb_random, 2
     if_globalvar_eq 0
@@ -940,7 +922,7 @@ script script_sick_beats_endless_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_event06 0
+    sick_beats_event06
     call sick_beats_endless_sub_08a5d618
     increase_speed 288, 94
     beat_anim
@@ -952,7 +934,7 @@ script script_sick_beats_endless_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_event06 0
+    sick_beats_event06
     call sick_beats_endless_sub_08a5d618
     increase_speed 288, 94
     beat_anim
@@ -964,7 +946,7 @@ script script_sick_beats_endless_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_event06 0
+    sick_beats_event06
     call sick_beats_endless_sub_08a5d618
     increase_speed 288, 94
     beat_anim
@@ -976,7 +958,7 @@ script script_sick_beats_endless_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_event06 0
+    sick_beats_event06
     call sick_beats_endless_sub_08a5d618
     increase_speed 288, 94
     beat_anim
@@ -988,7 +970,7 @@ script script_sick_beats_endless_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_event06 0
+    sick_beats_event06
     call sick_beats_endless_sub_08a5d618
     increase_speed 288, 94
     beat_anim
@@ -1000,7 +982,7 @@ script script_sick_beats_endless_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_event06 0
+    sick_beats_event06
     call sick_beats_endless_sub_08a5d618
     increase_speed 288, 94
     beat_anim
@@ -1012,7 +994,7 @@ script script_sick_beats_endless_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_event06 0
+    sick_beats_event06
     loop_start
         call sick_beats_endless_sub_08a5d618
         increase_speed 256, 94
@@ -1025,7 +1007,7 @@ script script_sick_beats_endless_main
         rest 24
         beat_anim
         rest 24
-        sick_beats_event06 0
+        sick_beats_event06
     loop_end
     beat_anim
     rest 24

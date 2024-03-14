@@ -313,7 +313,7 @@ script script_remix_6_main
     rest 24
 
     load_rat_race
-    rat_race_event12 0
+    rat_race_event12
     beat_anim
     rest 24
     beat_anim
@@ -426,12 +426,12 @@ script script_remix_6_main
     print_text_s 0
     beat_anim
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     beat_anim
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     beat_anim
     rest 24
@@ -467,7 +467,7 @@ script script_remix_6_main
     rest 24
     quiz_show_event01 -32
     assess_perfect_inputs 1
-    quiz_show_event04 0
+    quiz_show_event04
     if_globalvar_eq 0
         print_text_s D_0806a900
         quiz_show_event00 64
@@ -684,7 +684,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    toss_boys_event01 196928
+    toss_boys_event01 0x30140
     beat_anim
     rest 24
     toss_boys_event02 0x300c9
@@ -722,7 +722,7 @@ script script_remix_6_main
     toss_boys_event03 4
     beat_anim
     rest 24
-    toss_boys_event02 NULL
+    toss_boys_event02 0x00000
     spawn_cue CUE_POP_Y
     toss_boys_event05 50
     beat_anim
@@ -734,7 +734,7 @@ script script_remix_6_main
     rest 24
 
     load_wizards_waltz
-    wizards_waltz_enable_tutorial 0
+    wizards_waltz_tutorial_enabled FALSE
     wizards_waltz_set_cycle_time 144
     beat_anim
     rest 24
@@ -960,11 +960,11 @@ script script_remix_6_main
     rest 24
     print_text_f text_remix_6_kimi_tte_saikou
     run remix6_sync_rap_vocal, s_rap_kimitte_saiko_seqData
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -979,7 +979,7 @@ script script_remix_6_main
     rest 8
     rest 8
     run remix6_sync_rap_vocal, s_rap_honto_desuka_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     rest 8
     print_text_f text_remix_6_honto_desu_ka
     beat_anim
@@ -1034,7 +1034,7 @@ script script_remix_6_main
     rest 24
 
     load_sneaky_spirits
-    sneaky_spirits_spawn_bow 0
+    sneaky_spirits_spawn_bow
     call sneaky_spirits_sub_08a791a4
     call sneaky_spirits_sub_08a7951c
 
@@ -1147,7 +1147,7 @@ script script_remix_6_main
     load_tram_pauline_no_curtain
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -1158,7 +1158,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -1169,8 +1169,8 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
-    tram_pauline_event00 1
+    tram_pauline_event00 FALSE
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -1201,7 +1201,7 @@ script script_remix_6_main
     load_spaceball
     spaceball_zoom_camera 0xfed4, 0
     spaceball_zoom_camera 0xff00, 287
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     beat_anim
     rest 24
     beat_anim
@@ -1211,7 +1211,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     beat_anim
     rest 24
     beat_anim
@@ -1219,19 +1219,19 @@ script script_remix_6_main
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     beat_anim
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     beat_anim
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     beat_anim
     rest 24
     spaceball_zoom_camera 0xfc00, 48
@@ -1286,7 +1286,7 @@ script script_remix_6_main
     rest 24
 
     load_rhythm_tweezers
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_SHORT
     rest 24
     spawn_cue CUE_SHORT
@@ -1300,13 +1300,13 @@ script script_remix_6_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_set_next_veg VEG_ONION
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_SHORT
     rest 24
     spawn_cue CUE_SHORT
@@ -1323,7 +1323,7 @@ script script_remix_6_main
     rest 24
     rest 6
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
 
     load_marching_orders
@@ -1338,7 +1338,7 @@ script script_remix_6_main
     rest 24
 
     load_space_dance
-    space_dance_event01 63720
+    space_dance_event01 -8, -24
     beat_anim
     rest 24
     call space_dance_sub_08a85588
@@ -1360,12 +1360,12 @@ script script_remix_6_main
     rest 12
     space_dance_event00 1
     play_sfx s_space_ikeo_punch_seqData
-    space_dance_event01 63512
+    space_dance_event01 -8, 24
     rest 12
     call space_dance_sub_08a85588
     call space_dance_sub_08a85588
     call space_dance_sub_08a84928
-    space_dance_event01 65280
+    space_dance_event01 -1, 0
     beat_anim
     rest 24
     beat_anim
@@ -1409,8 +1409,8 @@ script script_remix_6_main
     rest 12
     rest 24
     rest 12
-    space_dance_event01 0
-    space_dance_event03 0
+    space_dance_event01 0, 0
+    space_dance_event03
     print_text_f D_0806a970
     assess_perfect_inputs 0
     beat_anim

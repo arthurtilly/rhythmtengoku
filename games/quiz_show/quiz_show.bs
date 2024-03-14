@@ -137,21 +137,21 @@ script quiz_show_sub_08a3c210
     switch_random 3
         case 0
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
             rest 12
             break
         case 1
             rest 24
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 12
             break
         default
             rest 12
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 12
     end_switch
 return
@@ -203,103 +203,103 @@ script script_quiz_show_main
                 rest 24
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 rest 24
                 break
             case 1
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 rest 24
                 break
             case 2
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
-                rest 24
-                rest 24
-                quiz_show_event02 0
-                rest 24
-                quiz_show_event02 0
-                rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
+                rest 24
+                quiz_show_event02 FALSE
+                rest 24
+                quiz_show_event02 FALSE
+                rest 24
+                quiz_show_event02 FALSE
+                rest 24
+                quiz_show_event02 FALSE
                 rest 24
                 rest 24
                 break
             case 3
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 12
-                quiz_show_event02 0
-                rest 24
-                rest 24
-                quiz_show_event02 0
-                rest 24
-                quiz_show_event02 0
-                rest 12
-                quiz_show_event02 1
-                rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
-                quiz_show_event02 0
-                rest 12
-                quiz_show_event02 1
-                rest 12
-                quiz_show_event02 0
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
+                rest 24
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
+                rest 24
+                quiz_show_event02 FALSE
+                rest 12
+                quiz_show_event02 TRUE
+                rest 12
+                quiz_show_event02 FALSE
+                rest 24
+                quiz_show_event02 FALSE
+                rest 12
+                quiz_show_event02 TRUE
+                rest 12
+                quiz_show_event02 FALSE
                 rest 24
                 call quiz_show_sub_08a3c210
                 rest 24
@@ -307,63 +307,63 @@ script script_quiz_show_main
             case 4
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 12
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 12
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 call quiz_show_sub_08a3c210
                 rest 24
@@ -371,93 +371,93 @@ script script_quiz_show_main
             case 5
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 rest 24
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 6
-                quiz_show_event02 1
+                quiz_show_event02 TRUE
                 rest 6
-                quiz_show_event02 0
+                quiz_show_event02 FALSE
                 rest 24
                 call quiz_show_sub_08a3c210
                 rest 24
@@ -473,7 +473,7 @@ script script_quiz_show_main
         rest 24
         rest 24
         print_text_s 0
-        quiz_show_event05 1
+        quiz_show_event05 TRUE
         quiz_show_event00 1
         rest 12
         enable_play_inputs 1
@@ -501,7 +501,7 @@ script script_quiz_show_main
         end_switch
         play_sfx s_keytoy_count1_seqData
         rest 24
-        quiz_show_event05 0
+        quiz_show_event05 FALSE
         play_sfx s_f_quiz_stop_seqData
         print_text_s D_0805ed7c
         rest 12
@@ -514,7 +514,7 @@ script script_quiz_show_main
         rest 12
         print_text_s D_0805ed8c
         run gameplay_display_text_and_wait
-        quiz_show_event03 1
+        quiz_show_event03 TRUE
         mod_lcd_blend_from 0x3F41, 24
         rest 24
         rest 24
@@ -526,9 +526,9 @@ script script_quiz_show_main
         rest 24
         rest 24
         rest 24
-        quiz_show_event03 0
+        quiz_show_event03 FALSE
         assess_perfect_inputs 1
-        quiz_show_event04 0
+        quiz_show_event04
         if_globalvar_eq 0
             import_marking_criteria quiz_show_marking_criteria_set_1
             assess_inputs 1
@@ -577,7 +577,7 @@ script script_quiz_show_main
             default
                 rest 24
                 rest 24
-                run beatscript_enable_loops, 0
+                run beatscript_enable_loops
         end_switch
         run gameplay_increment_loop_counter
     loop_end

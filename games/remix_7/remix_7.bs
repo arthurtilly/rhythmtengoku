@@ -203,7 +203,7 @@ script script_remix_7_main
     play_music L1_pat05_seqData
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -214,7 +214,7 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -225,8 +225,8 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
-    tram_pauline_event00 1
+    tram_pauline_event00 FALSE
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -278,7 +278,7 @@ script script_remix_7_main
     rest 6
     rest 24
     rest 24
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_SHORT
     rest 12
     rest 12
@@ -463,12 +463,12 @@ script script_remix_7_main
     call tap_trial_sub_08a85c78
 
     load_sneaky_spirits_remix
-    sneaky_spirits_spawn_bow 0
+    sneaky_spirits_spawn_bow
     rest 24
     rest 24
     rest 24
     rest 24
-    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_wind_sfx_enabled TRUE
     sneaky_spirits_set_ghost_height 112
     rest 24
     sneaky_spirits_set_ghost_height 0
@@ -483,7 +483,7 @@ script script_remix_7_main
     sneaky_spirits_set_ghost_height 112
     sneaky_spirits_show_ghost 3
     rest 24
-    sneaky_spirits_draw_bow 0
+    sneaky_spirits_draw_bow
     sneaky_spirits_set_ghost_height 160
     sneaky_spirits_show_ghost 4
     rest 24
@@ -494,7 +494,7 @@ script script_remix_7_main
     sneaky_spirits_show_ghost 6
     spawn_cue CUE_LENIENT
     rest 24
-    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_wind_sfx_enabled FALSE
     sneaky_spirits_set_ghost_height 256
     mute_music_track MIDI_TRACK_5
     rest 24
@@ -626,7 +626,7 @@ script script_remix_7_main
     set_game_fade_in_time 0
 
     load_showtime
-    showtime_event00 0
+    showtime_event00 FALSE
     beat_anim
     rest 24
     beat_anim
@@ -676,7 +676,7 @@ script script_remix_7_main
     rest 24
 
     load_spaceball
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     spaceball_zoom_camera 0xff00, 24
     rest 24
     spawn_cue CUE_LOW
@@ -699,7 +699,7 @@ script script_remix_7_main
     rest 24
 
     load_spaceball
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     spaceball_zoom_camera 0xff00, 24
     rest 24
     run remix7_start_last_remix1_bgm

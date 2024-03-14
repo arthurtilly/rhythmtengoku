@@ -98,7 +98,7 @@ script script_showtime_main
     import_marking_criteria showtime_marking_criteria
     forgive_x_misses 1
     assess_inputs 1
-    showtime_event00 1
+    showtime_event00 TRUE
     set_tempo 150
     set_music_volume 256
     play_music s_naniwa_bgm_seqData
@@ -330,7 +330,7 @@ script script_showtime_practice
     play_music s_renshu_bgm2_seqData
     rest 6
     assess_inputs 0
-    showtime_event00 0
+    showtime_event00 FALSE
     beat_anim
     rest 24
     enable_pause_menu TRUE

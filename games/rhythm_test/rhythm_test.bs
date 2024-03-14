@@ -266,7 +266,7 @@ script script_rhythm_test_click_main
     play_music s_check_machine_seqData
     rest 24
     rest 24
-    rhythm_test_event03 0
+    rhythm_test_event03
     rest 24
     rest 24
     rest 24
@@ -641,7 +641,7 @@ script script_rhythm_test_cue_main
     rest 24
     rest 24
     rest 24
-    rhythm_test_event03 0
+    rhythm_test_event03
     rest 24
     rest 24
     rest 24
@@ -916,7 +916,7 @@ script script_rhythm_test_trick_main
     play_music s_check_machine_seqData
     rest 24
     rest 24
-    rhythm_test_event03 0
+    rhythm_test_event03
     rest 24
     rest 24
     rest 24
@@ -956,7 +956,7 @@ script rhythm_test_sub_08a40cb4
     fade_music_out 48
     rest 24
     call script_rhythm_test_click_main
-    rhythm_test_event06 0
+    rhythm_test_event06
     rest 12
     print_text_s D_0805f0d0
     rest 12
@@ -964,7 +964,7 @@ script rhythm_test_sub_08a40cb4
     fade_music_out 48
     rest 24
     call script_rhythm_test_cue_main
-    rhythm_test_event06 0
+    rhythm_test_event06
     rest 24
     print_text_s D_0805f0ec
     rest 12

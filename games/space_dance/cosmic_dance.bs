@@ -106,7 +106,7 @@ script script_cosmic_dance_main
     forgive_x_misses 2
     assess_inputs 1
     print_text_f D_08068310
-    space_dance_event01 65280
+    space_dance_event01 -1, 0
     rest 8
     set_marking_criteria 0
     call space_dance_sub_08a848bc
@@ -114,36 +114,36 @@ script script_cosmic_dance_main
     call cosmic_dance_sub_08a84e14
     call space_dance_sub_08a848bc
     call cosmic_dance_sub_08a85318
-    space_dance_event01 65535
+    space_dance_event01 -1, -1
     call space_dance_sub_08a848bc
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a85858
-    space_dance_event01 65281
+    space_dance_event01 -1, 1
     call space_dance_sub_08a848bc
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a84e14
     call space_dance_sub_08a848bc
     call cosmic_dance_sub_08a85858
-    space_dance_event01 256
+    space_dance_event01 1, 0
     call space_dance_sub_08a84bec
-    space_dance_event05 1
+    space_dance_event05 TRUE
     call space_dance_sub_08a84bec
-    space_dance_event05 1
-    space_dance_event01 65024
+    space_dance_event05 TRUE
+    space_dance_event01 -2, 0
     set_marking_criteria 1
     call cosmic_dance_sub_08a85858
     call cosmic_dance_sub_08a85954
     call cosmic_dance_sub_08a85858
     call cosmic_dance_sub_08a85954
-    space_dance_event01 256
+    space_dance_event01 1, 0
     set_marking_criteria 0
     call space_dance_sub_08a84bec
-    space_dance_event05 1
+    space_dance_event05 TRUE
     call space_dance_sub_08a84bec
-    space_dance_event05 1
-    space_dance_event01 65024
+    space_dance_event05 TRUE
+    space_dance_event01 -2, 0
     set_marking_criteria 1
     call cosmic_dance_sub_08a85858
     call cosmic_dance_sub_08a85954
@@ -165,7 +165,7 @@ script script_cosmic_dance_main
     play_sfx s_space_kou_sit_seqData
     rest 2
     rest 8
-    space_dance_event01 0
+    space_dance_event01 0, 0
     space_dance_event00 2
     play_sfx s_space_kou_down_seqData
     add_music MUSIC_PLAYER_2, s_studio_bgm_seqData
@@ -173,7 +173,7 @@ script script_cosmic_dance_main
     mod_music_volume 150, 144
     rest 24
     rest 24
-    space_dance_event04 1
+    space_dance_event04 TRUE
     rest 24
     rest 24
     switch_random 6
@@ -198,7 +198,7 @@ script script_cosmic_dance_main
             break
     end_switch
     mod_music_volume 80, 72
-    space_dance_event04 0
+    space_dance_event04 FALSE
     play_sfx_vol s_intro_one_seqData, 52
     rest 24
     play_sfx_vol s_intro_two_seqData, 60
@@ -233,7 +233,7 @@ script script_cosmic_dance_main
     space_dance_event00 1
     play_sfx s_space_kou_punch_seqData
     play_sfx s_space_ikeo_punch_seqData
-    space_dance_event01 63720
+    space_dance_event01 -8, -24
     mod_lcd_blend_to 0x442, 24
     run gameplay_set_reverb, 30
     rest 8
@@ -259,7 +259,7 @@ script script_cosmic_dance_main
     rest 8
     space_dance_event00 1
     play_sfx s_space_kou_punch_seqData
-    space_dance_event01 63512
+    space_dance_event01 -8, 24
     mod_lcd_blend_to 0x442, 24
     rest 8
     call cosmic_dance_sub_08a84fdc
@@ -287,10 +287,10 @@ script script_cosmic_dance_main
     space_dance_event00 1
     play_sfx s_space_kou_punch_seqData
     play_sfx s_space_ikeo_punch_seqData
-    space_dance_event01 63512
+    space_dance_event01 -8, 24
     rest 8
     run gameplay_set_reverb, 0
-    space_dance_event01 65280
+    space_dance_event01 -1, 0
     call space_dance_sub_08a848bc
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a85858
@@ -310,16 +310,16 @@ script script_cosmic_dance_main
     play_sfx s_space_ikeo_punch_seqData
     rest 8
     rest 24
-    space_dance_event04 1
+    space_dance_event04 TRUE
     rest 12
-    space_dance_event01 0
+    space_dance_event01 0, 0
     assess_perfect_inputs 0
     beat_anim
     rest 12
     rest 24
     rest 24
     rest 24
-    space_dance_event04 0
+    space_dance_event04 FALSE
     enable_pause_menu FALSE
     rest 24
 return

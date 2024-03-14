@@ -68,46 +68,54 @@
 
 
 @ [Event 0x00] ?
-.macro toss_boys_event00 args
-    toss_boys_event EVENT_00, \args
+.macro toss_boys_event00
+    toss_boys_event EVENT_00, 0
 .endm
+
 
 @ [Event 0x01] ?
 .macro toss_boys_event01 args
     toss_boys_event EVENT_01, \args
 .endm
 
+
 @ [Event 0x02] ?
 .macro toss_boys_event02 args
     toss_boys_event EVENT_02, \args
 .endm
+
 
 @ [Event 0x03] ?
 .macro toss_boys_event03 args
     toss_boys_event EVENT_03, \args
 .endm
 
+
 @ [Event 0x04] ?
-.macro toss_boys_event04 args
-    toss_boys_event EVENT_04, \args
+.macro toss_boys_event04
+    toss_boys_event EVENT_04, 0
 .endm
+
 
 @ [Event 0x05] ?
 .macro toss_boys_event05 args
     toss_boys_event EVENT_05, \args
 .endm
 
+
 @ [Event 0x06] ?
 .macro toss_boys_event06 args
     toss_boys_event EVENT_06, \args
 .endm
 
+
 @ [Event 0x07] ?
-.macro toss_boys_event07 args
-    toss_boys_event EVENT_07, \args
+.macro toss_boys_event07
+    toss_boys_event EVENT_07, 0
 .endm
 
+
 @ [Event 0x08] ?
-.macro toss_boys_event08 args
-    toss_boys_event EVENT_08, \args
+.macro toss_boys_event08
+    toss_boys_event EVENT_08, 0
 .endm

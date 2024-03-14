@@ -140,7 +140,7 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -152,7 +152,7 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -160,7 +160,7 @@ script script_tram_pauline_main
     spawn_cue CUE_PAULINE
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -168,7 +168,7 @@ script script_tram_pauline_main
     spawn_cue CUE_TRAM
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -180,8 +180,8 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
-    tram_pauline_event00 1
+    tram_pauline_event00 FALSE
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -195,7 +195,7 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -207,7 +207,7 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -215,7 +215,7 @@ script script_tram_pauline_main
     spawn_cue CUE_PAULINE
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -223,7 +223,7 @@ script script_tram_pauline_main
     spawn_cue CUE_TRAM
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -235,8 +235,8 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
-    tram_pauline_event00 1
+    tram_pauline_event00 FALSE
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -248,10 +248,10 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     tram_pauline_event01 0
     set_marking_criteria 0
     spawn_cue CUE_TRAM
@@ -264,10 +264,10 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     tram_pauline_event01 0
     set_marking_criteria 0
     spawn_cue CUE_TRAM
@@ -285,7 +285,7 @@ script script_tram_pauline_main
     spawn_cue CUE_TRAM
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 3
@@ -293,7 +293,7 @@ script script_tram_pauline_main
     spawn_cue CUE_PAULINE
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 2
@@ -314,10 +314,10 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     tram_pauline_event01 1
     set_marking_criteria 1
     spawn_cue CUE_PAULINE
@@ -330,10 +330,10 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     tram_pauline_event01 1
     set_marking_criteria 1
     spawn_cue CUE_PAULINE
@@ -351,7 +351,7 @@ script script_tram_pauline_main
     spawn_cue CUE_PAULINE
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 2
@@ -359,16 +359,7 @@ script script_tram_pauline_main
     spawn_cue CUE_TRAM
     beat_anim
     rest 24
-    tram_pauline_event00 1
-    beat_anim
-    rest 24
-    tram_pauline_event01 2
-    tram_pauline_event01 3
-    set_marking_criteria 2
-    spawn_cue CUE_TRAM
-    spawn_cue CUE_PAULINE
-    beat_anim
-    rest 24
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 2
@@ -389,57 +380,13 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event01 0
-    tram_pauline_event01 1
+    tram_pauline_event01 2
+    tram_pauline_event01 3
     set_marking_criteria 2
     spawn_cue CUE_TRAM
     spawn_cue CUE_PAULINE
     beat_anim
     rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    tram_pauline_event00 0
-    beat_anim
-    rest 24
-    tram_pauline_event01 0
-    set_marking_criteria 0
-    spawn_cue CUE_TRAM
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    tram_pauline_event00 1
-    beat_anim
-    rest 24
-    tram_pauline_event01 1
-    set_marking_criteria 1
-    spawn_cue CUE_PAULINE
-    beat_anim
-    rest 24
-    tram_pauline_event00 0
-    beat_anim
-    rest 24
-    tram_pauline_event01 0
-    set_marking_criteria 0
-    spawn_cue CUE_TRAM
-    beat_anim
-    rest 24
-    tram_pauline_event00 1
-    beat_anim
-    rest 24
-    tram_pauline_event01 1
-    set_marking_criteria 1
-    spawn_cue CUE_PAULINE
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    tram_pauline_event00 0
-    tram_pauline_event00 1
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -453,9 +400,7 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    beat_anim
-    rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -467,7 +412,62 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    tram_pauline_event00 FALSE
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    tram_pauline_event00 TRUE
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 FALSE
+    tram_pauline_event00 TRUE
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    tram_pauline_event01 1
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 FALSE
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 3
@@ -475,7 +475,7 @@ script script_tram_pauline_main
     spawn_cue CUE_PAULINE
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -487,10 +487,10 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     tram_pauline_event01 2
     set_marking_criteria 0
     spawn_cue CUE_TRAM
@@ -648,7 +648,7 @@ script script_tram_pauline_practice
         run beatscript_disable_loops
         beat_anim
         rest 24
-        tram_pauline_event00 0
+        tram_pauline_event00 FALSE
         beat_anim
         rest 24
         tram_pauline_event01 0
@@ -662,7 +662,7 @@ script script_tram_pauline_practice
         run beatscript_disable_loops
         beat_anim
         rest 24
-        tram_pauline_event00 1
+        tram_pauline_event00 TRUE
         beat_anim
         rest 24
         tram_pauline_event01 1
@@ -691,7 +691,7 @@ script script_tram_pauline_practice
         rest 24
         beat_anim
         rest 24
-        tram_pauline_event00 0
+        tram_pauline_event00 FALSE
         beat_anim
         rest 24
         tram_pauline_event01 2
@@ -715,7 +715,7 @@ script script_tram_pauline_practice
         rest 24
         beat_anim
         rest 24
-        tram_pauline_event00 1
+        tram_pauline_event00 TRUE
         beat_anim
         rest 24
         tram_pauline_event01 3
@@ -752,10 +752,10 @@ script script_tram_pauline_practice
         rest 24
         beat_anim
         rest 24
-        tram_pauline_event00 0
+        tram_pauline_event00 FALSE
         beat_anim
         rest 24
-        tram_pauline_event00 1
+        tram_pauline_event00 TRUE
         tram_pauline_event01 0
         spawn_cue CUE_TRAM
         beat_anim
@@ -781,8 +781,8 @@ script script_tram_pauline_practice
         run beatscript_disable_loops
         beat_anim
         rest 24
-        tram_pauline_event00 0
-        tram_pauline_event00 1
+        tram_pauline_event00 FALSE
+        tram_pauline_event00 TRUE
         beat_anim
         rest 24
         tram_pauline_event01 0

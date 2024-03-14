@@ -55,7 +55,7 @@ extern void wizards_waltz_engine_start(u32 version); // Game Engine Start
 extern void wizards_waltz_set_cycle_duration(u32 duration); // Engine Event 0x00 (Set Rotation Interval)
 extern void wizards_waltz_set_sprite_pos(struct AffineSprite *, s32 x, s32 y, u32 z); // Update Sprite Position
 extern void wizards_waltz_engine_update(void); // Game Engine Update
-extern void wizards_waltz_enable_tutorial(u32 enable); // Engine Event 0x01 (Enable Tutorial Mode)
+extern void wizards_waltz_tutorial_enabled(u32 enable); // Engine Event 0x01 (Enable Tutorial Mode)
 extern void wizards_waltz_engine_stop(void); // Game Engine Stop
 extern void wizards_waltz_cue_spawn(struct Cue *, struct WizardsWaltzCue *, u32 param); // Cue - Spawn
 extern u32  wizards_waltz_cue_update(struct Cue *, struct WizardsWaltzCue *, u32 runningTime, u32 duration); // Cue - Update

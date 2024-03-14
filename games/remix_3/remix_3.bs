@@ -350,7 +350,7 @@ script script_remix_3_main
     set_game_fade_in_time 0
 
     load_showtime_remix_3
-    showtime_event00 1
+    showtime_event00 TRUE
     beat_anim
     rest 24
     beat_anim
@@ -433,7 +433,7 @@ script script_remix_3_main
     load_tram_pauline_remix_3
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -465,7 +465,7 @@ script script_remix_3_main
     load_tram_pauline_remix_3
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -498,7 +498,7 @@ script script_remix_3_main
     load_tram_pauline_remix_3
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -530,7 +530,7 @@ script script_remix_3_main
     load_tram_pauline_remix_3
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -539,8 +539,8 @@ script script_remix_3_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
-    tram_pauline_event00 1
+    tram_pauline_event00 FALSE
+    tram_pauline_event00 TRUE
     rest 24
     rest 24
     tram_pauline_event01 0

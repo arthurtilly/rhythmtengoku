@@ -116,8 +116,8 @@ script script_toss_boys_2_main
     assess_inputs 1
     set_tempo 106
     set_music_volume 150
-    toss_boys_event00 0
-    toss_boys_event04 0
+    toss_boys_event00
+    toss_boys_event04
     print_text_s D_0805d6c4
     play_music s_toss_bgm_seqData
     set_marking_criteria 0
@@ -130,7 +130,7 @@ script script_toss_boys_2_main
     beat_anim
     rest 24
     print_text_s 0
-    toss_boys_event01 196928
+    toss_boys_event01 0x30140
     beat_anim
     rest 24
     toss_boys_event02 0x300c9
@@ -188,7 +188,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 26
     toss_boys_event02 0x300c8
     spawn_cue CUE_TOSS_B
@@ -236,7 +236,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 4
     beat_anim
     rest 24
@@ -307,7 +307,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 15
     beat_anim
     rest 24
@@ -325,7 +325,7 @@ script script_toss_boys_2_main
     beat_anim
     rest 24
     set_marking_criteria 0
-    toss_boys_event01 196930
+    toss_boys_event01 0x30142
     beat_anim
     rest 24
     toss_boys_event02 0x300a1
@@ -376,7 +376,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 26
     toss_boys_event02 0x300c9
     spawn_cue CUE_TOSS_R
@@ -431,7 +431,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 13
     beat_anim
     rest 24
@@ -478,7 +478,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 26
     toss_boys_event02 0x300c8
     spawn_cue CUE_TOSS_B
@@ -520,7 +520,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 15
     beat_anim
     rest 24
@@ -538,7 +538,7 @@ script script_toss_boys_2_main
     beat_anim
     rest 24
     set_marking_criteria 0
-    toss_boys_event01 196930
+    toss_boys_event01 0x30142
     beat_anim
     rest 24
     toss_boys_event02 0x300a1
@@ -589,7 +589,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 26
     toss_boys_event02 0x300c8
     spawn_cue CUE_TOSS_B
@@ -637,7 +637,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 4
     beat_anim
     rest 24
@@ -675,7 +675,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 26
     toss_boys_event02 0x300c8
     spawn_cue CUE_TOSS_B
@@ -711,7 +711,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 1
     beat_anim
     rest 24
@@ -742,7 +742,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 15
     beat_anim
     rest 24
@@ -760,7 +760,7 @@ script script_toss_boys_2_main
     beat_anim
     rest 24
     set_marking_criteria 0
-    toss_boys_event01 196928
+    toss_boys_event01 0x30140
     beat_anim
     rest 24
     toss_boys_event02 0x18079
@@ -795,7 +795,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 10
     beat_anim
     rest 24
@@ -819,7 +819,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 10
     beat_anim
     rest 24
@@ -849,7 +849,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 4
     beat_anim
     rest 24
@@ -873,7 +873,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 26
     toss_boys_event02 0x300c8
     spawn_cue CUE_TOSS_B
@@ -910,7 +910,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 26
     toss_boys_event02 0x300c9
     spawn_cue CUE_TOSS_R
@@ -947,7 +947,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 12
     beat_anim
     rest 24
@@ -999,7 +999,7 @@ script script_toss_boys_2_main
     toss_boys_event05 1
     toss_boys_event05 2
     rest 12
-    toss_boys_event07 0
+    toss_boys_event07
     toss_boys_event03 15
     beat_anim
     rest 24

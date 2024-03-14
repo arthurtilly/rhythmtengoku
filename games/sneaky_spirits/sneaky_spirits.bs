@@ -138,7 +138,7 @@ endstruct
 @ Sneaky Spirits - Main Script
 
 script sneaky_spirits_sub_08a02f24
-    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_wind_sfx_enabled TRUE
     set_music_volume 256
     mod_music_volume 0, 24
     rest 24
@@ -156,7 +156,7 @@ script sneaky_spirits_sub_08a02f24
     rest 24
     rest 24
     rest 24
-    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_wind_sfx_enabled FALSE
     rest 24
     sneaky_spirits_set_ghost_height 256
     sneaky_spirits_show_ghost 0
@@ -232,9 +232,9 @@ script sneaky_spirits_sub_08a02f24
     beat_anim
     rest 24
     sneaky_spirits_print_text D_0805bb78
-    sneaky_spirits_freeze_slow_rain 1
-    sneaky_spirits_set_rain_speed 1
-    sneaky_spirits_show_tutorial_ghost 1
+    sneaky_spirits_freeze_slow_rain TRUE
+    sneaky_spirits_set_rain_slowmo TRUE
+    sneaky_spirits_show_tutorial_ghost TRUE
     sneaky_spirits_set_tutorial_ghost_frame 0
     set_tempo 40
     set_music_volume 0
@@ -243,8 +243,8 @@ script sneaky_spirits_sub_08a02f24
     set_tempo 120
     mod_music_volume 256, 48
     rest 12
-    sneaky_spirits_set_rain_speed 0
-    sneaky_spirits_freeze_slow_rain 0
+    sneaky_spirits_set_rain_slowmo FALSE
+    sneaky_spirits_freeze_slow_rain FALSE
     sneaky_spirits_set_tutorial_ghost_frame 2
     sneaky_spirits_print_text D_0805ba9c
     sneaky_spirits_show_ghost 0
@@ -284,9 +284,9 @@ script sneaky_spirits_sub_08a02f24
     beat_anim
     rest 24
     sneaky_spirits_print_text D_0805bb78
-    sneaky_spirits_freeze_slow_rain 1
-    sneaky_spirits_set_rain_speed 1
-    sneaky_spirits_show_tutorial_ghost 1
+    sneaky_spirits_freeze_slow_rain TRUE
+    sneaky_spirits_set_rain_slowmo TRUE
+    sneaky_spirits_show_tutorial_ghost TRUE
     sneaky_spirits_set_tutorial_ghost_frame 0
     set_tempo 40
     set_music_volume 0
@@ -295,8 +295,8 @@ script sneaky_spirits_sub_08a02f24
     set_tempo 120
     mod_music_volume 256, 48
     rest 12
-    sneaky_spirits_set_rain_speed 0
-    sneaky_spirits_freeze_slow_rain 0
+    sneaky_spirits_set_rain_slowmo FALSE
+    sneaky_spirits_freeze_slow_rain FALSE
     sneaky_spirits_set_tutorial_ghost_frame 2
     sneaky_spirits_print_text D_0805ba9c
     sneaky_spirits_show_ghost 0
@@ -319,7 +319,7 @@ script sneaky_spirits_sub_08a02f24
     beat_anim
     rest 24
     rest 24
-    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_wind_sfx_enabled TRUE
     sneaky_spirits_set_ghost_height 256
     sneaky_spirits_show_ghost 0
     rest 24
@@ -328,7 +328,7 @@ script sneaky_spirits_sub_08a02f24
     sneaky_spirits_show_ghost 2
     rest 24
     sneaky_spirits_print_text D_0805ba9c
-    sneaky_spirits_draw_bow 0
+    sneaky_spirits_draw_bow
     sneaky_spirits_show_ghost 3
     rest 24
     sneaky_spirits_show_ghost 4
@@ -338,7 +338,7 @@ script sneaky_spirits_sub_08a02f24
     sneaky_spirits_show_ghost 6
     spawn_cue CUE_STRICT
     rest 24
-    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_wind_sfx_enabled FALSE
     sneaky_spirits_set_ghost_height 256
     rest 24
 return
@@ -396,14 +396,14 @@ return
 script script_sneaky_spirits_practice
     set_tempo 120
     assess_inputs 0
-    sneaky_spirits_spawn_bow 0
+    sneaky_spirits_spawn_bow
     call sneaky_spirits_sub_08a02f24
     goto script_sneaky_spirits_main
 
 
 script script_sneaky_spirits_skipped_practice
     set_tempo 120
-    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_wind_sfx_enabled TRUE
     set_music_volume 256
     mod_music_volume 128, 24
     rest 24
@@ -414,11 +414,11 @@ script script_sneaky_spirits_skipped_practice
     rest 24
     rest 24
     rest 24
-    sneaky_spirits_spawn_bow 0
+    sneaky_spirits_spawn_bow
     rest 24
     rest 24
     rest 24
-    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_wind_sfx_enabled FALSE
     rest 24
     goto script_sneaky_spirits_main
 

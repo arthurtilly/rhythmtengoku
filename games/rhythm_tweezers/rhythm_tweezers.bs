@@ -132,7 +132,7 @@ script script_rhythm_tweezers_main
     rest 24
     assess_perfect_inputs 1
     set_marking_criteria 0
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_SHORT
     rest 24
     spawn_cue CUE_SHORT
@@ -146,43 +146,18 @@ script script_rhythm_tweezers_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_set_next_veg VEG_ONION
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     set_marking_criteria 0
     spawn_cue CUE_SHORT
     rest 24
     spawn_cue CUE_SHORT
     rest 24
-    rhythm_tweezers_spawn_tweezers
-    set_marking_criteria 1
-    spawn_cue CUE_LONG
-    rest 24
-    set_marking_criteria 0
-    spawn_cue CUE_SHORT
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    rest 6
-    rhythm_tweezers_set_next_veg 0
-    rhythm_tweezers_scroll_veg 12
-    rhythm_tweezers_play_register_sfx
-    rest 6
-    rhythm_tweezers_removed_event 0
-    rest 12
-    rhythm_tweezers_start_hair_cycle 0
-    set_marking_criteria 0
-    spawn_cue CUE_SHORT
-    rest 24
-    spawn_cue CUE_SHORT
-    rest 12
-    spawn_cue CUE_SHORT
-    rest 12
     rhythm_tweezers_spawn_tweezers
     set_marking_criteria 1
     spawn_cue CUE_LONG
@@ -194,13 +169,13 @@ script script_rhythm_tweezers_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_set_next_veg VEG_ONION
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     set_marking_criteria 0
     spawn_cue CUE_SHORT
     rest 24
@@ -219,13 +194,38 @@ script script_rhythm_tweezers_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_set_next_veg VEG_ONION
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
+    set_marking_criteria 0
+    spawn_cue CUE_SHORT
+    rest 24
+    spawn_cue CUE_SHORT
+    rest 12
+    spawn_cue CUE_SHORT
+    rest 12
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 1
+    spawn_cue CUE_LONG
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_SHORT
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg VEG_ONION
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event
+    rest 12
+    rhythm_tweezers_start_hair_cycle
     set_marking_criteria 0
     spawn_cue CUE_SHORT
     rest 12
@@ -247,13 +247,13 @@ script script_rhythm_tweezers_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 1
+    rhythm_tweezers_set_next_veg VEG_TURNIP
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     set_marking_criteria 0
     spawn_cue CUE_SHORT
     rest 24
@@ -276,13 +276,13 @@ script script_rhythm_tweezers_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_set_next_veg VEG_ONION
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_SHORT
@@ -298,13 +298,13 @@ script script_rhythm_tweezers_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 1
+    rhythm_tweezers_set_next_veg VEG_TURNIP
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     set_marking_criteria 0
     spawn_cue CUE_SHORT
     rest 24
@@ -327,13 +327,13 @@ script script_rhythm_tweezers_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_set_next_veg VEG_ONION
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_SHORT
@@ -349,83 +349,13 @@ script script_rhythm_tweezers_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 1
+    rhythm_tweezers_set_next_veg VEG_TURNIP
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
-    set_marking_criteria 2
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 24
-    rhythm_tweezers_spawn_tweezers
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    rest 6
-    rhythm_tweezers_set_next_veg 1
-    rhythm_tweezers_scroll_veg 12
-    rhythm_tweezers_play_register_sfx
-    rest 6
-    rhythm_tweezers_removed_event 0
-    rest 12
-    rhythm_tweezers_start_hair_cycle 0
-    set_marking_criteria 2
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 12
-    set_marking_criteria 0
-    spawn_cue CUE_FAST
-    rest 12
-    rhythm_tweezers_spawn_tweezers
-    set_marking_criteria 2
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 6
-    spawn_cue CUE_FAST
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    rest 6
-    rhythm_tweezers_set_next_veg 1
-    rhythm_tweezers_scroll_veg 12
-    rhythm_tweezers_play_register_sfx
-    rest 6
-    rhythm_tweezers_removed_event 0
-    rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     set_marking_criteria 2
     spawn_cue CUE_FAST
     rest 6
@@ -452,13 +382,83 @@ script script_rhythm_tweezers_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 1
+    rhythm_tweezers_set_next_veg VEG_TURNIP
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
+    set_marking_criteria 2
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 12
+    set_marking_criteria 0
+    spawn_cue CUE_FAST
+    rest 12
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 2
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg VEG_TURNIP
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event
+    rest 12
+    rhythm_tweezers_start_hair_cycle
+    set_marking_criteria 2
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 24
+    rhythm_tweezers_spawn_tweezers
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg VEG_TURNIP
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event
+    rest 12
+    rhythm_tweezers_start_hair_cycle
     set_marking_criteria 2
     spawn_cue CUE_FAST
     rest 6
@@ -492,7 +492,7 @@ script script_rhythm_tweezers_main
     rest 24
     rest 6
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
     assess_perfect_inputs 0
     rest 24
@@ -534,7 +534,7 @@ script script_rhythm_tweezers_practice
     run gameplay_reset_loop_counter
     loop_start
         run beatscript_disable_loops
-        rhythm_tweezers_start_hair_cycle 0
+        rhythm_tweezers_start_hair_cycle
         spawn_cue CUE_SHORT
         rest 24
         spawn_cue CUE_SHORT
@@ -548,11 +548,11 @@ script script_rhythm_tweezers_practice
         rest 24
         rest 24
         rest 6
-        rhythm_tweezers_set_next_veg 0
+        rhythm_tweezers_set_next_veg VEG_ONION
         rhythm_tweezers_scroll_veg 12
         rhythm_tweezers_play_register_sfx
         rest 6
-        rhythm_tweezers_removed_event 0
+        rhythm_tweezers_removed_event
         rest 12
         run gameplay_increment_loop_counter
     loop_end
@@ -571,7 +571,7 @@ script script_rhythm_tweezers_practice
     run gameplay_reset_loop_counter
     loop_start
         run beatscript_disable_loops
-        rhythm_tweezers_start_hair_cycle 0
+        rhythm_tweezers_start_hair_cycle
         spawn_cue CUE_LONG
         rest 24
         spawn_cue CUE_SHORT
@@ -585,11 +585,11 @@ script script_rhythm_tweezers_practice
         rest 24
         rest 24
         rest 6
-        rhythm_tweezers_set_next_veg 0
+        rhythm_tweezers_set_next_veg VEG_ONION
         rhythm_tweezers_scroll_veg 12
         rhythm_tweezers_play_register_sfx
         rest 6
-        rhythm_tweezers_removed_event 0
+        rhythm_tweezers_removed_event
         rest 12
         run gameplay_increment_loop_counter
     loop_end
@@ -608,7 +608,7 @@ script script_rhythm_tweezers_practice
     run gameplay_reset_loop_counter
     loop_start
         run beatscript_disable_loops
-        rhythm_tweezers_start_hair_cycle 0
+        rhythm_tweezers_start_hair_cycle
         spawn_cue CUE_SHORT
         rest 24
         spawn_cue CUE_SHORT
@@ -628,11 +628,11 @@ script script_rhythm_tweezers_practice
         rest 24
         rest 24
         rest 6
-        rhythm_tweezers_set_next_veg 0
+        rhythm_tweezers_set_next_veg VEG_ONION
         rhythm_tweezers_scroll_veg 12
         rhythm_tweezers_play_register_sfx
         rest 6
-        rhythm_tweezers_removed_event 0
+        rhythm_tweezers_removed_event
         rest 12
         run gameplay_increment_loop_counter
     loop_end

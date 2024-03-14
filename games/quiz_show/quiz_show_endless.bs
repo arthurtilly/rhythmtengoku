@@ -49,105 +49,105 @@ return
 script quiz_show_endless_sub_08068358
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
     switch_random 3
         case 0
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 8
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 8
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 8
             break
         case 1
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
             rest 6
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
             break
         case 2
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
             break
     end_switch
     switch_random 3
         case 0
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
             rest 6
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
             rest 6
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
             rest 6
             break
         case 1
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
             rest 6
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
             rest 6
             break
         case 2
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
             break
     end_switch
-    quiz_show_event0C 0x108
+    quiz_show_event0C 264
 return
 
 
 script quiz_show_endless_sub_080687f0
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 8
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 8
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 8
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
 return
 
@@ -158,24 +158,24 @@ quiz_show_endless_table D_080689b8, D_08a59c64
 script quiz_show_endless_sub_080689c0
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 8
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 8
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 8
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
 return
 
@@ -189,22 +189,22 @@ quiz_show_endless_table D_08068b3c, D_08a59c7c
 script quiz_show_endless_sub_08068b44
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
 return
 
@@ -215,18 +215,18 @@ quiz_show_endless_table D_08068c94, D_08a59c88
 script quiz_show_endless_sub_08068c9c
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
     rest 24
 return
@@ -238,16 +238,16 @@ quiz_show_endless_table D_08068db0, D_08a59c94
 script quiz_show_endless_sub_08068db8
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
     rest 24
 return
@@ -259,13 +259,13 @@ quiz_show_endless_table D_08068ea8, D_08a59ca0
 script quiz_show_endless_sub_08068eb0
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
     rest 24
 return
@@ -277,11 +277,11 @@ quiz_show_endless_table D_08068f70, D_08a59cac
 script quiz_show_endless_sub_08068f78
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
     rest 24
 return
@@ -295,95 +295,95 @@ script quiz_show_endless_sub_0806901c
     rest 24
     switch_random 2
         case 0
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             break
         case 1
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
             break
     end_switch
     switch_random 3
         case 0
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
             break
         case 1
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
             break
         case 2
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
             break
     end_switch
     switch_random 3
         case 0
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
             break
         case 1
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 12
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
             break
         case 2
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 6
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 6
             break
     end_switch
-    quiz_show_event0C 0x108
+    quiz_show_event0C 264
 return
 
 
 script quiz_show_endless_sub_0806949c
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
 return
 
@@ -394,22 +394,22 @@ quiz_show_endless_table D_08069610, D_08a59cd0
 script quiz_show_endless_sub_08069618
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
 return
 
@@ -420,18 +420,18 @@ quiz_show_endless_table D_08069768, D_08a59cdc
 script quiz_show_endless_sub_08069770
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 6
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 6
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
     rest 24
 return
@@ -443,14 +443,14 @@ quiz_show_endless_table D_08069884, D_08a59ce8
 script quiz_show_endless_sub_0806988c
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
     rest 24
 return
@@ -618,7 +618,7 @@ script script_quiz_show_endless_game_over
     quiz_show_event00 64
     quiz_show_event00 65
     enable_pause_menu FALSE
-    quiz_show_event10 0
+    quiz_show_event10
     play_sfx s_f_quiz_miss_seqData
     rest 12
     play_sfx s_warai_solo_seqData
@@ -677,7 +677,7 @@ script script_quiz_show_endless_main
             case 10
             case 15
             case 20
-                quiz_show_event0E 0
+                quiz_show_event0E
                 break
         end_switch
         quiz_show_event01 0
@@ -686,27 +686,27 @@ script script_quiz_show_endless_main
         rest 24
         quiz_show_event00 0
         rest 24
-        quiz_show_event0D 1
-        quiz_show_event08 0
+        quiz_show_event0D TRUE
+        quiz_show_event08
         call_result
-        quiz_show_event0D 0
+        quiz_show_event0D FALSE
         rest 12
         quiz_show_event00 16
         rest 24
         print_text_s 0
-        quiz_show_event05 1
+        quiz_show_event05 TRUE
         quiz_show_event00 1
         rest 12
         enable_play_inputs 1
         rest 12
         play_sfx s_keytoy_count2_seqData
-        quiz_show_event0D 1
-        quiz_show_event09 0
+        quiz_show_event0D TRUE
+        quiz_show_event09
         call_result
-        quiz_show_event0D 0
+        quiz_show_event0D FALSE
         play_sfx s_keytoy_count1_seqData
         rest 24
-        quiz_show_event05 0
+        quiz_show_event05 FALSE
         play_sfx s_f_quiz_stop_seqData
         print_text_s D_08069a04
         rest 12
@@ -721,7 +721,7 @@ script script_quiz_show_endless_main
         play_sfx s_f_quiz_answer_seqData
         quiz_show_event01 -32
         rest 24
-        quiz_show_event04 0
+        quiz_show_event04
         if_globalvar_eq 0
             goto script_quiz_show_endless_game_over
         end_if
@@ -729,7 +729,7 @@ script script_quiz_show_endless_main
         quiz_show_event00 49
         play_sfx s_f_quiz_ok_seqData
         print_text_s D_08069a28
-        quiz_show_event0F 0
+        quiz_show_event0F
         rest 12
         play_sfx s_kansei_seqData
         play_sfx s_quiz_fan_good_seqData
@@ -739,8 +739,8 @@ script script_quiz_show_endless_main
         rest 12
         print_text_s D_08069a34
         run gameplay_display_text_and_wait
-        quiz_show_event0A 0
-        run beatscript_enable_loops, 0
+        quiz_show_event0A
+        run beatscript_enable_loops
         run gameplay_increment_loop_counter
     loop_end
 return

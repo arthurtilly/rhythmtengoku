@@ -111,14 +111,14 @@
 
 
 @ [Event 0x03] Start BG Monitor Display
-.macro dms_start_bg_monitor noArgs
-    drum_studio_event START_BG_MONITOR, \noArgs
+.macro dms_start_bg_monitor args
+    drum_studio_event START_BG_MONITOR, \args
 .endm
 
 
 @ [Event 0x04] Stop BG Monitor Display
-.macro dms_stop_bg_monitor noArgs
-    drum_studio_event STOP_BG_MONITOR, \noArgs
+.macro dms_stop_bg_monitor
+    drum_studio_event STOP_BG_MONITOR, 0
 .endm
 
 

@@ -36,15 +36,18 @@
     staff_credit_event EVENT_00, \args
 .endm
 
+
 @ [Event 0x01] ?
 .macro staff_credit_event01 args
     staff_credit_event EVENT_01, \args
 .endm
 
+
 @ [Event 0x02] ?
-.macro staff_credit_event02 args
-    staff_credit_event EVENT_02, \args
+.macro staff_credit_event02
+    staff_credit_event EVENT_02, 0
 .endm
+
 
 @ [Event 0x03] ?
 .macro staff_credit_event03 args

@@ -347,14 +347,14 @@ script script_remix_4_main
     print_text_s 0
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 24
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 24
     quiz_show_event00 16
     print_text_s D_080680fc
@@ -378,7 +378,7 @@ script script_remix_4_main
     print_text_s 0
     rest 12
     quiz_show_event01 -32
-    quiz_show_event04 0
+    quiz_show_event04
     if_globalvar_eq 0
         print_text_s D_08068118
         quiz_show_event00 64
@@ -745,15 +745,15 @@ script script_remix_4_main
     rest 24
     print_text_f text_remix_4_sanji_desu_ka
     play_sfx s_rap_15ji_desuka_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -764,15 +764,15 @@ script script_remix_4_main
     rest 24
     print_text_f text_remix_4_oyatsu_desu_ka
     play_sfx s_rap_oyatu_desuka_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -783,7 +783,7 @@ script script_remix_4_main
     rest 8
     rest 8
     play_sfx s_rap_honto_desuka_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     rest 8
     print_text_f text_remix_4_honto_desu_ka
     beat_anim
@@ -803,11 +803,11 @@ script script_remix_4_main
     play_music L3_C40_seqData
     print_text_f text_remix_4_kibun_wa_saikou
     play_sfx s_rap_kibunha_saiko_seqData
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     spawn_cue CUE_UN
@@ -825,7 +825,7 @@ script script_remix_4_main
     beat_anim
     rest 24
     play_sfx s_rap_yeah_seqData
-    rap_men_animate_rapper 1
+    rap_men_animate_rapper ANIM_KAMONE
     rest 24
     beat_anim
     rest 24
@@ -932,59 +932,59 @@ script script_remix_4_main
     switch_random 4
         case 0
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 8
             rest 8
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 8
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             break
         case 1
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 8
             rest 8
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 8
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             break
         case 2
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             rest 8
             rest 8
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 8
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             break
         case 3
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             break
     end_switch
@@ -1016,7 +1016,7 @@ script script_remix_4_main
     set_tempo 140
     print_text_s D_0806815c
     run gameplay_display_text_and_wait
-    quiz_show_event03 1
+    quiz_show_event03 TRUE
     mod_lcd_blend_from 0x3F41, 24
     rest 24
     rest 24
@@ -1028,8 +1028,8 @@ script script_remix_4_main
     rest 24
     rest 24
     rest 24
-    quiz_show_event03 0
-    quiz_show_event04 0
+    quiz_show_event03 FALSE
+    quiz_show_event04
     if_globalvar_eq 0
         print_text_s D_08068118
         quiz_show_event00 64

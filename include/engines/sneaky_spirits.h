@@ -71,7 +71,7 @@ extern void sneaky_spirits_show_ghost(u32); // Engine Event 00 (Show Ghost)
 extern void sneaky_spirits_init_rain(void); // Initialise Rain
 extern void sneaky_spirits_update_fast_rain(void); // Update Rain
 extern void sneaky_spirits_update_rain(void); // Update Rain If Not In Slow-Motion
-extern void sneaky_spirits_set_rain_speed(u32); // Set Rain Speed
+extern void sneaky_spirits_set_rain_slowmo(u32); // Set Rain Speed
 extern void sneaky_spirits_event_set_rain_speed(u32); // Engine Event 06 (Set Rain Speed)
 extern void sneaky_spirits_freeze_slow_rain(u32); // Engine Event 07 (Freeze Slow-Motion Rain)
 extern void sneaky_spirits_init_gfx3(void); // Graphics Init. 3
@@ -82,7 +82,7 @@ extern void sneaky_spirits_engine_event_stub(void); // Engine Event 0A (Stub)
 extern void sneaky_spirits_set_ghost_height(u32); // Engine Event 01 (Set Next Vertical Position)
 extern void sneaky_spirits_spawn_bow(void); // Engine Event 02 (Spawn Bow)
 extern void sneaky_spirits_draw_bow(void); // Engine Event 03 (Draw Bow)
-extern void sneaky_spirits_enable_wind_sfx(u32); // Engine Event 04 (Play Wind/Rain SFX)
+extern void sneaky_spirits_wind_sfx_enabled(u32); // Engine Event 04 (Play Wind/Rain SFX)
 extern void sneaky_spirits_update_wind_sfx(void); // Cross-Fade Music and Wind/Rain SFX
 extern void sneaky_spirits_display_text(char *); // Engine Event 05 (Display Text)
 extern void sneaky_spirits_display_tutorial_ghost(u32); // Engine Event 08 (Display Tutorial Sneaky Spirit)

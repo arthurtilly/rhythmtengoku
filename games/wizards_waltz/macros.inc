@@ -36,7 +36,8 @@
     wizards_waltz_event SET_CYCLE_TIME, \time
 .endm
 
+
 @ [Event 0x01] Enable Tutorial Mode
-.macro wizards_waltz_enable_tutorial enable
+.macro wizards_waltz_tutorial_enabled enable
     wizards_waltz_event ENABLE_TUTORIAL, \enable
 .endm
