@@ -1,0 +1,136 @@
+.include "include/beatscript.inc"
+.include "games/drum_studio/macros.inc"
+
+
+
+.section .script.entry
+@ Drum Studio (Ver. 0) - Script Entry Point
+
+script script_drum_studio_ver0_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_studio_ver0
+    enable_play_inputs
+    start_tracking_inputs
+    call script_drum_studio_ver0_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_studio_ver0, script_drum_studio_ver0_entry
+
+
+
+@ Drum Studio (Drumming) - Script Entry Point
+
+script script_drum_studio_drumming_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_studio_play
+    enable_play_inputs
+    start_tracking_inputs
+    call script_drum_studio_drumming_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_studio_drumming, script_drum_studio_drumming_entry
+
+
+
+@ Drum Studio (Ver. 2) - Script Entry Point
+
+script script_drum_studio_ver2_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_studio_ver2
+    enable_play_inputs
+    start_tracking_inputs
+    call script_drum_studio_ver2_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_studio_ver2, script_drum_studio_ver2_entry
+
+
+
+@ Drum Studio (Listening) - Script Entry Point
+
+script script_drum_studio_listening_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_studio_listen
+    enable_play_inputs
+    start_tracking_inputs
+    call script_drum_studio_listening_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_studio_listening, script_drum_studio_listening_entry
+
+
+
+.section .script.main
+@ Drum Studio - Main Script
+
+script script_drum_studio_main
+    rest 24
+    dms_event02 TRUE
+    loop_start
+        set_tempo 140
+        set_music_volume 256
+        rest 24
+        rest_reset
+        dms_get_next_script
+        call_result
+        dms_stop_bg_monitor
+        dms_event01
+        if_globalvar_eq 0
+            run beatscript_disable_loops
+        end_if
+    loop_end
+    dms_event02 FALSE
+    dms_show_save_options
+    set_tempo 140
+    rest 12
+return
+
+
+script script_drum_studio_ver0_main
+    goto script_drum_studio_main
+
+
+script script_drum_studio_drumming_main
+    goto script_drum_studio_main
+
+
+script script_drum_studio_ver2_main
+    goto script_drum_studio_main
+
+
+script script_drum_studio_listening_main
+    goto script_drum_studio_main
+
+.end

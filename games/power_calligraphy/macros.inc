@@ -55,60 +55,72 @@
     power_calligraphy_event EVENT_00, \args
 .endm
 
+
 @ [Event 0x01] ?
 .macro power_calligraphy_event01 args
     power_calligraphy_event EVENT_01, \args
 .endm
 
+
 @ [Event 0x02] ?
-.macro power_calligraphy_event02 args
-    power_calligraphy_event EVENT_02, \args
+.macro power_calligraphy_event02 arg1, arg2
+    power_calligraphy_event EVENT_02, ((\arg1 & 0xFF) << 8) | (\arg2 & 0xFF)
 .endm
+
 
 @ [Event 0x03] ?
 .macro power_calligraphy_event03 args
     power_calligraphy_event EVENT_03, \args
 .endm
 
+
 @ [Event 0x04] ?
 .macro power_calligraphy_event04 args
     power_calligraphy_event EVENT_04, \args
 .endm
+
 
 @ [Event 0x05] ?
 .macro power_calligraphy_event05 args
     power_calligraphy_event EVENT_05, \args
 .endm
 
+
 @ [Event 0x06] ?
-.macro power_calligraphy_event06 args
-    power_calligraphy_event EVENT_06, \args
+.macro power_calligraphy_event06 arg1, arg2, arg3
+    power_calligraphy_event EVENT_06, ((\arg1 & 0xFF) << 16) | ((\arg2 & 0xFF) << 8) | (\arg3 & 0xFF)
 .endm
+
 
 @ [Event 0x07] ?
 .macro power_calligraphy_event07 args
     power_calligraphy_event EVENT_07, \args
 .endm
 
+
 @ [Event 0x08] ?
 .macro power_calligraphy_event08 args
     power_calligraphy_event EVENT_08, \args
 .endm
 
+
 @ [Event 0x09] ?
-.macro power_calligraphy_event09 args
-    power_calligraphy_event EVENT_09, \args
+.macro power_calligraphy_event09
+    power_calligraphy_event EVENT_09, 0
 .endm
+
 
 @ [Event 0x0A] ?
 .macro power_calligraphy_event0A args
     power_calligraphy_event EVENT_0A, \args
 .endm
 
+
 @ [Event 0x0B] ?
 .macro power_calligraphy_event0B args
     power_calligraphy_event EVENT_0B, \args
 .endm
+
 
 @ [Event 0x0C] ?
 .macro power_calligraphy_event0C args

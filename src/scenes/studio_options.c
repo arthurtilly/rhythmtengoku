@@ -95,9 +95,9 @@ void studio_option_list_exit_to_listening(void) {
     func_080006f0(scene, var);
 
     songItem = listbox_get_sel_item(gStudio->songList);
-    set_next_scene(&D_089d4ba4);
-    set_scene_trans_target(&D_089d4ba4, &scene_studio);
-    set_scene_trans_var(&D_089d4ba4, songItem);
+    set_next_scene(&scene_drum_studio_listening);
+    set_scene_trans_target(&scene_drum_studio_listening, &scene_studio);
+    set_scene_trans_var(&scene_drum_studio_listening, songItem);
     func_0801d968(script_scene_studio_exit);
     gStudio->inputsEnabled = FALSE;
 }

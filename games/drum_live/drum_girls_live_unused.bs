@@ -1,0 +1,644 @@
+.include "include/beatscript.inc"
+.include "games/drum_live/macros.inc"
+
+
+
+.section .script.entry
+@ Drum Girls LIVE (Unused) - Script Entry Point
+
+script script_drum_girls_live_unused_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_girls_live
+    enable_play_inputs
+    start_tracking_inputs
+    call script_drum_girls_live_unused_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_girls_live_unused, script_drum_girls_live_unused_entry
+
+
+
+.section .script.main
+@ Drum Girls LIVE (Unused) - Marking Criteria
+
+struct drum_girls_live_unused_marking_criteria_0
+    /* Positive Remark */     .word D_0805d3b0
+    /* Negative Remark */     .word D_0805d398
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x66 @ 40%
+    /* Neg: Minimum Hits */   .hword 0x33 @ 20%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct drum_girls_live_unused_marking_criteria_1
+    /* Positive Remark */     .word D_0805d3e4
+    /* Negative Remark */     .word D_0805d3c4
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x33 @ 20%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct drum_girls_live_unused_marking_criteria_2
+    /* Positive Remark */     .word D_0805d420
+    /* Negative Remark */     .word D_0805d404
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x33 @ 20%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct drum_girls_live_unused_marking_criteria
+    .word drum_girls_live_unused_marking_criteria_0
+    .word drum_girls_live_unused_marking_criteria_1
+    .word drum_girls_live_unused_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+
+@ Drum Girls LIVE (Unused) - Main Scripts
+
+script drum_girls_live_unused_sub_08a1f7dc
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    dml_set_guitarist_next_state 0x3, 1
+    spawn_cue CUE_LIVE_00
+    rest 24
+    dml_set_guitarist_next_state 0x3, 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 12
+    rest 12
+    dml_set_guitarist_next_state 0x3, 0
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+return
+
+
+script drum_girls_live_unused_sub_08a1fa64
+    run func_08047e50, s_rabbit_c7_seqData
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    run func_08047e50, s_rabbit_c7_brass_seqData
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+return
+
+
+script drum_girls_live_unused_sub_08a1fce0
+    run func_08047e50, s_rabbit_c7_seqData
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    run func_08047e50, s_rabbit_c7_brass_seqData
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    dml_set_guitarist_next_state 0x3, 1
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    rest 12
+    run stop_sound, s_rabbit_c7_brass_seqData
+    rest 12
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+    dml_set_guitarist_next_state 0x3, 0
+return
+
+
+script drum_girls_live_unused_sub_08a1ff8c
+    run func_08047e50, s_rabbit_c7_seqData
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    dml_set_guitarist_next_state 0x3, 1
+    dml_event01 TRUE
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    rest 6
+    run stop_sound, s_rabbit_c7_brass_seqData
+    rest 6
+    rest 12
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+    dml_set_guitarist_next_state 0x3, 0
+    dml_event01 FALSE
+return
+
+
+script drum_girls_live_unused_sub_08a20238
+    run func_08047e50, s_rabbit_f7_seqData
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    run func_08047e50, s_rabbit_c7_brass_seqData
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+return
+
+
+script drum_girls_live_unused_sub_08a204b4
+    run func_08047e50, s_rabbit_f7_seqData
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    run func_08047e50, s_rabbit_c7_brass_seqData
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    dml_set_guitarist_next_state 0x3, 1
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    rest 12
+    run stop_sound, s_rabbit_c7_brass_seqData
+    rest 12
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+    dml_set_guitarist_next_state 0x3, 0
+return
+
+
+script drum_girls_live_unused_sub_08a20760
+    run func_08047e50, s_rabbit_f7_seqData
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    dml_set_guitarist_next_state 0x3, 1
+    dml_event01 TRUE
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    rest 6
+    run stop_sound, s_rabbit_c7_brass_seqData
+    rest 6
+    rest 12
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+    dml_set_guitarist_next_state 0x3, 0
+    dml_event01 FALSE
+return
+
+
+script drum_girls_live_unused_sub_08a20a0c
+    run func_08047e50, s_rabbit_g7f7_1_seqData
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    dml_set_guitarist_next_state 0x3, 1
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    rest 6
+    run stop_sound, s_rabbit_g7f7_1_seqData
+    rest 6
+    rest 12
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 24
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+    run func_08047e50, s_rabbit_c7g7_seqData
+    set_marking_criteria 0
+    dml_set_guitarist_next_state 0x3, 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    dml_set_guitarist_next_state 0x3, 1
+    spawn_cue CUE_LIVE_00
+    rest 24
+    dml_set_guitarist_next_state 0x3, 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 12
+    rest 12
+    dml_set_guitarist_next_state 0x3, 0
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+return
+
+
+script drum_girls_live_unused_sub_08a20d00
+    run func_08047e50, s_rabbit_g7f7_2_seqData
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    rest 6
+    run stop_sound, s_rabbit_g7f7_1_seqData
+    rest 6
+    rest 12
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+    run func_08047e50, s_rabbit_c7g7_seqData
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    dml_set_guitarist_next_state 0x3, 1
+    spawn_cue CUE_LIVE_00
+    rest 24
+    dml_set_guitarist_next_state 0x3, 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+    spawn_cue CUE_LIVE_00
+    rest 12
+    rest 12
+    dml_set_guitarist_next_state 0x3, 0
+    set_marking_criteria 2
+    spawn_cue CUE_LIVE_00
+    rest 24
+return
+
+
+script script_drum_girls_live_unused_main
+    set_tempo 150
+    set_music_volume 190
+    import_marking_criteria drum_girls_live_unused_marking_criteria
+    set_marking_criteria 0
+    run gameplay_set_miss_punishment_duration, 0
+    rest 24
+    rest 24
+    play_sfx s_intro_stick_seqData
+    rest 24
+    rest 24
+    play_sfx s_intro_stick_seqData
+    rest 24
+    rest 24
+    play_sfx s_intro_stick_seqData
+    rest 24
+    play_sfx s_intro_stick_seqData
+    rest 24
+    play_sfx s_intro_stick_seqData
+    rest 24
+    play_sfx s_intro_stick_seqData
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    play_music s_rabbit_bgm_seqData
+    mute_music_track MIDI_TRACK_5
+    call drum_girls_live_unused_sub_08a1f7dc
+    call drum_girls_live_unused_sub_08a1fa64
+    call drum_girls_live_unused_sub_08a20238
+    call drum_girls_live_unused_sub_08a20a0c
+    call drum_girls_live_unused_sub_08a1fce0
+    call drum_girls_live_unused_sub_08a204b4
+    call drum_girls_live_unused_sub_08a20d00
+    call drum_girls_live_unused_sub_08a1ff8c
+    call drum_girls_live_unused_sub_08a20760
+    call drum_girls_live_unused_sub_08a20a0c
+    set_marking_criteria 0
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_LIVE_00
+    beat_anim
+    rest 24
+    dml_set_guitarist_next_state 0x3, 1
+    rest 24
+    dml_set_guitarist_next_state 0x3, 2
+    rest 24
+    rest 24
+    rest 24
+return
+
+.end

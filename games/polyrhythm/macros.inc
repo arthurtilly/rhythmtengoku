@@ -63,20 +63,24 @@
     polyrhythm_event SPAWN_BLOCK, (((\blockID & 0xF)) | ((\lane & 1) << 4) | ((\blockType) << 5))
 .endm
 
+
 @ [Event 0x01] Despawn All Blocks on Lane
 .macro polyrhythm_despawn_blocks lane
     polyrhythm_event DESPAWN_BLOCKS, \lane
 .endm
+
 
 @ [Event 0x02] Retract All Pistons on Lane
 .macro polyrhythm_retract_pistons lane
     polyrhythm_event RETRACT_PISTONS, \lane
 .endm
 
+
 @ [Event 0x03] Spawn Rod on Lane
 .macro polyrhythm_spawn_rod lane
     polyrhythm_event SPAWN_ROD, \lane
 .endm
+
 
 @ [Event 0x04] Play Applause SFX on Successful Pattern
 .macro polyrhythm_play_applause_sfx

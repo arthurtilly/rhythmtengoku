@@ -12,12 +12,12 @@ script script_sick_beats_entry
     call script_sick_beats_prologue
     set_game_fade_in_time 16
     load_sick_beats
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_sick_beats_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -33,7 +33,7 @@ define_gameplay_scene scene_sick_beats, script_sick_beats_entry
 script script_sick_beats_prologue
     set_game_fade_in_time 8
     load_game sick_beats_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     play_sfx s_jingle_ghost_seqData
     rest 24
     rest 24
@@ -179,14 +179,14 @@ sb_stop
 script script_sick_beats_main
     set_results_header D_0805b764
     import_marking_criteria sick_beats_marking_criteria
-    assess_inputs 1
+    start_tracking_inputs
     set_marking_criteria 0
     set_tempo 125
     set_music_volume 240
     play_music s_hitmegeton1_bgm_seqData
     beat_anim
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     beat_anim
     rest 24
     beat_anim
@@ -463,10 +463,10 @@ script script_sick_beats_main
     rest 24
     beat_anim
     rest 24
-    assess_perfect_inputs 0
+    stop_tracking_perfect_campaign
     beat_anim
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     beat_anim
     rest 24
 return

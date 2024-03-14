@@ -36,12 +36,12 @@ script script_remix_6_entry
     call script_remix_6_prologue
     set_game_fade_in_time 16
     load_space_dance
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_remix_6_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -57,7 +57,7 @@ define_gameplay_scene scene_remix_6, script_remix_6_entry
 script script_remix_6_prologue
     set_game_fade_in_time 8
     load_game remix_6_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_remix_seqData
     rest 24
@@ -178,11 +178,11 @@ sb_stop
 
 @ Remix 6 - Rap Men Text
 
-text D_08a6b218
+text text_remix_6_honto_desu_ka
     .asciz ".b:1ほんとです:0か？"
 endtext
 
-text D_08a6b230
+text text_remix_6_kimi_tte_saikou
     .asciz ".a:1キミって　:0サイコー！！"
 endtext
 
@@ -193,8 +193,8 @@ endtext
 script script_remix_6_main
     set_results_header D_0806a850
     import_marking_criteria remix_6_marking_criteria
-    forgive_x_misses 1
-    assess_inputs 1
+    run gameplay_set_mercy_count, 1
+    start_tracking_inputs
     set_marking_criteria 0
     set_tempo 140
     set_music_volume 200
@@ -202,7 +202,7 @@ script script_remix_6_main
     rest 12
     play_music s_remix_all_bgm_seqData
     rest 12
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     start_perfect_campaign
     print_text_f D_0806a86c
@@ -232,7 +232,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     call space_dance_sub_08a84928
     print_text_f D_0806a898
     space_dance_event07 7
@@ -261,7 +261,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     call space_dance_sub_08a850d8
     print_text_f D_0806a8c8
     space_dance_event07 7
@@ -313,7 +313,7 @@ script script_remix_6_main
     rest 24
 
     load_rat_race
-    rat_race_event12 0
+    rat_race_event12
     beat_anim
     rest 24
     beat_anim
@@ -381,7 +381,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -410,10 +410,10 @@ script script_remix_6_main
     rest 12
 
     load_quiz_show
-    assess_perfect_inputs 0
-    enable_play_inputs 0
-    assess_inputs 0
-    run gameplay_assess_irrelevant_inputs, 0
+    stop_tracking_perfect_campaign
+    disable_play_inputs
+    stop_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
     quiz_show_event01 0
     quiz_show_event01 -16
     quiz_show_event01 1
@@ -423,15 +423,15 @@ script script_remix_6_main
     beat_anim
     rest 24
     quiz_show_event00 0
-    print_text_s 0
+    clear_text_s
     beat_anim
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     beat_anim
     rest 12
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 12
     beat_anim
     rest 24
@@ -443,9 +443,9 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    print_text_s 0
+    clear_text_s
     quiz_show_event00 1
-    enable_play_inputs 1
+    enable_play_inputs
     beat_anim
     rest 24
     beat_anim
@@ -458,17 +458,17 @@ script script_remix_6_main
     print_text_s D_0806a8f0
     beat_anim
     rest 12
-    enable_play_inputs 0
+    disable_play_inputs
     rest 12
     beat_anim
     rest 24
-    print_text_s 0
+    clear_text_s
     beat_anim
     rest 24
     quiz_show_event01 -32
-    assess_perfect_inputs 1
-    quiz_show_event04 0
-    if_eq INT8, GLOBAL_VARIABLE, 0
+    start_tracking_perfect_campaign
+    quiz_show_event04
+    if_globalvar_eq 0
         print_text_s D_0806a900
         quiz_show_event00 64
         quiz_show_event00 65
@@ -485,25 +485,25 @@ script script_remix_6_main
     rest 24
 
     load_polyrhythm_remix
-    enable_play_inputs 1
-    assess_inputs 1
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_block 0, 1, 2
+    enable_play_inputs
+    start_tracking_inputs
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
     beat_anim
     rest 24
-    polyrhythm_spawn_block 2, 1, 2
+    polyrhythm_spawn_block 2, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
     beat_anim
     rest 24
-    polyrhythm_spawn_block 4, 1, 2
+    polyrhythm_spawn_block 4, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
     beat_anim
     rest 24
-    polyrhythm_spawn_block 6, 1, 2
+    polyrhythm_spawn_block 6, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
     beat_anim
     rest 24
     beat_anim
@@ -515,33 +515,33 @@ script script_remix_6_main
     rest 6
     rest 6
     polyrhythm_play_applause_sfx
-    polyrhythm_retract_pistons 1
+    polyrhythm_retract_pistons DOWNSIDE
     rest 6
-    polyrhythm_despawn_blocks 1
+    polyrhythm_despawn_blocks DOWNSIDE
     rest 6
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_block 0, 1, 2
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
     beat_anim
     rest 24
-    polyrhythm_spawn_block 0, 0, 0
-    polyrhythm_spawn_block 1, 0, 0
-    polyrhythm_spawn_block 2, 0, 1
+    polyrhythm_spawn_block 0, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 1, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 2, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
     beat_anim
     rest 24
-    polyrhythm_spawn_block 4, 1, 2
+    polyrhythm_spawn_block 4, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
     beat_anim
     rest 24
-    polyrhythm_spawn_block 6, 0, 1
+    polyrhythm_spawn_block 6, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
-    polyrhythm_spawn_block 10, 0, 0
-    polyrhythm_spawn_block 11, 0, 0
-    polyrhythm_spawn_block 12, 0, 0
+    polyrhythm_spawn_block 10, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 11, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 12, UPSIDE, PLATFORM
     beat_anim
     rest 24
     beat_anim
@@ -566,7 +566,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     beat_anim
     rest 24
     beat_anim
@@ -574,13 +574,13 @@ script script_remix_6_main
     beat_anim
     rest 12
     rest 12
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     beat_anim
     rest 24
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     beat_anim
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -611,7 +611,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7df08
     beat_anim
     rest 24
@@ -684,7 +684,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    toss_boys_event01 196928
+    toss_boys_event01 0x30140
     beat_anim
     rest 24
     toss_boys_event02 0x300c9
@@ -722,7 +722,7 @@ script script_remix_6_main
     toss_boys_event03 4
     beat_anim
     rest 24
-    toss_boys_event02 NULL
+    toss_boys_event02 0x00000
     spawn_cue CUE_POP_Y
     toss_boys_event05 50
     beat_anim
@@ -734,7 +734,7 @@ script script_remix_6_main
     rest 24
 
     load_wizards_waltz
-    wizards_waltz_enable_tutorial 0
+    wizards_waltz_tutorial_enabled FALSE
     wizards_waltz_set_cycle_time 144
     beat_anim
     rest 24
@@ -791,7 +791,7 @@ script script_remix_6_main
     rest 24
 
     load_night_walk
-    enable_play_inputs 1
+    enable_play_inputs
     night_walk_set_cue_earliness 240
     spawn_cue CUE_KICK
     night_walk_set_cue_earliness 216
@@ -915,19 +915,19 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     beat_anim
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     beat_anim
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     bunny_hop_event01 1
     spawn_cue CUE_BUNNY_01
     spawn_cue CUE_BUNNY_02
     beat_anim
     rest 24
-    bunny_hop_event02 1
+    bunny_hop_event02 TRUE
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     beat_anim
@@ -958,18 +958,18 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    print_text_f D_08a6b230
+    print_text_f text_remix_6_kimi_tte_saikou
     run remix6_sync_rap_vocal, s_rap_kimitte_saiko_seqData
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_UUN
     beat_anim
     rest 24
@@ -979,9 +979,9 @@ script script_remix_6_main
     rest 8
     rest 8
     run remix6_sync_rap_vocal, s_rap_honto_desuka_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     rest 8
-    print_text_f D_08a6b218
+    print_text_f text_remix_6_honto_desu_ka
     beat_anim
     rest 24
     rest 24
@@ -989,7 +989,7 @@ script script_remix_6_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -1034,7 +1034,7 @@ script script_remix_6_main
     rest 24
 
     load_sneaky_spirits
-    sneaky_spirits_spawn_bow 0
+    sneaky_spirits_spawn_bow
     call sneaky_spirits_sub_08a791a4
     call sneaky_spirits_sub_08a7951c
 
@@ -1056,60 +1056,53 @@ script script_remix_6_main
     beat_anim
     rest 24
     bon_odori_darken_screen 48
-    bon_odori_lyrics_set_curr_line 1
-    bon_odori_lyrics_curr_line_print_left D_0806a920
-    bon_odori_lyrics_set_curr_line 2
-    bon_odori_lyrics_curr_line_print_center D_0806a920
-    bon_odori_lyrics_set_curr_line 3
-    bon_odori_lyrics_curr_line_print_right D_0806a944
-    bon_odori_animate_all 3
+    bon_odori_lyrics_print_left 1, D_0806a920
+    bon_odori_lyrics_print_center 2, D_0806a920
+    bon_odori_lyrics_print_right 3, D_0806a944
+    bon_odori_animate_all ANIM_BOW
     rest 24
     rest 24
     beat_anim
     rest 24
     rest 24
     bon_odori_start_input_check
-    bon_odori_lyrics_set_curr_line 1
-    bon_odori_lyrics_curr_line_start_highlight 45
+    bon_odori_lyrics_start_highlight 1, 45
     spawn_cue CUE_SIDE_CLAP
     beat_anim
     rest 8
     rest 8
     spawn_cue CUE_SIDE_CLAP
     rest 8
-    bon_odori_lyrics_set_curr_line 0
-    bon_odori_lyrics_curr_line_print_center NULL
-    bon_odori_animate_npc 2
+    bon_odori_lyrics_print_center 0, NULL
+    bon_odori_animate_npc ANIM_CLAP_F
     beat_anim
     rest 8
     rest 8
-    bon_odori_animate_npc 2
+    bon_odori_animate_npc ANIM_CLAP_F
     rest 8
-    bon_odori_lyrics_set_curr_line 2
-    bon_odori_lyrics_curr_line_start_highlight 45
+    bon_odori_lyrics_start_highlight 2, 45
     spawn_cue CUE_SIDE_CLAP
     beat_anim
     rest 8
     rest 8
     spawn_cue CUE_SIDE_CLAP
     rest 8
-    bon_odori_animate_npc 2
+    bon_odori_animate_npc ANIM_CLAP_F
     beat_anim
     rest 8
     rest 8
-    bon_odori_animate_npc 2
+    bon_odori_animate_npc ANIM_CLAP_F
     rest 8
-    bon_odori_animate_all 3
-    bon_odori_lyrics_set_curr_line 3
-    bon_odori_lyrics_curr_line_start_highlight 60
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 3, 60
     spawn_cue CUE_FORWARD_CLAP
     beat_anim
     rest 24
-    bon_odori_animate_npc 1
+    bon_odori_animate_npc ANIM_CLAP_S
     spawn_cue CUE_FORWARD_CLAP
     beat_anim
     rest 24
-    bon_odori_animate_npc 1
+    bon_odori_animate_npc ANIM_CLAP_S
     beat_anim
     rest 24
     bon_odori_stop_input_check
@@ -1154,7 +1147,7 @@ script script_remix_6_main
     load_tram_pauline_no_curtain
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -1165,7 +1158,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -1176,8 +1169,8 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
-    tram_pauline_event00 1
+    tram_pauline_event00 FALSE
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -1208,7 +1201,7 @@ script script_remix_6_main
     load_spaceball
     spaceball_zoom_camera 0xfed4, 0
     spaceball_zoom_camera 0xff00, 287
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     beat_anim
     rest 24
     beat_anim
@@ -1218,7 +1211,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     beat_anim
     rest 24
     beat_anim
@@ -1226,19 +1219,19 @@ script script_remix_6_main
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     beat_anim
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     beat_anim
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     beat_anim
     rest 24
     spaceball_zoom_camera 0xfc00, 48
@@ -1293,7 +1286,7 @@ script script_remix_6_main
     rest 24
 
     load_rhythm_tweezers
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_SHORT
     rest 24
     spawn_cue CUE_SHORT
@@ -1307,13 +1300,13 @@ script script_remix_6_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_set_next_veg VEG_ONION
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_SHORT
     rest 24
     spawn_cue CUE_SHORT
@@ -1330,7 +1323,7 @@ script script_remix_6_main
     rest 24
     rest 6
     rest 6
-    rhythm_tweezers_removed_event 0
+    rhythm_tweezers_removed_event
     rest 12
 
     load_marching_orders
@@ -1345,7 +1338,7 @@ script script_remix_6_main
     rest 24
 
     load_space_dance
-    space_dance_event01 63720
+    space_dance_event01 -8, -24
     beat_anim
     rest 24
     call space_dance_sub_08a85588
@@ -1367,12 +1360,12 @@ script script_remix_6_main
     rest 12
     space_dance_event00 1
     play_sfx s_space_ikeo_punch_seqData
-    space_dance_event01 63512
+    space_dance_event01 -8, 24
     rest 12
     call space_dance_sub_08a85588
     call space_dance_sub_08a85588
     call space_dance_sub_08a84928
-    space_dance_event01 65280
+    space_dance_event01 -1, 0
     beat_anim
     rest 24
     beat_anim
@@ -1416,10 +1409,10 @@ script script_remix_6_main
     rest 12
     rest 24
     rest 12
-    space_dance_event01 0
-    space_dance_event03 0
+    space_dance_event01 0, 0
+    space_dance_event03
     print_text_f D_0806a970
-    assess_perfect_inputs 0
+    stop_tracking_perfect_campaign
     beat_anim
     rest 12
     rest 24

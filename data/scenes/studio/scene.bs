@@ -16,7 +16,7 @@ script script_scene_studio
     run func_08007324 TRUE
     fade_screen_in 12, BLACK
     rest 12
-    scene_set_int INT8, 0x358, TRUE
+    scene_set_byte 0x358, TRUE
     goto script_scene_studio_idle
 
 
@@ -29,8 +29,8 @@ script script_scene_studio_start_song
 
 @ Exit
 script script_scene_studio_exit
-    scene_set_int INT8, 0x358, FALSE
-    fade_music_out TO_TEMPO, 48
+    scene_set_byte 0x358, FALSE
+    fade_music_out 48
     rest 12
     run fade_out_studio_mus
     fade_screen_out 13, BLACK

@@ -99,6 +99,7 @@ extern struct Scene scene_mechanical_horse;
 extern struct Scene scene_love_machine;
 extern struct Scene scene_rap_machine;
 extern struct Scene scene_staff_credit;
+extern struct Scene scene_staff_credit_remix_6;
 extern struct Scene scene_drum_live;
 
 // Drum Lessons
@@ -123,22 +124,38 @@ extern struct Scene scene_drum_lesson_hi_tech_1;
 extern struct Scene scene_drum_lesson_hi_tech_2;
 
 // Other
+extern struct Scene scene_rhythm_test_click;
+extern struct Scene scene_rhythm_test_cue;
+extern struct Scene scene_rhythm_test_trick;
 extern struct Scene scene_rhythm_test;
+extern struct Scene scene_rhythm_test_opening;
 
-// Unlabelled
-extern struct Scene D_089d48ec;
-extern struct Scene D_089d4464;
-extern struct Scene D_089d454c;
-extern struct Scene D_089d4634;
-extern struct Scene D_089d4804;
-extern struct Scene D_089d6534;
-extern struct Scene D_089d3a6c;
-extern struct Scene D_089d3984;
-extern struct Scene D_089d2f98;
-extern struct Scene D_089d2940;
-extern struct Scene D_089d2670;
-extern struct Scene D_089d6d74;
+extern struct Scene scene_drum_studio_drumming;
+extern struct Scene scene_drum_studio_listening;
 
+extern struct Scene scene_drum_samurai_demo_cutscene;
+extern struct Scene scene_drum_samurai_opening_cutscene;
+
+// Unused
+extern struct Scene scene_snappy_trio_unused;
+extern struct Scene scene_bouncy_road_unused;
+extern struct Scene scene_bouncy_road_unused_2;
+extern struct Scene scene_spaceball_unused;
+extern struct Scene scene_spaceball_unused_2;
+extern struct Scene scene_tap_trial_unused;
+extern struct Scene scene_marching_orders_unused;
+extern struct Scene scene_rap_women_unused;
+extern struct Scene scene_remix_1_unused;
+extern struct Scene scene_mechanical_horse_unused;
+
+extern struct Scene scene_metronome;
+extern struct Scene scene_drum_girls_live_unused;
+extern struct Scene scene_drum_studio_ver0;
+extern struct Scene scene_drum_studio_ver2;
+extern struct Scene scene_drum_intro_unused;
+extern struct Scene scene_drum_intro_unused_2;
+extern struct Scene scene_drum_intro_unused_3;
+extern struct Scene scene_tanuki_and_monkey;
 
 // Bitmap Fonts from WarioWare
 extern struct BitmapFontData bitmap_font_warioware_outline[];

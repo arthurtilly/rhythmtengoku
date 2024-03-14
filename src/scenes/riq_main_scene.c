@@ -205,7 +205,7 @@ void func_0801daf8(const struct PauseMenuDefinition *data) {
 
 
 // [func_0801db04] Enable Pause Menu
-void func_0801db04(u32 enable) {
+void pause_menu_enabled(u32 enable) {
     gPauseMenu.enabled = enable;
 }
 

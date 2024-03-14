@@ -11,12 +11,12 @@ script script_cat_machine_entry
     rest 24
     rest 24
     load_cat_machine
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_cat_machine_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -33,12 +33,12 @@ script script_love_machine_entry
     rest 24
     rest 24
     load_love_machine
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_love_machine_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -55,12 +55,12 @@ script script_rap_machine_entry
     rest 24
     rest 24
     load_rap_machine
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_rap_machine_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24

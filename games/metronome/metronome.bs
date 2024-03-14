@@ -1,0 +1,147 @@
+.include "include/beatscript.inc"
+.include "games/metronome/macros.inc"
+
+
+
+.section .script.entry
+@ Metronome - Script Entry Point
+
+script script_metronome_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_metronome
+    enable_play_inputs
+    start_tracking_inputs
+    call script_metronome_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_metronome, script_metronome_entry
+
+
+
+.section .script.main
+@ Metronome - Main Script
+
+script metronome_sub_08a19850
+    metronome_event00 FALSE
+    spawn_cue CUE_DEFAULT
+    rest 12
+    metronome_event01 TRUE
+    rest 12
+    metronome_event00 TRUE
+    spawn_cue CUE_DEFAULT
+    rest 12
+    metronome_event01 TRUE
+    rest 12
+return
+
+
+script metronome_sub_08a19904
+    metronome_event00 FALSE
+    spawn_cue CUE_DEFAULT
+    rest 12
+    metronome_event01 TRUE
+    rest 12
+    metronome_event00 TRUE
+    spawn_cue CUE_DEFAULT
+    rest 12
+    metronome_event01 FALSE
+    rest 12
+return
+
+
+script metronome_sub_08a199b8
+    metronome_event00 FALSE
+    spawn_cue CUE_DEFAULT
+    rest 12
+    metronome_event01 FALSE
+    rest 12
+    metronome_event00 TRUE
+    spawn_cue CUE_DEFAULT
+    rest 12
+    metronome_event01 FALSE
+    rest 12
+return
+
+
+struct metronome_grade_thresholds
+    .hword 990
+    .hword 960
+    .hword 880
+    .hword 700
+endstruct
+
+struct metronome_grade_comments
+    .word D_0805cd44
+    .word D_0805cd24
+    .word D_0805cd04
+    .word D_0805cce4
+    .word D_0805ccc8
+endstruct
+
+script script_metronome_main
+    run score_results_set_grade_thresholds, metronome_grade_thresholds
+    run score_results_set_grade_comments, metronome_grade_comments
+    set_tempo 120
+    set_music_volume 256
+    rest 12
+    stop_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
+    call metronome_sub_08a19850
+    call metronome_sub_08a19850
+    clear_text_f
+    loop_start
+        call metronome_sub_08a19850
+        call metronome_sub_08a19850
+        call metronome_sub_08a19850
+        call metronome_sub_08a19850
+        metronome_event02
+    loop_end
+    print_text_f 1
+    start_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, TRUE
+    metronome_event00 FALSE
+    spawn_cue CUE_DEFAULT
+    rest 12
+    metronome_event01 TRUE
+    rest 12
+    metronome_event00 TRUE
+    spawn_cue CUE_DEFAULT
+    rest 12
+    metronome_event01 TRUE
+    rest 12
+    call metronome_sub_08a19850
+    call metronome_sub_08a19850
+    mod_music_volume 0, 192
+    call metronome_sub_08a19850
+    call metronome_sub_08a19850
+    call metronome_sub_08a19850
+    call metronome_sub_08a19850
+    call metronome_sub_08a19904
+    call metronome_sub_08a19904
+    call metronome_sub_08a19904
+    call metronome_sub_08a19904
+    call metronome_sub_08a19904
+    loop_start
+        call metronome_sub_08a199b8
+        metronome_event03
+    loop_end
+    stop_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
+    print_text_f -1
+    call metronome_sub_08a19850
+    print_text_f 2
+    call metronome_sub_08a19850
+    call metronome_sub_08a19850
+    call metronome_sub_08a19850
+    call metronome_sub_08a19850
+return
+
+.end

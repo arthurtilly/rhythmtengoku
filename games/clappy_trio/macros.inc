@@ -55,29 +55,38 @@
 
 
 @ [Event 0x00] Crouch
-.macro clappy_trio_crouch unkParam
+.macro clappy_trio_crouch_param unkParam
     clappy_trio_event LIONS_CROUCH, \unkParam
 .endm
+
+.macro clappy_trio_crouch
+    clappy_trio_crouch_param 0
+.endm
+
 
 @ [Event 0x01] Crouch (Smirk)
 .macro clappy_trio_crouch_smirk
     clappy_trio_event LIONS_CROUCH_SMIRK, 0
 .endm
 
+
 @ [Event 0x02] Clap
 .macro clappy_trio_do_clap lionID
     clappy_trio_event LION_CLAP, \lionID
 .endm
+
 
 @ [Event 0x03] Run Grayscale Effect on Next Hit
 .macro clappy_trio_prepare_grayscale_effect args
     clappy_trio_event GRAYSCALE_ON_NEXT_HIT, \args
 .endm
 
+
 @ [Event 0x04] Set NPC Clap Volume
 .macro clappy_trio_set_npc_clap_volume volume
     clappy_trio_event SET_LION_CLAP_VOLUME, \volume
 .endm
+
 
 @ [Event 0x05] Hide Textbox
 .macro clappy_trio_hide_textbox unkParam

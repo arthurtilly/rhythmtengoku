@@ -112,7 +112,7 @@ script space_dance_sub_08a84bec
     space_dance_event00 0
     beat_anim
     rest 24
-    space_dance_event05 1
+    space_dance_event05 TRUE
     space_dance_event00 3
     play_sfx s_space_kou_turn_seqData
     spawn_cue CUE_TURN_RIGHT
@@ -122,7 +122,7 @@ script space_dance_sub_08a84bec
     play_sfx s_space_kou_right_seqData
     beat_anim
     rest 24
-    space_dance_event05 0
+    space_dance_event05 FALSE
 return
 
 
@@ -398,6 +398,54 @@ script cosmic_dance_sub_08a85954
     play_sfx s_space_kou_down_seqData
     beat_anim
     rest 24
+    beat_anim
+    rest 24
+return
+
+
+script space_dance_sub_08a85a50_unused
+    beat_anim
+    rest 24
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_lets_seqData
+    rest 2
+    play_sfx s_space_kou_lets_seqData
+    space_dance_event00 6
+    spawn_cue CUE_SIT_DOWN
+    beat_anim
+    rest 8
+    rest 6
+    play_sfx s_space_kou_sit_seqData
+    play_sfx s_space_ikeo_sit_seqData
+    rest 2
+    rest 8
+    space_dance_event00 2
+    play_sfx s_space_kou_down_seqData
+    play_sfx s_space_ikeo_down_seqData
+    beat_anim
+    rest 24
+return
+
+
+script space_dance_sub_08a85b70_unused
+    beat_anim
+    rest 24
+    beat_anim
+    rest 14
+    play_sfx s_space_ikeo_lets_seqData
+    rest 2
+    space_dance_event00 6
+    spawn_cue CUE_SIT_DOWN
+    beat_anim
+    rest 8
+    rest 6
+    play_sfx s_space_ikeo_sit_seqData
+    rest 2
+    rest 8
+    space_dance_event00 2
+    play_sfx s_space_ikeo_down_seqData
+    rest 8
     beat_anim
     rest 24
 return

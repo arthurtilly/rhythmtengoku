@@ -1,0 +1,438 @@
+.include "include/beatscript.inc"
+.include "games/drum_intro/macros.inc"
+
+
+
+.section .script.entry
+@ Drum Samurai (Demo Cutscene) - Script Entry Point
+
+script script_drum_samurai_demo_cutscene_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_samurai_cutscene
+    enable_play_inputs
+    start_tracking_inputs
+    call script_drum_samurai_demo_cutscene_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_samurai_demo_cutscene script_drum_samurai_demo_cutscene_entry
+
+
+
+.section .script.main
+@ Drum Samurai (Demo Cutscene) - Main Script
+
+script script_drum_samurai_demo_cutscene_main
+    set_tempo 120
+    play_music s_drum_lesson_bgm_seqData
+    set_music_volume 0
+    mod_music_volume 256, 192
+    rest 24
+    run gameplay_set_skip_button, (A_BUTTON | SELECT_BUTTON | START_BUTTON)
+    run gameplay_enable_tutorial, TRUE
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    dmi_event01 1
+    beat_anim
+    rest 6
+    dmi_event01 16
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 128
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 1
+    rest 6
+    dmi_event01 16
+    rest 6
+    beat_anim
+    rest 6
+    dmi_event01 128
+    rest 6
+    rest 6
+    dmi_event01 16
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 1
+    rest 6
+    dmi_event01 16
+    rest 6
+    print_text_s D_0805df4c
+    dmi_event01 256
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    clear_text_s
+    dmi_event01 32
+    beat_anim
+    rest 6
+    dmi_event01 1
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 1
+    rest 6
+    dmi_event01 128
+    rest 6
+    print_text_s D_0805df88
+    dmi_event01 256
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 2
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 1
+    rest 6
+    dmi_event01 16
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 128
+    rest 6
+    rest 6
+    clear_text_s
+    dmi_event01 256
+    dmi_event01 2
+    beat_anim
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    beat_anim
+    rest 6
+    rest 6
+    rest 6
+    dmi_event01 16
+    rest 6
+    dmi_event01 1
+    beat_anim
+    rest 6
+    dmi_event01 16
+    rest 6
+    rest 6
+    dmi_event01 16
+    rest 6
+    dmi_event01 1
+    beat_anim
+    rest 6
+    rest 6
+    dmi_event01 1
+    rest 6
+    rest 6
+    print_text_s D_0805dfcc
+    dmi_event01 256
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 64
+    rest 6
+    rest 6
+    dmi_event01 2
+    rest 6
+    rest 6
+    dmi_event01 1
+    dmi_event01 512
+    dmi_event01 32
+    clear_text_s
+    rest 6
+    run scene_stop_music
+    rest 6
+    rest 24
+    rest 24
+    run gameplay_enable_tutorial, FALSE
+return
+
+.end

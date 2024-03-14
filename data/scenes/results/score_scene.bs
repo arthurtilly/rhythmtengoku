@@ -13,13 +13,13 @@ script script_scene_results_ver_score
     rest 24
     rest 24
     set_music_volume 40
-    mod_music_volume 0xA0, (24 * 8)
+    mod_music_volume 160, 192
     play_music s_check_result_bgm_seqData
-    scene_set_int INT8, 8, TRUE
+    scene_set_byte 8, TRUE
     pause_scene
 
-    scene_set_int INT8, 8, FALSE
-    fade_music_out TO_TEMPO, 48
+    scene_set_byte 8, FALSE
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24

@@ -12,12 +12,12 @@ script script_ninja_bodyguard_entry
     call script_ninja_bodyguard_prologue
     set_game_fade_in_time 16
     load_ninja_bodyguard
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_ninja_bodyguard_intro
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -33,12 +33,12 @@ script script_ninja_bodyguard_skipped_intro_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_ninja_bodyguard
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_ninja_bodyguard_skipped_intro
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -54,7 +54,7 @@ define_gameplay_scene scene_ninja_bodyguard_skipped_intro, script_ninja_bodyguar
 script script_ninja_bodyguard_prologue
     set_game_fade_in_time 8
     load_game ninja_bodyguard_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     play_sfx s_jingle_iai_seqData
     rest 24
     rest 24
@@ -117,7 +117,7 @@ script ninja_bodyguard_sub_08a000bc
     set_marking_criteria 0
     play_music s_ninja_bgm1_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 1
     ninja_bodyguard_event0B 1
@@ -129,17 +129,17 @@ script ninja_bodyguard_sub_08a000bc
     rest 6
     rest 6
     rest 6
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 24
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     play_music s_ninja_bgm1_seqData
     set_music_key 2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -152,7 +152,7 @@ script ninja_bodyguard_sub_08a000bc
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
 return
 
@@ -161,7 +161,7 @@ script ninja_bodyguard_sub_08a00320
     set_marking_criteria 0
     play_music s_ninja_bgm1_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 2
     ninja_bodyguard_event0B 1
@@ -173,21 +173,21 @@ script ninja_bodyguard_sub_08a00320
     rest 6
     rest 6
     rest 6
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 12
     ninja_bodyguard_event0F 126
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 12
     ninja_bodyguard_event0F 256
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     play_music s_ninja_bgm1_seqData
     set_music_key 2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -203,7 +203,7 @@ script ninja_bodyguard_sub_08a00320
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
 return
 
@@ -212,7 +212,7 @@ script ninja_bodyguard_sub_08a00614
     set_marking_criteria 1
     play_music s_ninja_bgm1_seqData
     set_music_key -3
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 3
     ninja_bodyguard_event0B 1
@@ -224,24 +224,24 @@ script ninja_bodyguard_sub_08a00614
     rest 6
     rest 6
     rest 6
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 12
     ninja_bodyguard_event0F 126
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 96
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 256
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     play_music s_ninja_bgm1_seqData
     set_music_key -2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -260,7 +260,7 @@ script ninja_bodyguard_sub_08a00614
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
 return
 
@@ -269,26 +269,26 @@ script ninja_bodyguard_sub_08a00974
     set_marking_criteria 0
     play_music s_ninja_bgm2_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 1
     ninja_bodyguard_event0B 1
     rest 12
     rest 24
     rest 24
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 24
     rest 24
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     rest 24
     play_music s_ninja_bgm2_seqData
     set_music_key -2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -300,7 +300,7 @@ script ninja_bodyguard_sub_08a00974
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
     rest 24
 return
@@ -310,35 +310,35 @@ script ninja_bodyguard_sub_08a00bb4
     set_marking_criteria 2
     play_music s_ninja_bgm2_seqData
     set_music_key 2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 4
     ninja_bodyguard_event0B 1
     rest 12
     rest 24
     rest 24
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 24
     rest 24
     ninja_bodyguard_event0F 156
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 8
     ninja_bodyguard_event0F 76
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 8
     ninja_bodyguard_event0F 106
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 8
     ninja_bodyguard_event0F 256
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     play_music s_ninja_bgm2_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -360,7 +360,7 @@ script ninja_bodyguard_sub_08a00bb4
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
 return
 
@@ -369,33 +369,33 @@ script ninja_bodyguard_sub_08a00f50
     set_marking_criteria 1
     play_music s_ninja_bgm2_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 3
     ninja_bodyguard_event0B 1
     rest 12
     rest 24
     rest 24
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 24
     rest 12
     ninja_bodyguard_event0F 126
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 96
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 256
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     rest 24
     play_music s_ninja_bgm2_seqData
     set_music_key -2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -414,7 +414,7 @@ script ninja_bodyguard_sub_08a00f50
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
     rest 24
 return
@@ -423,8 +423,8 @@ return
 script script_ninja_bodyguard_main
     set_results_header D_0805b988
     import_marking_criteria ninja_bodyguard_marking_criteria
-    assess_inputs 1
-    forgive_x_misses 1
+    start_tracking_inputs
+    run gameplay_set_mercy_count, 1
     start_perfect_campaign
     set_music_volume 256
     call ninja_bodyguard_sub_08a000bc
@@ -436,9 +436,9 @@ script script_ninja_bodyguard_main
     call ninja_bodyguard_sub_08a00974
     call ninja_bodyguard_sub_08a00bb4
     call ninja_bodyguard_sub_08a000bc
-    assess_perfect_inputs 0
+    stop_tracking_perfect_campaign
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
 return
 
@@ -449,22 +449,22 @@ script script_ninja_bodyguard_intro
     ninja_bodyguard_event07 1
     ninja_bodyguard_event0B 1
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     run gameplay_set_tutorial scene_ninja_bodyguard_skipped_intro
     rest 24
     rest 24
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 24
     rest 24
     rest 24
     ninja_bodyguard_event0F 126
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     rest 12
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event10 1
+    ninja_bodyguard_event10 TRUE
     ninja_bodyguard_event11 264
     rest 24
     rest 24
@@ -473,22 +473,22 @@ script script_ninja_bodyguard_intro
     rest 24
     rest 24
     rest 24
-    ninja_bodyguard_event10 0
+    ninja_bodyguard_event10 FALSE
     rest 24
     ninja_bodyguard_event0B 2
     ninja_bodyguard_event00 288
-    rest 276
-    ninja_bodyguard_event0A 0
+    rest 276 @ 11.5 beats
+    ninja_bodyguard_event0A
     run stop_sound, s_f_ninja_demo_seqData
     rest 12
-    ninja_bodyguard_event01 0
+    ninja_bodyguard_event01
     rest 24
-    ninja_bodyguard_event02 0
+    ninja_bodyguard_event02
     play_sfx s_ninja_wind_seqData
     rest 24
-    ninja_bodyguard_event03 0
+    ninja_bodyguard_event03
     rest 48
-    ninja_bodyguard_event04 0
+    ninja_bodyguard_event04
     run gameplay_set_tutorial NULL
     rest 48
     goto script_ninja_bodyguard_main
@@ -498,14 +498,14 @@ script script_ninja_bodyguard_skipped_intro
     set_tempo 140
     ninja_bodyguard_event0B 3
     ninja_bodyguard_event00 0
-    ninja_bodyguard_event02 0
+    ninja_bodyguard_event02
     play_sfx s_ninja_wind_seqData
     rest 24
-    enable_pause_menu TRUE
-    ninja_bodyguard_event03 0
+    enable_pause_menu
+    ninja_bodyguard_event03
     rest 24
     rest 24
-    ninja_bodyguard_event04 0
+    ninja_bodyguard_event04
     rest 24
     rest 24
     goto script_ninja_bodyguard_main

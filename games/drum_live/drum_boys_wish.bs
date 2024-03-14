@@ -34,7 +34,7 @@ script script_drum_boys_wish
     call drum_live_pat01
     run drum_boys_wish_play_count_in, 0
     dml_set_disable_excitement FALSE
-    dml_event06 1
+    dml_event06 TRUE
     dml_set_guitarist_next_state 0x3, 1
     call drum_live_pat08
     play_music s_wish_bgm_seqData
@@ -113,7 +113,7 @@ script script_drum_boys_wish
     call drum_live_pat01
     run drum_boys_wish_stop_crowd_sfx
     dml_set_enable_boredom TRUE
-    dml_event06 1
+    dml_event06 TRUE
     dml_set_guitarist_next_state 0x3, 1
     call drum_live_pat11
     call drum_live_pat11
@@ -157,7 +157,7 @@ script script_drum_boys_wish
     call drum_live_pat10
     call drum_live_pat10
     call drum_live_pat10
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat10
     call drum_live_pat00
     call drum_live_pat00
@@ -222,7 +222,7 @@ script script_drum_boys_wish
     call drum_live_pat00
     call drum_live_pat00
     call drum_live_pat00
-    dml_event06 1
+    dml_event06 TRUE
     dml_set_guitarist_next_state 0x1, 1
     call drum_live_pat10
     call drum_live_pat00
@@ -265,7 +265,7 @@ script script_drum_boys_wish
     call drum_live_pat00
     call drum_live_pat11
     call drum_live_pat11
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat10
     call drum_live_pat10
     call drum_live_pat10
@@ -294,9 +294,9 @@ script script_drum_boys_wish
     call drum_live_pat10
     dml_set_guitarist_next_state 0x3, 1
     call drum_live_pat10
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat03
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat10
     dml_set_guitarist_next_state 0x3, 0
     call drum_live_pat10
@@ -334,7 +334,7 @@ script script_drum_boys_wish
     call drum_live_pat13
     call drum_live_pat13
     call drum_live_pat13
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat08
     call drum_live_pat10
     call drum_live_pat10
@@ -363,9 +363,9 @@ script script_drum_boys_wish
     call drum_live_pat10
     dml_set_guitarist_next_state 0x3, 1
     call drum_live_pat10
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat03
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat10
     dml_set_guitarist_next_state 0x3, 0
     call drum_live_pat10
@@ -395,7 +395,7 @@ script script_drum_boys_wish
     call drum_live_pat10
     call drum_live_pat10
     call drum_live_pat10
-    dml_event06 1
+    dml_event06 TRUE
     dml_set_guitarist_next_state 0x3, 1
     call drum_live_pat08
     call drum_live_pat00
@@ -449,7 +449,7 @@ script script_drum_boys_wish
     run drum_boys_wish_play_count_in, 80
     rest 24
     run drum_boys_wish_play_count_in, 80
-    dml_event06 0
+    dml_event06 FALSE
     dml_set_guitarist_next_state 0x3, 2
     call drum_live_pat08
     dml_set_enable_boredom FALSE

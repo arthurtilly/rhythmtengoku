@@ -12,12 +12,12 @@ script script_cosmic_dance_entry
     call script_cosmic_dance_prologue
     set_game_fade_in_time 16
     load_cosmic_dance
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_cosmic_dance_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -33,7 +33,7 @@ define_gameplay_scene scene_cosmic_dance, script_cosmic_dance_entry
 script script_cosmic_dance_prologue
     set_game_fade_in_time 8
     load_game cosmic_dance_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_handclap_seqData
     rest 24
@@ -95,7 +95,7 @@ script script_cosmic_dance_main
     set_music_volume 256
     start_perfect_campaign
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     play_music s_trexnew_bgm1_seqData
     rest 8
@@ -103,47 +103,47 @@ script script_cosmic_dance_main
     rest 8
     set_results_header D_080682f4
     import_marking_criteria cosmic_dance_marking_criteria
-    forgive_x_misses 2
-    assess_inputs 1
+    run gameplay_set_mercy_count, 2
+    start_tracking_inputs
     print_text_f D_08068310
-    space_dance_event01 65280
+    space_dance_event01 -1, 0
     rest 8
     set_marking_criteria 0
     call space_dance_sub_08a848bc
-    print_text_f NULL
+    clear_text_f
     call cosmic_dance_sub_08a84e14
     call space_dance_sub_08a848bc
     call cosmic_dance_sub_08a85318
-    space_dance_event01 65535
+    space_dance_event01 -1, -1
     call space_dance_sub_08a848bc
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a85858
-    space_dance_event01 65281
+    space_dance_event01 -1, 1
     call space_dance_sub_08a848bc
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a84e14
     call space_dance_sub_08a848bc
     call cosmic_dance_sub_08a85858
-    space_dance_event01 256
+    space_dance_event01 1, 0
     call space_dance_sub_08a84bec
-    space_dance_event05 1
+    space_dance_event05 TRUE
     call space_dance_sub_08a84bec
-    space_dance_event05 1
-    space_dance_event01 65024
+    space_dance_event05 TRUE
+    space_dance_event01 -2, 0
     set_marking_criteria 1
     call cosmic_dance_sub_08a85858
     call cosmic_dance_sub_08a85954
     call cosmic_dance_sub_08a85858
     call cosmic_dance_sub_08a85954
-    space_dance_event01 256
+    space_dance_event01 1, 0
     set_marking_criteria 0
     call space_dance_sub_08a84bec
-    space_dance_event05 1
+    space_dance_event05 TRUE
     call space_dance_sub_08a84bec
-    space_dance_event05 1
-    space_dance_event01 65024
+    space_dance_event05 TRUE
+    space_dance_event01 -2, 0
     set_marking_criteria 1
     call cosmic_dance_sub_08a85858
     call cosmic_dance_sub_08a85954
@@ -165,19 +165,18 @@ script script_cosmic_dance_main
     play_sfx s_space_kou_sit_seqData
     rest 2
     rest 8
-    space_dance_event01 0
+    space_dance_event01 0, 0
     space_dance_event00 2
     play_sfx s_space_kou_down_seqData
-    add_music_in MUSIC_PLAYER_2, s_studio_bgm_seqData
+    add_music MUSIC_PLAYER_2, s_studio_bgm_seqData
     set_music_volume 40
     mod_music_volume 150, 144
     rest 24
     rest 24
-    space_dance_event04 1
+    space_dance_event04 TRUE
     rest 24
     rest 24
-    run agb_random, 6
-    switch INT8, FUNCTION_RESULT
+    switch_random 6
         case 0
         case 1
         case 2
@@ -199,15 +198,15 @@ script script_cosmic_dance_main
             break
     end_switch
     mod_music_volume 80, 72
-    space_dance_event04 0
-    play_sfx_sp s_intro_one_seqData, 52, 0
+    space_dance_event04 FALSE
+    play_sfx_vol s_intro_one_seqData, 52
     rest 24
-    play_sfx_sp s_intro_two_seqData, 60, 0
+    play_sfx_vol s_intro_two_seqData, 60
     rest 24
-    play_sfx_sp s_intro_three_seqData, 48, 0
+    play_sfx_vol s_intro_three_seqData, 48
     rest 22
     rest 2
-    play_sfx_sp s_intro_uh_seqData, 56, 0
+    play_sfx_vol s_intro_uh_seqData, 56
     rest 22
     rest 2
     rest 8
@@ -234,8 +233,8 @@ script script_cosmic_dance_main
     space_dance_event00 1
     play_sfx s_space_kou_punch_seqData
     play_sfx s_space_ikeo_punch_seqData
-    space_dance_event01 63720
-    mod_lcd_blend_to 0x442, TO_TEMPO, 24
+    space_dance_event01 -8, -24
+    mod_lcd_blend_to 0x442, 24
     run gameplay_set_reverb, 30
     rest 8
     set_marking_criteria 0
@@ -260,8 +259,8 @@ script script_cosmic_dance_main
     rest 8
     space_dance_event00 1
     play_sfx s_space_kou_punch_seqData
-    space_dance_event01 63512
-    mod_lcd_blend_to 0x442, TO_TEMPO, 24
+    space_dance_event01 -8, 24
+    mod_lcd_blend_to 0x442, 24
     rest 8
     call cosmic_dance_sub_08a84fdc
     call cosmic_dance_sub_08a84fdc
@@ -277,7 +276,7 @@ script script_cosmic_dance_main
     space_dance_event00 5
     play_sfx s_space_kou_pa_seqData
     play_sfx s_space_ikeo_pa_seqData
-    mod_lcd_blend_from 0x442, TO_TEMPO, 24
+    mod_lcd_blend_from 0x442, 24
     rest 8
     space_dance_event00 4
     play_sfx s_space_kou_pa_seqData
@@ -288,10 +287,10 @@ script script_cosmic_dance_main
     space_dance_event00 1
     play_sfx s_space_kou_punch_seqData
     play_sfx s_space_ikeo_punch_seqData
-    space_dance_event01 63512
+    space_dance_event01 -8, 24
     rest 8
     run gameplay_set_reverb, 0
-    space_dance_event01 65280
+    space_dance_event01 -1, 0
     call space_dance_sub_08a848bc
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a85858
@@ -311,17 +310,17 @@ script script_cosmic_dance_main
     play_sfx s_space_ikeo_punch_seqData
     rest 8
     rest 24
-    space_dance_event04 1
+    space_dance_event04 TRUE
     rest 12
-    space_dance_event01 0
-    assess_perfect_inputs 0
+    space_dance_event01 0, 0
+    stop_tracking_perfect_campaign
     beat_anim
     rest 12
     rest 24
     rest 24
     rest 24
-    space_dance_event04 0
-    enable_pause_menu FALSE
+    space_dance_event04 FALSE
+    disable_pause_menu
     rest 24
 return
 

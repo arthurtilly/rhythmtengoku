@@ -11,12 +11,12 @@ script script_drum_live_entry
     rest 24
     rest 24
     load_drum_live_menu
-    enable_play_inputs TRUE
-    assess_inputs TRUE
+    enable_play_inputs
+    start_tracking_inputs
     call script_drum_live_menu
-    enable_pause_menu FALSE
-    enable_play_inputs FALSE
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -36,7 +36,7 @@ script script_drum_live_menu
     drum_live_menu_freeze_scene
 
     run gameplay_get_inter_engine_variable, 0
-    switch INT8, FUNCTION_RESULT
+    switch INT8, GLOBAL_VARIABLE
         case ENGINE_VER_DRUM_GIRLS_LIVE
             load_drum_girls_live
             break
@@ -52,9 +52,9 @@ script script_drum_live_menu
     dml_set_enable_boredom FALSE
     run gameplay_enable_cue_input_overlap, FALSE
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     run gameplay_get_inter_engine_variable, 0
-    switch INT8, FUNCTION_RESULT
+    switch INT8, GLOBAL_VARIABLE
         case ENGINE_VER_DRUM_GIRLS_LIVE
             call script_drum_girls_night_walk
             call script_drum_girls_space_dance
@@ -77,7 +77,7 @@ script script_drum_live_menu
     rest 24
     rest 24
     run gameplay_enable_tutorial, FALSE
-    enable_pause_menu FALSE
+    disable_pause_menu
 return
 
 

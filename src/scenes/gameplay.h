@@ -40,8 +40,8 @@ struct GameplaySceneData {
 	struct Scene *skipDestination; // Skip Tutorial destination scene
 	u16 fadeInTicks; // Remaining ticks for screen fade-in?
     u16 nextCueDuration;
-    u16 unk88;
-    u16 unk8A;
+    u16 loopCounter;
+    u16 loopCounterStart;
     s16 pauseSprite;
     s16 pauseOptionsSprite;
     u8 unpausing; // Pause Menu is currently being exited.
@@ -108,7 +108,7 @@ extern void gameplay_set_input_buttons(u16 press, u16 release); // [func_0801733
 extern s32  gameplay_run_common_event(s32 param, s32 id); // [func_08017348] Run Engine-Common Event
 extern void gameplay_set_engine_event_param(s32 param); // [func_08017380] Set Parameter for Engine-Specific Event
 extern s32  gameplay_run_engine_event(const struct GameEngine *engine, s32 id); // [func_0801738c] Run Engine-Specific Event
-extern void gameplay_enable_inputs(u32 enable); // [func_080173c4] Enable Play Inputs
+extern void gameplay_inputs_enabled(u32 enable); // [func_080173c4] Enable Play Inputs
 extern void gameplay_assess_irrelevant_inputs(u32 assess); // [func_080173d0] Assess Non-Cue Inputs
 extern void gameplay_set_next_cue_spawn_sfx(struct SongHeader *sfx); // [func_080173dc] Set Next Cue Spawn SFX
 extern void gameplay_set_next_cue_hit_sfx(struct SongHeader *sfx); // [func_080173e8] Set Next Cue Hit SFX
@@ -123,10 +123,10 @@ extern void gameplay_display_skip_icon(u32 corner); // [func_080174e8] Display S
 extern void gameplay_skip_tutorial(void); // [func_08017514] Skip Tutorial
 extern void gameplay_set_screen_fade_in_time(u32 duration); // [func_08017568] Set Screen Fade-In
 extern void gameplay_start_screen_fade_in(void); // [func_08017578] Fade-In Screen
-extern void func_080175a0(u32 count); // [func_080175a0] Set unk8A
-extern void func_080175b0(void); // [func_080175b0] Set unk88 to unk8A
-extern void func_080175c4(void); // [func_080175c4] Increment unk88
-extern u32  func_080175d8(void); // [func_080175d8] Get unk88
+extern void gameplay_set_initial_counter_value(u32 count); // [func_080175a0] Set Initial Loop Counter Value
+extern void gameplay_reset_loop_counter(void); // [func_080175b0] Reset Loop Counter
+extern void gameplay_increment_loop_counter(void); // [func_080175c4] Increment Loop Counter
+extern u32  gameplay_get_loop_counter(void); // [func_080175d8] Get Loop Counter
 extern void gameplay_set_reverb(u32 level); // [func_080175e8] Set Global Reverb
 extern void gameplay_start_perfect_campaign(void); // [func_08017604] Start Perfect Campaign
 extern void gameplay_check_for_perfect(u32 assessInputs); // [func_08017648] Start/Stop Assessing Inputs for Perfect Campaign

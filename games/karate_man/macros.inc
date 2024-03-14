@@ -60,44 +60,56 @@
 
 
 @ [Event 0x00] Reset BG Face
-.macro karate_man_reset_bg_face noArgs
-    karate_man_event RESET_BG_FACE, \noArgs
+.macro karate_man_reset_bg_face
+    karate_man_event RESET_BG_FACE, 0
 .endm
+
 
 @ [Event 0x01] Start "Serious Mode" on Next Hit
 .macro karate_man_start_serious_next_hit
     karate_man_event START_SERIOUS_NEXT_HIT, 0
 .endm
 
+
 @ [Event 0x02] Finish "Serious Mode" on Next Hit
 .macro karate_man_stop_serious_next_hit
     karate_man_event STOP_SERIOUS_NEXT_HIT, 0
 .endm
+
 
 @ [Event 0x03] Print Textbox
 .macro karate_man_print_textbox string
     karate_man_event PRINT_TEXTBOX, \string
 .endm
 
+.macro karate_man_clear_textbox
+    karate_man_print_textbox NULL
+.endm
+
+
 @ [Event 0x04] Wait at Textbox for Player Input
 .macro karate_man_wait_at_textbox
     karate_man_event WAIT_AT_TEXTBOX, 0
 .endm
+
 
 @ [Event 0x05] Enable Flow Meter
 .macro karate_man_enable_flow enable
     karate_man_event ENABLE_FLOW_METER, \enable
 .endm
 
+
 @ [Event 0x06] Start Tutorial Loop (set required inputs to pass)
 .macro karate_man_start_tutorial_loop totalCues
     karate_man_event START_TUTORIAL_LOOP, \totalCues
 .endm
 
+
 @ [Event 0x07] Proceed With Tutorial if All Hit
-.macro karate_man_exit_loop_if_all_hit noArgs
-    karate_man_event EXIT_LOOP_IF_ALL_HIT, \noArgs
+.macro karate_man_exit_loop_if_all_hit
+    karate_man_event EXIT_LOOP_IF_ALL_HIT, 0
 .endm
+
 
 @ [Event 0x08] Use The Face
 .macro karate_man_use_the_face use

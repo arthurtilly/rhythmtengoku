@@ -1,0 +1,241 @@
+.include "include/beatscript.inc"
+.include "games/drum_intro/macros.inc"
+
+
+
+.section .script.entry
+@ Drum Intro (Unused) - Script Entry Point
+
+script script_drum_intro_unused_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_intro_talk
+    enable_play_inputs
+    start_tracking_inputs
+    call script_drum_intro_unused_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_intro_unused, script_drum_intro_unused_entry
+
+
+
+.section .script.main
+@ Drum Intro (Unused) - Main Script
+
+script drum_intro_unused_sub_08a21294
+    play_sfx s_intro_one_seqData
+    beat_anim
+    rest 24
+    rest 24
+    play_sfx s_intro_two_seqData
+    beat_anim
+    rest 24
+    rest 12
+    play_sfx s_intro_a_seqData
+    rest 12
+    play_sfx s_intro_one_seqData
+    beat_anim
+    rest 24
+    play_sfx s_intro_two_seqData
+    beat_anim
+    rest 23
+    play_sfx s_intro_three_seqData
+    rest 1
+    beat_anim
+    rest 20
+return
+
+
+script drum_intro_unused_sub_08a21390
+    call drum_intro_unused_sub_08a21294
+    play_sfx s_intro_four_seqData
+    rest 4
+    beat_anim
+    rest 24
+return
+
+
+script drum_intro_unused_sub_08a213d8
+    call drum_intro_unused_sub_08a21294
+    rest 28
+return
+
+
+script drum_intro_unused_sub_08a213fc
+    beat_anim
+    dmi_event01 2
+    rest 24
+    beat_anim
+    dmi_event01 16
+    rest 24
+    beat_anim
+    dmi_event01 2
+    rest 12
+    dmi_event01 2
+    rest 12
+    beat_anim
+    dmi_event01 16
+    rest 24
+return
+
+
+script drum_intro_unused_sub_08a214ec
+    beat_anim
+    dmi_event01 2
+    rest 24
+    beat_anim
+    dmi_event01 16
+    rest 24
+    beat_anim
+    dmi_event01 2
+    rest 12
+    dmi_event01 2
+    rest 12
+    beat_anim
+    dmi_event01 16
+    rest 12
+    dmi_event01 65
+    rest 12
+return
+
+
+script drum_intro_unused_sub_08a21600
+    beat_anim
+    dmi_event01 258
+    rest 6
+    dmi_event01 64
+    rest 6
+    dmi_event01 1
+    rest 6
+    dmi_event01 16
+    rest 6
+    beat_anim
+    dmi_event01 1
+    rest 6
+    dmi_event01 544
+    rest 6
+    dmi_event01 0
+    rest 6
+    dmi_event01 544
+    rest 6
+    beat_anim
+    dmi_event01 0
+    rest 5
+    dmi_event01 2
+    rest 3
+    dmi_event01 128
+    rest 4
+    dmi_event01 2
+    rest 6
+    dmi_event01 32
+    rest 6
+    beat_anim
+    dmi_event01 1
+    rest 6
+    dmi_event01 0
+    rest 6
+    dmi_event01 1
+    rest 6
+    dmi_event01 16
+    rest 6
+    beat_anim
+    dmi_event01 258
+return
+
+
+script script_drum_intro_unused_main
+    set_tempo 120
+    set_music_volume 0
+    mod_music_volume 256, 192
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    dmi_event02 2
+    print_text_s D_0805d438
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805d458
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805d4b4
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805d508
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    mod_music_volume 0, 96
+    dmi_event02 2
+    print_text_s D_0805d554
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 0
+    rest 48
+    set_tempo 130
+    call drum_intro_unused_sub_08a21390
+    call drum_intro_unused_sub_08a213fc
+    call drum_intro_unused_sub_08a213fc
+    call drum_intro_unused_sub_08a214ec
+    call drum_intro_unused_sub_08a21600
+    rest 24
+    set_game_fade_in_time 8
+
+    load_drum_intro_play
+    rest 24
+    dmi_event04 TRUE
+    dmi_event03 2
+    print_text_s D_0805d568
+    rest 48
+    dmi_event03 1
+    clear_text_s
+    no_op
+    call drum_intro_unused_sub_08a213d8
+    rest_beats 4
+    rest_beats 4
+    rest_beats 4
+    dmi_event04 FALSE
+    rest_beats 4
+    set_tempo 120
+    dmi_event03 2
+    print_text_s D_0805d57c
+    rest_beats 5
+    dmi_event03 1
+    clear_text_s
+    no_op
+    rest 24
+    set_game_fade_in_time 8
+
+    load_drum_intro_talk
+    dmi_event02 1
+    mod_music_volume 256, 192
+    rest 48
+    dmi_event02 2
+    print_text_s D_0805d5a4
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805d5ec
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    run set_next_scene, scene_game_select
+return
+
+.end

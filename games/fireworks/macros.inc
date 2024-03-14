@@ -15,11 +15,11 @@
     .set CUE_TAIKO_BOMBER,      0x04
 
     @ [Event 0x00] Pattern Modes
-    .set MODE_SPIRIT_SPARKLER,  0
-    .set MODE_NORMAL_FIREWORK,  1
-    .set MODE_TAIKO_BOMBER,     2
-    .set MODE_FIREWORKS_1,      3
-    .set MODE_USE_DEFAULT,      4
+    .set PATTERN_MODE_0,            0
+    .set PATTERN_MODE_1,            1
+    .set PATTERN_MODE_TAIKO_BOMBER, 2
+    .set PATTERN_MODE_USE_TABLE,    3
+    .set PATTERN_MODE_USE_DEFAULT,  99
 
     @ [Event 0x01] Sound Effects
     .set SFX_COME_ON,   0
@@ -97,10 +97,12 @@
     fireworks_event SET_PATTERN_MODE, \mode
 .endm
 
+
 @ [Event 0x01] Play Count-In SFX (includes "Nuei!" but not "Tamaya~")
 .macro fireworks_play_sfx id
     fireworks_event PLAY_SOUND, \id
 .endm
+
 
 @ [Event 0x02] Set Default Firework Pattern
 .macro fireworks_set_default_pattern pattern

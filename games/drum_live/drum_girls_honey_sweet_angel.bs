@@ -56,7 +56,7 @@ script script_drum_girls_honey_sweet_angel
     rest 6
     spawn_cue CUE_LIVE_02
     rest 6
-    dml_event06 1
+    dml_event06 TRUE
     dml_set_guitarist_next_state 0x3, 0
     call drum_live_pat14
     call drum_live_pat14
@@ -68,7 +68,7 @@ script script_drum_girls_honey_sweet_angel
     dml_set_guitarist_next_state 0x3, 0
     dml_set_disable_excitement FALSE
     dml_set_enable_boredom TRUE
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat10
     call drum_live_pat00
     call drum_live_pat00
@@ -104,7 +104,7 @@ script script_drum_girls_honey_sweet_angel
     dml_set_guitarist_next_state 0x3, 2
     call drum_live_pat08
     dml_set_guitarist_next_state 0x3, 0
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat10
     call drum_live_pat00
     call drum_live_pat00
@@ -121,7 +121,7 @@ script script_drum_girls_honey_sweet_angel
     call drum_live_pat00
     call drum_live_pat00
     call drum_live_pat00
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat00
     call drum_live_pat00
     call drum_live_pat00
@@ -144,7 +144,7 @@ script script_drum_girls_honey_sweet_angel
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
     call drum_live_pat00
     dml_set_guitarist_next_state 0x3, 0
     call drum_live_pat00
@@ -175,7 +175,7 @@ script script_drum_girls_honey_sweet_angel
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
     call drum_live_pat00
     dml_set_guitarist_next_state 0x3, 0
     call drum_live_pat00
@@ -184,7 +184,7 @@ script script_drum_girls_honey_sweet_angel
     call drum_live_pat00
     call drum_live_pat00
     call drum_live_pat00
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat09
     call drum_live_pat00
     call drum_live_pat00
@@ -193,7 +193,7 @@ script script_drum_girls_honey_sweet_angel
     call drum_live_pat00
     call drum_live_pat00
     call drum_live_pat00
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat10
     call drum_live_pat10
     call drum_live_pat10
@@ -233,7 +233,7 @@ script script_drum_girls_honey_sweet_angel
     dml_set_guitarist_next_state 0x3, 2
     call drum_live_pat08
     dml_set_guitarist_next_state 0x3, 0
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat10
     call drum_live_pat10
     call drum_live_pat10
@@ -272,7 +272,7 @@ script script_drum_girls_honey_sweet_angel
     dml_set_guitarist_next_state 0x3, 2
     call drum_live_pat00
     dml_set_guitarist_next_state 0x3, 0
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat08
     call drum_live_pat00
     call drum_live_pat00
@@ -319,7 +319,7 @@ script script_drum_girls_honey_sweet_angel
     call drum_live_pat11
     call drum_live_pat11
     dml_set_guitarist_next_state 0x3, 2
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat08
     call drum_live_pat00
     call drum_live_pat00

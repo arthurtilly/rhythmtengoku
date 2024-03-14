@@ -13,7 +13,7 @@ script script_scene_cafe
     rest 24
     rest 24
     rest 24
-    scene_set_int INT8, 0, TRUE
+    scene_set_byte 0, TRUE
 
     loop_start
         run cafe_print_dialogue
@@ -108,9 +108,9 @@ script script_scene_cafe
         end_switch
     loop_end
 
-    scene_set_int INT8, 0, FALSE
+    scene_set_byte 0, FALSE
     run scene_hide_bg_layer, TRUE
-    fade_music_out TO_TEMPO, 48
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 48
     stop

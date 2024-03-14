@@ -24,10 +24,6 @@
 .set INT32, 2
 .set FUNC,  3
 
-@ Time Value Types
-.set REALTIME, 0
-.set TO_TEMPO, 1
-
 @ Marking Criteria Flags
 .set CHECK_AVERAGE_MISSES, 0x100
 .set OVERRIDE_COMMENTS,    0x80
@@ -128,6 +124,14 @@ endstruct
     beatscript_cmd 0x00, 0, 0, \time
 .endm
 
+.macro no_op
+    rest 0
+.endm
+
+.macro rest_beats beats
+    rest (\beats * 24)
+.endm
+
 
 @ [0x01] Stop
 .macro stop
@@ -154,14 +158,22 @@ endstruct
 
 
 @ [0x05] Set Variable
-.macro set_int type, address, value
+.macro set_var type, address, value
     beatscript_cmd 0x05, \type, \address, \value
+.endm
+
+.macro set_byte address, value
+    set_var INT8, \address, \value
 .endm
 
 
 @ [0x06] Add to Variable
-.macro add_int type, address, value
+.macro add_var type, address, value
     beatscript_cmd 0x06, \type, \address, \value
+.endm
+
+.macro add_byte address, value
+    add_var INT8, \address, \value
 .endm
 
 
@@ -178,14 +190,22 @@ endstruct
 
 
 @ [0x09] (Scene) Set Variable
-.macro scene_set_int type, offset, value
+.macro scene_set_var type, offset, value
     beatscript_cmd 0x09, \type, \offset, \value
+.endm
+
+.macro scene_set_byte address, value
+    scene_set_var INT8, \address, \value
 .endm
 
 
 @ [0x0A] (Scene) Add to Variable
-.macro scene_add_int type, offset, value
+.macro scene_add_var type, offset, value
     beatscript_cmd 0x0A, \type, \offset, \value
+.endm
+
+.macro scene_add_byte offset, value
+    scene_add_var INT8, \offset, \value
 .endm
 
 
@@ -236,6 +256,10 @@ endstruct
     beatscript_cmd 0x12, \type, \address, \value
 .endm
 
+.macro if_globalvar_eq value
+    if_eq INT8, GLOBAL_VARIABLE, \value
+.endm
+
 
 @ [0x13] If Not Equal
 .macro if_neq type, address, value
@@ -274,6 +298,15 @@ endstruct
 @ [0x1A] Switch Statement
 .macro switch type, address
     beatscript_cmd 0x1A, \type, 0, \address
+.endm
+
+.macro switch_loop_counter
+    switch FUNC, gameplay_get_loop_counter
+.endm
+
+.macro switch_random range
+    run agb_random, \range
+    switch INT8, GLOBAL_VARIABLE
 .endm
 
 
@@ -325,7 +358,7 @@ endstruct
 
 
 @ [0x28] Play Music
-.macro play_music_in player=DEFAULT_SOUND_PLAYER, music
+.macro play_music_in player, music
     beatscript_cmd 0x28, 0, \player, \music
 .endm
 
@@ -354,14 +387,22 @@ endstruct
 
 
 @ [0x35] Music Fade-In
-.macro fade_music_in toTempo, time
+.macro fade_music_in_cmd toTempo, time
     beatscript_cmd 0x35, \toTempo, 0, \time
+.endm
+
+.macro fade_music_in time
+    fade_music_in_cmd TRUE, \time
 .endm
 
 
 @ [0x36] Music Fade-Out
-.macro fade_music_out toTempo, time
+.macro fade_music_out_cmd toTempo, time
     beatscript_cmd 0x36, \toTempo, 0, \time
+.endm
+
+.macro fade_music_out time
+    fade_music_out_cmd TRUE, \time
 .endm
 
 
@@ -381,12 +422,8 @@ endstruct
 
 
 @ [0x3A] Play Music (without overriding existing music if possible)
-.macro add_music_in player, music
+.macro add_music player, music
     beatscript_cmd 0x3A, 0, \player, \music
-.endm
-
-.macro add_music music
-    add_music_in DEFAULT_SOUND_PLAYER, \music
 .endm
 
 
@@ -416,12 +453,12 @@ endstruct
     beatscript_cmd 0x3F, \reverse, \controls, ((\toTempo << 31) | (\time & 0x7FFFFFFF))
 .endm
 
-.macro mod_lcd_blend_to controls, toTempo, time
-    mod_lcd_blend 0, \controls, \toTempo, \time
+.macro mod_lcd_blend_to controls, time
+    mod_lcd_blend FALSE, \controls, TRUE, \time
 .endm
 
-.macro mod_lcd_blend_from controls, toTempo, time
-    mod_lcd_blend 1, \controls, \toTempo, \time
+.macro mod_lcd_blend_from controls, time
+    mod_lcd_blend TRUE, \controls, TRUE, \time
 .endm
 
 
@@ -622,8 +659,12 @@ endstruct
 
 
 @ [0xAE] Play Sound Effect (at given volume & pitch)
-.macro play_sfx_sp sound, volume, pitch
+.macro play_sfx_vol_pitch sound, volume, pitch
     beatscript_cmd 0xAE, \volume, \pitch, \sound
+.endm
+
+.macro play_sfx_vol sound, volume
+    play_sfx_vol_pitch \sound, \volume, 0
 .endm
 
 
@@ -646,6 +687,10 @@ endstruct
 
 
 @ [0xB2] Play Sound Effect (at given volume & pitch)
-.macro play_sfx_synced sound, baseBPM, volume, pitch
+.macro play_sfx_synced_pitch sound, baseBPM, volume, pitch
     beatscript_cmd 0xB2, \baseBPM, ((\volume & 0xFFFF) | (\pitch << 16)), \sound
+.endm
+
+.macro play_sfx_synced sound, baseBPM, volume
+    play_sfx_synced_pitch \sound, \baseBPM, \volume, 0
 .endm

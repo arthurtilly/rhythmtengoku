@@ -232,7 +232,7 @@ EngineEvent sneaky_spirits_engine_events[] = {
     /* 0x01 */ sneaky_spirits_set_ghost_height,
     /* 0x02 */ sneaky_spirits_spawn_bow,
     /* 0x03 */ sneaky_spirits_draw_bow,
-    /* 0x04 */ sneaky_spirits_enable_wind_sfx,
+    /* 0x04 */ sneaky_spirits_wind_sfx_enabled,
     /* 0x05 */ sneaky_spirits_display_text,
     /* 0x06 */ sneaky_spirits_event_set_rain_speed,
     /* 0x07 */ sneaky_spirits_freeze_slow_rain,

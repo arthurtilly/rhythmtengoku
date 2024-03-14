@@ -180,7 +180,7 @@ void title_scene_start(void *sVar, s32 dArg) {
     gTitle->inputsEnabled = FALSE;
     gTitle->timeUntilDemo = 180 * 16;
     gTitle->titleIsDisplayed = FALSE;
-    set_next_scene(&D_089d3984);
+    set_next_scene(&scene_drum_samurai_demo_cutscene);
     set_scene_trans_var(&scene_main_menu, 0);
 }
 
@@ -217,7 +217,7 @@ void title_scene_update_inputs(void) {
         if (D_030046a8->data.unkB0) {
             set_next_scene(&scene_main_menu);
         } else {
-            set_next_scene(&D_089d3a6c);
+            set_next_scene(&scene_drum_samurai_opening_cutscene);
         }
 
         func_0801d968(script_scene_title_exit);
@@ -234,8 +234,8 @@ void title_scene_update_inputs(void) {
 void title_scene_update(void *sVar, s32 dArg) {
     if (gTitle->timeUntilDemo > 0) {
         if (--gTitle->timeUntilDemo == 0) {
-            set_next_scene(&D_089d3984);
-            set_scene_trans_target(&D_089d3984, &scene_title);
+            set_next_scene(&scene_drum_samurai_demo_cutscene);
+            set_scene_trans_target(&scene_drum_samurai_demo_cutscene, &scene_title);
             func_0801d968(script_scene_title_exit);
             gTitle->inputsEnabled = FALSE;
         }

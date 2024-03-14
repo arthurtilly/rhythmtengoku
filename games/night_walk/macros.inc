@@ -58,45 +58,54 @@
     night_walk_event PLAY_DRUMTECH_NOTE, (((\drumID & 0xFF)) | ((\volume & 0x1FF) << 8) | ((\pitch) << 17))
 .endm
 
+
 @ [Event 0x01] Initialise Balloons (max. 30)
 .macro night_walk_init_balloons balloonCount
     night_walk_event INIT_BALLOONS, \balloonCount
 .endm
+
 
 @ [Event 0x02] Pop Balloon
 .macro night_walk_pop_balloon
     night_walk_event POP_BALLOON, 0
 .endm
 
+
 @ [Event 0x03] Set Ending Script
 .macro night_walk_set_end_script script
     night_walk_event SET_END_SCRIPT, \script
 .endm
+
 
 @ [Event 0x04] Set Bridge Type
 .macro night_walk_set_platform type
     night_walk_event SET_PLATFORM, \type
 .endm
 
+
 @ [Event 0x05] Set Marking Criteria
 .macro night_walk_set_marking_criteria id
     night_walk_event SET_MARKING_CRITERIA, \id
 .endm
+
 
 @ [Event 0x06] Set Cue Earliness Offset (used to initialise the level without using balloons)
 .macro night_walk_set_cue_earliness time
     night_walk_event SET_CUE_EARLINESS, \time
 .endm
 
+
 @ [Event 0x07] Enable Swing
 .macro night_walk_enable_swing enable
     night_walk_event ENABLE_SWING, \enable
 .endm
 
+
 @ [Event 0x08] Set DrumTech Volume
 .macro night_walk_set_drumtech_volume volume
     night_walk_event SET_DRUM_VOLUME, \volume
 .endm
+
 
 @ [Event 0x09] Increment Stars Stage
 .macro night_walk_inc_stars_progress totalStages

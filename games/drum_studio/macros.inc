@@ -93,129 +93,154 @@
 
 
 @ [Event 0x00] Get Next Script (sets global scene variable to the next script)
-.macro dms_get_next_script noArgs
-    drum_studio_event GET_NEXT_SCRIPT, \noArgs
+.macro dms_get_next_script
+    drum_studio_event GET_NEXT_SCRIPT, 0
 .endm
 
+
 @ [Event 0x01] ?
-.macro dms_event01 args
-    drum_studio_event EVENT_01, \args
+.macro dms_event01
+    drum_studio_event EVENT_01, 0
 .endm
+
 
 @ [Event 0x02] ?
 .macro dms_event02 args
     drum_studio_event EVENT_02, \args
 .endm
 
+
 @ [Event 0x03] Start BG Monitor Display
-.macro dms_start_bg_monitor noArgs
-    drum_studio_event START_BG_MONITOR, \noArgs
+.macro dms_start_bg_monitor args
+    drum_studio_event START_BG_MONITOR, \args
 .endm
+
 
 @ [Event 0x04] Stop BG Monitor Display
-.macro dms_stop_bg_monitor noArgs
-    drum_studio_event STOP_BG_MONITOR, \noArgs
+.macro dms_stop_bg_monitor
+    drum_studio_event STOP_BG_MONITOR, 0
 .endm
+
 
 @ [Event 0x05] Show "Save Replay" Options
-.macro dms_show_save_options noArgs
-    drum_studio_event SHOW_SAVE_OPTIONS, \noArgs
+.macro dms_show_save_options
+    drum_studio_event SHOW_SAVE_OPTIONS, 0
 .endm
 
+
 @ [Event 0x06] ?
-.macro dms_event06 args
-    drum_studio_event EVENT_06, \args
+.macro dms_event06
+    drum_studio_event EVENT_06, 0
 .endm
+
 
 @ [Event 0x07] ?
 .macro dms_event07 args
     drum_studio_event EVENT_07, \args
 .endm
 
+
 @ [Event 0x08] ?
 .macro dms_event08 args
     drum_studio_event EVENT_08, \args
 .endm
+
 
 @ [Event 0x09] ?
 .macro dms_event09 args
     drum_studio_event EVENT_09, \args
 .endm
 
+
 @ [Event 0x0A] ?
-.macro dms_event0A args
-    drum_studio_event EVENT_0A, \args
+.macro dms_event0A
+    drum_studio_event EVENT_0A, 0
 .endm
+
 
 @ [Event 0x0B] ?
-.macro dms_event0B args
-    drum_studio_event EVENT_0B, \args
+.macro dms_event0B
+    drum_studio_event EVENT_0B, 0
 .endm
 
+
 @ [Event 0x0C] ?
-.macro dms_event0C args
-    drum_studio_event EVENT_0C, \args
+.macro dms_event0C
+    drum_studio_event EVENT_0C, 0
 .endm
+
 
 @ [Event 0x0D] Set Lesson Dialogue Text
 .macro dms_set_dialogue_text string
     drum_studio_event SET_DIALOGUE_TEXT, \string
 .endm
 
+
 @ [Event 0x0E] ?
 .macro dms_event0E args
     drum_studio_event EVENT_0E, \args
 .endm
+
 
 @ [Event 0x0F] ?
 .macro dms_event0F args
     drum_studio_event EVENT_0F, \args
 .endm
 
+
 @ [Event 0x10] Show Lesson Dialogue
 .macro dms_show_dialogue show
     drum_studio_event SHOW_DIALOGUE, \show
 .endm
 
+
 @ [Event 0x11] ?
-.macro dms_event11 args
-    drum_studio_event EVENT_11, \args
+.macro dms_event11
+    drum_studio_event EVENT_11, 0
 .endm
+
 
 @ [Event 0x12] Set Drum Samurai Expression
 .macro dms_set_teacher_exp expression
     drum_studio_event SET_TEACHER_EMOTE, \expression
 .endm
 
+
 @ [Event 0x13] ?
 .macro dms_event13 args
     drum_studio_event EVENT_13, \args
 .endm
+
 
 @ [Event 0x14] Display Lesson Rank, Score and Dialogue
 .macro dms_get_lesson_score
     drum_studio_event GET_LESSON_SCORE, 0
 .endm
 
+
 @ [Event 0x15] ?
-.macro dms_event15 args
-    drum_studio_event EVENT_15, \args
+.macro dms_event15
+    drum_studio_event EVENT_15, 0
 .endm
 
+
 @ [Event 0x16] ?
-.macro dms_event16 args
-    drum_studio_event EVENT_16, \args
+.macro dms_event16
+    drum_studio_event EVENT_16, 0
 .endm
+
 
 @ [Event 0x17] ?
 .macro dms_event17 args
     drum_studio_event EVENT_17, \args
 .endm
 
+
 @ [Event 0x18] ?
 .macro dms_event18 args
     drum_studio_event EVENT_18, \args
 .endm
+
 
 @ [Event 0x19] ?
 .macro dms_event19 args

@@ -11,12 +11,12 @@ script script_snappy_trio_unused_entry
     rest 24
     rest 24
     load_snappy_trio
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_snappy_trio_unused_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -79,17 +79,17 @@ endstruct
 
 script script_snappy_trio_unused_main
     set_results_header D_0805ae34
-    import_marking_criteria D_089ef90c
+    import_marking_criteria snappy_trio_unused_marking_criteria
     set_tempo 120
     set_music_volume 256
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     rest 24
-    clappy_trio_crouch 1
+    clappy_trio_crouch_param 1
     rest 24
-    run gameplay_assess_irrelevant_inputs, 1
+    run gameplay_assess_irrelevant_inputs, TRUE
     beat_anim
     rest 24
     beat_anim
@@ -99,7 +99,7 @@ script script_snappy_trio_unused_main
     beat_anim
     rest 24
     set_marking_criteria 0
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -115,7 +115,7 @@ script script_snappy_trio_unused_main
     rest 24
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -148,7 +148,7 @@ script script_snappy_trio_unused_main
     rest 24
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -166,7 +166,7 @@ script script_snappy_trio_unused_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -182,7 +182,7 @@ script script_snappy_trio_unused_main
     rest 24
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -202,7 +202,7 @@ script script_snappy_trio_unused_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -213,7 +213,7 @@ script script_snappy_trio_unused_main
     set_marking_criteria 1
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -224,7 +224,7 @@ script script_snappy_trio_unused_main
     rest 12
     rest 12
     set_marking_criteria 0
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -235,7 +235,7 @@ script script_snappy_trio_unused_main
     set_marking_criteria 1
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -246,7 +246,7 @@ script script_snappy_trio_unused_main
     rest 12
     rest 12
     set_marking_criteria 0
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -254,7 +254,7 @@ script script_snappy_trio_unused_main
     spawn_cue CUE_FULL_BEAT
     rest 24
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -266,7 +266,7 @@ script script_snappy_trio_unused_main
     rest 24
     set_marking_criteria 0
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -274,7 +274,7 @@ script script_snappy_trio_unused_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -286,7 +286,7 @@ script script_snappy_trio_unused_main
     rest 24
     set_marking_criteria 0
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -294,7 +294,7 @@ script script_snappy_trio_unused_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -309,7 +309,7 @@ script script_snappy_trio_unused_main
     clappy_trio_crouch_smirk
     set_marking_criteria 3
     spawn_cue CUE_FULL_BEAT_W_SMILE
-    rest 0
+    no_op
     set_marking_criteria 0
     rest 12
     clappy_trio_do_clap 0
@@ -317,7 +317,7 @@ script script_snappy_trio_unused_main
     clappy_trio_do_clap 1
     rest 6
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -332,7 +332,7 @@ script script_snappy_trio_unused_main
     clappy_trio_crouch_smirk
     set_marking_criteria 3
     spawn_cue CUE_FULL_BEAT_W_SMILE
-    rest 0
+    no_op
     set_marking_criteria 0
     rest 12
     clappy_trio_do_clap 0
@@ -346,7 +346,7 @@ script script_snappy_trio_unused_main
     rest 24
     beat_anim
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     beat_anim
     rest 24
 return

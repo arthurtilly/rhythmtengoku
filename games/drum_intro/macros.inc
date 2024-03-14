@@ -72,75 +72,90 @@
     drum_intro_event EVENT_00, \args
 .endm
 
+
 @ [Event 0x01] ?
 .macro dmi_event01 args
     drum_intro_event EVENT_01, \args
 .endm
+
 
 @ [Event 0x02] ?
 .macro dmi_event02 args
     drum_intro_event EVENT_02, \args
 .endm
 
+
 @ [Event 0x03] ?
 .macro dmi_event03 args
     drum_intro_event EVENT_03, \args
 .endm
+
 
 @ [Event 0x04] ?
 .macro dmi_event04 args
     drum_intro_event EVENT_04, \args
 .endm
 
+
 @ [Event 0x05] ?
 .macro dmi_event05 args
     drum_intro_event EVENT_05, \args
 .endm
 
+
 @ [Event 0x06] ?
-.macro dmi_event06 args
-    drum_intro_event EVENT_06, \args
+.macro dmi_event06
+    drum_intro_event EVENT_06, 0
 .endm
+
 
 @ [Event 0x07] ?
 .macro dmi_event07 args
     drum_intro_event EVENT_07, \args
 .endm
 
+
 @ [Event 0x08] ?
 .macro dmi_event08 args
     drum_intro_event EVENT_08, \args
 .endm
+
 
 @ [Event 0x09] ?
 .macro dmi_event09 args
     drum_intro_event EVENT_09, \args
 .endm
 
+
 @ [Event 0x0A] ?
 .macro dmi_event0A args
     drum_intro_event EVENT_0A, \args
 .endm
 
+
 @ [Event 0x0B] ?
-.macro dmi_event0B args
-    drum_intro_event EVENT_0B, \args
+.macro dmi_event0B textTable, offset
+    drum_intro_event EVENT_0B, \textTable + (\offset * 0xC)
 .endm
+
 
 @ [Event 0x0C] ?
-.macro dmi_event0C args
-    drum_intro_event EVENT_0C, \args
+.macro dmi_event0C
+    drum_intro_event EVENT_0C, 0
 .endm
+
 
 @ [Event 0x0D] ?
-.macro dmi_event0D args
-    drum_intro_event EVENT_0D, \args
+.macro dmi_event0D
+    drum_intro_event EVENT_0D, 0
 .endm
 
+
 @ [Event 0x0E] ?
-.macro dmi_event0E args
-    drum_intro_event EVENT_0E, \args
+.macro dmi_event0E
+    drum_intro_event EVENT_0E, 0
 .endm
+
 
 @ [Event 0x0F] ?
 .macro dmi_event0F args

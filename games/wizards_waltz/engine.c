@@ -147,7 +147,7 @@ EngineEvent wizards_waltz_common_events[] = {
 // [D_089ea060] Engine Events
 EngineEvent wizards_waltz_engine_events[] = {
     /* 0x00 */ wizards_waltz_set_cycle_duration,
-    /* 0x01 */ wizards_waltz_enable_tutorial
+    /* 0x01 */ wizards_waltz_tutorial_enabled
 };
 
 // [D_089ea068] Wizard's Waltz Game Engine

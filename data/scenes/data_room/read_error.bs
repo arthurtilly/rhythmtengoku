@@ -8,11 +8,11 @@ script script_scene_read_error
     pause_scene
 
     run func_08007324 TRUE
-    scene_set_int INT8, 0, TRUE
+    scene_set_byte 0, TRUE
     pause_scene
 
-    scene_set_int INT8, 0, FALSE
-    fade_music_out TO_TEMPO, 48
+    scene_set_byte 0, FALSE
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 12
     stop

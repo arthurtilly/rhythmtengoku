@@ -40,27 +40,32 @@
     mr_upbeat_event EVENT_00, \args
 .endm
 
+
 @ [Event 0x01] ?
 .macro mr_upbeat_event01 args
     mr_upbeat_event EVENT_01, \args
 .endm
 
+
 @ [Event 0x02] ?
-.macro mr_upbeat_event02 args
-    mr_upbeat_event EVENT_02, \args
+.macro mr_upbeat_event02
+    mr_upbeat_event EVENT_02, 0
 .endm
+
 
 @ [Event 0x03] ?
-.macro mr_upbeat_event03 args
-    mr_upbeat_event EVENT_03, \args
+.macro mr_upbeat_event03
+    mr_upbeat_event EVENT_03, 0
 .endm
+
 
 @ [Event 0x04] ?
-.macro mr_upbeat_event04 args
-    mr_upbeat_event EVENT_04, \args
+.macro mr_upbeat_event04
+    mr_upbeat_event EVENT_04, 0
 .endm
 
+
 @ [Event 0x05] ?
-.macro mr_upbeat_event05 args
-    mr_upbeat_event EVENT_05, \args
+.macro mr_upbeat_event05
+    mr_upbeat_event EVENT_05, 0
 .endm

@@ -156,23 +156,23 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "レッスン（じっせん８）"
     },
     /* Studio Drummer */ {
-        /* Scene */ &D_089d48ec,
+        /* Scene */ &scene_drum_studio_ver0,
         /* Label */ "スタジオドラマー"
     },
-    /* Check Machine (Click) */ {
-        /* Scene */ &D_089d4464,
+    /* Rhythm Test (Click) */ {
+        /* Scene */ &scene_rhythm_test_click,
         /* Label */ "チェックマシン　（クリック）"
     },
     /* Rhythm Test (Cue) */ {
-        /* Scene */ &D_089d454c,
+        /* Scene */ &scene_rhythm_test_cue,
         /* Label */ "チェックマシン　（キューフ）"
     },
     /* Rhythm Test (Trick) */ {
-        /* Scene */ &D_089d4634,
+        /* Scene */ &scene_rhythm_test_trick,
         /* Label */ "チェックマシン　（トリッキー）"
     },
     /* Rhythm Test (Total) */ {
-        /* Scene */ &D_089d4804,
+        /* Scene */ &scene_rhythm_test_opening,
         /* Label */ "チェックマシン　（トータル）"
     },
     /* Reading Material */ {
@@ -192,7 +192,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ラップ　ウィメン（ｂｙ　ＹＯＮＥ）"
     },
     /* Rap Women (by KAZU) */ {
-        /* Scene */ &D_089d6534,
+        /* Scene */ &scene_rap_women_unused,
         /* Label */ "ラップ　ウィメン（ｂｙ　ＫＡＺＵ）"
     },
     /* Space Dance */ {
@@ -212,11 +212,11 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ＲＩＱデータチェック"
     },
     /* Opening (B Type) */ {
-        /* Scene */ &D_089d3a6c,
+        /* Scene */ &scene_drum_samurai_opening_cutscene,
         /* Label */ "オープニング　（Ｂ　Ｔｙｐｅ）"
     },
     /* Opening (A Type) */ {
-        /* Scene */ &D_089d3984,
+        /* Scene */ &scene_drum_samurai_demo_cutscene,
         /* Label */ "オープニング　（Ａ　Ｔｙｐｅ）"
     },
     /* Tram & Pauline */ {
@@ -232,7 +232,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "トスボーイズ　２"
     },
     /* Drum Girls LIVE */ {
-        /* Scene */ &D_089d2f98,
+        /* Scene */ &scene_drum_girls_live_unused,
         /* Label */ "ドラムガールズ"
     },
     /* Power Calligraphy */ {
@@ -252,7 +252,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ハナビ"
     },
     /* Metronome */ {
-        /* Scene */ &D_089d2940,
+        /* Scene */ &scene_metronome,
         /* Label */ "メトロノーム"
     },
     /* Bunny Hop */ {
@@ -260,7 +260,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ウサギとび"
     },
     /* Dance Lesson 1 */ {
-        /* Scene */ &D_089d2670,
+        /* Scene */ &scene_remix_1_unused,
         /* Label */ "ダンスレッスン　１"
     },
     /* Wizard's Waltz */ {
@@ -436,7 +436,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "Ｒ－ＩＱ　（カウンセラー）"
     },
     /* Ending (from clearing Remix 6) */ {
-        /* Scene */ &D_089d6d74,
+        /* Scene */ &scene_staff_credit_remix_6,
         /* Label */ "エンディング（クリアご）"
     },
     /* Ending (from Game Select) */ {

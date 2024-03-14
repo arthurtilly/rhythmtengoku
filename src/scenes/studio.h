@@ -203,8 +203,6 @@ extern struct Beatscript script_scene_studio_idle[];
 extern struct Beatscript script_scene_studio_start_song[];
 extern struct Beatscript script_scene_studio_exit[];
 extern struct Scene scene_studio;
-extern struct Scene D_089d4ba4; // Studio Drumming - Listening
-extern struct Scene D_089d49d4; // Studio Drumming - Drumming
 
 
 // FUNCTIONS

@@ -40,32 +40,38 @@
     rhythm_test_event EVENT_00, \args
 .endm
 
+
 @ [Event 0x01] ?
 .macro rhythm_test_event01 args
     rhythm_test_event EVENT_01, \args
 .endm
+
 
 @ [Event 0x02] ?
 .macro rhythm_test_event02 args
     rhythm_test_event EVENT_02, \args
 .endm
 
+
 @ [Event 0x03] ?
-.macro rhythm_test_event03 args
-    rhythm_test_event EVENT_03, \args
+.macro rhythm_test_event03
+    rhythm_test_event EVENT_03, 0
 .endm
+
 
 @ [Event 0x04] ?
 .macro rhythm_test_event04 args
     rhythm_test_event EVENT_04, \args
 .endm
 
+
 @ [Event 0x05] ?
 .macro rhythm_test_event05 args
     rhythm_test_event EVENT_05, \args
 .endm
 
+
 @ [Event 0x06] ?
-.macro rhythm_test_event06 args
-    rhythm_test_event EVENT_06, \args
+.macro rhythm_test_event06
+    rhythm_test_event EVENT_06, 0
 .endm

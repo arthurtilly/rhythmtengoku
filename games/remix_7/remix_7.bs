@@ -26,12 +26,12 @@ script script_remix_7_entry
     call script_remix_7_prologue
     set_game_fade_in_time 16
     load_marching_orders
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_remix_7_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -47,7 +47,7 @@ define_gameplay_scene scene_remix_7, script_remix_7_entry
 script script_remix_7_prologue
     set_game_fade_in_time 8
     load_game remix_7_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_remix_seqData
     rest 24
@@ -146,14 +146,14 @@ sb_stop
 script script_remix_7_main
     set_results_header D_0806a214
     import_marking_criteria remix_7_marking_criteria
-    forgive_x_misses 2
-    assess_inputs 1
+    run gameplay_set_mercy_count, 2
+    start_tracking_inputs
     set_marking_criteria 0
     start_perfect_campaign
     set_tempo 140
     set_music_volume 200
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     rest 24
     rest 24
@@ -203,7 +203,7 @@ script script_remix_7_main
     play_music L1_pat05_seqData
     beat_anim
     rest 24
-    tram_pauline_event00 1
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 1
@@ -214,7 +214,7 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
+    tram_pauline_event00 FALSE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -225,8 +225,8 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
-    tram_pauline_event00 0
-    tram_pauline_event00 1
+    tram_pauline_event00 FALSE
+    tram_pauline_event00 TRUE
     beat_anim
     rest 24
     tram_pauline_event01 0
@@ -278,7 +278,7 @@ script script_remix_7_main
     rest 6
     rest 24
     rest 24
-    rhythm_tweezers_start_hair_cycle 0
+    rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_SHORT
     rest 12
     rest 12
@@ -298,7 +298,7 @@ script script_remix_7_main
     run remix7_fade_in_remix2_intro
     rest 24
     rest 24
-    run scene_stop_music, 0
+    run scene_stop_music
     set_game_fade_in_time 30
 
     load_samurai_slice_remix
@@ -326,7 +326,7 @@ script script_remix_7_main
     set_game_fade_in_time 0
 
     load_power_calligraphy
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7da58
     call power_calligraphy_sub_08a7dadc
     beat_anim
@@ -384,7 +384,7 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -399,7 +399,7 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -463,12 +463,12 @@ script script_remix_7_main
     call tap_trial_sub_08a85c78
 
     load_sneaky_spirits_remix
-    sneaky_spirits_spawn_bow 0
+    sneaky_spirits_spawn_bow
     rest 24
     rest 24
     rest 24
     rest 24
-    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_wind_sfx_enabled TRUE
     sneaky_spirits_set_ghost_height 112
     rest 24
     sneaky_spirits_set_ghost_height 0
@@ -483,7 +483,7 @@ script script_remix_7_main
     sneaky_spirits_set_ghost_height 112
     sneaky_spirits_show_ghost 3
     rest 24
-    sneaky_spirits_draw_bow 0
+    sneaky_spirits_draw_bow
     sneaky_spirits_set_ghost_height 160
     sneaky_spirits_show_ghost 4
     rest 24
@@ -494,11 +494,11 @@ script script_remix_7_main
     sneaky_spirits_show_ghost 6
     spawn_cue CUE_LENIENT
     rest 24
-    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_wind_sfx_enabled FALSE
     sneaky_spirits_set_ghost_height 256
     mute_music_track MIDI_TRACK_5
     rest 24
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 24
     reset_music_track_volumes
     set_tempo 131
@@ -510,9 +510,9 @@ script script_remix_7_main
     set_game_fade_in_time 20
 
     load_night_walk
-    enable_play_inputs 1
+    enable_play_inputs
     night_walk_set_drumtech_volume 0
-    night_walk_enable_swing 1
+    night_walk_enable_swing TRUE
     night_walk_set_cue_earliness 240
     spawn_cue CUE_KICK
     night_walk_set_cue_earliness 216
@@ -577,7 +577,7 @@ script script_remix_7_main
     set_game_fade_in_time 0
 
     load_karate_man
-    enable_play_inputs 0
+    disable_play_inputs
     rest 8
     rest 8
     beat_anim
@@ -586,7 +586,7 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
-    enable_play_inputs 1
+    enable_play_inputs
     beat_anim
     rest 24
     spawn_cue CUE_POT
@@ -626,7 +626,7 @@ script script_remix_7_main
     set_game_fade_in_time 0
 
     load_showtime
-    showtime_event00 0
+    showtime_event00 FALSE
     beat_anim
     rest 24
     beat_anim
@@ -676,7 +676,7 @@ script script_remix_7_main
     rest 24
 
     load_spaceball
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     spaceball_zoom_camera 0xff00, 24
     rest 24
     spawn_cue CUE_LOW
@@ -699,7 +699,7 @@ script script_remix_7_main
     rest 24
 
     load_spaceball
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     spaceball_zoom_camera 0xff00, 24
     rest 24
     run remix7_start_last_remix1_bgm
@@ -711,7 +711,7 @@ script script_remix_7_main
     rest 8
     rest 8
     rest 4
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 4
     rest 8
     spaceball_zoom_camera 0xf000, 32
@@ -793,13 +793,13 @@ script script_remix_7_main
 
     load_bunny_hop
     bunny_hop_event08 3
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
     rest 24
-    bunny_hop_event02 1
+    bunny_hop_event02 TRUE
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
     rest 24
@@ -821,7 +821,7 @@ script script_remix_7_main
     rest 24
     rest 24
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
 return
 
 .end

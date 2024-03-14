@@ -24,7 +24,7 @@ script drum_live_pat00
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -64,7 +64,7 @@ script drum_live_pat02
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -87,7 +87,7 @@ script drum_live_pat03
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -111,7 +111,7 @@ script drum_live_pat04
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -138,7 +138,7 @@ script drum_live_pat05
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -165,7 +165,7 @@ script drum_live_pat06
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -192,7 +192,7 @@ script drum_live_pat07
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -215,7 +215,7 @@ script drum_live_pat08
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -238,7 +238,7 @@ script drum_live_pat09
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -261,7 +261,7 @@ script drum_live_pat10
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -286,7 +286,7 @@ script drum_live_pat11
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -308,7 +308,7 @@ script drum_live_pat12
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -335,7 +335,7 @@ script drum_live_pat13
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -362,7 +362,7 @@ script drum_live_pat14
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
     spawn_cue CUE_LIVE_00
     rest 6
     spawn_cue CUE_LIVE_02
@@ -377,7 +377,7 @@ script drum_live_pat14
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -395,7 +395,7 @@ script drum_live_pat15
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -413,7 +413,7 @@ script drum_live_pat16
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -449,7 +449,7 @@ script drum_live_pat18
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -474,7 +474,7 @@ script drum_live_pat19
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -495,7 +495,7 @@ script drum_live_pat20
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -517,7 +517,7 @@ script drum_live_pat21
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -538,7 +538,7 @@ script drum_live_pat22
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -562,7 +562,7 @@ script drum_live_pat23
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -582,7 +582,7 @@ script drum_live_pat24
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -607,7 +607,7 @@ script drum_live_pat25
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -627,7 +627,7 @@ script drum_live_pat26
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -668,7 +668,7 @@ script drum_live_pat28
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -695,7 +695,7 @@ script drum_live_pat29
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -718,7 +718,7 @@ script drum_live_pat30
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -742,7 +742,7 @@ script drum_live_pat31
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -765,7 +765,7 @@ script drum_live_pat32
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -791,7 +791,7 @@ script drum_live_pat33
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -814,7 +814,7 @@ script drum_live_pat34
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -842,7 +842,7 @@ script drum_live_pat35
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -869,7 +869,7 @@ script drum_live_pat36
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -895,7 +895,7 @@ script drum_live_pat37
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -944,7 +944,7 @@ script drum_live_pat39
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -972,7 +972,7 @@ script drum_live_pat40
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
     spawn_cue CUE_LIVE_00
     rest 8
     spawn_cue CUE_LIVE_01
@@ -987,7 +987,7 @@ script drum_live_pat40
     spawn_cue CUE_LIVE_01
     rest 4
     beat_anim
-    rest 0
+    no_op
 return
 
 
@@ -1006,7 +1006,7 @@ script drum_live_pat41
     spawn_cue CUE_LIVE_01
     rest 8
     beat_anim
-    rest 0
+    no_op
 return
 
 

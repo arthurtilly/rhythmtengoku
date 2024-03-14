@@ -1,0 +1,822 @@
+.include "include/beatscript.inc"
+.include "games/rap_men/macros.inc"
+
+
+
+.section .script.entry
+@ Rap Women (Unused) - Script Entry Point
+
+script script_rap_women_unused_entry
+    set_tempo 124
+    rest 24
+    call script_rap_women_prologue
+    set_game_fade_in_time 16
+    load_rap_women
+    enable_play_inputs
+    start_tracking_inputs
+    call script_rap_women_unused_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rap_women_unused, script_rap_women_unused_entry
+
+
+
+.section .script.main
+@ Rap Women (Unused) - Text
+
+text text_rap_women_unused_juji_desu_ka
+    .asciz ".b:1ＡＭ１０：００　です:0か？"
+endtext
+
+text text_rap_women_unused_oyatsu_desu_ka
+    .asciz ".b:1おやつ　です:0か？"
+endtext
+
+text text_rap_women_unused_naisho_desu_ka
+    .asciz ".b:1ナイショです:0か？"
+endtext
+
+text text_rap_women_unused_kare_no_oyatsu_da_ne
+    .asciz ".9:1カレのおやつ　だ:0ね"
+endtext
+
+text text_rap_women_unused_tabeteii_kamo_ne
+    .asciz ".9:1たべていー　かも:0ネ"
+endtext
+
+text text_rap_women_unused_aketeii_kamo_ne
+    .asciz ".9:1あけていー　かも:0ネ"
+endtext
+
+text text_rap_women_unused_oyatsu_wa_saikou
+    .asciz ".a:1おやつは　:0サイコー！！"
+endtext
+
+text text_rap_women_unused_kibun_wa_saikou
+    .asciz ".a:1きぶんは　:0サイコー！！"
+endtext
+
+text text_rap_women_unused_amakute_saikou
+    .asciz ".a:1あまくて　:0サイコー！！"
+endtext
+
+text text_rap_women_unused_betsubara_saikou
+    .asciz ".a:1べつばら　:0サイコー！！"
+endtext
+
+text text_rap_women_unused_kare_ni_wa_naisho
+    .asciz ".a:1カレには　:0ナイショー！！"
+endtext
+
+text text_rap_women_unused_dare_ni_mo_naisho
+    .asciz ".a:1ダレにも　:0ナイショー！！"
+endtext
+
+
+
+@ Rap Women (Unused) - Marking Criteria
+
+struct rap_women_unused_marking_criteria_0
+    /* Positive Remark */     .word D_08067dc4
+    /* Negative Remark */     .word D_08067da0
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES     
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct rap_women_unused_marking_criteria_1
+    /* Positive Remark */     .word D_08067e14
+    /* Negative Remark */     .word D_08067dec
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES     
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct rap_women_unused_marking_criteria_2
+    /* Positive Remark */     .word D_08067e6c
+    /* Negative Remark */     .word D_08067e3c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES     
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct rap_women_unused_marking_criteria
+    .word rap_women_unused_marking_criteria_0
+    .word rap_women_unused_marking_criteria_1
+    .word rap_women_unused_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+
+@ Rap Women (Unused) - Main Script
+
+script script_rap_women_unused_main
+    set_results_header D_08067e98
+    import_marking_criteria rap_women_unused_marking_criteria
+    start_tracking_inputs
+    rest 24
+    enable_pause_menu
+    rest 24
+    rest 24
+    rest 24
+    set_tempo 180
+    set_music_volume 256
+    start_perfect_campaign
+    print_text_f D_08067eb0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    clear_text_f
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_oyatsu_desu_ka
+    play_sfx s_f_rapW_v_YoOyatuDesuka_seqData
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    clear_text_f
+    rest 16
+    play_music s_rap_jazz_bgm_seqData
+    rest 8
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_juji_desu_ka
+    play_sfx s_f_rapW_v_Yo10JiDesuka_seqData
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_oyatsu_desu_ka
+    play_sfx s_f_rapW_v_YoOyatuDesuka_seqData
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_kibun_wa_saikou
+    play_sfx s_f_rapW_v_KibunnwaSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_naisho_desu_ka
+    beat_anim
+    rest 24
+    rest 12
+    rest 6
+    play_sfx s_f_rapW_v_Naishodesuka_seqData
+    rap_men_animate_rapper ANIM_HONTO
+    rest 6
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    print_text_f text_rap_women_unused_kare_no_oyatsu_da_ne
+    play_sfx s_f_rapW_v_KarenoOyatudane_seqData
+    rap_men_animate_rapper ANIM_HONTO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    clear_text_f
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_amakute_saikou
+    play_sfx s_f_rapW_v_AmakuteSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_betsubara_saikou
+    play_sfx s_f_rapW_v_BetubaraSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_naisho_desu_ka
+    beat_anim
+    rest 24
+    rest 12
+    rest 6
+    play_sfx s_f_rapW_v_Naishodesuka_seqData
+    rap_men_animate_rapper ANIM_HONTO
+    rest 6
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_kare_ni_wa_naisho
+    play_sfx s_f_rapW_v_KareniwaNaisho_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_juji_desu_ka
+    play_sfx s_f_rapW_v_Yo10JiDesuka_seqData
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    print_text_f text_rap_women_unused_kare_no_oyatsu_da_ne
+    play_sfx s_f_rapW_v_KarenoOyatudane_seqData
+    rap_men_animate_rapper ANIM_HONTO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    clear_text_f
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_oyatsu_desu_ka
+    play_sfx s_f_rapW_v_YoOyatuDesuka_seqData
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_kibun_wa_saikou
+    play_sfx s_f_rapW_v_KibunnwaSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_juji_desu_ka
+    play_sfx s_f_rapW_v_Yo10JiDesuka_seqData
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    print_text_f text_rap_women_unused_tabeteii_kamo_ne
+    play_sfx s_f_rapW_v_TabeteIikamone_seqData
+    rap_men_animate_rapper ANIM_HONTO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    clear_text_f
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_oyatsu_desu_ka
+    play_sfx s_f_rapW_v_YoOyatuDesuka_seqData
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_amakute_saikou
+    play_sfx s_f_rapW_v_AmakuteSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    print_text_f text_rap_women_unused_aketeii_kamo_ne
+    play_sfx s_f_rapW_v_AketeIikamone_seqData
+    rap_men_animate_rapper ANIM_HONTO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    clear_text_f
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_naisho_desu_ka
+    beat_anim
+    rest 24
+    rest 12
+    rest 6
+    play_sfx s_f_rapW_v_Naishodesuka_seqData
+    rap_men_animate_rapper ANIM_HONTO
+    rest 6
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    print_text_f text_rap_women_unused_tabeteii_kamo_ne
+    play_sfx s_f_rapW_v_TabeteIikamone_seqData
+    rap_men_animate_rapper ANIM_HONTO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    clear_text_f
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_oyatsu_desu_ka
+    play_sfx s_f_rapW_v_YoOyatuDesuka_seqData
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_DESUKA
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_amakute_saikou
+    play_sfx s_f_rapW_v_AmakuteSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_kibun_wa_saikou
+    play_sfx s_f_rapW_v_KibunnwaSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_betsubara_saikou
+    play_sfx s_f_rapW_v_BetubaraSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_kare_ni_wa_naisho
+    play_sfx s_f_rapW_v_KareniwaNaisho_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_dare_ni_mo_naisho
+    play_sfx s_f_rapW_v_DarenimoNaisho_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper ANIM_SAIKO
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    spawn_cue CUE_UUN
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f text_rap_women_unused_naisho_desu_ka
+    beat_anim
+    rest 24
+    rest 12
+    rest 6
+    play_sfx s_f_rapW_v_Naishodesuka_seqData
+    rap_men_animate_rapper ANIM_HONTO
+    rest 6
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    clear_text_f
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    play_sfx s_f_rapW_v_Yeah_seqData
+    rap_men_animate_rapper ANIM_KAMONE
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f D_08067ebc
+    beat_anim
+    rest 24
+    rest 24
+    mod_music_volume 0, 120
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    disable_pause_menu
+    rest 24
+return
+
+.end

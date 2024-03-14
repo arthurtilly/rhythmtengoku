@@ -1,0 +1,999 @@
+.include "include/beatscript.inc"
+.include "games/rhythm_test/macros.inc"
+
+
+
+.section .script.entry
+@ Rhythm Test (Click) - Script Entry Point
+
+script script_rhythm_test_click_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_rhythm_test
+    enable_play_inputs
+    start_tracking_inputs
+    call script_rhythm_test_click_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rhythm_test_click, script_rhythm_test_click_entry
+
+
+
+@ Rhythm Test (Cue) - Script Entry Point
+
+script script_rhythm_test_cue_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_rhythm_test
+    enable_play_inputs
+    start_tracking_inputs
+    call script_rhythm_test_cue_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rhythm_test_cue, script_rhythm_test_cue_entry
+
+
+
+@ Rhythm Test (Trick) - Script Entry Point
+
+script script_rhythm_test_trick_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_rhythm_test
+    enable_play_inputs
+    start_tracking_inputs
+    call script_rhythm_test_trick_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rhythm_test_trick, script_rhythm_test_trick_entry
+
+
+
+@ Rhythm Test - Script Entry Point
+
+script script_rhythm_test_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_rhythm_test
+    enable_play_inputs
+    start_tracking_inputs
+    call script_rhythm_test_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rhythm_test, script_rhythm_test_entry
+
+
+
+@ Rhythm Test (Opening) - Script Entry Point
+
+script script_rhythm_test_opening_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_rhythm_test
+    enable_play_inputs
+    start_tracking_inputs
+    call script_rhythm_test_opening_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rhythm_test_opening, script_rhythm_test_opening_entry
+
+
+
+.section .script.main
+@ Rhythm Test (Click) - Main Script
+
+script rhythm_test_click_sub_08a3dfe0
+    play_sfx_vol s_f_machine_click_seqData, 256
+    beat_anim
+    rest 12
+    play_sfx_vol s_f_machine_click_seqData, 96
+    rest 12
+return
+
+
+script rhythm_test_click_sub_08a3e028
+    play_sfx_vol s_f_machine_click_seqData, 256
+    beat_anim
+    rest 12
+    play_sfx_vol s_f_machine_click_seqData, 96
+    spawn_cue CUE_TEST_00
+    rest 12
+return
+
+
+script rhythm_test_click_sub_08a3e07c
+    play_sfx_vol_pitch s_f_machine_click_seqData, 256, 768
+    beat_anim
+    rest 12
+    clear_text_s
+    play_sfx_vol_pitch s_f_machine_click_seqData, 96, 768
+    spawn_cue CUE_TEST_00
+    rest 12
+return
+
+
+script rhythm_test_click_sub_08a3e0dc_unused
+    spawn_cue CUE_TEST_00
+    beat_anim
+    rest 12
+    rest 12
+    play_sfx_vol s_metro_tin_seqData, 256
+return
+
+
+script script_rhythm_test_click_main
+    set_tempo 120
+    stop_tracking_inputs
+    run gameplay_set_miss_punishment_duration, 0
+    print_text_s D_0805eed8
+    rest 24
+    rest 24
+    rhythm_test_event00 1
+    call rhythm_test_click_sub_08a3dfe0
+    call rhythm_test_click_sub_08a3dfe0
+    call rhythm_test_click_sub_08a3dfe0
+    call rhythm_test_click_sub_08a3dfe0
+    call rhythm_test_click_sub_08a3dfe0
+    play_sfx_vol s_f_machine_click_seqData, 256
+    beat_anim
+    rest 12
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        play_sfx_vol s_f_machine_click_seqData, 96
+        spawn_cue CUE_TEST_00
+        rest 12
+        call rhythm_test_click_sub_08a3e028
+        call rhythm_test_click_sub_08a3e028
+        call rhythm_test_click_sub_08a3e028
+        play_sfx_vol s_f_machine_click_seqData, 256
+        beat_anim
+        rest 12
+        run gameplay_increment_loop_counter
+    loop_end
+    clear_text_s
+    play_sfx_vol s_f_machine_click_seqData, 96
+    rest 12
+    rhythm_test_event00 2
+    call rhythm_test_click_sub_08a3dfe0
+    call rhythm_test_click_sub_08a3dfe0
+    call rhythm_test_click_sub_08a3dfe0
+    call rhythm_test_click_sub_08a3dfe0
+    call rhythm_test_click_sub_08a3dfe0
+    play_sfx_vol s_f_machine_click_seqData, 256
+    beat_anim
+    rest 12
+    rhythm_test_event02 12
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        play_sfx_vol s_f_machine_click_seqData, 96
+        spawn_cue CUE_TEST_00
+        rest 12
+        call rhythm_test_click_sub_08a3e028
+        call rhythm_test_click_sub_08a3e028
+        call rhythm_test_click_sub_08a3e028
+        play_sfx_vol s_f_machine_click_seqData, 256
+        beat_anim
+        rest 12
+        run gameplay_increment_loop_counter
+    loop_end
+    rhythm_test_event00 3
+    start_tracking_inputs
+    rhythm_test_event01 1
+    play_sfx_vol s_f_machine_click_seqData, 96
+    spawn_cue CUE_TEST_00
+    rest 12
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    print_text_s D_0805ef00
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    clear_text_s
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    call rhythm_test_click_sub_08a3e028
+    print_text_s D_0805ef0c
+    call rhythm_test_click_sub_08a3e07c
+    print_text_s D_0805ef10
+    call rhythm_test_click_sub_08a3e07c
+    print_text_s D_0805ef14
+    call rhythm_test_click_sub_08a3e07c
+    rhythm_test_event00 4
+    play_sfx_vol s_metro_tin_seqData, 256
+    beat_anim
+    rest 12
+    rest 12
+    stop_tracking_inputs
+    rest 24
+    rhythm_test_event02 64
+    play_music s_check_machine_seqData
+    rest 24
+    rest 24
+    rhythm_test_event03
+    rest 24
+    rest 24
+    rest 24
+    run gameplay_display_text_and_wait
+    rest 24
+    run set_next_scene, scene_results_ver_score
+return
+
+
+
+@ Rhythm Test (Cue) - Main Script
+
+script script_rhythm_test_cue_main
+    set_tempo 120
+    stop_tracking_inputs
+    run gameplay_set_miss_punishment_duration, 0
+    print_text_s D_0805ef18
+    rest 24
+    rest 24
+    rhythm_test_event00 5
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        rhythm_test_event04 3
+        rest 24
+        rhythm_test_event04 2
+        rest 24
+        rhythm_test_event04 1
+        spawn_cue CUE_TEST_01
+        rest 24
+        rhythm_test_event04 0
+        rest 24
+        rhythm_test_event04 3
+        rest 24
+        rhythm_test_event04 2
+        rest 24
+        rhythm_test_event04 1
+        spawn_cue CUE_TEST_01
+        rest 24
+        rhythm_test_event04 0
+        rest 24
+        run gameplay_increment_loop_counter
+    loop_end
+    clear_text_s
+    rest 24
+    print_text_s D_0805ef44
+    rest 24
+    rest 24
+    rest 24
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        rhythm_test_event04 3
+        rest 24
+        rhythm_test_event04 2
+        rest 24
+        rhythm_test_event00 0
+        spawn_cue CUE_TEST_01
+        rest 24
+        rhythm_test_event00 5
+        rhythm_test_event04 0
+        rest 24
+        rhythm_test_event04 3
+        rest 24
+        rhythm_test_event04 2
+        rest 24
+        rhythm_test_event00 0
+        spawn_cue CUE_TEST_01
+        rest 24
+        rhythm_test_event00 5
+        rhythm_test_event04 0
+        rest 24
+        run gameplay_increment_loop_counter
+    loop_end
+    clear_text_s
+    rest 24
+    print_text_s D_0805ef74
+    rest 24
+    rest 24
+    rest 24
+    clear_text_s
+    rhythm_test_event02 12
+    rest 24
+    start_tracking_inputs
+    rhythm_test_event01 1
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event00 0
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event00 5
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event04 7
+    rest 24
+    rhythm_test_event04 6
+    rest 24
+    rhythm_test_event04 5
+    rest 24
+    rhythm_test_event04 4
+    rest 24
+    rhythm_test_event04 3
+    rest 24
+    rhythm_test_event04 2
+    rest 24
+    rhythm_test_event04 1
+    spawn_cue CUE_TEST_01
+    rest 24
+    rhythm_test_event04 0
+    rest 24
+    rhythm_test_event00 4
+    rest 24
+    rhythm_test_event02 120
+    play_music s_check_machine_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rhythm_test_event03
+    rest 24
+    rest 24
+    rest 24
+    run gameplay_display_text_and_wait
+    rest 24
+    run set_next_scene, scene_results_ver_score
+return
+
+
+
+@ Rhythm Test (Trick) - Main Script
+
+script rhythm_test_trick_sub_08a4002c
+    play_sfx_vol s_f_machine_click_seqData, 256
+    beat_anim
+    rest 12
+    rest 12
+return
+
+
+script rhythm_test_trick_sub_08a40068
+    play_sfx_vol s_f_machine_click_seqData, 256
+    beat_anim
+    rest 12
+    spawn_cue CUE_TEST_00
+    rest 12
+return
+
+
+script rhythm_test_trick_sub_08a400b0_unused
+    play_sfx_vol_pitch s_f_machine_click_seqData, 256, 768
+    beat_anim
+    rest 12
+    clear_text_s
+    spawn_cue CUE_TEST_00
+    rest 12
+return
+
+
+script rhythm_test_trick_sub_08a40104_unused
+    spawn_cue CUE_TEST_00
+    beat_anim
+    rest 12
+    rest 12
+    play_sfx_vol s_metro_tin_seqData, 256
+return
+
+
+script script_rhythm_test_trick_main
+    set_tempo 120
+    stop_tracking_inputs
+    run gameplay_set_miss_punishment_duration, 0
+    print_text_s D_0805ef8c
+    rest 24
+    rest 24
+    rhythm_test_event00 1
+    call rhythm_test_trick_sub_08a4002c
+    call rhythm_test_trick_sub_08a4002c
+    call rhythm_test_trick_sub_08a4002c
+    call rhythm_test_trick_sub_08a4002c
+    call rhythm_test_trick_sub_08a4002c
+    call rhythm_test_trick_sub_08a4002c
+    call rhythm_test_trick_sub_08a4002c
+    play_sfx_vol s_f_machine_click_seqData, 256
+    beat_anim
+    rest 12
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        spawn_cue CUE_TEST_00
+        rest 12
+        call rhythm_test_trick_sub_08a40068
+        call rhythm_test_trick_sub_08a40068
+        call rhythm_test_trick_sub_08a40068
+        play_sfx_vol s_f_machine_click_seqData, 256
+        beat_anim
+        rest 12
+        run gameplay_increment_loop_counter
+    loop_end
+    clear_text_s
+    rest 12
+    print_text_s D_0805efb4
+    call rhythm_test_trick_sub_08a4002c
+    call rhythm_test_trick_sub_08a4002c
+    call rhythm_test_trick_sub_08a4002c
+    play_sfx_vol s_f_machine_click_seqData, 256
+    beat_anim
+    rest 12
+    set_music_volume 256
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        spawn_cue CUE_TEST_00
+        rest 12
+        play_music s_check_trick1_seqData
+        call rhythm_test_trick_sub_08a40068
+        call rhythm_test_trick_sub_08a40068
+        call rhythm_test_trick_sub_08a40068
+        play_sfx_vol s_f_machine_click_seqData, 256
+        beat_anim
+        rest 12
+        run gameplay_increment_loop_counter
+    loop_end
+    clear_text_s
+    rest 12
+    call rhythm_test_trick_sub_08a4002c
+    call rhythm_test_trick_sub_08a4002c
+    call rhythm_test_trick_sub_08a4002c
+    play_sfx_vol s_f_machine_click_seqData, 256
+    beat_anim
+    rest 12
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        spawn_cue CUE_TEST_00
+        rest 12
+        call rhythm_test_trick_sub_08a40068
+        call rhythm_test_trick_sub_08a40068
+        call rhythm_test_trick_sub_08a40068
+        play_sfx_vol s_f_machine_click_seqData, 256
+        beat_anim
+        rest 12
+        run gameplay_increment_loop_counter
+    loop_end
+    beat_anim
+    rest 12
+    rhythm_test_event00 2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        spawn_cue CUE_TEST_00
+        rest 12
+        spawn_cue CUE_TEST_01
+        beat_anim
+        rest 24
+        spawn_cue CUE_TEST_01
+        beat_anim
+        rest 24
+        spawn_cue CUE_TEST_01
+        beat_anim
+        rest 24
+        beat_anim
+        rest 12
+        run gameplay_increment_loop_counter
+    loop_end
+    rhythm_test_event02 12
+    rhythm_test_event00 3
+    start_tracking_inputs
+    rhythm_test_event01 1
+    spawn_cue CUE_TEST_00
+    beat_anim
+    rest 12
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    play_music s_check_trick2_seqData
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    spawn_cue CUE_TEST_01
+    beat_anim
+    rest 24
+    run scene_stop_music
+    rhythm_test_event00 4
+    play_sfx_vol s_metro_tin_seqData, 256
+    rest 24
+    stop_tracking_inputs
+    rhythm_test_event02 64
+    play_music s_check_machine_seqData
+    rest 24
+    rest 24
+    rhythm_test_event03
+    rest 24
+    rest 24
+    rest 24
+    run gameplay_display_text_and_wait
+    rest 24
+    run set_next_scene, scene_results_ver_score
+return
+
+
+struct rhythm_test_grade_thresholds
+    .hword 900
+    .hword 750
+    .hword 550
+    .hword 300
+endstruct
+
+struct rhythm_test_grade_comments
+    .word D_0805f054
+    .word D_0805f034
+    .word D_0805f014
+    .word D_0805eff4
+    .word D_0805efd8
+endstruct
+
+script rhythm_test_sub_08a40cb4
+    run score_results_set_grade_thresholds, rhythm_test_grade_thresholds
+    run score_results_set_grade_comments, rhythm_test_grade_comments
+    print_text_s D_0805f078
+    rest 12
+    run gameplay_display_text_and_wait
+    print_text_s D_0805f09c
+    rest 12
+    run gameplay_display_text_and_wait
+    print_text_s D_0805f0bc
+    rest 12
+    run gameplay_display_text_and_wait
+    fade_music_out 48
+    rest 24
+    call script_rhythm_test_click_main
+    rhythm_test_event06
+    rest 12
+    print_text_s D_0805f0d0
+    rest 12
+    run gameplay_display_text_and_wait
+    fade_music_out 48
+    rest 24
+    call script_rhythm_test_cue_main
+    rhythm_test_event06
+    rest 24
+    print_text_s D_0805f0ec
+    rest 12
+    run gameplay_display_text_and_wait
+    fade_music_out 48
+    rest 24
+    call script_rhythm_test_trick_main
+    print_text_s D_0805f100
+    rest 24
+    rest 24
+return
+
+
+script script_rhythm_test_main
+    set_tempo 120
+    set_music_volume 256
+    play_music s_check_machine_seqData
+    rest 24
+    enable_pause_menu
+    rest 24
+    goto rhythm_test_sub_08a40cb4
+
+
+script script_rhythm_test_opening_main
+    set_tempo 120
+    set_music_volume 256
+    play_music s_check_machine_seqData
+    rest 24
+    rest 24
+    goto rhythm_test_sub_08a40cb4
+
+.end

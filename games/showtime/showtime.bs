@@ -12,12 +12,12 @@ script script_showtime_entry
     call script_showtime_prologue
     set_game_fade_in_time 16
     load_showtime
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_showtime_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -33,12 +33,12 @@ script script_showtime_skipped_practice_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_showtime
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_showtime_skipped_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -54,7 +54,7 @@ define_gameplay_scene scene_showtime_skipped_practice, script_showtime_skipped_p
 script script_showtime_prologue
     set_game_fade_in_time 8
     load_game showtime_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_quiz_seqData
     rest 24
@@ -96,9 +96,9 @@ endstruct
 script script_showtime_main
     set_results_header D_0805e1a8
     import_marking_criteria showtime_marking_criteria
-    forgive_x_misses 1
-    assess_inputs 1
-    showtime_event00 1
+    run gameplay_set_mercy_count, 1
+    start_tracking_inputs
+    showtime_event00 TRUE
     set_tempo 150
     set_music_volume 256
     play_music s_naniwa_bgm_seqData
@@ -114,7 +114,7 @@ script script_showtime_main
     beat_anim
     rest 24
     start_perfect_campaign
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     beat_anim
@@ -303,7 +303,7 @@ script script_showtime_main
     rest 24
     beat_anim
     rest 24
-    assess_perfect_inputs 0
+    stop_tracking_perfect_campaign
     beat_anim
     rest 24
     beat_anim
@@ -318,7 +318,7 @@ script script_showtime_main
     rest 24
     beat_anim
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     beat_anim
     rest 24
 return
@@ -329,11 +329,11 @@ script script_showtime_practice
     set_music_volume 256
     play_music s_renshu_bgm2_seqData
     rest 6
-    assess_inputs 0
-    showtime_event00 0
+    stop_tracking_inputs
+    showtime_event00 FALSE
     beat_anim
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     beat_anim
     rest 24
     beat_anim
@@ -356,7 +356,7 @@ script script_showtime_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     print_text_f D_0805e1f8
@@ -374,7 +374,7 @@ script script_showtime_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     print_text_f D_0805e218
     loop_start
         beat_anim
@@ -406,7 +406,7 @@ script script_showtime_practice
         rest 24
         beat_anim
         rest 24
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         spawn_cue CUE_GRAY
         beat_anim
         rest 24
@@ -479,7 +479,7 @@ script script_showtime_practice
         rest 24
         beat_anim
         rest 24
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         spawn_cue CUE_BLACK
         beat_anim
         rest 24
@@ -570,7 +570,7 @@ script script_showtime_practice
         rest 24
         beat_anim
         rest 24
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         print_text_f D_0805e21c
         spawn_cue CUE_WHITE
         beat_anim
@@ -609,7 +609,7 @@ script script_showtime_practice
 script script_showtime_skipped_practice
     set_tempo 128
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     goto script_showtime_main
 

@@ -1,27 +1,760 @@
 .include "include/beatscript.inc"
 .include "games/staff_credit/macros.inc"
+.include "games/drum_intro/macros.inc"
 
 
 
 .section .script.entry
-@ Staff Credit - Script Entry Point
+@ Staff Credit (Remix 6) - Script Entry Point
+
+script script_staff_credit_remix_6_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_staff_credit
+    enable_play_inputs
+    start_tracking_inputs
+    call script_staff_credit_remix_6_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_staff_credit_remix_6, script_staff_credit_remix_6_entry
+
+
+
+@ Staff Credit (Game Select) - Script Entry Point
 
 script script_staff_credit_entry
     set_tempo 124
     rest 24
     rest 24
     load_staff_credit
-    enable_play_inputs 1
-    assess_inputs 1
-    call D_08a5fe74
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    enable_play_inputs
+    start_tracking_inputs
+    call script_staff_credit_game_select_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
 stop
 
 define_gameplay_scene scene_staff_credit, script_staff_credit_entry
+
+
+
+.section .script.main
+@ Staff Credit - Graphics Tables
+
+struct D_08a5dd8c
+    .word D_08c3a8b0
+    .word VRAMBase
+    .word -1
+
+    .word D_08c3f16c
+    .word VRAMBase + 0xE800
+    .word -1
+
+    .word staff_credit_bg_pal
+    .word D_03004b10 + 0x54
+    .word 0x140
+
+    .word NULL
+    .word NULL
+    .word 0
+endstruct
+
+struct D_08a5ddbc
+    .word D_08c3b51c
+    .word VRAMBase
+    .word -1
+
+    .word D_08c3f364
+    .word VRAMBase + 0xE800
+    .word -1
+
+    .word staff_credit_bg_pal + 0x20
+    .word D_03004b10 + 0x54
+    .word 0x140
+
+    .word NULL
+    .word NULL
+    .word 0
+endstruct
+
+struct D_08a5ddec
+    .word D_08c3be64
+    .word VRAMBase
+    .word -1
+
+    .word D_08c3f580
+    .word VRAMBase + 0xE800
+    .word -1
+
+    .word staff_credit_bg_pal + 0x40
+    .word D_03004b10 + 0x54
+    .word 0x140
+
+    .word NULL
+    .word NULL
+    .word 0
+endstruct
+
+struct D_08a5de1c
+    .word D_08c3ca50
+    .word VRAMBase
+    .word -1
+
+    .word D_08c3f798
+    .word VRAMBase + 0xE800
+    .word -1
+
+    .word staff_credit_bg_pal + 0x60
+    .word D_03004b10 + 0x54
+    .word 0x140
+
+    .word NULL
+    .word NULL
+    .word 0
+endstruct
+
+struct D_08a5de4c
+    .word D_08c3d6f4
+    .word VRAMBase
+    .word -1
+
+    .word D_08c3f9cc
+    .word VRAMBase + 0xE800
+    .word -1
+
+    .word staff_credit_bg_pal + 0x80
+    .word D_03004b10 + 0x54
+    .word 0x140
+
+    .word NULL
+    .word NULL
+    .word 0
+endstruct
+
+struct D_08a5de7c
+    .word D_08c3e508
+    .word VRAMBase
+    .word -1
+
+    .word D_08c3fc00
+    .word VRAMBase + 0xE800
+    .word -1
+
+    .word staff_credit_bg_pal + 0xA0
+    .word D_03004b10 + 0x54
+    .word 0x140
+
+    .word NULL
+    .word NULL
+    .word 0
+endstruct
+
+struct D_08a5deac
+    .word D_08c3eb4c
+    .word VRAMBase
+    .word -1
+
+    .word D_08c3fde4
+    .word VRAMBase + 0xE800
+    .word -1
+
+    .word staff_credit_bg_pal + 0xC0
+    .word D_03004b10 + 0x54
+    .word 0x140
+
+    .word NULL
+    .word NULL
+    .word 0
+endstruct
+
+struct D_08a5dedc
+    .word D_08c3ef78
+    .word VRAMBase
+    .word -1
+
+    .word D_08c3fe9c
+    .word VRAMBase + 0xE800
+    .word -1
+
+    .word staff_credit_bg_pal + 0xE0
+    .word D_03004b10 + 0x54
+    .word 0x140
+
+    .word NULL
+    .word NULL
+    .word 0
+endstruct
+
+
+
+@ Staff Credit - Main Script
+
+script script_staff_credit_main
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069a48
+    rest 56
+    rest 56
+    staff_credit_event03 D_08a5dd8c
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069a58
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069a64
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069a70
+    rest 28
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069a7c
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069a88
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069a94
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069a9c
+    rest 28
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069aa8
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ab8
+    rest 28
+    staff_credit_event03 D_08a5ddbc
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069ac0
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ab8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069acc
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ad8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ae0
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ae8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069af4
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069b00
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069b0c
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069a70
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069a88
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069a94
+    rest 28
+    staff_credit_event03 D_08a5ddec
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069b18
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ab8
+    rest 28
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069b2c
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069b00
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069b0c
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069af4
+    rest 28
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069b38
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069acc
+    rest 28
+    staff_credit_event03 D_08a5de1c
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069b48
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ae0
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ab8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ae8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069b50
+    rest 28
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069b5c
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ad8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069b6c
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069b74
+    rest 28
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069b80
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069a64
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ad8
+    rest 28
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069b88
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069b9c
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ba4
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069bb0
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069bb8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ad8
+    rest 28
+    staff_credit_event03 D_08a5de4c
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069bc4
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069bd4
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ad8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069bb8
+    rest 28
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069bdc
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069be4
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069bf0
+    rest 28
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069bfc
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ad8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069bd4
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069acc
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069b50
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ae0
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c04
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c10
+    rest 28
+    rest 56
+    staff_credit_event03 D_08a5de7c
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069c1c
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c24
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c30
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c3c
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c48
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c54
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c5c
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c68
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c74
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c80
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c8c
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069c98
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ca0
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ca8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069cb4
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069cc0
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069cc8
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069cd0
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069ce0
+    rest 28
+    rest 56
+    staff_credit_event03 D_08a5deac
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069cec
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069cfc
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d08
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d14
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d20
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d2c
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d38
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d40
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d4c
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d5c
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d68
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d74
+    rest 28
+    rest 56
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069d7c
+    rest 28
+    staff_credit_event01 FALSE
+    staff_credit_event00 D_08069d88
+    rest 56
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069d98
+    rest 28
+    staff_credit_event01 TRUE
+    staff_credit_event00 D_08069da0
+    rest 28
+    rest 56
+    rest 56
+    rest 56
+    rest 56
+    rest 56
+    staff_credit_event03 D_08a5dedc
+    staff_credit_event01 2
+    staff_credit_event00 D_08069da8
+    rest 28
+    staff_credit_event01 2
+    staff_credit_event00 D_08069da8
+    rest 28
+    staff_credit_event01 2
+    staff_credit_event00 D_08069da8
+    rest 28
+    staff_credit_event01 2
+    staff_credit_event00 D_08069dac
+    rest 28
+    rest 12
+    staff_credit_event02
+    rest 56
+    rest 56
+    rest 56
+    rest 56
+    rest 56
+    rest 56
+    run gameplay_enable_tutorial, FALSE
+    run enable_game_select_2_bgm, 0
+return
+
+
+script script_staff_credit_remix_6_main
+    set_tempo 140
+    set_music_volume 256
+    play_music s_ending_bgm_seqData
+    load_drum_samurai_cutscene
+    dmi_event02 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 2
+    print_text_s D_08069dc8
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    clear_text_s
+    rest 24
+    dmi_event02 2
+    print_text_s D_08069ddc
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    clear_text_s
+    rest 24
+    dmi_event02 2
+    print_text_s D_08069e24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    clear_text_s
+    rest 24
+    dmi_event02 2
+    print_text_s D_08069e78
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    clear_text_s
+    rest 24
+    print_text_s D_08069ed4
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    load_staff_credit
+    rest 24
+    rest 24
+    goto script_staff_credit_main
+
+
+script script_staff_credit_game_select_main
+    set_tempo 140
+    set_music_volume 256
+    play_music s_ending_bgm_seqData
+    load_drum_samurai_cutscene
+    dmi_event02 1
+    rest 24
+    run gameplay_set_skip_button, (B_BUTTON | SELECT_BUTTON | START_BUTTON)
+    run gameplay_enable_tutorial, TRUE
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 2
+    print_text_s D_08069ee8
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    clear_text_s
+    rest 24
+    dmi_event02 2
+    print_text_s D_08069ef8
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    clear_text_s
+    rest 24
+    dmi_event02 2
+    print_text_s D_08069f40
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    clear_text_s
+    rest 24
+    dmi_event02 2
+    print_text_s D_08069f90
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    clear_text_s
+    rest 24
+    print_text_s D_08069fe4
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    rest 24
+    rest 24
+    load_staff_credit
+    rest 24
+    rest 24
+    goto script_staff_credit_main
 
 .end

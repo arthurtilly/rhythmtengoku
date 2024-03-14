@@ -50,25 +50,30 @@
     bouncy_road_event DEPLOY_BALL, \bounceInterval
 .endm
 
+
 @ [Event 0x01] Bounce Ball
 .macro bouncy_road_bounce_ball ballID
     bouncy_road_event BOUNCE_BALL, \ballID
 .endm
+
 
 @ [Event 0x02] Enable Goal SFX For This Ball
 .macro bouncy_road_enable_ball_goal_sfx
     bouncy_road_event ENABLE_BALL_GOAL_SFX, 0
 .endm
 
+
 @ [Event 0x03] Play Distance Ball Bounce ("Tonk") SFX
 .macro bouncy_road_play_distant_bounce_sfx
     bouncy_road_event PLAY_DISTANT_BOUNCE_SFX, 0
 .endm
 
+
 @ [Event 0x04] Set Palette For This Ball
 .macro bouncy_road_set_ball_palette paletteID
     bouncy_road_event SET_BALL_PALETTE, \paletteID
 .endm
+
 
 @ [Event 0x05] Set Global Bounce Height (default = 0x100)
 .macro bouncy_road_set_bounce_height multiplier

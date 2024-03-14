@@ -1,0 +1,104 @@
+.include "include/beatscript.inc"
+.include "games/drum_intro/macros.inc"
+
+
+
+.section .script.entry
+@ Drum Samurai (Opening Cutscene) - Script Entry Point
+
+script script_drum_samurai_opening_cutscene_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_samurai_cutscene
+    enable_play_inputs
+    start_tracking_inputs
+    call script_drum_samurai_opening_cutscene_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_samurai_opening_cutscene script_drum_samurai_opening_cutscene_entry
+
+
+@ Part 2 of the cutscene plays after the Rhythm Test is completed.
+script script_drum_samurai_opening_cutscene_2_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_samurai_cutscene
+    enable_play_inputs
+    start_tracking_inputs
+    call script_drum_samurai_opening_cutscene_2_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_samurai_opening_cutscene_2 script_drum_samurai_opening_cutscene_2_entry
+
+
+
+.section .script.main
+@ Drum Samurai (Opening Cutscene) - Main Script
+
+script script_drum_samurai_opening_cutscene_main
+    set_tempo 118
+    play_music s_dr_sam_bgm_seqData
+    set_music_volume 256
+    rest 24
+    rest 24
+    dmi_event02 1
+    rest 24
+    dmi_event02 2
+    print_text_s D_0805e000
+    run gameplay_display_text_and_wait
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e03c
+    run gameplay_display_text_and_wait
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e070
+    run gameplay_display_text_and_wait
+    rest 12
+    run set_next_scene, scene_rhythm_test_opening
+    run func_08047e64, scene_drum_samurai_opening_cutscene_2
+return
+
+
+script script_drum_samurai_opening_cutscene_2_main
+    set_tempo 118
+    play_music s_dr_sam_bgm_seqData
+    set_music_volume 0
+    mod_music_volume 256, 96
+    dmi_event02 1
+    rest 24
+    rest 24
+    dmi_event02 2
+    print_text_s D_0805e0a8
+    run gameplay_display_text_and_wait
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e0d8
+    run gameplay_display_text_and_wait
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e10c
+    run gameplay_display_text_and_wait
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e15c
+    run gameplay_display_text_and_wait
+    rest 12
+    run set_next_scene, scene_main_menu
+return
+
+.end

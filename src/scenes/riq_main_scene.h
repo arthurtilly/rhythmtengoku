@@ -51,7 +51,7 @@ extern u32  func_0801d9d0(void); // Update Pause Menu (State: Play)
 extern void func_0801da48(void); // Update Pause Menu (State: Pause)
 extern u32  func_0801dabc(void); // Update Pause Menu (State: Stop)
 extern void func_0801daf8(const struct PauseMenuDefinition *data); // Set Pause Handler Definition
-extern void func_0801db04(u32 enable); // Enable Pause Menu
+extern void pause_menu_enabled(u32 enable); // Enable Pause Menu
 
 
 // Types (Debug Text):

@@ -12,12 +12,12 @@ script script_marching_orders_entry
     call script_marching_orders_prologue
     set_game_fade_in_time 16
     load_marching_orders
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_marching_orders_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -33,12 +33,12 @@ script script_marching_orders_skipped_practice_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_marching_orders
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_marching_orders_skipped_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -54,7 +54,7 @@ define_gameplay_scene scene_marching_orders_skipped_practice, script_marching_or
 script script_marching_orders_prologue
     set_game_fade_in_time 8
     load_game marching_orders_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_march_seqData
     run func_0804630c, 1
@@ -115,8 +115,8 @@ endstruct
 script script_marching_orders_main
     set_results_header D_0805c8a8
     import_marking_criteria marching_orders_marking_criteria
-    forgive_x_misses 1
-    assess_inputs 1
+    run gameplay_set_mercy_count, 1
+    start_tracking_inputs
     set_tempo 135
     set_music_volume 256
     play_music s_guntai2_seqData
@@ -125,7 +125,7 @@ script script_marching_orders_main
     rest 24
     rest 24
     rest 24
-    assess_perfect_inputs 1
+    start_tracking_perfect_campaign
     call marching_orders_sub_08a83848
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
@@ -194,7 +194,7 @@ script script_marching_orders_main
     print_text_f D_0805c8b4
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
-    marching_orders_event03 0
+    marching_orders_event03
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
@@ -202,9 +202,9 @@ script script_marching_orders_main
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     rest 12
-    assess_inputs 0
-    assess_perfect_inputs 0
-    enable_play_inputs 0
+    stop_tracking_inputs
+    stop_tracking_perfect_campaign
+    disable_play_inputs
     rest 12
     marching_orders_event00 7
     play_sfx s_guntai_foot2_seqData
@@ -217,14 +217,14 @@ script script_marching_orders_main
     rest 24
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
-    enable_pause_menu FALSE
+    disable_pause_menu
 return
 
 
 script script_marching_orders_practice
     rest 24
-    enable_pause_menu TRUE
-    assess_inputs 0
+    enable_pause_menu
+    stop_tracking_inputs
     marching_orders_event02 0
     set_tempo 135
     set_music_volume 256
@@ -240,7 +240,7 @@ script script_marching_orders_practice
     rest 24
     rest 24
     rest 24
-    assess_inputs 0
+    stop_tracking_inputs
     rest 24
     rest 24
     rest 24
@@ -257,15 +257,15 @@ script script_marching_orders_practice
     marching_orders_event00 258
     rest 24
     marching_orders_event00 256
-    print_text_f NULL
+    clear_text_f
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         marching_orders_event02 3
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_migi_muke1_seqData
         rest 24
         rest 24
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_migi_seqData
         spawn_cue CUE_TURN_RIGHT
         beat_anim
@@ -275,11 +275,11 @@ script script_marching_orders_practice
         marching_orders_event02 -1
         rest 24
         marching_orders_event02 4
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_hidari_muke1_seqData
         rest 24
         rest 24
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_hidari_seqData
         spawn_cue CUE_TURN_LEFT
         beat_anim
@@ -290,12 +290,12 @@ script script_marching_orders_practice
         rest 24
     loop_end
     loop_start
-        run beatscript_disable_loops, 0
-        marching_orders_event01 0
+        run beatscript_disable_loops
+        marching_orders_event01
         play_sfx s_guntai_v_zentai1_seqData
         rest 24
         rest 24
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_susume_seqData
         rest 24
         marching_orders_event02 1
@@ -345,7 +345,7 @@ script script_marching_orders_practice
         beat_anim
         rest 24
         marching_orders_event02 -1
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_zentai1_seqData
         marching_orders_event00 8
         play_sfx s_guntai_foot1_seqData
@@ -358,7 +358,7 @@ script script_marching_orders_practice
         beat_anim
         rest 24
         marching_orders_event02 2
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_tomare_seqData
         marching_orders_event00 8
         play_sfx s_guntai_foot1_seqData
@@ -386,7 +386,7 @@ script script_marching_orders_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     goto script_marching_orders_main
 
 
@@ -394,7 +394,7 @@ script script_marching_orders_skipped_practice
     set_game_fade_in_time 0
     set_tempo 120
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     goto script_marching_orders_main
 

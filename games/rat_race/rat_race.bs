@@ -12,12 +12,12 @@ script script_rat_race_entry
     call script_rat_race_prologue
     set_game_fade_in_time 16
     load_rat_race_practice
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_rat_race_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -33,12 +33,12 @@ script script_rat_race_skipped_practice_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_rat_race
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_rat_race_skipped_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -54,7 +54,7 @@ define_gameplay_scene scene_rat_race_skipped_practice, script_rat_race_skipped_p
 script script_rat_race_prologue
     set_game_fade_in_time 8
     load_game rat_race_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     play_sfx s_jingle_rat_seqData
     rest 24
     rest 24
@@ -129,7 +129,7 @@ script rat_race_sub_08a1b5f0
     rat_race_event02 2
     beat_anim
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     run gameplay_set_tutorial scene_rat_race_skipped_practice
     beat_anim
     rest 24
@@ -186,7 +186,7 @@ script rat_race_sub_08a1b5f0
     rest 24
     rest 24
     rat_race_event07 D_0805d180
-    rat_race_event0F 0
+    rat_race_event0F
     beat_anim
     rest 24
     rest 24
@@ -197,13 +197,13 @@ return
 
 script rat_race_sub_08a1b998
     rat_race_event02 2
-    rat_race_event0E 0
+    rat_race_event0E FALSE
     beat_anim
     rest 24
     rest 24
     rest 24
     rest 24
-    rat_race_event0E 1
+    rat_race_event0E TRUE
     rat_race_event06 D_0805d204
     beat_anim
     rest 24
@@ -216,7 +216,7 @@ script rat_race_sub_08a1b998
     rest 24
     rest 24
     rest 24
-    rat_race_event0E 1
+    rat_race_event0E TRUE
     rat_race_event06 D_0805d220
     run gameplay_set_tutorial NULL
     beat_anim
@@ -224,7 +224,7 @@ script rat_race_sub_08a1b998
     rest 24
     rest 24
     rest 24
-    rat_race_event0E 0
+    rat_race_event0E FALSE
     rat_race_event07 D_0805d180
 return
 
@@ -349,25 +349,25 @@ return
 script script_rat_race_main
     set_results_header D_0805d234
     import_marking_criteria rat_race_marking_criteria
-    forgive_x_misses 1
+    run gameplay_set_mercy_count, 1
     set_tempo 150
     set_music_volume 256
-    assess_inputs 1
-    rat_race_event12 0
+    start_tracking_inputs
+    rat_race_event12
     start_perfect_campaign
     play_music s_rat_bgm2_seqData
-    rat_race_event08 0
+    rat_race_event08
     rat_race_event09 1
     rest 24
     rest 24
-    rat_race_event0E 1
+    rat_race_event0E TRUE
     rest 24
     rest 24
     rest 24
     rest 24
     rest 24
     rest 24
-    rat_race_event0E 1
+    rat_race_event0E TRUE
     rest 24
     rest 24
     rest 24
@@ -421,10 +421,10 @@ script script_rat_race_main
     rat_race_event01 1
     set_music_volume 256
     rat_race_event02 1
-    rat_race_event0E 0
+    rat_race_event0E FALSE
     rest 24
     rest 24
-    rat_race_event0E 1
+    rat_race_event0E TRUE
     rest 24
     rest 24
     set_marking_criteria 1
@@ -476,7 +476,7 @@ script script_rat_race_main
     rat_race_event01 1
     set_music_volume 256
     rat_race_event02 1
-    rat_race_event0E 0
+    rat_race_event0E FALSE
     rest 24
     rest 24
     rest 24
@@ -526,7 +526,7 @@ script script_rat_race_main
     rat_race_event01 1
     set_music_volume 256
     rat_race_event02 1
-    rat_race_event0E 1
+    rat_race_event0E TRUE
     rest 24
     rest 24
     rest 24
@@ -576,12 +576,12 @@ script script_rat_race_main
     rat_race_event01 1
     set_music_volume 256
     rat_race_event02 1
-    rat_race_event0E 1
+    rat_race_event0E TRUE
     rest 24
     rest 24
     rest 24
     rest 24
-    rat_race_event0E 0
+    rat_race_event0E FALSE
     rest 24
     rest 24
     rest 24
@@ -631,25 +631,25 @@ script script_rat_race_main
     rat_race_event01 1
     set_music_volume 256
     rat_race_event02 1
-    rat_race_event0E 0
+    rat_race_event0E FALSE
     rest 24
     rest 24
     rest 24
     rest 24
-    rat_race_event0E 1
+    rat_race_event0E TRUE
     rest 24
     rest 24
     rest 24
     rest 24
-    rat_race_event0E 0
+    rat_race_event0E FALSE
     rest 24
     rest 24
     rest 24
     rest 24
-    rat_race_event0E 1
+    rat_race_event0E TRUE
     rest 24
     rest 24
-    rat_race_event0E 1
+    rat_race_event0E TRUE
     rest 24
     rest 24
     set_marking_criteria 1
@@ -693,7 +693,7 @@ script script_rat_race_main
     rat_race_event01 1
     set_music_volume 256
     rat_race_event02 1
-    rat_race_event0E 0
+    rat_race_event0E FALSE
     call rat_race_sub_08a1bb78
     set_marking_criteria 1
     spawn_cue CUE_STOP4
@@ -736,8 +736,8 @@ script script_rat_race_main
     rat_race_event01 1
     set_music_volume 256
     rat_race_event02 1
-    rat_race_event0E 1
-    rat_race_event0A 0
+    rat_race_event0E TRUE
+    rat_race_event0A
     rat_race_event02 2
     set_tempo 140
     rest 24
@@ -749,9 +749,9 @@ script script_rat_race_main
     rest 24
     rest 24
     rest 12
-    rat_race_event0B 0
-    rat_race_event0C 0
-    assess_perfect_inputs 0
+    rat_race_event0B
+    rat_race_event0C
+    stop_tracking_perfect_campaign
     rest 24
     rest 24
     rest 24
@@ -765,14 +765,14 @@ script script_rat_race_main
     rest 24
     rest 24
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
 return
 
 
 script script_rat_race_practice
     set_tempo 150
     set_music_volume 256
-    assess_inputs 0
+    stop_tracking_inputs
     play_music s_rat_bgm1_seqData
     call rat_race_sub_08a1b5f0
     rat_race_event09 1
@@ -968,9 +968,9 @@ script script_rat_race_practice
 
 
 script script_rat_race_skipped_practice
-    rat_race_event0F 0
+    rat_race_event0F
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     goto script_rat_race_main
 
 .end

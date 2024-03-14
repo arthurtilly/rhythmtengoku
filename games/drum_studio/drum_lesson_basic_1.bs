@@ -11,12 +11,12 @@ script script_drum_lesson_basic_1_entry
     rest 24
     rest 24
     load_drum_lessons
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_drum_lesson_basic_1_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -260,89 +260,89 @@ endstruct
 script script_drum_lesson_basic_1_main
     set_tempo 116
     set_music_volume 256
-    assess_inputs 0
+    stop_tracking_inputs
     dms_event08 4
     dms_event09 1
     rest 24
     rest 24
-    dms_event02 1
+    dms_event02 TRUE
     rest 24
     dms_set_dialogue_text D_08061704
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061740
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_0806178c
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     rest 24
     run drum_lesson_script_import_pattern, D_08a41e90
     call drum_lessons_sub_08a7d7a0
     run drum_lesson_script_import_pattern, D_08a41ea0
     call drum_lessons_sub_08a7d7a0
-    dms_show_dialogue 1
+    dms_show_dialogue TRUE
     dms_set_dialogue_text D_080617bc
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_080617f0
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_0806183c
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061884
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     run drum_lesson_script_import_pattern, D_08a41eb0
     call drum_lessons_sub_08a7d7a0
     run drum_lesson_script_import_pattern, D_08a41ec0
     call drum_lessons_sub_08a7d7a0
-    dms_show_dialogue 1
+    dms_show_dialogue TRUE
     dms_set_dialogue_text D_0806189c
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_080618d8
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061910
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061950
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061980
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
-    assess_inputs 1
+    start_tracking_inputs
     run drum_lesson_script_import_pattern, D_08a41ed0
     call drum_lessons_sub_08a7d7a0
-    dms_show_dialogue 1
-    dms_set_teacher_exp 4
+    dms_show_dialogue TRUE
+    dms_set_teacher_exp TEACHER_EXP_GIVE_RANK
     dms_get_lesson_score
 return
 

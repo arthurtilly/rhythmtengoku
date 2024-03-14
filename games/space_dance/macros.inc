@@ -68,35 +68,42 @@
     space_dance_event EVENT_00, \args
 .endm
 
+
 @ [Event 0x01] ?
-.macro space_dance_event01 args
-    space_dance_event EVENT_01, \args
+.macro space_dance_event01 arg1, arg2
+    space_dance_event EVENT_01, ((\arg1 & 0xFF) << 8) | (\arg2 & 0xFF)
 .endm
+
 
 @ [Event 0x02] ?
 .macro space_dance_event02 args
     space_dance_event EVENT_02, \args
 .endm
 
+
 @ [Event 0x03] ?
-.macro space_dance_event03 args
-    space_dance_event EVENT_03, \args
+.macro space_dance_event03
+    space_dance_event EVENT_03, 0
 .endm
+
 
 @ [Event 0x04] ?
 .macro space_dance_event04 args
     space_dance_event EVENT_04, \args
 .endm
 
+
 @ [Event 0x05] ?
 .macro space_dance_event05 args
     space_dance_event EVENT_05, \args
 .endm
 
+
 @ [Event 0x06] ?
 .macro space_dance_event06 args
     space_dance_event EVENT_06, \args
 .endm
+
 
 @ [Event 0x07] ?
 .macro space_dance_event07 args

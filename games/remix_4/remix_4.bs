@@ -16,12 +16,12 @@ script script_remix_4_entry
     call script_remix_4_prologue
     set_game_fade_in_time 16
     load_quiz_show
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_remix_4_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -37,7 +37,7 @@ define_gameplay_scene scene_remix_4, script_remix_4_entry
 script script_remix_4_prologue
     set_game_fade_in_time 8
     load_game remix_4_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_remix_seqData
     rest 24
@@ -121,31 +121,31 @@ text text_remix_4_honto_desu_ka
     .asciz ".b:1ほんとです:0か？"
 endtext
 
-text D_08a53568
+text text_remix_4_wakarimasu_ka
     .asciz ".b:1わかります:0か？"
 endtext
 
-text D_08a53580
+text text_remix_4_oishii_kamo_ne
     .asciz ".9:1おいしい　かも:0ネ"
 endtext
 
-text D_08a53598
+text text_remix_4_herushii_kamo_ne
     .asciz ".9:1ヘルシー　かも:0ネ"
 endtext
 
-text D_08a535b0
+text text_remix_4_ore_no_sei_kamo_ne
     .asciz ".9:1オレの　せいかも:0ネ"
 endtext
 
-text D_08a535cc
+text text_remix_4_sore_mo_sou_kamo_ne
     .asciz ".9:1それもそう　かも:0ネ"
 endtext
 
-text D_08a535e8
+text text_remix_4_tanoshii_kamo_ne
     .asciz ".9:1たのしい　かも:0ネ"
 endtext
 
-text D_08a53600
+text text_remix_4_oyatsu_wa_saikou
     .asciz ".a:1おやつは　:0サイコー！！"
 endtext
 
@@ -153,19 +153,19 @@ text text_remix_4_kibun_wa_saikou
     .asciz ".a:1きぶんは　:0サイコー！！"
 endtext
 
-text D_08a53640
+text text_remix_4_ore_tte_saikou
     .asciz ".a:1オレって　:0サイコー！！"
 endtext
 
-text D_08a53660
+text text_remix_4_kimi_tte_saikou
     .asciz ".a:1キミって　:0サイコー！！"
 endtext
 
-text D_08a53680
+text text_remix_4_oyatsu_ga_nai_yo
     .asciz ".a:1おやつが　:0ナイヨー！！"
 endtext
 
-text D_08a536a0
+text text_remix_4_ore_shiranai_yo
     .asciz ".a:1オレ、　しらない:0ヨー！！"
 endtext
 
@@ -235,9 +235,9 @@ return
 
 script script_remix_4_main
     set_results_header D_080680d4
-    import_marking_criteria D_08a53508
-    forgive_x_misses 2
-    assess_inputs 1
+    import_marking_criteria remix_4_marking_criteria
+    run gameplay_set_mercy_count, 2
+    start_tracking_inputs
     set_marking_criteria 0
     start_perfect_campaign
     set_tempo 128
@@ -245,9 +245,9 @@ script script_remix_4_main
     set_game_fade_in_time 0
     set_game_fade_in_time 20
     load_night_walk
-    enable_play_inputs 1
+    enable_play_inputs
     night_walk_set_drumtech_volume 0
-    night_walk_enable_swing 1
+    night_walk_enable_swing TRUE
     night_walk_set_cue_earliness 24
     spawn_cue CUE_KICK
     night_walk_set_cue_earliness 48
@@ -276,7 +276,7 @@ script script_remix_4_main
     rest 4
     night_walk_set_drumtech_volume 96
     rest 4
-    enable_pause_menu TRUE
+    enable_pause_menu
     night_walk_set_platform 1
     spawn_cue CUE_KICK
     rest 24
@@ -332,9 +332,9 @@ script script_remix_4_main
     set_game_fade_in_time 0
 
     load_quiz_show
-    enable_play_inputs 0
-    assess_inputs 0
-    run gameplay_assess_irrelevant_inputs, 0
+    disable_play_inputs
+    stop_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
     quiz_show_event01 0
     quiz_show_event01 -16
     quiz_show_event01 1
@@ -344,24 +344,24 @@ script script_remix_4_main
     rest 24
     rest 24
     quiz_show_event00 0
-    print_text_s 0
+    clear_text_s
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
     rest 24
-    quiz_show_event02 0
+    quiz_show_event02 FALSE
     rest 24
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 24
-    quiz_show_event02 1
+    quiz_show_event02 TRUE
     rest 24
     quiz_show_event00 16
     print_text_s D_080680fc
     rest 24
-    print_text_s 0
+    clear_text_s
     quiz_show_event00 1
-    enable_play_inputs 1
+    enable_play_inputs
     rest 24
     rest 24
     rest 24
@@ -372,14 +372,14 @@ script script_remix_4_main
     play_sfx s_f_quiz_stop_seqData
     print_text_s D_08068108
     rest 12
-    enable_play_inputs 0
+    disable_play_inputs
     rest 12
     rest 12
-    print_text_s 0
+    clear_text_s
     rest 12
     quiz_show_event01 -32
-    quiz_show_event04 0
-    if_eq INT8, GLOBAL_VARIABLE, 0
+    quiz_show_event04
+    if_globalvar_eq 0
         print_text_s D_08068118
         quiz_show_event00 64
         quiz_show_event00 65
@@ -400,11 +400,11 @@ script script_remix_4_main
 
     load_night_walk
     night_walk_set_platform 0
-    enable_play_inputs 1
-    assess_inputs 1
-    run gameplay_assess_irrelevant_inputs, 1
+    enable_play_inputs
+    start_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, TRUE
     night_walk_set_drumtech_volume 0
-    night_walk_enable_swing 1
+    night_walk_enable_swing TRUE
     night_walk_set_cue_earliness 240
     spawn_cue CUE_KICK
     night_walk_set_cue_earliness 216
@@ -466,25 +466,25 @@ script script_remix_4_main
     set_game_fade_in_time 0
 
     load_polyrhythm_remix
-    run gameplay_assess_irrelevant_inputs, 0
+    run gameplay_assess_irrelevant_inputs, FALSE
     rest 12
     mute_music_track (MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8)
-    polyrhythm_spawn_rod 1
+    polyrhythm_spawn_rod DOWNSIDE
     rest 24
-    run gameplay_assess_irrelevant_inputs, 1
-    polyrhythm_despawn_blocks 0
-    polyrhythm_spawn_block 0, 1, 0
-    polyrhythm_spawn_block 1, 1, 0
-    polyrhythm_spawn_block 2, 1, 2
+    run gameplay_assess_irrelevant_inputs, TRUE
+    polyrhythm_despawn_blocks UPSIDE
+    polyrhythm_spawn_block 0, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 1, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 2, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
     rest 24
     rest 24
-    polyrhythm_spawn_block 4, 1, 0
-    polyrhythm_spawn_block 5, 1, 0
-    polyrhythm_spawn_block 6, 1, 2
+    polyrhythm_spawn_block 4, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 5, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 6, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
     rest 24
     rest 24
     rest 24
@@ -493,36 +493,36 @@ script script_remix_4_main
     rest 8
     polyrhythm_play_applause_sfx
     rest 8
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_rod 0
-    polyrhythm_retract_pistons 1
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_retract_pistons DOWNSIDE
     rest 24
-    polyrhythm_despawn_blocks 1
-    polyrhythm_spawn_block 0, 0, 0
-    polyrhythm_spawn_block 1, 0, 0
-    polyrhythm_spawn_block 2, 0, 1
+    polyrhythm_despawn_blocks DOWNSIDE
+    polyrhythm_spawn_block 0, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 1, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 2, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
     rest 24
     rest 24
-    polyrhythm_spawn_block 0, 1, 0
-    polyrhythm_spawn_block 1, 1, 0
-    polyrhythm_spawn_block 2, 1, 0
-    polyrhythm_spawn_block 3, 1, 0
-    polyrhythm_spawn_block 4, 1, 0
-    polyrhythm_spawn_block 5, 1, 0
-    polyrhythm_spawn_block 6, 1, 2
+    polyrhythm_spawn_block 0, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 1, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 2, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 3, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 4, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 5, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 6, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
-    polyrhythm_spawn_block 4, 0, 0
-    polyrhythm_spawn_block 5, 0, 0
-    polyrhythm_spawn_block 6, 0, 1
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 4, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 5, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 6, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
-    polyrhythm_spawn_block 8, 0, 0
-    polyrhythm_spawn_block 9, 0, 0
-    polyrhythm_spawn_block 10, 0, 0
-    polyrhythm_spawn_block 11, 0, 0
-    polyrhythm_spawn_block 12, 0, 0
+    polyrhythm_spawn_block 8, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 9, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 10, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 11, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 12, UPSIDE, PLATFORM
     rest 24
     rest 24
     rest 24
@@ -539,16 +539,16 @@ script script_remix_4_main
     rest 24
     rest 24
     rest 24
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_remix_4_sub_08a82060
     rest 24
     rest 24
     rest 24
     call power_calligraphy_sub_08a7f264
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_remix_4_sub_08a808d8
     call power_calligraphy_remix_4_sub_08a8095c
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_remix_4_sub_08a80d88
     call power_calligraphy_remix_4_sub_08a80e0c
     rest 24
@@ -561,9 +561,9 @@ script script_remix_4_main
 
     load_night_walk
     night_walk_set_platform 0
-    enable_play_inputs 1
+    enable_play_inputs
     night_walk_set_drumtech_volume 0
-    night_walk_enable_swing 1
+    night_walk_enable_swing TRUE
     night_walk_set_cue_earliness 240
     spawn_cue CUE_KICK
     night_walk_set_cue_earliness 216
@@ -636,47 +636,47 @@ script script_remix_4_main
     set_game_fade_in_time 0
 
     load_polyrhythm_remix
-    run gameplay_assess_irrelevant_inputs, 0
+    run gameplay_assess_irrelevant_inputs, FALSE
     rest 12
     reset_music_track_volumes
     rest 24
     rest 24
     rest 24
     rest 24
-    run gameplay_assess_irrelevant_inputs, 1
+    run gameplay_assess_irrelevant_inputs, TRUE
     mute_music_track (MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8)
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_block 0, 1, 2
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 2, 1, 2
+    polyrhythm_spawn_block 2, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 4, 1, 2
+    polyrhythm_spawn_block 4, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 6, 1, 2
+    polyrhythm_spawn_block 6, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
     rest 24
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_block 0, 0, 1
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_block 0, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
     rest 24
-    polyrhythm_spawn_block 2, 0, 1
+    polyrhythm_spawn_block 2, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
     rest 24
-    polyrhythm_spawn_block 4, 0, 1
+    polyrhythm_spawn_block 4, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
     rest 24
-    polyrhythm_spawn_block 6, 0, 1
+    polyrhythm_spawn_block 6, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
-    polyrhythm_spawn_block 8, 0, 0
-    polyrhythm_spawn_block 9, 0, 0
-    polyrhythm_spawn_block 10, 0, 0
-    polyrhythm_spawn_block 11, 0, 0
-    polyrhythm_spawn_block 12, 0, 0
+    polyrhythm_spawn_block 8, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 9, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 10, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 11, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 12, UPSIDE, PLATFORM
     rest 8
     rest 8
     rest 8
@@ -688,41 +688,41 @@ script script_remix_4_main
     reset_music_track_volumes
     rest 24
     rest 24
-    polyrhythm_retract_pistons 1
-    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons DOWNSIDE
+    polyrhythm_retract_pistons UPSIDE
     rest 24
-    polyrhythm_despawn_blocks 1
-    polyrhythm_despawn_blocks 0
+    polyrhythm_despawn_blocks DOWNSIDE
+    polyrhythm_despawn_blocks UPSIDE
     rest 24
     mute_music_track (MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8)
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_block 0, 1, 2
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
-    polyrhythm_spawn_block 0, 0, 1
+    polyrhythm_spawn_block 0, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
     rest 24
-    polyrhythm_spawn_block 2, 1, 2
+    polyrhythm_spawn_block 2, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
-    polyrhythm_spawn_block 2, 0, 1
+    polyrhythm_spawn_block 2, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
     rest 24
-    polyrhythm_spawn_block 4, 1, 2
+    polyrhythm_spawn_block 4, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
-    polyrhythm_spawn_block 4, 0, 1
+    polyrhythm_spawn_block 4, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
     rest 24
-    polyrhythm_spawn_block 6, 1, 2
+    polyrhythm_spawn_block 6, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
-    polyrhythm_spawn_block 6, 0, 1
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 6, UPSIDE, PISTON_UPSIDE
     spawn_cue CUE_4_UPSIDE
-    polyrhythm_spawn_block 8, 0, 0
-    polyrhythm_spawn_block 9, 0, 0
-    polyrhythm_spawn_block 10, 0, 0
-    polyrhythm_spawn_block 11, 0, 0
-    polyrhythm_spawn_block 12, 0, 0
+    polyrhythm_spawn_block 8, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 9, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 10, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 11, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 12, UPSIDE, PLATFORM
     rest 24
     rest 24
     rest 24
@@ -745,45 +745,45 @@ script script_remix_4_main
     rest 24
     print_text_f text_remix_4_sanji_desu_ka
     play_sfx s_rap_15ji_desuka_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
     print_text_f text_remix_4_oyatsu_desu_ka
     play_sfx s_rap_oyatu_desuka_seqData
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 0
+    rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 8
     rest 8
     play_sfx s_rap_honto_desuka_seqData
-    rap_men_animate_rapper 4
+    rap_men_animate_rapper ANIM_HONTO
     rest 8
     print_text_f text_remix_4_honto_desu_ka
     beat_anim
@@ -793,7 +793,7 @@ script script_remix_4_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -803,16 +803,16 @@ script script_remix_4_main
     play_music L3_C40_seqData
     print_text_f text_remix_4_kibun_wa_saikou
     play_sfx s_rap_kibunha_saiko_seqData
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     rest 24
-    rap_men_animate_rapper 2
+    rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_UUN
     beat_anim
     rest 24
@@ -825,7 +825,7 @@ script script_remix_4_main
     beat_anim
     rest 24
     play_sfx s_rap_yeah_seqData
-    rap_men_animate_rapper 1
+    rap_men_animate_rapper ANIM_KAMONE
     rest 24
     beat_anim
     rest 24
@@ -838,13 +838,13 @@ script script_remix_4_main
     load_power_calligraphy
     power_calligraphy_event0B 1
     power_calligraphy_event0C 160
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_remix_4_sub_08a80d88
     beat_anim
     rest 24
     set_tempo 128
     call power_calligraphy_remix_4_sub_08a80e0c
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_remix_4_sub_08a819b8
     call power_calligraphy_remix_4_sub_08a81a3c
     rest 24
@@ -852,9 +852,9 @@ script script_remix_4_main
     set_game_fade_in_time 20
 
     load_night_walk
-    enable_play_inputs 1
+    enable_play_inputs
     night_walk_set_drumtech_volume 0
-    night_walk_enable_swing 1
+    night_walk_enable_swing TRUE
     night_walk_set_cue_earliness 240
     spawn_cue CUE_KICK
     night_walk_set_cue_earliness 216
@@ -913,9 +913,9 @@ script script_remix_4_main
     set_game_fade_in_time 0
 
     load_quiz_show
-    enable_play_inputs 0
-    assess_inputs 0
-    run gameplay_assess_irrelevant_inputs, 0
+    disable_play_inputs
+    stop_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
     quiz_show_event01 0
     quiz_show_event01 -16
     quiz_show_event01 1
@@ -926,75 +926,74 @@ script script_remix_4_main
     rest 24
     rest 24
     quiz_show_event00 0
-    print_text_s 0
+    clear_text_s
     set_music_volume 150
     rest 24
-    run agb_random, 4
-    switch INT8, FUNCTION_RESULT
+    switch_random 4
         case 0
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 8
             rest 8
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 8
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             break
         case 1
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 8
             rest 8
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 8
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             break
         case 2
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             rest 8
             rest 8
-            quiz_show_event02 1
+            quiz_show_event02 TRUE
             rest 8
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             break
         case 3
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
-            quiz_show_event02 0
+            quiz_show_event02 FALSE
             rest 24
             break
     end_switch
     quiz_show_event00 16
     print_text_s D_080680fc
     rest 24
-    print_text_s 0
+    clear_text_s
     quiz_show_event00 1
-    enable_play_inputs 1
+    enable_play_inputs
     rest 24
     rest 24
     rest 24
@@ -1006,19 +1005,19 @@ script script_remix_4_main
     play_sfx s_f_quiz_stop_seqData
     print_text_s D_08068108
     rest 12
-    enable_play_inputs 0
+    disable_play_inputs
     rest 12
     rest 24
     rest 24
     rest 24
     quiz_show_event00 17
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     set_tempo 140
     print_text_s D_0806815c
-    run gameplay_display_text_and_wait, 0
-    quiz_show_event03 1
-    mod_lcd_blend_from 0x3F41, TO_TEMPO, 24
+    run gameplay_display_text_and_wait
+    quiz_show_event03 TRUE
+    mod_lcd_blend_from 0x3F41, 24
     rest 24
     rest 24
     rest 24
@@ -1029,9 +1028,9 @@ script script_remix_4_main
     rest 24
     rest 24
     rest 24
-    quiz_show_event03 0
-    quiz_show_event04 0
-    if_eq INT8, GLOBAL_VARIABLE, 0
+    quiz_show_event03 FALSE
+    quiz_show_event04
+    if_globalvar_eq 0
         print_text_s D_08068118
         quiz_show_event00 64
         quiz_show_event00 65
@@ -1056,7 +1055,7 @@ script script_remix_4_main
     rest 24
     rest 24
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
 return
 

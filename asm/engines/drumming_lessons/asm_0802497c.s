@@ -8,7 +8,7 @@ thumb_func_start func_0802497c \n\
 /* 08024980 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08024982 */ LDR R1, [R4] \n\
 /* 08024984 */ STR R1, [SP] \n\
-/* 08024986 */ BL func_080175d8 \n\
+/* 08024986 */ BL gameplay_get_loop_counter \n\
 /* 0802498a */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 0802498c */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
 /* 0802498e */ LDR R1, [SP] \n\

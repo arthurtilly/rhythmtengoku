@@ -45,7 +45,7 @@ script script_drum_band_cosmic_dance
     rest 8
     dml_set_disable_excitement FALSE
     run drum_band_cosmic_dance_stop_crowd_sfx
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat16
     call drum_live_pat16
     call drum_live_pat16
@@ -63,7 +63,7 @@ script script_drum_band_cosmic_dance
     call drum_live_pat16
     call drum_live_pat16
     dml_set_enable_boredom TRUE
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat16
     call drum_live_pat16
     call drum_live_pat16
@@ -104,7 +104,7 @@ script script_drum_band_cosmic_dance
     call drum_live_pat16
     call drum_live_pat16
     call drum_live_pat16
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat16
     call drum_live_pat16
     call drum_live_pat16
@@ -173,7 +173,7 @@ script script_drum_band_cosmic_dance
     call drum_live_pat18
     call drum_live_pat16
     call drum_live_pat16
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat20
     call drum_live_pat17
     call drum_live_pat17

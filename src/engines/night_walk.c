@@ -786,7 +786,7 @@ void night_walk_engine_start(u32 ver) {
     night_walk_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, FALSE, 0, 0, 0, 29, 0);
-    gameplay_enable_inputs(FALSE);
+    gameplay_inputs_enabled(FALSE);
     gameplay_set_input_buttons(A_BUTTON, 0);
     init_drumtech(&gNightWalk->drumTech);
     gNightWalk->drumVolume = INT_TO_FIXED(1.0);

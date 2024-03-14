@@ -47,15 +47,18 @@
     sick_beats_event EVENT_00, \args
 .endm
 
+
 @ [Event 0x01] Spawn Virus
 .macro sick_beats_spawn_virus position
     sick_beats_event SPAWN_VIRUS, \position
 .endm 
 
+
 @ [Event 0x02] Set Virus Hits Needed
 .macro sick_beats_set_hits_needed hits
     sick_beats_event SET_HITS_NEEDED, \hits
 .endm
+
 
 @ [Event 0x03] Set Virus Palette
 .macro sick_beats_set_virus_palette palette
@@ -80,19 +83,22 @@
     sick_beats_spawn_virus \position
 .endm
 
+
 @ [Event 0x04] ?
 .macro sick_beats_event04 args
     sick_beats_event EVENT_04, \args
 .endm
 
+
 @ [Event 0x05] ?
-.macro sick_beats_event05 args
-    sick_beats_event EVENT_05, \args
+.macro sick_beats_event05
+    sick_beats_event EVENT_05, 0
 .endm
 
+
 @ [Event 0x06] ?
-.macro sick_beats_event06 args
-    sick_beats_event EVENT_06, \args
+.macro sick_beats_event06
+    sick_beats_event EVENT_06, 0
 .endm
 
 
@@ -111,20 +117,24 @@
     sick_beats_cmd 0xFE, 0, \rest
 .endm
 
+
 @ [0xFF] Stop
 .macro sb_stop
     sick_beats_cmd 0xFF, 0, 0
 .endm
+
 
 @ [0x0E] Set Marking Criteria
 .macro sb_set_marking_criteria criteria
     sick_beats_cmd 0x0E, \criteria, 0
 .endm
 
+
 @ [0x0F] Initiate Without Entering Animation
 .macro sb_init_no_entering
     sick_beats_cmd 0x0F, 0, 0
 .endm
+
 
 @ Spawn Cue
 .macro sb_spawn_cue type, cue
@@ -135,30 +145,36 @@
     sb_spawn_cue 0, 0
 .endm
 
+
 @ Appear at Point
 .macro sb_appear point
     sb_spawn_cue (\point*3 - 2), CUE_SICK_BEATS_00
 .endm
+
 
 @ Dash from Point
 .macro sb_dash_from point
     sb_spawn_cue (\point*3 - 1), CUE_SICK_BEATS_00
 .endm
 
+
 @ Dash from Point (Always used after an invulnerable dash)
 .macro sb_dash_from_after_inv point
     sb_spawn_cue (\point*3 - 1), CUE_SICK_BEATS_04
 .endm
+
 
 @ Dash from Point (Invulnerable)
 .macro sb_dash_from_invulnerable point
     sb_spawn_cue (\point*3), CUE_SICK_BEATS_08
 .endm
 
+
 @ Dash from Point (Invulnerable, difference from above unknown)
 .macro sb_dash_from_invulnerable2 point
     sb_spawn_cue (\point*3), CUE_SICK_BEATS_00
 .endm
+
 
 @ Attack Microbe
 .macro sb_attack_microbe

@@ -16,12 +16,12 @@ script script_remix_1_unused_entry
     call script_remix_1_prologue
     set_game_fade_in_time 16
     load_marching_orders
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_remix_1_unused_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -126,13 +126,13 @@ script script_remix_1_unused_main
     set_music_volume 256
     load_marching_orders
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     rest 24
     rest 24
     set_results_header D_0805cadc
     import_marking_criteria remix_1_unused_marking_criteria
-    assess_inputs 1
+    start_tracking_inputs
     set_marking_criteria 0
     set_game_fade_in_time 0
     play_music Lesson1_seqData
@@ -220,7 +220,7 @@ script script_remix_1_unused_main
     print_text_f 2
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim
     rest 24
@@ -260,7 +260,7 @@ script script_remix_1_unused_main
     print_text_f 2
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim
     rest 24
@@ -274,7 +274,7 @@ script script_remix_1_unused_main
     rest 12
     spawn_cue CUE_ROCK
     rest 12
-    print_text_f NULL
+    clear_text_f
     rest 12
     rest 12
     beat_anim
@@ -309,7 +309,7 @@ script script_remix_1_unused_main
     print_text_f 2
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim
     rest 24
@@ -325,7 +325,7 @@ script script_remix_1_unused_main
     rest 12
     spawn_cue CUE_ROCK
     rest 12
-    print_text_f NULL
+    clear_text_f
     rest 12
     rest 12
     beat_anim
@@ -402,7 +402,7 @@ script script_remix_1_unused_main
     print_text_f 2
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim
     rest 24
@@ -470,7 +470,7 @@ script script_remix_1_unused_main
     print_text_f 2
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim
     rest 24
@@ -568,38 +568,38 @@ script script_remix_1_unused_main
 
     load_spaceball
     spaceball_zoom_camera 0xff00, 1
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     play_music L1_pat10_seqData
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xfe0c, 24
     spawn_cue CUE_HIGH
@@ -628,7 +628,7 @@ script script_remix_1_unused_main
 
     load_spaceball
     spaceball_zoom_camera 0xfe0c, 96
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 12
     spawn_cue CUE_HIGH
     beat_anim
@@ -656,13 +656,13 @@ script script_remix_1_unused_main
 
     load_spaceball
     spaceball_zoom_camera 0xfe0c, 83
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 12
     spawn_cue CUE_HIGH
     beat_anim
     rest 24
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xff00, 24
     spawn_cue CUE_LOW
@@ -678,32 +678,32 @@ script script_remix_1_unused_main
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
     beat_anim
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xfe0c, 24
     spawn_cue CUE_HIGH
@@ -735,7 +735,7 @@ script script_remix_1_unused_main
 
     load_spaceball
     spaceball_zoom_camera 0xfe0c, 96
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 12
     spawn_cue CUE_HIGH
     beat_anim
@@ -766,13 +766,13 @@ script script_remix_1_unused_main
 
     load_spaceball
     spaceball_zoom_camera 0xfe0c, 83
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 12
     spawn_cue CUE_HIGH
     beat_anim
     rest 24
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xf830, 24
     spawn_cue CUE_LOW
@@ -839,13 +839,13 @@ script script_remix_1_unused_main
 
     load_spaceball
     spaceball_zoom_camera 0xfe0c, 83
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 12
     spawn_cue CUE_HIGH
     beat_anim
     rest 24
     rest 24
-    spaceball_prep_pitcher 0
+    spaceball_prep_pitcher
     rest 24
     spaceball_zoom_camera 0xff00, 24
     spawn_cue CUE_LOW
@@ -857,7 +857,7 @@ script script_remix_1_unused_main
     print_text_f 4
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_POT
     beat_anim
     rest 24

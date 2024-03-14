@@ -12,12 +12,12 @@ script script_bon_odori_entry
     call script_bon_odori_prologue
     set_game_fade_in_time 16
     load_bon_odori
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_bon_odori_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -33,12 +33,12 @@ script script_bon_odori_skipped_practice_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_bon_odori
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_bon_odori_skipped_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -54,7 +54,7 @@ define_gameplay_scene scene_bon_odori_skipped_practice, script_bon_odori_skipped
 script script_bon_odori_prologue
     set_game_fade_in_time 8
     load_game bon_odori_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_bon_seqData
     rest 24
@@ -126,8 +126,8 @@ endstruct
 script script_bon_odori_main
     set_results_header D_08067778
     import_marking_criteria bon_odori_marking_criteria
-    forgive_x_misses 1
-    assess_inputs 1
+    run gameplay_set_mercy_count, 1
+    start_tracking_inputs
     set_tempo 121
     set_music_volume 256
     play_music s_bon_odori_bgm_seqData
@@ -930,11 +930,11 @@ script script_bon_odori_main
     rest 24
     bon_odori_lighten_screen 24
     bon_odori_lyrics_clear_line 1
-    assess_perfect_inputs 0
+    stop_tracking_perfect_campaign
     rest 24
     rest 24
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
 return
 
@@ -1026,14 +1026,14 @@ return
 
 
 script script_bon_odori_practice
-    assess_inputs 0
+    stop_tracking_inputs
     set_tempo 121
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     set_music_volume 150
     play_music s_mario2_seqData
-    assess_inputs 0
+    stop_tracking_inputs
     run gameplay_display_skip_icon, 1
     run gameplay_set_tutorial scene_bon_odori_skipped_practice
     rest 24
@@ -1066,11 +1066,11 @@ script script_bon_odori_practice
     rest 24
     rest 24
     rest 12
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         bon_odori_start_input_check
-        switch FUNC, func_080175d8
+        switch_loop_counter
             case 0
                 break
             default
@@ -1080,7 +1080,7 @@ script script_bon_odori_practice
         call bon_odori_sub_08a47d44
         call bon_odori_sub_08a47db0
         bon_odori_stop_input_check
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     rest 12
     bon_odori_lighten_screen 48
@@ -1106,11 +1106,11 @@ script script_bon_odori_practice
     rest 24
     rest 24
     rest 12
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         bon_odori_start_input_check
-        switch FUNC, func_080175d8
+        switch_loop_counter
             case 0
                 break
             default
@@ -1120,7 +1120,7 @@ script script_bon_odori_practice
         call bon_odori_sub_08a47fb4
         call bon_odori_sub_08a478050
         bon_odori_stop_input_check
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     rest 12
     run gameplay_set_tutorial NULL
@@ -1143,7 +1143,7 @@ script script_bon_odori_practice
 script script_bon_odori_skipped_practice
     set_tempo 120
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     goto script_bon_odori_main
 

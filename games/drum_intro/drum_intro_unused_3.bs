@@ -1,0 +1,546 @@
+.include "include/beatscript.inc"
+.include "games/drum_intro/macros.inc"
+
+
+
+.section .script.entry
+@ Drum Intro (Unused 3) - Script Entry Point
+
+script script_drum_intro_unused_3_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_intro_talk
+    enable_play_inputs
+    start_tracking_inputs
+    call script_drum_intro_unused_3_main
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_intro_unused_3, script_drum_intro_unused_3_entry
+
+
+
+.section .script.main
+@ Drum Intro (Unused 3) - Main Script
+
+script drum_intro_unused_3_sub_08a36930
+    play_sfx s_intro_one_seqData
+    beat_anim
+    rest 24
+    rest 24
+    play_sfx s_intro_two_seqData
+    beat_anim
+    rest 24
+    rest 12
+    play_sfx s_intro_a_seqData
+    clear_text_s
+    rest 12
+    play_sfx s_intro_one_seqData
+    beat_anim
+    rest 24
+    play_sfx s_intro_two_seqData
+    beat_anim
+    rest 23
+    play_sfx s_intro_three_seqData
+    rest 1
+    beat_anim
+    rest 20
+    play_sfx s_intro_four_seqData
+    beat_anim
+    rest 4
+return
+
+
+script drum_intro_unused_3_sub_08a36a5c
+    play_sfx s_intro_one_seqData
+    dmi_event03 3
+    rest 24
+    rest 24
+    play_sfx s_intro_two_seqData
+    dmi_event03 3
+    rest 24
+    rest 12
+    play_sfx s_intro_a_seqData
+    clear_text_s
+    rest 12
+    play_sfx s_intro_one_seqData
+    dmi_event03 3
+    rest 24
+    play_sfx s_intro_two_seqData
+    dmi_event03 3
+    rest 23
+    play_sfx s_intro_three_seqData
+    rest 1
+    dmi_event03 3
+    rest 20
+    play_sfx s_intro_four_seqData
+    rest 4
+    dmi_event03 3
+return
+
+
+script script_drum_intro_unused_3_main
+    set_tempo 120
+    set_music_volume 40
+    mod_music_volume 156, 96
+    dmi_event02 1
+    rest 24
+    rest 24
+    dmi_event02 2
+    print_text_s D_0805e42c
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e444
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e458
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    mod_music_volume 0, 48
+    dmi_event02 2
+    print_text_s D_0805e490
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    set_tempo 140
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        dmi_event04 FALSE
+        switch_loop_counter
+            case 0
+                break
+            default
+                set_game_fade_in_time 8
+                load_drum_intro_talk
+                dmi_event02 1
+                rest 24
+                play_sfx s_f_drumdr_miss_seqData
+        end_switch
+        dmi_event02 2
+        dmi_event00 D_0805e520
+        rest 24
+        rest 24
+        dmi_event02 0
+        rest 24
+        call drum_intro_unused_3_sub_08a36930
+        clear_text_s
+        rest 24
+        set_music_volume 156
+        mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        run scene_stop_music
+        rest 24
+        set_game_fade_in_time 8
+
+        load_drum_intro_play
+        rest 24
+        rest 24
+        dmi_event00 D_0805e574
+        rest 24
+        rest 24
+        dmi_event04 TRUE
+        call drum_intro_unused_3_sub_08a36a5c
+        clear_text_s
+        dmi_event05 2
+        start_tracking_inputs
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        clear_text_s
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        rest 24
+        run scene_stop_music
+        rest 24
+        rest 24
+        run gameplay_increment_loop_counter
+    loop_end
+    dmi_event04 FALSE
+    print_text_s D_0805e584
+    play_sfx s_f_drumdr_ok_seqData
+    rest 24
+    rest 24
+    rest 24
+    set_game_fade_in_time 8
+
+    load_drum_intro_talk
+    dmi_event02 1
+    rest 24
+    rest 24
+    dmi_event02 2
+    dmi_event00 D_0805e5e4
+    rest 12
+    run gameplay_display_text_and_wait
+    clear_text_s
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e5f8
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e64c
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e684
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        dmi_event04 FALSE
+        switch_loop_counter
+            case 0
+                break
+            default
+                set_game_fade_in_time 8
+                load_drum_intro_talk
+                dmi_event02 1
+                rest 24
+                play_sfx s_f_drumdr_miss_seqData
+        end_switch
+        dmi_event02 2
+        dmi_event00 D_0805e6c4
+        rest 24
+        rest 24
+        dmi_event02 0
+        rest 24
+        call drum_intro_unused_3_sub_08a36930
+        clear_text_s
+        rest 24
+        mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
+        dmi_event01 256
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        run scene_stop_music
+        rest 24
+        set_game_fade_in_time 8
+
+        load_drum_intro_play
+        rest 24
+        rest 24
+        dmi_event00 D_0805e574
+        rest 24
+        rest 24
+        dmi_event04 TRUE
+        call drum_intro_unused_3_sub_08a36a5c
+        clear_text_s
+        dmi_event05 2
+        start_tracking_inputs
+        spawn_cue CUE_CYMBAL
+        no_op
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        clear_text_s
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        rest 24
+        run scene_stop_music
+        rest 24
+        rest 24
+        run gameplay_increment_loop_counter
+    loop_end
+    dmi_event04 FALSE
+    print_text_s D_0805e584
+    play_sfx s_f_drumdr_ok_seqData
+    rest 24
+    rest 24
+    rest 24
+    set_game_fade_in_time 8
+
+    load_drum_intro_talk
+    dmi_event02 1
+    rest 24
+    rest 24
+    dmi_event02 2
+    dmi_event00 D_0805e730
+    rest 12
+    run gameplay_display_text_and_wait
+    clear_text_s
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e744
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    run gameplay_reset_loop_counter
+    loop_start
+        run beatscript_disable_loops
+        dmi_event04 FALSE
+        switch_loop_counter
+            case 0
+                break
+            default
+                set_game_fade_in_time 8
+                load_drum_intro_talk
+                dmi_event02 1
+                rest 24
+                play_sfx s_f_drumdr_miss_seqData
+        end_switch
+        dmi_event02 2
+        dmi_event00 D_0805e790
+        rest 24
+        rest 24
+        dmi_event02 0
+        rest 24
+        call drum_intro_unused_3_sub_08a36930
+        clear_text_s
+        rest 24
+        mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
+        dmi_event01 256
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 16
+        rest 8
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 16
+        rest 8
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 16
+        dmi_event01 2
+        rest 8
+        dmi_event01 2
+        rest 24
+        dmi_event01 16
+        rest 24
+        rest 16
+        dmi_event01 2
+        rest 8
+        run scene_stop_music
+        dmi_event01 16
+        rest 24
+        set_game_fade_in_time 8
+
+        load_drum_intro_play
+        rest 24
+        rest 24
+        dmi_event00 D_0805e7b0
+        rest 24
+        rest 24
+        dmi_event04 TRUE
+        call drum_intro_unused_3_sub_08a36a5c
+        clear_text_s
+        dmi_event05 2
+        start_tracking_inputs
+        spawn_cue CUE_CYMBAL
+        no_op
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        clear_text_s
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 16
+        spawn_cue CUE_KICK
+        rest 8
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        rest 16
+        spawn_cue CUE_KICK
+        rest 8
+        spawn_cue CUE_SNARE
+        rest 24
+        run scene_stop_music
+        rest 24
+        rest 24
+        run gameplay_increment_loop_counter
+    loop_end
+    dmi_event04 FALSE
+    print_text_s D_0805e584
+    play_sfx s_f_drumdr_ok_seqData
+    rest 24
+    rest 24
+    rest 24
+    set_game_fade_in_time 8
+
+    load_drum_intro_talk
+    dmi_event02 1
+    rest 24
+    rest 24
+    dmi_event02 2
+    dmi_event00 D_0805e844
+    rest 12
+    run gameplay_display_text_and_wait
+    clear_text_s
+    rest 12
+    set_tempo 120
+    set_music_volume 40
+    mod_music_volume 156, 96
+    dmi_event02 2
+    print_text_s D_0805e858
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e8c0
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+    dmi_event02 2
+    print_text_s D_0805e8f8
+    run gameplay_display_text_and_wait
+    dmi_event02 1
+    rest 12
+return
+
+.end

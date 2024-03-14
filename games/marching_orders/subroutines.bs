@@ -9,18 +9,18 @@ load_marching_orders_labels
 @ Marching Orders - Subroutines
 
 script marching_orders_sub_08a83758
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 3
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_ATTENTION
     rest 24
     rest 24
 return
 
 
 script marching_orders_sub_08a837ac
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 4
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_MARCH
     rest 24
-    marching_orders_play_voice_sfx 0
+    marching_orders_play_voice_sfx SHOUT_START
     marching_orders_event00 263
     spawn_cue CUE_STEP
     beat_anim
@@ -59,8 +59,8 @@ return
 
 
 script marching_orders_sub_08a83998
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 3
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_ATTENTION
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
@@ -71,14 +71,14 @@ script marching_orders_sub_08a83998
     spawn_cue CUE_STEP
     beat_anim
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 5
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_HALT
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_HALT
     beat_anim
     rest 24
-    marching_orders_play_voice_sfx 1
+    marching_orders_play_voice_sfx SHOUT_STOP
     marching_orders_event00 1
     play_sfx s_guntai_foot2_seqData
     rest 24
@@ -86,8 +86,8 @@ return
 
 
 script marching_orders_sub_08a83b24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 3
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_ATTENTION
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
@@ -103,14 +103,14 @@ return
 
 
 script marching_orders_sub_08a83bfc
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 5
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_HALT
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_HALT
     beat_anim
     rest 24
-    marching_orders_play_voice_sfx 1
+    marching_orders_play_voice_sfx SHOUT_STOP
     marching_orders_event00 1
     play_sfx s_guntai_foot2_seqData
     rest 24
@@ -118,8 +118,8 @@ return
 
 
 script marching_orders_2_sub_08a83cc8
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 6
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_RIGHT_FACE
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
@@ -130,18 +130,18 @@ script marching_orders_2_sub_08a83cc8
     spawn_cue CUE_STEP
     beat_anim
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 8
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_TURN_RIGHT
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
     beat_anim
-    rest 0
+    no_op
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 24
     marching_orders_event00 4
-    marching_orders_play_voice_sfx 2
+    marching_orders_play_voice_sfx SHOUT_TURN
     marching_orders_event00 7
     play_sfx s_guntai_foot2_seqData
     spawn_cue CUE_STEP
@@ -151,8 +151,8 @@ return
 
 
 script marching_orders_2_sub_08a83ea8
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 9
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_LEFT_FACE
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
@@ -163,18 +163,18 @@ script marching_orders_2_sub_08a83ea8
     spawn_cue CUE_STEP
     beat_anim
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 11
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_TURN_LEFT
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
     beat_anim
-    rest 0
+    no_op
     spawn_cue CUE_TURN_LEFT
     beat_anim
     rest 24
     marching_orders_event00 3
-    marching_orders_play_voice_sfx 2
+    marching_orders_play_voice_sfx SHOUT_TURN
     marching_orders_event00 7
     play_sfx s_guntai_foot2_seqData
     spawn_cue CUE_STEP
@@ -184,25 +184,25 @@ return
 
 
 script marching_orders_2_sub_08a84088
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 7
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_RIGHT_FACE_F
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
     beat_anim
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 8
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_TURN_RIGHT
     marching_orders_event00 7
     play_sfx s_guntai_foot2_seqData
     spawn_cue CUE_STEP
     beat_anim
-    rest 0
+    no_op
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 24
     marching_orders_event00 4
-    marching_orders_play_voice_sfx 2
+    marching_orders_play_voice_sfx SHOUT_TURN
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
@@ -217,25 +217,25 @@ return
 
 
 script marching_orders_2_sub_08a84268
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 10
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_LEFT_FACE_F
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
     beat_anim
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 11
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_TURN_LEFT
     marching_orders_event00 7
     play_sfx s_guntai_foot2_seqData
     spawn_cue CUE_STEP
     beat_anim
-    rest 0
+    no_op
     spawn_cue CUE_TURN_LEFT
     beat_anim
     rest 24
     marching_orders_event00 3
-    marching_orders_play_voice_sfx 2
+    marching_orders_play_voice_sfx SHOUT_TURN
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
@@ -250,64 +250,64 @@ return
 
 
 script marching_orders_sub_08a84448
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 6
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_RIGHT_FACE
     rest 24
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 8
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_TURN_RIGHT
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 24
     marching_orders_event00 4
-    marching_orders_play_voice_sfx 2
+    marching_orders_play_voice_sfx SHOUT_TURN
     rest 24
 return
 
 
 script marching_orders_sub_08a8452c
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 9
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_LEFT_FACE
     rest 24
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 11
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_TURN_LEFT
     spawn_cue CUE_TURN_LEFT
     beat_anim
     rest 24
     marching_orders_event00 3
-    marching_orders_play_voice_sfx 2
+    marching_orders_play_voice_sfx SHOUT_TURN
     rest 24
 return
 
 
 script marching_orders_2_sub_08a84610
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 7
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_RIGHT_FACE_F
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 8
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_TURN_RIGHT
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 24
     marching_orders_event00 4
-    marching_orders_play_voice_sfx 2
+    marching_orders_play_voice_sfx SHOUT_TURN
     rest 24
     rest 24
 return
 
 
 script marching_orders_unk_sub_08a846f4
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 10
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_LEFT_FACE_F
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 11
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_TURN_LEFT
     spawn_cue CUE_TURN_LEFT
     beat_anim
     rest 24
     marching_orders_event00 3
-    marching_orders_play_voice_sfx 2
+    marching_orders_play_voice_sfx SHOUT_TURN
     rest 24
     rest 24
 return
@@ -315,16 +315,16 @@ return
 
 script marching_orders_2_sub_08a847d8
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 7
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_RIGHT_FACE_F
     rest 24
-    marching_orders_event01 0
-    marching_orders_play_voice_sfx 8
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_TURN_RIGHT
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 24
     marching_orders_event00 4
-    marching_orders_play_voice_sfx 2
+    marching_orders_play_voice_sfx SHOUT_TURN
     rest 24
 return
 

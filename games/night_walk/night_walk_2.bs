@@ -12,12 +12,12 @@ script script_night_walk_2_entry
     call script_night_walk_prologue
     set_game_fade_in_time 16
     load_night_walk
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_night_walk_2_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -69,7 +69,7 @@ endstruct
 @ Night Walk 2 - Main Script
 
 script script_night_walk_2_end
-    fade_music_out TO_TEMPO, 96
+    fade_music_out 96
     rest 24
     rest 24
     rest 24
@@ -77,9 +77,9 @@ script script_night_walk_2_end
     rest 24
     rest 24
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
-    enable_play_inputs 0
+    disable_play_inputs
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -93,13 +93,13 @@ script script_night_walk_2_main
     night_walk_set_marking_criteria 0
     night_walk_set_end_script script_night_walk_2_end
     set_tempo 128
-    assess_inputs 1
-    run gameplay_assess_irrelevant_inputs, 0
-    enable_play_inputs 0
+    start_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
+    disable_play_inputs
     night_walk_init_balloons 7
     start_perfect_campaign
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     rest 24
     rest 24
@@ -139,9 +139,9 @@ script script_night_walk_2_main
     night_walk_pop_balloon
     rest 20
     night_walk_pop_balloon
-    enable_play_inputs 1
+    enable_play_inputs
     rest 4
-    print_text_s 0
+    clear_text_s
     run scene_hide_bg_layer, 1
     night_walk_set_platform 0
     set_marking_criteria 1
@@ -260,7 +260,7 @@ script script_night_walk_2_main
     night_walk_set_platform 0
     spawn_cue CUE_SNARE
     rest 24
-    print_text_s 0
+    clear_text_s
     run scene_hide_bg_layer, 1
     night_walk_set_platform 2
     spawn_cue CUE_KICK
@@ -377,7 +377,7 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_SNARE
     rest 24
-    print_text_s 0
+    clear_text_s
     run scene_hide_bg_layer, 1
     spawn_cue CUE_KICK
     rest 24
@@ -513,7 +513,7 @@ script script_night_walk_2_main
     rest 24
     night_walk_set_platform 3
     spawn_cue CUE_SNARE
-    print_text_s 0
+    clear_text_s
     run scene_hide_bg_layer, 1
     rest 24
     night_walk_set_platform 1
@@ -550,7 +550,7 @@ script script_night_walk_2_main
     rest 24
     rest 24
     rest 12
-    enable_play_inputs 0
+    disable_play_inputs
     rest 12
     rest 24
     rest 24
@@ -576,7 +576,7 @@ script script_night_walk_2_main
     beat_anim
     rest 24
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
 return
 

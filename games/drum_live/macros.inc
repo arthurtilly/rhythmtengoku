@@ -64,45 +64,54 @@
     drum_live_event SET_GUITARIST_NEXT_STATE, (((\state) << 2) | ((\mask) & 3))
 .endm
 
+
 @ [Event 0x01] ?
 .macro dml_event01 args
     drum_live_event EVENT_01, \args
 .endm
+
 
 @ [Event 0x02] Clear "Cool"/"Lame" Input Definitions
 .macro dml_clear_input_def
     drum_live_event CLEAR_INPUT_DEF, 0
 .endm
 
+
 @ [Event 0x03] Define "Cool" Inputs
 .macro dml_define_cool_inputs index, keys
     drum_live_event DEFINE_COOL_INPUTS, (((\keys) << 8) | ((\index) & 0xFF))
 .endm
+
 
 @ [Event 0x04] Define "Lame" Inputs
 .macro dml_define_lame_inputs index, keys
     drum_live_event DEFINE_LAME_INPUTS, (((\keys) << 8) | ((\index) & 0xFF))
 .endm
 
+
 @ [Event 0x05] ?
 .macro dml_event05 args
     drum_live_event EVENT_05, \args
 .endm
+
 
 @ [Event 0x06] ?
 .macro dml_event06 args
     drum_live_event EVENT_06, \args
 .endm
 
+
 @ [Event 0x07] ?
-.macro dml_event07 args
-    drum_live_event EVENT_07, \args
+.macro dml_event07
+    drum_live_event EVENT_07, 0
 .endm
+
 
 @ [Event 0x08] Set Enable Boredom Timer
 .macro dml_set_enable_boredom enable
     drum_live_event SET_ENABLE_BOREDOM, \enable
 .endm
+
 
 @ [Event 0x09] Set Disable Excitement Changes
 .macro dml_set_disable_excitement args

@@ -11,12 +11,12 @@ script script_drum_lesson_short_9_entry
     rest 24
     rest 24
     load_drum_lessons
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_drum_lesson_short_9_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
-    fade_music_out TO_TEMPO, 48
+    disable_pause_menu
+    disable_play_inputs
+    fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
     rest 24
@@ -275,11 +275,11 @@ endstruct
 script script_drum_lesson_short_9_main
     set_tempo 90
     set_music_volume 256
-    assess_inputs 0
+    stop_tracking_inputs
     dms_event08 4
     dms_event09 1
     rest 24
-    dms_event02 1
+    dms_event02 TRUE
     run drum_lesson_script_import_pattern, D_08a41ad8
     call drum_lessons_sub_08a7d7a0
     run drum_lesson_script_import_pattern, D_08a41ae8
@@ -292,11 +292,11 @@ script script_drum_lesson_short_9_main
     call drum_lessons_sub_08a7d7a0
     run drum_lesson_script_import_pattern, D_08a41b28
     call drum_lessons_sub_08a7d7a0
-    assess_inputs 1
+    start_tracking_inputs
     run drum_lesson_script_import_pattern, D_08a41b38
     call drum_lessons_sub_08a7d7a0
-    dms_show_dialogue 1
-    dms_set_teacher_exp 4
+    dms_show_dialogue TRUE
+    dms_set_teacher_exp TEACHER_EXP_GIVE_RANK
     dms_get_lesson_score
 return
 

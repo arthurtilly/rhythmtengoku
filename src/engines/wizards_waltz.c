@@ -195,7 +195,7 @@ void wizards_waltz_engine_update(void) {
 
 
 // Engine Event 0x01 (Enable Tutorial Mode)
-void wizards_waltz_enable_tutorial(u32 isTutorial) {
+void wizards_waltz_tutorial_enabled(u32 isTutorial) {
     gWizardsWaltz->isTutorial = isTutorial;
 }
 

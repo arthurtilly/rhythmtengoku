@@ -75,9 +75,9 @@ void studio_drum_list_exit_to_drumming(void) {
     songItem = listbox_get_sel_item(gStudio->songList);
     drumItem = listbox_get_sel_item(gStudio->drumList);
     studio_set_current_kit(drumItem);
-    set_next_scene(&D_089d49d4);
-    set_scene_trans_target(&D_089d49d4, &scene_studio);
-    set_scene_trans_var(&D_089d49d4, songItem);
+    set_next_scene(&scene_drum_studio_drumming);
+    set_scene_trans_target(&scene_drum_studio_drumming, &scene_studio);
+    set_scene_trans_var(&scene_drum_studio_drumming, songItem);
     func_0801d968(script_scene_studio_exit);
     gStudio->inputsEnabled = FALSE;
 }

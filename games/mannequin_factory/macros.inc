@@ -46,34 +46,40 @@
 
 
 @ [Event 0x00] ?
-.macro mannequin_factory_event00 args
-    mannequin_factory_event EVENT_00, \args
+.macro mannequin_factory_event00
+    mannequin_factory_event EVENT_00, 0
 .endm
 
+
 @ [Event 0x01] ?
-.macro mannequin_factory_event01 args
-    mannequin_factory_event EVENT_01, \args
+.macro mannequin_factory_event01
+    mannequin_factory_event EVENT_01, 0
 .endm
+
 
 @ [Event 0x02] ?
 .macro mannequin_factory_event02 args
     mannequin_factory_event EVENT_02, \args
 .endm
 
+
 @ [Event 0x03] ?
 .macro mannequin_factory_event03 args
     mannequin_factory_event EVENT_03, \args
 .endm
+
 
 @ [Event 0x04] ?
 .macro mannequin_factory_event04 args
     mannequin_factory_event EVENT_04, \args
 .endm
 
+
 @ [Event 0x05] ?
-.macro mannequin_factory_event05 args
-    mannequin_factory_event EVENT_05, \args
+.macro mannequin_factory_event05
+    mannequin_factory_event EVENT_05, 0
 .endm
+
 
 @ [Event 0x06] ?
 .macro mannequin_factory_event06 args
