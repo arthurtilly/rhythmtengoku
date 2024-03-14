@@ -413,9 +413,9 @@ script script_fireworks_practice
     rest 24
     print_text_f NULL
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         rest 24
         rest 24
         print_text_f D_0805ce5c
@@ -456,7 +456,7 @@ script script_fireworks_practice
         print_text_f D_0805ceec
         rest 24
         print_text_f NULL
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     rest 24
     rest 24
@@ -473,9 +473,9 @@ script script_fireworks_practice
     rest 24
     print_text_f NULL
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         rest 24
         rest 24
         print_text_f D_0805cf2c
@@ -518,7 +518,7 @@ script script_fireworks_practice
         rest 24
         print_text_f NULL
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     rest 24
     rest 24
@@ -535,9 +535,9 @@ script script_fireworks_practice
     rest 24
     print_text_f NULL
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         rest 24
         rest 24
         print_text_f D_0805d010
@@ -576,7 +576,7 @@ script script_fireworks_practice
         rest 24
         print_text_f NULL
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     run gameplay_set_tutorial NULL
     mod_music_volume 0, 144

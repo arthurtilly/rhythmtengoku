@@ -172,9 +172,9 @@ script script_rhythm_test_click_main
     play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         play_sfx_vol s_f_machine_click_seqData, 96
         spawn_cue CUE_TEST_00
         rest 12
@@ -184,7 +184,7 @@ script script_rhythm_test_click_main
         play_sfx_vol s_f_machine_click_seqData, 256
         beat_anim
         rest 12
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     play_sfx_vol s_f_machine_click_seqData, 96
@@ -199,9 +199,9 @@ script script_rhythm_test_click_main
     beat_anim
     rest 12
     rhythm_test_event02 12
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         play_sfx_vol s_f_machine_click_seqData, 96
         spawn_cue CUE_TEST_00
         rest 12
@@ -211,7 +211,7 @@ script script_rhythm_test_click_main
         play_sfx_vol s_f_machine_click_seqData, 256
         beat_anim
         rest 12
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     rhythm_test_event00 3
     assess_inputs 1
@@ -287,9 +287,9 @@ script script_rhythm_test_cue_main
     rest 24
     rest 24
     rhythm_test_event00 5
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         rhythm_test_event04 3
         rest 24
         rhythm_test_event04 2
@@ -308,7 +308,7 @@ script script_rhythm_test_cue_main
         rest 24
         rhythm_test_event04 0
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     rest 24
@@ -316,9 +316,9 @@ script script_rhythm_test_cue_main
     rest 24
     rest 24
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         rhythm_test_event04 3
         rest 24
         rhythm_test_event04 2
@@ -339,7 +339,7 @@ script script_rhythm_test_cue_main
         rhythm_test_event00 5
         rhythm_test_event04 0
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     rest 24
@@ -708,9 +708,9 @@ script script_rhythm_test_trick_main
     play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         spawn_cue CUE_TEST_00
         rest 12
         call rhythm_test_trick_sub_08a40068
@@ -719,7 +719,7 @@ script script_rhythm_test_trick_main
         play_sfx_vol s_f_machine_click_seqData, 256
         beat_anim
         rest 12
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     rest 12
@@ -731,9 +731,9 @@ script script_rhythm_test_trick_main
     beat_anim
     rest 12
     set_music_volume 256
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         spawn_cue CUE_TEST_00
         rest 12
         play_music s_check_trick1_seqData
@@ -743,7 +743,7 @@ script script_rhythm_test_trick_main
         play_sfx_vol s_f_machine_click_seqData, 256
         beat_anim
         rest 12
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     rest 12
@@ -753,9 +753,9 @@ script script_rhythm_test_trick_main
     play_sfx_vol s_f_machine_click_seqData, 256
     beat_anim
     rest 12
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         spawn_cue CUE_TEST_00
         rest 12
         call rhythm_test_trick_sub_08a40068
@@ -764,7 +764,7 @@ script script_rhythm_test_trick_main
         play_sfx_vol s_f_machine_click_seqData, 256
         beat_anim
         rest 12
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     beat_anim
     rest 12
@@ -785,9 +785,9 @@ script script_rhythm_test_trick_main
     rest 24
     beat_anim
     rest 12
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         spawn_cue CUE_TEST_00
         rest 12
         spawn_cue CUE_TEST_01
@@ -801,7 +801,7 @@ script script_rhythm_test_trick_main
         rest 24
         beat_anim
         rest 12
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     rhythm_test_event02 12
     rhythm_test_event00 3

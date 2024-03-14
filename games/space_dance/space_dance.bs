@@ -370,7 +370,7 @@ script script_space_dance_practice
     call space_dance_sub_08a84928
     call space_dance_sub_08a84928
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         call space_dance_sub_08a84928
         call space_dance_sub_08a84928
     loop_end
@@ -395,7 +395,7 @@ script script_space_dance_practice
     call space_dance_sub_08a85588
     call space_dance_sub_08a85588
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         call space_dance_sub_08a85588
         call space_dance_sub_08a85588
     loop_end
@@ -420,7 +420,7 @@ script script_space_dance_practice
     call space_dance_sub_08a851f8
     call space_dance_sub_08a851f8
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         call space_dance_sub_08a851f8
         call space_dance_sub_08a851f8
     loop_end

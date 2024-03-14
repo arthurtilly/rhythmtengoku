@@ -259,7 +259,7 @@ script script_marching_orders_practice
     marching_orders_event00 256
     print_text_f NULL
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         marching_orders_event02 3
         marching_orders_event01 0
         play_sfx s_guntai_v_migi_muke1_seqData
@@ -290,7 +290,7 @@ script script_marching_orders_practice
         rest 24
     loop_end
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         marching_orders_event01 0
         play_sfx s_guntai_v_zentai1_seqData
         rest 24

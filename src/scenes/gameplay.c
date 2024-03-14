@@ -106,7 +106,7 @@ void gameplay_start_scene(void) {
     gGameplay->skipTutorialButton = SELECT_BUTTON;
     gGameplay->fadeInTicks = 0x10;
     gGameplay->allowCueInputOverlap = FALSE;
-    gGameplay->unk8A = 0;
+    gGameplay->loopCounterStart = 0;
     gGameplay->goingForPerfect = FALSE;
     gGameplay->assessPerfectInputs = TRUE;
     gGameplay->perfectFailed = FALSE;
@@ -455,27 +455,27 @@ void gameplay_start_screen_fade_in(void) {
 }
 
 
-// [func_080175a0] Set unk8A
-void func_080175a0(u32 count) {
-    gGameplay->unk8A = count;
+// [func_080175a0] Set initial counter value
+void gameplay_set_initial_counter_value(u32 count) {
+    gGameplay->loopCounterStart = count;
 }
 
 
-// [func_080175b0] Set unk88 to unk8A
-void func_080175b0(void) {
-    gGameplay->unk88 = gGameplay->unk8A;
+// [func_080175b0] Reset loop counter
+void gameplay_reset_loop_counter(void) {
+    gGameplay->loopCounter = gGameplay->loopCounterStart;
 }
 
 
-// [func_080175c4] Increment unk88
-void func_080175c4(void) {
-    gGameplay->unk88++;
+// [func_080175c4] Increment loop counter
+void gameplay_increment_loop_counter(void) {
+    gGameplay->loopCounter++;
 }
 
 
-// [func_080175d8] Get unk88
-u32 func_080175d8(void) {
-    return gGameplay->unk88;
+// [func_080175d8] Get loop counter
+u32 gameplay_get_loop_counter(void) {
+    return gGameplay->loopCounter;
 }
 
 

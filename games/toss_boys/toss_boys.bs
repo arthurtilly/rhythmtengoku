@@ -970,9 +970,9 @@ script script_toss_boys_practice
     rest 24
     toss_boys_event00 0
     toss_boys_event04 0
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         toss_boys_event01 196928
         beat_anim
         rest 24
@@ -1028,7 +1028,7 @@ script script_toss_boys_practice
         toss_boys_event05 2
         beat_anim
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     beat_anim
@@ -1040,9 +1040,9 @@ script script_toss_boys_practice
     rest 24
     beat_anim
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         toss_boys_event01 196930
         beat_anim
         rest 24
@@ -1119,7 +1119,7 @@ script script_toss_boys_practice
         toss_boys_event05 2
         beat_anim
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     beat_anim
@@ -1127,9 +1127,9 @@ script script_toss_boys_practice
     print_text_s D_0805d7fc
     beat_anim
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         toss_boys_event01 196930
         beat_anim
         rest 24
@@ -1206,7 +1206,7 @@ script script_toss_boys_practice
         toss_boys_event05 2
         beat_anim
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     beat_anim
@@ -1228,9 +1228,9 @@ script script_toss_boys_practice
     rest 24
     beat_anim
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         toss_boys_event01 196928
         beat_anim
         rest 24
@@ -1310,7 +1310,7 @@ script script_toss_boys_practice
         toss_boys_event05 2
         beat_anim
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     beat_anim
@@ -1318,9 +1318,9 @@ script script_toss_boys_practice
     print_text_s D_0805d848
     beat_anim
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         toss_boys_event01 196928
         beat_anim
         rest 24
@@ -1400,7 +1400,7 @@ script script_toss_boys_practice
         toss_boys_event05 2
         beat_anim
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     beat_anim
@@ -1422,9 +1422,9 @@ script script_toss_boys_practice
     rest 24
     beat_anim
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         toss_boys_event01 196928
         beat_anim
         rest 24
@@ -1495,7 +1495,7 @@ script script_toss_boys_practice
         toss_boys_event05 2
         beat_anim
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     beat_anim
@@ -1503,9 +1503,9 @@ script script_toss_boys_practice
     print_text_s D_0805d8a0
     beat_anim
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         toss_boys_event01 196928
         beat_anim
         rest 24
@@ -1576,7 +1576,7 @@ script script_toss_boys_practice
         toss_boys_event05 2
         beat_anim
         rest 24
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     print_text_s 0
     beat_anim

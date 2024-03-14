@@ -183,7 +183,7 @@ script script_tanuki_and_monkey_main
     dmi_event0B 144896888
     loop_start
         call tanuki_and_monkey_sub_08a2efe0
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         dmi_event08 5
         beat_anim
         rest 24
@@ -247,7 +247,7 @@ script script_tanuki_and_monkey_main
     dmi_event0B 144896900
     loop_start
         call tanuki_and_monkey_sub_08a2efe0
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         dmi_event08 5
         beat_anim
         rest 24
@@ -319,7 +319,7 @@ script script_tanuki_and_monkey_main
     dmi_event0B 144896912
     loop_start
         call tanuki_and_monkey_sub_08a2efe0
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         dmi_event08 5
         beat_anim
         rest 24
@@ -391,7 +391,7 @@ script script_tanuki_and_monkey_main
     dmi_event0B 144896924
     loop_start
         call tanuki_and_monkey_sub_08a2efe0
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         dmi_event08 5
         beat_anim
         rest 24
@@ -465,7 +465,7 @@ script script_tanuki_and_monkey_main
     dmi_event0B 144896936
     loop_start
         call tanuki_and_monkey_sub_08a2efe0
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         dmi_event08 5
         beat_anim
         rest 24
@@ -625,7 +625,7 @@ script script_tanuki_and_monkey_intro
     loop_start
         dmi_event09 0
         rest 12
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         dmi_event08 13
         rest 24
         dmi_event0A 1
@@ -695,7 +695,7 @@ script script_tanuki_and_monkey_intro
     loop_start
         dmi_event09 0
         rest 12
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         dmi_event08 13
         rest 24
         dmi_event0A 1
@@ -765,7 +765,7 @@ script script_tanuki_and_monkey_intro
     loop_start
         dmi_event09 0
         rest 12
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         dmi_event08 13
         rest 24
         dmi_event0A 1
@@ -843,7 +843,7 @@ script script_tanuki_and_monkey_intro
     loop_start
         dmi_event09 0
         rest 12
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         dmi_event08 13
         rest 24
         dmi_event0A 1

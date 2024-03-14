@@ -108,7 +108,7 @@ script script_drum_studio_main
         dms_stop_bg_monitor
         dms_event01 0
         if_globalvar_eq 0
-            run beatscript_disable_loops, 0
+            run beatscript_disable_loops
         end_if
     loop_end
     dms_event02 0

@@ -576,7 +576,7 @@ script script_karate_man_practice
     run scene_stop_music, 0
     rest 24
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         spawn_cue CUE_POT_STRICT
         rest 24
         rest 24
@@ -602,7 +602,7 @@ script script_karate_man_practice
     set_music_volume 150
     set_tempo 134
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         play_sfx s_intro_one_seqData
         rest 24
         play_sfx s_intro_two_seqData

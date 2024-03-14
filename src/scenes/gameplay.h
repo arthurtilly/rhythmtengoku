@@ -40,8 +40,8 @@ struct GameplaySceneData {
 	struct Scene *skipDestination; // Skip Tutorial destination scene
 	u16 fadeInTicks; // Remaining ticks for screen fade-in?
     u16 nextCueDuration;
-    u16 unk88;
-    u16 unk8A;
+    u16 loopCounter;
+    u16 loopCounterStart;
     s16 pauseSprite;
     s16 pauseOptionsSprite;
     u8 unpausing; // Pause Menu is currently being exited.
@@ -123,10 +123,10 @@ extern void gameplay_display_skip_icon(u32 corner); // [func_080174e8] Display S
 extern void gameplay_skip_tutorial(void); // [func_08017514] Skip Tutorial
 extern void gameplay_set_screen_fade_in_time(u32 duration); // [func_08017568] Set Screen Fade-In
 extern void gameplay_start_screen_fade_in(void); // [func_08017578] Fade-In Screen
-extern void func_080175a0(u32 count); // [func_080175a0] Set unk8A
-extern void func_080175b0(void); // [func_080175b0] Set unk88 to unk8A
-extern void func_080175c4(void); // [func_080175c4] Increment unk88
-extern u32  func_080175d8(void); // [func_080175d8] Get unk88
+extern void gameplay_set_initial_counter_value(u32 count); // [func_080175a0] Set Initial Loop Counter Value
+extern void gameplay_reset_loop_counter(void); // [func_080175b0] Reset Loop Counter
+extern void gameplay_increment_loop_counter(void); // [func_080175c4] Increment Loop Counter
+extern u32  gameplay_get_loop_counter(void); // [func_080175d8] Get Loop Counter
 extern void gameplay_set_reverb(u32 level); // [func_080175e8] Set Global Reverb
 extern void gameplay_start_perfect_campaign(void); // [func_08017604] Start Perfect Campaign
 extern void gameplay_check_for_perfect(u32 assessInputs); // [func_08017648] Start/Stop Assessing Inputs for Perfect Campaign

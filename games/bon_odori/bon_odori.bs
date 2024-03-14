@@ -1066,9 +1066,9 @@ script script_bon_odori_practice
     rest 24
     rest 24
     rest 12
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         bon_odori_start_input_check
         switch_loop_counter
             case 0
@@ -1080,7 +1080,7 @@ script script_bon_odori_practice
         call bon_odori_sub_08a47d44
         call bon_odori_sub_08a47db0
         bon_odori_stop_input_check
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     rest 12
     bon_odori_lighten_screen 48
@@ -1106,9 +1106,9 @@ script script_bon_odori_practice
     rest 24
     rest 24
     rest 12
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         bon_odori_start_input_check
         switch_loop_counter
             case 0
@@ -1120,7 +1120,7 @@ script script_bon_odori_practice
         call bon_odori_sub_08a47fb4
         call bon_odori_sub_08a478050
         bon_odori_stop_input_check
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     rest 12
     run gameplay_set_tutorial NULL

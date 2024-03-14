@@ -303,7 +303,7 @@ script script_power_calligraphy_practice
     print_text_f D_0805d318
     power_calligraphy_event03 0
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         call power_calligraphy_sub_08a7f1e0
         call power_calligraphy_sub_08a7f264
         power_calligraphy_event03 0
@@ -322,7 +322,7 @@ script script_power_calligraphy_practice
     rest 24
     power_calligraphy_event03 0
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         call power_calligraphy_sub_08a7f534
         call power_calligraphy_sub_08a7f594
         power_calligraphy_event03 0

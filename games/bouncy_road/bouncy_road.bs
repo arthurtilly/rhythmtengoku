@@ -208,19 +208,19 @@ script script_bouncy_road_practice
     rest 24
     rest 24
     rest 24
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         bouncy_road_enable_ball_goal_sfx
         bouncy_road_deploy_ball 24
         rest 288
         play_music s_f_even_road_seqData
         rest 96
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         rest 24
         rest 24
         bouncy_road_deploy_ball 24
@@ -231,11 +231,11 @@ script script_bouncy_road_practice
         rest 288
         play_music s_f_even_road_seqData
         rest 96
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         bouncy_road_enable_ball_goal_sfx
         bouncy_road_deploy_ball 12
         rest 192
@@ -244,7 +244,7 @@ script script_bouncy_road_practice
         rest 96
         play_music s_f_even_road_seqData
         rest 96
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     run gameplay_set_tutorial NULL
     rest 24

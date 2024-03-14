@@ -293,7 +293,7 @@ endstruct
 .endm
 
 .macro switch_loop_counter
-    switch FUNC, func_080175d8
+    switch FUNC, gameplay_get_loop_counter
 .endm
 
 .macro switch_random range

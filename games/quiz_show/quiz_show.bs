@@ -163,9 +163,9 @@ script script_quiz_show_main
     assess_inputs 0
     start_perfect_campaign
     assess_perfect_inputs 0
-    run func_080175b0, 0
+    run gameplay_reset_loop_counter
     loop_start
-        run beatscript_disable_loops, 0
+        run beatscript_disable_loops
         switch_loop_counter
             case 0
                 print_text_s D_0805ece8
@@ -579,7 +579,7 @@ script script_quiz_show_main
                 rest 24
                 run beatscript_enable_loops, 0
         end_switch
-        run func_080175c4, 0
+        run gameplay_increment_loop_counter
     loop_end
     set_tempo 125
     play_music s_quiz_bgm_seqData
@@ -636,7 +636,7 @@ script script_quiz_show_skipped_practice
     rest 24
     enable_pause_menu TRUE
     rest 24
-    run func_080175a0, 3
+    run gameplay_set_initial_counter_value, 3
     goto script_quiz_show_main
 
 .end
