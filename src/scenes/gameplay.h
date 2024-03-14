@@ -108,7 +108,7 @@ extern void gameplay_set_input_buttons(u16 press, u16 release); // [func_0801733
 extern s32  gameplay_run_common_event(s32 param, s32 id); // [func_08017348] Run Engine-Common Event
 extern void gameplay_set_engine_event_param(s32 param); // [func_08017380] Set Parameter for Engine-Specific Event
 extern s32  gameplay_run_engine_event(const struct GameEngine *engine, s32 id); // [func_0801738c] Run Engine-Specific Event
-extern void gameplay_enable_inputs(u32 enable); // [func_080173c4] Enable Play Inputs
+extern void gameplay_inputs_enabled(u32 enable); // [func_080173c4] Enable Play Inputs
 extern void gameplay_assess_irrelevant_inputs(u32 assess); // [func_080173d0] Assess Non-Cue Inputs
 extern void gameplay_set_next_cue_spawn_sfx(struct SongHeader *sfx); // [func_080173dc] Set Next Cue Spawn SFX
 extern void gameplay_set_next_cue_hit_sfx(struct SongHeader *sfx); // [func_080173e8] Set Next Cue Hit SFX

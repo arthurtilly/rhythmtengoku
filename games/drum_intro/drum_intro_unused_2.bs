@@ -11,11 +11,11 @@ script script_drum_intro_unused_2_entry
     rest 24
     rest 24
     load_drum_intro_talk
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_drum_intro_unused_2_intro
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -32,11 +32,11 @@ script script_drum_intro_unused_2_skipped_intro_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_drum_intro_play
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_drum_intro_unused_2_skipped_intro
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -56,13 +56,13 @@ script script_drum_intro_unused_2_main
     dmi_event04 TRUE
     dmi_event03 2
     print_text_s D_0805d8d8
-    rest 96
+    rest_beats 4
     dmi_event03 1
-    print_text_s 0
+    clear_text_s
     rest 24
     set_tempo 150
     dmi_event05 1
-    assess_inputs 1
+    start_tracking_inputs
     play_sfx s_intro_one_seqData
     dmi_event03 3
     rest 24
@@ -88,31 +88,31 @@ script script_drum_intro_unused_2_main
     dmi_event03 3
     rest 4
     spawn_cue CUE_KICK
-    rest 0
+    no_op
     spawn_cue CUE_CYMBAL
-    rest 0
+    no_op
     rest 24
     set_music_volume 256
     rest 72
     mod_music_volume 0, 120
-    rest 120
+    rest_beats 5
     set_tempo 140
-    assess_inputs 0
+    stop_tracking_inputs
     dmi_event03 2
     dmi_event06
-    rest 96
+    rest_beats 4
     dmi_event03 1
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event03 2
     print_text_s D_0805d8ec
-    rest 96
+    rest_beats 4
     dmi_event03 1
-    print_text_s 0
-    rest 0
+    clear_text_s
+    no_op
     set_tempo 140
     dmi_event05 1
-    assess_inputs 1
+    start_tracking_inputs
     play_sfx s_intro_one_seqData
     dmi_event03 3
     rest 24
@@ -135,34 +135,34 @@ script script_drum_intro_unused_2_main
     rest 24
     play_sfx_vol s_intro_uh_seqData, 160
     dmi_event03 3
-    rest 0
+    no_op
     spawn_cue CUE_KICK
-    rest 0
+    no_op
     spawn_cue CUE_CYMBAL
-    rest 0
+    no_op
     rest 24
     set_music_volume 256
     play_music s_intro_pat2_seqData
     rest 72
     mod_music_volume 0, 120
-    rest 120
+    rest_beats 5
     set_tempo 140
-    assess_inputs 0
+    stop_tracking_inputs
     dmi_event03 2
     dmi_event06
-    rest 96
+    rest_beats 4
     dmi_event03 1
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event03 2
     print_text_s D_0805d900
-    rest 96
+    rest_beats 4
     dmi_event03 1
-    print_text_s 0
-    rest 0
+    clear_text_s
+    no_op
     set_tempo 130
     dmi_event05 1
-    assess_inputs 1
+    start_tracking_inputs
     play_sfx s_intro_one_seqData
     dmi_event03 3
     rest 24
@@ -195,34 +195,34 @@ script script_drum_intro_unused_2_main
     rest 24
     play_sfx s_intro_comeon_seqData
     dmi_event03 3
-    rest 0
+    no_op
     spawn_cue CUE_KICK
-    rest 0
+    no_op
     spawn_cue CUE_CYMBAL
-    rest 0
+    no_op
     rest 24
     set_music_volume 256
     play_music s_intro_pat3_seqData
     rest 72
     mod_music_volume 0, 120
-    rest 120
+    rest_beats 5
     set_tempo 140
-    assess_inputs 0
+    stop_tracking_inputs
     dmi_event03 2
     dmi_event06
-    rest 96
+    rest_beats 4
     dmi_event03 1
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event03 2
     print_text_s D_0805d914
-    rest 96
+    rest_beats 4
     dmi_event03 1
-    print_text_s 0
-    rest 0
+    clear_text_s
+    no_op
     set_tempo 200
     dmi_event05 1
-    assess_inputs 1
+    start_tracking_inputs
     play_sfx s_intro_a_seqData
     rest 12
     play_sfx s_intro_one_seqData
@@ -249,30 +249,30 @@ script script_drum_intro_unused_2_main
     dmi_event03 3
     rest 4
     spawn_cue CUE_KICK
-    rest 0
+    no_op
     spawn_cue CUE_CYMBAL
-    rest 0
+    no_op
     rest 24
     set_music_volume 256
-    rest 144
+    rest_beats 6
     mod_music_volume 0, 144
-    rest 144
+    rest_beats 6
     set_tempo 140
-    assess_inputs 0
+    stop_tracking_inputs
     dmi_event03 2
     dmi_event06
-    rest 96
+    rest_beats 4
     dmi_event03 1
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event04 FALSE
     set_tempo 120
     dmi_event03 2
     print_text_s D_0805d928
-    rest 96
+    rest_beats 4
     dmi_event03 1
-    print_text_s 0
-    rest 0
+    clear_text_s
+    no_op
     set_game_fade_in_time 8
     load_drum_intro_talk
     dmi_event02 1
@@ -297,7 +297,7 @@ script script_drum_intro_unused_2_intro
     set_tempo 120
     set_music_volume 0
     mod_music_volume 256, 192
-    assess_inputs 0
+    stop_tracking_inputs
     rest 24
     rest 24
     init_tutorial scene_drum_intro_unused_2_skipped_intro
@@ -339,7 +339,7 @@ script script_drum_intro_unused_2_intro
 
 script script_drum_intro_unused_2_skipped_intro
     set_tempo 120
-    assess_inputs 0
+    stop_tracking_inputs
     goto script_drum_intro_unused_2_main
 
 .end

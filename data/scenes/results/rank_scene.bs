@@ -13,7 +13,7 @@ script script_scene_results_ver_rank
     rest 72
     run results_publish_comments
     play_sfx s_f_result_mes_step2_seqData
-    rest 96
+    rest_beats 4
     run rank_results_display_rank
     rest 24
     rest 24

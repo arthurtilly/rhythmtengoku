@@ -31,7 +31,7 @@ script drum_lessons_sub_08a7d7a0
         dms_event0C
         rest 3
     loop_end
-    run scene_stop_music, 0
+    run scene_stop_music
     run drum_lesson_script_end_pattern
     dms_set_dialogue_text NULL
     rest 6

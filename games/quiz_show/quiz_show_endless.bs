@@ -11,11 +11,11 @@ script script_quiz_show_endless_entry
     rest 24
     rest 24
     load_quiz_show_endless
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_quiz_show_endless_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -42,7 +42,7 @@ quiz_show_endless_table D_08068320, D_08a59c58
 
 script quiz_show_endless_sub_08068328
     quiz_show_event06 192
-    rest 192
+    rest_beats 8
 return
 
 
@@ -617,7 +617,7 @@ endstruct
 script script_quiz_show_endless_game_over
     quiz_show_event00 64
     quiz_show_event00 65
-    enable_pause_menu FALSE
+    disable_pause_menu
     quiz_show_event10
     play_sfx s_f_quiz_miss_seqData
     rest 12
@@ -633,19 +633,19 @@ script script_quiz_show_endless_game_over
     mod_music_volume 256, 96
     print_text_s D_0806996c
     run gameplay_display_text_and_wait
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
 return
 
 
 script script_quiz_show_endless_main
-    enable_play_inputs 0
+    disable_play_inputs
     set_tempo 120
     play_music s_quiz_bgm_seqData
     set_music_volume 40
     mod_music_volume 256, 48
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     print_text_s D_08069990
     run gameplay_display_text_and_wait
@@ -693,11 +693,11 @@ script script_quiz_show_endless_main
         rest 12
         quiz_show_event00 16
         rest 24
-        print_text_s 0
+        clear_text_s
         quiz_show_event05 TRUE
         quiz_show_event00 1
         rest 12
-        enable_play_inputs 1
+        enable_play_inputs
         rest 12
         play_sfx s_keytoy_count2_seqData
         quiz_show_event0D TRUE
@@ -710,7 +710,7 @@ script script_quiz_show_endless_main
         play_sfx s_f_quiz_stop_seqData
         print_text_s D_08069a04
         rest 12
-        enable_play_inputs 0
+        disable_play_inputs
         rest 12
         quiz_show_event00 17
         run gameplay_display_text_and_wait

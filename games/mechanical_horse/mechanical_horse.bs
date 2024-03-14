@@ -11,11 +11,11 @@ script script_mechanical_horse_entry
     rest 24
     rest 24
     load_mechanical_horse
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_mechanical_horse_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -79,21 +79,21 @@ endstruct
 
 script script_mechanical_horse_main
     import_marking_criteria mechanical_horse_marking_criteria
-    assess_inputs 0
+    stop_tracking_inputs
     set_tempo 80
     set_music_volume 256
-    enable_play_inputs 0
+    disable_play_inputs
     mechanical_horse_event02 D_0805c684
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
-    enable_play_inputs 1
+    enable_play_inputs
     mechanical_horse_event02 D_0805c69c
     rest 24
     rest 24
     mechanical_horse_event02 D_0805c6b8
     mechanical_horse_event01 0
-    assess_inputs 0
+    stop_tracking_inputs
     spawn_cue CUE_WALK
     rest 12
     play_music s_uma_bgm1_seqData
@@ -122,7 +122,7 @@ script script_mechanical_horse_main
     rest 16
     mechanical_horse_event02 D_0805c6d4
     mechanical_horse_event04 TRUE
-    assess_inputs 1
+    start_tracking_inputs
     loop_start
         mechanical_horse_event05 0
         spawn_cue CUE_WALK
@@ -138,7 +138,7 @@ script script_mechanical_horse_main
         beat_anim
         rest 16
     loop_end
-    assess_inputs 0
+    stop_tracking_inputs
     mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c6d8
     mechanical_horse_event01 1
@@ -183,7 +183,7 @@ script script_mechanical_horse_main
     rest 24
     mechanical_horse_event02 D_0805c6d4
     mechanical_horse_event04 TRUE
-    assess_inputs 1
+    start_tracking_inputs
     loop_start
         mechanical_horse_event05 1
         spawn_cue CUE_WALK
@@ -199,7 +199,7 @@ script script_mechanical_horse_main
         beat_anim
         rest 24
     loop_end
-    assess_inputs 0
+    stop_tracking_inputs
     mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c6d8
     mechanical_horse_event01 2
@@ -235,7 +235,7 @@ script script_mechanical_horse_main
     rest 12
     mechanical_horse_event02 D_0805c6d4
     mechanical_horse_event04 TRUE
-    assess_inputs 1
+    start_tracking_inputs
     loop_start
         mechanical_horse_event05 2
         spawn_cue CUE_WALK
@@ -248,7 +248,7 @@ script script_mechanical_horse_main
         rest 12
         rest 12
     loop_end
-    assess_inputs 0
+    stop_tracking_inputs
     mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c728
     mechanical_horse_event01 3
@@ -284,7 +284,7 @@ script script_mechanical_horse_main
     rest 12
     mechanical_horse_event02 D_0805c6d4
     mechanical_horse_event04 TRUE
-    assess_inputs 1
+    start_tracking_inputs
     mechanical_horse_event06 160
     loop_start
         spawn_cue CUE_WALK
@@ -370,8 +370,8 @@ script script_mechanical_horse_main
         rest 12
         run beatscript_enable_loops
     loop_end
-    assess_inputs 0
-    enable_pause_menu FALSE
+    stop_tracking_inputs
+    disable_pause_menu
     mechanical_horse_event03 1
     mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c75c
@@ -384,8 +384,8 @@ script script_mechanical_horse_main
     spawn_cue CUE_WALK
     rest 12
     rest 12
-    run gameplay_enable_tutorial, 0
-    enable_pause_menu FALSE
+    run gameplay_enable_tutorial, FALSE
+    disable_pause_menu
 return
 
 .end

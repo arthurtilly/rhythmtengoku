@@ -344,7 +344,7 @@ s32 gameplay_run_engine_event(const struct GameEngine *engine, s32 id) {
 
 
 // [func_080173c4] Enable Play Inputs
-void gameplay_enable_inputs(u32 enable) {
+void gameplay_inputs_enabled(u32 enable) {
     gGameplay->playInputsEnabled = enable;
 }
 
@@ -434,7 +434,7 @@ void gameplay_skip_tutorial(void) {
     task_pool_pause_id(get_current_mem_id(), TRUE);
     set_pause_beatscript_scene(FALSE);
     func_0801d968(D_089cfda4);
-    func_0801db04(FALSE);
+    pause_menu_enabled(FALSE);
     gGameplay->skippingTutorial = TRUE;
 }
 
@@ -1287,7 +1287,7 @@ s32 gameplay_update_pause_menu(void) {
 // [func_08018524] Initialise Pause Handler
 void gameplay_init_pause_menu(void) {
     func_0801daf8(&gameplay_pause_menu_data);
-    func_0801db04(FALSE); // Disable Pause Menu
+    pause_menu_enabled(FALSE); // Disable Pause Menu
 }
 
 

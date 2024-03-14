@@ -11,11 +11,11 @@ script script_drum_samurai_opening_cutscene_entry
     rest 24
     rest 24
     load_drum_samurai_cutscene
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_drum_samurai_opening_cutscene_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -31,11 +31,11 @@ script script_drum_samurai_opening_cutscene_2_entry
     rest 24
     rest 24
     load_drum_samurai_cutscene
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_drum_samurai_opening_cutscene_2_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24

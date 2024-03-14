@@ -208,7 +208,7 @@ script script_drum_boys_clappy_trio
     rest 24
     rest 12
     rest 6
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 6
     dml_set_enable_boredom FALSE
     rest 24

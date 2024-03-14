@@ -11,11 +11,11 @@ script script_drum_samurai_demo_cutscene_entry
     rest 24
     rest 24
     load_drum_samurai_cutscene
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_drum_samurai_demo_cutscene_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -190,7 +190,7 @@ script script_drum_samurai_demo_cutscene_main
     dmi_event01 64
     rest 6
     rest 6
-    print_text_s 0
+    clear_text_s
     dmi_event01 32
     beat_anim
     rest 6
@@ -299,7 +299,7 @@ script script_drum_samurai_demo_cutscene_main
     dmi_event01 128
     rest 6
     rest 6
-    print_text_s 0
+    clear_text_s
     dmi_event01 256
     dmi_event01 2
     beat_anim
@@ -426,9 +426,9 @@ script script_drum_samurai_demo_cutscene_main
     dmi_event01 1
     dmi_event01 512
     dmi_event01 32
-    print_text_s 0
+    clear_text_s
     rest 6
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 6
     rest 24
     rest 24

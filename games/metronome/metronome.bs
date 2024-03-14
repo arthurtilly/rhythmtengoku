@@ -11,11 +11,11 @@ script script_metronome_entry
     rest 24
     rest 24
     load_metronome
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_metronome_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -92,11 +92,11 @@ script script_metronome_main
     set_tempo 120
     set_music_volume 256
     rest 12
-    assess_inputs 0
-    run gameplay_assess_irrelevant_inputs, 0
+    stop_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
     call metronome_sub_08a19850
     call metronome_sub_08a19850
-    print_text_f NULL
+    clear_text_f
     loop_start
         call metronome_sub_08a19850
         call metronome_sub_08a19850
@@ -105,8 +105,8 @@ script script_metronome_main
         metronome_event02
     loop_end
     print_text_f 1
-    assess_inputs 1
-    run gameplay_assess_irrelevant_inputs, 1
+    start_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, TRUE
     metronome_event00 FALSE
     spawn_cue CUE_DEFAULT
     rest 12
@@ -133,8 +133,8 @@ script script_metronome_main
         call metronome_sub_08a199b8
         metronome_event03
     loop_end
-    assess_inputs 0
-    run gameplay_assess_irrelevant_inputs, 0
+    stop_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
     print_text_f -1
     call metronome_sub_08a19850
     print_text_f 2

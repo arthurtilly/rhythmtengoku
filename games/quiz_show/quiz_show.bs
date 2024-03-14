@@ -12,11 +12,11 @@ script script_quiz_show_entry
     call script_quiz_show_prologue
     set_game_fade_in_time 16
     load_quiz_show
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_quiz_show_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -33,11 +33,11 @@ script script_quiz_show_skipped_practice_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_quiz_show
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_quiz_show_skipped_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -54,7 +54,7 @@ define_gameplay_scene scene_quiz_show_skipped_practice, script_quiz_show_skipped
 script script_quiz_show_prologue
     set_game_fade_in_time 8
     load_game quiz_show_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_quiz_seqData
     rest 24
@@ -124,7 +124,7 @@ script quiz_show_sub_08a3c108
     mod_music_volume 256, 96
     print_text_s D_0805ecb0
     run gameplay_display_text_and_wait
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
 return
 
@@ -160,9 +160,9 @@ return
 script script_quiz_show_main
     set_tempo 140
     set_results_header D_0805ecd4
-    assess_inputs 0
+    stop_tracking_inputs
     start_perfect_campaign
-    assess_perfect_inputs 0
+    stop_tracking_perfect_campaign
     run gameplay_reset_loop_counter
     loop_start
         run beatscript_disable_loops
@@ -472,31 +472,31 @@ script script_quiz_show_main
         rest 24
         rest 24
         rest 24
-        print_text_s 0
+        clear_text_s
         quiz_show_event05 TRUE
         quiz_show_event00 1
         rest 12
-        enable_play_inputs 1
+        enable_play_inputs
         rest 12
         play_sfx s_keytoy_count2_seqData
         switch_loop_counter
             case 0
                 quiz_show_event06 192
-                rest 192
+                rest_beats 8
                 break
             case 1
                 quiz_show_event06 288
-                rest 288
+                rest_beats 12
                 break
             case 2
             case 3
             case 4
                 quiz_show_event06 480
-                rest 480
+                rest_beats 20
                 break
             case 5
                 quiz_show_event06 576
-                rest 576
+                rest_beats 24
                 break
         end_switch
         play_sfx s_keytoy_count1_seqData
@@ -505,7 +505,7 @@ script script_quiz_show_main
         play_sfx s_f_quiz_stop_seqData
         print_text_s D_0805ed7c
         rest 12
-        enable_play_inputs 0
+        disable_play_inputs
         rest 24
         rest 24
         rest 24
@@ -527,11 +527,11 @@ script script_quiz_show_main
         rest 24
         rest 24
         quiz_show_event03 FALSE
-        assess_perfect_inputs 1
+        start_tracking_perfect_campaign
         quiz_show_event04
         if_globalvar_eq 0
             import_marking_criteria quiz_show_marking_criteria_set_1
-            assess_inputs 1
+            start_tracking_inputs
             switch_loop_counter
                 case 5
                     set_marking_criteria 0
@@ -543,23 +543,23 @@ script script_quiz_show_main
                     set_marking_criteria 0
                     run gameplay_add_cue_result_barely, 0
             end_switch
-            assess_inputs 0
+            stop_tracking_inputs
             run gameplay_set_tutorial NULL
             goto quiz_show_sub_08a3c108
         else
             switch_loop_counter
                 case 5
                     import_marking_criteria quiz_show_marking_criteria_set_2
-                    assess_inputs 1
+                    start_tracking_inputs
                     set_marking_criteria 0
                     run gameplay_add_cue_result_hit, 0
-                    assess_inputs 0
+                    stop_tracking_inputs
                     break
                 default
                     run gameplay_register_perfect_input, 0
             end_switch
         end_if
-        assess_perfect_inputs 0
+        stop_tracking_perfect_campaign
         quiz_show_event00 48
         quiz_show_event00 49
         play_sfx s_f_quiz_ok_seqData
@@ -590,19 +590,19 @@ script script_quiz_show_main
     rest 12
     print_text_s D_0805edd8
     run gameplay_display_text_and_wait
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
 return
 
 
 script script_quiz_show_practice
-    enable_play_inputs 0
+    disable_play_inputs
     set_tempo 125
     play_music s_quiz_bgm_seqData
     set_music_volume 40
     mod_music_volume 256, 192
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     run gameplay_set_tutorial scene_quiz_show_skipped_practice
     print_text_s D_0805edf4
@@ -631,10 +631,10 @@ script script_quiz_show_practice
 
 
 script script_quiz_show_skipped_practice
-    enable_play_inputs 0
+    disable_play_inputs
     set_tempo 125
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     run gameplay_set_initial_counter_value, 3
     goto script_quiz_show_main

@@ -16,11 +16,11 @@ script script_remix_4_entry
     call script_remix_4_prologue
     set_game_fade_in_time 16
     load_quiz_show
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_remix_4_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -37,7 +37,7 @@ define_gameplay_scene scene_remix_4, script_remix_4_entry
 script script_remix_4_prologue
     set_game_fade_in_time 8
     load_game remix_4_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_remix_seqData
     rest 24
@@ -236,8 +236,8 @@ return
 script script_remix_4_main
     set_results_header D_080680d4
     import_marking_criteria remix_4_marking_criteria
-    forgive_x_misses 2
-    assess_inputs 1
+    run gameplay_set_mercy_count, 2
+    start_tracking_inputs
     set_marking_criteria 0
     start_perfect_campaign
     set_tempo 128
@@ -245,7 +245,7 @@ script script_remix_4_main
     set_game_fade_in_time 0
     set_game_fade_in_time 20
     load_night_walk
-    enable_play_inputs 1
+    enable_play_inputs
     night_walk_set_drumtech_volume 0
     night_walk_enable_swing TRUE
     night_walk_set_cue_earliness 24
@@ -276,7 +276,7 @@ script script_remix_4_main
     rest 4
     night_walk_set_drumtech_volume 96
     rest 4
-    enable_pause_menu TRUE
+    enable_pause_menu
     night_walk_set_platform 1
     spawn_cue CUE_KICK
     rest 24
@@ -332,9 +332,9 @@ script script_remix_4_main
     set_game_fade_in_time 0
 
     load_quiz_show
-    enable_play_inputs 0
-    assess_inputs 0
-    run gameplay_assess_irrelevant_inputs, 0
+    disable_play_inputs
+    stop_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
     quiz_show_event01 0
     quiz_show_event01 -16
     quiz_show_event01 1
@@ -344,7 +344,7 @@ script script_remix_4_main
     rest 24
     rest 24
     quiz_show_event00 0
-    print_text_s 0
+    clear_text_s
     rest 24
     rest 24
     quiz_show_event02 FALSE
@@ -359,9 +359,9 @@ script script_remix_4_main
     quiz_show_event00 16
     print_text_s D_080680fc
     rest 24
-    print_text_s 0
+    clear_text_s
     quiz_show_event00 1
-    enable_play_inputs 1
+    enable_play_inputs
     rest 24
     rest 24
     rest 24
@@ -372,10 +372,10 @@ script script_remix_4_main
     play_sfx s_f_quiz_stop_seqData
     print_text_s D_08068108
     rest 12
-    enable_play_inputs 0
+    disable_play_inputs
     rest 12
     rest 12
-    print_text_s 0
+    clear_text_s
     rest 12
     quiz_show_event01 -32
     quiz_show_event04
@@ -400,9 +400,9 @@ script script_remix_4_main
 
     load_night_walk
     night_walk_set_platform 0
-    enable_play_inputs 1
-    assess_inputs 1
-    run gameplay_assess_irrelevant_inputs, 1
+    enable_play_inputs
+    start_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, TRUE
     night_walk_set_drumtech_volume 0
     night_walk_enable_swing TRUE
     night_walk_set_cue_earliness 240
@@ -466,12 +466,12 @@ script script_remix_4_main
     set_game_fade_in_time 0
 
     load_polyrhythm_remix
-    run gameplay_assess_irrelevant_inputs, 0
+    run gameplay_assess_irrelevant_inputs, FALSE
     rest 12
     mute_music_track (MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8)
     polyrhythm_spawn_rod DOWNSIDE
     rest 24
-    run gameplay_assess_irrelevant_inputs, 1
+    run gameplay_assess_irrelevant_inputs, TRUE
     polyrhythm_despawn_blocks UPSIDE
     polyrhythm_spawn_block 0, DOWNSIDE, PLATFORM
     polyrhythm_spawn_block 1, DOWNSIDE, PLATFORM
@@ -561,7 +561,7 @@ script script_remix_4_main
 
     load_night_walk
     night_walk_set_platform 0
-    enable_play_inputs 1
+    enable_play_inputs
     night_walk_set_drumtech_volume 0
     night_walk_enable_swing TRUE
     night_walk_set_cue_earliness 240
@@ -636,14 +636,14 @@ script script_remix_4_main
     set_game_fade_in_time 0
 
     load_polyrhythm_remix
-    run gameplay_assess_irrelevant_inputs, 0
+    run gameplay_assess_irrelevant_inputs, FALSE
     rest 12
     reset_music_track_volumes
     rest 24
     rest 24
     rest 24
     rest 24
-    run gameplay_assess_irrelevant_inputs, 1
+    run gameplay_assess_irrelevant_inputs, TRUE
     mute_music_track (MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8)
     polyrhythm_spawn_rod DOWNSIDE
     polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
@@ -758,7 +758,7 @@ script script_remix_4_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -777,7 +777,7 @@ script script_remix_4_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 8
@@ -793,7 +793,7 @@ script script_remix_4_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -812,7 +812,7 @@ script script_remix_4_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_UUN
     beat_anim
     rest 24
@@ -852,7 +852,7 @@ script script_remix_4_main
     set_game_fade_in_time 20
 
     load_night_walk
-    enable_play_inputs 1
+    enable_play_inputs
     night_walk_set_drumtech_volume 0
     night_walk_enable_swing TRUE
     night_walk_set_cue_earliness 240
@@ -913,9 +913,9 @@ script script_remix_4_main
     set_game_fade_in_time 0
 
     load_quiz_show
-    enable_play_inputs 0
-    assess_inputs 0
-    run gameplay_assess_irrelevant_inputs, 0
+    disable_play_inputs
+    stop_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
     quiz_show_event01 0
     quiz_show_event01 -16
     quiz_show_event01 1
@@ -926,7 +926,7 @@ script script_remix_4_main
     rest 24
     rest 24
     quiz_show_event00 0
-    print_text_s 0
+    clear_text_s
     set_music_volume 150
     rest 24
     switch_random 4
@@ -991,9 +991,9 @@ script script_remix_4_main
     quiz_show_event00 16
     print_text_s D_080680fc
     rest 24
-    print_text_s 0
+    clear_text_s
     quiz_show_event00 1
-    enable_play_inputs 1
+    enable_play_inputs
     rest 24
     rest 24
     rest 24
@@ -1005,7 +1005,7 @@ script script_remix_4_main
     play_sfx s_f_quiz_stop_seqData
     print_text_s D_08068108
     rest 12
-    enable_play_inputs 0
+    disable_play_inputs
     rest 12
     rest 24
     rest 24
@@ -1055,7 +1055,7 @@ script script_remix_4_main
     rest 24
     rest 24
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
 return
 

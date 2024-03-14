@@ -12,11 +12,11 @@ script script_marching_orders_unused_entry
     call script_marching_orders_prologue
     set_game_fade_in_time 16
     load_marching_orders
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_marching_orders_unused_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -33,11 +33,11 @@ script script_marching_orders_unused_skipped_practice_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_marching_orders
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_marching_orders_unused_skipped_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -92,7 +92,7 @@ endstruct
 script script_marching_orders_unused_main
     set_results_header D_0805c80c
     import_marking_criteria marching_orders_unused_marking_criteria
-    assess_inputs 1
+    start_tracking_inputs
     set_tempo 135
     set_music_volume 256
     play_music s_guntai2_seqData
@@ -204,8 +204,8 @@ return
 
 script script_marching_orders_unused_practice
     rest 24
-    enable_pause_menu TRUE
-    assess_inputs 0
+    enable_pause_menu
+    stop_tracking_inputs
     marching_orders_event02 0
     set_tempo 135
     set_music_volume 256
@@ -220,7 +220,7 @@ script script_marching_orders_unused_practice
     rest 24
     rest 24
     rest 24
-    assess_inputs 0
+    stop_tracking_inputs
     rest 24
     rest 24
     rest 24
@@ -237,7 +237,7 @@ script script_marching_orders_unused_practice
     marching_orders_event00 258
     rest 24
     marching_orders_event00 256
-    print_text_f NULL
+    clear_text_f
     loop_start
         run beatscript_disable_loops
         marching_orders_event01
@@ -411,7 +411,7 @@ script script_marching_orders_unused_practice
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
-        rest 0
+        no_op
         spawn_cue CUE_TURN_RIGHT
         beat_anim
         rest 24
@@ -440,7 +440,7 @@ script script_marching_orders_unused_practice
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
-        rest 0
+        no_op
         spawn_cue CUE_TURN_LEFT
         beat_anim
         rest 24
@@ -493,7 +493,7 @@ script script_marching_orders_unused_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     goto script_marching_orders_unused_main
 
 
@@ -501,7 +501,7 @@ script script_marching_orders_unused_skipped_practice
     set_game_fade_in_time 0
     set_tempo 120
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     goto script_marching_orders_unused_main
 

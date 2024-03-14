@@ -11,11 +11,11 @@ script script_drum_intro_unused_3_entry
     rest 24
     rest 24
     load_drum_intro_talk
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_drum_intro_unused_3_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -39,7 +39,7 @@ script drum_intro_unused_3_sub_08a36930
     rest 24
     rest 12
     play_sfx s_intro_a_seqData
-    print_text_s 0
+    clear_text_s
     rest 12
     play_sfx s_intro_one_seqData
     beat_anim
@@ -67,7 +67,7 @@ script drum_intro_unused_3_sub_08a36a5c
     rest 24
     rest 12
     play_sfx s_intro_a_seqData
-    print_text_s 0
+    clear_text_s
     rest 12
     play_sfx s_intro_one_seqData
     dmi_event03 3
@@ -135,7 +135,7 @@ script script_drum_intro_unused_3_main
         dmi_event02 0
         rest 24
         call drum_intro_unused_3_sub_08a36930
-        print_text_s 0
+        clear_text_s
         rest 24
         set_music_volume 156
         mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
@@ -169,7 +169,7 @@ script script_drum_intro_unused_3_main
         rest 24
         dmi_event01 2
         rest 24
-        run scene_stop_music, 0
+        run scene_stop_music
         rest 24
         set_game_fade_in_time 8
 
@@ -181,9 +181,9 @@ script script_drum_intro_unused_3_main
         rest 24
         dmi_event04 TRUE
         call drum_intro_unused_3_sub_08a36a5c
-        print_text_s 0
+        clear_text_s
         dmi_event05 2
-        assess_inputs 1
+        start_tracking_inputs
         spawn_cue CUE_KICK
         rest 24
         spawn_cue CUE_SNARE
@@ -192,15 +192,7 @@ script script_drum_intro_unused_3_main
         rest 24
         spawn_cue CUE_SNARE
         rest 24
-        print_text_s 0
-        spawn_cue CUE_KICK
-        rest 24
-        spawn_cue CUE_SNARE
-        rest 24
-        spawn_cue CUE_KICK
-        rest 24
-        spawn_cue CUE_SNARE
-        rest 24
+        clear_text_s
         spawn_cue CUE_KICK
         rest 24
         spawn_cue CUE_SNARE
@@ -215,8 +207,16 @@ script script_drum_intro_unused_3_main
         rest 24
         spawn_cue CUE_KICK
         rest 24
+        spawn_cue CUE_SNARE
         rest 24
-        run scene_stop_music, 0
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        rest 24
+        run scene_stop_music
         rest 24
         rest 24
         run gameplay_increment_loop_counter
@@ -237,7 +237,7 @@ script script_drum_intro_unused_3_main
     dmi_event00 D_0805e5e4
     rest 12
     run gameplay_display_text_and_wait
-    print_text_s 0
+    clear_text_s
     rest 12
     dmi_event02 2
     print_text_s D_0805e5f8
@@ -275,7 +275,7 @@ script script_drum_intro_unused_3_main
         dmi_event02 0
         rest 24
         call drum_intro_unused_3_sub_08a36930
-        print_text_s 0
+        clear_text_s
         rest 24
         mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
         dmi_event01 256
@@ -309,7 +309,7 @@ script script_drum_intro_unused_3_main
         rest 24
         dmi_event01 2
         rest 24
-        run scene_stop_music, 0
+        run scene_stop_music
         rest 24
         set_game_fade_in_time 8
 
@@ -321,11 +321,11 @@ script script_drum_intro_unused_3_main
         rest 24
         dmi_event04 TRUE
         call drum_intro_unused_3_sub_08a36a5c
-        print_text_s 0
+        clear_text_s
         dmi_event05 2
-        assess_inputs 1
+        start_tracking_inputs
         spawn_cue CUE_CYMBAL
-        rest 0
+        no_op
         spawn_cue CUE_KICK
         rest 24
         spawn_cue CUE_SNARE
@@ -334,15 +334,7 @@ script script_drum_intro_unused_3_main
         rest 24
         spawn_cue CUE_SNARE
         rest 24
-        print_text_s 0
-        spawn_cue CUE_KICK
-        rest 24
-        spawn_cue CUE_SNARE
-        rest 24
-        spawn_cue CUE_KICK
-        rest 24
-        spawn_cue CUE_SNARE
-        rest 24
+        clear_text_s
         spawn_cue CUE_KICK
         rest 24
         spawn_cue CUE_SNARE
@@ -357,8 +349,16 @@ script script_drum_intro_unused_3_main
         rest 24
         spawn_cue CUE_KICK
         rest 24
+        spawn_cue CUE_SNARE
         rest 24
-        run scene_stop_music, 0
+        spawn_cue CUE_KICK
+        rest 24
+        spawn_cue CUE_SNARE
+        rest 24
+        spawn_cue CUE_KICK
+        rest 24
+        rest 24
+        run scene_stop_music
         rest 24
         rest 24
         run gameplay_increment_loop_counter
@@ -379,7 +379,7 @@ script script_drum_intro_unused_3_main
     dmi_event00 D_0805e730
     rest 12
     run gameplay_display_text_and_wait
-    print_text_s 0
+    clear_text_s
     rest 12
     dmi_event02 2
     print_text_s D_0805e744
@@ -407,7 +407,7 @@ script script_drum_intro_unused_3_main
         dmi_event02 0
         rest 24
         call drum_intro_unused_3_sub_08a36930
-        print_text_s 0
+        clear_text_s
         rest 24
         mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
         dmi_event01 256
@@ -446,7 +446,7 @@ script script_drum_intro_unused_3_main
         rest 16
         dmi_event01 2
         rest 8
-        run scene_stop_music, 0
+        run scene_stop_music
         dmi_event01 16
         rest 24
         set_game_fade_in_time 8
@@ -459,11 +459,11 @@ script script_drum_intro_unused_3_main
         rest 24
         dmi_event04 TRUE
         call drum_intro_unused_3_sub_08a36a5c
-        print_text_s 0
+        clear_text_s
         dmi_event05 2
-        assess_inputs 1
+        start_tracking_inputs
         spawn_cue CUE_CYMBAL
-        rest 0
+        no_op
         spawn_cue CUE_KICK
         rest 24
         spawn_cue CUE_SNARE
@@ -472,7 +472,7 @@ script script_drum_intro_unused_3_main
         rest 24
         spawn_cue CUE_SNARE
         rest 24
-        print_text_s 0
+        clear_text_s
         spawn_cue CUE_KICK
         rest 24
         spawn_cue CUE_SNARE
@@ -500,7 +500,7 @@ script script_drum_intro_unused_3_main
         rest 8
         spawn_cue CUE_SNARE
         rest 24
-        run scene_stop_music, 0
+        run scene_stop_music
         rest 24
         rest 24
         run gameplay_increment_loop_counter
@@ -521,7 +521,7 @@ script script_drum_intro_unused_3_main
     dmi_event00 D_0805e844
     rest 12
     run gameplay_display_text_and_wait
-    print_text_s 0
+    clear_text_s
     rest 12
     set_tempo 120
     set_music_volume 40

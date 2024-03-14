@@ -36,11 +36,11 @@ script script_remix_6_entry
     call script_remix_6_prologue
     set_game_fade_in_time 16
     load_space_dance
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_remix_6_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -57,7 +57,7 @@ define_gameplay_scene scene_remix_6, script_remix_6_entry
 script script_remix_6_prologue
     set_game_fade_in_time 8
     load_game remix_6_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_remix_seqData
     rest 24
@@ -193,8 +193,8 @@ endtext
 script script_remix_6_main
     set_results_header D_0806a850
     import_marking_criteria remix_6_marking_criteria
-    forgive_x_misses 1
-    assess_inputs 1
+    run gameplay_set_mercy_count, 1
+    start_tracking_inputs
     set_marking_criteria 0
     set_tempo 140
     set_music_volume 200
@@ -202,7 +202,7 @@ script script_remix_6_main
     rest 12
     play_music s_remix_all_bgm_seqData
     rest 12
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     start_perfect_campaign
     print_text_f D_0806a86c
@@ -232,7 +232,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     call space_dance_sub_08a84928
     print_text_f D_0806a898
     space_dance_event07 7
@@ -261,7 +261,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     call space_dance_sub_08a850d8
     print_text_f D_0806a8c8
     space_dance_event07 7
@@ -410,10 +410,10 @@ script script_remix_6_main
     rest 12
 
     load_quiz_show
-    assess_perfect_inputs 0
-    enable_play_inputs 0
-    assess_inputs 0
-    run gameplay_assess_irrelevant_inputs, 0
+    stop_tracking_perfect_campaign
+    disable_play_inputs
+    stop_tracking_inputs
+    run gameplay_assess_irrelevant_inputs, FALSE
     quiz_show_event01 0
     quiz_show_event01 -16
     quiz_show_event01 1
@@ -423,7 +423,7 @@ script script_remix_6_main
     beat_anim
     rest 24
     quiz_show_event00 0
-    print_text_s 0
+    clear_text_s
     beat_anim
     rest 12
     quiz_show_event02 FALSE
@@ -443,9 +443,9 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    print_text_s 0
+    clear_text_s
     quiz_show_event00 1
-    enable_play_inputs 1
+    enable_play_inputs
     beat_anim
     rest 24
     beat_anim
@@ -458,15 +458,15 @@ script script_remix_6_main
     print_text_s D_0806a8f0
     beat_anim
     rest 12
-    enable_play_inputs 0
+    disable_play_inputs
     rest 12
     beat_anim
     rest 24
-    print_text_s 0
+    clear_text_s
     beat_anim
     rest 24
     quiz_show_event01 -32
-    assess_perfect_inputs 1
+    start_tracking_perfect_campaign
     quiz_show_event04
     if_globalvar_eq 0
         print_text_s D_0806a900
@@ -485,8 +485,8 @@ script script_remix_6_main
     rest 24
 
     load_polyrhythm_remix
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     polyrhythm_spawn_rod DOWNSIDE
     polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
@@ -791,7 +791,7 @@ script script_remix_6_main
     rest 24
 
     load_night_walk
-    enable_play_inputs 1
+    enable_play_inputs
     night_walk_set_cue_earliness 240
     spawn_cue CUE_KICK
     night_walk_set_cue_earliness 216
@@ -969,7 +969,7 @@ script script_remix_6_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_UUN
     beat_anim
     rest 24
@@ -989,7 +989,7 @@ script script_remix_6_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -1412,7 +1412,7 @@ script script_remix_6_main
     space_dance_event01 0, 0
     space_dance_event03
     print_text_f D_0806a970
-    assess_perfect_inputs 0
+    stop_tracking_perfect_campaign
     beat_anim
     rest 12
     rest 24

@@ -12,11 +12,11 @@ script script_fireworks_entry
     call script_fireworks_prologue
     set_game_fade_in_time 16
     load_fireworks
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_fireworks_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -33,11 +33,11 @@ script script_fireworks_skipped_practice_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_fireworks
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_fireworks_skipped_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -54,7 +54,7 @@ define_gameplay_scene scene_fireworks_skipped_practice, script_fireworks_skipped
 script script_fireworks_prologue
     set_game_fade_in_time 8
     load_game fireworks_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     run func_08045dc8, 1
     rest 24
     play_sfx s_jingle_bon_seqData
@@ -113,8 +113,8 @@ endstruct
 script script_fireworks_main
     set_results_header D_0805cdc8
     import_marking_criteria fireworks_marking_criteria
-    forgive_x_misses 2
-    assess_inputs 1
+    run gameplay_set_mercy_count, 2
+    start_tracking_inputs
     set_tempo 140
     set_music_volume 256
     play_music s_hanabi_bgm_seqData
@@ -358,23 +358,23 @@ script script_fireworks_main
     rest 24
     rest 24
     rest 24
-    assess_perfect_inputs 0
+    stop_tracking_perfect_campaign
     rest 24
     rest 24
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
 return
 
 
 script script_fireworks_practice
-    assess_inputs 0
+    stop_tracking_inputs
     set_tempo 130
     set_music_volume 200
     play_music s_renshu_bgm1_seqData
     rest 6
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     run gameplay_set_tutorial scene_fireworks_skipped_practice
     rest 24
     rest 24
@@ -385,14 +385,14 @@ script script_fireworks_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     rest 24
     print_text_f D_0805ce00
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     print_text_f D_0805ce10
     rest 24
@@ -400,7 +400,7 @@ script script_fireworks_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     mod_music_volume 200, 144
     print_text_f D_0805ce34
@@ -411,7 +411,7 @@ script script_fireworks_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     run gameplay_reset_loop_counter
     loop_start
@@ -435,7 +435,7 @@ script script_fireworks_practice
         play_sfx s_hanabi_hai_seqData
         print_text_f D_0805ceec
         rest 24
-        print_text_f NULL
+        clear_text_f
         rest 24
         rest 24
         print_text_f D_0805ce5c
@@ -455,7 +455,7 @@ script script_fireworks_practice
         play_sfx s_hanabi_hai_seqData
         print_text_f D_0805ceec
         rest 24
-        print_text_f NULL
+        clear_text_f
         run gameplay_increment_loop_counter
     loop_end
     rest 24
@@ -471,7 +471,7 @@ script script_fireworks_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     run gameplay_reset_loop_counter
     loop_start
@@ -495,7 +495,7 @@ script script_fireworks_practice
         play_sfx s_hanabi_hai_seqData
         print_text_f D_0805cfcc
         rest 24
-        print_text_f NULL
+        clear_text_f
         rest 24
         rest 24
         rest 24
@@ -516,7 +516,7 @@ script script_fireworks_practice
         play_sfx s_hanabi_hai_seqData
         print_text_f D_0805cfcc
         rest 24
-        print_text_f NULL
+        clear_text_f
         rest 24
         run gameplay_increment_loop_counter
     loop_end
@@ -533,7 +533,7 @@ script script_fireworks_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     run gameplay_reset_loop_counter
     loop_start
@@ -555,7 +555,7 @@ script script_fireworks_practice
         play_sfx s_hanabi_hai_seqData
         print_text_f D_0805d0b0
         rest 24
-        print_text_f NULL
+        clear_text_f
         rest 24
         rest 24
         rest 24
@@ -574,7 +574,7 @@ script script_fireworks_practice
         play_sfx s_hanabi_hai_seqData
         print_text_f D_0805d0b0
         rest 24
-        print_text_f NULL
+        clear_text_f
         rest 24
         run gameplay_increment_loop_counter
     loop_end
@@ -591,7 +591,7 @@ script script_fireworks_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     print_text_f D_0805d0e8
     rest 24
@@ -599,14 +599,14 @@ script script_fireworks_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     goto script_fireworks_main
 
 
 script script_fireworks_skipped_practice
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     fireworks_set_pattern_mode PATTERN_MODE_USE_TABLE
     goto script_fireworks_main
 

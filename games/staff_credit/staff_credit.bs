@@ -12,11 +12,11 @@ script script_staff_credit_remix_6_entry
     rest 24
     rest 24
     load_staff_credit
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_staff_credit_remix_6_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -34,11 +34,11 @@ script script_staff_credit_entry
     rest 24
     rest 24
     load_staff_credit
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_staff_credit_game_select_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -545,7 +545,7 @@ script script_staff_credit_main
     rest 56
     rest 56
     rest 56
-    run gameplay_enable_tutorial, 0
+    run gameplay_enable_tutorial, FALSE
     run enable_game_select_2_bgm, 0
 return
 
@@ -574,7 +574,7 @@ script script_staff_credit_remix_6_main
     rest 24
     dmi_event02 1
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event02 2
     print_text_s D_08069ddc
@@ -594,7 +594,7 @@ script script_staff_credit_remix_6_main
     rest 24
     dmi_event02 1
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event02 2
     print_text_s D_08069e24
@@ -614,7 +614,7 @@ script script_staff_credit_remix_6_main
     rest 24
     dmi_event02 1
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event02 2
     print_text_s D_08069e78
@@ -634,7 +634,7 @@ script script_staff_credit_remix_6_main
     rest 24
     dmi_event02 1
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     print_text_s D_08069ed4
     rest 24
@@ -661,7 +661,7 @@ script script_staff_credit_game_select_main
     dmi_event02 1
     rest 24
     run gameplay_set_skip_button, (B_BUTTON | SELECT_BUTTON | START_BUTTON)
-    run gameplay_enable_tutorial, 1
+    run gameplay_enable_tutorial, TRUE
     rest 24
     rest 24
     rest 24
@@ -679,7 +679,7 @@ script script_staff_credit_game_select_main
     rest 24
     dmi_event02 1
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event02 2
     print_text_s D_08069ef8
@@ -699,7 +699,7 @@ script script_staff_credit_game_select_main
     rest 24
     dmi_event02 1
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event02 2
     print_text_s D_08069f40
@@ -719,7 +719,7 @@ script script_staff_credit_game_select_main
     rest 24
     dmi_event02 1
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event02 2
     print_text_s D_08069f90
@@ -739,7 +739,7 @@ script script_staff_credit_game_select_main
     rest 24
     dmi_event02 1
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     print_text_s D_08069fe4
     rest 24

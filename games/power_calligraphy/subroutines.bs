@@ -67,7 +67,7 @@ script power_calligraphy_sub_08a7dadc
     rest 24
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_event07 FALSE
-    rest 0
+    no_op
     rest 24
     power_calligraphy_event08 TRUE
     power_calligraphy_event04 2
@@ -131,7 +131,7 @@ script power_calligraphy_sub_08a7df8c
     play_sfx NULL
     rest 23
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    rest 0
+    no_op
     power_calligraphy_event01 9
     power_calligraphy_event06 TRUE, 10, -13
     power_calligraphy_event02 -2, 0
@@ -166,7 +166,7 @@ script power_calligraphy_sub_08a7df8c
     power_calligraphy_event06 TRUE, 20, 31
     power_calligraphy_event02 0, -2
     play_sfx NULL
-    rest 0
+    no_op
     power_calligraphy_event07 FALSE
     rest 18
     power_calligraphy_event04 0
@@ -233,7 +233,7 @@ script power_calligraphy_sub_08a7e67c
     play_sfx NULL
     rest 10
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    rest 0
+    no_op
     power_calligraphy_event07 FALSE
     rest 24
     power_calligraphy_event04 3
@@ -241,7 +241,7 @@ script power_calligraphy_sub_08a7e67c
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_event08 FALSE
-    rest 0
+    no_op
     rest 24
     power_calligraphy_event06 FALSE, -27, -11
     power_calligraphy_event07 TRUE
@@ -292,7 +292,7 @@ script power_calligraphy_sub_08a7ebbc
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    rest 0
+    no_op
     power_calligraphy_event01 4
     power_calligraphy_event06 TRUE, -7, -4
     power_calligraphy_event02 -2, 0
@@ -333,7 +333,7 @@ script power_calligraphy_sub_08a7ebbc
     rest 12
     power_calligraphy_event06 FALSE, -68, 7
     rest 12
-    rest 0
+    no_op
     power_calligraphy_event01 11
     power_calligraphy_event06 TRUE, -34, 17
     power_calligraphy_event02 -2, -2
@@ -397,7 +397,7 @@ script power_calligraphy_sub_08a7f264
     rest 23
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_event07 FALSE
-    rest 0
+    no_op
     rest 24
     power_calligraphy_event08 TRUE
     power_calligraphy_event04 8
@@ -680,10 +680,10 @@ script power_calligraphy_sub_08a7f894
     power_calligraphy_event06 TRUE, 16, -13
     power_calligraphy_event02 -4, 0
     play_sfx NULL
-    rest 0
+    no_op
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_event07 FALSE
-    rest 0
+    no_op
     rest 24
     power_calligraphy_event08 TRUE
     power_calligraphy_event04 10
@@ -756,7 +756,7 @@ script power_calligraphy_remix_4_sub_08a8095c
     rest 24
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_event07 FALSE
-    rest 0
+    no_op
     rest 24
     power_calligraphy_event08 TRUE
     power_calligraphy_event04 2
@@ -820,7 +820,7 @@ script power_calligraphy_remix_4_sub_08a80e0c
     play_sfx NULL
     rest 23
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    rest 0
+    no_op
     power_calligraphy_event01 9
     power_calligraphy_event06 TRUE, 10, -13
     power_calligraphy_event02 -2, 0
@@ -855,7 +855,7 @@ script power_calligraphy_remix_4_sub_08a80e0c
     power_calligraphy_event06 TRUE, 20, 31
     power_calligraphy_event02 0, -2
     play_sfx NULL
-    rest 0
+    no_op
     power_calligraphy_event07 FALSE
     rest 18
     power_calligraphy_event04 0
@@ -922,7 +922,7 @@ script power_calligraphy_unk_sub_08a814fc
     play_sfx 0x00000000
     rest 6
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    rest 0
+    no_op
     power_calligraphy_event07 FALSE
     rest 24
     power_calligraphy_event04 3
@@ -930,7 +930,7 @@ script power_calligraphy_unk_sub_08a814fc
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_event08 FALSE
-    rest 0
+    no_op
     rest 24
     power_calligraphy_event06 FALSE, -27, -11
     power_calligraphy_event07 TRUE
@@ -981,7 +981,7 @@ script power_calligraphy_remix_4_sub_08a81a3c
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    rest 0
+    no_op
     power_calligraphy_event01 4
     power_calligraphy_event06 TRUE, -7, -4
     power_calligraphy_event02 -2, 0
@@ -1022,7 +1022,7 @@ script power_calligraphy_remix_4_sub_08a81a3c
     rest 16
     power_calligraphy_event06 FALSE, -68, 7
     rest 8
-    rest 0
+    no_op
     power_calligraphy_event01 11
     power_calligraphy_event06 TRUE, -34, 17
     power_calligraphy_event02 -2, -2
@@ -1086,7 +1086,7 @@ script power_calligraphy_sub_08a820e4_unused
     rest 23
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_event07 FALSE
-    rest 0
+    no_op
     rest 24
     power_calligraphy_event08 TRUE
     power_calligraphy_event04 8
@@ -1369,10 +1369,10 @@ script power_calligraphy_sub_08a82714_unused
     power_calligraphy_event06 TRUE, 16, -13
     power_calligraphy_event02 -4, 0
     play_sfx NULL
-    rest 0
+    no_op
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_event07 FALSE
-    rest 0
+    no_op
     rest 24
     power_calligraphy_event08 TRUE
     power_calligraphy_event04 10

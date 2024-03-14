@@ -10,11 +10,11 @@ script script_tap_trial_unused_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_tap_trial_random
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_tap_trial_unused_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -31,11 +31,11 @@ script script_tap_trial_unused_skipped_practice_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_tap_trial_random
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_tap_trial_unused_skipped_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -219,7 +219,7 @@ return
 
 script script_tap_trial_unused_main
     import_marking_criteria tap_trial_unused_marking_criteria
-    assess_inputs 1
+    start_tracking_inputs
     set_tempo 120
     set_music_volume 180
     set_marking_criteria 0
@@ -232,7 +232,7 @@ script script_tap_trial_unused_main
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     tap_trial_event03 1
     beat_anim
     rest 24
@@ -454,7 +454,7 @@ script script_tap_trial_unused_main
     rest 24
     tap_trial_event00 4
     rest 14
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 10
     tap_trial_event06 1
     set_marking_criteria 3
@@ -482,7 +482,7 @@ script script_tap_trial_unused_main
     rest 24
     beat_anim
     rest 22
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 2
     call tap_trial_unused_sub_08a0b6a8
     play_music s_karate_fan_seqData
@@ -490,7 +490,7 @@ script script_tap_trial_unused_main
     rest 24
     beat_anim
     rest 22
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 2
     call tap_trial_unused_sub_08a0b6a8
     play_music s_karate_fan_seqData
@@ -526,9 +526,9 @@ script script_tap_trial_unused_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
-    assess_inputs 0
+    stop_tracking_inputs
     set_tempo 110
     set_music_volume 256
     print_text_f D_0805c1d0
@@ -538,7 +538,7 @@ script script_tap_trial_unused_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     print_text_f D_0805c1e8
@@ -558,7 +558,7 @@ script script_tap_trial_unused_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     call tap_trial_unused_sub_08a0ba80
@@ -569,7 +569,7 @@ script script_tap_trial_unused_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     call tap_trial_unused_sub_08a0baec
@@ -580,7 +580,7 @@ script script_tap_trial_unused_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     call tap_trial_unused_sub_08a0bb70
@@ -593,7 +593,7 @@ script script_tap_trial_unused_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     goto script_tap_trial_unused_main

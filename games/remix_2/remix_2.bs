@@ -16,11 +16,11 @@ script script_remix_2_entry
     call script_remix_2_prologue
     set_game_fade_in_time 16
     load_samurai_slice_remix
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_remix_2_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -37,7 +37,7 @@ define_gameplay_scene scene_remix_2, script_remix_2_entry
 script script_remix_2_prologue
     set_game_fade_in_time 8
     load_game remix_2_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_remix_seqData
     rest 24
@@ -198,14 +198,14 @@ sb_stop
 script script_remix_2_main
     set_results_header D_08067f74
     import_marking_criteria remix_2_marking_criteria
-    forgive_x_misses 2
-    assess_inputs 1
+    run gameplay_set_mercy_count, 2
+    start_tracking_inputs
     set_marking_criteria 0
     set_tempo 133
     set_music_volume 250
     samurai_slice_event09 -57
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     set_game_fade_in_time 0
     samurai_slice_event09 -56
     rest 6
@@ -1078,11 +1078,11 @@ script script_remix_2_main
     beat_anim
     rest 24
     rest 24
-    assess_inputs 0
+    stop_tracking_inputs
     rest 24
     rest 24
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
     rat_race_event11
 return

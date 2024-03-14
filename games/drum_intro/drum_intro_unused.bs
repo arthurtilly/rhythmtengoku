@@ -11,11 +11,11 @@ script script_drum_intro_unused_entry
     rest 24
     rest 24
     load_drum_intro_talk
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_drum_intro_unused_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -203,21 +203,21 @@ script script_drum_intro_unused_main
     print_text_s D_0805d568
     rest 48
     dmi_event03 1
-    print_text_s 0
-    rest 0
+    clear_text_s
+    no_op
     call drum_intro_unused_sub_08a213d8
-    rest 96
-    rest 96
-    rest 96
+    rest_beats 4
+    rest_beats 4
+    rest_beats 4
     dmi_event04 FALSE
-    rest 96
+    rest_beats 4
     set_tempo 120
     dmi_event03 2
     print_text_s D_0805d57c
-    rest 120
+    rest_beats 5
     dmi_event03 1
-    print_text_s 0
-    rest 0
+    clear_text_s
+    no_op
     rest 24
     set_game_fade_in_time 8
 

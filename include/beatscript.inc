@@ -39,15 +39,23 @@
 /* ------------------------ Extension Macros (Rhythm Tengoku) ------------------------ */
 
 
-@ [RIQ] Enable Pause Menu
-.macro enable_pause_menu enable
-    run func_0801db04, \enable
+@ [RIQ] Enable/Disable Pause Menu
+.macro enable_pause_menu
+    run pause_menu_enabled, TRUE
+.endm
+
+.macro disable_pause_menu
+    run pause_menu_enabled, FALSE
 .endm
 
 
-@ [RIQ] Enable Play Inputs
-.macro enable_play_inputs enable
-    run gameplay_enable_inputs, \enable
+@ [RIQ] Enable/Disable Play Inputs
+.macro enable_play_inputs
+    run gameplay_inputs_enabled, TRUE
+.endm
+
+.macro disable_play_inputs
+    run gameplay_inputs_enabled, FALSE
 .endm
 
 
@@ -74,8 +82,12 @@
 
 
 @ [RIQ] Enable Input Assessment
-.macro assess_inputs enable
-    run results_enable_input_tracking, \enable
+.macro start_tracking_inputs
+    run results_enable_input_tracking, TRUE
+.endm
+
+.macro stop_tracking_inputs
+    run results_enable_input_tracking, FALSE
 .endm
 
 
@@ -85,21 +97,19 @@
 .endm
 
 
-@ [RIQ] Forgive Some Misses
-.macro forgive_x_misses total
-    run gameplay_set_mercy_count, \total
-.endm
-
-
 @ [RIQ] Start Perfect Campaign
 .macro start_perfect_campaign
-    run gameplay_start_perfect_campaign
+    start_perfect_campaign
 .endm
 
 
 @ [RIQ] Enable Input Assessment for Perfect Campaign
-.macro assess_perfect_inputs enable
-    run gameplay_check_for_perfect, \enable
+.macro start_tracking_perfect_campaign
+    run gameplay_check_for_perfect, TRUE
+.endm
+
+.macro stop_tracking_perfect_campaign
+    run gameplay_check_for_perfect, FALSE
 .endm
 
 
@@ -121,10 +131,12 @@
     run2 gameplay_run_common_event, \event, \arg
 .endm
 
+
 @ Play Beat Animations
 .macro beat_anim
     common_event 0
 .endm
+
 
 @ Print Special Text/Sprite
 .macro print_text_f arg
@@ -134,6 +146,7 @@
 .macro clear_text_f
     print_text_f 0
 .endm
+
 
 @ Initialise Tutorial
 .macro init_tutorial skipDest

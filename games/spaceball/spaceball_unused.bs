@@ -12,11 +12,11 @@ script script_spaceball_unused_entry
     call script_spaceball_prologue
     set_game_fade_in_time 16
     load_spaceball
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_spaceball_unused_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -80,7 +80,7 @@ endstruct
 
 script script_spaceball_unused_main
     import_marking_criteria spaceball_unused_marking_criteria
-    assess_inputs 0
+    stop_tracking_inputs
     set_tempo 105
     set_music_volume 256
     run gameplay_force_stop_music_midi_track, 6
@@ -140,7 +140,7 @@ script script_spaceball_unused_main
     rest 24
     spaceball_prep_pitcher
     rest 24
-    assess_inputs 1
+    start_tracking_inputs
     set_marking_criteria 0
     spawn_cue CUE_LOW
     beat_anim

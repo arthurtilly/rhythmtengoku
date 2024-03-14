@@ -144,7 +144,7 @@ script script_drum_girls_honey_sweet_angel
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
     call drum_live_pat00
     dml_set_guitarist_next_state 0x3, 0
     call drum_live_pat00
@@ -175,7 +175,7 @@ script script_drum_girls_honey_sweet_angel
     spawn_cue CUE_LIVE_02
     rest 6
     beat_anim
-    rest 0
+    no_op
     call drum_live_pat00
     dml_set_guitarist_next_state 0x3, 0
     call drum_live_pat00

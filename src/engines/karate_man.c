@@ -396,7 +396,7 @@ void karate_stop_serious_mode(void) {
     func_0804d770(D_03005380, gKarateMan->flowSprite, TRUE);
     gKarateMan->version = KARATE_VER_0;
     karate_update_bg_palette();
-    gameplay_enable_inputs(FALSE); // Disable inputs
+    gameplay_inputs_enabled(FALSE); // Disable inputs
 }
 
 

@@ -12,11 +12,11 @@ script script_spaceball_2_entry
     call script_spaceball_prologue
     set_game_fade_in_time 16
     load_spaceball
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_spaceball_2_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -81,15 +81,15 @@ endstruct
 script script_spaceball_2_main
     set_results_header D_0805c0c4
     import_marking_criteria spaceball_2_marking_criteria
-    forgive_x_misses 1
-    assess_inputs 1
+    run gameplay_set_mercy_count, 1
+    start_tracking_inputs
     set_tempo 105
     set_music_volume 240
     spaceball_set_batter_sprite BATTER_PINK
     spaceball_zoom_camera 0xff00, 1
     start_perfect_campaign
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     set_music_volume 180
     play_music s_shibafu1_bgm_seqData
@@ -245,7 +245,7 @@ script script_spaceball_2_main
     spaceball_zoom_camera 0xfef2, 24
     rest 24
     rest 4
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 20
     mute_music_track MIDI_TRACK_9
     set_tempo 125
@@ -255,7 +255,7 @@ script script_spaceball_2_main
     spaceball_zoom_camera 0xff00, 24
     rest 24
     rest 4
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 20
     reset_music_track_volumes
     set_tempo 140
@@ -425,8 +425,8 @@ script script_spaceball_2_main
     spawn_cue CUE_LOW
     rest 24
     rest 12
-    assess_perfect_inputs 0
-    enable_pause_menu FALSE
+    stop_tracking_perfect_campaign
+    disable_pause_menu
     rest 12
 return
 

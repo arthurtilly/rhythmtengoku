@@ -11,11 +11,11 @@ script script_sick_beats_endless_entry
     rest 24
     rest 24
     load_sick_beats_endless
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_sick_beats_endless_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -31,9 +31,9 @@ define_gameplay_scene scene_sick_beats_endless, script_sick_beats_endless_entry
 
 script script_sick_beats_endless_game_over
     set_tempo 120
-    run scene_stop_music, 0
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    run scene_stop_music
+    disable_pause_menu
+    disable_play_inputs
     rest 24
     rest 24
     rest 24
@@ -885,7 +885,7 @@ script script_sick_beats_endless_main
     sick_beats_event04 script_sick_beats_endless_game_over
     beat_anim
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     set_tempo 125
     set_music_volume 240
     play_music s_hitmegeton2_bgm_seqData
@@ -1011,7 +1011,7 @@ script script_sick_beats_endless_main
     loop_end
     beat_anim
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     beat_anim
     rest 24
 return

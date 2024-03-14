@@ -136,7 +136,7 @@ script marching_orders_2_sub_08a83cc8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
     beat_anim
-    rest 0
+    no_op
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 24
@@ -169,7 +169,7 @@ script marching_orders_2_sub_08a83ea8
     play_sfx s_guntai_foot1_seqData
     spawn_cue CUE_STEP
     beat_anim
-    rest 0
+    no_op
     spawn_cue CUE_TURN_LEFT
     beat_anim
     rest 24
@@ -197,7 +197,7 @@ script marching_orders_2_sub_08a84088
     play_sfx s_guntai_foot2_seqData
     spawn_cue CUE_STEP
     beat_anim
-    rest 0
+    no_op
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 24
@@ -230,7 +230,7 @@ script marching_orders_2_sub_08a84268
     play_sfx s_guntai_foot2_seqData
     spawn_cue CUE_STEP
     beat_anim
-    rest 0
+    no_op
     spawn_cue CUE_TURN_LEFT
     beat_anim
     rest 24

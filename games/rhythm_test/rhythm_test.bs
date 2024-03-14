@@ -11,11 +11,11 @@ script script_rhythm_test_click_entry
     rest 24
     rest 24
     load_rhythm_test
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_rhythm_test_click_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -33,11 +33,11 @@ script script_rhythm_test_cue_entry
     rest 24
     rest 24
     load_rhythm_test
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_rhythm_test_cue_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -55,11 +55,11 @@ script script_rhythm_test_trick_entry
     rest 24
     rest 24
     load_rhythm_test
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_rhythm_test_trick_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -77,11 +77,11 @@ script script_rhythm_test_entry
     rest 24
     rest 24
     load_rhythm_test
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_rhythm_test_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -99,11 +99,11 @@ script script_rhythm_test_opening_entry
     rest 24
     rest 24
     load_rhythm_test
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_rhythm_test_opening_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -140,7 +140,7 @@ script rhythm_test_click_sub_08a3e07c
     play_sfx_vol_pitch s_f_machine_click_seqData, 256, 768
     beat_anim
     rest 12
-    print_text_s 0
+    clear_text_s
     play_sfx_vol_pitch s_f_machine_click_seqData, 96, 768
     spawn_cue CUE_TEST_00
     rest 12
@@ -158,7 +158,7 @@ return
 
 script script_rhythm_test_click_main
     set_tempo 120
-    assess_inputs 0
+    stop_tracking_inputs
     run gameplay_set_miss_punishment_duration, 0
     print_text_s D_0805eed8
     rest 24
@@ -186,7 +186,7 @@ script script_rhythm_test_click_main
         rest 12
         run gameplay_increment_loop_counter
     loop_end
-    print_text_s 0
+    clear_text_s
     play_sfx_vol s_f_machine_click_seqData, 96
     rest 12
     rhythm_test_event00 2
@@ -214,7 +214,7 @@ script script_rhythm_test_click_main
         run gameplay_increment_loop_counter
     loop_end
     rhythm_test_event00 3
-    assess_inputs 1
+    start_tracking_inputs
     rhythm_test_event01 1
     play_sfx_vol s_f_machine_click_seqData, 96
     spawn_cue CUE_TEST_00
@@ -240,7 +240,7 @@ script script_rhythm_test_click_main
     call rhythm_test_click_sub_08a3e028
     call rhythm_test_click_sub_08a3e028
     call rhythm_test_click_sub_08a3e028
-    print_text_s 0
+    clear_text_s
     call rhythm_test_click_sub_08a3e028
     call rhythm_test_click_sub_08a3e028
     call rhythm_test_click_sub_08a3e028
@@ -260,7 +260,7 @@ script script_rhythm_test_click_main
     beat_anim
     rest 12
     rest 12
-    assess_inputs 0
+    stop_tracking_inputs
     rest 24
     rhythm_test_event02 64
     play_music s_check_machine_seqData
@@ -281,7 +281,7 @@ return
 
 script script_rhythm_test_cue_main
     set_tempo 120
-    assess_inputs 0
+    stop_tracking_inputs
     run gameplay_set_miss_punishment_duration, 0
     print_text_s D_0805ef18
     rest 24
@@ -310,7 +310,7 @@ script script_rhythm_test_cue_main
         rest 24
         run gameplay_increment_loop_counter
     loop_end
-    print_text_s 0
+    clear_text_s
     rest 24
     print_text_s D_0805ef44
     rest 24
@@ -341,16 +341,16 @@ script script_rhythm_test_cue_main
         rest 24
         run gameplay_increment_loop_counter
     loop_end
-    print_text_s 0
+    clear_text_s
     rest 24
     print_text_s D_0805ef74
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     rhythm_test_event02 12
     rest 24
-    assess_inputs 1
+    start_tracking_inputs
     rhythm_test_event01 1
     rhythm_test_event04 7
     rest 24
@@ -675,7 +675,7 @@ script rhythm_test_trick_sub_08a400b0_unused
     play_sfx_vol_pitch s_f_machine_click_seqData, 256, 768
     beat_anim
     rest 12
-    print_text_s 0
+    clear_text_s
     spawn_cue CUE_TEST_00
     rest 12
 return
@@ -692,7 +692,7 @@ return
 
 script script_rhythm_test_trick_main
     set_tempo 120
-    assess_inputs 0
+    stop_tracking_inputs
     run gameplay_set_miss_punishment_duration, 0
     print_text_s D_0805ef8c
     rest 24
@@ -721,7 +721,7 @@ script script_rhythm_test_trick_main
         rest 12
         run gameplay_increment_loop_counter
     loop_end
-    print_text_s 0
+    clear_text_s
     rest 12
     print_text_s D_0805efb4
     call rhythm_test_trick_sub_08a4002c
@@ -745,7 +745,7 @@ script script_rhythm_test_trick_main
         rest 12
         run gameplay_increment_loop_counter
     loop_end
-    print_text_s 0
+    clear_text_s
     rest 12
     call rhythm_test_trick_sub_08a4002c
     call rhythm_test_trick_sub_08a4002c
@@ -805,7 +805,7 @@ script script_rhythm_test_trick_main
     loop_end
     rhythm_test_event02 12
     rhythm_test_event00 3
-    assess_inputs 1
+    start_tracking_inputs
     rhythm_test_event01 1
     spawn_cue CUE_TEST_00
     beat_anim
@@ -907,11 +907,11 @@ script script_rhythm_test_trick_main
     spawn_cue CUE_TEST_01
     beat_anim
     rest 24
-    run scene_stop_music, 0
+    run scene_stop_music
     rhythm_test_event00 4
     play_sfx_vol s_metro_tin_seqData, 256
     rest 24
-    assess_inputs 0
+    stop_tracking_inputs
     rhythm_test_event02 64
     play_music s_check_machine_seqData
     rest 24
@@ -983,7 +983,7 @@ script script_rhythm_test_main
     set_music_volume 256
     play_music s_check_machine_seqData
     rest 24
-    enable_pause_menu 1
+    enable_pause_menu
     rest 24
     goto rhythm_test_sub_08a40cb4
 

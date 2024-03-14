@@ -12,11 +12,11 @@ script script_spaceball_entry
     call script_spaceball_prologue
     set_game_fade_in_time 16
     load_spaceball
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_spaceball_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -33,7 +33,7 @@ define_gameplay_scene scene_spaceball, script_spaceball_entry
 script script_spaceball_prologue
     set_game_fade_in_time 8
     load_game spaceball_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     play_sfx s_jingle_baseball_seqData
     rest 24
     rest 24
@@ -110,8 +110,8 @@ endstruct
 script script_spaceball_main
     set_results_header D_0805bff8
     import_marking_criteria spaceball_marking_criteria
-    forgive_x_misses 1
-    assess_inputs 0
+    run gameplay_set_mercy_count, 1
+    stop_tracking_inputs
     set_tempo 105
     set_music_volume 240
     spaceball_zoom_camera 0xff00, 96
@@ -119,12 +119,12 @@ script script_spaceball_main
     mod_music_volume 180, 192
     play_music s_shibafu1_bgm_seqData
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     rest 24
     spaceball_prep_pitcher
     rest 3
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 21
     play_music s_shibafu1_bgm_seqData
     rest 24
@@ -132,7 +132,7 @@ script script_spaceball_main
     rest 24
     spaceball_prep_pitcher
     rest 3
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 21
     loop_start
         play_music s_shibafu1_bgm_seqData
@@ -144,7 +144,7 @@ script script_spaceball_main
         rest 24
         spaceball_prep_pitcher
         rest 3
-        run scene_stop_music, 0
+        run scene_stop_music
         rest 21
         play_music s_shibafu1_bgm_seqData
         spawn_cue CUE_LOW
@@ -155,7 +155,7 @@ script script_spaceball_main
         rest 24
         spaceball_prep_pitcher
         rest 3
-        run scene_stop_music, 0
+        run scene_stop_music
         rest 21
         spaceball_exit_loop_if_no_miss
     loop_end
@@ -178,7 +178,7 @@ script script_spaceball_main
     rest 24
     spaceball_prep_pitcher
     rest 24
-    assess_inputs 1
+    start_tracking_inputs
     set_marking_criteria 0
     spawn_cue CUE_LOW
     rest 24
@@ -443,8 +443,8 @@ script script_spaceball_main
     rest 24
     rest 21
     rest 27
-    assess_perfect_inputs 0
-    enable_pause_menu FALSE
+    stop_tracking_perfect_campaign
+    disable_pause_menu
     rest 24
 return
 

@@ -12,11 +12,11 @@ script script_polyrhythm_2_entry
     call script_polyrhythm_prologue
     set_game_fade_in_time 16
     load_polyrhythm_2
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_polyrhythm_2_main
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -389,14 +389,14 @@ return
 script script_polyrhythm_2_main
     set_results_header D_0805b14c
     import_marking_criteria polyrhythm_2_marking_criteria
-    forgive_x_misses 1
+    run gameplay_set_mercy_count, 1
     start_perfect_campaign
     set_tempo 150
     set_music_volume 256
     play_music s_poly_bgm_seqData
     set_music_pitch 512
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     rest 24
     rest 24
@@ -421,8 +421,8 @@ script script_polyrhythm_2_main
     set_marking_criteria 3
     call polyrhythm_2_sub_089f4bec
     call polyrhythm_2_sub_089f4bec
-    assess_perfect_inputs 0
-    enable_pause_menu FALSE
+    stop_tracking_perfect_campaign
+    disable_pause_menu
     rest 24
 return
 

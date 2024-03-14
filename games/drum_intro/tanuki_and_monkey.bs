@@ -11,11 +11,11 @@ script script_tanuki_and_monkey_entry
     rest 24
     rest 24
     load_tanuki_and_monkey
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_tanuki_and_monkey_intro
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -32,11 +32,11 @@ script script_tanuki_and_monkey_skipped_intro_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_tanuki_and_monkey
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_tanuki_and_monkey_skipped_intro
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -52,7 +52,7 @@ define_gameplay_scene scene_tanuki_and_monkey_skipped_intro, script_tanuki_and_m
 
 script tanuki_and_monkey_sub_08a2efe0
     dmi_event08 1
-    assess_inputs 0
+    stop_tracking_inputs
     beat_anim
     rest 24
     dmi_event0C
@@ -78,7 +78,7 @@ script tanuki_and_monkey_sub_08a2efe0
     rest 24
     beat_anim
     rest 24
-    print_text_s 0
+    clear_text_s
     beat_anim
     rest 24
     dmi_event08 4
@@ -91,7 +91,7 @@ script tanuki_and_monkey_sub_08a2efe0
     dmi_event09 0
     beat_anim
     rest 24
-    assess_inputs 1
+    start_tracking_inputs
 return
 
 
@@ -169,7 +169,7 @@ script tanuki_and_monkey_sub_08a2f3b4
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     print_text_s D_0805dcf0
     rest 24
@@ -539,7 +539,7 @@ script script_tanuki_and_monkey_main
         dmi_event09 -1
         dmi_event0E
     loop_end
-    assess_inputs 0
+    stop_tracking_inputs
     rest 24
     print_text_s D_0805dd04
     rest 24
@@ -548,7 +548,7 @@ script script_tanuki_and_monkey_main
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     set_tempo 120
     set_music_volume 0
     mod_music_volume 200, 192
@@ -567,7 +567,7 @@ return
 script script_tanuki_and_monkey_intro
     set_tempo 120
     set_music_volume 256
-    assess_inputs 0
+    stop_tracking_inputs
     dmi_event04 TRUE
     dmi_event0F tanuki_and_monkey_sub_08a2f3b4
     rest 24
@@ -578,7 +578,7 @@ script script_tanuki_and_monkey_intro
     dmi_event08 10
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     rest 24
     dmi_event08 11
@@ -590,7 +590,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event08 12
     print_text_s D_0805dd90
@@ -601,7 +601,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event08 11
     print_text_s D_0805ddb8
@@ -612,7 +612,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event08 12
     print_text_s D_0805dde0
@@ -623,7 +623,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     dmi_event09 0
     rest 12
     loop_start
@@ -693,7 +693,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     dmi_event09 0
     rest 12
     loop_start
@@ -763,7 +763,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     dmi_event09 0
     rest 12
     loop_start
@@ -830,7 +830,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event08 12
     print_text_s D_0805dea0
@@ -841,7 +841,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     dmi_event09 0
     rest 12
     loop_start
@@ -914,7 +914,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     rest 24
     rest 24
-    print_text_s 0
+    clear_text_s
     rest 24
     dmi_event08 1
     print_text_s D_0805def8
@@ -933,7 +933,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     beat_anim
     rest 24
-    print_text_s 0
+    clear_text_s
     beat_anim
     rest 24
     dmi_event08 2
@@ -954,7 +954,7 @@ script script_tanuki_and_monkey_intro
     rest 24
     beat_anim
     rest 24
-    print_text_s 0
+    clear_text_s
     beat_anim
     rest 24
     goto script_tanuki_and_monkey_main

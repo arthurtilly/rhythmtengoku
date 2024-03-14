@@ -12,11 +12,11 @@ script script_space_dance_entry
     call script_space_dance_prologue
     set_game_fade_in_time 16
     load_space_dance
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_space_dance_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -33,11 +33,11 @@ script script_space_dance_skipped_practice_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_space_dance
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_space_dance_skipped_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -54,7 +54,7 @@ define_gameplay_scene scene_space_dance_skipped_practice, script_space_dance_ski
 script script_space_dance_prologue
     set_game_fade_in_time 8
     load_game space_dance_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     rest 24
     run func_08047630, 0
     play_sfx s_jingle_handclap_seqData
@@ -124,15 +124,15 @@ script script_space_dance_main
     rest 24
     set_results_header D_0805e364
     import_marking_criteria space_dance_marking_criteria
-    forgive_x_misses 2
-    assess_inputs 1
+    run gameplay_set_mercy_count, 2
+    start_tracking_inputs
     start_perfect_campaign
     print_text_f D_0805e37c
     space_dance_event07 7
     space_dance_event01 -1, 0
     set_marking_criteria 0
     call space_dance_sub_08a848bc
-    print_text_f NULL
+    clear_text_f
     space_dance_event07 8
     call space_dance_sub_08a84928
     call space_dance_sub_08a848bc
@@ -300,13 +300,13 @@ script script_space_dance_main
     rest 12
     space_dance_event01 0, 0
     space_dance_event03
-    assess_perfect_inputs 0
+    stop_tracking_perfect_campaign
     beat_anim
     rest 12
     rest 24
     rest 24
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     rest 24
 return
 
@@ -322,9 +322,9 @@ script script_space_dance_practice
     rest 6
     space_dance_event02 1
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
-    assess_inputs 0
+    stop_tracking_inputs
     run gameplay_display_skip_icon, 1
     run gameplay_set_tutorial scene_space_dance_skipped_practice
     print_text_f D_0805e38c
@@ -335,7 +335,7 @@ script script_space_dance_practice
     rest 24
     space_dance_event07 8
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     print_text_f D_0805e3a8
     space_dance_event07 7
@@ -347,7 +347,7 @@ script script_space_dance_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     print_text_f D_0805e3d8
     space_dance_event07 7
@@ -355,7 +355,7 @@ script script_space_dance_practice
     rest 24
     space_dance_event07 8
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     print_text_f D_0805e3ec
     space_dance_event07 7
@@ -363,7 +363,7 @@ script script_space_dance_practice
     rest 24
     space_dance_event07 8
     rest 24
-    print_text_f NULL
+    clear_text_f
     space_dance_event02 0
     rest 24
     space_dance_event02 3
@@ -381,7 +381,7 @@ script script_space_dance_practice
     rest 24
     space_dance_event07 8
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     print_text_f D_0805e404
     space_dance_event07 7
@@ -389,7 +389,7 @@ script script_space_dance_practice
     rest 24
     space_dance_event07 8
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     space_dance_event02 4
     call space_dance_sub_08a85588
@@ -406,7 +406,7 @@ script script_space_dance_practice
     rest 24
     space_dance_event07 8
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     print_text_f D_0805e40c
     space_dance_event07 7
@@ -414,7 +414,7 @@ script script_space_dance_practice
     rest 24
     space_dance_event07 8
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     space_dance_event02 2
     call space_dance_sub_08a851f8
@@ -431,7 +431,7 @@ script script_space_dance_practice
     rest 24
     space_dance_event07 8
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     run gameplay_set_tutorial NULL
     mod_music_volume 0, 96
@@ -441,10 +441,10 @@ script script_space_dance_practice
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     space_dance_event07 8
     rest 24
-    run scene_stop_music, 0
+    run scene_stop_music
     rest 24
     rest 24
     goto script_space_dance_main
@@ -453,7 +453,7 @@ script script_space_dance_practice
 script script_space_dance_skipped_practice
     set_tempo 120
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     space_dance_event05 FALSE
     space_dance_event06 FALSE

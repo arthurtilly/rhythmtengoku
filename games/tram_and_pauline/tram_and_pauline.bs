@@ -12,11 +12,11 @@ script script_tram_pauline_entry
     call script_tram_pauline_prologue
     set_game_fade_in_time 16
     load_tram_pauline_practice
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_tram_pauline_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -33,11 +33,11 @@ script script_tram_pauline_skipped_practice_entry
     set_tempo 124
     set_game_fade_in_time 0
     load_tram_pauline
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_tram_pauline_skipped_practice
-    enable_pause_menu FALSE
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -54,7 +54,7 @@ define_gameplay_scene scene_tram_pauline_skipped_practice, script_tram_pauline_s
 script script_tram_pauline_prologue
     set_game_fade_in_time 8
     load_game tram_pauline_prologue_engine, 0
-    run stop_all_soundplayers, 0
+    run stop_all_soundplayers
     play_sfx s_jingle_tap_seqData
     rest 24
     rest 24
@@ -119,8 +119,8 @@ script script_tram_pauline_main
     play_music s_puipui_bgm_seqData
     set_results_header D_0805db94
     import_marking_criteria tram_pauline_marking_criteria
-    forgive_x_misses 1
-    assess_inputs 1
+    run gameplay_set_mercy_count, 1
+    start_tracking_inputs
     start_perfect_campaign
     beat_anim
     rest 24
@@ -513,29 +513,29 @@ script script_tram_pauline_main
     rest 24
     beat_anim
     rest 24
-    assess_perfect_inputs 0
+    stop_tracking_perfect_campaign
     beat_anim
     rest 24
     beat_anim
     rest 24
     beat_anim
     rest 24
-    enable_pause_menu FALSE
+    disable_pause_menu
     beat_anim
     rest 24
     beat_anim
-    rest 0
+    no_op
 return
 
 
 script script_tram_pauline_practice
-    assess_inputs 0
+    stop_tracking_inputs
     set_tempo 130
     set_music_volume 256
     play_music s_puipui_intro_bgm_seqData
     beat_anim
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     beat_anim
     rest 24
     run gameplay_set_tutorial scene_tram_pauline_skipped_practice
@@ -553,7 +553,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 12
-    print_text_f NULL
+    clear_text_f
     rest 12
     tram_pauline_event02 1
     print_text_f D_0805dbb0
@@ -565,7 +565,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 12
-    print_text_f NULL
+    clear_text_f
     rest 12
     tram_pauline_event02 2
     print_text_f D_0805dbc0
@@ -577,7 +577,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 12
-    print_text_f NULL
+    clear_text_f
     rest 12
     beat_anim
     rest 24
@@ -592,7 +592,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 12
-    print_text_f NULL
+    clear_text_f
     rest 12
     tram_pauline_event02 0
     print_text_f D_0805dbf4
@@ -604,7 +604,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 12
-    print_text_f NULL
+    clear_text_f
     rest 12
     tram_pauline_event02 1
     print_text_f D_0805dc0c
@@ -616,7 +616,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 12
-    print_text_f NULL
+    clear_text_f
     rest 12
     tram_pauline_event02 2
     print_text_f D_0805dc24
@@ -628,7 +628,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 12
-    print_text_f NULL
+    clear_text_f
     rest 12
     beat_anim
     rest 24
@@ -643,7 +643,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     loop_start
         run beatscript_disable_loops
         beat_anim
@@ -682,7 +682,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     loop_start
         run beatscript_disable_loops
         beat_anim
@@ -741,7 +741,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     loop_start
         run beatscript_disable_loops
         beat_anim
@@ -776,7 +776,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     loop_start
         run beatscript_disable_loops
         beat_anim
@@ -806,7 +806,7 @@ script script_tram_pauline_practice
     rest 24
     beat_anim
     rest 24
-    print_text_f NULL
+    clear_text_f
     load_game tram_pauline_engine, 1
     goto script_tram_pauline_main
 
@@ -814,7 +814,7 @@ script script_tram_pauline_practice
 script script_tram_pauline_skipped_practice
     tram_pauline_event02 2
     rest 24
-    enable_pause_menu TRUE
+    enable_pause_menu
     rest 24
     goto script_tram_pauline_main
 

@@ -12,11 +12,11 @@ script script_rap_women_unused_entry
     call script_rap_women_prologue
     set_game_fade_in_time 16
     load_rap_women
-    enable_play_inputs 1
-    assess_inputs 1
+    enable_play_inputs
+    start_tracking_inputs
     call script_rap_women_unused_main
-    enable_pause_menu 0
-    enable_play_inputs 0
+    disable_pause_menu
+    disable_play_inputs
     fade_music_out 48
     fade_screen_out 12, BLACK
     rest 24
@@ -123,9 +123,9 @@ endstruct
 script script_rap_women_unused_main
     set_results_header D_08067e98
     import_marking_criteria rap_women_unused_marking_criteria
-    assess_inputs 1
+    start_tracking_inputs
     rest 24
-    enable_pause_menu 1
+    enable_pause_menu
     rest 24
     rest 24
     rest 24
@@ -139,7 +139,7 @@ script script_rap_women_unused_main
     rest 24
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 24
     rest 24
     set_marking_criteria 0
@@ -158,7 +158,7 @@ script script_rap_women_unused_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     rest 16
     play_music s_rap_jazz_bgm_seqData
     rest 8
@@ -185,7 +185,7 @@ script script_rap_women_unused_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -211,7 +211,7 @@ script script_rap_women_unused_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -228,7 +228,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -251,7 +251,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -271,7 +271,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -305,7 +305,7 @@ script script_rap_women_unused_main
     beat_anim
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_UN
     beat_anim
     rest 24
@@ -330,7 +330,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -350,7 +350,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -386,7 +386,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -412,7 +412,7 @@ script script_rap_women_unused_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -427,7 +427,7 @@ script script_rap_women_unused_main
     beat_anim
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_UN
     beat_anim
     rest 24
@@ -452,7 +452,7 @@ script script_rap_women_unused_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -469,7 +469,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -492,7 +492,7 @@ script script_rap_women_unused_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -507,7 +507,7 @@ script script_rap_women_unused_main
     beat_anim
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_UN
     beat_anim
     rest 24
@@ -532,7 +532,7 @@ script script_rap_women_unused_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -549,7 +549,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -567,7 +567,7 @@ script script_rap_women_unused_main
     beat_anim
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_UN
     beat_anim
     rest 24
@@ -592,7 +592,7 @@ script script_rap_women_unused_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -607,7 +607,7 @@ script script_rap_women_unused_main
     beat_anim
     rest 24
     rest 24
-    print_text_f NULL
+    clear_text_f
     spawn_cue CUE_UN
     beat_anim
     rest 24
@@ -632,7 +632,7 @@ script script_rap_women_unused_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -649,7 +649,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -666,7 +666,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -689,7 +689,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -706,7 +706,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -729,7 +729,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -746,7 +746,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -769,7 +769,7 @@ script script_rap_women_unused_main
     spawn_cue CUE_UN
     rest 24
     spawn_cue CUE_UUN
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -789,7 +789,7 @@ script script_rap_women_unused_main
     rest 24
     spawn_cue CUE_UN
     rest 24
-    print_text_f NULL
+    clear_text_f
     beat_anim
     rest 24
     rest 24
@@ -815,7 +815,7 @@ script script_rap_women_unused_main
     beat_anim
     rest 24
     rest 24
-    enable_pause_menu 0
+    disable_pause_menu
     rest 24
 return
 

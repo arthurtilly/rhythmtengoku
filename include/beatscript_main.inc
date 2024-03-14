@@ -124,6 +124,14 @@ endstruct
     beatscript_cmd 0x00, 0, 0, \time
 .endm
 
+.macro no_op
+    rest 0
+.endm
+
+.macro rest_beats beats
+    rest (beats * 24)
+.endm
+
 
 @ [0x01] Stop
 .macro stop
