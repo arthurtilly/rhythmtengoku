@@ -161,28 +161,28 @@ script script_drum_intro_unused_main
     rest 24
     dmi_event02 2
     print_text_s D_0805d438
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 2
     print_text_s D_0805d458
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 2
     print_text_s D_0805d4b4
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 2
     print_text_s D_0805d508
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     mod_music_volume 0, 96
     dmi_event02 2
     print_text_s D_0805d554
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 0
@@ -227,12 +227,12 @@ script script_drum_intro_unused_main
     rest 48
     dmi_event02 2
     print_text_s D_0805d5a4
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 2
     print_text_s D_0805d5ec
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     run set_next_scene, scene_game_select

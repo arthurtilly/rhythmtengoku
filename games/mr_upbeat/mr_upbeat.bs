@@ -40,7 +40,7 @@ script script_mr_upbeat_game_over
     rest 24
     mr_upbeat_event05 0
     rest 24
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     fade_music_out TO_TEMPO, 48
     fade_screen_out 12, BLACK
     rest 24

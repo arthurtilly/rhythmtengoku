@@ -1012,11 +1012,11 @@ script script_remix_4_main
     rest 24
     rest 24
     quiz_show_event00 17
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     set_tempo 140
     print_text_s D_0806815c
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     quiz_show_event03 1
     mod_lcd_blend_from 0x3F41, TO_TEMPO, 24
     rest 24

@@ -270,7 +270,7 @@ script script_rhythm_test_click_main
     rest 24
     rest 24
     rest 24
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 24
     run set_next_scene, scene_results_ver_score
 return
@@ -645,7 +645,7 @@ script script_rhythm_test_cue_main
     rest 24
     rest 24
     rest 24
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 24
     run set_next_scene, scene_results_ver_score
 return
@@ -920,7 +920,7 @@ script script_rhythm_test_trick_main
     rest 24
     rest 24
     rest 24
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 24
     run set_next_scene, scene_results_ver_score
 return
@@ -946,13 +946,13 @@ script rhythm_test_sub_08a40cb4
     run score_results_set_grade_comments, rhythm_test_grade_comments
     print_text_s D_0805f078
     rest 12
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     print_text_s D_0805f09c
     rest 12
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     print_text_s D_0805f0bc
     rest 12
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     .byte 0x36, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x00, 0x00, 0x00
     rest 24
     call script_rhythm_test_click_main
@@ -960,7 +960,7 @@ script rhythm_test_sub_08a40cb4
     rest 12
     print_text_s D_0805f0d0
     rest 12
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     .byte 0x36, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x00, 0x00, 0x00
     rest 24
     call script_rhythm_test_cue_main
@@ -968,7 +968,7 @@ script rhythm_test_sub_08a40cb4
     rest 24
     print_text_s D_0805f0ec
     rest 12
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     .byte 0x36, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x00, 0x00, 0x00
     rest 24
     call script_rhythm_test_trick_main

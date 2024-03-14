@@ -59,15 +59,15 @@ script script_drum_samurai_opening_cutscene_main
     rest 24
     dmi_event02 2
     print_text_s D_0805e000
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     dmi_event02 2
     print_text_s D_0805e03c
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     dmi_event02 2
     print_text_s D_0805e070
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     run set_next_scene, scene_rhythm_test_opening
     run func_08047e64, scene_drum_samurai_opening_cutscene_2
@@ -84,19 +84,19 @@ script script_drum_samurai_opening_cutscene_2_main
     rest 24
     dmi_event02 2
     print_text_s D_0805e0a8
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     dmi_event02 2
     print_text_s D_0805e0d8
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     dmi_event02 2
     print_text_s D_0805e10c
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     dmi_event02 2
     print_text_s D_0805e15c
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     run set_next_scene, scene_main_menu
 return

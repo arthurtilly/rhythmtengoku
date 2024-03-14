@@ -94,23 +94,23 @@ script script_drum_intro_unused_3_main
     rest 24
     dmi_event02 2
     print_text_s D_0805e42c
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 2
     print_text_s D_0805e444
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 2
     print_text_s D_0805e458
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     mod_music_volume 0, 48
     dmi_event02 2
     print_text_s D_0805e490
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     set_tempo 140
@@ -236,22 +236,22 @@ script script_drum_intro_unused_3_main
     dmi_event02 2
     dmi_event00 134604260
     rest 12
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     print_text_s 0
     rest 12
     dmi_event02 2
     print_text_s D_0805e5f8
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 2
     print_text_s D_0805e64c
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 2
     print_text_s D_0805e684
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     run func_080175b0, 0
@@ -378,12 +378,12 @@ script script_drum_intro_unused_3_main
     dmi_event02 2
     dmi_event00 134604592
     rest 12
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     print_text_s 0
     rest 12
     dmi_event02 2
     print_text_s D_0805e744
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     run func_080175b0, 0
@@ -520,7 +520,7 @@ script script_drum_intro_unused_3_main
     dmi_event02 2
     dmi_event00 134604868
     rest 12
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     print_text_s 0
     rest 12
     set_tempo 120
@@ -528,17 +528,17 @@ script script_drum_intro_unused_3_main
     mod_music_volume 156, 96
     dmi_event02 2
     print_text_s D_0805e858
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 2
     print_text_s D_0805e8c0
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
     dmi_event02 2
     print_text_s D_0805e8f8
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
 return

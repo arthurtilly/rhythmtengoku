@@ -45,6 +45,9 @@ define print
   $(V)echo -e "$(GREEN)$(1) $(YELLOW)$(2)$(GREEN) -> $(BLUE)$(3)$(NO_COL)"
 endef
 
+# Whether to build a byte-for-byte matching ROM
+NONMATCHING ?= 0
+
 #---------------------------------------------------------------------------------
 
 TARGET		   := rhythmtengoku
@@ -73,7 +76,11 @@ ALL_DIRS       := $(BIN) $(ASM_DIRS) $(C_DIRS) $(MUSIC) $(SFX)
 ALL_DIRS       := $(sort $(ALL_DIRS)) # remove duplicates
 BUILD_DIRS     := $(BUILD) $(addprefix $(BUILD)/,$(ALL_DIRS))
 
-LD_SCRIPT      := rt.ld
+ifeq ($(NONMATCHING), 0)
+	LD_SCRIPT := rt.ld
+else
+	LD_SCRIPT := rt_modern.ld
+endif
 UNDEFINED_SYMS := undefined_syms.ld
 
 #---------------------------------------------------------------------------------
@@ -104,8 +111,14 @@ INCLUDE	:=	-I $(foreach dir,$(INCLUDES),$(wildcard $(dir)/*.h)) \
 .SECONDARY:
 #---------------------------------------------------------------------------------
 
+# If matching is 0, print a generic message
+# otherwise check if the ROM matches the official ROM
 default: $(OUTPUT).gba
-	$(V)diff baserom.gba $(OUTPUT).gba && (echo "$(TARGET).gba: OK") || (echo "The build succeeded, but did not match the official ROM.")
+	$(V)if [ "$(NONMATCHING)" = "1" ]; then \
+		echo "Build succeeded!"; \
+	else \
+		diff baserom.gba $(OUTPUT).gba && (echo "$(TARGET).gba: OK") || (echo "The build succeeded, but did not match the official ROM."); \
+	fi \
 
 #---------------------------------------------------------------------------------
 
@@ -113,7 +126,7 @@ clean:
 	$(V)echo clean ...
 	$(V)rm -fr $(filter-out build/audio, $(wildcard build/*))
 	$(V)rm -fr $(filter-out build/audio/samples build/audio/sequences, $(wildcard build/audio/*))
-    
+
 distclean:
 	$(V)echo full clean ...
 	$(V)rm -fr $(BUILD)

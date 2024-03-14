@@ -115,7 +115,7 @@ script quiz_show_sub_08a3c108
     play_sfx s_warai_solo_seqData
     play_sfx s_quiz_fan_bad_seqData
     print_text_s D_0805eca4
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     quiz_show_event00 32
     set_tempo 125
@@ -123,7 +123,7 @@ script quiz_show_sub_08a3c108
     set_music_volume 0
     mod_music_volume 256, 96
     print_text_s D_0805ecb0
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     enable_pause_menu FALSE
     rest 24
 return
@@ -180,7 +180,7 @@ script script_quiz_show_main
             case 3
                 run gameplay_set_tutorial NULL
                 print_text_s D_0805ed14
-                run gameplay_display_text_and_wait, 0
+                run gameplay_display_text_and_wait
                 rest 12
                 print_text_s D_0805ed28
                 break
@@ -191,7 +191,7 @@ script script_quiz_show_main
                 print_text_s D_0805ed60
                 break
         end_switch
-        run gameplay_display_text_and_wait, 0
+        run gameplay_display_text_and_wait
         quiz_show_event01 0
         quiz_show_event01 -16
         quiz_show_event01 1
@@ -511,10 +511,10 @@ script script_quiz_show_main
         rest 24
         rest 24
         quiz_show_event00 17
-        run gameplay_display_text_and_wait, 0
+        run gameplay_display_text_and_wait
         rest 12
         print_text_s D_0805ed8c
-        run gameplay_display_text_and_wait, 0
+        run gameplay_display_text_and_wait
         quiz_show_event03 1
         mod_lcd_blend_from 0x3F41, TO_TEMPO, 24
         rest 24
@@ -568,7 +568,7 @@ script script_quiz_show_main
         rest 12
         play_sfx s_kansei_seqData
         play_sfx s_quiz_fan_good_seqData
-        run gameplay_display_text_and_wait, 0
+        run gameplay_display_text_and_wait
         quiz_show_event00 32
         quiz_show_event00 33
         rest 12
@@ -587,10 +587,10 @@ script script_quiz_show_main
     set_music_volume 0
     mod_music_volume 256, 96
     print_text_s D_0805eda8
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     print_text_s D_0805edd8
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     enable_pause_menu FALSE
     rest 24
 return
@@ -607,26 +607,26 @@ script script_quiz_show_practice
     rest 24
     run gameplay_set_tutorial scene_quiz_show_skipped_practice
     print_text_s D_0805edf4
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     print_text_s D_0805ee20
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     print_text_s D_0805ee34
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     print_text_s D_0805ee5c
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     print_text_s D_0805ee8c
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 12
     print_text_s D_0805eebc
     mod_music_volume 0, 96
     rest 24
     rest 24
     rest 24
-    run gameplay_display_text_and_wait, 0
+    run gameplay_display_text_and_wait
     rest 24
     goto script_quiz_show_main
 
