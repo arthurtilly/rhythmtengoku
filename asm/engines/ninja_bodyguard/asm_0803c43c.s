@@ -8,7 +8,7 @@ thumb_func_start func_0803c43c \n\
 /* 0803c440 */ MOVS R0, 0x13 @ Set R0 to 0x13 \n\
 /* 0803c442 */ BL ninja_get_anim \n\
 /* 0803c446 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803c448 */ LDR R0, =D_03005380 \n\
+/* 0803c448 */ LDR R0, =gSpriteHandler \n\
 /* 0803c44a */ LDR R0, [R0] \n\
 /* 0803c44c */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
 /* 0803c44e */ STR R2, [SP] \n\
@@ -34,7 +34,7 @@ branch_0803c474: \n\
 /* 0803c474 */ MOVS R0, 0xA @ Set R0 to 0xA \n\
 /* 0803c476 */ BL ninja_get_anim \n\
 /* 0803c47a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803c47c */ LDR R0, =D_03005380 \n\
+/* 0803c47c */ LDR R0, =gSpriteHandler \n\
 /* 0803c47e */ LDR R0, [R0] \n\
 /* 0803c480 */ MOVS R2, 0x4E @ Set R2 to 0x4E \n\
 /* 0803c482 */ STR R2, [SP] \n\

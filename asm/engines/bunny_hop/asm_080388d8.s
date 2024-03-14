@@ -15,7 +15,7 @@ thumb_func_start func_080388d8 \n\
 /* 080388ea */ MOVS R0, 0xC0 @ Set R0 to 0xC0 \n\
 /* 080388ec */ LSLS R0, R0, 0x8 \n\
 /* 080388ee */ STR R0, [R4, 0x8] \n\
-/* 080388f0 */ LDR R6, =D_03005380 \n\
+/* 080388f0 */ LDR R6, =gSpriteHandler \n\
 /* 080388f2 */ LDR R0, [R6] \n\
 /* 080388f4 */ LDR R1, =anim_bunny_hop_1beat_turtle \n\
 /* 080388f6 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\

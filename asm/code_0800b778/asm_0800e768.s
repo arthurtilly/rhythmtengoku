@@ -49,7 +49,7 @@ branch_0800e7b2: \n\
 /* 0800e7b2 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
  \n\
 branch_0800e7b4: \n\
-/* 0800e7b4 */ LDR R0, =D_03005380 \n\
+/* 0800e7b4 */ LDR R0, =gSpriteHandler \n\
 /* 0800e7b6 */ LDR R0, [R0] \n\
 /* 0800e7b8 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 0800e7ba */ LDRSH R3, [R4, R2] \n\

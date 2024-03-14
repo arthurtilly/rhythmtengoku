@@ -71,20 +71,20 @@ void fireworks_engine_start(u32 version) {
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 0);
     gFireworks->unk4 = scene_create_obj_font_printer(0x340, 2);
     textAnim = bmp_font_obj_print_c(gFireworks->unk4, D_0805a3d0, 1, 15);
-    gFireworks->textSprite = sprite_create(D_03005380, textAnim->frames, 0, 120, 144, 0x7f7, 0, 0, 0);
+    gFireworks->textSprite = sprite_create(gSpriteHandler, textAnim->frames, 0, 120, 144, 0x7f7, 0, 0, 0);
     gFireworks->screenBrightness = 0;
     gFireworks->patternTableNext = 0;
     D_03004b10.BLDMOD = BLDMOD_BG1_SRC | BLDMOD_BLEND_MODE(BLEND_MODE_LIGHTEN);
     D_03004b10.COLEY = 0;
-    gFireworks->skipTutorialSprite = sprite_create(D_03005380, anim_fireworks_skip_tutorial_icon, 0, 208, 152, 0x802, 0, 0, 0);
-    sprite_set_visible(D_03005380, gFireworks->skipTutorialSprite, FALSE);
+    gFireworks->skipTutorialSprite = sprite_create(gSpriteHandler, anim_fireworks_skip_tutorial_icon, 0, 208, 152, 0x802, 0, 0, 0);
+    sprite_set_visible(gSpriteHandler, gFireworks->skipTutorialSprite, FALSE);
     gFireworks->patternMode = FIREWORKS_PATTERN_MODE_0;
     gFireworks->patternDefault = FIREWORKS_PATTERN_L3;
 
     for (i = 0; i < FIREWORKS_PARTICLE_AMOUNT; i++) {
-        gFireworks->particles[i].sprite = sprite_create(D_03005380, anim_fireworks_particle_red, 0, 0, 0, 0x801, 0, 0, 0);
+        gFireworks->particles[i].sprite = sprite_create(gSpriteHandler, anim_fireworks_particle_red, 0, 0, 0, 0x801, 0, 0, 0);
         gFireworks->particles[i].active = FALSE;
-        sprite_set_visible(D_03005380, gFireworks->particles[i].sprite, FALSE);
+        sprite_set_visible(gSpriteHandler, gFireworks->particles[i].sprite, FALSE);
     }
 
     textPrinter = text_printer_create_new(get_current_mem_id(), 4, 240, 30);
@@ -104,7 +104,7 @@ void fireworks_set_pattern_mode(u32 mode) {
     gFireworks->patternMode = mode;
 
     if (mode == FIREWORKS_PATTERN_MODE_USE_TABLE) {
-        sprite_set_visible(D_03005380, gFireworks->skipTutorialSprite, FALSE);
+        sprite_set_visible(gSpriteHandler, gFireworks->skipTutorialSprite, FALSE);
     }
 }
 
@@ -148,10 +148,10 @@ void fireworks_update_explosion(void) {
             gFireworks->particles[i].y += gFireworks->particles[i].velY;
             gFireworks->particles[i].velY -= (gFireworks->particles[i].velY / 32);
             gFireworks->particles[i].velY += 6;
-            sprite_set_x_y(D_03005380, gFireworks->particles[i].sprite, FIXED_TO_INT(gFireworks->particles[i].x), FIXED_TO_INT(gFireworks->particles[i].y));
-            if (sprite_get_anim_cel(D_03005380, gFireworks->particles[i].sprite) >= fireworks_particle_durations[gFireworks->particles[i].colour]) {
+            sprite_set_x_y(gSpriteHandler, gFireworks->particles[i].sprite, FIXED_TO_INT(gFireworks->particles[i].x), FIXED_TO_INT(gFireworks->particles[i].y));
+            if (sprite_get_anim_cel(gSpriteHandler, gFireworks->particles[i].sprite) >= fireworks_particle_durations[gFireworks->particles[i].colour]) {
                 gFireworks->particles[i].active = FALSE;
-                sprite_set_visible(D_03005380, gFireworks->particles[i].sprite, FALSE);
+                sprite_set_visible(gSpriteHandler, gFireworks->particles[i].sprite, FALSE);
             }
         }
     }
@@ -346,20 +346,20 @@ void fireworks_create_explosion(u8 pattern, s32 x, s32 y) {
         }
 
         gFireworks->particles[i].active = TRUE;
-        sprite_set_visible(D_03005380, gFireworks->particles[i].sprite, TRUE);
-        sprite_set_x_y(D_03005380, gFireworks->particles[i].sprite, FIXED_TO_INT(gFireworks->particles[i].x), FIXED_TO_INT(gFireworks->particles[i].y));
+        sprite_set_visible(gSpriteHandler, gFireworks->particles[i].sprite, TRUE);
+        sprite_set_x_y(gSpriteHandler, gFireworks->particles[i].sprite, FIXED_TO_INT(gFireworks->particles[i].x), FIXED_TO_INT(gFireworks->particles[i].y));
 
         if (gFireworks->particles[i].colour == FIREWORKS_PARTICLE_RED) {
-            sprite_set_anim(D_03005380, gFireworks->particles[i].sprite, anim_fireworks_particle_red, 0, 1, 127, 0);
+            sprite_set_anim(gSpriteHandler, gFireworks->particles[i].sprite, anim_fireworks_particle_red, 0, 1, 127, 0);
         }
         else if (gFireworks->particles[i].colour == FIREWORKS_PARTICLE_GREEN) {
-            sprite_set_anim(D_03005380, gFireworks->particles[i].sprite, anim_fireworks_particle_green, 0, 1, 127, 0);
+            sprite_set_anim(gSpriteHandler, gFireworks->particles[i].sprite, anim_fireworks_particle_green, 0, 1, 127, 0);
         }
         else if (gFireworks->particles[i].colour == FIREWORKS_PARTICLE_BLUE) {
-            sprite_set_anim(D_03005380, gFireworks->particles[i].sprite, anim_fireworks_particle_blue, 0, 1, 127, 0);
+            sprite_set_anim(gSpriteHandler, gFireworks->particles[i].sprite, anim_fireworks_particle_blue, 0, 1, 127, 0);
         }
         else {
-            sprite_set_anim(D_03005380, gFireworks->particles[i].sprite, anim_fireworks_particle_tri_rgb, 0, 1, 127, 0);
+            sprite_set_anim(gSpriteHandler, gFireworks->particles[i].sprite, anim_fireworks_particle_tri_rgb, 0, 1, 127, 0);
         }
     }
 }
@@ -466,7 +466,7 @@ void fireworks_cue_spawn(struct Cue *cue, struct FireworksCue *info, u32 type) {
             info->velX = 0;
             info->y = INT_TO_FIXED(160);
             info->velY = (info->targetY - info->y) / ticks_to_frames(0x18);
-            info->sprite = sprite_create(D_03005380, anim_fireworks_rocket2, 0, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y), 0x801, 1, 0, 0);
+            info->sprite = sprite_create(gSpriteHandler, anim_fireworks_rocket2, 0, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y), 0x801, 1, 0, 0);
             break;
 
         case FIREWORKS_CUE_TYPE_NORMAL_FIREWORK:
@@ -474,7 +474,7 @@ void fireworks_cue_spawn(struct Cue *cue, struct FireworksCue *info, u32 type) {
             info->velX = 0;
             info->y = INT_TO_FIXED(160);
             info->velY = (info->targetY - info->y) / ticks_to_frames(0x48);
-            info->sprite = sprite_create(D_03005380, anim_fireworks_rocket1, 0, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y), 0x801, 1, 0, 0);
+            info->sprite = sprite_create(gSpriteHandler, anim_fireworks_rocket1, 0, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y), 0x801, 1, 0, 0);
             play_sound(&s_hanabi_hyu_seqData);
             break;
 
@@ -487,7 +487,7 @@ void fireworks_cue_spawn(struct Cue *cue, struct FireworksCue *info, u32 type) {
                 yDistance += i;
             }
             info->y = info->targetY - (ticks_to_frames(0x30) * info->velY) - (yDistance * 64);
-            info->sprite = sprite_create(D_03005380, anim_fireworks_bomb, 0, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y), 0x801, 0, 0, 0);
+            info->sprite = sprite_create(gSpriteHandler, anim_fireworks_bomb, 0, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y), 0x801, 0, 0, 0);
             play_sound(&s_f_hanabi_v_tamaya_seqData);
             break;
     }
@@ -499,42 +499,42 @@ u32 fireworks_cue_update(struct Cue *cue, struct FireworksCue *info, u32 running
     switch (info->type) {
         case FIREWORKS_CUE_TYPE_SPIRIT_SPARKLER:
             info->y += info->velY;
-            sprite_set_y(D_03005380, info->sprite, FIXED_TO_INT(info->y));
+            sprite_set_y(gSpriteHandler, info->sprite, FIXED_TO_INT(info->y));
             if (info->state == 0) {
                 if (runningTime > ticks_to_frames(0x07)) {
                     info->state = 1;
-                    sprite_set_anim(D_03005380, info->sprite, anim_fireworks_rocket3, 0, 1, 0, 0);
+                    sprite_set_anim(gSpriteHandler, info->sprite, anim_fireworks_rocket3, 0, 1, 0, 0);
                 }
             } else if (info->state == 1) {
                 if (runningTime > ticks_to_frames(0x13)) {
                     info->state = 2;
-                    sprite_set_anim(D_03005380, info->sprite, anim_fireworks_rocket4, 0, 1, 0, 0);
+                    sprite_set_anim(gSpriteHandler, info->sprite, anim_fireworks_rocket4, 0, 1, 0, 0);
                 }
             }
             break;
 
         case FIREWORKS_CUE_TYPE_NORMAL_FIREWORK:
             info->y += info->velY;
-            sprite_set_y(D_03005380, info->sprite, FIXED_TO_INT(info->y));
+            sprite_set_y(gSpriteHandler, info->sprite, FIXED_TO_INT(info->y));
             switch (info->state) {
                 case 0:
                     if (runningTime > ticks_to_frames(0x13)) {
                         info->state = 1;
-                        sprite_set_anim(D_03005380, info->sprite, anim_fireworks_rocket2, 0, 1, 0, 0);
+                        sprite_set_anim(gSpriteHandler, info->sprite, anim_fireworks_rocket2, 0, 1, 0, 0);
                     }
                     break;
 
                 case 1:
                     if (runningTime > ticks_to_frames(0x2B)) {
                         info->state = 2;
-                        sprite_set_anim(D_03005380, info->sprite, anim_fireworks_rocket3, 0, 1, 0, 0);
+                        sprite_set_anim(gSpriteHandler, info->sprite, anim_fireworks_rocket3, 0, 1, 0, 0);
                     }
                     break;
 
                 case 2:
                     if (runningTime > ticks_to_frames(0x43)) {
                         info->state = 3;
-                        sprite_set_anim(D_03005380, info->sprite, anim_fireworks_rocket4, 0, 1, 0, 0);
+                        sprite_set_anim(gSpriteHandler, info->sprite, anim_fireworks_rocket4, 0, 1, 0, 0);
                     }
                     break;
             }
@@ -545,7 +545,7 @@ u32 fireworks_cue_update(struct Cue *cue, struct FireworksCue *info, u32 running
                 info->x += info->velX;
                 info->y += info->velY;
                 info->velY += INT_TO_FIXED(0.25);
-                sprite_set_x_y(D_03005380, info->sprite, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y));
+                sprite_set_x_y(gSpriteHandler, info->sprite, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y));
             }
             break;
     }
@@ -563,7 +563,7 @@ u32 fireworks_cue_update(struct Cue *cue, struct FireworksCue *info, u32 running
 
 // Cue - Despawn
 void fireworks_cue_despawn(struct Cue *cue, struct FireworksCue *info) {
-    sprite_delete(D_03005380, info->sprite);
+    sprite_delete(gSpriteHandler, info->sprite);
 }
 
 
@@ -573,10 +573,10 @@ void fireworks_cue_hit(struct Cue *cue, struct FireworksCue *info, u32 pressed, 
 
     if (info->pattern == FIREWORKS_PATTERN_TAIKO_BOMBER) {
         info->state = TAIKO_BOMBER_STATE_EXPLODING;
-        sprite_set_anim(D_03005380, info->sprite, anim_fireworks_bomb_explode, 0, 1, 127, 0);
+        sprite_set_anim(gSpriteHandler, info->sprite, anim_fireworks_bomb_explode, 0, 1, 127, 0);
         gFireworks->screenBrightness = 0x10;
     } else {
-        sprite_set_anim(D_03005380, info->sprite, anim_fireworks_rocket_explode, 0, 1, 127, 0);
+        sprite_set_anim(gSpriteHandler, info->sprite, anim_fireworks_rocket_explode, 0, 1, 127, 0);
         fireworks_create_explosion(info->pattern, info->targetX, info->targetY);
     }
 
@@ -594,9 +594,9 @@ void fireworks_cue_barely(struct Cue *cue, struct FireworksCue *info, u32 presse
 
     if (info->pattern == FIREWORKS_PATTERN_TAIKO_BOMBER) {
         info->state = TAIKO_BOMBER_STATE_EXPLODING;
-        sprite_set_anim(D_03005380, info->sprite, anim_fireworks_bomb_explode, 0, 1, 127, 0);
+        sprite_set_anim(gSpriteHandler, info->sprite, anim_fireworks_bomb_explode, 0, 1, 127, 0);
     } else {
-        sprite_set_anim(D_03005380, info->sprite, anim_fireworks_rocket_explode, 0, 1, 127, 0);
+        sprite_set_anim(gSpriteHandler, info->sprite, anim_fireworks_rocket_explode, 0, 1, 127, 0);
         switch (info->pattern) {
             case FIREWORKS_PATTERN_L3:
                 pattern = FIREWORKS_PATTERN_L3_BARELY;
@@ -653,12 +653,12 @@ void fireworks_common_display_text(char *text) {
     struct PrintedTextAnim *textAnim;
 
     if (text == NULL) {
-        sprite_set_visible(D_03005380, gFireworks->textSprite, FALSE);
+        sprite_set_visible(gSpriteHandler, gFireworks->textSprite, FALSE);
     } else {
         textAnim = bmp_font_obj_print_c(gFireworks->unk4, text, 1, 12);
         delete_bmp_font_obj_text_anim(gFireworks->unk4, gFireworks->textSprite);
-        sprite_set_anim(D_03005380, gFireworks->textSprite, textAnim->frames, 0, 1, 0, 0);
-        sprite_set_visible(D_03005380, gFireworks->textSprite, TRUE);
+        sprite_set_anim(gSpriteHandler, gFireworks->textSprite, textAnim->frames, 0, 1, 0, 0);
+        sprite_set_visible(gSpriteHandler, gFireworks->textSprite, TRUE);
     }
 }
 
@@ -668,9 +668,9 @@ void fireworks_common_init_tutorial(struct Scene *skipDestination) {
     if (skipDestination != NULL) {
         gameplay_enable_tutorial(TRUE);
         gameplay_set_skip_destination(skipDestination);
-        sprite_set_visible(D_03005380, gFireworks->skipTutorialSprite, TRUE);
+        sprite_set_visible(gSpriteHandler, gFireworks->skipTutorialSprite, TRUE);
     } else {
         gameplay_enable_tutorial(FALSE);
-        sprite_set_visible(D_03005380, gFireworks->skipTutorialSprite, FALSE);
+        sprite_set_visible(gSpriteHandler, gFireworks->skipTutorialSprite, FALSE);
     }
 }

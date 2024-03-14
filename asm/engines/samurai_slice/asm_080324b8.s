@@ -10,7 +10,7 @@ thumb_func_start func_080324b8 \n\
 /* 080324c0 */ STRB R4, [R5, 0x1C] \n\
 /* 080324c2 */ BL scene_affine_group_alloc \n\
 /* 080324c6 */ STRB R0, [R5, 0x2] \n\
-/* 080324c8 */ LDR R6, =D_03005380 \n\
+/* 080324c8 */ LDR R6, =gSpriteHandler \n\
 /* 080324ca */ LDR R0, [R6] \n\
 /* 080324cc */ LDR R1, =anim_med_demon_hop \n\
 /* 080324ce */ MOVS R2, 0x42 @ Set R2 to 0x42 \n\

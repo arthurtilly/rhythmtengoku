@@ -9,7 +9,7 @@ thumb_func_start func_08038d18 \n\
 /* 08038d1e */ LSRS R4, R4, 0x10 \n\
 /* 08038d20 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08038d22 */ BL func_0800c604 \n\
-/* 08038d26 */ LDR R0, =D_03005380 \n\
+/* 08038d26 */ LDR R0, =gSpriteHandler \n\
 /* 08038d28 */ LDR R0, [R0] \n\
 /* 08038d2a */ LSLS R4, R4, 0x10 \n\
 /* 08038d2c */ ASRS R4, R4, 0x10 \n\

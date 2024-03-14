@@ -9,7 +9,7 @@ thumb_func_start func_080336a0 \n\
 /* 080336a6 */ ADDS R6, R1, 0x0 @ Set R6 to R1 + 0x0 \n\
 /* 080336a8 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 080336aa */ BLT branch_08033776 \n\
-/* 080336ac */ LDR R4, =D_03005380 \n\
+/* 080336ac */ LDR R4, =gSpriteHandler \n\
 /* 080336ae */ LDR R0, [R4] \n\
 /* 080336b0 */ LDR R1, =power_calligraphy_pattern_input_anim \n\
 /* 080336b2 */ LSLS R5, R7, 0x2 \n\

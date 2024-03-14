@@ -41,7 +41,7 @@ branch_08042572: \n\
 /* 08042588 */ LDR R0, [R0] \n\
 /* 0804258a */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 0804258c */ BL affine_sprite_set_visible \n\
-/* 08042590 */ LDR R0, =D_03005380 \n\
+/* 08042590 */ LDR R0, =gSpriteHandler \n\
 /* 08042592 */ LDR R0, [R0] \n\
 /* 08042594 */ LDR R1, [R4] \n\
 /* 08042596 */ MOVS R2, 0xBF @ Set R2 to 0xBF \n\
@@ -72,7 +72,7 @@ branch_080425ca: \n\
 /* 080425d4 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
  \n\
 branch_080425d6: \n\
-/* 080425d6 */ LDR R0, =D_03005380 \n\
+/* 080425d6 */ LDR R0, =gSpriteHandler \n\
 /* 080425d8 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 080425da */ LDR R0, [R0] \n\
 /* 080425dc */ LDR R1, =gCurrentEngineData \n\

@@ -6,7 +6,7 @@ thumb_func_start func_0803118c \n\
 /* 0803118c */ PUSH {LR} \n\
 /* 0803118e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08031190 */ ADDS R2, 0xE @ Add 0xE to R2 \n\
-/* 08031192 */ LDR R0, =D_03005380 \n\
+/* 08031192 */ LDR R0, =gSpriteHandler \n\
 /* 08031194 */ LDR R0, [R0] \n\
 /* 08031196 */ LDR R1, =gCurrentEngineData \n\
 /* 08031198 */ LDR R1, [R1] \n\

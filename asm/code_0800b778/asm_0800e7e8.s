@@ -11,7 +11,7 @@ thumb_func_start func_0800e7e8 \n\
 /* 0800e7f2 */ LDRSH R0, [R1, R2] \n\
 /* 0800e7f4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0800e7f6 */ BLT branch_0800e826 \n\
-/* 0800e7f8 */ LDR R4, =D_03005380 \n\
+/* 0800e7f8 */ LDR R4, =gSpriteHandler \n\
 /* 0800e7fa */ LDR R0, [R4] \n\
 /* 0800e7fc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800e7fe */ LDRSH R1, [R1, R2] \n\

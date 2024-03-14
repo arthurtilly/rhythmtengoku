@@ -20,7 +20,7 @@ thumb_func_start tap_trial_cue_miss \n\
 /* 0803e59c */ MOVS R0, 0xD @ Set R0 to 0xD \n\
 /* 0803e59e */ BL tap_trial_get_anim \n\
 /* 0803e5a2 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803e5a4 */ LDR R0, =D_03005380 \n\
+/* 0803e5a4 */ LDR R0, =gSpriteHandler \n\
 /* 0803e5a6 */ LDR R0, [R0] \n\
 /* 0803e5a8 */ LDR R1, [R5] \n\
 /* 0803e5aa */ MOVS R3, 0x8 @ Set R3 to 0x8 \n\
@@ -49,7 +49,7 @@ branch_0803e5e4: \n\
 /* 0803e5e4 */ MOVS R0, 0xE @ Set R0 to 0xE \n\
 /* 0803e5e6 */ BL tap_trial_get_anim \n\
 /* 0803e5ea */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803e5ec */ LDR R0, =D_03005380 \n\
+/* 0803e5ec */ LDR R0, =gSpriteHandler \n\
 /* 0803e5ee */ LDR R0, [R0] \n\
 /* 0803e5f0 */ LDR R1, [R5] \n\
 /* 0803e5f2 */ MOVS R3, 0x8 @ Set R3 to 0x8 \n\

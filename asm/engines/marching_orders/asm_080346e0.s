@@ -25,7 +25,7 @@ branch_08034704: \n\
 /* 08034704 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 08034706 */ BL func_08034100 \n\
 /* 0803470a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803470c */ LDR R0, =D_03005380 \n\
+/* 0803470c */ LDR R0, =gSpriteHandler \n\
 /* 0803470e */ LDR R0, [R0] \n\
 /* 08034710 */ LDR R1, [R7] \n\
 /* 08034712 */ MOVS R3, 0x3C @ Set R3 to 0x3C \n\
@@ -46,7 +46,7 @@ branch_08034730: \n\
 /* 08034730 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 08034732 */ BL func_08034100 \n\
 /* 08034736 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 08034738 */ LDR R4, =D_03005380 \n\
+/* 08034738 */ LDR R4, =gSpriteHandler \n\
 /* 0803473a */ LDR R0, [R4] \n\
 /* 0803473c */ LDR R1, [R7] \n\
 /* 0803473e */ MOVS R3, 0x3C @ Set R3 to 0x3C \n\
@@ -82,7 +82,7 @@ branch_08034788: \n\
 /* 08034788 */ MOVS R0, 0xE @ Set R0 to 0xE \n\
 /* 0803478a */ BL func_08034100 \n\
 /* 0803478e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 08034790 */ LDR R0, =D_03005380 \n\
+/* 08034790 */ LDR R0, =gSpriteHandler \n\
 /* 08034792 */ LDR R0, [R0] \n\
 /* 08034794 */ LDR R1, [R7] \n\
 /* 08034796 */ MOVS R3, 0x3C @ Set R3 to 0x3C \n\

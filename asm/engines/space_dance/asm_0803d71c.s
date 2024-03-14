@@ -16,7 +16,7 @@ thumb_func_start space_dance_cue_miss \n\
 /* 0803d730 */ MOVS R0, 0x8 @ Set R0 to 0x8 \n\
 /* 0803d732 */ BL space_dance_get_anim \n\
 /* 0803d736 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803d738 */ LDR R5, =D_03005380 \n\
+/* 0803d738 */ LDR R5, =gSpriteHandler \n\
 /* 0803d73a */ LDR R0, [R5] \n\
 /* 0803d73c */ LSLS R4, R4, 0x10 \n\
 /* 0803d73e */ ASRS R4, R4, 0x10 \n\

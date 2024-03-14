@@ -49,7 +49,7 @@ branch_08036e66: \n\
 /* 08036e7c */ STR R0, [R1, 0x10] \n\
 /* 08036e7e */ MOVS R0, 0x28 @ Set R0 to 0x28 \n\
 /* 08036e80 */ STRH R0, [R1, 0xA] \n\
-/* 08036e82 */ LDR R4, =D_03005380 \n\
+/* 08036e82 */ LDR R4, =gSpriteHandler \n\
 /* 08036e84 */ LDR R0, [R4] \n\
 /* 08036e86 */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 08036e88 */ LDRSH R1, [R1, R2] \n\

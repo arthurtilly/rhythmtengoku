@@ -63,7 +63,7 @@ branch_0803d11a: \n\
 /* 0803d126 */ MOVS R3, 0xF @ Set R3 to 0xF \n\
 /* 0803d128 */ BL bmp_font_obj_print_l \n\
 /* 0803d12c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803d12e */ LDR R4, =D_03005380 \n\
+/* 0803d12e */ LDR R4, =gSpriteHandler \n\
 /* 0803d130 */ LDR R0, [R4] \n\
 /* 0803d132 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0803d134 */ STR R2, [SP] \n\
@@ -140,7 +140,7 @@ branch_0803d158: \n\
 /* 0803d1c6 */ MOVS R0, 0xF @ Set R0 to 0xF \n\
 /* 0803d1c8 */ BL space_dance_get_anim \n\
 /* 0803d1cc */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803d1ce */ LDR R6, =D_03005380 \n\
+/* 0803d1ce */ LDR R6, =gSpriteHandler \n\
 /* 0803d1d0 */ LDR R0, [R6] \n\
 /* 0803d1d2 */ MOVS R2, 0x88 @ Set R2 to 0x88 \n\
 /* 0803d1d4 */ STR R2, [SP] \n\

@@ -13,7 +13,7 @@ thumb_func_start func_080397f8 \n\
 /* 08039806 */ ADDS R4, R0, R1 @ Set R4 to R0 + R1 \n\
 /* 08039808 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803980a */ MOV R8, R2 @ Set R8 to R2 \n\
-/* 0803980c */ LDR R7, =D_03005380 \n\
+/* 0803980c */ LDR R7, =gSpriteHandler \n\
  \n\
 branch_0803980e: \n\
 /* 0803980e */ LDRB R0, [R4, 0x2] \n\

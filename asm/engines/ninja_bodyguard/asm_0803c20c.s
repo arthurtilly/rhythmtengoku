@@ -18,7 +18,7 @@ thumb_func_start func_0803c20c \n\
 /* 0803c226 */ ADDS R5, R1, 0x0 @ Set R5 to R1 + 0x0 \n\
  \n\
 branch_0803c228: \n\
-/* 0803c228 */ LDR R0, =D_03005380 \n\
+/* 0803c228 */ LDR R0, =gSpriteHandler \n\
 /* 0803c22a */ LDR R0, [R0] \n\
 /* 0803c22c */ LDR R1, [R5] \n\
 /* 0803c22e */ LSLS R2, R4, 0x1 \n\

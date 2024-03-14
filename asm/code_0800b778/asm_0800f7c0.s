@@ -25,7 +25,7 @@ thumb_func_start func_0800f7c0 \n\
 /* 0800f7e6 */ LDRB R0, [R0] \n\
 /* 0800f7e8 */ CMP R9, R0 @ Compare R9 and R0 \n\
 /* 0800f7ea */ BGE branch_0800f888 \n\
-/* 0800f7ec */ LDR R1, =D_03005380 \n\
+/* 0800f7ec */ LDR R1, =gSpriteHandler \n\
 /* 0800f7ee */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 0800f7f0 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
  \n\

@@ -100,7 +100,7 @@ branch_0803f622: \n\
 /* 0803f65a */ MOVS R0, 0x7 @ Set R0 to 0x7 \n\
 /* 0803f65c */ BL toss_boys_get_anim \n\
 /* 0803f660 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803f662 */ LDR R0, =D_03005380 \n\
+/* 0803f662 */ LDR R0, =gSpriteHandler \n\
 /* 0803f664 */ LDR R0, [R0] \n\
 /* 0803f666 */ LDR R4, =gCurrentEngineData \n\
 /* 0803f668 */ LDR R1, [R4] \n\
@@ -129,7 +129,7 @@ branch_0803f6a0: \n\
 /* 0803f6a8 */ LDRB R0, [R7] \n\
 /* 0803f6aa */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803f6ac */ BL func_0803f9a0 \n\
-/* 0803f6b0 */ LDR R0, =D_03005380 \n\
+/* 0803f6b0 */ LDR R0, =gSpriteHandler \n\
 /* 0803f6b2 */ LDR R0, [R0] \n\
 /* 0803f6b4 */ LDR R1, =gCurrentEngineData \n\
 /* 0803f6b6 */ LDR R1, [R1] \n\
@@ -163,7 +163,7 @@ branch_0803f6f8: \n\
 /* 0803f700 */ LDRB R0, [R7] \n\
 /* 0803f702 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803f704 */ BL func_0803fa64 \n\
-/* 0803f708 */ LDR R5, =D_03005380 \n\
+/* 0803f708 */ LDR R5, =gSpriteHandler \n\
 /* 0803f70a */ LDR R0, [R5] \n\
 /* 0803f70c */ LDR R6, =gCurrentEngineData \n\
 /* 0803f70e */ LDR R1, [R6] \n\

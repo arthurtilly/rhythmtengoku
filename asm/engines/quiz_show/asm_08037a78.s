@@ -45,7 +45,7 @@ jtbl_08037ab8: \n\
 .word jump_08037b7c \n\
 .word jump_08037ba8 \n\
 jump_08037acc: \n\
-/* 08037acc */ LDR R0, =D_03005380 \n\
+/* 08037acc */ LDR R0, =gSpriteHandler \n\
 /* 08037ace */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08037ad0 */ LDR R0, [R0] \n\
 /* 08037ad2 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
@@ -79,7 +79,7 @@ jump_08037acc: \n\
 \n\
 .ltorg \n\
 jump_08037b1c: \n\
-/* 08037b1c */ LDR R0, =D_03005380 \n\
+/* 08037b1c */ LDR R0, =gSpriteHandler \n\
 /* 08037b1e */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08037b20 */ LDR R0, [R0] \n\
 /* 08037b22 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
@@ -112,7 +112,7 @@ jump_08037b1c: \n\
 \n\
 .ltorg \n\
 jump_08037b68: \n\
-/* 08037b68 */ LDR R0, =D_03005380 \n\
+/* 08037b68 */ LDR R0, =gSpriteHandler \n\
 /* 08037b6a */ LDR R0, [R0] \n\
 /* 08037b6c */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 08037b6e */ LDRSH R1, [R7, R3] \n\
@@ -121,7 +121,7 @@ jump_08037b68: \n\
 \n\
 .ltorg \n\
 jump_08037b7c: \n\
-/* 08037b7c */ LDR R0, =D_03005380 \n\
+/* 08037b7c */ LDR R0, =gSpriteHandler \n\
 /* 08037b7e */ LDR R0, [R0] \n\
 /* 08037b80 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08037b82 */ LDRSH R1, [R7, R2] \n\
@@ -142,7 +142,7 @@ branch_08037b86: \n\
 \n\
 .ltorg \n\
 jump_08037ba8: \n\
-/* 08037ba8 */ LDR R0, =D_03005380 \n\
+/* 08037ba8 */ LDR R0, =gSpriteHandler \n\
 /* 08037baa */ LDR R0, [R0] \n\
 /* 08037bac */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 08037bae */ LDRSH R1, [R7, R3] \n\

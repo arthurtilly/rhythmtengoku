@@ -73,17 +73,17 @@ void debug_menu_scene_start(void *sVar, s32 dArg) {
 
     gDebugMenu->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
     gDebugMenu->objFont = scene_create_obj_font_printer(0x200, 8);
-    import_all_scene_objects(D_03005380, gDebugMenu->objFont, debug_menu_scene_objects, D_0300558c);
+    import_all_scene_objects(gSpriteHandler, gDebugMenu->objFont, debug_menu_scene_objects, D_0300558c);
     debug_menu_scene_init_gfx1();
 
     textAnim = bmp_font_obj_print_l(gDebugMenu->objFont, "シーケンス　テスト", 1, 6); // Sequence Test
-    sprite_create(D_03005380, textAnim->frames, 0, 0, 8, 0x800, 0, 0, 0);
+    sprite_create(gSpriteHandler, textAnim->frames, 0, 0, 8, 0x800, 0, 0, 0);
 
     textAnim = bmp_font_obj_print_l(gDebugMenu->objFont, "＊", 1, 7);
-    gDebugMenu->cursor = sprite_create(D_03005380, textAnim->frames, 0, 0, 0, 0x800, 0, 0, 0);
+    gDebugMenu->cursor = sprite_create(gSpriteHandler, textAnim->frames, 0, 0, 0, 0x800, 0, 0, 0);
 
     textAnim = bmp_font_obj_print_r(gDebugMenu->objFont, "１／１", 1, 4);
-    gDebugMenu->counter = sprite_create(D_03005380, textAnim->frames, 0, 240, 8, 0x800, 0, 0, 0);
+    gDebugMenu->counter = sprite_create(gSpriteHandler, textAnim->frames, 0, 240, 8, 0x800, 0, 0, 0);
 
     gDebugMenu->page = -1;
     gDebugMenu->row = 0;

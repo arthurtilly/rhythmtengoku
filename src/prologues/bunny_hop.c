@@ -48,8 +48,8 @@ void bunny_hop_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = sprite_create(D_03005380, anim_bunny_hop_prologue_title, 0, 22, 162, 0, 0, 0x7f, 0);
-    gPrologueEngineData->rabbitsSprite = sprite_create(D_03005380, anim_bunny_hop_prologue_rabbits, 0, 114, 120, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_bunny_hop_prologue_title, 0, 22, 162, 0, 0, 0x7f, 0);
+    gPrologueEngineData->rabbitsSprite = sprite_create(gSpriteHandler, anim_bunny_hop_prologue_rabbits, 0, 114, 120, 0, 0, 0x7f, 0);
 }
 
 
@@ -70,11 +70,11 @@ void bunny_hop_prologue_engine_stop(void) {
 
 // [func_08046f0c] Event 0 - Set Animation Frame (Text)
 void func_08046f0c(u32 frame) {
-    sprite_set_anim_cel(D_03005380, gPrologueEngineData->textSprite, frame);
+    sprite_set_anim_cel(gSpriteHandler, gPrologueEngineData->textSprite, frame);
 }
 
 
 // [func_08046f30] Event 1 - Play Animation (Rabbits)
 void func_08046f30(void) {
-    sprite_set_playback(D_03005380, gPrologueEngineData->rabbitsSprite, 1, 0x7f, 0);
+    sprite_set_playback(gSpriteHandler, gPrologueEngineData->rabbitsSprite, 1, 0x7f, 0);
 }

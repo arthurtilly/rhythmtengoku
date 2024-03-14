@@ -14,7 +14,7 @@ thumb_func_start func_08024ae4 \n\
 /* 08024af4 */ B branch_08024b8c \n\
  \n\
 branch_08024af6: \n\
-/* 08024af6 */ LDR R0, =D_03005380 \n\
+/* 08024af6 */ LDR R0, =gSpriteHandler \n\
 /* 08024af8 */ LDR R0, [R0] \n\
 /* 08024afa */ LDR R1, =gCurrentEngineData \n\
 /* 08024afc */ LDR R1, [R1] \n\
@@ -30,7 +30,7 @@ branch_08024af6: \n\
 .ltorg \n\
  \n\
 branch_08024b18: \n\
-/* 08024b18 */ LDR R6, =D_03005380 \n\
+/* 08024b18 */ LDR R6, =gSpriteHandler \n\
 /* 08024b1a */ LDR R0, [R6] \n\
 /* 08024b1c */ LDR R5, =gCurrentEngineData \n\
 /* 08024b1e */ LDR R1, [R5] \n\
@@ -58,7 +58,7 @@ branch_08024b18: \n\
 .ltorg \n\
  \n\
 branch_08024b58: \n\
-/* 08024b58 */ LDR R6, =D_03005380 \n\
+/* 08024b58 */ LDR R6, =gSpriteHandler \n\
 /* 08024b5a */ LDR R0, [R6] \n\
 /* 08024b5c */ LDR R5, =gCurrentEngineData \n\
 /* 08024b5e */ LDR R1, [R5] \n\

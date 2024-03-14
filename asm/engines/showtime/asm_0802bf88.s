@@ -19,7 +19,7 @@ thumb_func_start showtime_cue_barely \n\
 /* 0802bfa6 */ ADDS R2, R1, R0 @ Set R2 to R1 + R0 \n\
 /* 0802bfa8 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0802bfaa */ STR R0, [R2] \n\
-/* 0802bfac */ LDR R6, =D_03005380 \n\
+/* 0802bfac */ LDR R6, =gSpriteHandler \n\
 /* 0802bfae */ LDR R0, [R6] \n\
 /* 0802bfb0 */ MOVS R4, 0xB0 @ Set R4 to 0xB0 \n\
 /* 0802bfb2 */ LSLS R4, R4, 0x1 \n\

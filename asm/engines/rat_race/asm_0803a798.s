@@ -42,7 +42,7 @@ jump_0803a7e4: \n\
 /* 0803a7ea */ MOVS R0, 0xA0 @ Set R0 to 0xA0 \n\
 /* 0803a7ec */ LSLS R0, R0, 0x7 \n\
 /* 0803a7ee */ STR R0, [R2] \n\
-/* 0803a7f0 */ LDR R4, =D_03005380 \n\
+/* 0803a7f0 */ LDR R4, =gSpriteHandler \n\
 /* 0803a7f2 */ LDR R0, [R4] \n\
 /* 0803a7f4 */ ADDS R1, 0x76 @ Add 0x76 to R1 \n\
 /* 0803a7f6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -74,7 +74,7 @@ jump_0803a7e4: \n\
 \n\
 .ltorg \n\
 jump_0803a838: \n\
-/* 0803a838 */ LDR R4, =D_03005380 \n\
+/* 0803a838 */ LDR R4, =gSpriteHandler \n\
 /* 0803a83a */ LDR R0, [R4] \n\
 /* 0803a83c */ LDR R1, [R5] \n\
 /* 0803a83e */ ADDS R1, 0x78 @ Add 0x78 to R1 \n\
@@ -101,7 +101,7 @@ jump_0803a838: \n\
 jump_0803a86c: \n\
 /* 0803a86c */ LDR R0, =s_rat_cat_seqData \n\
 /* 0803a86e */ BL play_sound \n\
-/* 0803a872 */ LDR R5, =D_03005380 \n\
+/* 0803a872 */ LDR R5, =gSpriteHandler \n\
 /* 0803a874 */ LDR R0, [R5] \n\
 /* 0803a876 */ LDR R4, =gCurrentEngineData \n\
 /* 0803a878 */ LDR R1, [R4] \n\
@@ -139,7 +139,7 @@ jump_0803a8bc: \n\
 /* 0803a8c2 */ STR R1, [R0] \n\
 /* 0803a8c4 */ B branch_0803a8d8 \n\
 jump_0803a8c6: \n\
-/* 0803a8c6 */ LDR R0, =D_03005380 \n\
+/* 0803a8c6 */ LDR R0, =gSpriteHandler \n\
 /* 0803a8c8 */ LDR R0, [R0] \n\
 /* 0803a8ca */ LDR R1, [R5] \n\
 /* 0803a8cc */ ADDS R1, 0x76 @ Add 0x76 to R1 \n\

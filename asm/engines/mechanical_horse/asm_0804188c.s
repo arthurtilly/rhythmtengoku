@@ -12,7 +12,7 @@ thumb_func_start func_0804188c \n\
 /* 08041898 */ LDRB R0, [R0] \n\
 /* 0804189a */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 0804189c */ BNE branch_080418ec \n\
-/* 0804189e */ LDR R5, =D_03005380 \n\
+/* 0804189e */ LDR R5, =gSpriteHandler \n\
 /* 080418a0 */ LDR R0, [R5] \n\
 /* 080418a2 */ MOVS R2, 0x34 @ Set R2 to 0x34 \n\
 /* 080418a4 */ LDRSH R1, [R1, R2] \n\
@@ -48,7 +48,7 @@ thumb_func_start func_0804188c \n\
 branch_080418ec: \n\
 /* 080418ec */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
 /* 080418ee */ BNE branch_0804192e \n\
-/* 080418f0 */ LDR R5, =D_03005380 \n\
+/* 080418f0 */ LDR R5, =gSpriteHandler \n\
 /* 080418f2 */ LDR R0, [R5] \n\
 /* 080418f4 */ MOVS R2, 0x34 @ Set R2 to 0x34 \n\
 /* 080418f6 */ LDRSH R1, [R1, R2] \n\

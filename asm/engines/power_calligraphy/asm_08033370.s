@@ -32,7 +32,7 @@ thumb_func_start func_08033370 \n\
 /* 080333a4 */ STRB R0, [R3, 0x7] \n\
 /* 080333a6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080333a8 */ BL scene_hide_bg_layer \n\
-/* 080333ac */ LDR R0, =D_03005380 \n\
+/* 080333ac */ LDR R0, =gSpriteHandler \n\
 /* 080333ae */ LDR R0, [R0] \n\
 /* 080333b0 */ LDR R1, [R5] \n\
 /* 080333b2 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\

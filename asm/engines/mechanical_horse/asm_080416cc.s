@@ -28,7 +28,7 @@ thumb_func_start func_080416cc \n\
 /* 080416fa */ MOVS R3, 0xC @ Set R3 to 0xC \n\
 /* 080416fc */ BL bmp_font_obj_print_c \n\
 /* 08041700 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 08041702 */ LDR R0, =D_03005380 \n\
+/* 08041702 */ LDR R0, =gSpriteHandler \n\
 /* 08041704 */ LDR R0, [R0] \n\
 /* 08041706 */ LDR R1, [R4] \n\
 /* 08041708 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\

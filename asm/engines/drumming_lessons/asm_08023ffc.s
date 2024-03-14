@@ -21,7 +21,7 @@ thumb_func_start func_08023ffc \n\
 /* 0802401c */ LDR R3, =anim_drum_player_use_hihat \n\
  \n\
 branch_0802401e: \n\
-/* 0802401e */ LDR R6, =D_03005380 \n\
+/* 0802401e */ LDR R6, =gSpriteHandler \n\
 /* 08024020 */ LDR R0, [R6] \n\
 /* 08024022 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08024024 */ LDRSH R1, [R7, R2] \n\

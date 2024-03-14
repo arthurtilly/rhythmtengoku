@@ -13,7 +13,7 @@ thumb_func_start func_080292e0 \n\
 /* 080292ee */ ADDS R5, R0, R1 @ Set R5 to R0 + R1 \n\
 /* 080292f0 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 080292f2 */ BEQ branch_08029358 \n\
-/* 080292f4 */ LDR R4, =D_03005380 \n\
+/* 080292f4 */ LDR R4, =gSpriteHandler \n\
 /* 080292f6 */ LDR R0, [R4] \n\
 /* 080292f8 */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 080292fa */ LDRSH R1, [R5, R2] \n\
@@ -54,7 +54,7 @@ thumb_func_start func_080292e0 \n\
 .ltorg \n\
  \n\
 branch_08029358: \n\
-/* 08029358 */ LDR R4, =D_03005380 \n\
+/* 08029358 */ LDR R4, =gSpriteHandler \n\
 /* 0802935a */ LDR R0, [R4] \n\
 /* 0802935c */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 0802935e */ LDRSH R1, [R5, R2] \n\

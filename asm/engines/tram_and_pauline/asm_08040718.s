@@ -64,7 +64,7 @@ branch_08040728: \n\
 /* 08040792 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08040794 */ ADDS R2, 0x88 @ Add 0x88 to R2 \n\
 /* 08040796 */ STR R2, [R5] \n\
-/* 08040798 */ LDR R5, =D_03005380 \n\
+/* 08040798 */ LDR R5, =gSpriteHandler \n\
 /* 0804079a */ LDR R0, [R5] \n\
 /* 0804079c */ ADDS R4, R4, R7 @ Set R4 to R4 + R7 \n\
 /* 0804079e */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
@@ -104,7 +104,7 @@ branch_080407b8: \n\
 /* 080407e8 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080407ea */ ADDS R2, 0x90 @ Add 0x90 to R2 \n\
 /* 080407ec */ STR R2, [R5] \n\
-/* 080407ee */ LDR R5, =D_03005380 \n\
+/* 080407ee */ LDR R5, =gSpriteHandler \n\
 /* 080407f0 */ LDR R0, [R5] \n\
 /* 080407f2 */ ADDS R4, R4, R7 @ Set R4 to R4 + R7 \n\
 /* 080407f4 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
@@ -201,7 +201,7 @@ branch_08040848: \n\
 /* 080408b0 */ BL __udivsi3 \n\
 /* 080408b4 */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 080408b6 */ STR R4, [R6] \n\
-/* 080408b8 */ LDR R6, =D_03005380 \n\
+/* 080408b8 */ LDR R6, =gSpriteHandler \n\
 /* 080408ba */ LDR R0, [R6] \n\
 /* 080408bc */ ADDS R5, R5, R7 @ Set R5 to R5 + R7 \n\
 /* 080408be */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
@@ -281,7 +281,7 @@ branch_0804092c: \n\
 /* 08040958 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 0804095a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0804095c */ STR R2, [R0] \n\
-/* 0804095e */ LDR R4, =D_03005380 \n\
+/* 0804095e */ LDR R4, =gSpriteHandler \n\
 /* 08040960 */ LDR R0, [R4] \n\
 /* 08040962 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
 /* 08040964 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\

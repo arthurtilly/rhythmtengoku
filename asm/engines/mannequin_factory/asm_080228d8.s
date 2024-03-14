@@ -33,7 +33,7 @@ jtbl_08022908: \n\
 .word jump_0802298c \n\
 \n\
 jump_0802291c: \n\
-/* 0802291c */ LDR R6, =D_03005380 \n\
+/* 0802291c */ LDR R6, =gSpriteHandler \n\
 /* 0802291e */ LDR R0, [R6] \n\
 /* 08022920 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08022922 */ LDRSH R1, [R5, R2] \n\

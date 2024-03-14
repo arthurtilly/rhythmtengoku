@@ -232,7 +232,7 @@ void studio_option_list_update(void) {
                 listbox_show_sel_sprite(gStudio->songList);
                 gStudio->selectedItem = listbox_get_sel_item(gStudio->songList);
                 listbox_link_sprite_x_y_to_line(gStudio->songList, gStudio->itemMoveHighlight, gStudio->selectedItem);
-                sprite_set_visible(D_03005380, gStudio->itemMoveHighlight, TRUE);
+                sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, TRUE);
                 gStudio->sceneState = STUDIO_STATE_EDIT_VIA_OPTION_LIST;
             }
 
@@ -308,7 +308,7 @@ void studio_option_list_update_w_selection(void) {
             if (songItem != gStudio->selectedItem) {
                 studio_song_list_move_item(gStudio->selectedItem, songItem);
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
-                sprite_set_visible(D_03005380, gStudio->itemMoveHighlight, FALSE);
+                sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, FALSE);
                 listbox_set_sel_sprite(gStudio->songList, anim_studio_selection_item);
                 listbox_show_sel_sprite(gStudio->optionList);
                 listbox_hide_sel_sprite(gStudio->songList);
@@ -318,7 +318,7 @@ void studio_option_list_update_w_selection(void) {
 
         case STUDIO_LIST_EV_CANCEL:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
-            sprite_set_visible(D_03005380, gStudio->itemMoveHighlight, FALSE);
+            sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, FALSE);
             listbox_set_sel_sprite(gStudio->songList, anim_studio_selection_item);
             listbox_show_sel_sprite(gStudio->optionList);
             listbox_hide_sel_sprite(gStudio->songList);

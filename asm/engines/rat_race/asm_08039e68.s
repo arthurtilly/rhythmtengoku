@@ -68,7 +68,7 @@ thumb_func_start rat_race_engine_start \n\
 /* 08039ef4 */ LDR R2, [R5] \n\
 /* 08039ef6 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
 /* 08039ef8 */ STR R0, [R2, 0xC] \n\
-/* 08039efa */ LDR R6, =D_03005380 \n\
+/* 08039efa */ LDR R6, =gSpriteHandler \n\
 /* 08039efc */ LDR R0, [R6] \n\
 /* 08039efe */ MOVS R2, 0x5A @ Set R2 to 0x5A \n\
 /* 08039f00 */ STR R2, [SP] \n\
@@ -162,7 +162,7 @@ branch_08039fb6: \n\
 /* 08039fc4 */ ADDS R5, 0x10 @ Add 0x10 to R5 \n\
 /* 08039fc6 */ CMP R4, 0x2 @ Compare R4 and 0x2 \n\
 /* 08039fc8 */ BLS branch_08039fb6 \n\
-/* 08039fca */ LDR R5, =D_03005380 \n\
+/* 08039fca */ LDR R5, =gSpriteHandler \n\
 /* 08039fcc */ LDR R0, [R5] \n\
 /* 08039fce */ LDR R1, =anim_rat_race_player_label \n\
 /* 08039fd0 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
@@ -215,7 +215,7 @@ branch_0803a00e: \n\
 /* 0803a032 */ LDR R0, [R5] \n\
 /* 0803a034 */ ADDS R0, 0xD4 @ Add 0xD4 to R0 \n\
 /* 0803a036 */ STR R4, [R0] \n\
-/* 0803a038 */ LDR R0, =D_03005380 \n\
+/* 0803a038 */ LDR R0, =gSpriteHandler \n\
 /* 0803a03a */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0803a03c */ LDR R0, [R0] \n\
 /* 0803a03e */ LDR R1, =anim_rat_race_blank \n\

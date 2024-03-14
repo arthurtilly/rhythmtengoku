@@ -11,7 +11,7 @@ thumb_func_start func_0803c964 \n\
 /* 0803c96e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803c970 */ BL ninja_get_anim \n\
 /* 0803c974 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803c976 */ LDR R0, =D_03005380 \n\
+/* 0803c976 */ LDR R0, =gSpriteHandler \n\
 /* 0803c978 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 0803c97a */ LDR R0, [R0] \n\
 /* 0803c97c */ MOVS R2, 0x69 @ Set R2 to 0x69 \n\

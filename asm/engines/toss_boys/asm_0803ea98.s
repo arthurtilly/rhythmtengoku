@@ -43,7 +43,7 @@ thumb_func_start toss_boys_engine_start \n\
 /* 0803eaea */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803eaec */ BL toss_boys_get_anim \n\
 /* 0803eaf0 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803eaf2 */ LDR R5, =D_03005380 \n\
+/* 0803eaf2 */ LDR R5, =gSpriteHandler \n\
 /* 0803eaf4 */ LDR R0, [R5] \n\
 /* 0803eaf6 */ MOVS R2, 0x73 @ Set R2 to 0x73 \n\
 /* 0803eaf8 */ STR R2, [SP] \n\
@@ -132,7 +132,7 @@ branch_0803eb86: \n\
 /* 0803eba4 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
 /* 0803eba6 */ BL toss_boys_get_anim \n\
 /* 0803ebaa */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803ebac */ LDR R3, =D_03005380 \n\
+/* 0803ebac */ LDR R3, =gSpriteHandler \n\
 /* 0803ebae */ MOV R10, R3 @ Set R10 to R3 \n\
 /* 0803ebb0 */ LDR R0, [R3] \n\
 /* 0803ebb2 */ MOVS R2, 0x6E @ Set R2 to 0x6E \n\

@@ -84,7 +84,7 @@ branch_0803ddca: \n\
 /* 0803de4c */ MOVS R3, 0xF @ Set R3 to 0xF \n\
 /* 0803de4e */ BL bmp_font_obj_print_c \n\
 /* 0803de52 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803de54 */ LDR R4, =D_03005380 \n\
+/* 0803de54 */ LDR R4, =gSpriteHandler \n\
 /* 0803de56 */ LDR R0, [R4] \n\
 /* 0803de58 */ MOVS R1, 0x3C @ Set R1 to 0x3C \n\
 /* 0803de5a */ STR R1, [SP] \n\

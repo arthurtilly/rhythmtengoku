@@ -27,7 +27,7 @@ branch_08036306: \n\
 /* 0803630a */ LSRS R0, R0, 0x1D \n\
 /* 0803630c */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
 /* 0803630e */ BNE branch_0803633c \n\
-/* 08036310 */ LDR R0, =D_03005380 \n\
+/* 08036310 */ LDR R0, =gSpriteHandler \n\
 /* 08036312 */ LDR R0, [R0] \n\
 /* 08036314 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 08036316 */ LDRSH R1, [R4, R3] \n\

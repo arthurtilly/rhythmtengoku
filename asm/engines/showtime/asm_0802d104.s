@@ -17,7 +17,7 @@ thumb_func_start func_0802d104 \n\
 /* 0802d11a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802d11c */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 0802d11e */ STR R2, [R0] \n\
-/* 0802d120 */ LDR R5, =D_03005380 \n\
+/* 0802d120 */ LDR R5, =gSpriteHandler \n\
 /* 0802d122 */ LDR R0, [R5] \n\
 /* 0802d124 */ LDR R1, =anim_showtime_monkey_beat2 \n\
 /* 0802d126 */ MOVS R3, 0x88 @ Set R3 to 0x88 \n\

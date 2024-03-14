@@ -58,7 +58,7 @@ thumb_func_start func_08041ddc \n\
 /* 08041e46 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08041e48 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08041e4a */ STRB R1, [R2] \n\
-/* 08041e4c */ LDR R0, =D_03005380 \n\
+/* 08041e4c */ LDR R0, =gSpriteHandler \n\
 /* 08041e4e */ LDR R0, [R0] \n\
 /* 08041e50 */ LDR R2, [R5] \n\
 /* 08041e52 */ LDRB R1, [R2, 0x7] \n\

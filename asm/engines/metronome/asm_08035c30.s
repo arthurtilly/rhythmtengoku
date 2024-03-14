@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start metronome_common_display_text \n\
 /* 08035c30 */ PUSH {R4-R6, LR} \n\
 /* 08035c32 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 08035c34 */ LDR R6, =D_03005380 \n\
+/* 08035c34 */ LDR R6, =gSpriteHandler \n\
 /* 08035c36 */ LDR R0, [R6] \n\
 /* 08035c38 */ LDR R4, =gCurrentEngineData \n\
 /* 08035c3a */ LDR R1, [R4] \n\
@@ -72,7 +72,7 @@ branch_08035c96: \n\
 /* 08035cb8 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
  \n\
 branch_08035cba: \n\
-/* 08035cba */ LDR R0, =D_03005380 \n\
+/* 08035cba */ LDR R0, =gSpriteHandler \n\
 /* 08035cbc */ LDR R0, [R0] \n\
 /* 08035cbe */ LDR R1, =gCurrentEngineData \n\
 /* 08035cc0 */ LDR R1, [R1] \n\

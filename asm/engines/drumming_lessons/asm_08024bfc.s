@@ -16,7 +16,7 @@ thumb_func_start func_08024bfc \n\
 /* 08024c10 */ LSLS R0, R0, 0x18 \n\
 /* 08024c12 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08024c14 */ BNE branch_08024c24 \n\
-/* 08024c16 */ LDR R0, =D_03005380 \n\
+/* 08024c16 */ LDR R0, =gSpriteHandler \n\
 /* 08024c18 */ LDR R0, [R0] \n\
 /* 08024c1a */ LSLS R1, R3, 0x10 \n\
 /* 08024c1c */ ASRS R1, R1, 0x10 \n\

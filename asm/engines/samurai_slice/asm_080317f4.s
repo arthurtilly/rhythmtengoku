@@ -7,7 +7,7 @@ thumb_func_start func_080317f4 \n\
 /* 080317f6 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 080317f8 */ PUSH {R7} \n\
 /* 080317fa */ SUB SP, 0xC \n\
-/* 080317fc */ LDR R0, =D_03005380 \n\
+/* 080317fc */ LDR R0, =gSpriteHandler \n\
 /* 080317fe */ LDR R3, [R0] \n\
 /* 08031800 */ LDR R0, =gCurrentEngineData \n\
 /* 08031802 */ LDR R0, [R0] \n\
@@ -40,7 +40,7 @@ branch_0803182a: \n\
 /* 0803183a */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 0803183c */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0803183e */ BL sprite_set_anim \n\
-/* 08031842 */ LDR R0, =D_03005380 \n\
+/* 08031842 */ LDR R0, =gSpriteHandler \n\
 /* 08031844 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08031846 */ LDR R0, [R0] \n\
 /* 08031848 */ LDR R7, =gCurrentEngineData \n\

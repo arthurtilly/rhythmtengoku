@@ -69,7 +69,7 @@ branch_080367ba: \n\
 /* 080367e0 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 080367e2 */ LDR R0, [R6, 0xC] \n\
 /* 080367e4 */ ADDS R3, R3, R0 @ Set R3 to R3 + R0 \n\
-/* 080367e6 */ LDR R5, =D_03005380 \n\
+/* 080367e6 */ LDR R5, =gSpriteHandler \n\
 /* 080367e8 */ LDR R0, [R5] \n\
 /* 080367ea */ MOVS R7, 0x4 @ Set R7 to 0x4 \n\
 /* 080367ec */ LDRSH R1, [R6, R7] \n\

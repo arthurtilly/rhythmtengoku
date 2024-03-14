@@ -9,7 +9,7 @@ thumb_func_start func_08028744 \n\
 /* 0802874a */ MOVS R0, 0xD5 @ Set R0 to 0xD5 \n\
 /* 0802874c */ LSLS R0, R0, 0x2 \n\
 /* 0802874e */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
-/* 08028750 */ LDR R5, =D_03005380 \n\
+/* 08028750 */ LDR R5, =gSpriteHandler \n\
 /* 08028752 */ LDR R0, [R5] \n\
 /* 08028754 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08028756 */ LDRSH R1, [R4, R2] \n\

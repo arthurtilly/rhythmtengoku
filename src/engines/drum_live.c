@@ -42,8 +42,8 @@ void drum_live_init_lighting(void) {
     gDrumLive->totalActiveLights = 0;
 
     for (i = 0; i < DRUM_LIVE_TOTAL_LIGHTS; i++) {
-        gDrumLive->lightFlashes[i] = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_LIGHT_FLASH), 0, 12 + (i * 72), 21, 0x700, 1, 0, 0x8002);
-        sprite_attr_set(D_03005380, gDrumLive->lightFlashes[i], 0x04);
+        gDrumLive->lightFlashes[i] = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_LIGHT_FLASH), 0, 12 + (i * 72), 21, 0x700, 1, 0, 0x8002);
+        sprite_attr_set(gSpriteHandler, gDrumLive->lightFlashes[i], 0x04);
     }
 
     gDrumLive->nextLightFlash = 2;
@@ -153,8 +153,8 @@ void drum_live_flash_big_lights(s32 flashType) {
             gDrumLive->brightnessInc = -0x30;
             gDrumLive->brightnessLevel = INT_TO_FIXED(5.0);
             sprite = gDrumLive->lightFlashes[gDrumLive->nextLightFlash];
-            sprite_set_visible(D_03005380, sprite, TRUE);
-            sprite_set_anim_cel(D_03005380, sprite, 0);
+            sprite_set_visible(gSpriteHandler, sprite, TRUE);
+            sprite_set_anim_cel(gSpriteHandler, sprite, 0);
             gDrumLive->nextLightFlash = (gDrumLive->nextLightFlash + 1) & 3;
             break;
     }
@@ -380,9 +380,9 @@ void drum_live_kit_play_roll(void) {
 void drum_live_kit_play_bass_l(void) {
     struct LiveDrummer *drummer = &gDrumLive->drummer;
 
-    sprite_set_anim_cel(D_03005380, drummer->leftBassDrum, 0);
-    sprite_set_anim_cel(D_03005380, drummer->body, 0);
-    sprite_set_anim_cel(D_03005380, drummer->head, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->leftBassDrum, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->body, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->head, 0);
 }
 
 
@@ -390,9 +390,9 @@ void drum_live_kit_play_bass_l(void) {
 void drum_live_kit_play_bass_r(void) {
     struct LiveDrummer *drummer = &gDrumLive->drummer;
 
-    sprite_set_anim_cel(D_03005380, drummer->rightBassDrum, 0);
-    sprite_set_anim_cel(D_03005380, drummer->body, 0);
-    sprite_set_anim_cel(D_03005380, drummer->head, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->rightBassDrum, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->body, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->head, 0);
 }
 
 
@@ -405,10 +405,10 @@ void drum_live_kit_play_stub(void) {
 void drum_live_kit_play_snare_l(void) {
     struct LiveDrummer *drummer = &gDrumLive->drummer;
 
-    sprite_set_anim(D_03005380, drummer->leftArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_SNARE_L), 0, 1, 0x7F, 0);
-    sprite_set_x_y(D_03005380, drummer->leftArm, 120, 70);
+    sprite_set_anim(gSpriteHandler, drummer->leftArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_SNARE_L), 0, 1, 0x7F, 0);
+    sprite_set_x_y(gSpriteHandler, drummer->leftArm, 120, 70);
     drum_live_offset_sprite_pos(drummer->leftArm, LIVE_PERFORMER_DRUMMER);
-    sprite_set_anim_cel(D_03005380, drummer->snareDrum, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->snareDrum, 0);
 }
 
 
@@ -416,10 +416,10 @@ void drum_live_kit_play_snare_l(void) {
 void drum_live_kit_play_snare_r(void) {
     struct LiveDrummer *drummer = &gDrumLive->drummer;
 
-    sprite_set_anim(D_03005380, drummer->rightArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_SNARE_R), 0, 1, 0x7F, 0);
-    sprite_set_x_y(D_03005380, drummer->rightArm, 120, 70);
+    sprite_set_anim(gSpriteHandler, drummer->rightArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_SNARE_R), 0, 1, 0x7F, 0);
+    sprite_set_x_y(gSpriteHandler, drummer->rightArm, 120, 70);
     drum_live_offset_sprite_pos(drummer->rightArm, LIVE_PERFORMER_DRUMMER);
-    sprite_set_anim_cel(D_03005380, drummer->snareDrum, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->snareDrum, 0);
 }
 
 
@@ -432,10 +432,10 @@ void drum_live_kit_play_tom_unused(void) {
 void drum_live_kit_play_tom(void) {
     struct LiveDrummer *drummer = &gDrumLive->drummer;
 
-    sprite_set_anim(D_03005380, drummer->leftArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_TOM), 0, 1, 0x7F, 0);
-    sprite_set_x_y(D_03005380, drummer->leftArm, 120, 70);
+    sprite_set_anim(gSpriteHandler, drummer->leftArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_TOM), 0, 1, 0x7F, 0);
+    sprite_set_x_y(gSpriteHandler, drummer->leftArm, 120, 70);
     drum_live_offset_sprite_pos(drummer->leftArm, LIVE_PERFORMER_DRUMMER);
-    sprite_set_anim_cel(D_03005380, drummer->tomDrum, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->tomDrum, 0);
 }
 
 
@@ -443,11 +443,11 @@ void drum_live_kit_play_tom(void) {
 void drum_live_kit_play_hihat(void) {
     struct LiveDrummer *drummer = &gDrumLive->drummer;
 
-    sprite_set_anim(D_03005380, drummer->leftArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_HIHAT), 0, 1, 0x7F, 0);
-    sprite_set_x_y(D_03005380, drummer->leftArm, 120, 70);
+    sprite_set_anim(gSpriteHandler, drummer->leftArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_HIHAT), 0, 1, 0x7F, 0);
+    sprite_set_x_y(gSpriteHandler, drummer->leftArm, 120, 70);
     drum_live_offset_sprite_pos(drummer->leftArm, LIVE_PERFORMER_DRUMMER);
-    sprite_set_playback(D_03005380, drummer->hiHat, 1, 0x7F, 0);
-    sprite_set_anim_cel(D_03005380, drummer->hiHat, 0);
+    sprite_set_playback(gSpriteHandler, drummer->hiHat, 1, 0x7F, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->hiHat, 0);
 }
 
 
@@ -455,10 +455,10 @@ void drum_live_kit_play_hihat(void) {
 void drum_live_kit_play_splash(void) {
     struct LiveDrummer *drummer = &gDrumLive->drummer;
 
-    sprite_set_anim(D_03005380, drummer->leftArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_SPLASH), 0, 1, 0x7F, 0);
-    sprite_set_x_y(D_03005380, drummer->leftArm, 120, 70);
+    sprite_set_anim(gSpriteHandler, drummer->leftArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_SPLASH), 0, 1, 0x7F, 0);
+    sprite_set_x_y(gSpriteHandler, drummer->leftArm, 120, 70);
     drum_live_offset_sprite_pos(drummer->leftArm, LIVE_PERFORMER_DRUMMER);
-    sprite_set_anim_cel(D_03005380, drummer->splashCymbal, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->splashCymbal, 0);
 }
 
 
@@ -466,10 +466,10 @@ void drum_live_kit_play_splash(void) {
 void drum_live_kit_play_crash(void) {
     struct LiveDrummer *drummer = &gDrumLive->drummer;
 
-    sprite_set_anim(D_03005380, drummer->rightArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_CRASH), 0, 1, 0x7F, 0);
-    sprite_set_x_y(D_03005380, drummer->rightArm, 120, 70);
+    sprite_set_anim(gSpriteHandler, drummer->rightArm, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_CRASH), 0, 1, 0x7F, 0);
+    sprite_set_x_y(gSpriteHandler, drummer->rightArm, 120, 70);
     drum_live_offset_sprite_pos(drummer->rightArm, LIVE_PERFORMER_DRUMMER);
-    sprite_set_anim_cel(D_03005380, drummer->crashCymbal, 0);
+    sprite_set_anim_cel(gSpriteHandler, drummer->crashCymbal, 0);
 }
 
 
@@ -504,10 +504,10 @@ void drum_live_init_gfx1(void) {
 // Offset Performer Sprite X/Y Position by Vector Table
 void drum_live_offset_sprite_pos(s16 sprite, u32 performer) {
     struct Vector2 *offset = &drum_live_performer_sprite_offsets[gDrumLive->version][performer];
-    s32 x = sprite_get_data(D_03005380, sprite, 4);
-    s32 y = sprite_get_data(D_03005380, sprite, 5);
+    s32 x = sprite_get_data(gSpriteHandler, sprite, 4);
+    s32 y = sprite_get_data(gSpriteHandler, sprite, 5);
 
-    sprite_set_x_y(D_03005380, sprite, x + offset->x, y + offset->y);
+    sprite_set_x_y(gSpriteHandler, sprite, x + offset->x, y + offset->y);
 }
 
 
@@ -525,20 +525,20 @@ void drum_live_engine_start(u32 version) {
     bg_anim_init(&gDrumLive->dynamicBgMap);
 
     // Init. Drummer
-    drummer->head = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUMMER_HEAD), 0, 120, 70, 0x482D, 1, 0x7F, 0);
-    drummer->body = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUMMER_BODY), 0, 120, 70, 0x4832, 1, 0x7F, 0);
-    drummer->leftArm = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_SNARE_L), 0, 120, 70, 0x4828, 1, 0x7F, 0);
-    drummer->rightArm = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_SNARE_R), 0, 120, 70, 0x4828, 1, 0x7F, 0);
-    sprite_set_origin_x_y(D_03005380, drummer->leftArm, NULL, &drummer->armPosY);
-    sprite_set_origin_x_y(D_03005380, drummer->rightArm, NULL, &drummer->armPosY);
+    drummer->head = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUMMER_HEAD), 0, 120, 70, 0x482D, 1, 0x7F, 0);
+    drummer->body = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUMMER_BODY), 0, 120, 70, 0x4832, 1, 0x7F, 0);
+    drummer->leftArm = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_SNARE_L), 0, 120, 70, 0x4828, 1, 0x7F, 0);
+    drummer->rightArm = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUMMER_USE_SNARE_R), 0, 120, 70, 0x4828, 1, 0x7F, 0);
+    sprite_set_origin_x_y(gSpriteHandler, drummer->leftArm, NULL, &drummer->armPosY);
+    sprite_set_origin_x_y(gSpriteHandler, drummer->rightArm, NULL, &drummer->armPosY);
     drummer->armPosY = 0;
-    drummer->leftBassDrum = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_BASS_L), 0, 120, 110, 0x47CE, 1, 0x7F, 0);
-    drummer->rightBassDrum = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_BASS_R), 0, 120, 110, 0x47CE, 1, 0x7F, 0);
-    drummer->snareDrum = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_SNARE), 0, 120, 110, 0x47D8, 1, 0x7F, 0);
-    drummer->tomDrum = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_TOM), 0, 120, 110, 0x47C9, 1, 0x7F, 0);
-    drummer->hiHat = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_HIHAT), 0, 120, 110, 0x47D6, 1, 0x7F, 0);
-    drummer->splashCymbal = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_SPLASH), 0, 120, 110, 0x47C4, 1, 0x7F, 0);
-    drummer->crashCymbal = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_CRASH), 0, 120, 110, 0x47C4, 1, 0x7F, 0);
+    drummer->leftBassDrum = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_BASS_L), 0, 120, 110, 0x47CE, 1, 0x7F, 0);
+    drummer->rightBassDrum = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_BASS_R), 0, 120, 110, 0x47CE, 1, 0x7F, 0);
+    drummer->snareDrum = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_SNARE), 0, 120, 110, 0x47D8, 1, 0x7F, 0);
+    drummer->tomDrum = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_TOM), 0, 120, 110, 0x47C9, 1, 0x7F, 0);
+    drummer->hiHat = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_HIHAT), 0, 120, 110, 0x47D6, 1, 0x7F, 0);
+    drummer->splashCymbal = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_SPLASH), 0, 120, 110, 0x47C4, 1, 0x7F, 0);
+    drummer->crashCymbal = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_DRUM_KIT_CRASH), 0, 120, 110, 0x47C4, 1, 0x7F, 0);
     drum_live_offset_sprite_pos(drummer->head, LIVE_PERFORMER_DRUMMER);
     drum_live_offset_sprite_pos(drummer->body, LIVE_PERFORMER_DRUMMER);
     drum_live_offset_sprite_pos(drummer->leftArm, LIVE_PERFORMER_DRUMMER);
@@ -553,42 +553,42 @@ void drum_live_engine_start(u32 version) {
 
     // Init. Bass Guitarist
     guitarist = &gDrumLive->guitarists[1];
-    guitarist->head = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_BASSIST_HEAD), 0, 50, 110, 0x4792, 1, 0x7F, 0);
-    guitarist->body = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_BASSIST_BODY), 0, 50, 110, 0x479C, 1, 0x7F, 0);
-    guitarist->legs = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_BASSIST_LEGS), 0, 50, 109, 0x47A6, 1, 0x7F, 0);
-    guitarist->leftArm = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_BASSIST_ARM_L), 0, 50, 110, 0x4788, 1, 0x7F, 0);
-    guitarist->rightArm = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_BASSIST_ARM_R), 0, 50, 110, 0x4788, 1, 0x7F, 0);
+    guitarist->head = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_BASSIST_HEAD), 0, 50, 110, 0x4792, 1, 0x7F, 0);
+    guitarist->body = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_BASSIST_BODY), 0, 50, 110, 0x479C, 1, 0x7F, 0);
+    guitarist->legs = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_BASSIST_LEGS), 0, 50, 109, 0x47A6, 1, 0x7F, 0);
+    guitarist->leftArm = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_BASSIST_ARM_L), 0, 50, 110, 0x4788, 1, 0x7F, 0);
+    guitarist->rightArm = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_BASSIST_ARM_R), 0, 50, 110, 0x4788, 1, 0x7F, 0);
     drum_live_offset_sprite_pos(guitarist->head, LIVE_PERFORMER_BASSIST);
     drum_live_offset_sprite_pos(guitarist->body, LIVE_PERFORMER_BASSIST);
     drum_live_offset_sprite_pos(guitarist->legs, LIVE_PERFORMER_BASSIST);
     drum_live_offset_sprite_pos(guitarist->leftArm, LIVE_PERFORMER_BASSIST);
     drum_live_offset_sprite_pos(guitarist->rightArm, LIVE_PERFORMER_BASSIST);
-    sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_MICROPHONE), 0, 38, 142, 0x4738, 0, 0, 0);
+    sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_MICROPHONE), 0, 38, 142, 0x4738, 0, 0, 0);
     guitarist->currentState = LIVE_GUITARIST_STATE_DEFAULT;
     guitarist->timeUntilNextState = 0;
 
     // Init. Guitarist
     guitarist = &gDrumLive->guitarists[0];
-    guitarist->head = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_GUITARIST_HEAD), 0, 190, 115, 0x4792, 1, 0x7F, 0);
-    guitarist->body = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_GUITARIST_BODY), 0, 190, 115, 0x479C, 1, 0x7F, 0);
-    guitarist->legs = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_GUITARIST_LEGS), 0, 190, 115, 0x47A6, 1, 0x7F, 0);
-    guitarist->leftArm = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_GUITARIST_ARM_L), 0, 190, 115, 0x4788, 1, 0x7F, 0);
-    guitarist->rightArm = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_GUITARIST_ARM_R), 0, 190, 115, 0x4788, 1, 0x7F, 0);
+    guitarist->head = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_GUITARIST_HEAD), 0, 190, 115, 0x4792, 1, 0x7F, 0);
+    guitarist->body = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_GUITARIST_BODY), 0, 190, 115, 0x479C, 1, 0x7F, 0);
+    guitarist->legs = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_GUITARIST_LEGS), 0, 190, 115, 0x47A6, 1, 0x7F, 0);
+    guitarist->leftArm = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_GUITARIST_ARM_L), 0, 190, 115, 0x4788, 1, 0x7F, 0);
+    guitarist->rightArm = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_GUITARIST_ARM_R), 0, 190, 115, 0x4788, 1, 0x7F, 0);
     drum_live_offset_sprite_pos(guitarist->head, LIVE_PERFORMER_GUITARIST);
     drum_live_offset_sprite_pos(guitarist->body, LIVE_PERFORMER_GUITARIST);
     drum_live_offset_sprite_pos(guitarist->legs, LIVE_PERFORMER_GUITARIST);
     drum_live_offset_sprite_pos(guitarist->leftArm, LIVE_PERFORMER_GUITARIST);
     drum_live_offset_sprite_pos(guitarist->rightArm, LIVE_PERFORMER_GUITARIST);
-    sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_MICROPHONE), 0, 202, 139, 0x4738, 0, 0, 0);
+    sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_MICROPHONE), 0, 202, 139, 0x4738, 0, 0, 0);
     guitarist->currentState = LIVE_GUITARIST_STATE_DEFAULT;
     guitarist->timeUntilNextState = 0;
 
     // Init. Modes and Icons
-    sprite_id_set_origin_x_y(D_03005380, get_current_mem_id(), NULL, &D_03004b10.BG_OFS[BG_LAYER_1].y);
+    sprite_id_set_origin_x_y(gSpriteHandler, get_current_mem_id(), NULL, &D_03004b10.BG_OFS[BG_LAYER_1].y);
     gDrumLive->adjustModeTempo = 0;
     gDrumLive->adjustModeEnabled = TRUE;
-    gDrumLive->adjustModeIcon = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_ADJUST_MODE_ICON), gDrumLive->adjustModeEnabled, 120, 154, 0, 0, 0, 0x8000);
-    gDrumLive->busyIcon = sprite_create(D_03005380, drum_live_get_anim(LIVE_ANIM_BUSY_ICON), 0, 120, 144, 0, 0, 0, 0x8000);
+    gDrumLive->adjustModeIcon = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_ADJUST_MODE_ICON), gDrumLive->adjustModeEnabled, 120, 154, 0, 0, 0, 0x8000);
+    gDrumLive->busyIcon = sprite_create(gSpriteHandler, drum_live_get_anim(LIVE_ANIM_BUSY_ICON), 0, 120, 144, 0, 0, 0, 0x8000);
 
     // Init. Other
     init_drumtech(&gDrumLive->drumTech);
@@ -612,43 +612,43 @@ void drum_live_set_guitarist_state(u32 id, u32 state) {
     s32 x, y;
     s32 frame;
 
-    sprite_set_visible(D_03005380, guitarist->head, FALSE);
-    sprite_set_visible(D_03005380, guitarist->legs, FALSE);
-    sprite_set_visible(D_03005380, guitarist->leftArm, FALSE);
-    sprite_set_visible(D_03005380, guitarist->rightArm, FALSE);
+    sprite_set_visible(gSpriteHandler, guitarist->head, FALSE);
+    sprite_set_visible(gSpriteHandler, guitarist->legs, FALSE);
+    sprite_set_visible(gSpriteHandler, guitarist->leftArm, FALSE);
+    sprite_set_visible(gSpriteHandler, guitarist->rightArm, FALSE);
 
     switch (state) {
         case LIVE_GUITARIST_STATE_DEFAULT:
-            sprite_set_anim(D_03005380, guitarist->head, drum_live_get_anim(drum_live_guitarist_anim_map_head[id]), 0, 1, 0x7F, 0);
-            sprite_set_anim(D_03005380, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_body[id]), 0, 1, 0x7F, 0);
-            sprite_set_anim(D_03005380, guitarist->legs, drum_live_get_anim(drum_live_guitarist_anim_map_legs[id]), 0, 1, 0x7F, 0);
-            sprite_set_anim(D_03005380, guitarist->leftArm, drum_live_get_anim(drum_live_guitarist_anim_map_arm_l[id]), 0, 1, 0x7F, 0);
-            sprite_set_anim(D_03005380, guitarist->rightArm, drum_live_get_anim(drum_live_guitarist_anim_map_arm_r[id]), 0, 1, 0x7F, 0);
-            sprite_set_visible(D_03005380, guitarist->head, TRUE);
-            sprite_set_visible(D_03005380, guitarist->legs, TRUE);
-            sprite_set_visible(D_03005380, guitarist->leftArm, TRUE);
-            sprite_set_visible(D_03005380, guitarist->rightArm, TRUE);
+            sprite_set_anim(gSpriteHandler, guitarist->head, drum_live_get_anim(drum_live_guitarist_anim_map_head[id]), 0, 1, 0x7F, 0);
+            sprite_set_anim(gSpriteHandler, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_body[id]), 0, 1, 0x7F, 0);
+            sprite_set_anim(gSpriteHandler, guitarist->legs, drum_live_get_anim(drum_live_guitarist_anim_map_legs[id]), 0, 1, 0x7F, 0);
+            sprite_set_anim(gSpriteHandler, guitarist->leftArm, drum_live_get_anim(drum_live_guitarist_anim_map_arm_l[id]), 0, 1, 0x7F, 0);
+            sprite_set_anim(gSpriteHandler, guitarist->rightArm, drum_live_get_anim(drum_live_guitarist_anim_map_arm_r[id]), 0, 1, 0x7F, 0);
+            sprite_set_visible(gSpriteHandler, guitarist->head, TRUE);
+            sprite_set_visible(gSpriteHandler, guitarist->legs, TRUE);
+            sprite_set_visible(gSpriteHandler, guitarist->leftArm, TRUE);
+            sprite_set_visible(gSpriteHandler, guitarist->rightArm, TRUE);
             break;
 
         case LIVE_GUITARIST_STATE_CROUCH:
-            sprite_set_anim(D_03005380, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_crouch[id]), 0, 1, 0x7F, 0);
+            sprite_set_anim(gSpriteHandler, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_crouch[id]), 0, 1, 0x7F, 0);
             break;
 
         case LIVE_GUITARIST_STATE_STRUM_JUMP:
-            sprite_set_anim(D_03005380, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_jump_strum[id]), 0, 1, 0x7F, 0);
+            sprite_set_anim(gSpriteHandler, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_jump_strum[id]), 0, 1, 0x7F, 0);
             break;
 
         case LIVE_GUITARIST_STATE_JUMP:
-            sprite_set_anim(D_03005380, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_jump[id]), 0, 1, 0x7F, 0);
-            x = sprite_get_data(D_03005380, guitarist->body, 4);
-            y = sprite_get_data(D_03005380, guitarist->body, 5);
+            sprite_set_anim(gSpriteHandler, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_jump[id]), 0, 1, 0x7F, 0);
+            x = sprite_get_data(gSpriteHandler, guitarist->body, 4);
+            y = sprite_get_data(gSpriteHandler, guitarist->body, 5);
             scene_move_sprite_sine_wave(guitarist->body, x, y, 16, ticks_to_frames(24));
             break;
 
         case LIVE_GUITARIST_STATE_HALF_CROUCH:
-            sprite_set_anim(D_03005380, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_crouch[id]), 0, -1, 0, 0);
-            frame = sprite_get_data(D_03005380, guitarist->body, 2);
-            sprite_set_anim_cel(D_03005380, guitarist->body, frame - 1);
+            sprite_set_anim(gSpriteHandler, guitarist->body, drum_live_get_anim(drum_live_guitarist_anim_map_crouch[id]), 0, -1, 0, 0);
+            frame = sprite_get_data(gSpriteHandler, guitarist->body, 2);
+            sprite_set_anim_cel(gSpriteHandler, guitarist->body, frame - 1);
             break;
     }
 
@@ -707,11 +707,11 @@ void drum_live_set_adjust_mode_tempo(u32 tempo) {
 
     if (tempo != 0) {
         gDrumLive->adjustModeTempo = get_beatscript_tempo();
-        sprite_set_visible(D_03005380, gDrumLive->busyIcon, TRUE);
+        sprite_set_visible(gSpriteHandler, gDrumLive->busyIcon, TRUE);
     } else if (gDrumLive->adjustModeTempo != 0) {
         set_beatscript_tempo(gDrumLive->adjustModeTempo);
         gDrumLive->adjustModeTempo = tempo;
-        sprite_set_visible(D_03005380, gDrumLive->busyIcon, FALSE);
+        sprite_set_visible(gSpriteHandler, gDrumLive->busyIcon, FALSE);
     }
 }
 
@@ -740,8 +740,8 @@ void drum_live_update_band_monkeys(void) {
     if (gDrumLive->version == ENGINE_VER_DRUM_SAMURAI_BAND_LIVE) {
         u24_8 speed = INT_TO_FIXED(get_beatscript_tempo()) / 120u;
 
-        sprite_set_anim_speed(D_03005380, gDrumLive->guitarists[0].body, speed);
-        sprite_set_anim_speed(D_03005380, gDrumLive->guitarists[1].body, speed);
+        sprite_set_anim_speed(gSpriteHandler, gDrumLive->guitarists[0].body, speed);
+        sprite_set_anim_speed(gSpriteHandler, gDrumLive->guitarists[1].body, speed);
     }
 }
 
@@ -892,10 +892,10 @@ void drum_live_common_beat_animation(void) {
         guitarist = &gDrumLive->guitarists[i];
 
         if (guitarist->currentState == LIVE_GUITARIST_STATE_DEFAULT) {
-            sprite_set_anim_cel(D_03005380, guitarist->head, 0);
-            sprite_set_anim_cel(D_03005380, guitarist->body, 0);
-            sprite_set_anim_cel(D_03005380, guitarist->legs, 0);
-            sprite_set_anim_cel(D_03005380, guitarist->leftArm, 0);
+            sprite_set_anim_cel(gSpriteHandler, guitarist->head, 0);
+            sprite_set_anim_cel(gSpriteHandler, guitarist->body, 0);
+            sprite_set_anim_cel(gSpriteHandler, guitarist->legs, 0);
+            sprite_set_anim_cel(gSpriteHandler, guitarist->leftArm, 0);
         }
     }
 

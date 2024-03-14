@@ -70,7 +70,7 @@ branch_0803f43e: \n\
 /* 0803f484 */ LSLS R3, R3, 0x2 \n\
 /* 0803f486 */ ADDS R1, R2, R3 @ Set R1 to R2 + R3 \n\
 /* 0803f488 */ STR R0, [R1] \n\
-/* 0803f48a */ LDR R0, =D_03005380 \n\
+/* 0803f48a */ LDR R0, =gSpriteHandler \n\
 /* 0803f48c */ LDR R0, [R0] \n\
 /* 0803f48e */ ADD R2, R8 @ Add R8 to R2 \n\
 /* 0803f490 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\

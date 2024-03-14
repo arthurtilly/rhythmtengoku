@@ -8,7 +8,7 @@ thumb_func_start space_dance_common_display_text \n\
 /* 0803d9a4 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0803d9a6 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0803d9a8 */ BNE branch_0803d9c8 \n\
-/* 0803d9aa */ LDR R0, =D_03005380 \n\
+/* 0803d9aa */ LDR R0, =gSpriteHandler \n\
 /* 0803d9ac */ LDR R0, [R0] \n\
 /* 0803d9ae */ LDR R1, =gCurrentEngineData \n\
 /* 0803d9b0 */ LDR R1, [R1] \n\
@@ -34,7 +34,7 @@ branch_0803d9c8: \n\
 /* 0803d9de */ MOVS R3, 0xC @ Set R3 to 0xC \n\
 /* 0803d9e0 */ BL bmp_font_obj_print_c \n\
 /* 0803d9e4 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803d9e6 */ LDR R5, =D_03005380 \n\
+/* 0803d9e6 */ LDR R5, =gSpriteHandler \n\
 /* 0803d9e8 */ LDR R0, [R5] \n\
 /* 0803d9ea */ LDR R1, [R4] \n\
 /* 0803d9ec */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\

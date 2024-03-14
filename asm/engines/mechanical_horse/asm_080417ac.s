@@ -24,7 +24,7 @@ thumb_func_start func_080417ac \n\
 /* 080417d0 */ STRB R4, [R0, 0x7] \n\
 /* 080417d2 */ LDR R1, [R6] \n\
 /* 080417d4 */ STR R4, [R1, 0x14] \n\
-/* 080417d6 */ LDR R5, =D_03005380 \n\
+/* 080417d6 */ LDR R5, =gSpriteHandler \n\
 /* 080417d8 */ LDR R0, [R5] \n\
 /* 080417da */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 080417dc */ LDRSH R1, [R1, R2] \n\

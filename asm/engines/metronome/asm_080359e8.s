@@ -33,7 +33,7 @@ branch_08035a12: \n\
 /* 08035a16 */ SUBS R5, 0x1 @ Subtract 0x1 from R5 \n\
  \n\
 branch_08035a18: \n\
-/* 08035a18 */ LDR R6, =D_03005380 \n\
+/* 08035a18 */ LDR R6, =gSpriteHandler \n\
 /* 08035a1a */ LDR R0, [R6] \n\
 /* 08035a1c */ LDR R4, =gCurrentEngineData \n\
 /* 08035a1e */ LDR R1, [R4] \n\
@@ -56,7 +56,7 @@ branch_08035a18: \n\
 /* 08035a42 */ BCS branch_08035a98 \n\
  \n\
 branch_08035a44: \n\
-/* 08035a44 */ LDR R0, =D_03005380 \n\
+/* 08035a44 */ LDR R0, =gSpriteHandler \n\
 /* 08035a46 */ LDR R0, [R0] \n\
 /* 08035a48 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08035a4a */ LDR R1, =gCurrentEngineData \n\
@@ -79,7 +79,7 @@ branch_08035a44: \n\
 /* 08035a70 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 08035a72 */ BL __udivsi3 \n\
 /* 08035a76 */ MOV R8, R0 @ Set R8 to R0 \n\
-/* 08035a78 */ LDR R1, =D_03005380 \n\
+/* 08035a78 */ LDR R1, =gSpriteHandler \n\
 /* 08035a7a */ LDR R0, [R1] \n\
 /* 08035a7c */ LDR R2, =gCurrentEngineData \n\
 /* 08035a7e */ LDR R1, [R2] \n\

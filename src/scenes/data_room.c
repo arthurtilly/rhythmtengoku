@@ -64,19 +64,19 @@ void dataroom_listbox_update(void) {
 
     if (gDataRoom->lines[0] >= 0) {
         for (i = 0; i < 8; i++) {
-            sprite_delete(D_03005380, gDataRoom->lines[i]);
+            sprite_delete(gSpriteHandler, gDataRoom->lines[i]);
         }
     }
 
-    x = sprite_get_data(D_03005380, baseLine, 4);
-    z = sprite_get_data(D_03005380, baseLine, 6);
+    x = sprite_get_data(gSpriteHandler, baseLine, 4);
+    z = sprite_get_data(gSpriteHandler, baseLine, 6);
 
     for (i = 0; i < 8; i++) {
-        s16 sprite = sprite_clone(D_03005380, baseLine);
+        s16 sprite = sprite_clone(gSpriteHandler, baseLine);
 
-        sprite_set_base_palette(D_03005380, sprite, i + 2);
-        sprite_set_x(D_03005380, sprite, x + (i + 1));
-        sprite_set_z(D_03005380, sprite, z + i + 1);
+        sprite_set_base_palette(gSpriteHandler, sprite, i + 2);
+        sprite_set_x(gSpriteHandler, sprite, x + (i + 1));
+        sprite_set_z(gSpriteHandler, sprite, z + i + 1);
         gDataRoom->lines[i] = sprite;
     }
 }
@@ -93,7 +93,7 @@ void dataroom_listbox_on_scroll(void) {
     dataroom_listbox_update();
 
     if (gDataRoom->userState != DATAROOM_USER_SCROLLING) {
-        sprite_set_anim(D_03005380, gDataRoom->userSprite, anim_data_room_user_scroll, 0, 1, 0, 0);
+        sprite_set_anim(gSpriteHandler, gDataRoom->userSprite, anim_data_room_user_scroll, 0, 1, 0, 0);
         gDataRoom->userState = DATAROOM_USER_SCROLLING;
         gDataRoom->userAnimTimer = 30;
     }
@@ -110,7 +110,7 @@ void dataroom_scene_start(void *sVar, s32 dArg) {
     func_080073f0();
     dataroom_scene_init_gfx1();
 
-    sprite_create(D_03005380, anim_data_room_green_led, 0, 188, 155, 0x800, 1, 0, 0);
+    sprite_create(gSpriteHandler, anim_data_room_green_led, 0, 188, 155, 0x800, 1, 0, 0);
 
     for (i = 0; i < 8; i++) {
         gDataRoom->lines[i] = -1;
@@ -123,7 +123,7 @@ void dataroom_scene_start(void *sVar, s32 dArg) {
     listbox_run_func_on_scroll(gDataRoom->listbox, dataroom_listbox_on_scroll, 0);
     listbox_run_func_on_finish(gDataRoom->listbox, dataroom_listbox_on_finish, 0);
 
-    gDataRoom->userSprite = sprite_create(D_03005380, anim_data_room_user_stare, 0x7F, 0, 160, 0x4800, 1, 0x7F, 0);
+    gDataRoom->userSprite = sprite_create(gSpriteHandler, anim_data_room_user_stare, 0x7F, 0, 160, 0x4800, 1, 0x7F, 0);
     gDataRoom->userState = DATAROOM_USER_STARING;
     gDataRoom->userAnimTimer = 540;
     gDataRoom->inputsEnabled = FALSE;
@@ -151,12 +151,12 @@ void dataroom_scene_update_user(void) {
     if (--gDataRoom->userAnimTimer == 0) {
         switch (gDataRoom->userState) {
             case DATAROOM_USER_STARING:
-                sprite_set_anim(D_03005380, gDataRoom->userSprite, anim_data_room_user_fall_asleep, 0, 1, 0x20, 0);
+                sprite_set_anim(gSpriteHandler, gDataRoom->userSprite, anim_data_room_user_fall_asleep, 0, 1, 0x20, 0);
                 gDataRoom->userState = DATAROOM_USER_ASLEEP;
                 break;
 
             case DATAROOM_USER_SCROLLING:
-                sprite_set_anim(D_03005380, gDataRoom->userSprite, anim_data_room_user_stare, 0, 1, 0x7F, 0);
+                sprite_set_anim(gSpriteHandler, gDataRoom->userSprite, anim_data_room_user_stare, 0, 1, 0x7F, 0);
                 gDataRoom->userState = DATAROOM_USER_STARING;
                 gDataRoom->userAnimTimer = 540;
                 break;

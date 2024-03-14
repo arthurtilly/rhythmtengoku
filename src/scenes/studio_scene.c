@@ -99,14 +99,14 @@ void studio_scene_start(void *sVar, s32 dArg) {
     gStudio->unused380 = 0;
     gStudio->unused384 = 0;
     gStudio->unused388 = 0;
-    gStudio->itemMoveHighlight = sprite_create(D_03005380, anim_studio_item_move_highlight, 0, 64, 64, 0x8864, 0, 0, 0x8000);
+    gStudio->itemMoveHighlight = sprite_create(gSpriteHandler, anim_studio_item_move_highlight, 0, 64, 64, 0x8864, 0, 0, 0x8000);
     gStudio->replayDrumKit = STUDIO_DRUM_STANDARD;
     studio_warning_init();
     gStudio->musicPlayer = play_sound(&s_studio_bgm_seqData);
-    graph = sprite_create(D_03005380, anim_studio_graphs_l, 0, 77, 66, 0x4800, 1, 0, 0);
-    sprite_set_origin_x_y(D_03005380, graph, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
-    graph = sprite_create(D_03005380, anim_studio_graph_r, 0, 320, 130, 0x4800, 1, 0, 0);
-    sprite_set_origin_x_y(D_03005380, graph, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
+    graph = sprite_create(gSpriteHandler, anim_studio_graphs_l, 0, 77, 66, 0x4800, 1, 0, 0);
+    sprite_set_origin_x_y(gSpriteHandler, graph, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
+    graph = sprite_create(gSpriteHandler, anim_studio_graph_r, 0, 320, 130, 0x4800, 1, 0, 0);
+    sprite_set_origin_x_y(gSpriteHandler, graph, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
     gStudio->inputsEnabled = FALSE;
     gStudio->replaySeq = mem_heap_alloc_id(get_current_mem_id(), 0x3800);
 }

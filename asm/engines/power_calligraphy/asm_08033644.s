@@ -7,7 +7,7 @@ thumb_func_start power_calligraphy_engine_update \n\
 /* 08033646 */ BL func_08033370 \n\
 /* 0803364a */ BL func_08032d34 \n\
 /* 0803364e */ BL func_080328b8 \n\
-/* 08033652 */ LDR R6, =D_03005380 \n\
+/* 08033652 */ LDR R6, =gSpriteHandler \n\
 /* 08033654 */ LDR R0, [R6] \n\
 /* 08033656 */ LDR R5, =gCurrentEngineData \n\
 /* 08033658 */ LDR R1, [R5] \n\

@@ -30,7 +30,7 @@ thumb_func_start func_08033558 \n\
 .ltorg \n\
  \n\
 branch_08033594: \n\
-/* 08033594 */ LDR R0, =D_03005380 \n\
+/* 08033594 */ LDR R0, =gSpriteHandler \n\
 /* 08033596 */ LDR R0, [R0] \n\
 /* 08033598 */ LDR R1, =gCurrentEngineData \n\
 /* 0803359a */ LDR R1, [R1] \n\

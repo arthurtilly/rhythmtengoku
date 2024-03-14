@@ -45,7 +45,7 @@ branch_08040106: \n\
 /* 08040118 */ STR R5, [R0] \n\
 /* 0804011a */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 0804011c */ STRB R4, [R1, 0x14] \n\
-/* 0804011e */ LDR R0, =D_03005380 \n\
+/* 0804011e */ LDR R0, =gSpriteHandler \n\
 /* 08040120 */ LDR R0, [R0] \n\
 /* 08040122 */ LDR R2, [R2] \n\
 /* 08040124 */ ADDS R3, R2, R3 @ Set R3 to R2 + R3 \n\

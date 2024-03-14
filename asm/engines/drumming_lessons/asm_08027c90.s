@@ -19,7 +19,7 @@ thumb_func_start func_08027c90 \n\
 /* 08027caa */ LDRB R0, [R0] \n\
 /* 08027cac */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08027cae */ BEQ branch_08027cde \n\
-/* 08027cb0 */ LDR R0, =D_03005380 \n\
+/* 08027cb0 */ LDR R0, =gSpriteHandler \n\
 /* 08027cb2 */ LDR R0, [R0] \n\
 /* 08027cb4 */ SUBS R2, 0x3 @ Subtract 0x3 from R2 \n\
 /* 08027cb6 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\

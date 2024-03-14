@@ -11,7 +11,7 @@ thumb_func_start func_08042020 \n\
 /* 0804202a */ STRB R4, [R0, 0x6] \n\
 /* 0804202c */ LDR R0, [R5] \n\
 /* 0804202e */ STRB R4, [R0, 0x7] \n\
-/* 08042030 */ LDR R6, =D_03005380 \n\
+/* 08042030 */ LDR R6, =gSpriteHandler \n\
 /* 08042032 */ LDR R0, [R6] \n\
 /* 08042034 */ LDR R1, [R5] \n\
 /* 08042036 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\

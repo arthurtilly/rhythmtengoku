@@ -10,7 +10,7 @@ thumb_func_start func_080333e8 \n\
 /* 080333f0 */ LDRB R0, [R0, 0xB] \n\
 /* 080333f2 */ CMP R6, R0 @ Check R6 - R0 \n\
 /* 080333f4 */ BCS branch_0803345c \n\
-/* 080333f6 */ LDR R7, =D_03005380 \n\
+/* 080333f6 */ LDR R7, =gSpriteHandler \n\
  \n\
 branch_080333f8: \n\
 /* 080333f8 */ LDR R1, [R1] \n\

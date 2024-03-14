@@ -34,7 +34,7 @@ branch_0803bb54: \n\
 /* 0803bb5e */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803bb60 */ STRB R0, [R7, 0x2] \n\
 /* 0803bb62 */ STR R4, [R7, 0x4] \n\
-/* 0803bb64 */ LDR R5, =D_03005380 \n\
+/* 0803bb64 */ LDR R5, =gSpriteHandler \n\
 /* 0803bb66 */ LDR R6, [R5] \n\
 /* 0803bb68 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803bb6a */ LDRSH R0, [R7, R1] \n\

@@ -20,7 +20,7 @@ thumb_func_start func_08023e50 \n\
 /* 08023e6e */ LDR R3, =anim_drum_player_use_snare_l \n\
  \n\
 branch_08023e70: \n\
-/* 08023e70 */ LDR R6, =D_03005380 \n\
+/* 08023e70 */ LDR R6, =gSpriteHandler \n\
 /* 08023e72 */ LDR R0, [R6] \n\
 /* 08023e74 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08023e76 */ LDRSH R1, [R7, R2] \n\

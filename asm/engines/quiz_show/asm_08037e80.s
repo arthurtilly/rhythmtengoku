@@ -18,7 +18,7 @@ thumb_func_start quiz_show_input_event \n\
 /* 08037e98 */ ANDS R0, R7 @ Set R0 to R0 & R7 \n\
 /* 08037e9a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08037e9c */ BEQ branch_08037ed2 \n\
-/* 08037e9e */ LDR R4, =D_03005380 \n\
+/* 08037e9e */ LDR R4, =gSpriteHandler \n\
 /* 08037ea0 */ LDR R0, [R4] \n\
 /* 08037ea2 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08037ea4 */ LDRSH R1, [R5, R2] \n\
@@ -46,7 +46,7 @@ branch_08037ed2: \n\
 /* 08037ed4 */ ANDS R0, R6 @ Set R0 to R0 & R6 \n\
 /* 08037ed6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08037ed8 */ BEQ branch_08037f0e \n\
-/* 08037eda */ LDR R4, =D_03005380 \n\
+/* 08037eda */ LDR R4, =gSpriteHandler \n\
 /* 08037edc */ LDR R0, [R4] \n\
 /* 08037ede */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08037ee0 */ LDRSH R1, [R5, R2] \n\
@@ -70,7 +70,7 @@ branch_08037ed2: \n\
 /* 08037f0a */ BL play_sound \n\
  \n\
 branch_08037f0e: \n\
-/* 08037f0e */ LDR R0, =D_03005380 \n\
+/* 08037f0e */ LDR R0, =gSpriteHandler \n\
 /* 08037f10 */ LDR R0, [R0] \n\
 /* 08037f12 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08037f14 */ LDRSH R1, [R5, R2] \n\

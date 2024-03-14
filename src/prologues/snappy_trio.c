@@ -48,7 +48,7 @@ void snappy_trio_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = sprite_create(D_03005380, anim_snappy_trio_prologue_title, 0, 120, 100, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_snappy_trio_prologue_title, 0, 120, 100, 0, 0, 0x7f, 0);
 }
 
 
@@ -69,5 +69,5 @@ void snappy_trio_prologue_engine_stop(void) {
 
 // [func_08045fc0] Event 0 - Set Animation Frame (Text)
 void func_08045fc0(u32 frame) {
-    sprite_set_anim_cel(D_03005380, gPrologueEngineData->textSprite, frame);
+    sprite_set_anim_cel(gSpriteHandler, gPrologueEngineData->textSprite, frame);
 }

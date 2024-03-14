@@ -14,7 +14,7 @@ thumb_func_start func_08041744 \n\
 /* 08041754 */ LSLS R7, R5, 0x10 \n\
  \n\
 branch_08041756: \n\
-/* 08041756 */ LDR R0, =D_03005380 \n\
+/* 08041756 */ LDR R0, =gSpriteHandler \n\
 /* 08041758 */ LDR R0, [R0] \n\
 /* 0804175a */ LDR R6, =gCurrentEngineData \n\
 /* 0804175c */ LDR R2, [R6] \n\

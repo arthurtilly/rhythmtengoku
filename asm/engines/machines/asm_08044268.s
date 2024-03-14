@@ -37,7 +37,7 @@ branch_08044288: \n\
 /* 080442a6 */ BL func_08044248 \n\
 /* 080442aa */ LSLS R0, R0, 0x10 \n\
 /* 080442ac */ ASRS R0, R0, 0x10 \n\
-/* 080442ae */ LDR R1, =D_03005380 \n\
+/* 080442ae */ LDR R1, =gSpriteHandler \n\
 /* 080442b0 */ MOV R9, R1 @ Set R9 to R1 \n\
 /* 080442b2 */ LDR R1, [R1] \n\
 /* 080442b4 */ STR R0, [SP] \n\

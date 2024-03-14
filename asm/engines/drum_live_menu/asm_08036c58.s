@@ -62,7 +62,7 @@ thumb_func_start drum_live_menu_engine_start \n\
 /* 08036ce4 */ LDR R0, [R5] \n\
 /* 08036ce6 */ STR R4, [R0, 0x4] \n\
 /* 08036ce8 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
-/* 08036cea */ LDR R7, =D_03005380 \n\
+/* 08036cea */ LDR R7, =gSpriteHandler \n\
 /* 08036cec */ MOVS R6, 0x80 @ Set R6 to 0x80 \n\
 /* 08036cee */ LSLS R6, R6, 0xE \n\
 /* 08036cf0 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
@@ -95,7 +95,7 @@ branch_08036cf2: \n\
 /* 08036d26 */ ADDS R4, 0x1 @ Add 0x1 to R4 \n\
 /* 08036d28 */ CMP R4, 0x2 @ Compare R4 and 0x2 \n\
 /* 08036d2a */ BLS branch_08036cf2 \n\
-/* 08036d2c */ LDR R5, =D_03005380 \n\
+/* 08036d2c */ LDR R5, =gSpriteHandler \n\
 /* 08036d2e */ LDR R0, [R5] \n\
 /* 08036d30 */ LDR R1, =anim_drum_live_menu_arrow_up \n\
 /* 08036d32 */ MOVS R7, 0x50 @ Set R7 to 0x50 \n\

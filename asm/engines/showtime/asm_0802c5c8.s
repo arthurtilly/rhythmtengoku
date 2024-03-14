@@ -105,7 +105,7 @@ jump_0802c66a: \n\
 /* 0802c6a0 */ MOVS R2, 0xC8 @ Set R2 to 0xC8 \n\
 /* 0802c6a2 */ MOVS R3, 0x68 @ Set R3 to 0x68 \n\
 /* 0802c6a4 */ BL func_0802c55c \n\
-/* 0802c6a8 */ LDR R6, =D_03005380 \n\
+/* 0802c6a8 */ LDR R6, =gSpriteHandler \n\
 /* 0802c6aa */ LDR R0, [R6] \n\
 /* 0802c6ac */ LDR R1, [R5] \n\
 /* 0802c6ae */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
@@ -183,7 +183,7 @@ jump_0802c71a: \n\
 /* 0802c73e */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0802c740 */ ADDS R3, 0x68 @ Add 0x68 to R3 \n\
 /* 0802c742 */ STR R3, [SP, 0x18] \n\
-/* 0802c744 */ LDR R6, =D_03005380 \n\
+/* 0802c744 */ LDR R6, =gSpriteHandler \n\
 /* 0802c746 */ LDR R0, [R6] \n\
 /* 0802c748 */ LDR R1, [R5] \n\
 /* 0802c74a */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
@@ -261,7 +261,7 @@ jump_0802c7a8: \n\
 /* 0802c7da */ MOVS R2, 0xB8 @ Set R2 to 0xB8 \n\
 /* 0802c7dc */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
 /* 0802c7de */ BL func_0802c55c \n\
-/* 0802c7e2 */ LDR R6, =D_03005380 \n\
+/* 0802c7e2 */ LDR R6, =gSpriteHandler \n\
 /* 0802c7e4 */ LDR R0, [R6] \n\
 /* 0802c7e6 */ LDR R1, [R5] \n\
 /* 0802c7e8 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
@@ -335,7 +335,7 @@ jump_0802c850: \n\
 /* 0802c874 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0802c876 */ ADDS R3, 0x78 @ Add 0x78 to R3 \n\
 /* 0802c878 */ STR R3, [SP, 0x18] \n\
-/* 0802c87a */ LDR R6, =D_03005380 \n\
+/* 0802c87a */ LDR R6, =gSpriteHandler \n\
 /* 0802c87c */ LDR R0, [R6] \n\
 /* 0802c87e */ LDR R1, [R7] \n\
 /* 0802c880 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
@@ -497,7 +497,7 @@ branch_0802c9a0: \n\
 /* 0802c9bc */ BL func_0802c55c \n\
  \n\
 branch_0802c9c0: \n\
-/* 0802c9c0 */ LDR R7, =D_03005380 \n\
+/* 0802c9c0 */ LDR R7, =gSpriteHandler \n\
 /* 0802c9c2 */ LDR R0, [R7] \n\
 /* 0802c9c4 */ LDR R6, =gCurrentEngineData \n\
 /* 0802c9c6 */ LDR R2, [R6] \n\
@@ -637,7 +637,7 @@ branch_0802cacc: \n\
 /* 0802cad8 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0802cada */ STR R5, [R0] \n\
 /* 0802cadc */ STR R7, [R2] \n\
-/* 0802cade */ LDR R4, =D_03005380 \n\
+/* 0802cade */ LDR R4, =gSpriteHandler \n\
 /* 0802cae0 */ LDR R0, [R4] \n\
 /* 0802cae2 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 0802cae4 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
@@ -724,7 +724,7 @@ jump_0802cb58: \n\
 /* 0802cb9e */ LDR R3, [R5] \n\
 /* 0802cba0 */ ADDS R3, R3, R0 @ Set R3 to R3 + R0 \n\
 /* 0802cba2 */ STR R3, [SP, 0x18] \n\
-/* 0802cba4 */ LDR R5, =D_03005380 \n\
+/* 0802cba4 */ LDR R5, =gSpriteHandler \n\
 /* 0802cba6 */ LDR R0, [R5] \n\
 /* 0802cba8 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 0802cbaa */ ADDS R1, R2, R7 @ Set R1 to R2 + R7 \n\
@@ -822,7 +822,7 @@ branch_0802cc3a: \n\
 /* 0802cc5e */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0802cc60 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0802cc62 */ STR R3, [R0] \n\
-/* 0802cc64 */ LDR R5, =D_03005380 \n\
+/* 0802cc64 */ LDR R5, =gSpriteHandler \n\
 /* 0802cc66 */ LDR R0, [R5] \n\
 /* 0802cc68 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 0802cc6a */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
@@ -877,7 +877,7 @@ jump_0802cca4: \n\
 /* 0802ccde */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0802cce0 */ ADDS R3, 0x30 @ Add 0x30 to R3 \n\
 /* 0802cce2 */ STR R3, [SP, 0x18] \n\
-/* 0802cce4 */ LDR R7, =D_03005380 \n\
+/* 0802cce4 */ LDR R7, =gSpriteHandler \n\
 /* 0802cce6 */ LDR R0, [R7] \n\
 /* 0802cce8 */ ADDS R4, R4, R6 @ Set R4 to R4 + R6 \n\
 /* 0802ccea */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
@@ -975,7 +975,7 @@ jump_0802cd7c: \n\
 /* 0802cdb4 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0802cdb6 */ LDR R3, [R0] \n\
 /* 0802cdb8 */ STR R3, [SP, 0x18] \n\
-/* 0802cdba */ LDR R7, =D_03005380 \n\
+/* 0802cdba */ LDR R7, =gSpriteHandler \n\
 /* 0802cdbc */ LDR R0, [R7] \n\
 /* 0802cdbe */ ADDS R1, R5, R6 @ Set R1 to R5 + R6 \n\
 /* 0802cdc0 */ MOVS R4, 0x20 @ Set R4 to 0x20 \n\

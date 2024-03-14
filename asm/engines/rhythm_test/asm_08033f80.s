@@ -17,7 +17,7 @@ thumb_func_start func_08033f80 \n\
 /* 08033f98 */ SUBS R0, 0x1 @ Subtract 0x1 from R0 \n\
 /* 08033f9a */ CMP R5, R0 @ Check R5 - R0 \n\
 /* 08033f9c */ BGE branch_08033fd0 \n\
-/* 08033f9e */ LDR R7, =D_03005380 \n\
+/* 08033f9e */ LDR R7, =gSpriteHandler \n\
 /* 08033fa0 */ ADDS R6, R1, 0x0 @ Set R6 to R1 + 0x0 \n\
  \n\
 branch_08033fa2: \n\
@@ -44,7 +44,7 @@ branch_08033fa2: \n\
 /* 08033fce */ BLT branch_08033fa2 \n\
  \n\
 branch_08033fd0: \n\
-/* 08033fd0 */ LDR R0, =D_03005380 \n\
+/* 08033fd0 */ LDR R0, =gSpriteHandler \n\
 /* 08033fd2 */ LDR R0, [R0] \n\
 /* 08033fd4 */ LDR R1, =gCurrentEngineData \n\
 /* 08033fd6 */ LDR R1, [R1] \n\

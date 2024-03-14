@@ -32,7 +32,7 @@ thumb_func_start func_0802327c \n\
 /* 080232b0 */ LDR R0, [R0] \n\
 /* 080232b2 */ STR R0, [R2] \n\
 /* 080232b4 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 080232b6 */ LDR R6, =D_03005380 \n\
+/* 080232b6 */ LDR R6, =gSpriteHandler \n\
 /* 080232b8 */ MOV R8, R4 @ Set R8 to R4 \n\
 /* 080232ba */ LDR R7, =0x41c \n\
 /* 080232bc */ LSLS R3, R3, 0x10 \n\
@@ -83,7 +83,7 @@ branch_080232c2: \n\
 /* 08023318 */ CMP R5, 0x3 @ Compare R5 and 0x3 \n\
 /* 0802331a */ BLS branch_080232c2 \n\
 /* 0802331c */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 0802331e */ LDR R6, =D_03005380 \n\
+/* 0802331e */ LDR R6, =gSpriteHandler \n\
 /* 08023320 */ LDR R0, =gCurrentEngineData \n\
 /* 08023322 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08023324 */ MOVS R7, 0x85 @ Set R7 to 0x85 \n\

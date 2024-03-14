@@ -225,8 +225,8 @@ void cafe_start_dialogue_inputs(void) {
     }
 
     text_printer_get_x_y(gCafe->printer, &x, &y);
-    sprite_set_x_y(D_03005380, gCafe->textAdvIcon, x, y);
-    sprite_set_visible(D_03005380, gCafe->textAdvIcon, TRUE);
+    sprite_set_x_y(gSpriteHandler, gCafe->textAdvIcon, x, y);
+    sprite_set_visible(gSpriteHandler, gCafe->textAdvIcon, TRUE);
 
     if (gCafe->queryEnabled) {
         anim = cafe_cursor_option_anim[gCafe->queryResult];
@@ -234,7 +234,7 @@ void cafe_start_dialogue_inputs(void) {
         anim = anim_cafe_text_adv_icon;
     }
 
-    sprite_set_anim(D_03005380, gCafe->textAdvIcon, anim, 0, 1, 0, 0);
+    sprite_set_anim(gSpriteHandler, gCafe->textAdvIcon, anim, 0, 1, 0, 0);
     gCafe->textAdvReady = TRUE;
     set_pause_beatscript_scene(TRUE);
 }
@@ -258,13 +258,13 @@ void cafe_update_dialogue_inputs(void) {
         gCafe->queryResult = clamp_int32(gCafe->queryResult, CAFE_OPT_YES, CAFE_OPT_NO);
 
         if (choice != gCafe->queryResult) {
-            sprite_set_anim(D_03005380, gCafe->textAdvIcon, cafe_cursor_option_anim[gCafe->queryResult], 0, 1, 0, 0);
+            sprite_set_anim(gSpriteHandler, gCafe->textAdvIcon, cafe_cursor_option_anim[gCafe->queryResult], 0, 1, 0, 0);
         }
     }
 
     if (D_03004afc & A_BUTTON) {
         text_printer_set_string(gCafe->printer, NULL);
-        sprite_set_visible(D_03005380, gCafe->textAdvIcon, FALSE);
+        sprite_set_visible(gSpriteHandler, gCafe->textAdvIcon, FALSE);
         play_sound(&s_f_cafe_send_mes_seqData);
         gCafe->textAdvReady = FALSE;
         set_pause_beatscript_scene(FALSE);
@@ -715,7 +715,7 @@ void cafe_init_text_printer(void) {
     text_printer_run_func_on_finish(printer, cafe_text_printer_show_box, 0);
     text_printer_run_func_on_clear(printer, cafe_text_printer_hide_box, 0);
     gCafe->printer = printer;
-    gCafe->textAdvIcon = sprite_create(D_03005380, anim_cafe_text_adv_icon, 0, 64, 64, 0x700, 1, 0, 0x8000);
+    gCafe->textAdvIcon = sprite_create(gSpriteHandler, anim_cafe_text_adv_icon, 0, 64, 64, 0x700, 1, 0, 0x8000);
     gCafe->textAdvHold = 0;
 }
 

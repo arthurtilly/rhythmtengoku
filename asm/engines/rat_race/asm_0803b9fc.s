@@ -47,7 +47,7 @@ branch_0803ba30: \n\
 /* 0803ba3e */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0803ba40 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0803ba42 */ STRB R3, [R5, 0x4] \n\
-/* 0803ba44 */ LDR R0, =D_03005380 \n\
+/* 0803ba44 */ LDR R0, =gSpriteHandler \n\
 /* 0803ba46 */ LDR R0, [R0] \n\
 /* 0803ba48 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803ba4a */ LDRSH R1, [R5, R2] \n\
@@ -62,7 +62,7 @@ branch_0803ba30: \n\
 .ltorg \n\
  \n\
 branch_0803ba64: \n\
-/* 0803ba64 */ LDR R4, =D_03005380 \n\
+/* 0803ba64 */ LDR R4, =gSpriteHandler \n\
 /* 0803ba66 */ LDR R0, [R4] \n\
 /* 0803ba68 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803ba6a */ LDRSH R1, [R5, R3] \n\

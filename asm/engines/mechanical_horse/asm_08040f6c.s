@@ -86,7 +86,7 @@ thumb_func_start mechanical_horse_engine_start \n\
 /* 0804101a */ MOVS R3, 0xF @ Set R3 to 0xF \n\
 /* 0804101c */ BL bmp_font_obj_print_c \n\
 /* 08041020 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 08041022 */ LDR R5, =D_03005380 \n\
+/* 08041022 */ LDR R5, =gSpriteHandler \n\
 /* 08041024 */ LDR R0, [R5] \n\
 /* 08041026 */ MOVS R2, 0x90 @ Set R2 to 0x90 \n\
 /* 08041028 */ STR R2, [SP] \n\
@@ -316,7 +316,7 @@ branch_080411f4: \n\
  \n\
 branch_08041200: \n\
 /* 08041200 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
-/* 08041202 */ LDR R3, =D_03005380 \n\
+/* 08041202 */ LDR R3, =gSpriteHandler \n\
 /* 08041204 */ MOV R8, R3 @ Set R8 to R3 \n\
 /* 08041206 */ MOVS R6, 0x40 @ Set R6 to 0x40 \n\
 /* 08041208 */ NEGS R6, R6 @ Set R6 to -R6 \n\
@@ -361,7 +361,7 @@ branch_0804120e: \n\
 /* 08041256 */ LDR R3, =gCurrentEngineData \n\
 /* 08041258 */ MOV R8, R3 @ Set R8 to R3 \n\
 /* 0804125a */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
-/* 0804125c */ LDR R0, =D_03005380 \n\
+/* 0804125c */ LDR R0, =gSpriteHandler \n\
 /* 0804125e */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 08041260 */ MOVS R1, 0x9B @ Set R1 to 0x9B \n\
 /* 08041262 */ LSLS R1, R1, 0x2 \n\
@@ -497,7 +497,7 @@ branch_08041266: \n\
 /* 0804136a */ LSLS R3, R3, 0x2 \n\
 /* 0804136c */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 0804136e */ STR R0, [R1] \n\
-/* 08041370 */ LDR R0, =D_03005380 \n\
+/* 08041370 */ LDR R0, =gSpriteHandler \n\
 /* 08041372 */ LDR R0, [R0] \n\
 /* 08041374 */ LDR R1, =anim_horse_high_speed_light \n\
 /* 08041376 */ MOVS R2, 0x82 @ Set R2 to 0x82 \n\

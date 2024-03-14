@@ -45,7 +45,7 @@ branch_0802ef9e: \n\
 /* 0802efb0 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0802efb2 */ ASRS R1, R1, 0x10 \n\
 /* 0802efb4 */ BL affine_sprite_set_rotation \n\
-/* 0802efb8 */ LDR R3, =D_03005380 \n\
+/* 0802efb8 */ LDR R3, =gSpriteHandler \n\
 /* 0802efba */ MOV R9, R3 @ Set R9 to R3 \n\
 /* 0802efbc */ LDR R4, [R3] \n\
 /* 0802efbe */ LDR R0, [R5, 0x4] \n\

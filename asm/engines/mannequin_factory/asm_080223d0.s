@@ -40,7 +40,7 @@ branch_08022406: \n\
 /* 0802240c */ ADDS R0, 0x90 @ Add 0x90 to R0 \n\
 /* 0802240e */ LDR R1, [R7] \n\
 /* 08022410 */ ADDS R6, R1, R0 @ Set R6 to R1 + R0 \n\
-/* 08022412 */ LDR R4, =D_03005380 \n\
+/* 08022412 */ LDR R4, =gSpriteHandler \n\
 /* 08022414 */ LDR R0, [R4] \n\
 /* 08022416 */ LDR R2, =mannequin_finish_anim \n\
 /* 08022418 */ MOV R3, R9 @ Set R3 to R9 \n\

@@ -33,7 +33,7 @@ branch_080339e4: \n\
 /* 080339ea */ MOVS R2, 0x30 @ Set R2 to 0x30 \n\
 /* 080339ec */ BL clamp_int32 \n\
 /* 080339f0 */ MOV R8, R0 @ Set R8 to R0 \n\
-/* 080339f2 */ LDR R7, =D_03005380 \n\
+/* 080339f2 */ LDR R7, =gSpriteHandler \n\
 /* 080339f4 */ LDR R0, [R7] \n\
 /* 080339f6 */ LDR R1, =anim_rhythm_test_chart_marker \n\
 /* 080339f8 */ MOV R2, R8 @ Set R2 to R8 \n\

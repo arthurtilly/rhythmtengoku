@@ -11,7 +11,7 @@ thumb_func_start func_0803a2a8 \n\
 /* 0803a2b2 */ LDRB R0, [R1, 0x10] \n\
 /* 0803a2b4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803a2b6 */ BEQ branch_0803a334 \n\
-/* 0803a2b8 */ LDR R5, =D_03005380 \n\
+/* 0803a2b8 */ LDR R5, =gSpriteHandler \n\
 /* 0803a2ba */ LDR R0, [R5] \n\
 /* 0803a2bc */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 0803a2be */ LDRSH R1, [R1, R2] \n\
@@ -50,7 +50,7 @@ branch_0803a2ea: \n\
 /* 0803a2fa */ BL sprite_set_anim \n\
  \n\
 branch_0803a2fe: \n\
-/* 0803a2fe */ LDR R5, =D_03005380 \n\
+/* 0803a2fe */ LDR R5, =gSpriteHandler \n\
 /* 0803a300 */ LDR R0, [R5] \n\
 /* 0803a302 */ LDR R4, =gCurrentEngineData \n\
 /* 0803a304 */ LDR R1, [R4] \n\

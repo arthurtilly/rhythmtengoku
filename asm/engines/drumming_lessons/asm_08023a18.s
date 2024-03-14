@@ -14,7 +14,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023a28 */ MOVS R2, 0xE6 @ Set R2 to 0xE6 \n\
 /* 08023a2a */ LSLS R2, R2, 0x2 \n\
 /* 08023a2c */ ADDS R7, R0, R2 @ Set R7 to R0 + R2 \n\
-/* 08023a2e */ LDR R0, =D_03005380 \n\
+/* 08023a2e */ LDR R0, =gSpriteHandler \n\
 /* 08023a30 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08023a32 */ LDR R0, [R0] \n\
 /* 08023a34 */ LDR R1, =anim_drum_tanuki_beat \n\

@@ -9,7 +9,7 @@ thumb_func_start func_08036848 \n\
 /* 0803684e */ SUB SP, 0x4 \n\
 /* 08036850 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 08036852 */ LDR R4, [R6, 0x14] \n\
-/* 08036854 */ LDR R0, =D_03005380 \n\
+/* 08036854 */ LDR R0, =gSpriteHandler \n\
 /* 08036856 */ LDR R0, [R0] \n\
 /* 08036858 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 0803685a */ LDRSH R1, [R6, R2] \n\
@@ -60,7 +60,7 @@ branch_080368b4: \n\
 /* 080368b6 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 080368b8 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 080368ba */ STRB R0, [R6, 0x1] \n\
-/* 080368bc */ LDR R0, =D_03005380 \n\
+/* 080368bc */ LDR R0, =gSpriteHandler \n\
 /* 080368be */ LDR R0, [R0] \n\
 /* 080368c0 */ MOVS R7, 0x4 @ Set R7 to 0x4 \n\
 /* 080368c2 */ LDRSH R1, [R6, R7] \n\
@@ -114,7 +114,7 @@ branch_080368fc: \n\
 /* 08036924 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 08036926 */ LDR R0, [R6, 0xC] \n\
 /* 08036928 */ ADDS R3, R3, R0 @ Set R3 to R3 + R0 \n\
-/* 0803692a */ LDR R5, =D_03005380 \n\
+/* 0803692a */ LDR R5, =gSpriteHandler \n\
 /* 0803692c */ LDR R0, [R5] \n\
 /* 0803692e */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08036930 */ LDRSH R1, [R6, R2] \n\

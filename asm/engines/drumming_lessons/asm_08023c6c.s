@@ -32,7 +32,7 @@ branch_08023ca0: \n\
 /* 08023ca4 */ MOVS R0, 0xE @ Set R0 to 0xE \n\
 /* 08023ca6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08023ca8 */ BL play_drumtech_note \n\
-/* 08023cac */ LDR R4, =D_03005380 \n\
+/* 08023cac */ LDR R4, =gSpriteHandler \n\
 /* 08023cae */ LDR R0, [R4] \n\
 /* 08023cb0 */ LDR R1, [R5] \n\
 /* 08023cb2 */ LDR R2, =0x000003a2 \n\
@@ -46,7 +46,7 @@ branch_08023cc0: \n\
 /* 08023cc4 */ MOVS R0, 0xE @ Set R0 to 0xE \n\
 /* 08023cc6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08023cc8 */ BL play_drumtech_note \n\
-/* 08023ccc */ LDR R4, =D_03005380 \n\
+/* 08023ccc */ LDR R4, =gSpriteHandler \n\
 /* 08023cce */ LDR R0, [R4] \n\
 /* 08023cd0 */ LDR R1, [R5] \n\
 /* 08023cd2 */ MOVS R2, 0xE9 @ Set R2 to 0xE9 \n\
@@ -76,7 +76,7 @@ branch_08023d00: \n\
 /* 08023d04 */ MOVS R0, 0x19 @ Set R0 to 0x19 \n\
 /* 08023d06 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08023d08 */ BL play_drumtech_note \n\
-/* 08023d0c */ LDR R4, =D_03005380 \n\
+/* 08023d0c */ LDR R4, =gSpriteHandler \n\
 /* 08023d0e */ LDR R0, [R4] \n\
 /* 08023d10 */ LDR R1, [R5] \n\
 /* 08023d12 */ LDR R2, =0x0000039a \n\

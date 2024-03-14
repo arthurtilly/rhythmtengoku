@@ -133,7 +133,7 @@ branch_080390b6: \n\
 /* 080390b6 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 080390b8 */ CMP R3, 0x0 @ Compare R3 and 0x0 \n\
 /* 080390ba */ BEQ branch_080390f4 \n\
-/* 080390bc */ LDR R0, =D_03005380 \n\
+/* 080390bc */ LDR R0, =gSpriteHandler \n\
 /* 080390be */ LDR R0, [R0] \n\
 /* 080390c0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080390c2 */ LDRSH R1, [R5, R2] \n\
@@ -159,7 +159,7 @@ branch_080390b6: \n\
 .ltorg \n\
  \n\
 branch_080390f4: \n\
-/* 080390f4 */ LDR R0, =D_03005380 \n\
+/* 080390f4 */ LDR R0, =gSpriteHandler \n\
 /* 080390f6 */ LDR R0, [R0] \n\
 /* 080390f8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080390fa */ LDRSH R1, [R5, R3] \n\

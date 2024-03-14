@@ -97,7 +97,7 @@ branch_0803c7a2: \n\
 /* 0803c7bc */ LSLS R0, R0, 0x10 \n\
 /* 0803c7be */ LSRS R0, R0, 0x10 \n\
 /* 0803c7c0 */ ADDS R7, R1, R0 @ Set R7 to R1 + R0 \n\
-/* 0803c7c2 */ LDR R5, =D_03005380 \n\
+/* 0803c7c2 */ LDR R5, =gSpriteHandler \n\
 /* 0803c7c4 */ LDR R0, [R5] \n\
 /* 0803c7c6 */ LSLS R4, R4, 0x10 \n\
 /* 0803c7c8 */ ASRS R4, R4, 0x10 \n\

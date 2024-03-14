@@ -64,7 +64,7 @@ void karate_engine_start(u32 ver) {
     gKarateMan->seriousModeStopped = FALSE;
 
     // Initialise text.
-    gKarateMan->cueTextSprite = sprite_create(D_03005380, anim_karate_cue_warning, 0, 120, 24, 0, 0, 0, 0x8000);
+    gKarateMan->cueTextSprite = sprite_create(gSpriteHandler, anim_karate_cue_warning, 0, 120, 24, 0, 0, 0, 0x8000);
     gKarateMan->textPrinter = text_printer_create_new(get_current_mem_id(), 4, 112, 30);
     text_printer_set_x_y(gKarateMan->textPrinter, 124, 32);
     text_printer_set_layer(gKarateMan->textPrinter, 0x4f00);
@@ -72,10 +72,10 @@ void karate_engine_start(u32 ver) {
 
     // Initialise tutorial.
     gKarateMan->awaitingInput = FALSE;
-    gKarateMan->textButtonSprite = sprite_create(D_03005380, anim_karate_tutorial_text_button, 0, 180, 112, 0x4f00, 1, 0, 0x8000);
-    sprite_set_x_y(D_03005380, gKarateMan->textButtonSprite, 172, 112);
-    gKarateMan->tutorialSkip = sprite_create(D_03005380, anim_karate_tutorial_skip, 0, 0, 160, 0, 0, 0, 0x8000);
-    gKarateMan->tutorialText = sprite_create(D_03005380, anim_karate_tutorial_counter, 0, 30, 76, 0, 0, 0, 0x8000);
+    gKarateMan->textButtonSprite = sprite_create(gSpriteHandler, anim_karate_tutorial_text_button, 0, 180, 112, 0x4f00, 1, 0, 0x8000);
+    sprite_set_x_y(gSpriteHandler, gKarateMan->textButtonSprite, 172, 112);
+    gKarateMan->tutorialSkip = sprite_create(gSpriteHandler, anim_karate_tutorial_skip, 0, 0, 160, 0, 0, 0, 0x8000);
+    gKarateMan->tutorialText = sprite_create(gSpriteHandler, anim_karate_tutorial_counter, 0, 30, 76, 0, 0, 0, 0x8000);
     gKarateMan->tutorialCounter = 0;
     gameplay_set_input_buttons(A_BUTTON, 0);
 
@@ -138,8 +138,8 @@ void karate_tutorial_display_text(char *text) {
 
 // ENGINE Func_04 - Wait for Input (Tutorial)
 void karate_tutorial_wait_for_input(void) {
-    sprite_set_anim_cel(D_03005380, gKarateMan->textButtonSprite, 0);
-    sprite_set_visible(D_03005380, gKarateMan->textButtonSprite, TRUE);
+    sprite_set_anim_cel(gSpriteHandler, gKarateMan->textButtonSprite, 0);
+    sprite_set_visible(gSpriteHandler, gKarateMan->textButtonSprite, TRUE);
     gameplay_set_input_buttons(0, 0);
     set_pause_beatscript_scene(TRUE);
     gKarateMan->awaitingInput = TRUE;
@@ -163,10 +163,10 @@ void karate_common_init_tutorial(struct Scene *scene) {
 void karate_tutorial_loop_start(u32 inputs) {
     gKarateMan->tutorialCounter = inputs;
     if (inputs) {
-        sprite_set_visible(D_03005380, gKarateMan->tutorialText, TRUE);
-        sprite_set_anim_cel(D_03005380, gKarateMan->tutorialText, inputs);
+        sprite_set_visible(gSpriteHandler, gKarateMan->tutorialText, TRUE);
+        sprite_set_anim_cel(gSpriteHandler, gKarateMan->tutorialText, inputs);
     } else {
-        sprite_set_visible(D_03005380, gKarateMan->tutorialText, FALSE);
+        sprite_set_visible(gSpriteHandler, gKarateMan->tutorialText, FALSE);
     }
 }
 
@@ -191,7 +191,7 @@ void karate_engine_update(void) {
     // Update Tutorial.
     if (gKarateMan->awaitingInput) {
         if (D_03004afc & A_BUTTON) {
-            sprite_set_visible(D_03005380, gKarateMan->textButtonSprite, FALSE);
+            sprite_set_visible(gSpriteHandler, gKarateMan->textButtonSprite, FALSE);
             gameplay_set_input_buttons(A_BUTTON, 0);
             set_pause_beatscript_scene(FALSE);
             gKarateMan->awaitingInput = FALSE;
@@ -214,8 +214,8 @@ void karate_engine_update(void) {
 // MAIN - Close
 void karate_engine_stop(void) {
     karate_joe_delete(&gKarateMan->joe);
-    sprite_delete(D_03005380, gKarateMan->cueTextSprite);
-    sprite_delete(D_03005380, gKarateMan->flowSprite);
+    sprite_delete(gSpriteHandler, gKarateMan->cueTextSprite);
+    sprite_delete(gSpriteHandler, gKarateMan->flowSprite);
     scene_hide_bg_layer(0);
     scene_hide_bg_layer(1);
 }
@@ -240,10 +240,10 @@ void karate_cue_increment_z_for_existing_objects(struct Cue *currentCue) {
 void karate_cue_spawn(struct Cue *cue, struct KarateManCue *data, u32 type) {
     data->isHit = FALSE;
     data->unk8 = scene_affine_group_alloc();
-    data->sprite = sprite_create(D_03005380, anim_karate_object, 0, 156, 52, 0x4800, 0, 0, 0);
+    data->sprite = sprite_create(gSpriteHandler, anim_karate_object, 0, 156, 52, 0x4800, 0, 0, 0);
     assign_sprite_affine_param(data->sprite, data->unk8);
     data->unk9 = scene_affine_group_alloc();
-    data->shadow = sprite_create(D_03005380, anim_karate_object_shadow, 0, 156, 133, 0x4a00, 0, 0, 0);
+    data->shadow = sprite_create(gSpriteHandler, anim_karate_object_shadow, 0, 156, 133, 0x4a00, 0, 0, 0);
     assign_sprite_affine_param(data->shadow, data->unk9);
     data->unk1C = 0;
     data->unk18 = 0;
@@ -255,7 +255,7 @@ void karate_cue_spawn(struct Cue *cue, struct KarateManCue *data, u32 type) {
     data->unk2C = 0;
     data->miss = 0;
     data->type = type;
-    sprite_set_anim(D_03005380, data->sprite, anim_karate_object, type, 0, 0, 0);
+    sprite_set_anim(gSpriteHandler, data->sprite, anim_karate_object, type, 0, 0, 0);
     karate_cue_increment_z_for_existing_objects(cue);
 }
 
@@ -265,18 +265,18 @@ void karate_cue_update_object(struct KarateManCue *cue) {
     s24_8 x, y;
 
     if (cue->unk28 < 0x80) { // Some distance check
-        sprite_set_visible(D_03005380, cue->sprite, FALSE);
-        sprite_set_visible(D_03005380, cue->shadow, FALSE);
+        sprite_set_visible(gSpriteHandler, cue->sprite, FALSE);
+        sprite_set_visible(gSpriteHandler, cue->shadow, FALSE);
     }
 
     x = cue->unkC;
     y = cue->unk10;
-    sprite_set_x_y_z(D_03005380, cue->sprite, FIXED_TO_INT(x), FIXED_TO_INT(y), (0x4700 + cue->unk28 + cue->unk2E));
-    sprite_set_x_y(D_03005380, cue->shadow, FIXED_TO_INT(x), cue->unk14);
+    sprite_set_x_y_z(gSpriteHandler, cue->sprite, FIXED_TO_INT(x), FIXED_TO_INT(y), (0x4700 + cue->unk28 + cue->unk2E));
+    sprite_set_x_y(gSpriteHandler, cue->shadow, FIXED_TO_INT(x), cue->unk14);
     set_affine_scale_rotation(cue->unk8, cue->unk2A, cue->unk2C);
     set_affine_scale_rotation(cue->unk9, cue->unk2A, 0);
-    sprite_set_visible(D_03005380, cue->sprite, TRUE);
-    sprite_set_visible(D_03005380, cue->shadow, TRUE);
+    sprite_set_visible(gSpriteHandler, cue->sprite, TRUE);
+    sprite_set_visible(gSpriteHandler, cue->shadow, TRUE);
 }
 
 
@@ -367,8 +367,8 @@ u32 karate_cue_update(struct Cue *cue, struct KarateManCue *data, u32 runningTim
 
 // CUE - Despawn 
 void karate_cue_despawn(struct Cue *cue, struct KarateManCue *data) {
-    sprite_delete(D_03005380, data->sprite);
-    sprite_delete(D_03005380, data->shadow);
+    sprite_delete(gSpriteHandler, data->sprite);
+    sprite_delete(gSpriteHandler, data->shadow);
     func_080021b8(data->unk8);
     func_080021b8(data->unk9);
 }
@@ -377,10 +377,10 @@ void karate_cue_despawn(struct Cue *cue, struct KarateManCue *data) {
 // Enter "Serious Mode"
 void karate_start_serious_mode(void) {
     gKarateMan->seriousModeStarted = FALSE;
-    sprite_set_base_palette(D_03005380, gKarateMan->joe.sprite, KARATE_PALETTE_SERIOUS);
+    sprite_set_base_palette(gSpriteHandler, gKarateMan->joe.sprite, KARATE_PALETTE_SERIOUS);
     scene_show_bg_layer(0);
     scene_hide_bg_layer(1);
-    sprite_set_visible(D_03005380, gKarateMan->flowSprite, FALSE);
+    sprite_set_visible(gSpriteHandler, gKarateMan->flowSprite, FALSE);
     gKarateMan->version = KARATE_VER_SERIOUS;
     scene_set_music_volume_env(0);
     scene_interpolate_music_volume(0x100, ticks_to_frames(0x60));
@@ -390,10 +390,10 @@ void karate_start_serious_mode(void) {
 // Stop "Serious Mode"
 void karate_stop_serious_mode(void) {
     gKarateMan->seriousModeStopped = FALSE;
-    sprite_set_base_palette(D_03005380, gKarateMan->joe.sprite, KARATE_PALETTE_NORMAL);
+    sprite_set_base_palette(gSpriteHandler, gKarateMan->joe.sprite, KARATE_PALETTE_NORMAL);
     scene_hide_bg_layer(0);
     scene_show_bg_layer(1);
-    sprite_set_visible(D_03005380, gKarateMan->flowSprite, TRUE);
+    sprite_set_visible(gSpriteHandler, gKarateMan->flowSprite, TRUE);
     gKarateMan->version = KARATE_VER_0;
     karate_update_bg_palette();
     gameplay_inputs_enabled(FALSE); // Disable inputs
@@ -444,7 +444,7 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
                 data->unk2C = 0xa;
                 data->unk2D = 0;
                 karateMan->joe.isNotBeat = TRUE;
-                sprite_set_anim(D_03005380, joe->sprite, anim_karate_joe_punch_ouch, 0, 1, 0x7f, 0);
+                sprite_set_anim(gSpriteHandler, joe->sprite, anim_karate_joe_punch_ouch, 0, 1, 0x7f, 0);
                 if (isBgFaceVer) {
                     play_sound(gameplay_get_cue_barely_sfx(cue));
                 } else {
@@ -467,8 +467,8 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
                     anim = anim_karate_joe_smug_low;
                 }
                 karateMan->joe.isNotBeat = TRUE;
-                sprite_set_anim(D_03005380, joe->sprite, anim, 0, 1, 0x7f, 0);
-                sprite_create(D_03005380, anim_karate_hit_effect, 0, 0x9e, 0x36, 0x4f00, 1, 0, 3);
+                sprite_set_anim(gSpriteHandler, joe->sprite, anim, 0, 1, 0x7f, 0);
+                sprite_create(gSpriteHandler, anim_karate_hit_effect, 0, 0x9e, 0x36, 0x4f00, 1, 0, 3);
                 if (!isBgFaceVer) {
                     gameplay_set_cue_hit_sfx(cue, &s_f_boxing_normal_seqData);
                 }
@@ -486,8 +486,8 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
             anim = anim_karate_joe_smug_high;
         }
         karateMan->joe.isNotBeat = TRUE;
-        sprite_set_anim(D_03005380, joe->sprite, anim, 0, 1, 0x7f, 0);
-        sprite_create(D_03005380, anim_karate_hit_effect, 0, 0x9e, 0x36, 0x4f00, 1, 0, 3);
+        sprite_set_anim(gSpriteHandler, joe->sprite, anim, 0, 1, 0x7f, 0);
+        sprite_create(gSpriteHandler, anim_karate_hit_effect, 0, 0x9e, 0x36, 0x4f00, 1, 0, 3);
         switch (data->type) {
             case 1: // Rock
                 joe->smirk = ticks_to_frames(0x24);
@@ -515,7 +515,7 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
     // Tutorial
     if (gKarateMan->tutorialCounter) {
         gKarateMan->tutorialCounter--;
-        sprite_set_anim_cel(D_03005380, gKarateMan->tutorialText, (s8)gKarateMan->tutorialCounter);
+        sprite_set_anim_cel(gSpriteHandler, gKarateMan->tutorialText, (s8)gKarateMan->tutorialCounter);
     }
 }
 
@@ -532,7 +532,7 @@ void karate_cue_barely(struct Cue *cue, struct KarateManCue *data) {
     data->unk24 = 0x20;
     data->unk2D = 4;
     joe->isNotBeat = TRUE;
-    sprite_set_anim(D_03005380, joe->sprite, anim_karate_joe_punch_high, 0, 1, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, joe->sprite, anim_karate_joe_punch_high, 0, 1, 0x7f, 0);
     joe->barely = ticks_to_frames(0x24);
     karate_decrement_flow(); // Decrement Flow
 
@@ -553,9 +553,9 @@ void karate_cue_miss(struct Cue *cue, struct KarateManCue *data) {
 // Initialise Joe
 void karate_joe_init(struct KarateJoe *joe) {
     joe->isNotBeat = FALSE;
-    joe->sprite = sprite_create(D_03005380, anim_karate_joe_stand, 0, 0x50, 0x58, 0x4800, 1, 0, 0);
+    joe->sprite = sprite_create(gSpriteHandler, anim_karate_joe_stand, 0, 0x50, 0x58, 0x4800, 1, 0, 0);
     if (gKarateMan->version == 2) { // "Serious Mode"
-        sprite_set_base_palette(D_03005380, joe->sprite, 1);
+        sprite_set_base_palette(gSpriteHandler, joe->sprite, 1);
     }
     joe->barely = 0;
     joe->miss = 0;
@@ -566,7 +566,7 @@ void karate_joe_init(struct KarateJoe *joe) {
 
 // Unload Joe
 void karate_joe_delete(struct KarateJoe *joe) {
-	sprite_delete(D_03005380, joe->sprite);
+	sprite_delete(gSpriteHandler, joe->sprite);
 }
 
 
@@ -585,9 +585,9 @@ void karate_input_event(u32 pressed, u32 released) {
 
     joe->isNotBeat = TRUE;
     if (gKarateMan->flowLevel < 3) {
-        sprite_set_anim(D_03005380, joe->sprite, anim_karate_joe_punch_low, 0, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, joe->sprite, anim_karate_joe_punch_low, 0, 1, 0x7f, 0);
     } else {
-        sprite_set_anim(D_03005380, joe->sprite, anim_karate_joe_punch_high, 0, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, joe->sprite, anim_karate_joe_punch_high, 0, 1, 0x7f, 0);
     }
     play_sound(&s_f_boxing_punch_seqData);
 }
@@ -602,25 +602,25 @@ void karate_common_beat_animation(void) {
     
     karate_update_bg_palette();
     if ((s16)karateMan->joe.isNotBeat == 1) {
-        temp = (u32)sprite_get_data(D_03005380, joe->sprite, 2); // should be u16?
-        currentEntity = sprite_get_anim_cel(D_03005380, joe->sprite);
+        temp = (u32)sprite_get_data(gSpriteHandler, joe->sprite, 2); // should be u16?
+        currentEntity = sprite_get_anim_cel(gSpriteHandler, joe->sprite);
         if (currentEntity < temp - 4) { // Return if current entity is less than ??
             return;
         }
     }
     karateMan->joe.isNotBeat = FALSE;
-    sprite_set_anim(D_03005380, joe->sprite, anim_karate_joe_beat, 0, 1, 0x7f, 0);     // Default Beat Animation
+    sprite_set_anim(gSpriteHandler, joe->sprite, anim_karate_joe_beat, 0, 1, 0x7f, 0);     // Default Beat Animation
     if (joe->smirk) {
-        sprite_set_anim(D_03005380, joe->sprite, anim_karate_joe_smirk, 0, 1, 0x7f, 0); // Smirk Beat Animation
+        sprite_set_anim(gSpriteHandler, joe->sprite, anim_karate_joe_smirk, 0, 1, 0x7f, 0); // Smirk Beat Animation
     }
     if (joe->barely) {
-        sprite_set_anim(D_03005380, joe->sprite, anim_karate_joe_barely, 0, 1, 0x7f, 0); // Barely Beat Animation
+        sprite_set_anim(gSpriteHandler, joe->sprite, anim_karate_joe_barely, 0, 1, 0x7f, 0); // Barely Beat Animation
     }
     if (joe->happy) {
-        sprite_set_anim(D_03005380, joe->sprite, anim_karate_joe_happy, 0, 1, 0x7f, 0); // Happy Beat Animation
+        sprite_set_anim(gSpriteHandler, joe->sprite, anim_karate_joe_happy, 0, 1, 0x7f, 0); // Happy Beat Animation
     }
     if (joe->miss) {
-        sprite_set_anim(D_03005380, joe->sprite, anim_karate_joe_miss, 0, 1, 0x7f, 0); // Miss
+        sprite_set_anim(gSpriteHandler, joe->sprite, anim_karate_joe_miss, 0, 1, 0x7f, 0); // Miss
         play_sound(&s_f_boxing_v_nua_seqData);
     }
 }
@@ -628,9 +628,9 @@ void karate_common_beat_animation(void) {
 
 // COMMON Func_01 - Toggle Cue Text
 void karate_common_display_text(u32 id) {
-    sprite_set_visible(D_03005380, gKarateMan->cueTextSprite, id != 0);
+    sprite_set_visible(gSpriteHandler, gKarateMan->cueTextSprite, id != 0);
     if (id != 0) {
-        sprite_set_anim_cel(D_03005380, gKarateMan->cueTextSprite, id - 1);
+        sprite_set_anim_cel(gSpriteHandler, gKarateMan->cueTextSprite, id - 1);
     }
 }
 
@@ -638,10 +638,10 @@ void karate_common_display_text(u32 id) {
 // Initialise Flow
 void karate_init_flow(void) {
     gKarateMan->flowLevel = 0;
-    gKarateMan->flowSprite = sprite_create(D_03005380, anim_karate_flow_meter, gKarateMan->flowLevel, 36, 16, 0x47f6, 0, 0, 0);
+    gKarateMan->flowSprite = sprite_create(gSpriteHandler, anim_karate_flow_meter, gKarateMan->flowLevel, 36, 16, 0x47f6, 0, 0, 0);
     gKarateMan->flowEnabled = TRUE;
     if (gKarateMan->version == KARATE_VER_SERIOUS) { // "Serious Mode"
-        sprite_set_visible(D_03005380, gKarateMan->flowSprite, FALSE);
+        sprite_set_visible(gSpriteHandler, gKarateMan->flowSprite, FALSE);
         gKarateMan->flowEnabled = FALSE;
     }
     gKarateMan->bg = 0;
@@ -655,7 +655,7 @@ void karate_reset_flow(void) {
         play_sound(&s_f_boxing_score_reset_seqData);
     }
     gKarateMan->flowLevel = 0;
-    sprite_set_anim_cel(D_03005380, gKarateMan->flowSprite, gKarateMan->flowLevel);
+    sprite_set_anim_cel(gSpriteHandler, gKarateMan->flowSprite, gKarateMan->flowLevel);
     gKarateMan->bg = 0;
     gKarateMan->bgPalIndex = karate_flow_palette_low;
     karate_update_bg_palette();
@@ -667,7 +667,7 @@ void karate_increment_flow(void) {
     if (gKarateMan->flowEnabled) {
         if (gKarateMan->flowLevel < 5) { // Flow can't go higher than 5
             gKarateMan->flowLevel++;
-            sprite_set_anim_cel(D_03005380, gKarateMan->flowSprite, gKarateMan->flowLevel);
+            sprite_set_anim_cel(gSpriteHandler, gKarateMan->flowSprite, gKarateMan->flowLevel);
             if (gKarateMan->flowLevel == 3) { // High Flow
                 gKarateMan->bg = 0;
                 gKarateMan->bgPalIndex = karate_flow_palette_high;
@@ -684,7 +684,7 @@ void karate_decrement_flow(void) {
     if (gKarateMan->flowEnabled) {
         if (gKarateMan->flowLevel) { // Flow can't go lower than 0
             gKarateMan->flowLevel--;
-            sprite_set_anim_cel(D_03005380, gKarateMan->flowSprite, gKarateMan->flowLevel);
+            sprite_set_anim_cel(gSpriteHandler, gKarateMan->flowSprite, gKarateMan->flowLevel);
             if (gKarateMan->flowLevel == 2) { // Low Flow
                 gKarateMan->bg = 0;
                 gKarateMan->bgPalIndex = karate_flow_palette_low;
@@ -723,5 +723,5 @@ void karate_update_bg_palette(void) {
 // SUB - Toggle Flow
 void karate_enable_flow(u32 enable) {
     gKarateMan->flowEnabled = enable;
-    sprite_set_visible(D_03005380, gKarateMan->flowSprite, enable);
+    sprite_set_visible(gSpriteHandler, gKarateMan->flowSprite, enable);
 }

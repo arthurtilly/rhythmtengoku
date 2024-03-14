@@ -64,7 +64,7 @@ thumb_func_start rhythm_test_engine_start \n\
 /* 08033d32 */ BL gameplay_set_text_printer \n\
 /* 08033d36 */ LDR R0, =0x48c8 \n\
 /* 08033d38 */ BL gameplay_set_text_z \n\
-/* 08033d3c */ LDR R5, =D_03005380 \n\
+/* 08033d3c */ LDR R5, =gSpriteHandler \n\
 /* 08033d3e */ LDR R0, [R5] \n\
 /* 08033d40 */ LDR R1, =anim_rhythm_test_button \n\
 /* 08033d42 */ MOVS R2, 0x64 @ Set R2 to 0x64 \n\

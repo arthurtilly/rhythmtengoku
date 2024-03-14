@@ -29,7 +29,7 @@ branch_08022a14: \n\
 /* 08022a1c */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 08022a1e */ BL func_080225bc \n\
 /* 08022a22 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 08022a24 */ LDR R5, =D_03005380 \n\
+/* 08022a24 */ LDR R5, =gSpriteHandler \n\
 /* 08022a26 */ LDR R0, [R5] \n\
 /* 08022a28 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08022a2a */ LDRSH R1, [R6, R2] \n\

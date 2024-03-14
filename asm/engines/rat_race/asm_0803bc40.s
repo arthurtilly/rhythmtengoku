@@ -6,7 +6,7 @@ thumb_func_start func_0803bc40 \n\
 /* 0803bc40 */ PUSH {R4, R5, LR} \n\
 /* 0803bc42 */ SUB SP, 0x14 \n\
 /* 0803bc44 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 0803bc46 */ LDR R5, =D_03005380 \n\
+/* 0803bc46 */ LDR R5, =gSpriteHandler \n\
 /* 0803bc48 */ LDR R0, [R5] \n\
 /* 0803bc4a */ LDR R1, =anim_rat_race_plates \n\
 /* 0803bc4c */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\

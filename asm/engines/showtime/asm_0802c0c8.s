@@ -18,7 +18,7 @@ thumb_func_start showtime_common_beat_animation \n\
 /* 0802c0e0 */ LDR R6, [R0] \n\
 /* 0802c0e2 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 0802c0e4 */ BNE branch_0802c13a \n\
-/* 0802c0e6 */ LDR R4, =D_03005380 \n\
+/* 0802c0e6 */ LDR R4, =gSpriteHandler \n\
 /* 0802c0e8 */ LDR R0, [R4] \n\
 /* 0802c0ea */ MOVS R5, 0xB0 @ Set R5 to 0xB0 \n\
 /* 0802c0ec */ LSLS R5, R5, 0x1 \n\

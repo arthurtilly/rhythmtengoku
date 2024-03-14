@@ -17,7 +17,7 @@ thumb_func_start func_0803068c \n\
 /* 080306a2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080306a4 */ BL clappy_trio_get_anim \n\
 /* 080306a8 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 080306aa */ LDR R1, =D_03005380 \n\
+/* 080306aa */ LDR R1, =gSpriteHandler \n\
 /* 080306ac */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 080306ae */ LDR R0, [R1] \n\
 /* 080306b0 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\

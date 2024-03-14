@@ -12,7 +12,7 @@ thumb_func_start func_08034f64 \n\
 /* 08034f70 */ LDR R4, [R0] \n\
 /* 08034f72 */ ADDS R0, R4, 0x4 @ Set R0 to R4 + 0x4 \n\
 /* 08034f74 */ MOV R8, R0 @ Set R8 to R0 \n\
-/* 08034f76 */ LDR R6, =D_03005380 \n\
+/* 08034f76 */ LDR R6, =gSpriteHandler \n\
 /* 08034f78 */ LDR R0, [R6] \n\
 /* 08034f7a */ LDR R1, =anim_mr_upbeat_l_step \n\
 /* 08034f7c */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\

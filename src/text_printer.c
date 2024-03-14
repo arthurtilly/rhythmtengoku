@@ -643,14 +643,14 @@ const char *text_printer_process_next_line(struct TextPrinter *textPrinter, u32 
     z = textPrinter->z;
 
     anim = text_printer_get_formatted_line_anim(textPrinter->memID, tileX, tileY, textPrinter->font, &string, 2, textPrinter->lineColors, textPrinter->maxWidth, textPrinter->indentWidth, textPrinter->shadowColors);
-    sprite = sprite_create(D_03005380, anim, 0, x, y, z, 0, 0, 0x8000);
-    sprite_set_base_palette(D_03005380, sprite, textPrinter->palette);
-    sprite_set_origin_x_y(D_03005380, sprite, textPrinter->xSrc, textPrinter->ySrc);
+    sprite = sprite_create(gSpriteHandler, anim, 0, x, y, z, 0, 0, 0x8000);
+    sprite_set_base_palette(gSpriteHandler, sprite, textPrinter->palette);
+    sprite_set_origin_x_y(gSpriteHandler, sprite, textPrinter->xSrc, textPrinter->ySrc);
     textPrinter->lineSprites[currentLine] = sprite;
     textPrinter->lineWidths[currentLine] = text_printer_get_current_line_width();
     textPrinter->lineAlignments[currentLine] = sPrinterAlignment;
-    sprite_set_x_y_z(D_03005380, textPrinter->lineShadowSprites[currentLine], x, y, z + 1);
-    sprite_set_origin_x_y(D_03005380, textPrinter->lineShadowSprites[currentLine], textPrinter->xSrc, textPrinter->ySrc);
+    sprite_set_x_y_z(gSpriteHandler, textPrinter->lineShadowSprites[currentLine], x, y, z + 1);
+    sprite_set_origin_x_y(gSpriteHandler, textPrinter->lineShadowSprites[currentLine], textPrinter->xSrc, textPrinter->ySrc);
 
     textPrinter->alignment = sPrinterAlignment;
     textPrinter->lineColors = sPrinterColors;
@@ -696,7 +696,7 @@ void text_printer_align_sprites(struct TextPrinter *textPrinter) {
                     xAligned = xCentre + ((greatestWidth - textPrinter->lineWidths[i]) / 2);
                     break;
             }
-            sprite_set_x(D_03005380, textPrinter->lineSprites[i], xAligned);
+            sprite_set_x(gSpriteHandler, textPrinter->lineSprites[i], xAligned);
         }
     }
 }
@@ -708,10 +708,10 @@ void text_printer_show_text_now(struct TextPrinter *textPrinter, u32 show) {
 
     for (i = 0; i < textPrinter->totalLines; i++) {
         if (textPrinter->lineSprites[i] >= 0) {
-            sprite_set_visible(D_03005380, textPrinter->lineSprites[i], show);
+            sprite_set_visible(gSpriteHandler, textPrinter->lineSprites[i], show);
         }
         if (textPrinter->lineShadowSprites[i] >= 0) {
-            sprite_set_visible(D_03005380, textPrinter->lineShadowSprites[i], show);
+            sprite_set_visible(gSpriteHandler, textPrinter->lineShadowSprites[i], show);
         }
     }
 }
@@ -826,8 +826,8 @@ void text_printer_clear(struct TextPrinter *textPrinter) {
     for (i = 0; i < textPrinter->totalLines; i++) {
         sprite = textPrinter->lineSprites[i];
         if (sprite >= 0) {
-            text_printer_delete_anim((void *)sprite_get_data(D_03005380, sprite, 7));
-            sprite_delete(D_03005380, sprite);
+            text_printer_delete_anim((void *)sprite_get_data(gSpriteHandler, sprite, 7));
+            sprite_delete(gSpriteHandler, sprite);
             textPrinter->lineSprites[i] = -1;
         }
 
@@ -837,7 +837,7 @@ void text_printer_clear(struct TextPrinter *textPrinter) {
         textPrinter->lineStrings[i] = NULL;
 
         if (textPrinter->lineShadowSprites[i] >= 0) {
-            sprite_delete(D_03005380, textPrinter->lineShadowSprites[i]);
+            sprite_delete(gSpriteHandler, textPrinter->lineShadowSprites[i]);
             textPrinter->lineShadowSprites[i] = -1;
         }
     }
@@ -927,18 +927,18 @@ void func_0800aac0(struct TextPrinter *textPrinter, s32 lineIndex, const char *s
     if ((printer->mode == TEXT_PRINTER_MODE_STATIC_TABLE) && (line < printer->totalLines)) {
         lineSprite = printer->lineSprites[line];
         if (lineSprite >= 0) {
-            text_printer_delete_anim((void *)sprite_get_data(D_03005380, lineSprite, 7));
-            sprite_delete(D_03005380, lineSprite);
+            text_printer_delete_anim((void *)sprite_get_data(gSpriteHandler, lineSprite, 7));
+            sprite_delete(gSpriteHandler, lineSprite);
             printer->lineSprites[line] = -1;
         }
 
         if (printer->lineShadowSprites[line] >= 0) {
-            sprite_delete(D_03005380, printer->lineShadowSprites[line]);
+            sprite_delete(gSpriteHandler, printer->lineShadowSprites[line]);
             printer->lineShadowSprites[line] = -1;
         }
 
         printer->lineShadowSprites[line] = shadowSprite;
-        sprite_set_visible(D_03005380, printer->lineShadowSprites[line], FALSE);
+        sprite_set_visible(gSpriteHandler, printer->lineShadowSprites[line], FALSE);
 
         if (printer->lineStrings[line] != NULL) {
             mem_heap_dealloc(printer->lineStrings[line]);
@@ -978,12 +978,12 @@ void func_0800abb0(struct TextPrinter *textPrinter, s32 line) {
         for (i = 0; i < printer->totalLines; i++) {
             sprite = printer->lineSprites[line];
             if (sprite >= 0) {
-                sprite_set_y(D_03005380, sprite, (printer->lineSpacing * i) + printer->y);
+                sprite_set_y(gSpriteHandler, sprite, (printer->lineSpacing * i) + printer->y);
             }
 
             sprite = printer->lineShadowSprites[line];
             if (sprite >= 0) {
-                sprite_set_y(D_03005380, sprite, (printer->lineSpacing * i) + printer->y);
+                sprite_set_y(gSpriteHandler, sprite, (printer->lineSpacing * i) + printer->y);
             }
 
             line++;
@@ -1215,7 +1215,7 @@ void func_0800ae3c(struct Listbox *listbox, u32 palette) {
     }
 
     sprite = text_printer_get_line_sprite(listbox->printer, line);
-    sprite_set_base_palette(D_03005380, sprite, palette);
+    sprite_set_base_palette(gSpriteHandler, sprite, palette);
 }
 
 
@@ -1281,12 +1281,12 @@ struct Listbox *create_new_listbox(
     listbox->getSprite = getSprite;
 
     if (selectionAnim != NULL) {
-        listbox->selSprite = sprite_create(D_03005380, selectionAnim, 0, x, listbox_get_y(listbox), z, 1, 0, 0);
+        listbox->selSprite = sprite_create(gSpriteHandler, selectionAnim, 0, x, listbox_get_y(listbox), z, 1, 0, 0);
     } else {
         listbox->selSprite = -1;
     }
 
-    sprite_set_origin_x_y(D_03005380, listbox->selSprite, &listbox->textX, &listbox->textY);
+    sprite_set_origin_x_y(gSpriteHandler, listbox->selSprite, &listbox->textX, &listbox->textY);
     listbox->unk3C = TRUE;
     listbox->onScroll = NULL;
     listbox->onFinish = NULL;
@@ -1347,7 +1347,7 @@ void delete_listbox(struct Listbox *listbox) {
     text_printer_delete(listbox->printer);
 
     if (listbox->selSprite >= 0) {
-        sprite_delete(D_03005380, listbox->selSprite);
+        sprite_delete(gSpriteHandler, listbox->selSprite);
     }
 
     mem_heap_dealloc(listbox);
@@ -1420,7 +1420,7 @@ void listbox_scroll_up(struct Listbox *listbox) {
         listbox->velY = 16;
     } else {
         listbox->selLine--;
-        sprite_set_y(D_03005380, listbox->selSprite, listbox_get_y(listbox));
+        sprite_set_y(gSpriteHandler, listbox->selSprite, listbox_get_y(listbox));
     }
 
     listbox->selItem--;
@@ -1447,7 +1447,7 @@ void listbox_scroll_down(struct Listbox *listbox) {
 
     if (listbox->selLine < (listbox->selMaxLine - 1)) {
         listbox->selLine++;
-        sprite_set_y(D_03005380, listbox->selSprite, listbox_get_y(listbox));
+        sprite_set_y(gSpriteHandler, listbox->selSprite, listbox_get_y(listbox));
     } else {
         next = listbox->selItem - listbox->selLine - listbox->selMinLine + listbox->maxLines - 1;
         line = (listbox->scrollIndex - 1) % listbox->maxLines;
@@ -1551,7 +1551,7 @@ void listbox_show_sel_sprite(struct Listbox *listbox) {
         return;
     }
 
-    sprite_set_visible(D_03005380, listbox->selSprite, TRUE);
+    sprite_set_visible(gSpriteHandler, listbox->selSprite, TRUE);
 }
 
 
@@ -1561,7 +1561,7 @@ void listbox_hide_sel_sprite(struct Listbox *listbox) {
         return;
     }
 
-    sprite_set_visible(D_03005380, listbox->selSprite, FALSE);
+    sprite_set_visible(gSpriteHandler, listbox->selSprite, FALSE);
 }
 
 
@@ -1571,8 +1571,8 @@ void listbox_link_sprite_x_y_to_line(struct Listbox *listbox, s16 sprite, s32 li
         return;
     }
 
-    sprite_set_origin_x_y(D_03005380, sprite, &listbox->itemsX, &listbox->itemsY);
-    sprite_set_x_y(D_03005380, sprite, listbox->x, line * listbox->lineSpacing + listbox->y);
+    sprite_set_origin_x_y(gSpriteHandler, sprite, &listbox->itemsX, &listbox->itemsY);
+    sprite_set_x_y(gSpriteHandler, sprite, listbox->x, line * listbox->lineSpacing + listbox->y);
 }
 
 
@@ -1620,14 +1620,14 @@ void listbox_set_sel_sprite(struct Listbox *listbox, struct Animation *selection
     }
 
     if (listbox->selSprite >= 0) {
-        sprite_delete(D_03005380, listbox->selSprite);
+        sprite_delete(gSpriteHandler, listbox->selSprite);
     }
 
     listbox->selSprite = -1;
 
     if (selectionAnim != NULL) {
-        listbox->selSprite = sprite_create(D_03005380, selectionAnim, 0, listbox->x, listbox_get_y(listbox), listbox->z, 1, 0, 0);
-        sprite_set_origin_x_y(D_03005380, listbox->selSprite, &listbox->textX, &listbox->textY);
+        listbox->selSprite = sprite_create(gSpriteHandler, selectionAnim, 0, listbox->x, listbox_get_y(listbox), listbox->z, 1, 0, 0);
+        sprite_set_origin_x_y(gSpriteHandler, listbox->selSprite, &listbox->textX, &listbox->textY);
     }
 }
 

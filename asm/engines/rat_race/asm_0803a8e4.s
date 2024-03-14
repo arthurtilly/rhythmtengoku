@@ -70,7 +70,7 @@ branch_0803a970: \n\
 branch_0803a97c: \n\
 /* 0803a97c */ ADDS R0, R2, R0 @ Set R0 to R2 + R0 \n\
 /* 0803a97e */ LDRB R2, [R0] \n\
-/* 0803a980 */ LDR R0, =D_03005380 \n\
+/* 0803a980 */ LDR R0, =gSpriteHandler \n\
 /* 0803a982 */ LDR R0, [R0] \n\
 /* 0803a984 */ LDR R1, =gCurrentEngineData \n\
 /* 0803a986 */ LDR R1, [R1] \n\
@@ -93,7 +93,7 @@ jump_0803a9a0: \n\
 /* 0803a9b0 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
  \n\
 branch_0803a9b2: \n\
-/* 0803a9b2 */ LDR R0, =D_03005380 \n\
+/* 0803a9b2 */ LDR R0, =gSpriteHandler \n\
 /* 0803a9b4 */ LDR R0, [R0] \n\
 /* 0803a9b6 */ ADDS R1, 0x76 @ Add 0x76 to R1 \n\
 /* 0803a9b8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -124,7 +124,7 @@ branch_0803a9ec: \n\
 /* 0803a9ec */ STR R1, [R4] \n\
  \n\
 branch_0803a9ee: \n\
-/* 0803a9ee */ LDR R5, =D_03005380 \n\
+/* 0803a9ee */ LDR R5, =gSpriteHandler \n\
 /* 0803a9f0 */ LDR R0, [R5] \n\
 /* 0803a9f2 */ LDR R4, =gCurrentEngineData \n\
 /* 0803a9f4 */ LDR R2, [R4] \n\

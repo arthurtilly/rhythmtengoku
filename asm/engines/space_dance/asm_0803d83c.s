@@ -36,7 +36,7 @@ branch_0803d864: \n\
 branch_0803d874: \n\
 /* 0803d874 */ CMP R3, 0x0 @ Compare R3 and 0x0 \n\
 /* 0803d876 */ BEQ branch_0803d8f2 \n\
-/* 0803d878 */ LDR R0, =D_03005380 \n\
+/* 0803d878 */ LDR R0, =gSpriteHandler \n\
 /* 0803d87a */ LDR R0, [R0] \n\
 /* 0803d87c */ LDR R6, =gCurrentEngineData \n\
 /* 0803d87e */ LDR R1, [R6] \n\

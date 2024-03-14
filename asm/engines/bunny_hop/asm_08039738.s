@@ -11,7 +11,7 @@ thumb_func_start func_08039738 \n\
 /* 08039744 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08039746 */ LSLS R2, R2, 0x18 \n\
 /* 08039748 */ ASRS R2, R2, 0x18 \n\
-/* 0803974a */ LDR R5, =D_03005380 \n\
+/* 0803974a */ LDR R5, =gSpriteHandler \n\
 /* 0803974c */ LDR R0, [R5] \n\
 /* 0803974e */ LDR R1, =anim_bunny_hop_splash_particle \n\
 /* 08039750 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\

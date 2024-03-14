@@ -10,7 +10,7 @@ thumb_func_start samurai_slice_common_beat_animation \n\
 /* 08031944 */ LDRB R0, [R1, 0x4] \n\
 /* 08031946 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08031948 */ BEQ branch_08031992 \n\
-/* 0803194a */ LDR R0, =D_03005380 \n\
+/* 0803194a */ LDR R0, =gSpriteHandler \n\
 /* 0803194c */ LDR R0, [R0] \n\
 /* 0803194e */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08031950 */ LDRSH R1, [R1, R2] \n\
@@ -28,7 +28,7 @@ thumb_func_start samurai_slice_common_beat_animation \n\
 /* 0803196a */ BNE branch_08031992 \n\
  \n\
 branch_0803196c: \n\
-/* 0803196c */ LDR R5, =D_03005380 \n\
+/* 0803196c */ LDR R5, =gSpriteHandler \n\
 /* 0803196e */ LDR R0, [R5] \n\
 /* 08031970 */ LDR R4, =gCurrentEngineData \n\
 /* 08031972 */ LDR R1, [R4] \n\

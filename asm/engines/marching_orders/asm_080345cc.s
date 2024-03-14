@@ -9,7 +9,7 @@ thumb_func_start func_080345cc \n\
 /* 080345d2 */ PUSH {R6, R7} \n\
 /* 080345d4 */ SUB SP, 0x4 \n\
 /* 080345d6 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 080345d8 */ LDR R0, =D_03005380 \n\
+/* 080345d8 */ LDR R0, =gSpriteHandler \n\
 /* 080345da */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 080345dc */ LDR R0, [R0] \n\
 /* 080345de */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -88,7 +88,7 @@ branch_08034654: \n\
 /* 08034682 */ BL sprite_set_anim_cel \n\
  \n\
 branch_08034686: \n\
-/* 08034686 */ LDR R0, =D_03005380 \n\
+/* 08034686 */ LDR R0, =gSpriteHandler \n\
 /* 08034688 */ LDR R0, [R0] \n\
 /* 0803468a */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 0803468c */ LDRSH R1, [R5, R3] \n\

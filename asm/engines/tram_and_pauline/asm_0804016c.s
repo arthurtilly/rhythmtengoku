@@ -75,7 +75,7 @@ jump_080401ea: \n\
 /* 080401f6 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 080401f8 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 080401fa */ STRB R0, [R1, 0x15] \n\
-/* 080401fc */ LDR R1, =D_03005380 \n\
+/* 080401fc */ LDR R1, =gSpriteHandler \n\
 /* 080401fe */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08040200 */ LDR R0, [R1] \n\
 /* 08040202 */ LDR R2, [R7] \n\
@@ -122,7 +122,7 @@ jump_08040250: \n\
 /* 0804025c */ STRB R6, [R0, 0x15] \n\
  \n\
 branch_0804025e: \n\
-/* 0804025e */ LDR R0, =D_03005380 \n\
+/* 0804025e */ LDR R0, =gSpriteHandler \n\
 /* 08040260 */ LDR R0, [R0] \n\
 /* 08040262 */ LDR R2, [R7] \n\
 /* 08040264 */ ADDS R3, R2, R3 @ Set R3 to R2 + R3 \n\
@@ -161,7 +161,7 @@ jump_0804029c: \n\
 /* 080402ac */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 080402ae */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 080402b0 */ STRB R3, [R0, 0x15] \n\
-/* 080402b2 */ LDR R0, =D_03005380 \n\
+/* 080402b2 */ LDR R0, =gSpriteHandler \n\
 /* 080402b4 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 080402b6 */ LDR R0, [R0] \n\
 /* 080402b8 */ LDR R2, [R7] \n\

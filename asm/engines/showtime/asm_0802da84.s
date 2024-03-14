@@ -10,7 +10,7 @@ thumb_func_start func_0802da84 \n\
 /* 0802da8c */ LDR R0, =gCurrentEngineData \n\
 /* 0802da8e */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0802da90 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 0802da92 */ LDR R7, =D_03005380 \n\
+/* 0802da92 */ LDR R7, =gSpriteHandler \n\
 /* 0802da94 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0802da96 */ MOVS R6, 0xF @ Set R6 to 0xF \n\
  \n\

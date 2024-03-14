@@ -48,10 +48,10 @@ void space_dance_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = sprite_create(D_03005380, anim_space_dance_prologue_title, 0, 80, 32, 0, 1, 0x7f, 0x8000);
-    sprite_set_anim_speed(D_03005380, gPrologueEngineData->textSprite, 0x280);
-    gPrologueEngineData->facesSprite = sprite_create(D_03005380, anim_space_dance_prologue_faces, 1, 120, 120, 0, 0, 0x7f, 0x8000);
-    gPrologueEngineData->starSprite = sprite_create(D_03005380, anim_space_dance_prologue_star, 0, 64, 64, 0, 1, 0x7f, 0x8002);
+    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_space_dance_prologue_title, 0, 80, 32, 0, 1, 0x7f, 0x8000);
+    sprite_set_anim_speed(gSpriteHandler, gPrologueEngineData->textSprite, 0x280);
+    gPrologueEngineData->facesSprite = sprite_create(gSpriteHandler, anim_space_dance_prologue_faces, 1, 120, 120, 0, 0, 0x7f, 0x8000);
+    gPrologueEngineData->starSprite = sprite_create(gSpriteHandler, anim_space_dance_prologue_star, 0, 64, 64, 0, 1, 0x7f, 0x8002);
 }
 
 
@@ -84,5 +84,5 @@ void func_08047630(u32 event) {
             sprite = gPrologueEngineData->starSprite;
             break;
     }
-    sprite_set_visible(D_03005380, sprite, TRUE);
+    sprite_set_visible(gSpriteHandler, sprite, TRUE);
 }

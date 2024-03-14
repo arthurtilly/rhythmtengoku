@@ -16,7 +16,7 @@ thumb_func_start rat_race_cue_update_stop \n\
 /* 0803a578 */ NEGS R0, R0 @ Set R0 to -R0 \n\
 /* 0803a57a */ CMP R2, R0 @ Check R2 - R0 \n\
 /* 0803a57c */ BLE branch_0803a59c \n\
-/* 0803a57e */ LDR R0, =D_03005380 \n\
+/* 0803a57e */ LDR R0, =gSpriteHandler \n\
 /* 0803a580 */ LDR R0, [R0] \n\
 /* 0803a582 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0803a584 */ LDRSH R1, [R3, R4] \n\

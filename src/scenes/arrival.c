@@ -61,7 +61,7 @@ void arrival_scene_start(void *sVar, s32 dArg) {
     func_080073f0();
     arrival_scene_init_gfx1();
 
-    gArrival->dialogOptions = sprite_create(D_03005380, anim_arrival_option1, 0, 120, 144, 0x800, 1, 0, 0x8000);
+    gArrival->dialogOptions = sprite_create(gSpriteHandler, anim_arrival_option1, 0, 120, 144, 0x800, 1, 0, 0x8000);
     gArrival->selectedOption = 0;
 
     printer = text_printer_create_new(get_current_mem_id(), 1, 240, 32);
@@ -118,7 +118,7 @@ void arrival_scene_update(void *sVar, s32 dArg) {
 
     if (option != gArrival->selectedOption) {
         gArrival->selectedOption = option;
-        sprite_set_anim(D_03005380, gArrival->dialogOptions, arrival_option_anim[option], 0, 1, 0, 0);
+        sprite_set_anim(gSpriteHandler, gArrival->dialogOptions, arrival_option_anim[option], 0, 1, 0, 0);
     }
 
     if (D_03004afc & A_BUTTON) {
@@ -153,5 +153,5 @@ void arrival_scene_stop(void *sVar, s32 dArg) {
 
 // Display Dialog Options (Script Function)
 void arrival_scene_show_options(void) {
-    sprite_set_visible(D_03005380, gArrival->dialogOptions, TRUE);
+    sprite_set_visible(gSpriteHandler, gArrival->dialogOptions, TRUE);
 }

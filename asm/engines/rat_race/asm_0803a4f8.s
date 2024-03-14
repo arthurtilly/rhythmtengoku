@@ -8,7 +8,7 @@ thumb_func_start rat_race_cue_spawn_stop \n\
 /* 0803a4fc */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
 /* 0803a4fe */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803a500 */ STRB R2, [R4, 0x2] \n\
-/* 0803a502 */ LDR R5, =D_03005380 \n\
+/* 0803a502 */ LDR R5, =gSpriteHandler \n\
 /* 0803a504 */ LDR R0, [R5] \n\
 /* 0803a506 */ LDR R1, =anim_rat_race_crockery \n\
 /* 0803a508 */ MOVS R2, 0x7E @ Set R2 to 0x7E \n\

@@ -58,7 +58,7 @@ branch_0803eeb6: \n\
 /* 0803ef06 */ LDR R4, [R0] \n\
 /* 0803ef08 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803ef0a */ BEQ branch_0803ef36 \n\
-/* 0803ef0c */ LDR R0, =D_03005380 \n\
+/* 0803ef0c */ LDR R0, =gSpriteHandler \n\
 /* 0803ef0e */ LDR R0, [R0] \n\
 /* 0803ef10 */ MOVS R6, 0xD5 @ Set R6 to 0xD5 \n\
 /* 0803ef12 */ LSLS R6, R6, 0x2 \n\

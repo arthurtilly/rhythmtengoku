@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_0803dd84 \n\
 /* 0803dd84 */ PUSH {LR} \n\
 /* 0803dd86 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803dd88 */ LDR R0, =D_03005380 \n\
+/* 0803dd88 */ LDR R0, =gSpriteHandler \n\
 /* 0803dd8a */ LDR R0, [R0] \n\
 /* 0803dd8c */ LSLS R1, R1, 0x10 \n\
 /* 0803dd8e */ ASRS R1, R1, 0x10 \n\

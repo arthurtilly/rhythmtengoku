@@ -64,15 +64,15 @@ void main_menu_scene_start(void *sVar, s32 dArg) {
     func_080073f0();
     gMainMenu->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
     gMainMenu->objFont = scene_create_obj_font_printer(0x300, 4);
-    import_all_scene_objects(D_03005380, gMainMenu->objFont, main_menu_scene_objects, D_0300558c);
+    import_all_scene_objects(gSpriteHandler, gMainMenu->objFont, main_menu_scene_objects, D_0300558c);
     main_menu_scene_init_gfx1();
-    sprite_create(D_03005380, anim_main_menu_blank1, 0, 120, 64, 0x6E, 1, 0, 0);
+    sprite_create(gSpriteHandler, anim_main_menu_blank1, 0, 120, 64, 0x6E, 1, 0, 0);
 
     for (i = 0; i < TOTAL_MAIN_MENU_BUTTONS; i++) {
         if (i == sMainMenuButton) {
-            gMainMenu->buttons[i] = sprite_create(D_03005380, main_menu_button_on_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
+            gMainMenu->buttons[i] = sprite_create(gSpriteHandler, main_menu_button_on_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
         } else {
-            gMainMenu->buttons[i] = sprite_create(D_03005380, main_menu_button_off_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
+            gMainMenu->buttons[i] = sprite_create(gSpriteHandler, main_menu_button_off_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
         }
     }
 
@@ -111,8 +111,8 @@ void main_menu_scene_update(void *sVar, s32 dArg) {
 
         if (prevButton != sMainMenuButton) {
             play_sound(&s_menu_cursor2_seqData);
-            sprite_set_anim(D_03005380, gMainMenu->buttons[prevButton], main_menu_button_off_anim[prevButton], 0, 1, 0, 0);
-            sprite_set_anim(D_03005380, gMainMenu->buttons[sMainMenuButton], main_menu_button_on_anim[sMainMenuButton], 0, 1, 0, 0);
+            sprite_set_anim(gSpriteHandler, gMainMenu->buttons[prevButton], main_menu_button_off_anim[prevButton], 0, 1, 0, 0);
+            sprite_set_anim(gSpriteHandler, gMainMenu->buttons[sMainMenuButton], main_menu_button_on_anim[sMainMenuButton], 0, 1, 0, 0);
         }
 
         else if (D_03004afc & (START_BUTTON | A_BUTTON)) {

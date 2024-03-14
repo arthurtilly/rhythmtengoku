@@ -62,7 +62,7 @@ branch_08032914: \n\
 /* 08032926 */ STR R0, [R4, 0x4] \n\
  \n\
 branch_08032928: \n\
-/* 08032928 */ LDR R0, =D_03005380 \n\
+/* 08032928 */ LDR R0, =gSpriteHandler \n\
 /* 0803292a */ LDR R0, [R0] \n\
 /* 0803292c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803292e */ LDRSH R1, [R4, R2] \n\
@@ -89,7 +89,7 @@ branch_08032946: \n\
 /* 08032956 */ STR R0, [R4, 0x4] \n\
  \n\
 branch_08032958: \n\
-/* 08032958 */ LDR R0, =D_03005380 \n\
+/* 08032958 */ LDR R0, =gSpriteHandler \n\
 /* 0803295a */ LDR R0, [R0] \n\
 /* 0803295c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803295e */ LDRSH R1, [R4, R2] \n\
@@ -114,7 +114,7 @@ branch_08032972: \n\
 /* 08032982 */ LDR R6, =power_calligraphy_people_dance_anim \n\
  \n\
 branch_08032984: \n\
-/* 08032984 */ LDR R0, =D_03005380 \n\
+/* 08032984 */ LDR R0, =gSpriteHandler \n\
 /* 08032986 */ LDR R0, [R0] \n\
 /* 08032988 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803298a */ LDRSH R1, [R4, R2] \n\

@@ -20,7 +20,7 @@ thumb_func_start func_0803e1a4 \n\
 /* 0803e1c0 */ MOVS R0, 0x1E @ Set R0 to 0x1E \n\
 /* 0803e1c2 */ BL tap_trial_get_anim \n\
 /* 0803e1c6 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803e1c8 */ LDR R0, =D_03005380 \n\
+/* 0803e1c8 */ LDR R0, =gSpriteHandler \n\
 /* 0803e1ca */ LDR R0, [R0] \n\
 /* 0803e1cc */ LDR R1, [R5] \n\
 /* 0803e1ce */ MOVS R3, 0x18 @ Set R3 to 0x18 \n\

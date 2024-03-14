@@ -6,7 +6,7 @@ thumb_func_start metronome_cue_hit \n\
 /* 08035b64 */ PUSH {R4-R6, LR} \n\
 /* 08035b66 */ BL gameplay_get_last_hit_offset \n\
 /* 08035b6a */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 08035b6c */ LDR R6, =D_03005380 \n\
+/* 08035b6c */ LDR R6, =gSpriteHandler \n\
 /* 08035b6e */ LDR R0, [R6] \n\
 /* 08035b70 */ LDR R5, =gCurrentEngineData \n\
 /* 08035b72 */ LDR R1, [R5] \n\

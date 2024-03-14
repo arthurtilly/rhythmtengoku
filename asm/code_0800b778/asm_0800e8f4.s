@@ -9,7 +9,7 @@ thumb_func_start func_0800e8f4 \n\
 /* 0800e8fa */ LSRS R1, R0, 0x10 \n\
 /* 0800e8fc */ CMP R3, 0x0 @ Compare R3 and 0x0 \n\
 /* 0800e8fe */ BEQ branch_0800e924 \n\
-/* 0800e900 */ LDR R5, =D_03005380 \n\
+/* 0800e900 */ LDR R5, =gSpriteHandler \n\
 /* 0800e902 */ LDR R0, [R5] \n\
 /* 0800e904 */ LSLS R4, R1, 0x10 \n\
 /* 0800e906 */ ASRS R4, R4, 0x10 \n\
@@ -24,7 +24,7 @@ thumb_func_start func_0800e8f4 \n\
 .ltorg \n\
  \n\
 branch_0800e924: \n\
-/* 0800e924 */ LDR R0, =D_03005380 \n\
+/* 0800e924 */ LDR R0, =gSpriteHandler \n\
 /* 0800e926 */ LDR R0, [R0] \n\
 /* 0800e928 */ LSLS R1, R1, 0x10 \n\
 /* 0800e92a */ ASRS R1, R1, 0x10 \n\

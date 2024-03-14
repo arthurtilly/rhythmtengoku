@@ -24,11 +24,11 @@ void sneaky_spirits_show_ghost(u32 position) {
     y += (0x100 - gSneakySpirits->ghostHeight) >> 3;
     ghostSprite = gSneakySpirits->ghostWalk;
 
-    sprite_set_x_y(D_03005380, ghostSprite, x, y);
-    sprite_set_visible(D_03005380, ghostSprite, 1);
-    sprite_set_anim_cel(D_03005380, ghostSprite, 0);
-    sprite_set_anim_speed(D_03005380, ghostSprite, INT_TO_FIXED(get_beatscript_tempo()) / 100u);
-    sprite_set_x(D_03005380, gSneakySpirits->ghostMask, x);
+    sprite_set_x_y(gSpriteHandler, ghostSprite, x, y);
+    sprite_set_visible(gSpriteHandler, ghostSprite, 1);
+    sprite_set_anim_cel(gSpriteHandler, ghostSprite, 0);
+    sprite_set_anim_speed(gSpriteHandler, ghostSprite, INT_TO_FIXED(get_beatscript_tempo()) / 100u);
+    sprite_set_x(gSpriteHandler, gSneakySpirits->ghostMask, x);
     play_sound_w_pitch_volume(&s_ghost_walk_seqData, (gSneakySpirits->ghostHeight * 15) >> 5, 0);
 }
 
@@ -38,17 +38,17 @@ void sneaky_spirits_init_rain(void) {
     u32 i;
 
     for (i = 0; i < SNEAKY_SPIRITS_RAIN_DROP_AMOUNT; i++) {
-        gSneakySpirits->rainDrops[i] = sprite_create(D_03005380, anim_sneaky_spirits_rain, 0, 120, 80, 0x800, 0, 0, 0x8000);
+        gSneakySpirits->rainDrops[i] = sprite_create(gSpriteHandler, anim_sneaky_spirits_rain, 0, 120, 80, 0x800, 0, 0, 0x8000);
     }
     for (i = 0; i < SNEAKY_SPIRITS_RAIN_SPLASH_AMOUNT; i++) {
-        gSneakySpirits->rainSplashes[i] = sprite_create(D_03005380, anim_sneaky_spirits_splash, 0, 64, 64, 0x8400, 0, 0, 0x8002);
+        gSneakySpirits->rainSplashes[i] = sprite_create(gSpriteHandler, anim_sneaky_spirits_splash, 0, 64, 64, 0x8400, 0, 0, 0x8002);
     }
 
     gSneakySpirits->rainDropNext = 0;
     gSneakySpirits->rainSplashNext = 0;
     gSneakySpirits->rainSlow = FALSE;
     gSneakySpirits->freezeRain = FALSE;
-    gSneakySpirits->tree = sprite_create(D_03005380, anim_sneaky_spirits_tree, 0, 223, 76, 0x4f00, 1, 0, 0);
+    gSneakySpirits->tree = sprite_create(gSpriteHandler, anim_sneaky_spirits_tree, 0, 223, 76, 0x4f00, 1, 0, 0);
 }
 
 
@@ -59,9 +59,9 @@ void sneaky_spirits_update_fast_rain(void) {
 
     for (i = 0; i < 4; i++) {
         sprite = gSneakySpirits->rainDrops[gSneakySpirits->rainDropNext];
-        sprite_set_anim(D_03005380, sprite, anim_sneaky_spirits_rain, 0, 1, 0, 2);
-        sprite_set_x_y(D_03005380, sprite, agb_random(240), agb_random(64) + 48);
-        sprite_set_visible(D_03005380, sprite, 1);
+        sprite_set_anim(gSpriteHandler, sprite, anim_sneaky_spirits_rain, 0, 1, 0, 2);
+        sprite_set_x_y(gSpriteHandler, sprite, agb_random(240), agb_random(64) + 48);
+        sprite_set_visible(gSpriteHandler, sprite, 1);
 
         gSneakySpirits->rainDropNext += 1;
         if (gSneakySpirits->rainDropNext >= SNEAKY_SPIRITS_RAIN_DROP_AMOUNT) {
@@ -71,9 +71,9 @@ void sneaky_spirits_update_fast_rain(void) {
 
     for (i = 0; i < 4; i++) {
         sprite = gSneakySpirits->rainSplashes[gSneakySpirits->rainSplashNext];
-        sprite_set_anim_cel(D_03005380, sprite, 0);
-        sprite_set_x_y(D_03005380, sprite, agb_random(240), agb_random(50) + 110);
-        sprite_set_visible(D_03005380, sprite, 1);
+        sprite_set_anim_cel(gSpriteHandler, sprite, 0);
+        sprite_set_x_y(gSpriteHandler, sprite, agb_random(240), agb_random(50) + 110);
+        sprite_set_visible(gSpriteHandler, sprite, 1);
 
         gSneakySpirits->rainSplashNext += 1;
         if (gSneakySpirits->rainSplashNext >= SNEAKY_SPIRITS_RAIN_SPLASH_AMOUNT) {
@@ -103,34 +103,34 @@ void sneaky_spirits_set_rain_slowmo(u32 slowMotion) {
             sprite = gSneakySpirits->rainDrops[i];
             animSpeed = (!gSneakySpirits->freezeRain) ? INT_TO_FIXED(1.0) / (agb_random(3) + 1) : 0;
 
-            sprite_set_anim(D_03005380, sprite, anim_sneaky_spirits_rain_slow, 0, 1, 0x7f, 0);
-            sprite_set_x_y(D_03005380, sprite, agb_random(240), agb_random(160));
-            sprite_set_anim_speed(D_03005380, sprite, animSpeed);
-            sprite_set_visible(D_03005380, sprite, 1);
+            sprite_set_anim(gSpriteHandler, sprite, anim_sneaky_spirits_rain_slow, 0, 1, 0x7f, 0);
+            sprite_set_x_y(gSpriteHandler, sprite, agb_random(240), agb_random(160));
+            sprite_set_anim_speed(gSpriteHandler, sprite, animSpeed);
+            sprite_set_visible(gSpriteHandler, sprite, 1);
         }
 
         for (i = 0; i < SNEAKY_SPIRITS_RAIN_SPLASH_AMOUNT; i++) {
             sprite = gSneakySpirits->rainSplashes[i];
-            sprite_set_enable_updates(D_03005380, sprite, TRUE);
+            sprite_set_enable_updates(gSpriteHandler, sprite, TRUE);
         }
 
-        sprite_set_enable_updates(D_03005380, gSneakySpirits->tree, TRUE);
+        sprite_set_enable_updates(gSpriteHandler, gSneakySpirits->tree, TRUE);
     }
 
     else {
         for (i = 0; i < SNEAKY_SPIRITS_RAIN_DROP_AMOUNT; i++) {
             sprite = gSneakySpirits->rainDrops[i];
 
-            sprite_set_visible(D_03005380, sprite, 0);
-            sprite_set_anim_speed(D_03005380, sprite, INT_TO_FIXED(1.0));
+            sprite_set_visible(gSpriteHandler, sprite, 0);
+            sprite_set_anim_speed(gSpriteHandler, sprite, INT_TO_FIXED(1.0));
         }
 
         for (i = 0; i < SNEAKY_SPIRITS_RAIN_SPLASH_AMOUNT; i++) {
             sprite = gSneakySpirits->rainSplashes[i];
-            sprite_set_enable_updates(D_03005380, sprite, FALSE);
+            sprite_set_enable_updates(gSpriteHandler, sprite, FALSE);
         }
 
-        sprite_set_enable_updates(D_03005380, gSneakySpirits->tree, FALSE);
+        sprite_set_enable_updates(gSpriteHandler, gSneakySpirits->tree, FALSE);
     }
 }
 
@@ -186,21 +186,21 @@ void sneaky_spirits_engine_start(u32 version) {
 
     gSneakySpirits->unk0 = scene_create_obj_font_printer(0x380, 1);
     textAnim = bmp_font_obj_print_c(gSneakySpirits->unk0, D_08059f90, 0, 0);
-    gSneakySpirits->text = sprite_create(D_03005380, textAnim->frames, 0, 120, 32, 0, 0, 0, 0);
+    gSneakySpirits->text = sprite_create(gSpriteHandler, textAnim->frames, 0, 120, 32, 0, 0, 0, 0);
     sneaky_spirits_init_rain();
 
-    gSneakySpirits->bow = sprite_create(D_03005380, anim_sneaky_spirits_bow, 0, 210, 128, 0x4800, 0, 0, 0x8000);
+    gSneakySpirits->bow = sprite_create(gSpriteHandler, anim_sneaky_spirits_bow, 0, 210, 128, 0x4800, 0, 0, 0x8000);
     gSneakySpirits->arrowReady = FALSE;
 
-    gSneakySpirits->door = sprite_create(D_03005380, anim_sneaky_spirits_door, 0, 72, 48, 0x8800, 0, 0, 0);
-    gSneakySpirits->backWall = sprite_create(D_03005380, anim_sneaky_spirits_back_wall, 0, 24, 45, 0x879c, 0, 0, 0);
+    gSneakySpirits->door = sprite_create(gSpriteHandler, anim_sneaky_spirits_door, 0, 72, 48, 0x8800, 0, 0, 0);
+    gSneakySpirits->backWall = sprite_create(gSpriteHandler, anim_sneaky_spirits_back_wall, 0, 24, 45, 0x879c, 0, 0, 0);
 
-    gSneakySpirits->ghostWalk = sprite_create(D_03005380, anim_sneaky_spirit_walk, 0, 16, 80, 0x8792, 1, 0, 2);
-    sprite_set_x_y(D_03005380, gSneakySpirits->ghostWalk, -100, -100);
-    gSneakySpirits->ghostMask = sprite_create(D_03005380, anim_sneaky_spirits_wall_mask, 0, 88, 140, 0x8791, 1, 0, 0);
-    gSneakySpirits->ghostHit = sprite_create(D_03005380, anim_sneaky_spirit_hit, 0, 100, 76, 0x87a6, 0, 0, 0x8000);
+    gSneakySpirits->ghostWalk = sprite_create(gSpriteHandler, anim_sneaky_spirit_walk, 0, 16, 80, 0x8792, 1, 0, 2);
+    sprite_set_x_y(gSpriteHandler, gSneakySpirits->ghostWalk, -100, -100);
+    gSneakySpirits->ghostMask = sprite_create(gSpriteHandler, anim_sneaky_spirits_wall_mask, 0, 88, 140, 0x8791, 1, 0, 0);
+    gSneakySpirits->ghostHit = sprite_create(gSpriteHandler, anim_sneaky_spirit_hit, 0, 100, 76, 0x87a6, 0, 0, 0x8000);
     gSneakySpirits->maxSteps = 7;
-    gSneakySpirits->tutorialGhost = sprite_create(D_03005380, anim_sneaky_spirit_tutorial, 0, 120, 92, 0x8792, 1, 0x7f, 0x8000);
+    gSneakySpirits->tutorialGhost = sprite_create(gSpriteHandler, anim_sneaky_spirit_tutorial, 0, 120, 92, 0x8792, 1, 0x7f, 0x8000);
     gSneakySpirits->ghostHeight = 0x100;
 
     gSneakySpirits->rainChannel = NULL;
@@ -228,7 +228,7 @@ void sneaky_spirits_set_ghost_height(u32 height) {
 // Engine Event 02 (Spawn Bow)
 void sneaky_spirits_spawn_bow(void) {
     scene_set_sprite_motion_decelerate(gSneakySpirits->bow, 290, 128, 210, 128, 230);
-    sprite_set_visible(D_03005380, gSneakySpirits->bow, 1);
+    sprite_set_visible(gSpriteHandler, gSneakySpirits->bow, 1);
 }
 
 
@@ -237,7 +237,7 @@ void sneaky_spirits_draw_bow(void) {
     if (!gSneakySpirits->arrowReady) {
         gSneakySpirits->arrowReady = TRUE;
         gameplay_set_input_buttons(A_BUTTON, 0);
-        sprite_set_anim(D_03005380, gSneakySpirits->bow, anim_sneaky_spirits_bow, 0, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, gSneakySpirits->bow, anim_sneaky_spirits_bow, 0, 1, 0x7f, 0);
     }
 }
 
@@ -272,19 +272,19 @@ void sneaky_spirits_display_text(char *string) {
 
     delete_bmp_font_obj_text_anim(gSneakySpirits->unk0, gSneakySpirits->text);
     textAnim = bmp_font_obj_print_c(gSneakySpirits->unk0, string, 1, 12);
-    sprite_set_anim(D_03005380, gSneakySpirits->text, textAnim->frames, 0, 1, 0, 0);
+    sprite_set_anim(gSpriteHandler, gSneakySpirits->text, textAnim->frames, 0, 1, 0, 0);
 }
 
 
 // Engine Event 08 (Display Tutorial Sneaky Spirit)
 void sneaky_spirits_display_tutorial_ghost(u32 playAnim) {
-    sprite_set_visible(D_03005380, gSneakySpirits->tutorialGhost, playAnim);
+    sprite_set_visible(gSpriteHandler, gSneakySpirits->tutorialGhost, playAnim);
 }
 
 
 // Engine Event 09 (Animate Tutorial Sneaky Spirit)
 void sneaky_spirits_animate_tutorial_ghost(u32 frame) {
-    sprite_set_anim_cel(D_03005380, gSneakySpirits->tutorialGhost, frame);
+    sprite_set_anim_cel(gSpriteHandler, gSneakySpirits->tutorialGhost, frame);
 }
 
 
@@ -334,12 +334,12 @@ void sneaky_spirits_stop_slow_motion(void) {
         scene_set_music_track_volume(0, 0);    // Reset Music Channel Volume
     }
 
-    sprite_set_visible(D_03005380, gSneakySpirits->ghostHit, 0);
-    sprite_set_playback(D_03005380, gSneakySpirits->door, -1, 0, 0);
-    sprite_set_anim_cel(D_03005380, gSneakySpirits->door, 3);
+    sprite_set_visible(gSpriteHandler, gSneakySpirits->ghostHit, 0);
+    sprite_set_playback(gSpriteHandler, gSneakySpirits->door, -1, 0, 0);
+    sprite_set_anim_cel(gSpriteHandler, gSneakySpirits->door, 3);
     sneaky_spirits_set_rain_slowmo(FALSE);
-    sprite_set_anim(D_03005380, gSneakySpirits->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
-    sprite_set_anim_speed(D_03005380, gSneakySpirits->ghostWalk, INT_TO_FIXED(get_beatscript_tempo()) / 100u);
+    sprite_set_anim(gSpriteHandler, gSneakySpirits->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
+    sprite_set_anim_speed(gSpriteHandler, gSneakySpirits->ghostWalk, INT_TO_FIXED(get_beatscript_tempo()) / 100u);
 }
 
 
@@ -364,25 +364,25 @@ void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 
         targetY = 68;
     }
 
-    totalFrames = (u16) sprite_get_data(D_03005380, gSneakySpirits->ghostHit, 2);
-    sprite_set_anim_cel(D_03005380, gSneakySpirits->ghostHit, agb_random(totalFrames));
-    sprite_set_visible(D_03005380, gSneakySpirits->ghostHit, 1);
+    totalFrames = (u16) sprite_get_data(gSpriteHandler, gSneakySpirits->ghostHit, 2);
+    sprite_set_anim_cel(gSpriteHandler, gSneakySpirits->ghostHit, agb_random(totalFrames));
+    sprite_set_visible(gSpriteHandler, gSneakySpirits->ghostHit, 1);
     task = scene_set_sprite_motion_lerp(gSneakySpirits->ghostHit, 100, 76, targetX, targetY, duration);
     run_func_after_task(task, sneaky_spirits_stop_slow_motion, 0);
 
-    sprite_set_playback(D_03005380, gSneakySpirits->door, 1, 0x7f, 0);
-    sprite_set_anim_cel(D_03005380, gSneakySpirits->door, 1);
+    sprite_set_playback(gSpriteHandler, gSneakySpirits->door, 1, 0x7f, 0);
+    sprite_set_anim_cel(gSpriteHandler, gSneakySpirits->door, 1);
 
     sneaky_spirits_set_rain_slowmo(TRUE);
 
     gSneakySpirits->arrowReady = FALSE;
     gameplay_set_input_buttons(0, 0);
-    sprite_set_anim(D_03005380, gSneakySpirits->bow, anim_sneaky_spirits_bow_shoot, 3, 0, 0, 0);
+    sprite_set_anim(gSpriteHandler, gSneakySpirits->bow, anim_sneaky_spirits_bow_shoot, 3, 0, 0, 0);
 
     play_sound(&s_f_aim_just_hit_seqData);
     play_sound(&s_f_aim_just_hit_voice_seqData);
 
-    sprite_create(D_03005380, anim_sneaky_spirit_hit_effect, 0, 128, 90, 0x8792, 1, 0, 3);
+    sprite_create(gSpriteHandler, anim_sneaky_spirit_hit_effect, 0, 128, 90, 0x8792, 1, 0, 3);
 }
 
 
@@ -390,13 +390,13 @@ void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 
 void sneaky_spirits_cue_barely(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, u32 released) {
     gSneakySpirits->arrowReady = FALSE;
     gameplay_set_input_buttons(0, 0);
-    sprite_set_anim(D_03005380, gSneakySpirits->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, gSneakySpirits->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
 
-    sprite_create(D_03005380, anim_sneaky_spirits_arrow_miss, 0, 70, 58, 0x8792, 1, 0x7f, 3);
+    sprite_create(gSpriteHandler, anim_sneaky_spirits_arrow_miss, 0, 70, 58, 0x8792, 1, 0x7f, 3);
     if (gameplay_get_last_hit_offset() < 0) {
-        sprite_create(D_03005380, anim_sneaky_spirit_scared_early, 0, 122, 94, 0x8792, 1, 0, 3);
+        sprite_create(gSpriteHandler, anim_sneaky_spirit_scared_early, 0, 122, 94, 0x8792, 1, 0, 3);
     } else {
-        sprite_create(D_03005380, anim_sneaky_spirit_scared_late, 0, 122, 94, 0x8792, 1, 0, 3);
+        sprite_create(gSpriteHandler, anim_sneaky_spirit_scared_late, 0, 122, 94, 0x8792, 1, 0, 3);
     }
     play_sound(&s_ghost_miss_hit_seqData);
 }
@@ -404,10 +404,10 @@ void sneaky_spirits_cue_barely(struct Cue *cue, struct SneakySpiritsCue *info, u
 
 // Cue - Miss
 void sneaky_spirits_cue_miss(struct Cue *cue, struct SneakySpiritsCue *info) {
-    sprite_create(D_03005380, anim_sneaky_spirit_dash, 0, 120, 92, 0x8792, 1, 0, 3);
+    sprite_create(gSpriteHandler, anim_sneaky_spirit_dash, 0, 120, 92, 0x8792, 1, 0, 3);
 
     if (!info->disableTaunt) {
-        sprite_create(D_03005380, anim_sneaky_spirit_taunt, 0, 160, 105, 0x8792, 1, 0, 3);
+        sprite_create(gSpriteHandler, anim_sneaky_spirit_taunt, 0, 160, 105, 0x8792, 1, 0, 3);
         schedule_function_call(get_current_mem_id(), play_sound, (u32)&s_ghost_warai_seqData, ticks_to_frames(0x0C));
     }
 
@@ -421,8 +421,8 @@ void sneaky_spirits_input_event(u32 pressed, u32 released) {
 
     gSneakySpirits->arrowReady = FALSE;
     gameplay_set_input_buttons(0, 0);
-    sprite_set_anim(D_03005380, gSneakySpirits->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
-    sprite_create(D_03005380, anim_sneaky_spirits_arrow_miss, 0, 70, 58, 0x8792, 1, 0x7f, 3);
+    sprite_set_anim(gSpriteHandler, gSneakySpirits->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
+    sprite_create(gSpriteHandler, anim_sneaky_spirits_arrow_miss, 0, 70, 58, 0x8792, 1, 0x7f, 3);
     play_sound(&s_ghost_gosha_seqData);
 }
 

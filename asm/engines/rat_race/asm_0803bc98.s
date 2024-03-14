@@ -32,7 +32,7 @@ branch_0803bcb8: \n\
 /* 0803bcc6 */ MOVS R2, 0xBC @ Set R2 to 0xBC \n\
 /* 0803bcc8 */ LSLS R2, R2, 0x9 \n\
 /* 0803bcca */ STR R2, [R5, 0x4] \n\
-/* 0803bccc */ LDR R4, =D_03005380 \n\
+/* 0803bccc */ LDR R4, =gSpriteHandler \n\
 /* 0803bcce */ LDR R0, [R4] \n\
 /* 0803bcd0 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803bcd2 */ LDRSH R1, [R5, R3] \n\

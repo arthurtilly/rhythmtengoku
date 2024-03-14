@@ -10,7 +10,7 @@ thumb_func_start func_0803e824 \n\
 /* 0803e82c */ LDRB R3, [R1] \n\
 /* 0803e82e */ CMP R3, 0x1 @ Compare R3 and 0x1 \n\
 /* 0803e830 */ BNE branch_0803e86c \n\
-/* 0803e832 */ LDR R0, =D_03005380 \n\
+/* 0803e832 */ LDR R0, =gSpriteHandler \n\
 /* 0803e834 */ LDR R0, [R0] \n\
 /* 0803e836 */ LDR R1, =anim_toss_remix_5_soshi_strum_pop \n\
 /* 0803e838 */ MOVS R2, 0x38 @ Set R2 to 0x38 \n\

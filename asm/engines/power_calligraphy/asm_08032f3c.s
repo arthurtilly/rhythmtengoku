@@ -43,7 +43,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 08032f8e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08032f90 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08032f92 */ BL scene_set_bg_layer_display \n\
-/* 08032f96 */ LDR R5, =D_03005380 \n\
+/* 08032f96 */ LDR R5, =gSpriteHandler \n\
 /* 08032f98 */ LDR R0, [R5] \n\
 /* 08032f9a */ LDR R1, =anim_power_calligraphy_brush \n\
 /* 08032f9c */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\

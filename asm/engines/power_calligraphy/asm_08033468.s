@@ -11,7 +11,7 @@ thumb_func_start func_08033468 \n\
 /* 08033472 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08033474 */ ADDS R6, R1, 0x0 @ Set R6 to R1 + 0x0 \n\
 /* 08033476 */ ADDS R3, R2, 0x0 @ Set R3 to R2 + 0x0 \n\
-/* 08033478 */ LDR R0, =D_03005380 \n\
+/* 08033478 */ LDR R0, =gSpriteHandler \n\
 /* 0803347a */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 0803347c */ LDR R0, [R0] \n\
 /* 0803347e */ LDR R1, =gCurrentEngineData \n\

@@ -18,7 +18,7 @@ thumb_func_start func_0800f89c \n\
 /* 0800f8b4 */ LDRSH R1, [R1, R0] \n\
 /* 0800f8b6 */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0800f8b8 */ BLT branch_0800f8ca \n\
-/* 0800f8ba */ LDR R0, =D_03005380 \n\
+/* 0800f8ba */ LDR R0, =gSpriteHandler \n\
 /* 0800f8bc */ LDR R0, [R0] \n\
 /* 0800f8be */ BL sprite_delete \n\
 /* 0800f8c2 */ LDR R0, [R5, 0x50] \n\

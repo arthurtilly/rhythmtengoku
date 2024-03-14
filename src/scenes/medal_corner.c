@@ -23,7 +23,7 @@ void medal_corner_init_lesson_grades(void) {
         grade = func_080281c4(i);
 
         if (grade != RESULTS_GRADE_D) {
-            sprite = sprite_create(D_03005380, lessons_menu_rank_icons[grade], 0, 0, 0, 0x8800, 1, 0, 0);
+            sprite = sprite_create(gSpriteHandler, lessons_menu_rank_icons[grade], 0, 0, 0, 0x8800, 1, 0, 0);
             listbox_link_sprite_x_y_to_line(gMedalCorner->listbox, sprite, i);
         }
     }
@@ -32,8 +32,8 @@ void medal_corner_init_lesson_grades(void) {
 
 // Init. Level Icon
 void medal_corner_init_level_icon(void) {
-    gMedalCorner->currentLevelIcon = sprite_clone(D_03005380, gMedalCorner->lockedLevelIcon);
-    sprite_set_base_tile(D_03005380, gMedalCorner->currentLevelIcon, 0);
+    gMedalCorner->currentLevelIcon = sprite_clone(gSpriteHandler, gMedalCorner->lockedLevelIcon);
+    sprite_set_base_tile(gSpriteHandler, gMedalCorner->currentLevelIcon, 0);
 }
 
 
@@ -50,12 +50,12 @@ void medal_corner_set_current_level(s32 item) {
     medal_corner_set_level_req_counter(levels[item].medalsToUnlock);
 
     if (medal_corner_level_is_unlocked(item)) {
-        sprite_set_visible(D_03005380, gMedalCorner->lockedLevelIcon, FALSE);
-        sprite_set_visible(D_03005380, gMedalCorner->currentLevelIcon, TRUE);
-        sprite_set_anim(D_03005380, gMedalCorner->currentLevelIcon, levels[item].icon, 0, 1, 0, 0);
+        sprite_set_visible(gSpriteHandler, gMedalCorner->lockedLevelIcon, FALSE);
+        sprite_set_visible(gSpriteHandler, gMedalCorner->currentLevelIcon, TRUE);
+        sprite_set_anim(gSpriteHandler, gMedalCorner->currentLevelIcon, levels[item].icon, 0, 1, 0, 0);
     } else {
-        sprite_set_visible(D_03005380, gMedalCorner->lockedLevelIcon, TRUE);
-        sprite_set_visible(D_03005380, gMedalCorner->currentLevelIcon, FALSE);
+        sprite_set_visible(gSpriteHandler, gMedalCorner->lockedLevelIcon, TRUE);
+        sprite_set_visible(gSpriteHandler, gMedalCorner->currentLevelIcon, FALSE);
     }
 }
 
@@ -83,16 +83,16 @@ void medal_corner_init_counters(void) {
     u32 totalMedals;
 
     totalMedals = D_030046a8->data.totalMedals;
-    gMedalCorner->medalCountDigit1 = sprite_create(D_03005380, anim_medal_corner_count_num, 0, 157, 151, 0x800, 0, 0x7F, 0);
-    gMedalCorner->medalCountDigit2 = sprite_clone(D_03005380, gMedalCorner->medalCountDigit1);
-    sprite_set_x(D_03005380, gMedalCorner->medalCountDigit2, 150);
-    sprite_set_anim_cel(D_03005380, gMedalCorner->medalCountDigit1, totalMedals % 10);
-    sprite_set_anim_cel(D_03005380, gMedalCorner->medalCountDigit2, (totalMedals >= 10) ? totalMedals / 10 : 10);
-    sprite_set_x(D_03005380, gMedalCorner->medalCountDigit1, (totalMedals < 10) ? 153 : 157);
+    gMedalCorner->medalCountDigit1 = sprite_create(gSpriteHandler, anim_medal_corner_count_num, 0, 157, 151, 0x800, 0, 0x7F, 0);
+    gMedalCorner->medalCountDigit2 = sprite_clone(gSpriteHandler, gMedalCorner->medalCountDigit1);
+    sprite_set_x(gSpriteHandler, gMedalCorner->medalCountDigit2, 150);
+    sprite_set_anim_cel(gSpriteHandler, gMedalCorner->medalCountDigit1, totalMedals % 10);
+    sprite_set_anim_cel(gSpriteHandler, gMedalCorner->medalCountDigit2, (totalMedals >= 10) ? totalMedals / 10 : 10);
+    sprite_set_x(gSpriteHandler, gMedalCorner->medalCountDigit1, (totalMedals < 10) ? 153 : 157);
 
-    gMedalCorner->reqCountDigit1 = sprite_create(D_03005380, anim_medal_corner_req_num, 0, 58, 142, 0x800, 0, 0x7F, 0);
-    gMedalCorner->reqCountDigit2 = sprite_clone(D_03005380, gMedalCorner->reqCountDigit1);
-    sprite_set_x(D_03005380, gMedalCorner->reqCountDigit2, 49);
+    gMedalCorner->reqCountDigit1 = sprite_create(gSpriteHandler, anim_medal_corner_req_num, 0, 58, 142, 0x800, 0, 0x7F, 0);
+    gMedalCorner->reqCountDigit2 = sprite_clone(gSpriteHandler, gMedalCorner->reqCountDigit1);
+    sprite_set_x(gSpriteHandler, gMedalCorner->reqCountDigit2, 49);
 
     medal_corner_set_level_req_counter(0);
     medal_corner_use_ui_texture_base(gMedalCorner->medalCountDigit1);
@@ -104,9 +104,9 @@ void medal_corner_init_counters(void) {
 
 // Set Level Requirement Counter
 void medal_corner_set_level_req_counter(u32 count) {
-    sprite_set_anim_cel(D_03005380, gMedalCorner->reqCountDigit1, count % 10);
-    sprite_set_anim_cel(D_03005380, gMedalCorner->reqCountDigit2, (count >= 10) ? count / 10 : 10);
-    sprite_set_x(D_03005380, gMedalCorner->reqCountDigit1, (count < 10) ? 53 : 58);
+    sprite_set_anim_cel(gSpriteHandler, gMedalCorner->reqCountDigit1, count % 10);
+    sprite_set_anim_cel(gSpriteHandler, gMedalCorner->reqCountDigit2, (count >= 10) ? count / 10 : 10);
+    sprite_set_x(gSpriteHandler, gMedalCorner->reqCountDigit1, (count < 10) ? 53 : 58);
 }
 
 
@@ -208,7 +208,7 @@ void medal_corner_scene_start(void *sVar, s32 dArg) {
     medal_corner_scene_init_gfx1();
 
     medal_corner_init_counters();
-    gMedalCorner->lockedLevelIcon = sprite_create(D_03005380, anim_medal_corner_locked_icon, 0, 0x38, 0x58, 0x800, 1, 0, 0);
+    gMedalCorner->lockedLevelIcon = sprite_create(gSpriteHandler, anim_medal_corner_locked_icon, 0, 0x38, 0x58, 0x800, 1, 0, 0);
     medal_corner_use_ui_texture_base(gMedalCorner->lockedLevelIcon);
     medal_corner_init_level_icon();
     medal_corner_listbox_init();
@@ -242,7 +242,7 @@ void medal_corner_scene_paused(void *sVar, s32 dArg) {
 
 // Set Sprite Texture Base Tile
 void medal_corner_use_ui_texture_base(s32 sprite) {
-    sprite_set_base_tile(D_03005380, sprite, 640);
+    sprite_set_base_tile(gSpriteHandler, sprite, 640);
 }
 
 

@@ -58,7 +58,7 @@ thumb_func_start marching_engine_start \n\
 /* 08034220 */ MOVS R3, 0xE @ Set R3 to 0xE \n\
 /* 08034222 */ BL bmp_font_obj_print_l \n\
 /* 08034226 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 08034228 */ LDR R5, =D_03005380 \n\
+/* 08034228 */ LDR R5, =gSpriteHandler \n\
 /* 0803422a */ LDR R0, [R5] \n\
 /* 0803422c */ MOVS R2, 0x16 @ Set R2 to 0x16 \n\
 /* 0803422e */ STR R2, [SP] \n\
@@ -171,7 +171,7 @@ branch_08034258: \n\
 /* 08034310 */ MOVS R0, 0xB @ Set R0 to 0xB \n\
 /* 08034312 */ BL func_08034100 \n\
 /* 08034316 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 08034318 */ LDR R5, =D_03005380 \n\
+/* 08034318 */ LDR R5, =gSpriteHandler \n\
 /* 0803431a */ LDR R0, [R5] \n\
 /* 0803431c */ MOVS R2, 0x82 @ Set R2 to 0x82 \n\
 /* 0803431e */ STR R2, [SP] \n\

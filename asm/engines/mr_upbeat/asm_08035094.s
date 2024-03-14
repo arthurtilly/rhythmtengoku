@@ -38,7 +38,7 @@ branch_080350c6: \n\
 /* 080350c6 */ STRB R0, [R5, 0x8] \n\
  \n\
 branch_080350c8: \n\
-/* 080350c8 */ LDR R0, =D_03005380 \n\
+/* 080350c8 */ LDR R0, =gSpriteHandler \n\
 /* 080350ca */ LDR R0, [R0] \n\
 /* 080350cc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080350ce */ LDRSH R1, [R5, R2] \n\
@@ -61,7 +61,7 @@ branch_080350c8: \n\
 /* 080350f2 */ NEGS R0, R1 @ Set R0 to -R1 \n\
 /* 080350f4 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 080350f6 */ LSRS R3, R0, 0x1F \n\
-/* 080350f8 */ LDR R4, =D_03005380 \n\
+/* 080350f8 */ LDR R4, =gSpriteHandler \n\
 /* 080350fa */ LDR R0, [R4] \n\
 /* 080350fc */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 080350fe */ LDRSH R1, [R5, R2] \n\

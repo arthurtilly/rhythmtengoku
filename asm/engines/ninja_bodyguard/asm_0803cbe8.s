@@ -39,7 +39,7 @@ thumb_func_start ninja_bodyguard_engine_start \n\
 /* 0803cc3a */ MOVS R0, 0x15 @ Set R0 to 0x15 \n\
 /* 0803cc3c */ BL ninja_get_anim \n\
 /* 0803cc40 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803cc42 */ LDR R5, =D_03005380 \n\
+/* 0803cc42 */ LDR R5, =gSpriteHandler \n\
 /* 0803cc44 */ LDR R0, [R5] \n\
 /* 0803cc46 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0803cc48 */ STR R2, [SP] \n\

@@ -10,7 +10,7 @@ thumb_func_start metronome_cue_barely \n\
 /* 08035bca */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08035bcc */ BL clamp_int32 \n\
 /* 08035bd0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 08035bd2 */ LDR R0, =D_03005380 \n\
+/* 08035bd2 */ LDR R0, =gSpriteHandler \n\
 /* 08035bd4 */ LDR R0, [R0] \n\
 /* 08035bd6 */ LDR R1, =gCurrentEngineData \n\
 /* 08035bd8 */ LDR R1, [R1] \n\

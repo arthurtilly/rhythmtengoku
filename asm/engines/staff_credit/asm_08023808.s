@@ -55,7 +55,7 @@ branch_08023842: \n\
 .ltorg \n\
  \n\
 branch_0802386c: \n\
-/* 0802386c */ LDR R0, =D_03005380 \n\
+/* 0802386c */ LDR R0, =gSpriteHandler \n\
 /* 0802386e */ LDR R0, [R0] \n\
 /* 08023870 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
 /* 08023872 */ LDRSH R1, [R3, R7] \n\

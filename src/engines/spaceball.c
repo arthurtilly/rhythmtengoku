@@ -45,7 +45,7 @@ void spaceball_update_stars_x_y(void) {
         scale = fast_divsi3(INT_TO_FIXED(256.0), star->z - gSpaceball->zoom);
         x = FIXED_TO_INT(star->x * scale);
         y = FIXED_TO_INT(star->y * scale);
-        sprite_set_x_y(D_03005380, sprite, x + SCREEN_CENTER_X, y + SCREEN_CENTER_Y);
+        sprite_set_x_y(gSpriteHandler, sprite, x + SCREEN_CENTER_X, y + SCREEN_CENTER_Y);
     }
 }
 
@@ -134,7 +134,7 @@ void spaceball_update_graphics(void) {
 
     // Update Stars
     if (gSpaceball->currentStar < SPACEBALL_STAR_AMOUNT) {
-        gSpaceball->starSprite[gSpaceball->currentStar] = sprite_create(D_03005380, anim_spaceball_bg_star, 0, 0, 0, 0xc800, 1, 0, 0);
+        gSpaceball->starSprite[gSpaceball->currentStar] = sprite_create(gSpriteHandler, anim_spaceball_bg_star, 0, 0, 0, 0xc800, 1, 0, 0);
         spaceball_reset_star(gSpaceball->currentStar);
         gSpaceball->currentStar++;
     } else {

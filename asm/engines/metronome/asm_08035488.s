@@ -40,7 +40,7 @@ thumb_func_start metronome_engine_start \n\
 /* 080354d2 */ LSLS R0, R0, 0x1 \n\
 /* 080354d4 */ STRH R0, [R1, 0x8] \n\
 /* 080354d6 */ STRH R4, [R1, 0xA] \n\
-/* 080354d8 */ LDR R0, =D_03005380 \n\
+/* 080354d8 */ LDR R0, =gSpriteHandler \n\
 /* 080354da */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080354dc */ LDR R0, [R0] \n\
 /* 080354de */ LDR R1, =anim_metronome_bird_marker \n\
@@ -110,7 +110,7 @@ thumb_func_start metronome_engine_start \n\
 /* 08035566 */ STRH R0, [R1, 0x14] \n\
  \n\
 branch_08035568: \n\
-/* 08035568 */ LDR R5, =D_03005380 \n\
+/* 08035568 */ LDR R5, =gSpriteHandler \n\
 /* 0803556a */ LDR R0, [R5] \n\
 /* 0803556c */ MOVS R1, 0x14 @ Set R1 to 0x14 \n\
 /* 0803556e */ STR R1, [SP] \n\
@@ -201,7 +201,7 @@ branch_080355e2: \n\
 /* 0803561e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08035620 */ BL text_printer_get_unformatted_line_anim \n\
 /* 08035624 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 08035626 */ LDR R6, =D_03005380 \n\
+/* 08035626 */ LDR R6, =gSpriteHandler \n\
 /* 08035628 */ LDR R0, [R6] \n\
 /* 0803562a */ MOVS R1, 0x40 @ Set R1 to 0x40 \n\
 /* 0803562c */ STR R1, [SP] \n\

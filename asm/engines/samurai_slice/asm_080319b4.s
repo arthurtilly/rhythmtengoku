@@ -8,7 +8,7 @@ thumb_func_start func_080319b4 \n\
 /* 080319b8 */ PUSH {R6} \n\
 /* 080319ba */ SUB SP, 0x14 \n\
 /* 080319bc */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 080319be */ LDR R6, =D_03005380 \n\
+/* 080319be */ LDR R6, =gSpriteHandler \n\
 /* 080319c0 */ LDR R0, [R6] \n\
 /* 080319c2 */ LDR R1, =anim_med_demon_hop \n\
 /* 080319c4 */ MOVS R2, 0x42 @ Set R2 to 0x42 \n\

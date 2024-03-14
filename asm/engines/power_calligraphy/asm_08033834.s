@@ -15,7 +15,7 @@ thumb_func_start power_calligraphy_common_display_text \n\
 /* 08033846 */ LDRSH R0, [R1, R2] \n\
 /* 08033848 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803384a */ BLT branch_0803387a \n\
-/* 0803384c */ LDR R4, =D_03005380 \n\
+/* 0803384c */ LDR R4, =gSpriteHandler \n\
 /* 0803384e */ LDR R0, [R4] \n\
 /* 08033850 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08033852 */ LDRSH R1, [R1, R2] \n\
@@ -61,7 +61,7 @@ branch_0803387a: \n\
 /* 080338a8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080338aa */ BL text_printer_get_unformatted_line_anim \n\
 /* 080338ae */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 080338b0 */ LDR R5, =D_03005380 \n\
+/* 080338b0 */ LDR R5, =gSpriteHandler \n\
 /* 080338b2 */ LDR R0, [R5] \n\
 /* 080338b4 */ MOVS R1, 0x92 @ Set R1 to 0x92 \n\
 /* 080338b6 */ STR R1, [SP] \n\

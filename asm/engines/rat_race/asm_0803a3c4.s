@@ -25,7 +25,7 @@ branch_0803a3d4: \n\
 /* 0803a3e6 */ ADDS R2, R2, R0 @ Set R2 to R2 + R0 \n\
 /* 0803a3e8 */ ASRS R2, R2, 0x8 \n\
 /* 0803a3ea */ STR R2, [R3, 0xC] \n\
-/* 0803a3ec */ LDR R4, =D_03005380 \n\
+/* 0803a3ec */ LDR R4, =gSpriteHandler \n\
 /* 0803a3ee */ LDR R0, [R4] \n\
 /* 0803a3f0 */ MOVS R6, 0x8 @ Set R6 to 0x8 \n\
 /* 0803a3f2 */ LDRSH R1, [R3, R6] \n\

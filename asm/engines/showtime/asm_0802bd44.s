@@ -21,7 +21,7 @@ branch_0802bd50: \n\
 /* 0802bd5e */ BEQ branch_0802bdc8 \n\
 /* 0802bd60 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0802bd62 */ BNE branch_0802bd98 \n\
-/* 0802bd64 */ LDR R0, =D_03005380 \n\
+/* 0802bd64 */ LDR R0, =gSpriteHandler \n\
 /* 0802bd66 */ LDR R0, [R0] \n\
 /* 0802bd68 */ LDR R3, [R2] \n\
 /* 0802bd6a */ SUBS R3, 0x4 @ Subtract 0x4 from R3 \n\
@@ -43,7 +43,7 @@ branch_0802bd50: \n\
 .ltorg \n\
  \n\
 branch_0802bd98: \n\
-/* 0802bd98 */ LDR R0, =D_03005380 \n\
+/* 0802bd98 */ LDR R0, =gSpriteHandler \n\
 /* 0802bd9a */ LDR R0, [R0] \n\
 /* 0802bd9c */ ADDS R3, 0x8 @ Add 0x8 to R3 \n\
 /* 0802bd9e */ LSLS R3, R3, 0x10 \n\

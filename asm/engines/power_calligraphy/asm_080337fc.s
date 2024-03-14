@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start power_calligraphy_cue_miss \n\
 /* 080337fc */ PUSH {LR} \n\
 /* 080337fe */ SUB SP, 0x4 \n\
-/* 08033800 */ LDR R0, =D_03005380 \n\
+/* 08033800 */ LDR R0, =gSpriteHandler \n\
 /* 08033802 */ LDR R0, [R0] \n\
 /* 08033804 */ LDR R1, =gCurrentEngineData \n\
 /* 08033806 */ LDR R1, [R1] \n\

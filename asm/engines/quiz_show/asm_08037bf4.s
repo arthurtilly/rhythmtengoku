@@ -21,7 +21,7 @@ branch_08037c0c: \n\
 /* 08037c10 */ LDRH R1, [R0, 0xE] \n\
  \n\
 branch_08037c12: \n\
-/* 08037c12 */ LDR R0, =D_03005380 \n\
+/* 08037c12 */ LDR R0, =gSpriteHandler \n\
 /* 08037c14 */ LDR R0, [R0] \n\
 /* 08037c16 */ LSLS R1, R1, 0x10 \n\
 /* 08037c18 */ ASRS R1, R1, 0x10 \n\
@@ -51,7 +51,7 @@ branch_08037c4c: \n\
 /* 08037c50 */ LDRH R1, [R0, 0x10] \n\
  \n\
 branch_08037c52: \n\
-/* 08037c52 */ LDR R4, =D_03005380 \n\
+/* 08037c52 */ LDR R4, =gSpriteHandler \n\
 /* 08037c54 */ LDR R0, [R4] \n\
 /* 08037c56 */ LSLS R1, R1, 0x10 \n\
 /* 08037c58 */ ASRS R1, R1, 0x10 \n\

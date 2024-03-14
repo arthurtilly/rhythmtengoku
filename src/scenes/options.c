@@ -47,15 +47,15 @@ void options_scene_start(void *sVar, s32 dArg) {
     func_080073f0();
     options_scene_init_gfx1();
 
-    sprite_create(D_03005380, anim_options_banner, 0, 120, 16, 0x4800, 1, 0, 0);
-    gOptionsMenu->uiBarista = sprite_create(D_03005380, anim_options_cursor_barista, 0, 104, 64, 0x4800, 1, 0, 0);
+    sprite_create(gSpriteHandler, anim_options_banner, 0, 120, 16, 0x4800, 1, 0, 0);
+    gOptionsMenu->uiBarista = sprite_create(gSpriteHandler, anim_options_cursor_barista, 0, 104, 64, 0x4800, 1, 0, 0);
     gOptionsMenu->soundMode = D_030046a8->data.unk294[8];
-    gOptionsMenu->uiSoundMode = sprite_create(D_03005380, anim_options_select_stereo, 0x7F, 104, 56, 0x4800, 1, 0x7F, 0);
-    gOptionsMenu->uiDataClear = sprite_create(D_03005380, anim_options_select_data_clear, 0x7F, 104, 84, 0x4800, 1, 0x7F, 0);
-    sprite_create(D_03005380, anim_options_desc_box, 0, 120, 116, 0x4F00, 0, 0, 0);
-    sprite_set_anim(D_03005380, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0x7F, 1, 0x7F, 0);
-    sprite_set_anim(D_03005380, gOptionsMenu->uiDataClear, anim_options_off_data_clear, 0, 0, 0, 0);
-    sprite_set_x_y(D_03005380, gOptionsMenu->uiBarista, 104, 56);
+    gOptionsMenu->uiSoundMode = sprite_create(gSpriteHandler, anim_options_select_stereo, 0x7F, 104, 56, 0x4800, 1, 0x7F, 0);
+    gOptionsMenu->uiDataClear = sprite_create(gSpriteHandler, anim_options_select_data_clear, 0x7F, 104, 84, 0x4800, 1, 0x7F, 0);
+    sprite_create(gSpriteHandler, anim_options_desc_box, 0, 120, 116, 0x4F00, 0, 0, 0);
+    sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0x7F, 1, 0x7F, 0);
+    sprite_set_anim(gSpriteHandler, gOptionsMenu->uiDataClear, anim_options_off_data_clear, 0, 0, 0, 0);
+    sprite_set_x_y(gSpriteHandler, gOptionsMenu->uiBarista, 104, 56);
     gOptionsMenu->cursorPos = OPTIONS_BUTTON_SOUND_MODE;
 
     printer = text_printer_create_new(get_current_mem_id(), 3, 208, 32);
@@ -69,9 +69,9 @@ void options_scene_start(void *sVar, s32 dArg) {
     text_printer_set_string(printer, options_desc_text[OPTIONS_BUTTON_SOUND_MODE]);
     gOptionsMenu->descText = printer;
 
-    gOptionsMenu->uiWarningPane = sprite_create(D_03005380, anim_options_warning_box, 0, 120, 74, 0x440A, 1, 0, 0x8000);
-    gOptionsMenu->uiWarningCursor = sprite_create(D_03005380, anim_options_cursor_default, 0, 64, 64, 0x4400, 1, 0, 0x8000);
-    sprite_set_x(D_03005380, gOptionsMenu->uiWarningCursor, 104);
+    gOptionsMenu->uiWarningPane = sprite_create(gSpriteHandler, anim_options_warning_box, 0, 120, 74, 0x440A, 1, 0, 0x8000);
+    gOptionsMenu->uiWarningCursor = sprite_create(gSpriteHandler, anim_options_cursor_default, 0, 64, 64, 0x4400, 1, 0, 0x8000);
+    sprite_set_x(gSpriteHandler, gOptionsMenu->uiWarningCursor, 104);
 
     printer = text_printer_create_new(get_current_mem_id(), 3, 80, 26);
     text_printer_set_x_y(printer, 80, 75);
@@ -99,7 +99,7 @@ void options_scene_paused(void *sVar, s32 dArg) {
 
 // Set Warning Cursor Position
 void options_scene_move_warning_cursor(u32 index) {
-    sprite_set_y(D_03005380, gOptionsMenu->uiWarningCursor, 75 + (15 * (index + 1)));
+    sprite_set_y(gSpriteHandler, gOptionsMenu->uiWarningCursor, 75 + (15 * (index + 1)));
 }
 
 
@@ -134,18 +134,18 @@ void options_scene_update_main(void) {
     switch (event) {
         case OPTIONS_EV_CURSOR_UP:
             gOptionsMenu->cursorPos = OPTIONS_BUTTON_SOUND_MODE;
-            sprite_set_y(D_03005380, gOptionsMenu->uiBarista, 56);
-            sprite_set_anim(D_03005380, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0x7F, 1, 0x7F, 0);
-            sprite_set_anim(D_03005380, gOptionsMenu->uiDataClear, anim_options_off_data_clear, 0, 0, 0, 0);
+            sprite_set_y(gSpriteHandler, gOptionsMenu->uiBarista, 56);
+            sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0x7F, 1, 0x7F, 0);
+            sprite_set_anim(gSpriteHandler, gOptionsMenu->uiDataClear, anim_options_off_data_clear, 0, 0, 0, 0);
             text_printer_set_string(gOptionsMenu->descText, options_desc_text[OPTIONS_BUTTON_SOUND_MODE]);
             play_sound(&s_menu_cursor2_seqData);
             break;
 
         case OPTIONS_EV_CURSOR_DOWN:
             gOptionsMenu->cursorPos = OPTIONS_BUTTON_DATA_CLEAR;
-            sprite_set_y(D_03005380, gOptionsMenu->uiBarista, 84);
-            sprite_set_anim(D_03005380, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_OFF], 0, 0, 0, 0);
-            sprite_set_anim(D_03005380, gOptionsMenu->uiDataClear, anim_options_select_data_clear, 0, 0, 0, 0);
+            sprite_set_y(gSpriteHandler, gOptionsMenu->uiBarista, 84);
+            sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_OFF], 0, 0, 0, 0);
+            sprite_set_anim(gSpriteHandler, gOptionsMenu->uiDataClear, anim_options_select_data_clear, 0, 0, 0, 0);
             text_printer_set_string(gOptionsMenu->descText, options_desc_text[OPTIONS_BUTTON_DATA_CLEAR]);
             play_sound(&s_menu_cursor2_seqData);
             break;
@@ -153,15 +153,15 @@ void options_scene_update_main(void) {
         case OPTIONS_EV_CONFIRM:
             if (gOptionsMenu->cursorPos == OPTIONS_BUTTON_SOUND_MODE) {
                 gOptionsMenu->soundMode ^= 1;
-                sprite_set_anim(D_03005380, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0, 1, 0x7F, 0);
+                sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0, 1, 0x7F, 0);
                 D_030046a8->data.unk294[8] = gOptionsMenu->soundMode;
                 set_sound_mode(gOptionsMenu->soundMode);
                 write_game_save_data();
             } else {
                 gOptionsMenu->warningCursorPos = OPTIONS_WARNING_NO;
                 options_scene_move_warning_cursor(gOptionsMenu->warningCursorPos);
-                sprite_set_visible(D_03005380, gOptionsMenu->uiWarningPane, TRUE);
-                sprite_set_visible(D_03005380, gOptionsMenu->uiWarningCursor, TRUE);
+                sprite_set_visible(gSpriteHandler, gOptionsMenu->uiWarningPane, TRUE);
+                sprite_set_visible(gSpriteHandler, gOptionsMenu->uiWarningCursor, TRUE);
                 text_printer_show_text(gOptionsMenu->warningText, TRUE);
                 gOptionsMenu->state = OPTIONS_SCENE_STATE_WARNING;
             }
@@ -187,8 +187,8 @@ void options_scene_update_warning(void) {
 
     if (D_03004afc & B_BUTTON) {
         play_sound(&s_menu_cancel2_seqData);
-        sprite_set_visible(D_03005380, gOptionsMenu->uiWarningPane, FALSE);
-        sprite_set_visible(D_03005380, gOptionsMenu->uiWarningCursor, FALSE);
+        sprite_set_visible(gSpriteHandler, gOptionsMenu->uiWarningPane, FALSE);
+        sprite_set_visible(gSpriteHandler, gOptionsMenu->uiWarningCursor, FALSE);
         text_printer_show_text(gOptionsMenu->warningText, FALSE);
         gOptionsMenu->state = OPTIONS_SCENE_STATE_MAIN;
         return;
@@ -204,8 +204,8 @@ void options_scene_update_warning(void) {
             play_sound(&s_menu_kettei2_seqData);
             return;
         } else {
-            sprite_set_visible(D_03005380, gOptionsMenu->uiWarningPane, FALSE);
-            sprite_set_visible(D_03005380, gOptionsMenu->uiWarningCursor, FALSE);
+            sprite_set_visible(gSpriteHandler, gOptionsMenu->uiWarningPane, FALSE);
+            sprite_set_visible(gSpriteHandler, gOptionsMenu->uiWarningCursor, FALSE);
             text_printer_show_text(gOptionsMenu->warningText, FALSE);
             play_sound(&s_menu_cancel2_seqData);
             gOptionsMenu->state = OPTIONS_SCENE_STATE_MAIN;
@@ -216,7 +216,7 @@ void options_scene_update_warning(void) {
         if (gOptionsMenu->warningCursorPos != OPTIONS_WARNING_YES) {
             gOptionsMenu->warningCursorPos = OPTIONS_WARNING_YES;
             options_scene_move_warning_cursor(gOptionsMenu->warningCursorPos);
-            sprite_set_anim_cel(D_03005380, gOptionsMenu->uiWarningCursor, 0);
+            sprite_set_anim_cel(gSpriteHandler, gOptionsMenu->uiWarningCursor, 0);
             play_sound(&s_menu_cursor1_seqData);
         }
     }
@@ -225,7 +225,7 @@ void options_scene_update_warning(void) {
         if (gOptionsMenu->warningCursorPos == OPTIONS_WARNING_YES) {
             gOptionsMenu->warningCursorPos = OPTIONS_WARNING_NO;
             options_scene_move_warning_cursor(gOptionsMenu->warningCursorPos);
-            sprite_set_anim_cel(D_03005380, gOptionsMenu->uiWarningCursor, 0);
+            sprite_set_anim_cel(gSpriteHandler, gOptionsMenu->uiWarningCursor, 0);
             play_sound(&s_menu_cursor1_seqData);
         }
     }

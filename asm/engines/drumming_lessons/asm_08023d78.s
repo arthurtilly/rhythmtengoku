@@ -12,7 +12,7 @@ thumb_func_start func_08023d78 \n\
 /* 08023d84 */ BLT branch_08023d98 \n\
 /* 08023d86 */ MOVS R0, 0x50 @ Set R0 to 0x50 \n\
 /* 08023d88 */ STRB R0, [R1] \n\
-/* 08023d8a */ LDR R0, =D_03005380 \n\
+/* 08023d8a */ LDR R0, =gSpriteHandler \n\
 /* 08023d8c */ LDR R0, [R0] \n\
 /* 08023d8e */ LSLS R1, R2, 0x10 \n\
 /* 08023d90 */ ASRS R1, R1, 0x10 \n\

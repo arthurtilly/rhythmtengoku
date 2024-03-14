@@ -63,7 +63,7 @@ branch_0803b08c: \n\
 branch_0803b092: \n\
 /* 0803b092 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803b094 */ MOV R10, R3 @ Set R10 to R3 \n\
-/* 0803b096 */ LDR R7, =D_03005380 \n\
+/* 0803b096 */ LDR R7, =gSpriteHandler \n\
 /* 0803b098 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803b09a */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 0803b09c */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\

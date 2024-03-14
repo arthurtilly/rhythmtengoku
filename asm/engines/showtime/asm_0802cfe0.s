@@ -37,7 +37,7 @@ thumb_func_start func_0802cfe0 \n\
 /* 0802d022 */ ADDS R1, 0x38 @ Add 0x38 to R1 \n\
 /* 0802d024 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 0802d026 */ STR R0, [R1] \n\
-/* 0802d028 */ LDR R5, =D_03005380 \n\
+/* 0802d028 */ LDR R5, =gSpriteHandler \n\
 /* 0802d02a */ LDR R0, [R5] \n\
 /* 0802d02c */ ADDS R2, R2, R6 @ Set R2 to R2 + R6 \n\
 /* 0802d02e */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\

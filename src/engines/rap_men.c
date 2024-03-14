@@ -56,9 +56,9 @@ void rap_men_engine_start(u32 version) {
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
     gRapMen->unk4 = scene_create_obj_font_printer(0x340, 2);
     textAnim = bmp_font_obj_print_l(gRapMen->unk4, D_0805a8b0, 1, 14);
-    gRapMen->textSprite = sprite_create(D_03005380, textAnim->frames, 0, 120, 148, 0, 0, 0, 0);
-    gRapMen->rapperSprite = sprite_create(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_RAPPER), 0, 70, 130, 0x4800, 1, 0x7f, 0);
-    gRapMen->playerSprite = sprite_create(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 160, 130, 0x4800, 1, 0x7f, 0);
+    gRapMen->textSprite = sprite_create(gSpriteHandler, textAnim->frames, 0, 120, 148, 0, 0, 0, 0);
+    gRapMen->rapperSprite = sprite_create(gSpriteHandler, rap_men_get_anim(RAP_MEN_ANIM_RAPPER), 0, 70, 130, 0x4800, 1, 0x7f, 0);
+    gRapMen->playerSprite = sprite_create(gSpriteHandler, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 160, 130, 0x4800, 1, 0x7f, 0);
     gRapMen->rapperAnimTimer = 0;
     gRapMen->playerAnimTimer = 0;
     gRapMen->unusedAnimTimer = 0;
@@ -74,7 +74,7 @@ void rap_men_engine_event_stub(void) {
 
 // Engine Event 00 (Set Rapper Animation)
 void rap_men_set_rapper_anim(u32 anim) {
-    sprite_set_anim(D_03005380, gRapMen->rapperSprite, rap_men_get_anim(rapping_anim_map[anim]), 0, 1, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, gRapMen->rapperSprite, rap_men_get_anim(rapping_anim_map[anim]), 0, 1, 0x7f, 0);
     gRapMen->rapperAnimTimer = ticks_to_frames(rapping_anim_durations[anim]);
 }
 
@@ -106,7 +106,7 @@ void rap_men_engine_stop(void) {
 
 // Cue - Spawn
 void rap_men_cue_spawn(struct Cue *cue, struct RapMenCue *info, u32 sound) {
-    sprite_set_anim(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PREPARE), 0, 1, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PREPARE), 0, 1, 0x7f, 0);
     gRapMen->playerAnimTimer = ticks_to_frames(0x24);
     gRapMen->unusedAnimTimer = ticks_to_frames(0x24);
     info->sound = sound;
@@ -130,9 +130,9 @@ void rap_men_cue_despawn(struct Cue *cue, struct RapMenCue *info) {
 
 // Cue - Hit
 void rap_men_cue_hit(struct Cue *cue, struct RapMenCue *info, u32 pressed, u32 released) {
-    sprite_set_anim(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_HIT), 0, 1, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_HIT), 0, 1, 0x7f, 0);
     gRapMen->playerAnimTimer = ticks_to_frames(0x24);
-    sprite_create(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_SMOKE), 0, 160, 130, 0x47f6, 1, 0, 3);
+    sprite_create(gSpriteHandler, rap_men_get_anim(RAP_MEN_ANIM_SMOKE), 0, 160, 130, 0x47f6, 1, 0, 3);
     rap_men_set_rapper_anim(RAP_MEN_ANIM_PREPARE);
     play_sound(rap_men_cue_hit_sfx[gRapMen->version][info->sound]);
     play_sound(&s_SD1_seqData);
@@ -142,7 +142,7 @@ void rap_men_cue_hit(struct Cue *cue, struct RapMenCue *info, u32 pressed, u32 r
 
 // Cue - Barely
 void rap_men_cue_barely(struct Cue *cue, struct RapMenCue *info, u32 pressed, u32 released) {
-    sprite_set_anim(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_BARELY), 0, 1, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_BARELY), 0, 1, 0x7f, 0);
     gRapMen->playerAnimTimer = ticks_to_frames(0x24);
     play_sound(rap_men_cue_hit_sfx[gRapMen->version][RAP_CUE_SFX_SHORT]);
     play_sound(&s_tom_M_seqData);
@@ -152,7 +152,7 @@ void rap_men_cue_barely(struct Cue *cue, struct RapMenCue *info, u32 pressed, u3
 // Cue - Miss
 void rap_men_cue_miss(struct Cue *cue, struct RapMenCue *info) {
     if (!gRapMen->isTutorial) {
-        sprite_set_anim(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_MISS), 0, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_MISS), 0, 1, 0x7f, 0);
         gRapMen->playerAnimTimer = ticks_to_frames(0x3C);
         play_sound(&s_RC_seqData);
     }
@@ -162,7 +162,7 @@ void rap_men_cue_miss(struct Cue *cue, struct RapMenCue *info) {
 
 // Input Event
 void rap_men_input_event(u32 pressed, u32 released) {
-    sprite_set_anim(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 1, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 1, 0x7f, 0);
     gRapMen->playerAnimTimer = ticks_to_frames(0x24);
     play_sound(rap_men_cue_miss_sfx[gRapMen->version]);
     beatscript_enable_loops();
@@ -172,10 +172,10 @@ void rap_men_input_event(u32 pressed, u32 released) {
 // Common Event 0 (Beat Animation)
 void rap_men_common_beat_animation(void) {
     if (gRapMen->rapperAnimTimer == 0) {
-        sprite_set_anim(D_03005380, gRapMen->rapperSprite, rap_men_get_anim(RAP_MEN_ANIM_RAPPER), 0, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, gRapMen->rapperSprite, rap_men_get_anim(RAP_MEN_ANIM_RAPPER), 0, 1, 0x7f, 0);
     }
     if (gRapMen->playerAnimTimer == 0) {
-        sprite_set_anim(D_03005380, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, gRapMen->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 1, 0x7f, 0);
     }
 }
 
@@ -185,12 +185,12 @@ void rap_men_common_display_text(char *text) {
     struct PrintedTextAnim *textAnim;
 
     if (text == NULL) {
-        sprite_set_visible(D_03005380, gRapMen->textSprite, FALSE);
+        sprite_set_visible(gSpriteHandler, gRapMen->textSprite, FALSE);
     } else {
         textAnim = bmp_font_obj_print_c(gRapMen->unk4, text, 1, 8);
         delete_bmp_font_obj_text_anim(gRapMen->unk4, gRapMen->textSprite);
-        sprite_set_anim(D_03005380, gRapMen->textSprite, textAnim->frames, 0, 0, 0, 0);
-        sprite_set_visible(D_03005380, gRapMen->textSprite, TRUE);
+        sprite_set_anim(gSpriteHandler, gRapMen->textSprite, textAnim->frames, 0, 0, 0, 0);
+        sprite_set_visible(gSpriteHandler, gRapMen->textSprite, TRUE);
     }
 }
 

@@ -9,7 +9,7 @@ thumb_func_start func_08024a4c \n\
 /* 08024a52 */ PUSH {R5, R6} \n\
 /* 08024a54 */ SUB SP, 0xC \n\
 /* 08024a56 */ MOV R8, R0 @ Set R8 to R0 \n\
-/* 08024a58 */ LDR R0, =D_03005380 \n\
+/* 08024a58 */ LDR R0, =gSpriteHandler \n\
 /* 08024a5a */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08024a5c */ LDR R0, [R0] \n\
 /* 08024a5e */ LDR R5, =gCurrentEngineData \n\

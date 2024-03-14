@@ -22,7 +22,7 @@ thumb_func_start func_08040434 \n\
 .ltorg \n\
  \n\
 branch_08040458: \n\
-/* 08040458 */ LDR R0, =D_03005380 \n\
+/* 08040458 */ LDR R0, =gSpriteHandler \n\
 /* 0804045a */ LDR R0, [R0] \n\
 /* 0804045c */ LDR R1, [R5] \n\
 /* 0804045e */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
@@ -33,7 +33,7 @@ branch_08040458: \n\
 .ltorg \n\
  \n\
 branch_0804046c: \n\
-/* 0804046c */ LDR R0, =D_03005380 \n\
+/* 0804046c */ LDR R0, =gSpriteHandler \n\
 /* 0804046e */ LDR R0, [R0] \n\
 /* 08040470 */ LDR R1, [R5] \n\
 /* 08040472 */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
@@ -44,7 +44,7 @@ branch_0804046c: \n\
 .ltorg \n\
  \n\
 branch_08040480: \n\
-/* 08040480 */ LDR R0, =D_03005380 \n\
+/* 08040480 */ LDR R0, =gSpriteHandler \n\
 /* 08040482 */ LDR R0, [R0] \n\
 /* 08040484 */ LDR R1, [R5] \n\
 /* 08040486 */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
@@ -59,7 +59,7 @@ branch_0804048c: \n\
 .ltorg \n\
  \n\
 branch_08040498: \n\
-/* 08040498 */ LDR R4, =D_03005380 \n\
+/* 08040498 */ LDR R4, =gSpriteHandler \n\
 /* 0804049a */ LDR R0, [R4] \n\
 /* 0804049c */ LDR R1, [R5] \n\
 /* 0804049e */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\

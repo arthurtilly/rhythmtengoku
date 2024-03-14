@@ -19,7 +19,7 @@ thumb_func_start func_08033e00 \n\
 /* 08033e1a */ LDRB R0, [R1, 0x8] \n\
 /* 08033e1c */ CMP R0, 0x5 @ Compare R0 and 0x5 \n\
 /* 08033e1e */ BNE branch_08033e2e \n\
-/* 08033e20 */ LDR R0, =D_03005380 \n\
+/* 08033e20 */ LDR R0, =gSpriteHandler \n\
 /* 08033e22 */ LDR R0, [R0] \n\
 /* 08033e24 */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08033e26 */ LDRSH R1, [R1, R2] \n\
@@ -74,7 +74,7 @@ jump_08033e90: \n\
 /* 08033e92 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08033e94 */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08033e96 */ MOVS R7, 0x1 @ Set R7 to 0x1 \n\
-/* 08033e98 */ LDR R0, =D_03005380 \n\
+/* 08033e98 */ LDR R0, =gSpriteHandler \n\
 /* 08033e9a */ LDR R0, [R0] \n\
 /* 08033e9c */ LDR R1, =gCurrentEngineData \n\
 /* 08033e9e */ LDR R1, [R1] \n\
@@ -86,7 +86,7 @@ jump_08033e90: \n\
 branch_08033eaa: \n\
 /* 08033eaa */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08033eac */ BEQ branch_08033ee4 \n\
-/* 08033eae */ LDR R5, =D_03005380 \n\
+/* 08033eae */ LDR R5, =gSpriteHandler \n\
 /* 08033eb0 */ LDR R0, [R5] \n\
 /* 08033eb2 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08033eb4 */ LSLS R4, R1, 0x10 \n\
@@ -109,7 +109,7 @@ branch_08033eaa: \n\
 .ltorg \n\
  \n\
 branch_08033ee4: \n\
-/* 08033ee4 */ LDR R0, =D_03005380 \n\
+/* 08033ee4 */ LDR R0, =gSpriteHandler \n\
 /* 08033ee6 */ LDR R0, [R0] \n\
 /* 08033ee8 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08033eea */ LSLS R1, R2, 0x10 \n\

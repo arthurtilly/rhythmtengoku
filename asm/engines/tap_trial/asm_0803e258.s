@@ -8,7 +8,7 @@ thumb_func_start func_0803e258 \n\
 /* 0803e25c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803e25e */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0803e260 */ BNE branch_0803e284 \n\
-/* 0803e262 */ LDR R0, =D_03005380 \n\
+/* 0803e262 */ LDR R0, =gSpriteHandler \n\
 /* 0803e264 */ LDR R0, [R0] \n\
 /* 0803e266 */ LDR R1, =gCurrentEngineData \n\
 /* 0803e268 */ LDR R1, [R1] \n\
@@ -35,7 +35,7 @@ branch_0803e284: \n\
 /* 0803e298 */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 0803e29a */ LDRSH R1, [R1, R2] \n\
 /* 0803e29c */ BL delete_bmp_font_obj_text_anim \n\
-/* 0803e2a0 */ LDR R5, =D_03005380 \n\
+/* 0803e2a0 */ LDR R5, =gSpriteHandler \n\
 /* 0803e2a2 */ LDR R0, [R5] \n\
 /* 0803e2a4 */ LDR R1, [R4] \n\
 /* 0803e2a6 */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\

@@ -20,7 +20,7 @@ thumb_func_start func_080240a4 \n\
 /* 080240c2 */ LDR R3, =0x088c2b00 \n\
  \n\
 branch_080240c4: \n\
-/* 080240c4 */ LDR R6, =D_03005380 \n\
+/* 080240c4 */ LDR R6, =gSpriteHandler \n\
 /* 080240c6 */ LDR R0, [R6] \n\
 /* 080240c8 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 080240ca */ LDRSH R1, [R7, R2] \n\

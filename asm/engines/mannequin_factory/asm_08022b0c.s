@@ -13,7 +13,7 @@ thumb_func_start func_08022b0c \n\
 /* 08022b1a */ LDR R2, =anim_mannequin_stamp_effect_r \n\
  \n\
 branch_08022b1c: \n\
-/* 08022b1c */ LDR R5, =D_03005380 \n\
+/* 08022b1c */ LDR R5, =gSpriteHandler \n\
 /* 08022b1e */ LDR R0, [R5] \n\
 /* 08022b20 */ MOVS R1, 0x40 @ Set R1 to 0x40 \n\
 /* 08022b22 */ STR R1, [SP] \n\

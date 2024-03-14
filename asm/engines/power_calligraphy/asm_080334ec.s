@@ -13,7 +13,7 @@ thumb_func_start func_080334ec \n\
 /* 080334fa */ B branch_08033544 \n\
  \n\
 branch_080334fc: \n\
-/* 080334fc */ LDR R0, =D_03005380 \n\
+/* 080334fc */ LDR R0, =gSpriteHandler \n\
 /* 080334fe */ LDR R0, [R0] \n\
 /* 08033500 */ LDR R1, =gCurrentEngineData \n\
 /* 08033502 */ LDR R1, [R1] \n\
@@ -32,7 +32,7 @@ branch_080334fc: \n\
 .ltorg \n\
  \n\
 branch_08033528: \n\
-/* 08033528 */ LDR R0, =D_03005380 \n\
+/* 08033528 */ LDR R0, =gSpriteHandler \n\
 /* 0803352a */ LDR R0, [R0] \n\
 /* 0803352c */ LDR R1, =gCurrentEngineData \n\
 /* 0803352e */ LDR R1, [R1] \n\

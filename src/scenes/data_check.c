@@ -58,7 +58,7 @@ void data_check_scene_start(void *sVar, s32 dArg) {
     gDataCheck->totalPages = game_select_get_total_levels();
     data_check_print_page(gDataCheck->currentPage);
 
-    import_all_scene_objects(D_03005380, gDataCheck->objFont, data_check_scene_objects, D_0300558c);
+    import_all_scene_objects(gSpriteHandler, gDataCheck->objFont, data_check_scene_objects, D_0300558c);
     data_check_scene_init_gfx1();
     gDataCheck->inputsEnabled = FALSE;
     set_next_scene(&scene_debug_menu);
@@ -125,8 +125,8 @@ void data_check_print_line(u32 line, u32 palette, const char *string) {
     sprite = gDataCheck->textLineSprites[line];
 
     if (sprite >= 0) {
-        anim = (void *)sprite_get_data(D_03005380, sprite, 7);
-        sprite_delete(D_03005380, sprite);
+        anim = (void *)sprite_get_data(gSpriteHandler, sprite, 7);
+        sprite_delete(gSpriteHandler, sprite);
         text_printer_delete_anim(anim);
     }
 
@@ -135,8 +135,8 @@ void data_check_print_line(u32 line, u32 palette, const char *string) {
     dma3_fill(0, tileset, 0x800, 0x20, 0x200);
 
     anim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, tileY, TEXT_PRINTER_FONT_SMALL, string, TEXT_ANCHOR_BOTTOM_LEFT, 0, 256);
-    sprite = sprite_create(D_03005380, anim, 0, 8, (line * 16) + 8, 0, 0, 0, 0);
-    sprite_set_base_palette(D_03005380, sprite, palette + 8);
+    sprite = sprite_create(gSpriteHandler, anim, 0, 8, (line * 16) + 8, 0, 0, 0, 0);
+    sprite_set_base_palette(gSpriteHandler, sprite, palette + 8);
     gDataCheck->textLineSprites[line] = sprite;
 }
 

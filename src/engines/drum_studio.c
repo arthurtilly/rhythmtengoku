@@ -38,9 +38,9 @@ extern struct Scene scene_studio;
 void drum_lessons_init_teacher_sprite(s16 sprite) {
     struct StudioDrummer *teacher = &gDrumStudio->teacher;
 
-    sprite_set_x_y(D_03005380, sprite, 152, 136);
-    sprite_set_origin_x_y(D_03005380, sprite, &teacher->xController, &teacher->yController);
-    sprite_set_base_tile(D_03005380, sprite, 640);
+    sprite_set_x_y(gSpriteHandler, sprite, 152, 136);
+    sprite_set_origin_x_y(gSpriteHandler, sprite, &teacher->xController, &teacher->yController);
+    sprite_set_base_tile(gSpriteHandler, sprite, 640);
     gDrumStudio->teacherDrumKitID = 0;
 }
 
@@ -49,22 +49,22 @@ void drum_lessons_init_teacher_sprite(s16 sprite) {
 void drum_lessons_init_teacher(void) {
     struct StudioDrummer *teacher = &gDrumStudio->teacher;
 
-    teacher->snareDrum = sprite_create(D_03005380, anim_drum_teacher_kit_snare, 0, 64, 64, 0x480c, 1, 0x7f, 0);
-    teacher->bassDrum = sprite_create(D_03005380, anim_drum_teacher_kit_bass, 0, 152, 136, 0x480f, 1, 0x7f, 0);
-    teacher->tomDrum = sprite_create(D_03005380, anim_drum_teacher_kit_tom, 0, 64, 64, 0x4814, 1, 0x7f, 0);
-    teacher->hiHat = sprite_create(D_03005380, anim_drum_teacher_kit_hihat, 0, 64, 64, 0x4819, 1, 0x7f, 0);
+    teacher->snareDrum = sprite_create(gSpriteHandler, anim_drum_teacher_kit_snare, 0, 64, 64, 0x480c, 1, 0x7f, 0);
+    teacher->bassDrum = sprite_create(gSpriteHandler, anim_drum_teacher_kit_bass, 0, 152, 136, 0x480f, 1, 0x7f, 0);
+    teacher->tomDrum = sprite_create(gSpriteHandler, anim_drum_teacher_kit_tom, 0, 64, 64, 0x4814, 1, 0x7f, 0);
+    teacher->hiHat = sprite_create(gSpriteHandler, anim_drum_teacher_kit_hihat, 0, 64, 64, 0x4819, 1, 0x7f, 0);
     teacher->pedalHiHat = -1;
-    teacher->rightPedal = sprite_create(D_03005380, anim_drum_teacher_kit_pedal_r, 0, 64, 64, 0x480a, 1, 0x7f, 0);
-    teacher->leftPedal = sprite_create(D_03005380, anim_drum_teacher_kit_pedal_l, 0, 64, 64, 0x480b, 1, 0x7f, 0);
-    teacher->splashCymbal = sprite_create(D_03005380, anim_drum_teacher_kit_splash, 0, 64, 64, 0x481e, 1, 0x7f, 0);
-    teacher->crashCymbal = sprite_create(D_03005380, anim_drum_teacher_kit_crash, 0, 64, 64, 0x47ec, 1, 0x7f, 0);
-    teacher->head = sprite_create(D_03005380, anim_drum_teacher_head, 0, 64, 64, 0x47f4, 1, 0x7f, 0);
-    teacher->body = sprite_create(D_03005380, anim_drum_teacher_body, 0, 64, 64, 0x47ec, 1, 0x7f, 0);
-    teacher->rightLeg = sprite_create(D_03005380, anim_drum_teacher_use_pedal_r, 0, 64, 64, 0x47ee, 1, 0x7f, 0);
-    teacher->leftLeg = sprite_create(D_03005380, anim_drum_teacher_use_pedal_l, 0, 64, 64, 0x47fb, 1, 0x7f, 0);
-    teacher->leftArm = sprite_create(D_03005380, anim_drum_teacher_use_snare_l, 0, 64, 64, 0x47f6, 1, 0x7f, 0);
-    teacher->rightArm = sprite_create(D_03005380, anim_drum_teacher_use_snare_r, 0, 64, 64, 0x47e2, 1, 0x7f, 0);
-    teacher->seat = sprite_create(D_03005380, anim_drum_teacher_kit_seat, 0, 64, 64, 0x47f0, 1, 0x7f, 0);
+    teacher->rightPedal = sprite_create(gSpriteHandler, anim_drum_teacher_kit_pedal_r, 0, 64, 64, 0x480a, 1, 0x7f, 0);
+    teacher->leftPedal = sprite_create(gSpriteHandler, anim_drum_teacher_kit_pedal_l, 0, 64, 64, 0x480b, 1, 0x7f, 0);
+    teacher->splashCymbal = sprite_create(gSpriteHandler, anim_drum_teacher_kit_splash, 0, 64, 64, 0x481e, 1, 0x7f, 0);
+    teacher->crashCymbal = sprite_create(gSpriteHandler, anim_drum_teacher_kit_crash, 0, 64, 64, 0x47ec, 1, 0x7f, 0);
+    teacher->head = sprite_create(gSpriteHandler, anim_drum_teacher_head, 0, 64, 64, 0x47f4, 1, 0x7f, 0);
+    teacher->body = sprite_create(gSpriteHandler, anim_drum_teacher_body, 0, 64, 64, 0x47ec, 1, 0x7f, 0);
+    teacher->rightLeg = sprite_create(gSpriteHandler, anim_drum_teacher_use_pedal_r, 0, 64, 64, 0x47ee, 1, 0x7f, 0);
+    teacher->leftLeg = sprite_create(gSpriteHandler, anim_drum_teacher_use_pedal_l, 0, 64, 64, 0x47fb, 1, 0x7f, 0);
+    teacher->leftArm = sprite_create(gSpriteHandler, anim_drum_teacher_use_snare_l, 0, 64, 64, 0x47f6, 1, 0x7f, 0);
+    teacher->rightArm = sprite_create(gSpriteHandler, anim_drum_teacher_use_snare_r, 0, 64, 64, 0x47e2, 1, 0x7f, 0);
+    teacher->seat = sprite_create(gSpriteHandler, anim_drum_teacher_kit_seat, 0, 64, 64, 0x47f0, 1, 0x7f, 0);
     teacher->coffeeSteam = -1;
 
     drum_lessons_init_teacher_sprite(teacher->snareDrum);
@@ -123,21 +123,21 @@ void drum_lessons_set_teacher_expression(u32 expression) {
     leftArmAnim = drum_teacher_expressions_anim[expression].leftArm;
 
     if (headAnim != NULL) {
-        sprite_set_anim(D_03005380, teacher->head, headAnim, 0, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, teacher->head, headAnim, 0, 1, 0x7f, 0);
     } else {
-        sprite_set_anim(D_03005380, teacher->head, anim_drum_teacher_head, 0x7f, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, teacher->head, anim_drum_teacher_head, 0x7f, 1, 0x7f, 0);
     }
 
     if (rightArmAnim != NULL) {
-        sprite_set_anim(D_03005380, teacher->rightArm, rightArmAnim, 0, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, teacher->rightArm, rightArmAnim, 0, 1, 0x7f, 0);
     } else {
-        sprite_set_anim(D_03005380, teacher->rightArm, anim_drum_teacher_use_snare_r, 0x7f, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, teacher->rightArm, anim_drum_teacher_use_snare_r, 0x7f, 1, 0x7f, 0);
     }
 
     if (leftArmAnim != NULL) {
-        sprite_set_anim(D_03005380, teacher->leftArm, leftArmAnim, 0, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, teacher->leftArm, leftArmAnim, 0, 1, 0x7f, 0);
     } else {
-        sprite_set_anim(D_03005380, teacher->leftArm, anim_drum_teacher_use_snare_l, 0x7f, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, teacher->leftArm, anim_drum_teacher_use_snare_l, 0x7f, 1, 0x7f, 0);
     }
 }
 
@@ -245,18 +245,18 @@ void drum_lessons_init_lesson(void) {
     text_printer_set_palette(gDrumStudio->lessonTextPrinter, 3);
     text_printer_center_by_content(gDrumStudio->lessonTextPrinter, TRUE);
     text_printer_set_alignment(gDrumStudio->lessonTextPrinter, 1);
-    gDrumStudio->textAdvIconSprite = sprite_create(D_03005380, anim_drum_lessons_text_adv_icon, 0, 64, 64, 0x700, 1, 0, 0x8000);
-    sprite_set_base_tile(D_03005380, gDrumStudio->textAdvIconSprite, 640);
-    gDrumStudio->lessonRankSprite = sprite_create(D_03005380, anim_drum_lessons_rank_s, 0, 208, 96, 0x700, 1, 0, 0x8000);
-    gDrumStudio->slowIconSprite = sprite_create(D_03005380, anim_drum_lessons_slow_icon, 0, 120, 80, 0x600, 1, 0, 0x8000);
-    sprite_set_base_tile(D_03005380, gDrumStudio->slowIconSprite, 640);
+    gDrumStudio->textAdvIconSprite = sprite_create(gSpriteHandler, anim_drum_lessons_text_adv_icon, 0, 64, 64, 0x700, 1, 0, 0x8000);
+    sprite_set_base_tile(gSpriteHandler, gDrumStudio->textAdvIconSprite, 640);
+    gDrumStudio->lessonRankSprite = sprite_create(gSpriteHandler, anim_drum_lessons_rank_s, 0, 208, 96, 0x700, 1, 0, 0x8000);
+    gDrumStudio->slowIconSprite = sprite_create(gSpriteHandler, anim_drum_lessons_slow_icon, 0, 120, 80, 0x600, 1, 0, 0x8000);
+    sprite_set_base_tile(gSpriteHandler, gDrumStudio->slowIconSprite, 640);
     gDrumStudio->unk562 = 0;
     gDrumStudio->unk563 = 0;
     gDrumStudio->unk564 = 0;
 
     for (i = 0; i < DRUM_STUDIO_ACCURACY_LIGHTS_AMOUNT; i++) {
-        gDrumStudio->accuracyLightSprites[i] = sprite_create(D_03005380, drum_lessons_accuracy_light_anim[i], 0x7f, drum_lessons_accuracy_light_positions[i].x, drum_lessons_accuracy_light_positions[i].y, 0x4f00, 1, 0x7f, 0x8002);
-        sprite_set_base_tile(D_03005380, gDrumStudio->accuracyLightSprites[i], 640);
+        gDrumStudio->accuracyLightSprites[i] = sprite_create(gSpriteHandler, drum_lessons_accuracy_light_anim[i], 0x7f, drum_lessons_accuracy_light_positions[i].x, drum_lessons_accuracy_light_positions[i].y, 0x4f00, 1, 0x7f, 0x8002);
+        sprite_set_base_tile(gSpriteHandler, gDrumStudio->accuracyLightSprites[i], 640);
     }
 
     gDrumStudio->unk576 = 0;
@@ -416,8 +416,8 @@ void drum_lessons_get_score(void) {
     set_pause_beatscript_scene(TRUE);
 
     gDrumStudio->unk45C = 1;
-    sprite_set_anim(D_03005380, gDrumStudio->lessonRankSprite, drum_lessons_rank_anim[rank], 0, 1, 0, 0);
-    sprite_set_visible(D_03005380, gDrumStudio->lessonRankSprite, TRUE);
+    sprite_set_anim(gSpriteHandler, gDrumStudio->lessonRankSprite, drum_lessons_rank_anim[rank], 0, 1, 0, 0);
+    sprite_set_visible(gSpriteHandler, gDrumStudio->lessonRankSprite, TRUE);
 
     lessonID = medal_corner_get_lesson_id();
     if (lessonID >= 0) {
@@ -532,19 +532,19 @@ void drum_studio_init_kit(void) {
     DrumPlayFunc playFunc;
     u32 drummingButtons;
 
-    sprite_set_visible(D_03005380, player->snareDrum, TRUE);
-    sprite_set_visible(D_03005380, player->bassDrum, TRUE);
-    sprite_set_visible(D_03005380, player->tomDrum, TRUE);
-    sprite_set_visible(D_03005380, player->hiHat, TRUE);
-    sprite_set_visible(D_03005380, player->leftPedal, TRUE);
-    sprite_set_visible(D_03005380, player->rightPedal, TRUE);
-    sprite_set_visible(D_03005380, player->crashCymbal, TRUE);
-    sprite_set_visible(D_03005380, player->splashCymbal, TRUE);
-    sprite_set_playback(D_03005380, player->hiHat, 0, 0, 0);
-    sprite_set_anim_cel(D_03005380, player->hiHat, 2);
-    sprite_set_visible(D_03005380, player->pedalHiHat, FALSE);
-    sprite_set_playback(D_03005380, player->pedalHiHat, 1, 0x7f, 0);
-    sprite_set_anim(D_03005380, player->rightLeg, anim_drum_student_use_pedal_r, 0x7f, 1, 0x7f, 0);
+    sprite_set_visible(gSpriteHandler, player->snareDrum, TRUE);
+    sprite_set_visible(gSpriteHandler, player->bassDrum, TRUE);
+    sprite_set_visible(gSpriteHandler, player->tomDrum, TRUE);
+    sprite_set_visible(gSpriteHandler, player->hiHat, TRUE);
+    sprite_set_visible(gSpriteHandler, player->leftPedal, TRUE);
+    sprite_set_visible(gSpriteHandler, player->rightPedal, TRUE);
+    sprite_set_visible(gSpriteHandler, player->crashCymbal, TRUE);
+    sprite_set_visible(gSpriteHandler, player->splashCymbal, TRUE);
+    sprite_set_playback(gSpriteHandler, player->hiHat, 0, 0, 0);
+    sprite_set_anim_cel(gSpriteHandler, player->hiHat, 2);
+    sprite_set_visible(gSpriteHandler, player->pedalHiHat, FALSE);
+    sprite_set_playback(gSpriteHandler, player->pedalHiHat, 1, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, player->rightLeg, anim_drum_student_use_pedal_r, 0x7f, 1, 0x7f, 0);
     set_drumtech_hihat_gfx(player->hiHat);
     set_drumtech_pedal_hihat_gfx(player->pedalHiHat, player->rightLeg, anim_drum_student_use_pedal_r, anim_drum_student_use_pedal_hihat);
 
@@ -638,26 +638,26 @@ void drum_studio_engine_start(u32 version) {
     scene_set_bg_layer_display(BG_LAYER_2, FALSE, 0, 0, 2, 30, BG_PRIORITY_LOW);
     scene_set_bg_layer_display(BG_LAYER_3, FALSE, 0, 0, 2, 31, BG_PRIORITY_LOWEST);
 
-    player->snareDrum = sprite_create(D_03005380, anim_drum_student_kit_snare, 0, 120, 100, 0x480c, 1, 0x7f, 0);
-    player->bassDrum = sprite_create(D_03005380, anim_drum_student_kit_bass, 0, 120, 100, 0x480f, 1, 0x7f, 0);
-    player->tomDrum = sprite_create(D_03005380, anim_drum_student_kit_tom, 0, 120, 100, 0x4814, 1, 0x7f, 0);
-    player->hiHat = sprite_create(D_03005380, anim_drum_student_kit_hihat, 0, 120, 100, 0x4819, 1, 0x7f, 0);
-    player->pedalHiHat = sprite_create(D_03005380, anim_drum_student_kit_pedal_hihat, 0, 120, 100, 0x4808, 1, 0x7f, 0x8000);
-    player->rightPedal = sprite_create(D_03005380, anim_drum_student_kit_pedal_r, 0, 123, 97, 0x480a, 1, 0x7f, 0);
-    player->leftPedal = sprite_create(D_03005380, anim_drum_student_kit_pedal_l, 0, 119, 96, 0x480b, 1, 0x7f, 0);
-    player->splashCymbal = sprite_create(D_03005380, anim_drum_student_kit_splash, 0, 120, 100, 0x481e, 1, 0x7f, 0);
-    player->crashCymbal = sprite_create(D_03005380, anim_drum_student_kit_crash, 0, 120, 100, 0x47ec, 1, 0x7f, 0);
-    player->head = sprite_create(D_03005380, anim_drum_student_head, 0, 120, 100, 0x47f4, 1, 0x7f, 0);
-    player->body = sprite_create(D_03005380, anim_drum_student_body, 0, 120, 100, 0x47ec, 1, 0x7f, 0);
-    player->rightLeg = sprite_create(D_03005380, anim_drum_student_use_pedal_r, 0, 120, 100, 0x47ee, 1, 0x7f, 0);
-    player->leftLeg = sprite_create(D_03005380, anim_drum_student_use_pedal_l, 0, 120, 100, 0x47fb, 1, 0x7f, 0);
-    player->leftArm = sprite_create(D_03005380, anim_drum_student_use_snare_l, 0, 102, 90, 0x47f6, 1, 0x7f, 0);
-    player->rightArm = sprite_create(D_03005380, anim_drum_student_use_snare_r, 0, 120, 100, 0x47e2, 1, 0x7f, 0);
-    player->seat = sprite_create(D_03005380, anim_drum_student_kit_seat, 0, 120, 100, 0x47f0, 1, 0x7f, 0);
-    player->coffeeSteam = sprite_create(D_03005380, anim_drum_student_coffee_steam, 0, 99, 82, 0x47eb, 1, 0, 0x8000);
+    player->snareDrum = sprite_create(gSpriteHandler, anim_drum_student_kit_snare, 0, 120, 100, 0x480c, 1, 0x7f, 0);
+    player->bassDrum = sprite_create(gSpriteHandler, anim_drum_student_kit_bass, 0, 120, 100, 0x480f, 1, 0x7f, 0);
+    player->tomDrum = sprite_create(gSpriteHandler, anim_drum_student_kit_tom, 0, 120, 100, 0x4814, 1, 0x7f, 0);
+    player->hiHat = sprite_create(gSpriteHandler, anim_drum_student_kit_hihat, 0, 120, 100, 0x4819, 1, 0x7f, 0);
+    player->pedalHiHat = sprite_create(gSpriteHandler, anim_drum_student_kit_pedal_hihat, 0, 120, 100, 0x4808, 1, 0x7f, 0x8000);
+    player->rightPedal = sprite_create(gSpriteHandler, anim_drum_student_kit_pedal_r, 0, 123, 97, 0x480a, 1, 0x7f, 0);
+    player->leftPedal = sprite_create(gSpriteHandler, anim_drum_student_kit_pedal_l, 0, 119, 96, 0x480b, 1, 0x7f, 0);
+    player->splashCymbal = sprite_create(gSpriteHandler, anim_drum_student_kit_splash, 0, 120, 100, 0x481e, 1, 0x7f, 0);
+    player->crashCymbal = sprite_create(gSpriteHandler, anim_drum_student_kit_crash, 0, 120, 100, 0x47ec, 1, 0x7f, 0);
+    player->head = sprite_create(gSpriteHandler, anim_drum_student_head, 0, 120, 100, 0x47f4, 1, 0x7f, 0);
+    player->body = sprite_create(gSpriteHandler, anim_drum_student_body, 0, 120, 100, 0x47ec, 1, 0x7f, 0);
+    player->rightLeg = sprite_create(gSpriteHandler, anim_drum_student_use_pedal_r, 0, 120, 100, 0x47ee, 1, 0x7f, 0);
+    player->leftLeg = sprite_create(gSpriteHandler, anim_drum_student_use_pedal_l, 0, 120, 100, 0x47fb, 1, 0x7f, 0);
+    player->leftArm = sprite_create(gSpriteHandler, anim_drum_student_use_snare_l, 0, 102, 90, 0x47f6, 1, 0x7f, 0);
+    player->rightArm = sprite_create(gSpriteHandler, anim_drum_student_use_snare_r, 0, 120, 100, 0x47e2, 1, 0x7f, 0);
+    player->seat = sprite_create(gSpriteHandler, anim_drum_student_kit_seat, 0, 120, 100, 0x47f0, 1, 0x7f, 0);
+    player->coffeeSteam = sprite_create(gSpriteHandler, anim_drum_student_coffee_steam, 0, 99, 82, 0x47eb, 1, 0, 0x8000);
     player->xController = 56;
     player->yController = -8;
-    sprite_id_set_origin_x_y(D_03005380, get_current_mem_id(), &player->xController, &player->yController);
+    sprite_id_set_origin_x_y(gSpriteHandler, get_current_mem_id(), &player->xController, &player->yController);
     player->headPosX = 120;
     player->headPosY = 100;
     player->leftArmPosX = 102;
@@ -672,12 +672,12 @@ void drum_studio_engine_start(u32 version) {
     text_printer_set_palette(gDrumStudio->songTitlePrinter, 3);
     text_printer_center_by_content(gDrumStudio->songTitlePrinter, TRUE);
     text_printer_set_x_controller(gDrumStudio->songTitlePrinter, &gDrumStudio->songTitlePosX);
-    gDrumStudio->songTitleBgSprite = sprite_create(D_03005380, anim_drum_studio_song_title_bubble, 0, 224, 8, 0x800, 0, 0, 0);
-    sprite_set_origin_x(D_03005380, gDrumStudio->songTitleBgSprite, &gDrumStudio->songTitlePosX);
+    gDrumStudio->songTitleBgSprite = sprite_create(gSpriteHandler, anim_drum_studio_song_title_bubble, 0, 224, 8, 0x800, 0, 0, 0);
+    sprite_set_origin_x(gSpriteHandler, gDrumStudio->songTitleBgSprite, &gDrumStudio->songTitlePosX);
     gDrumStudio->songTitlePosX = -144;
     gDrumStudio->unk3FC = 0;
 
-    gDrumStudio->replaySaveOptionSprite = sprite_create(D_03005380, anim_drum_studio_save_option_y, 0, 180, 102, 0x800, 1, 0, 0x8000);
+    gDrumStudio->replaySaveOptionSprite = sprite_create(gSpriteHandler, anim_drum_studio_save_option_y, 0, 180, 102, 0x800, 1, 0, 0x8000);
     gDrumStudio->currentSaveOption = REPLAY_SAVE_OPTION_YES;
     gDrumStudio->replayTextPrinter = text_printer_create_new(get_current_mem_id(), 2, 120, 32);
     text_printer_set_x_y(gDrumStudio->replayTextPrinter, 120, 64);
@@ -686,7 +686,7 @@ void drum_studio_engine_start(u32 version) {
     text_printer_set_palette(gDrumStudio->replayTextPrinter, 3);
     text_printer_center_by_content(gDrumStudio->replayTextPrinter, TRUE);
 
-    gDrumStudio->memoryWarningSprite = sprite_create(D_03005380, anim_drum_studio_memory_warning, 0, 240, 160, 0x800, 1, 0, 0x8000);
+    gDrumStudio->memoryWarningSprite = sprite_create(gSpriteHandler, anim_drum_studio_memory_warning, 0, 240, 160, 0x800, 1, 0, 0x8000);
 
     init_drumtech(&gDrumStudio->drumTech);
 
@@ -798,7 +798,7 @@ void drum_studio_update_song_title(void) {
             gDrumStudio->unk3FE = -144;
             gDrumStudio->unk400 = 0;
             text_printer_set_string(gDrumStudio->songTitlePrinter, gDrumStudio->songTitleText);
-            sprite_set_anim_cel(D_03005380, gDrumStudio->songTitleBgSprite, gDrumStudio->unk408);
+            sprite_set_anim_cel(gSpriteHandler, gDrumStudio->songTitleBgSprite, gDrumStudio->unk408);
         }
     }
 
@@ -874,7 +874,7 @@ const struct Beatscript *drum_studio_init_script(void) {
             availableSpace = get_remaining_replay_data_space(&D_030046a8->data.drumReplaysAlloc);
             key_rec_set_mode(1, 0x3ff, gDrumStudio->drumReplaySeq, availableSpace / 2);
             if ((availableSpace == 0) || (get_available_replay_data_id(&D_030046a8->data.drumReplaysAlloc) < 0)) {
-                sprite_set_visible(D_03005380, gDrumStudio->memoryWarningSprite, TRUE);
+                sprite_set_visible(gSpriteHandler, gDrumStudio->memoryWarningSprite, TRUE);
             }
             gDrumStudio->playerDrumKitID = clamp_int32(studio_get_current_kit(), 0, drum_studio_get_total_kits());
             break;
@@ -931,10 +931,10 @@ s32 func_080295d4(void) {
 
 // Align Drummer Parts to Body
 void drum_studio_align_drummer_sprites(struct StudioDrummer *drummer, const struct Vector2 *vecOfs) {
-    vecOfs += sprite_get_anim_cel(D_03005380, drummer->body);
-    sprite_set_x_y(D_03005380, drummer->head, drummer->headPosX + vecOfs->x, drummer->headPosY + vecOfs->y);
-    sprite_set_x_y(D_03005380, drummer->leftArm, drummer->leftArmPosX + vecOfs->x, drummer->leftArmPosY + vecOfs->y);
-    sprite_set_x_y(D_03005380, drummer->rightArm, drummer->rightArmPosX + vecOfs->x, drummer->rightArmPosY + vecOfs->y);
+    vecOfs += sprite_get_anim_cel(gSpriteHandler, drummer->body);
+    sprite_set_x_y(gSpriteHandler, drummer->head, drummer->headPosX + vecOfs->x, drummer->headPosY + vecOfs->y);
+    sprite_set_x_y(gSpriteHandler, drummer->leftArm, drummer->leftArmPosX + vecOfs->x, drummer->leftArmPosY + vecOfs->y);
+    sprite_set_x_y(gSpriteHandler, drummer->rightArm, drummer->rightArmPosX + vecOfs->x, drummer->rightArmPosY + vecOfs->y);
 }
 
 
@@ -942,7 +942,7 @@ void drum_studio_align_drummer_sprites(struct StudioDrummer *drummer, const stru
 void func_0802972c(void) {
     if (gDrumStudio->unk3CD == 2) {
         if (key_rec_reached_end()) {
-            sprite_set_visible(D_03005380, gDrumStudio->memoryWarningSprite, TRUE);
+            sprite_set_visible(gSpriteHandler, gDrumStudio->memoryWarningSprite, TRUE);
         }
     }
 
@@ -1060,16 +1060,16 @@ void drum_studio_save_replay(void) {
 void drum_studio_update_save_options(void) {
     if (gDrumStudio->saveOptionsDelayTime > 0) {
         if (--gDrumStudio->saveOptionsDelayTime == 0) {
-            sprite_set_visible(D_03005380, gDrumStudio->replaySaveOptionSprite, TRUE);
+            sprite_set_visible(gSpriteHandler, gDrumStudio->replaySaveOptionSprite, TRUE);
         }
     } else {
         if ((D_03004afc & DPAD_LEFT) && (gDrumStudio->currentSaveOption == REPLAY_SAVE_OPTION_NO)) {
-            sprite_set_anim(D_03005380, gDrumStudio->replaySaveOptionSprite, anim_drum_studio_save_option_y, 0, 1, 0, 0);
+            sprite_set_anim(gSpriteHandler, gDrumStudio->replaySaveOptionSprite, anim_drum_studio_save_option_y, 0, 1, 0, 0);
             gDrumStudio->currentSaveOption = REPLAY_SAVE_OPTION_YES;
             play_sound(&s_menu_cursor1_seqData);
             return;
         } else if ((D_03004afc & DPAD_RIGHT) && (gDrumStudio->currentSaveOption == REPLAY_SAVE_OPTION_YES)) {
-            sprite_set_anim(D_03005380, gDrumStudio->replaySaveOptionSprite, anim_drum_studio_save_option_n, 0, 1, 0, 0);
+            sprite_set_anim(gSpriteHandler, gDrumStudio->replaySaveOptionSprite, anim_drum_studio_save_option_n, 0, 1, 0, 0);
             gDrumStudio->currentSaveOption = REPLAY_SAVE_OPTION_NO;
             play_sound(&s_menu_cursor1_seqData);
             return;
@@ -1080,7 +1080,7 @@ void drum_studio_update_save_options(void) {
             } else {
                 play_sound(&s_menu_cancel3_seqData);
             }
-            sprite_set_visible(D_03005380, gDrumStudio->replaySaveOptionSprite, FALSE);
+            sprite_set_visible(gSpriteHandler, gDrumStudio->replaySaveOptionSprite, FALSE);
             text_printer_clear(gDrumStudio->replayTextPrinter);
             set_pause_beatscript_scene(FALSE);
             gDrumStudio->state = DRUM_STUDIO_STATE_INACTIVE;
@@ -1198,8 +1198,8 @@ void drum_studio_flash_accuracy_meter(void) {
     }
 
     timingOffset = clamp_int32(timingOffset + 3, 0, DRUM_STUDIO_ACCURACY_LIGHTS_AMOUNT - 1);
-    sprite_set_anim_cel(D_03005380, gDrumStudio->accuracyLightSprites[timingOffset], 0);
-    sprite_set_visible(D_03005380, gDrumStudio->accuracyLightSprites[timingOffset], TRUE);
+    sprite_set_anim_cel(gSpriteHandler, gDrumStudio->accuracyLightSprites[timingOffset], 0);
+    sprite_set_visible(gSpriteHandler, gDrumStudio->accuracyLightSprites[timingOffset], TRUE);
 }
 
 

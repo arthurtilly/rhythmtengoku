@@ -33,7 +33,7 @@ thumb_func_start func_080358fc \n\
 .ltorg \n\
  \n\
 branch_08035934: \n\
-/* 08035934 */ LDR R0, =D_03005380 \n\
+/* 08035934 */ LDR R0, =gSpriteHandler \n\
 /* 08035936 */ LDR R0, [R0] \n\
 /* 08035938 */ LSLS R5, R5, 0x10 \n\
 /* 0803593a */ ASRS R5, R5, 0x10 \n\
@@ -70,7 +70,7 @@ branch_08035934: \n\
 .ltorg \n\
  \n\
 branch_08035984: \n\
-/* 08035984 */ LDR R0, =D_03005380 \n\
+/* 08035984 */ LDR R0, =gSpriteHandler \n\
 /* 08035986 */ LDR R0, [R0] \n\
 /* 08035988 */ LSLS R5, R5, 0x10 \n\
 /* 0803598a */ ASRS R5, R5, 0x10 \n\

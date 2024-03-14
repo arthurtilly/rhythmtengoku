@@ -11,7 +11,7 @@ thumb_func_start power_calligraphy_common_init_tutorial \n\
 /* 08033906 */ BL gameplay_enable_tutorial \n\
 /* 0803390a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803390c */ BL gameplay_set_skip_destination \n\
-/* 08033910 */ LDR R0, =D_03005380 \n\
+/* 08033910 */ LDR R0, =gSpriteHandler \n\
 /* 08033912 */ LDR R0, [R0] \n\
 /* 08033914 */ LDR R1, =gCurrentEngineData \n\
 /* 08033916 */ LDR R1, [R1] \n\
@@ -29,7 +29,7 @@ thumb_func_start power_calligraphy_common_init_tutorial \n\
 branch_08033934: \n\
 /* 08033934 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08033936 */ BL gameplay_enable_tutorial \n\
-/* 0803393a */ LDR R0, =D_03005380 \n\
+/* 0803393a */ LDR R0, =gSpriteHandler \n\
 /* 0803393c */ LDR R0, [R0] \n\
 /* 0803393e */ LDR R1, =gCurrentEngineData \n\
 /* 08033940 */ LDR R1, [R1] \n\

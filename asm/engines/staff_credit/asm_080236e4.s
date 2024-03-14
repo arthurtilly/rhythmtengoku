@@ -13,7 +13,7 @@ thumb_func_start func_080236e4 \n\
 /* 080236f2 */ LDRSH R0, [R5, R1] \n\
 /* 080236f4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080236f6 */ BLT branch_08023718 \n\
-/* 080236f8 */ LDR R4, =D_03005380 \n\
+/* 080236f8 */ LDR R4, =gSpriteHandler \n\
 /* 080236fa */ LDR R0, [R4] \n\
 /* 080236fc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080236fe */ LDRSH R1, [R5, R2] \n\

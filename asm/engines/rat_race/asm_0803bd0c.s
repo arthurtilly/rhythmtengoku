@@ -18,7 +18,7 @@ thumb_func_start func_0803bd0c \n\
 /* 0803bd24 */ BGT branch_0803bd38 \n\
 /* 0803bd26 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803bd28 */ STRB R0, [R4, 0x2] \n\
-/* 0803bd2a */ LDR R0, =D_03005380 \n\
+/* 0803bd2a */ LDR R0, =gSpriteHandler \n\
 /* 0803bd2c */ LDR R0, [R0] \n\
 /* 0803bd2e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803bd30 */ LDRSH R1, [R4, R2] \n\
@@ -26,7 +26,7 @@ thumb_func_start func_0803bd0c \n\
 /* 0803bd34 */ BL sprite_set_visible \n\
  \n\
 branch_0803bd38: \n\
-/* 0803bd38 */ LDR R0, =D_03005380 \n\
+/* 0803bd38 */ LDR R0, =gSpriteHandler \n\
 /* 0803bd3a */ LDR R0, [R0] \n\
 /* 0803bd3c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803bd3e */ LDRSH R1, [R4, R2] \n\

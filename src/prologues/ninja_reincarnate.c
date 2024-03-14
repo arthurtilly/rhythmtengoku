@@ -48,7 +48,7 @@ void ninja_reincarnate_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = sprite_create(D_03005380, anim_ninja_reincarnate_prologue_title, 0, 120, 130, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_ninja_reincarnate_prologue_title, 0, 120, 130, 0, 0, 0x7f, 0);
 }
 
 
@@ -69,5 +69,5 @@ void ninja_reincarnate_prologue_engine_stop(void) {
 
 // [func_080474ac] Event 0 - Play Animation (Text)
 void func_080474ac(u32 speed) {
-    sprite_set_playback(D_03005380, gPrologueEngineData->textSprite, speed, 0x7f, 0);
+    sprite_set_playback(gSpriteHandler, gPrologueEngineData->textSprite, speed, 0x7f, 0);
 }

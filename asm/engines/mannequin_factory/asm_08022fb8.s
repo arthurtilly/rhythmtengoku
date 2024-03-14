@@ -34,7 +34,7 @@ thumb_func_start func_08022fb8 \n\
 /* 08022ff4 */ STRB R1, [R0] \n\
 /* 08022ff6 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
 /* 08022ff8 */ MOV R8, R4 @ Set R8 to R4 \n\
-/* 08022ffa */ LDR R7, =D_03005380 \n\
+/* 08022ffa */ LDR R7, =gSpriteHandler \n\
 /* 08022ffc */ MOVS R5, 0x14 @ Set R5 to 0x14 \n\
  \n\
 branch_08022ffe: \n\

@@ -48,7 +48,7 @@ void cosmic_dance_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = sprite_create(D_03005380, anim_cosmic_dance_prologue_title, 0, 120, 80, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_cosmic_dance_prologue_title, 0, 120, 80, 0, 0, 0x7f, 0);
 }
 
 
@@ -74,7 +74,7 @@ void func_0804573c(void) {
     u32 i;
 
     for (i = 0; i < 4; i++) {
-        dancer = sprite_create(D_03005380, anim_cosmic_dance_prologue_dancer, 0, 300, 120, 0x4800 - i, 0, 0, 0);
+        dancer = sprite_create(gSpriteHandler, anim_cosmic_dance_prologue_dancer, 0, 300, 120, 0x4800 - i, 0, 0, 0);
         x = 72 + (i * 32);
         scene_move_sprite_sine_vel(dancer, 0, x, 120, ticks_to_frames(0x12));
     }

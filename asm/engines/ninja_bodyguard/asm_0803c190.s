@@ -7,7 +7,7 @@ thumb_func_start func_0803c190 \n\
 /* 0803c192 */ SUB SP, 0xC \n\
 /* 0803c194 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803c196 */ BL scene_show_bg_layer \n\
-/* 0803c19a */ LDR R5, =D_03005380 \n\
+/* 0803c19a */ LDR R5, =gSpriteHandler \n\
 /* 0803c19c */ LDR R0, [R5] \n\
 /* 0803c19e */ LDR R4, =gCurrentEngineData \n\
 /* 0803c1a0 */ LDR R1, [R4] \n\

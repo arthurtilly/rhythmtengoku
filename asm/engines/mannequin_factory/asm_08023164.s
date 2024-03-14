@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08023164 \n\
 /* 08023164 */ PUSH {R4, LR} \n\
 /* 08023166 */ SUB SP, 0x14 \n\
-/* 08023168 */ LDR R0, =D_03005380 \n\
+/* 08023168 */ LDR R0, =gSpriteHandler \n\
 /* 0802316a */ LDR R0, [R0] \n\
 /* 0802316c */ LDR R1, =anim_mannequin_game_over \n\
 /* 0802316e */ MOVS R2, 0x48 @ Set R2 to 0x48 \n\

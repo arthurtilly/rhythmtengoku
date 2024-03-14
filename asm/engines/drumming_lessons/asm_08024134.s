@@ -20,7 +20,7 @@ thumb_func_start func_08024134 \n\
 /* 08024152 */ LDR R3, =anim_drum_player_use_crash \n\
  \n\
 branch_08024154: \n\
-/* 08024154 */ LDR R6, =D_03005380 \n\
+/* 08024154 */ LDR R6, =gSpriteHandler \n\
 /* 08024156 */ LDR R0, [R6] \n\
 /* 08024158 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 0802415a */ LDRSH R1, [R7, R2] \n\

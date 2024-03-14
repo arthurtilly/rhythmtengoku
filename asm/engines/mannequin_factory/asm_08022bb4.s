@@ -10,7 +10,7 @@ thumb_func_start func_08022bb4 \n\
 /* 08022bbc */ PUSH {R5-R7} \n\
 /* 08022bbe */ SUB SP, 0x14 \n\
 /* 08022bc0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08022bc2 */ LDR R7, =D_03005380 \n\
+/* 08022bc2 */ LDR R7, =gSpriteHandler \n\
 /* 08022bc4 */ LDR R5, =anim_mannequin_hand_r \n\
 /* 08022bc6 */ LDR R4, =gCurrentEngineData \n\
 /* 08022bc8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\

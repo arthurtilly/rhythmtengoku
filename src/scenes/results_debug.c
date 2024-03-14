@@ -44,7 +44,7 @@ void results_scene_start(void *sVar, s32 dArg) {
     func_080073f0();
     gResults->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
     gResults->objFont = scene_create_obj_font_printer(0x300, 4);
-    import_all_scene_objects(D_03005380, gResults->objFont, debug_results_scene_objects, D_0300558c);
+    import_all_scene_objects(gSpriteHandler, gResults->objFont, debug_results_scene_objects, D_0300558c);
     results_scene_init_gfx1();
     gResults->inputsEnabled = FALSE;
     set_next_scene(&scene_debug_menu);

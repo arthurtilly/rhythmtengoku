@@ -114,7 +114,7 @@ jump_0803ae18: \n\
 /* 0803ae38 */ ADDS R0, 0xDE @ Add 0xDE to R0 \n\
 /* 0803ae3a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803ae3c */ STRB R1, [R0] \n\
-/* 0803ae3e */ LDR R0, =D_03005380 \n\
+/* 0803ae3e */ LDR R0, =gSpriteHandler \n\
 /* 0803ae40 */ LDR R0, [R0] \n\
 /* 0803ae42 */ LDR R1, [R4] \n\
 /* 0803ae44 */ ADDS R1, 0xDC @ Add 0xDC to R1 \n\

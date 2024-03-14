@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08034b14 \n\
 /* 08034b14 */ PUSH {R4-R6, LR} \n\
 /* 08034b16 */ SUB SP, 0x14 \n\
-/* 08034b18 */ LDR R0, =D_03005380 \n\
+/* 08034b18 */ LDR R0, =gSpriteHandler \n\
 /* 08034b1a */ LDR R0, [R0] \n\
 /* 08034b1c */ LDR R1, =anim_metronome_score_counter \n\
 /* 08034b1e */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
@@ -26,7 +26,7 @@ thumb_func_start func_08034b14 \n\
 /* 08034b3e */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
  \n\
 branch_08034b40: \n\
-/* 08034b40 */ LDR R0, =D_03005380 \n\
+/* 08034b40 */ LDR R0, =gSpriteHandler \n\
 /* 08034b42 */ LDR R0, [R0] \n\
 /* 08034b44 */ MOVS R1, 0x14 @ Set R1 to 0x14 \n\
 /* 08034b46 */ STR R1, [SP] \n\
@@ -54,7 +54,7 @@ branch_08034b40: \n\
 /* 08034b74 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
  \n\
 branch_08034b76: \n\
-/* 08034b76 */ LDR R0, =D_03005380 \n\
+/* 08034b76 */ LDR R0, =gSpriteHandler \n\
 /* 08034b78 */ LDR R0, [R0] \n\
 /* 08034b7a */ MOVS R1, 0x14 @ Set R1 to 0x14 \n\
 /* 08034b7c */ STR R1, [SP] \n\

@@ -22,7 +22,7 @@ thumb_func_start func_08034ff4 \n\
 .ltorg \n\
  \n\
 branch_0803501c: \n\
-/* 0803501c */ LDR R4, =D_03005380 \n\
+/* 0803501c */ LDR R4, =gSpriteHandler \n\
 /* 0803501e */ LDR R0, [R4] \n\
 /* 08035020 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08035022 */ LDRSH R1, [R6, R2] \n\
@@ -46,7 +46,7 @@ branch_0803501c: \n\
 .ltorg \n\
  \n\
 branch_08035050: \n\
-/* 08035050 */ LDR R0, =D_03005380 \n\
+/* 08035050 */ LDR R0, =gSpriteHandler \n\
 /* 08035052 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08035054 */ LDR R0, [R0] \n\
 /* 08035056 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\

@@ -41,7 +41,7 @@ branch_08030842: \n\
 /* 08030842 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 08030844 */ BL clappy_trio_get_anim \n\
 /* 08030848 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803084a */ LDR R0, =D_03005380 \n\
+/* 0803084a */ LDR R0, =gSpriteHandler \n\
 /* 0803084c */ LDR R0, [R0] \n\
 /* 0803084e */ LSLS R1, R4, 0x10 \n\
 /* 08030850 */ ASRS R1, R1, 0x10 \n\

@@ -29,7 +29,7 @@ thumb_func_start samurai_slice_engine_update \n\
 /* 08030f88 */ BL set_beatscript_speed \n\
 /* 08030f8c */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08030f8e */ BL scene_set_music_pitch_env \n\
-/* 08030f92 */ LDR R5, =D_03005380 \n\
+/* 08030f92 */ LDR R5, =gSpriteHandler \n\
 /* 08030f94 */ LDR R6, [R5] \n\
 /* 08030f96 */ LDR R0, [R7] \n\
 /* 08030f98 */ MOVS R1, 0xC @ Set R1 to 0xC \n\
@@ -117,7 +117,7 @@ jump_08031038: \n\
 /* 08031050 */ MOVS R0, 0xF0 @ Set R0 to 0xF0 \n\
 /* 08031052 */ LSLS R0, R0, 0x7 \n\
 /* 08031054 */ STR R0, [R1] \n\
-/* 08031056 */ LDR R0, =D_03005380 \n\
+/* 08031056 */ LDR R0, =gSpriteHandler \n\
 /* 08031058 */ LDR R0, [R0] \n\
 /* 0803105a */ ADDS R3, 0xDA @ Add 0xDA to R3 \n\
 /* 0803105c */ ADDS R1, R2, R3 @ Set R1 to R2 + R3 \n\
@@ -127,7 +127,7 @@ jump_08031038: \n\
 /* 08031064 */ BL sprite_set_visible \n\
  \n\
 branch_08031068: \n\
-/* 08031068 */ LDR R0, =D_03005380 \n\
+/* 08031068 */ LDR R0, =gSpriteHandler \n\
 /* 0803106a */ LDR R0, [R0] \n\
 /* 0803106c */ LDR R2, [R4] \n\
 /* 0803106e */ MOVS R3, 0xED @ Set R3 to 0xED \n\
@@ -144,7 +144,7 @@ branch_08031068: \n\
 \n\
 .ltorg \n\
 jump_0803108c: \n\
-/* 0803108c */ LDR R5, =D_03005380 \n\
+/* 0803108c */ LDR R5, =gSpriteHandler \n\
 /* 0803108e */ LDR R0, [R5] \n\
 /* 08031090 */ LDR R1, [R4] \n\
 /* 08031092 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
@@ -163,7 +163,7 @@ jump_0803108c: \n\
 \n\
 .ltorg \n\
 jump_080310bc: \n\
-/* 080310bc */ LDR R5, =D_03005380 \n\
+/* 080310bc */ LDR R5, =gSpriteHandler \n\
 /* 080310be */ LDR R0, [R5] \n\
 /* 080310c0 */ LDR R1, [R4] \n\
 /* 080310c2 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
@@ -189,7 +189,7 @@ branch_080310dc: \n\
 \n\
 .ltorg \n\
 jump_080310f8: \n\
-/* 080310f8 */ LDR R5, =D_03005380 \n\
+/* 080310f8 */ LDR R5, =gSpriteHandler \n\
 /* 080310fa */ LDR R0, [R5] \n\
 /* 080310fc */ LDR R1, [R4] \n\
 /* 080310fe */ MOVS R2, 0xC @ Set R2 to 0xC \n\

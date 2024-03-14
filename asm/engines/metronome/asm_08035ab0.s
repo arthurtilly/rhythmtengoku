@@ -53,7 +53,7 @@ branch_08035af6: \n\
 /* 08035b0c */ STRB R1, [R0] \n\
  \n\
 branch_08035b0e: \n\
-/* 08035b0e */ LDR R0, =D_03005380 \n\
+/* 08035b0e */ LDR R0, =gSpriteHandler \n\
 /* 08035b10 */ LDR R0, [R0] \n\
 /* 08035b12 */ LDR R2, [R6] \n\
 /* 08035b14 */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\

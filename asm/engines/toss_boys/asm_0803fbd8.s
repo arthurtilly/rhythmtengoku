@@ -52,7 +52,7 @@ branch_0803fc18: \n\
 /* 0803fc28 */ BLT branch_0803fc60 \n\
 /* 0803fc2a */ BL toss_boys_get_anim \n\
 /* 0803fc2e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803fc30 */ LDR R0, =D_03005380 \n\
+/* 0803fc30 */ LDR R0, =gSpriteHandler \n\
 /* 0803fc32 */ LDR R0, [R0] \n\
 /* 0803fc34 */ LDR R1, =gCurrentEngineData \n\
 /* 0803fc36 */ LDR R1, [R1] \n\

@@ -16,7 +16,7 @@ thumb_func_start tap_trial_common_beat_animation \n\
 /* 0803e724 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
 /* 0803e726 */ BL tap_trial_get_anim \n\
 /* 0803e72a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803e72c */ LDR R0, =D_03005380 \n\
+/* 0803e72c */ LDR R0, =gSpriteHandler \n\
 /* 0803e72e */ LDR R0, [R0] \n\
 /* 0803e730 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0803e732 */ LDR R1, [R3] \n\
@@ -39,7 +39,7 @@ branch_0803e748: \n\
 /* 0803e752 */ MOVS R0, 0x1B @ Set R0 to 0x1B \n\
 /* 0803e754 */ BL tap_trial_get_anim \n\
 /* 0803e758 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803e75a */ LDR R6, =D_03005380 \n\
+/* 0803e75a */ LDR R6, =gSpriteHandler \n\
 /* 0803e75c */ LDR R0, [R6] \n\
 /* 0803e75e */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0803e760 */ LDR R1, [R3] \n\

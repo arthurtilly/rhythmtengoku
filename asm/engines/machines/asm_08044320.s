@@ -25,7 +25,7 @@ thumb_func_start func_08044320 \n\
 /* 08044346 */ BL func_080443c0 \n\
  \n\
 branch_0804434a: \n\
-/* 0804434a */ LDR R5, =D_03005380 \n\
+/* 0804434a */ LDR R5, =gSpriteHandler \n\
 /* 0804434c */ LDR R0, [R5] \n\
 /* 0804434e */ LDR R1, [R7] \n\
 /* 08044350 */ MOVS R4, 0xD8 @ Set R4 to 0xD8 \n\

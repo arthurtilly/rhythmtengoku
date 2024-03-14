@@ -34,7 +34,7 @@ void update_affine_sprite(struct AffineSprite *affineData) {
             y += FIXED_TO_INT(affineData->offsetDistance * sins2(offsetAngleLowPrec));
         }
     }
-    sprite_set_x_y(D_03005380, affineData->sprite, x, y);
+    sprite_set_x_y(gSpriteHandler, affineData->sprite, x, y);
 
     if (affineID >= 0) {
         rotation = affineData->rotation;
@@ -65,7 +65,7 @@ struct AffineSprite *create_affine_sprite(struct Animation *anim, s8 startCel, s
     s8 affineID;
 
     // Create standard sprite.
-    sprite = sprite_create(D_03005380, anim, startCel, x, y, z, animDirection, loopCel, loopType);
+    sprite = sprite_create(gSpriteHandler, anim, startCel, x, y, z, animDirection, loopCel, loopType);
     if (sprite < 0) {
         return NULL;
     }
@@ -103,7 +103,7 @@ struct AffineSprite *create_affine_sprite(struct Animation *anim, s8 startCel, s
     assign_sprite_affine_param(sprite, affineID);
     func_080022d8(affineID);
     set_affine_stretch_rotation(affineID, affineData->scaleX, affineData->scaleY, affineData->rotation);
-    func_0804dc8c(D_03005380, sprite, (doubleSize ? 3 : 1));
+    func_0804dc8c(gSpriteHandler, sprite, (doubleSize ? 3 : 1));
 
     return affineData;
 }
@@ -115,7 +115,7 @@ struct AffineSprite *create_default_affine_sprite(struct Animation *anim, s8 sta
     struct AffineSprite *affineData;
     s16 sprite;
 
-    sprite = sprite_create(D_03005380, anim, startCel, x, y, z, animDirection, loopCel, loopType);
+    sprite = sprite_create(gSpriteHandler, anim, startCel, x, y, z, animDirection, loopCel, loopType);
     if (sprite < 0) {
         return NULL;
     }
@@ -152,7 +152,7 @@ void delete_affine_sprite(struct AffineSprite *affineData) {
         return;
     }
 
-    sprite_delete(D_03005380, affineData->sprite);
+    sprite_delete(gSpriteHandler, affineData->sprite);
     if (affineData->affineID >= 0) func_080021b8(affineData->affineID);
     mem_heap_dealloc(affineData);
 }
@@ -167,7 +167,7 @@ void affine_sprite_set_param_id(struct AffineSprite *affineData, u32 setIndex) {
     if (setIndex && (affineData->affineID < 0)) {
         affineData->affineID = scene_affine_group_alloc();
         if (affineData->affineID >= 0) {
-            func_0804dc8c(D_03005380, affineData->sprite, (affineData->doubleSize ? 3 : 1));
+            func_0804dc8c(gSpriteHandler, affineData->sprite, (affineData->doubleSize ? 3 : 1));
             assign_sprite_affine_param(affineData->sprite, affineData->affineID);
             update_affine_sprite(affineData);
         }
@@ -203,7 +203,7 @@ void affine_sprite_set_angle_size(struct AffineSprite *affineData, u32 highPreci
 // Set "Double-Size" Flag
 void affine_sprite_set_double_size(struct AffineSprite *affineData, u32 doubleSize) {
     if (affineData->affineID >= 0) {
-        func_0804dc8c(D_03005380, affineData->sprite, (doubleSize ? 3 : 1));
+        func_0804dc8c(gSpriteHandler, affineData->sprite, (doubleSize ? 3 : 1));
     }
 
     affineData->doubleSize = doubleSize;
@@ -228,7 +228,7 @@ void affine_sprite_set_x_y_z(struct AffineSprite *affineData, s16 x, s16 y, u16 
 
     affineData->x = x;
     affineData->y = y;
-    sprite_set_z(D_03005380, affineData->sprite, z);
+    sprite_set_z(gSpriteHandler, affineData->sprite, z);
     update_affine_sprite(affineData);
 }
 
@@ -273,7 +273,7 @@ void affine_sprite_set_z(struct AffineSprite *affineData, u16 z) {
         return;
     }
 
-    sprite_set_z(D_03005380, affineData->sprite, z);
+    sprite_set_z(gSpriteHandler, affineData->sprite, z);
 }
 
 
@@ -425,7 +425,7 @@ void affine_sprite_set_anim_cel(struct AffineSprite *affineData, u32 cel) {
         return;
     }
 
-    sprite_set_anim_cel(D_03005380, affineData->sprite, cel);
+    sprite_set_anim_cel(gSpriteHandler, affineData->sprite, cel);
 }
 
 
@@ -435,7 +435,7 @@ void affine_sprite_set_anim_progress(struct AffineSprite *affineData, u8 progres
         return;
     }
 
-    sprite_set_anim_progress(D_03005380, affineData->sprite, progress);
+    sprite_set_anim_progress(gSpriteHandler, affineData->sprite, progress);
 }
 
 
@@ -445,7 +445,7 @@ void affine_sprite_set_playback(struct AffineSprite *affineData, u32 direction, 
         return;
     }
 
-    sprite_set_playback(D_03005380, affineData->sprite, direction, loopCel, playbackType);
+    sprite_set_playback(gSpriteHandler, affineData->sprite, direction, loopCel, playbackType);
 }
 
 
@@ -455,7 +455,7 @@ void affine_sprite_set_visible(struct AffineSprite *affineData, u32 isVisible) {
         return;
     }
 
-    sprite_set_visible(D_03005380, affineData->sprite, isVisible);
+    sprite_set_visible(gSpriteHandler, affineData->sprite, isVisible);
 }
 
 
@@ -465,7 +465,7 @@ void affine_sprite_set_anim(struct AffineSprite *affineData, struct Animation *a
         return;
     }
 
-    sprite_set_anim(D_03005380, affineData->sprite, anim, startCel, direction, loopCel, playbackType);
+    sprite_set_anim(gSpriteHandler, affineData->sprite, anim, startCel, direction, loopCel, playbackType);
 }
 
 
@@ -475,7 +475,7 @@ void affine_sprite_set_base_palette(struct AffineSprite *affineData, u32 basePal
         return;
     }
 
-    sprite_set_base_palette(D_03005380, affineData->sprite, basePalette);
+    sprite_set_base_palette(gSpriteHandler, affineData->sprite, basePalette);
 }
 
 
@@ -485,7 +485,7 @@ void affine_sprite_set_base_tile(struct AffineSprite *affineData, u32 baseTile) 
         return;
     }
 
-    sprite_set_base_tile(D_03005380, affineData->sprite, baseTile);
+    sprite_set_base_tile(gSpriteHandler, affineData->sprite, baseTile);
 }
 
 
@@ -495,7 +495,7 @@ u32 affine_sprite_get_base_sprite_x(struct AffineSprite *affineData) {
         return;
     }
 
-    return sprite_get_data(D_03005380, affineData->sprite, 4);
+    return sprite_get_data(gSpriteHandler, affineData->sprite, 4);
 }
 
 
@@ -505,7 +505,7 @@ u32 affine_sprite_get_base_sprite_y(struct AffineSprite *affineData) {
         return;
     }
 
-    return sprite_get_data(D_03005380, affineData->sprite, 5);
+    return sprite_get_data(gSpriteHandler, affineData->sprite, 5);
 }
 
 
@@ -515,7 +515,7 @@ u32 affine_sprite_get_base_sprite_z(struct AffineSprite *affineData) {
         return;
     }
 
-    return sprite_get_data(D_03005380, affineData->sprite, 6);
+    return sprite_get_data(gSpriteHandler, affineData->sprite, 6);
 }
 
 
@@ -525,7 +525,7 @@ void affine_sprite_set_base_sprite_enable_updates(struct AffineSprite *affineDat
         return;
     }
 
-    sprite_set_enable_updates(D_03005380, affineData->sprite, canUpdate);
+    sprite_set_enable_updates(gSpriteHandler, affineData->sprite, canUpdate);
 }
 
 
@@ -535,7 +535,7 @@ void affine_sprite_set_anim_speed(struct AffineSprite *affineData, u8_8 speed) {
         return;
     }
 
-    sprite_set_anim_speed(D_03005380, affineData->sprite, speed);
+    sprite_set_anim_speed(gSpriteHandler, affineData->sprite, speed);
 }
 
 
@@ -545,7 +545,7 @@ s8 affine_sprite_get_anim_cel(struct AffineSprite *affineData) {
         return;
     }
 
-    return sprite_get_anim_cel(D_03005380, affineData->sprite);
+    return sprite_get_anim_cel(gSpriteHandler, affineData->sprite);
 }
 
 
@@ -555,7 +555,7 @@ u8 affine_sprite_get_anim_progress(struct AffineSprite *affineData) {
         return;
     }
 
-    return sprite_get_anim_progress(D_03005380, affineData->sprite);
+    return sprite_get_anim_progress(gSpriteHandler, affineData->sprite);
 }
 
 
@@ -565,7 +565,7 @@ void affine_sprite_set_attr(struct AffineSprite *affineData, u32 arg) {
         return;
     }
 
-    sprite_attr_set(D_03005380, affineData->sprite, arg);
+    sprite_attr_set(gSpriteHandler, affineData->sprite, arg);
 }
 
 
@@ -575,7 +575,7 @@ void affine_sprite_orr_attr(struct AffineSprite *affineData, u32 arg) {
         return;
     }
 
-    sprite_attr_orr(D_03005380, affineData->sprite, arg);
+    sprite_attr_orr(gSpriteHandler, affineData->sprite, arg);
 }
 
 
@@ -585,7 +585,7 @@ void affine_sprite_and_attr(struct AffineSprite *affineData, u32 arg) {
         return;
     }
 
-    sprite_attr_and(D_03005380, affineData->sprite, arg);
+    sprite_attr_and(gSpriteHandler, affineData->sprite, arg);
 }
 
 
@@ -595,7 +595,7 @@ void affine_sprite_set_callback(struct AffineSprite *affineData, void *func, u32
         return;
     }
 
-    sprite_set_callback(D_03005380, affineData->sprite, func, arg);
+    sprite_set_callback(gSpriteHandler, affineData->sprite, func, arg);
 }
 
 
@@ -605,7 +605,7 @@ void affine_sprite_set_callback_cel(struct AffineSprite *affineData, s8 arg) {
         return;
     }
 
-    sprite_set_callback_cel(D_03005380, affineData->sprite, arg);
+    sprite_set_callback_cel(gSpriteHandler, affineData->sprite, arg);
 }
 
 
@@ -615,7 +615,7 @@ u32 affine_sprite_get_total_cels(struct AffineSprite *affineData) {
         return;
     }
 
-    return sprite_get_data(D_03005380, affineData->sprite, 2);
+    return sprite_get_data(gSpriteHandler, affineData->sprite, 2);
 }
 
 
@@ -625,5 +625,5 @@ void affine_sprite_set_origin_x_y(struct AffineSprite *affineData, s16 *xOrigin,
         return;
     }
 
-    sprite_set_origin_x_y(D_03005380, affineData->sprite, xOrigin, yOrigin);
+    sprite_set_origin_x_y(gSpriteHandler, affineData->sprite, xOrigin, yOrigin);
 }

@@ -60,7 +60,7 @@ branch_0803f9fe: \n\
 /* 0803fa0a */ ASRS R0, R0, 0x18 \n\
 /* 0803fa0c */ BL toss_boys_get_anim \n\
 /* 0803fa10 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803fa12 */ LDR R0, =D_03005380 \n\
+/* 0803fa12 */ LDR R0, =gSpriteHandler \n\
 /* 0803fa14 */ LDR R0, [R0] \n\
 /* 0803fa16 */ LDR R5, =gCurrentEngineData \n\
 /* 0803fa18 */ LDR R1, [R5] \n\

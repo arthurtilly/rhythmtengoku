@@ -52,7 +52,7 @@ branch_080396d0: \n\
 /* 080396f2 */ STR R0, [R5, 0x8] \n\
  \n\
 branch_080396f4: \n\
-/* 080396f4 */ LDR R0, =D_03005380 \n\
+/* 080396f4 */ LDR R0, =gSpriteHandler \n\
 /* 080396f6 */ LDR R0, [R0] \n\
 /* 080396f8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080396fa */ LDRSH R1, [R5, R2] \n\

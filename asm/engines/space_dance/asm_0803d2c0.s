@@ -30,7 +30,7 @@ branch_0803d2e8: \n\
 /* 0803d2ea */ LDRB R0, [R1] \n\
 /* 0803d2ec */ BL space_dance_get_anim \n\
 /* 0803d2f0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803d2f2 */ LDR R0, =D_03005380 \n\
+/* 0803d2f2 */ LDR R0, =gSpriteHandler \n\
 /* 0803d2f4 */ LDR R0, [R0] \n\
 /* 0803d2f6 */ LDR R1, [R7] \n\
 /* 0803d2f8 */ LSLS R4, R5, 0x1 \n\
@@ -69,7 +69,7 @@ branch_0803d320: \n\
 /* 0803d33a */ LDRB R0, [R0] \n\
 /* 0803d33c */ BL space_dance_get_anim \n\
 /* 0803d340 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803d342 */ LDR R0, =D_03005380 \n\
+/* 0803d342 */ LDR R0, =gSpriteHandler \n\
 /* 0803d344 */ LDR R0, [R0] \n\
 /* 0803d346 */ LDR R1, [R5] \n\
 /* 0803d348 */ MOVS R3, 0x16 @ Set R3 to 0x16 \n\

@@ -30,7 +30,7 @@ jtbl_0803af1c: \n\
 .word jump_0803af7c \n\
 .word jump_0803b004 \n\
 jump_0803af30: \n\
-/* 0803af30 */ LDR R0, =D_03005380 \n\
+/* 0803af30 */ LDR R0, =gSpriteHandler \n\
 /* 0803af32 */ LDR R0, [R0] \n\
 /* 0803af34 */ LSLS R1, R4, 0x10 \n\
 /* 0803af36 */ ASRS R1, R1, 0x10 \n\
@@ -46,7 +46,7 @@ jump_0803af30: \n\
 \n\
 .ltorg \n\
 jump_0803af54: \n\
-/* 0803af54 */ LDR R0, =D_03005380 \n\
+/* 0803af54 */ LDR R0, =gSpriteHandler \n\
 /* 0803af56 */ LDR R0, [R0] \n\
 /* 0803af58 */ LSLS R1, R4, 0x10 \n\
 /* 0803af5a */ ASRS R1, R1, 0x10 \n\
@@ -63,7 +63,7 @@ jump_0803af54: \n\
 \n\
 .ltorg \n\
 jump_0803af7c: \n\
-/* 0803af7c */ LDR R6, =D_03005380 \n\
+/* 0803af7c */ LDR R6, =gSpriteHandler \n\
 /* 0803af7e */ LDR R1, [R6] \n\
 /* 0803af80 */ LSLS R0, R4, 0x10 \n\
 /* 0803af82 */ ASRS R5, R0, 0x10 \n\
@@ -96,7 +96,7 @@ branch_0803af8e: \n\
 \n\
 .ltorg \n\
 jump_0803afc8: \n\
-/* 0803afc8 */ LDR R5, =D_03005380 \n\
+/* 0803afc8 */ LDR R5, =gSpriteHandler \n\
 /* 0803afca */ LDR R0, [R5] \n\
 /* 0803afcc */ LSLS R4, R4, 0x10 \n\
 /* 0803afce */ ASRS R4, R4, 0x10 \n\
@@ -121,7 +121,7 @@ jump_0803afc8: \n\
 \n\
 .ltorg \n\
 jump_0803b004: \n\
-/* 0803b004 */ LDR R0, =D_03005380 \n\
+/* 0803b004 */ LDR R0, =gSpriteHandler \n\
 /* 0803b006 */ LDR R0, [R0] \n\
 /* 0803b008 */ LSLS R1, R4, 0x10 \n\
 /* 0803b00a */ ASRS R1, R1, 0x10 \n\

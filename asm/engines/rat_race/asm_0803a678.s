@@ -22,7 +22,7 @@ thumb_func_start func_0803a678 \n\
 /* 0803a698 */ MOVS R1, 0xA0 @ Set R1 to 0xA0 \n\
 /* 0803a69a */ LSLS R1, R1, 0x7 \n\
 /* 0803a69c */ STR R1, [R0] \n\
-/* 0803a69e */ LDR R5, =D_03005380 \n\
+/* 0803a69e */ LDR R5, =gSpriteHandler \n\
 /* 0803a6a0 */ LDR R0, [R5] \n\
 /* 0803a6a2 */ LDR R1, =anim_cat_pupils \n\
 /* 0803a6a4 */ MOVS R2, 0x94 @ Set R2 to 0x94 \n\

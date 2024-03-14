@@ -8,7 +8,7 @@ thumb_func_start func_0803cb0c \n\
 /* 0803cb10 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
 /* 0803cb12 */ BL ninja_get_anim \n\
 /* 0803cb16 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803cb18 */ LDR R0, =D_03005380 \n\
+/* 0803cb18 */ LDR R0, =gSpriteHandler \n\
 /* 0803cb1a */ LDR R0, [R0] \n\
 /* 0803cb1c */ MOVS R2, 0x49 @ Set R2 to 0x49 \n\
 /* 0803cb1e */ STR R2, [SP] \n\

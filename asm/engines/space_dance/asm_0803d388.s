@@ -45,7 +45,7 @@ branch_0803d3b6: \n\
 /* 0803d3ca */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 0803d3cc */ BL space_dance_get_anim \n\
 /* 0803d3d0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803d3d2 */ LDR R0, =D_03005380 \n\
+/* 0803d3d2 */ LDR R0, =gSpriteHandler \n\
 /* 0803d3d4 */ LDR R0, [R0] \n\
 /* 0803d3d6 */ LDR R1, [R5] \n\
 /* 0803d3d8 */ MOVS R3, 0x16 @ Set R3 to 0x16 \n\

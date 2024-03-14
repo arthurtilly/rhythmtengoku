@@ -31,7 +31,7 @@ thumb_func_start func_080404c4 \n\
 /* 080404fa */ LDR R1, [R4] \n\
 /* 080404fc */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 080404fe */ BCS branch_08040514 \n\
-/* 08040500 */ LDR R0, =D_03005380 \n\
+/* 08040500 */ LDR R0, =gSpriteHandler \n\
 /* 08040502 */ LDR R0, [R0] \n\
 /* 08040504 */ LDR R1, [R7] \n\
 /* 08040506 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
@@ -48,7 +48,7 @@ branch_08040514: \n\
 /* 08040520 */ LDR R1, [R4] \n\
 /* 08040522 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 08040524 */ BCS branch_08040534 \n\
-/* 08040526 */ LDR R0, =D_03005380 \n\
+/* 08040526 */ LDR R0, =gSpriteHandler \n\
 /* 08040528 */ LDR R0, [R0] \n\
 /* 0804052a */ LDR R1, [R7] \n\
 /* 0804052c */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
@@ -65,7 +65,7 @@ branch_08040534: \n\
 /* 08040540 */ LDR R1, [R4] \n\
 /* 08040542 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 08040544 */ BCS branch_08040554 \n\
-/* 08040546 */ LDR R0, =D_03005380 \n\
+/* 08040546 */ LDR R0, =gSpriteHandler \n\
 /* 08040548 */ LDR R0, [R0] \n\
 /* 0804054a */ LDR R1, [R7] \n\
 /* 0804054c */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
@@ -82,7 +82,7 @@ branch_08040554: \n\
 /* 08040560 */ LDR R1, [R4] \n\
 /* 08040562 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 08040564 */ BCS branch_08040574 \n\
-/* 08040566 */ LDR R0, =D_03005380 \n\
+/* 08040566 */ LDR R0, =gSpriteHandler \n\
 /* 08040568 */ LDR R0, [R0] \n\
 /* 0804056a */ LDR R1, [R7] \n\
 /* 0804056c */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
@@ -91,7 +91,7 @@ branch_08040554: \n\
 .ltorg \n\
  \n\
 branch_08040574: \n\
-/* 08040574 */ LDR R0, =D_03005380 \n\
+/* 08040574 */ LDR R0, =gSpriteHandler \n\
 /* 08040576 */ LDR R0, [R0] \n\
 /* 08040578 */ LDR R1, [R7] \n\
 /* 0804057a */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
@@ -114,7 +114,7 @@ branch_08040584: \n\
 /* 0804059c */ LDR R1, [R4] \n\
 /* 0804059e */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 080405a0 */ BCS branch_080405b4 \n\
-/* 080405a2 */ LDR R0, =D_03005380 \n\
+/* 080405a2 */ LDR R0, =gSpriteHandler \n\
 /* 080405a4 */ LDR R0, [R0] \n\
 /* 080405a6 */ LDR R1, [R7] \n\
 /* 080405a8 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
@@ -133,7 +133,7 @@ branch_080405b4: \n\
 /* 080405c4 */ BCS branch_080405e0 \n\
  \n\
 branch_080405c6: \n\
-/* 080405c6 */ LDR R0, =D_03005380 \n\
+/* 080405c6 */ LDR R0, =gSpriteHandler \n\
 /* 080405c8 */ LDR R0, [R0] \n\
 /* 080405ca */ LDR R1, [R7] \n\
 /* 080405cc */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
@@ -146,7 +146,7 @@ branch_080405c6: \n\
 .ltorg \n\
  \n\
 branch_080405e0: \n\
-/* 080405e0 */ LDR R0, =D_03005380 \n\
+/* 080405e0 */ LDR R0, =gSpriteHandler \n\
 /* 080405e2 */ LDR R0, [R0] \n\
 /* 080405e4 */ LDR R1, [R7] \n\
 /* 080405e6 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
@@ -205,7 +205,7 @@ branch_080405f8: \n\
 /* 08040658 */ BCS branch_08040678 \n\
  \n\
 branch_0804065a: \n\
-/* 0804065a */ LDR R0, =D_03005380 \n\
+/* 0804065a */ LDR R0, =gSpriteHandler \n\
 /* 0804065c */ LDR R0, [R0] \n\
 /* 0804065e */ LDR R1, [R6] \n\
 /* 08040660 */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\
@@ -228,7 +228,7 @@ branch_08040678: \n\
 /* 08040688 */ BCS branch_080406a4 \n\
  \n\
 branch_0804068a: \n\
-/* 0804068a */ LDR R0, =D_03005380 \n\
+/* 0804068a */ LDR R0, =gSpriteHandler \n\
 /* 0804068c */ LDR R0, [R0] \n\
 /* 0804068e */ LDR R1, [R6] \n\
 /* 08040690 */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\
@@ -253,7 +253,7 @@ branch_080406a4: \n\
 /* 080406b4 */ BCS branch_080406d0 \n\
  \n\
 branch_080406b6: \n\
-/* 080406b6 */ LDR R0, =D_03005380 \n\
+/* 080406b6 */ LDR R0, =gSpriteHandler \n\
 /* 080406b8 */ LDR R0, [R0] \n\
 /* 080406ba */ LDR R1, [R6] \n\
 /* 080406bc */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\
@@ -276,7 +276,7 @@ branch_080406d0: \n\
 /* 080406dc */ LDR R1, [R4] \n\
 /* 080406de */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 080406e0 */ BCS branch_080406fc \n\
-/* 080406e2 */ LDR R0, =D_03005380 \n\
+/* 080406e2 */ LDR R0, =gSpriteHandler \n\
 /* 080406e4 */ LDR R0, [R0] \n\
 /* 080406e6 */ LDR R1, [R6] \n\
 /* 080406e8 */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\
@@ -291,7 +291,7 @@ branch_080406ea: \n\
 .ltorg \n\
  \n\
 branch_080406fc: \n\
-/* 080406fc */ LDR R0, =D_03005380 \n\
+/* 080406fc */ LDR R0, =gSpriteHandler \n\
 /* 080406fe */ LDR R0, [R0] \n\
 /* 08040700 */ LDR R1, [R6] \n\
 /* 08040702 */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\

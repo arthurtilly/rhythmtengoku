@@ -15,7 +15,7 @@ thumb_func_start func_080231c8 \n\
 /* 080231da */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
  \n\
 branch_080231dc: \n\
-/* 080231dc */ LDR R0, =D_03005380 \n\
+/* 080231dc */ LDR R0, =gSpriteHandler \n\
 /* 080231de */ LDR R5, [R0] \n\
 /* 080231e0 */ LDR R2, =gCurrentEngineData \n\
 /* 080231e2 */ MOV R8, R2 @ Set R8 to R2 \n\
@@ -50,7 +50,7 @@ branch_080231dc: \n\
 /* 08023222 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
  \n\
 branch_08023224: \n\
-/* 08023224 */ LDR R0, =D_03005380 \n\
+/* 08023224 */ LDR R0, =gSpriteHandler \n\
 /* 08023226 */ LDR R5, [R0] \n\
 /* 08023228 */ LDR R0, =gCurrentEngineData \n\
 /* 0802322a */ LDR R0, [R0] \n\

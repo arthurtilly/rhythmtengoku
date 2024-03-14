@@ -47,7 +47,7 @@ branch_08027d58: \n\
 /* 08027d66 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 08027d68 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08027d6a */ BEQ branch_08027de8 \n\
-/* 08027d6c */ LDR R0, =D_03005380 \n\
+/* 08027d6c */ LDR R0, =gSpriteHandler \n\
 /* 08027d6e */ LDR R0, [R0] \n\
 /* 08027d70 */ MOVS R3, 0xAC @ Set R3 to 0xAC \n\
 /* 08027d72 */ LSLS R3, R3, 0x3 \n\
@@ -75,7 +75,7 @@ branch_08027da0: \n\
 /* 08027da6 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 08027da8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08027daa */ BEQ branch_08027de8 \n\
-/* 08027dac */ LDR R0, =D_03005380 \n\
+/* 08027dac */ LDR R0, =gSpriteHandler \n\
 /* 08027dae */ LDR R0, [R0] \n\
 /* 08027db0 */ MOVS R3, 0xAC @ Set R3 to 0xAC \n\
 /* 08027db2 */ LSLS R3, R3, 0x3 \n\

@@ -16,7 +16,7 @@ thumb_func_start func_080320c8 \n\
 /* 080320dc */ LDR R0, =0xfffffe80 \n\
 /* 080320de */ ADDS R2, R2, R0 @ Set R2 to R2 + R0 \n\
 /* 080320e0 */ STR R2, [R6, 0x8] \n\
-/* 080320e2 */ LDR R5, =D_03005380 \n\
+/* 080320e2 */ LDR R5, =gSpriteHandler \n\
 /* 080320e4 */ LDR R0, [R5] \n\
 /* 080320e6 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 080320e8 */ LDRSH R1, [R6, R4] \n\
@@ -92,7 +92,7 @@ branch_0803217e: \n\
 /* 08032184 */ NEGS R1, R1 @ Set R1 to -R1 \n\
 /* 08032186 */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 08032188 */ BGT branch_080321a8 \n\
-/* 0803218a */ LDR R4, =D_03005380 \n\
+/* 0803218a */ LDR R4, =gSpriteHandler \n\
 /* 0803218c */ LDR R0, [R4] \n\
 /* 0803218e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08032190 */ LDRSH R1, [R6, R2] \n\

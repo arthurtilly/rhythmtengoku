@@ -20,7 +20,7 @@ branch_08022a92: \n\
 /* 08022a94 */ LSLS R0, R0, 0x2 \n\
 /* 08022a96 */ SUBS R0, R1, R0 @ Set R0 to R1 - R0 \n\
 /* 08022a98 */ STRB R0, [R4, 0xA] \n\
-/* 08022a9a */ LDR R5, =D_03005380 \n\
+/* 08022a9a */ LDR R5, =gSpriteHandler \n\
 /* 08022a9c */ LDR R0, [R5] \n\
 /* 08022a9e */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08022aa0 */ LDRSH R1, [R4, R2] \n\

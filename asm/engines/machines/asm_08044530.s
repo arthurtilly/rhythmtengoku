@@ -47,7 +47,7 @@ thumb_func_start rhythm_toys_engine_start \n\
 /* 0804458e */ BL func_08044248 \n\
 /* 08044592 */ LSLS R0, R0, 0x10 \n\
 /* 08044594 */ ASRS R0, R0, 0x10 \n\
-/* 08044596 */ LDR R3, =D_03005380 \n\
+/* 08044596 */ LDR R3, =gSpriteHandler \n\
 /* 08044598 */ LDR R1, [R3] \n\
 /* 0804459a */ STR R0, [SP] \n\
 /* 0804459c */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
@@ -85,7 +85,7 @@ thumb_func_start rhythm_toys_engine_start \n\
 /* 080445e2 */ BL func_08044248 \n\
 /* 080445e6 */ LSLS R0, R0, 0x10 \n\
 /* 080445e8 */ ASRS R0, R0, 0x10 \n\
-/* 080445ea */ LDR R2, =D_03005380 \n\
+/* 080445ea */ LDR R2, =gSpriteHandler \n\
 /* 080445ec */ LDR R1, [R2] \n\
 /* 080445ee */ STR R0, [SP] \n\
 /* 080445f0 */ LDR R0, =0x7ff \n\
@@ -152,7 +152,7 @@ branch_0804465c: \n\
 /* 08044676 */ BL func_08044248 \n\
 /* 0804467a */ LSLS R0, R0, 0x10 \n\
 /* 0804467c */ ASRS R0, R0, 0x10 \n\
-/* 0804467e */ LDR R1, =D_03005380 \n\
+/* 0804467e */ LDR R1, =gSpriteHandler \n\
 /* 08044680 */ LDR R1, [R1] \n\
 /* 08044682 */ STR R0, [SP] \n\
 /* 08044684 */ MOVS R0, 0xE0 @ Set R0 to 0xE0 \n\

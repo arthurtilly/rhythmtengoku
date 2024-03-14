@@ -74,7 +74,7 @@ branch_0803f82c: \n\
 /* 0803f854 */ LDRB R0, [R0] \n\
 /* 0803f856 */ BL toss_boys_get_anim \n\
 /* 0803f85a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803f85c */ LDR R3, =D_03005380 \n\
+/* 0803f85c */ LDR R3, =gSpriteHandler \n\
 /* 0803f85e */ MOV R9, R3 @ Set R9 to R3 \n\
 /* 0803f860 */ LDR R0, [R3] \n\
 /* 0803f862 */ LDR R3, [R5] \n\

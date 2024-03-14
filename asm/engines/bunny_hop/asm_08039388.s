@@ -23,7 +23,7 @@ thumb_func_start func_08039388 \n\
 /* 080393b0 */ BLE branch_080393de \n\
 /* 080393b2 */ LDR R0, =s_rabbit_moon_seqData \n\
 /* 080393b4 */ BL play_sound \n\
-/* 080393b8 */ LDR R4, =D_03005380 \n\
+/* 080393b8 */ LDR R4, =gSpriteHandler \n\
 /* 080393ba */ LDR R0, [R4] \n\
 /* 080393bc */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 080393be */ LDRSH R1, [R6, R2] \n\
@@ -42,7 +42,7 @@ thumb_func_start func_08039388 \n\
 /* 080393dc */ STRB R0, [R5, 0x2] \n\
  \n\
 branch_080393de: \n\
-/* 080393de */ LDR R0, =D_03005380 \n\
+/* 080393de */ LDR R0, =gSpriteHandler \n\
 /* 080393e0 */ LDR R0, [R0] \n\
 /* 080393e2 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 080393e4 */ LDRSH R1, [R6, R2] \n\

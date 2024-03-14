@@ -231,7 +231,7 @@ void gameplay_set_current_engine(const struct GameEngine *engine, u32 version) {
         if (gGameplay->gameEngineData != NULL) {
             mem_heap_dealloc(gGameplay->gameEngineData);
         }
-        sprite_id_delete(D_03005380, get_current_mem_id());
+        sprite_id_delete(gSpriteHandler, get_current_mem_id());
         func_0800222c(get_current_mem_id());
         task_pool_force_cancel_id(get_current_mem_id());
         mem_heap_dealloc_with_id(get_current_mem_id());
@@ -413,24 +413,24 @@ void gameplay_set_tutorial(struct Scene *scene) {
     if (scene != NULL) {
         gameplay_enable_tutorial(TRUE);
         gameplay_set_skip_destination(scene);
-        sprite_set_visible(D_03005380, gGameplay->skipTutorialSprite, TRUE);
+        sprite_set_visible(gSpriteHandler, gGameplay->skipTutorialSprite, TRUE);
     } else {
         gameplay_enable_tutorial(FALSE);
         gameplay_set_skip_destination(NULL);
-        sprite_set_visible(D_03005380, gGameplay->skipTutorialSprite, FALSE);
+        sprite_set_visible(gSpriteHandler, gGameplay->skipTutorialSprite, FALSE);
     }
 }
 
 
 // [func_080174e8] Display Skip Tutorial Icon
 void gameplay_display_skip_icon(u32 corner) {
-    sprite_set_anim_cel(D_03005380, gGameplay->skipTutorialSprite, corner);
+    sprite_set_anim_cel(gSpriteHandler, gGameplay->skipTutorialSprite, corner);
 }
 
 
 // [func_08017514] Skip Tutorial
 void gameplay_skip_tutorial(void) {
-    sprite_id_set_enable_updates(D_03005380, get_current_mem_id(), 1);
+    sprite_id_set_enable_updates(gSpriteHandler, get_current_mem_id(), 1);
     task_pool_pause_id(get_current_mem_id(), TRUE);
     set_pause_beatscript_scene(FALSE);
     func_0801d968(D_089cfda4);
@@ -493,7 +493,7 @@ void gameplay_start_perfect_campaign(void) {
 
     if (!gGameplay->goingForPerfect) {
         gGameplay->goingForPerfect = TRUE;
-        sprite_set_visible(D_03005380, gGameplay->perfectSprite, TRUE);
+        sprite_set_visible(gSpriteHandler, gGameplay->perfectSprite, TRUE);
     }
 }
 
@@ -507,7 +507,7 @@ void gameplay_check_for_perfect(u32 assessInputs) {
 // [func_0801765c] Register Imperfect Input
 void gameplay_register_imperfect_input(void) {
     if (!gGameplay->perfectFailed && gGameplay->goingForPerfect && gGameplay->assessPerfectInputs) {
-        sprite_set_anim(D_03005380, gGameplay->perfectSprite, anim_gameplay_perfect_miss, 0, 1, 0, 2);
+        sprite_set_anim(gSpriteHandler, gGameplay->perfectSprite, anim_gameplay_perfect_miss, 0, 1, 0, 2);
         play_sound(&s_f_fail_perfect_seqData);
         gGameplay->perfectFailed = TRUE;
     }
@@ -517,7 +517,7 @@ void gameplay_register_imperfect_input(void) {
 // [func_080176cc] Register Perfect Input
 void gameplay_register_perfect_input(void) {
     if (!gGameplay->perfectFailed && gGameplay->goingForPerfect && gGameplay->assessPerfectInputs) {
-        sprite_set_anim(D_03005380, gGameplay->perfectSprite, anim_gameplay_perfect_hit, 0, 1, 0x7f, 0);
+        sprite_set_anim(gSpriteHandler, gGameplay->perfectSprite, anim_gameplay_perfect_hit, 0, 1, 0x7f, 0);
     }
 }
 
@@ -578,7 +578,7 @@ void gameplay_set_mercy_count(u32 total) {
 void gameplay_stop_scene(void) {
     struct Scene *tempScene;
 
-    sprite_id_delete(D_03005380, 16);
+    sprite_id_delete(gSpriteHandler, 16);
     gameplay_reset_cues(); // Reset Cues
     if (gGameplay->gameEngine->closeFunc != NULL) {
         gGameplay->gameEngine->closeFunc();
@@ -1181,18 +1181,18 @@ void gameplay_get_previous_cue_info(struct Cue *cue, struct Cue **prev, void **i
 void gameplay_init_overlay(void) {
     u32 memID;
 
-    memID = sprite_handler_get_mem_id(D_03005380);
-    sprite_handler_set_mem_id(D_03005380, 16);
-    gGameplay->pauseSprite = sprite_create(D_03005380, anim_gameplay_pause_title, 0, 120, 80, 0, 1, 0, 0x8000);
-    gGameplay->pauseOptionsSprite = sprite_create(D_03005380, anim_gameplay_pause_option1, 0, 120, 80, 0, 1, 0, 0x8000);
-    gGameplay->skipTutorialSprite = sprite_create(D_03005380, anim_gameplay_skip_icon, 0, 120, 80, 0, 0, 0, 0x8000);
-    gGameplay->aButtonSprite = sprite_create(D_03005380, anim_gameplay_text_button_black, 0, 64, 64, 0x64, 1, 0, 0x8000);
-    gGameplay->perfectSprite = sprite_create(D_03005380, anim_gameplay_perfect_icon, 0, 230, 10, 0x5A, 1, 0x7f, 0x8000);
-    sprite_set_paused(D_03005380, gGameplay->pauseSprite, 1);
-    sprite_set_paused(D_03005380, gGameplay->pauseOptionsSprite, 1);
-    sprite_id_set_base_tile(D_03005380, 16, 960);
-    sprite_id_set_base_palette(D_03005380, 16, 14);
-    sprite_handler_set_mem_id(D_03005380, memID);
+    memID = sprite_handler_get_mem_id(gSpriteHandler);
+    sprite_handler_set_mem_id(gSpriteHandler, 16);
+    gGameplay->pauseSprite = sprite_create(gSpriteHandler, anim_gameplay_pause_title, 0, 120, 80, 0, 1, 0, 0x8000);
+    gGameplay->pauseOptionsSprite = sprite_create(gSpriteHandler, anim_gameplay_pause_option1, 0, 120, 80, 0, 1, 0, 0x8000);
+    gGameplay->skipTutorialSprite = sprite_create(gSpriteHandler, anim_gameplay_skip_icon, 0, 120, 80, 0, 0, 0, 0x8000);
+    gGameplay->aButtonSprite = sprite_create(gSpriteHandler, anim_gameplay_text_button_black, 0, 64, 64, 0x64, 1, 0, 0x8000);
+    gGameplay->perfectSprite = sprite_create(gSpriteHandler, anim_gameplay_perfect_icon, 0, 230, 10, 0x5A, 1, 0x7f, 0x8000);
+    sprite_set_paused(gSpriteHandler, gGameplay->pauseSprite, 1);
+    sprite_set_paused(gSpriteHandler, gGameplay->pauseOptionsSprite, 1);
+    sprite_id_set_base_tile(gSpriteHandler, 16, 960);
+    sprite_id_set_base_palette(gSpriteHandler, 16, 14);
+    sprite_handler_set_mem_id(gSpriteHandler, memID);
 }
 
 
@@ -1229,10 +1229,10 @@ void gameplay_pause_menu_lighten_screen(void) {
 void gameplay_start_pause_menu(void) {
     gGameplay->unpausing = FALSE;
     gGameplay->currentPauseOption = PAUSE_OPTION_CONTINUE;
-    sprite_set_anim_cel(D_03005380, gGameplay->pauseSprite, 0);
-    sprite_set_anim(D_03005380, gGameplay->pauseOptionsSprite, anim_gameplay_pause_option1, 0, 1, 0, 0);
-    sprite_set_visible(D_03005380, gGameplay->pauseSprite, TRUE);
-    sprite_set_visible(D_03005380, gGameplay->pauseOptionsSprite, TRUE);
+    sprite_set_anim_cel(gSpriteHandler, gGameplay->pauseSprite, 0);
+    sprite_set_anim(gSpriteHandler, gGameplay->pauseOptionsSprite, anim_gameplay_pause_option1, 0, 1, 0, 0);
+    sprite_set_visible(gSpriteHandler, gGameplay->pauseSprite, TRUE);
+    sprite_set_visible(gSpriteHandler, gGameplay->pauseOptionsSprite, TRUE);
     gameplay_pause_menu_darken_screen();
     play_sound(&s_f_pause_on_seqData);
 }
@@ -1243,17 +1243,17 @@ s32 gameplay_update_pause_menu(void) {
     if (!gGameplay->unpausing) {
         if (D_03004afc & DPAD_LEFT) {
             gGameplay->currentPauseOption = PAUSE_OPTION_CONTINUE;
-            sprite_set_anim(D_03005380, gGameplay->pauseOptionsSprite, anim_gameplay_pause_option1, 0, 1, 0, 0);
+            sprite_set_anim(gSpriteHandler, gGameplay->pauseOptionsSprite, anim_gameplay_pause_option1, 0, 1, 0, 0);
             play_sound(&s_f_pause_cursor_seqData);
         }
         if (D_03004afc & DPAD_RIGHT) {
             gGameplay->currentPauseOption = PAUSE_OPTION_QUIT;
-            sprite_set_anim(D_03005380, gGameplay->pauseOptionsSprite, anim_gameplay_pause_option2, 0, 1, 0, 0);
+            sprite_set_anim(gSpriteHandler, gGameplay->pauseOptionsSprite, anim_gameplay_pause_option2, 0, 1, 0, 0);
             play_sound(&s_f_pause_cursor_seqData);
         }
         if (D_03004afc & A_BUTTON) {
-            sprite_set_visible(D_03005380, gGameplay->pauseSprite, FALSE);
-            sprite_set_visible(D_03005380, gGameplay->pauseOptionsSprite, FALSE);
+            sprite_set_visible(gSpriteHandler, gGameplay->pauseSprite, FALSE);
+            sprite_set_visible(gSpriteHandler, gGameplay->pauseOptionsSprite, FALSE);
             if (gGameplay->currentPauseOption == PAUSE_OPTION_CONTINUE) {
                 gGameplay->unpausing = TRUE;
                 play_sound(&s_f_pause_continue_seqData);
@@ -1265,8 +1265,8 @@ s32 gameplay_update_pause_menu(void) {
             }
         }
         if (D_03004afc & (B_BUTTON | START_BUTTON)) {
-            sprite_set_visible(D_03005380, gGameplay->pauseSprite, FALSE);
-            sprite_set_visible(D_03005380, gGameplay->pauseOptionsSprite, FALSE);
+            sprite_set_visible(gSpriteHandler, gGameplay->pauseSprite, FALSE);
+            sprite_set_visible(gSpriteHandler, gGameplay->pauseOptionsSprite, FALSE);
             gGameplay->unpausing = TRUE;
             play_sound(&s_f_pause_continue_seqData);
             return PAUSE_MENU_SELECTION_PENDING;
@@ -1293,22 +1293,22 @@ void gameplay_init_pause_menu(void) {
 
 // [func_0801853c] Set Skip Tutorial Icon Display
 void gameplay_set_skip_icon(u32 corner, u32 show) {
-    sprite_set_anim_cel(D_03005380, gGameplay->skipTutorialSprite, corner);
-    sprite_set_visible(D_03005380, gGameplay->skipTutorialSprite, show);
+    sprite_set_anim_cel(gSpriteHandler, gGameplay->skipTutorialSprite, corner);
+    sprite_set_visible(gSpriteHandler, gGameplay->skipTutorialSprite, show);
 }
 
 
 // [func_0801858c] Set Text Button Style
 void gameplay_set_text_advance_icon(u32 style) {
-    sprite_set_anim(D_03005380, gGameplay->aButtonSprite, gameplay_text_adv_icons[style], 0, 1, 0, 0);
+    sprite_set_anim(gSpriteHandler, gGameplay->aButtonSprite, gameplay_text_adv_icons[style], 0, 1, 0, 0);
 }
 
 
 // [func_080185d0] Display A Button Prompt
 void gameplay_display_text_advance_icon(s16 x, s16 y, s32 show) {
-    sprite_set_visible(D_03005380, gGameplay->aButtonSprite, show);
+    sprite_set_visible(gSpriteHandler, gGameplay->aButtonSprite, show);
     if (show) {
-        sprite_set_x_y(D_03005380, gGameplay->aButtonSprite, x, y);
+        sprite_set_x_y(gSpriteHandler, gGameplay->aButtonSprite, x, y);
     }
 }
 
@@ -1404,7 +1404,7 @@ void gameplay_set_text_y(s32 y) {
 
 // Set Text Z Position (Sprite Depth/Layer)
 void gameplay_set_text_z(u16 z) {
-    sprite_set_z(D_03005380, gGameplay->aButtonSprite, z);
+    sprite_set_z(gSpriteHandler, gGameplay->aButtonSprite, z);
 
     if (gGameplay->textPrinter != NULL) {
         text_printer_set_layer(gGameplay->textPrinter, z);

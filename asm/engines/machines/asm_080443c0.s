@@ -17,7 +17,7 @@ thumb_func_start func_080443c0 \n\
 /* 080443d6 */ LDRB R0, [R0] \n\
 /* 080443d8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080443da */ BEQ branch_08044414 \n\
-/* 080443dc */ LDR R4, =D_03005380 \n\
+/* 080443dc */ LDR R4, =gSpriteHandler \n\
 /* 080443de */ LDR R0, [R4] \n\
 /* 080443e0 */ MOVS R5, 0xD8 @ Set R5 to 0xD8 \n\
 /* 080443e2 */ LSLS R5, R5, 0x2 \n\

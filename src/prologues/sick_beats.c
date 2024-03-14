@@ -48,8 +48,8 @@ void sick_beats_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = sprite_create(D_03005380, anim_sick_beats_prologue_title, 0, 96, 17, 0, 0, 0x7f, 0);
-    gPrologueEngineData->virusSprite = sprite_create(D_03005380, anim_sick_beats_prologue_virus, 0, 160, 48, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_sick_beats_prologue_title, 0, 96, 17, 0, 0, 0x7f, 0);
+    gPrologueEngineData->virusSprite = sprite_create(gSpriteHandler, anim_sick_beats_prologue_virus, 0, 160, 48, 0, 0, 0x7f, 0);
 }
 
 
@@ -70,6 +70,6 @@ void sick_beats_prologue_engine_stop(void) {
 
 // [func_08047d0c] Event 0 - Play Animation (Text), Play Animation (Virus)
 void func_08047d0c(void) {
-    sprite_set_playback(D_03005380, gPrologueEngineData->textSprite, 1, 0x7f, 0);
-    sprite_set_playback(D_03005380, gPrologueEngineData->virusSprite, 1, 0x7f, 0);
+    sprite_set_playback(gSpriteHandler, gPrologueEngineData->textSprite, 1, 0x7f, 0);
+    sprite_set_playback(gSpriteHandler, gPrologueEngineData->virusSprite, 1, 0x7f, 0);
 }

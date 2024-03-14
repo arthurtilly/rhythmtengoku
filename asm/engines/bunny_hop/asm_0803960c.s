@@ -21,7 +21,7 @@ thumb_func_start func_0803960c \n\
 /* 0803962e */ LDR R3, =0x400a \n\
  \n\
 branch_08039630: \n\
-/* 08039630 */ LDR R4, =D_03005380 \n\
+/* 08039630 */ LDR R4, =gSpriteHandler \n\
 /* 08039632 */ LDR R0, [R4] \n\
 /* 08039634 */ LDR R1, =anim_bunny_hop_cloud \n\
 /* 08039636 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\

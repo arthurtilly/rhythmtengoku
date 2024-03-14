@@ -48,8 +48,8 @@ void tap_trial_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = sprite_create(D_03005380, anim_tap_trial_prologue_title, 0, 120, 80, 0, 1, 0x7f, 0x8000);
-    sprite_set_anim_speed(D_03005380, gPrologueEngineData->textSprite, INT_TO_FIXED(1.5));
+    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_tap_trial_prologue_title, 0, 120, 80, 0, 1, 0x7f, 0x8000);
+    sprite_set_anim_speed(gSpriteHandler, gPrologueEngineData->textSprite, INT_TO_FIXED(1.5));
 }
 
 
@@ -70,11 +70,11 @@ void tap_trial_prologue_engine_stop(void) {
 
 // [func_08047770] Event 0 - Set Animation Frame (Text)
 void func_08047770(u32 frame) {
-    sprite_set_anim_cel(D_03005380, gPrologueEngineData->textSprite, frame);
+    sprite_set_anim_cel(gSpriteHandler, gPrologueEngineData->textSprite, frame);
 }
 
 
 // [func_08047794] Event 1 - Animate Text
 void func_08047794(void) {
-    sprite_set_visible(D_03005380, gPrologueEngineData->textSprite, TRUE);
+    sprite_set_visible(gSpriteHandler, gPrologueEngineData->textSprite, TRUE);
 }

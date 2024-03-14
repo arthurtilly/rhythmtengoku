@@ -138,13 +138,13 @@ s16 studio_song_list_get_sprite(s32 line) {
 
     switch (D_030046a8->data.studioSongs[line].unk3 & 3u) {
         case 0:
-            return sprite_create(D_03005380, anim_studio_item_marker_check, 0, 64, 64, 0, 0, 0, 0);
+            return sprite_create(gSpriteHandler, anim_studio_item_marker_check, 0, 64, 64, 0, 0, 0, 0);
 
         case 1:
-            return sprite_create(D_03005380, anim_studio_item_markers, D_030046a8->data.studioSongs[line].replayID, 118, 96, 0, 0, 0, 0);
+            return sprite_create(gSpriteHandler, anim_studio_item_markers, D_030046a8->data.studioSongs[line].replayID, 118, 96, 0, 0, 0, 0);
 
         case 3:
-            return sprite_create(D_03005380, anim_studio_item_marker_replay, D_030046a8->data.studioSongs[line].replayID, 64, 64, 0, 0, 0, 0);
+            return sprite_create(gSpriteHandler, anim_studio_item_marker_replay, D_030046a8->data.studioSongs[line].replayID, 64, 64, 0, 0, 0, 0);
 
         default:
             return -1;
@@ -259,7 +259,7 @@ void studio_song_list_update(void) {
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
             gStudio->selectedItem = listbox_get_sel_item(gStudio->songList);
             listbox_link_sprite_x_y_to_line(gStudio->songList, gStudio->itemMoveHighlight, gStudio->selectedItem);
-            sprite_set_visible(D_03005380, gStudio->itemMoveHighlight, TRUE);
+            sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, TRUE);
             gStudio->sceneState = STUDIO_STATE_EDIT_VIA_SONG_LIST;
             break;
 
@@ -335,7 +335,7 @@ void studio_song_list_update_w_selection(void) {
             if (songItem != gStudio->selectedItem) {
                 studio_song_list_move_item(gStudio->selectedItem, songItem);
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
-                sprite_set_visible(D_03005380, gStudio->itemMoveHighlight, FALSE);
+                sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, FALSE);
                 listbox_set_sel_sprite(gStudio->songList, anim_studio_selection_item);
                 gStudio->sceneState = STUDIO_STATE_NAV_SONG_LIST;
                 break;
@@ -343,7 +343,7 @@ void studio_song_list_update_w_selection(void) {
 
         case STUDIO_LIST_EV_CANCEL:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
-            sprite_set_visible(D_03005380, gStudio->itemMoveHighlight, FALSE);
+            sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, FALSE);
             listbox_set_sel_sprite(gStudio->songList, anim_studio_selection_item);
             gStudio->sceneState = STUDIO_STATE_NAV_SONG_LIST;
             break;

@@ -43,7 +43,7 @@ branch_08037910: \n\
 /* 08037918 */ B branch_08037a54 \n\
  \n\
 branch_0803791a: \n\
-/* 0803791a */ LDR R4, =D_03005380 \n\
+/* 0803791a */ LDR R4, =gSpriteHandler \n\
 /* 0803791c */ LDR R0, [R4] \n\
 /* 0803791e */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08037920 */ LDRSH R1, [R5, R2] \n\
@@ -87,7 +87,7 @@ branch_08037966: \n\
 /* 0803796a */ B branch_08037a5a \n\
  \n\
 branch_0803796c: \n\
-/* 0803796c */ LDR R4, =D_03005380 \n\
+/* 0803796c */ LDR R4, =gSpriteHandler \n\
 /* 0803796e */ LDR R0, [R4] \n\
 /* 08037970 */ LDR R5, =gCurrentEngineData \n\
 /* 08037972 */ LDR R1, [R5] \n\
@@ -121,7 +121,7 @@ branch_0803796c: \n\
 .ltorg \n\
  \n\
 branch_080379c4: \n\
-/* 080379c4 */ LDR R4, =D_03005380 \n\
+/* 080379c4 */ LDR R4, =gSpriteHandler \n\
 /* 080379c6 */ LDR R0, [R4] \n\
 /* 080379c8 */ LDR R5, =gCurrentEngineData \n\
 /* 080379ca */ LDR R1, [R5] \n\
@@ -155,7 +155,7 @@ branch_080379c4: \n\
 .ltorg \n\
  \n\
 branch_08037a1c: \n\
-/* 08037a1c */ LDR R0, =D_03005380 \n\
+/* 08037a1c */ LDR R0, =gSpriteHandler \n\
 /* 08037a1e */ LDR R0, [R0] \n\
 /* 08037a20 */ LDR R1, =anim_quiz_show_explode_sign \n\
 /* 08037a22 */ MOVS R2, 0x2D @ Set R2 to 0x2D \n\

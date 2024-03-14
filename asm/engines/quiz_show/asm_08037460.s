@@ -107,7 +107,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 0803754a */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 0803754c */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 0803754e */ ADDS R7, 0x8 @ Add 0x8 to R7 \n\
-/* 08037550 */ LDR R5, =D_03005380 \n\
+/* 08037550 */ LDR R5, =gSpriteHandler \n\
 /* 08037552 */ LDR R0, [R5] \n\
 /* 08037554 */ LDR R1, =anim_quiz_show_host_body \n\
 /* 08037556 */ MOVS R6, 0x50 @ Set R6 to 0x50 \n\

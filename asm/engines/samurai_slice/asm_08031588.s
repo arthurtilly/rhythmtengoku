@@ -17,7 +17,7 @@ thumb_func_start samurai_slice_cue_barely \n\
 /* 0803159e */ ADDS R1, R2, R0 @ Set R1 to R2 + R0 \n\
 /* 080315a0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080315a2 */ STRH R0, [R1] \n\
-/* 080315a4 */ LDR R4, =D_03005380 \n\
+/* 080315a4 */ LDR R4, =gSpriteHandler \n\
 /* 080315a6 */ LDR R0, [R4] \n\
 /* 080315a8 */ MOVS R3, 0xED @ Set R3 to 0xED \n\
 /* 080315aa */ LSLS R3, R3, 0x1 \n\
@@ -130,7 +130,7 @@ branch_0803168a: \n\
 /* 0803168a */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803168c */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 0803168e */ STRB R0, [R6, 0x4] \n\
-/* 08031690 */ LDR R4, =D_03005380 \n\
+/* 08031690 */ LDR R4, =gSpriteHandler \n\
 /* 08031692 */ LDR R0, [R4] \n\
 /* 08031694 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08031696 */ LDRSH R1, [R6, R2] \n\

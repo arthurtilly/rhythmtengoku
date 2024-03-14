@@ -7,7 +7,7 @@ thumb_func_start func_080372e8 \n\
 /* 080372ea */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 080372ec */ PUSH {R6} \n\
 /* 080372ee */ SUB SP, 0x1C \n\
-/* 080372f0 */ LDR R0, =D_03005380 \n\
+/* 080372f0 */ LDR R0, =gSpriteHandler \n\
 /* 080372f2 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080372f4 */ LDR R0, [R0] \n\
 /* 080372f6 */ LDR R1, =anim_quiz_show_clock \n\

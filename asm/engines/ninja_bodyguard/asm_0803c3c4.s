@@ -9,7 +9,7 @@ thumb_func_start func_0803c3c4 \n\
 /* 0803c3cc */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
  \n\
 branch_0803c3ce: \n\
-/* 0803c3ce */ LDR R0, =D_03005380 \n\
+/* 0803c3ce */ LDR R0, =gSpriteHandler \n\
 /* 0803c3d0 */ LDR R0, [R0] \n\
 /* 0803c3d2 */ LDR R1, =gCurrentEngineData \n\
 /* 0803c3d4 */ LDR R1, [R1] \n\

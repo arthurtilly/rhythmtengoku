@@ -155,7 +155,7 @@ extern struct GraphicsBuffer {
   //  //  //  SPRITE HANDLER (LIBRARY)  //  //  //
 
 
-extern struct SpriteHandler *D_03005380; // gSpriteHandler
+extern struct SpriteHandler *gSpriteHandler; // gSpriteHandler
 
 
   //  //  //  SCENE GRAPHICS  //  //  //

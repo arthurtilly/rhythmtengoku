@@ -125,7 +125,7 @@ branch_0803f28c: \n\
 /* 0803f2e2 */ LSLS R3, R3, 0x2 \n\
 /* 0803f2e4 */ ADDS R1, R2, R3 @ Set R1 to R2 + R3 \n\
 /* 0803f2e6 */ STR R0, [R1] \n\
-/* 0803f2e8 */ LDR R4, =D_03005380 \n\
+/* 0803f2e8 */ LDR R4, =gSpriteHandler \n\
 /* 0803f2ea */ LDR R0, [R4] \n\
 /* 0803f2ec */ ADD R2, R9 @ Add R9 to R2 \n\
 /* 0803f2ee */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\

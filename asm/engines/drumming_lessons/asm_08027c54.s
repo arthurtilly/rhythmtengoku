@@ -12,7 +12,7 @@ thumb_func_start func_08027c54 \n\
 /* 08027c60 */ LDR R0, [R0] \n\
 /* 08027c62 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08027c64 */ BL text_printer_set_string \n\
-/* 08027c68 */ LDR R0, =D_03005380 \n\
+/* 08027c68 */ LDR R0, =gSpriteHandler \n\
 /* 08027c6a */ LDR R0, [R0] \n\
 /* 08027c6c */ LDR R1, [R4] \n\
 /* 08027c6e */ LDR R2, =0x0000042c \n\

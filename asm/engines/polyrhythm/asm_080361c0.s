@@ -32,7 +32,7 @@ thumb_func_start polyrhythm_spawn_piston \n\
 /* 080361f4 */ MOVS R1, 0x8 @ Set R1 to 0x8 \n\
 /* 080361f6 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 080361f8 */ STRB R0, [R2] \n\
-/* 080361fa */ LDR R0, =D_03005380 \n\
+/* 080361fa */ LDR R0, =gSpriteHandler \n\
 /* 080361fc */ LDR R0, [R0] \n\
 /* 080361fe */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 08036200 */ LDRSH R1, [R2, R3] \n\

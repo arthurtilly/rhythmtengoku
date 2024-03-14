@@ -18,7 +18,7 @@ thumb_func_start func_08027bd8 \n\
 /* 08027bf0 */ MOV R1, SP @ Set R1 to SP \n\
 /* 08027bf2 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 08027bf4 */ BL text_printer_get_x_y \n\
-/* 08027bf8 */ LDR R2, =D_03005380 \n\
+/* 08027bf8 */ LDR R2, =gSpriteHandler \n\
 /* 08027bfa */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 08027bfc */ LDR R0, [R2] \n\
 /* 08027bfe */ LDR R1, [R4] \n\

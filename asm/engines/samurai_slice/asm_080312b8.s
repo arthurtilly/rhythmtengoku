@@ -18,7 +18,7 @@ thumb_func_start samurai_slice_cue_hit \n\
 /* 080312d0 */ LDRH R0, [R1] \n\
 /* 080312d2 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 080312d4 */ STRH R0, [R1] \n\
-/* 080312d6 */ LDR R0, =D_03005380 \n\
+/* 080312d6 */ LDR R0, =gSpriteHandler \n\
 /* 080312d8 */ LDR R0, [R0] \n\
 /* 080312da */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080312dc */ LDRSH R1, [R5, R2] \n\
@@ -154,7 +154,7 @@ jump_080313b2: \n\
 /* 080313ee */ BL func_08032510 \n\
  \n\
 branch_080313f2: \n\
-/* 080313f2 */ LDR R4, =D_03005380 \n\
+/* 080313f2 */ LDR R4, =gSpriteHandler \n\
 /* 080313f4 */ LDR R0, [R4] \n\
 /* 080313f6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080313f8 */ LDRSH R1, [R5, R2] \n\
@@ -324,7 +324,7 @@ branch_0803153e: \n\
 /* 0803154e */ BNE branch_08031576 \n\
 /* 08031550 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08031552 */ STRB R0, [R1] \n\
-/* 08031554 */ LDR R4, =D_03005380 \n\
+/* 08031554 */ LDR R4, =gSpriteHandler \n\
 /* 08031556 */ LDR R0, [R4] \n\
 /* 08031558 */ LDR R1, [R5] \n\
 /* 0803155a */ ADDS R1, 0x8C @ Add 0x8C to R1 \n\

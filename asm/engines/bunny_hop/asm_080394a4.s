@@ -104,7 +104,7 @@ branch_08039560: \n\
 /* 08039566 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08039568 */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\
 /* 0803956a */ BL scene_set_bg_layer_pos \n\
-/* 0803956e */ LDR R0, =D_03005380 \n\
+/* 0803956e */ LDR R0, =gSpriteHandler \n\
 /* 08039570 */ LDR R4, [R0] \n\
 /* 08039572 */ LDR R0, [R5] \n\
 /* 08039574 */ MOVS R2, 0xBC @ Set R2 to 0xBC \n\

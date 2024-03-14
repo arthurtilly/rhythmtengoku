@@ -17,7 +17,7 @@ thumb_func_start func_0803d414 \n\
 /* 0803d42a */ LDRB R0, [R0] \n\
 /* 0803d42c */ BL space_dance_get_anim \n\
 /* 0803d430 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803d432 */ LDR R0, =D_03005380 \n\
+/* 0803d432 */ LDR R0, =gSpriteHandler \n\
 /* 0803d434 */ LDR R0, [R0] \n\
 /* 0803d436 */ LDR R1, [R5] \n\
 /* 0803d438 */ MOVS R3, 0x16 @ Set R3 to 0x16 \n\

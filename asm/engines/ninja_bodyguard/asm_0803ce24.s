@@ -20,7 +20,7 @@ branch_0803ce3c: \n\
 /* 0803ce3c */ MOVS R0, 0x11 @ Set R0 to 0x11 \n\
 /* 0803ce3e */ BL ninja_get_anim \n\
 /* 0803ce42 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803ce44 */ LDR R4, =D_03005380 \n\
+/* 0803ce44 */ LDR R4, =gSpriteHandler \n\
 /* 0803ce46 */ LDR R0, [R4] \n\
 /* 0803ce48 */ LDR R1, [R7] \n\
 /* 0803ce4a */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
@@ -56,7 +56,7 @@ branch_0803ce8c: \n\
 /* 0803ce8c */ MOVS R0, 0x12 @ Set R0 to 0x12 \n\
 /* 0803ce8e */ BL ninja_get_anim \n\
 /* 0803ce92 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803ce94 */ LDR R4, =D_03005380 \n\
+/* 0803ce94 */ LDR R4, =gSpriteHandler \n\
 /* 0803ce96 */ LDR R0, [R4] \n\
 /* 0803ce98 */ LDR R1, [R7] \n\
 /* 0803ce9a */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\

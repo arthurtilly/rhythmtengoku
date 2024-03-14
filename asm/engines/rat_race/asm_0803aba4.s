@@ -14,7 +14,7 @@ thumb_func_start func_0803aba4 \n\
 /* 0803abb4 */ STMIA R0!, {R2-R4} \n\
 /* 0803abb6 */ LDR R1, [R1] \n\
 /* 0803abb8 */ STR R1, [R0] \n\
-/* 0803abba */ LDR R5, =D_03005380 \n\
+/* 0803abba */ LDR R5, =gSpriteHandler \n\
 /* 0803abbc */ LDR R0, [R5] \n\
 /* 0803abbe */ LDR R1, =anim_rat_run \n\
 /* 0803abc0 */ MOVS R2, 0x90 @ Set R2 to 0x90 \n\
@@ -73,7 +73,7 @@ branch_0803ac38: \n\
 /* 0803ac3e */ STRB R7, [R6, 0x4] \n\
  \n\
 branch_0803ac40: \n\
-/* 0803ac40 */ LDR R4, =D_03005380 \n\
+/* 0803ac40 */ LDR R4, =gSpriteHandler \n\
 /* 0803ac42 */ LDR R0, [R4] \n\
 /* 0803ac44 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803ac46 */ LDRSH R1, [R6, R2] \n\

@@ -197,7 +197,7 @@ branch_0803264e: \n\
 /* 0803269c */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 0803269e */ BL __udivsi3 \n\
 /* 080326a2 */ STR R0, [R7, 0x18] \n\
-/* 080326a4 */ LDR R4, =D_03005380 \n\
+/* 080326a4 */ LDR R4, =gSpriteHandler \n\
 /* 080326a6 */ LDR R0, [R4] \n\
 /* 080326a8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080326aa */ LDRSH R1, [R7, R2] \n\

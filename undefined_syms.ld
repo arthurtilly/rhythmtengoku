@@ -1,5 +1,7 @@
 OUTPUT_ARCH(arm)
 
+/* STATIC VARIABLES (.bss) */
+
 /* DirectSound Space */
 sPCMBufferArea = 0x03001888;
 sPCMScratchArea = 0x030024c8;
@@ -64,6 +66,8 @@ D_0300443a = 0x0300443a;
 D_0300443c = 0x0300443c;
 D_03004440 = 0x03004440;
 
+/* GLOBAL VARIABLES (COMMON) */
+
 /* Interrupt Handler */
 interrupt_handler_jtbl = 0x03004460;
 D_03004498 = 0x03004498;
@@ -95,7 +99,7 @@ D_03005370 = 0x03005370;
 sRecMaxKeys = 0x03005374;
 D_03005378 = 0x03005378;
 D_0300537c = 0x0300537c;
-D_03005380 = 0x03005380;
+gSpriteHandler = 0x03005380;
 D_03005390 = 0x03005390;
 D_030053b0 = 0x030053b0;
 sRecCurrentKey = 0x030053b4;

@@ -86,7 +86,7 @@ branch_080414da: \n\
 /* 080414e0 */ BL set_soundplayer_volume \n\
  \n\
 branch_080414e4: \n\
-/* 080414e4 */ LDR R2, =D_03005380 \n\
+/* 080414e4 */ LDR R2, =gSpriteHandler \n\
 /* 080414e6 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 080414e8 */ LDR R0, [R2] \n\
 /* 080414ea */ LDR R5, =gCurrentEngineData \n\

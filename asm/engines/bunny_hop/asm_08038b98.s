@@ -35,7 +35,7 @@ branch_08038bb2: \n\
 /* 08038bd2 */ BLE branch_08038c1c \n\
 /* 08038bd4 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08038bd6 */ STRB R0, [R5, 0x2] \n\
-/* 08038bd8 */ LDR R4, =D_03005380 \n\
+/* 08038bd8 */ LDR R4, =gSpriteHandler \n\
 /* 08038bda */ LDR R0, [R4] \n\
 /* 08038bdc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08038bde */ LDRSH R1, [R5, R2] \n\
@@ -90,7 +90,7 @@ branch_08038c40: \n\
 /* 08038c48 */ LSRS R0, R0, 0x18 \n\
 /* 08038c4a */ CMP R0, 0x6 @ Compare R0 and 0x6 \n\
 /* 08038c4c */ BNE branch_08038c72 \n\
-/* 08038c4e */ LDR R0, =D_03005380 \n\
+/* 08038c4e */ LDR R0, =gSpriteHandler \n\
 /* 08038c50 */ LDR R0, [R0] \n\
 /* 08038c52 */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
 /* 08038c54 */ LDRSH R1, [R5, R2] \n\
@@ -138,7 +138,7 @@ branch_08038c94: \n\
 /* 08038c9e */ STRH R0, [R5, 0x18] \n\
  \n\
 branch_08038ca0: \n\
-/* 08038ca0 */ LDR R0, =D_03005380 \n\
+/* 08038ca0 */ LDR R0, =gSpriteHandler \n\
 /* 08038ca2 */ LDR R0, [R0] \n\
 /* 08038ca4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08038ca6 */ LDRSH R1, [R5, R2] \n\

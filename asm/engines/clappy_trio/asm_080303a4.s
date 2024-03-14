@@ -13,7 +13,7 @@ thumb_func_start func_080303a4 \n\
 /* 080303b2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080303b4 */ BL clappy_trio_get_anim \n\
 /* 080303b8 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 080303ba */ LDR R4, =D_03005380 \n\
+/* 080303ba */ LDR R4, =gSpriteHandler \n\
 /* 080303bc */ LDR R0, [R4] \n\
 /* 080303be */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 080303c0 */ STR R2, [SP] \n\
@@ -53,7 +53,7 @@ branch_080303f8: \n\
 /* 08030408 */ STR R0, [SP, 0x14] \n\
  \n\
 branch_0803040a: \n\
-/* 0803040a */ LDR R1, =D_03005380 \n\
+/* 0803040a */ LDR R1, =gSpriteHandler \n\
 /* 0803040c */ LDR R0, [R1] \n\
 /* 0803040e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08030410 */ LDRSH R1, [R7, R2] \n\
@@ -66,7 +66,7 @@ branch_0803040a: \n\
 /* 08030420 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08030422 */ BL clappy_trio_get_anim \n\
 /* 08030426 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 08030428 */ LDR R2, =D_03005380 \n\
+/* 08030428 */ LDR R2, =gSpriteHandler \n\
 /* 0803042a */ LDR R0, [R2] \n\
 /* 0803042c */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 0803042e */ ADDS R3, 0x48 @ Add 0x48 to R3 \n\
@@ -89,7 +89,7 @@ branch_0803040a: \n\
 /* 08030452 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08030454 */ BL clappy_trio_get_anim \n\
 /* 08030458 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803045a */ LDR R3, =D_03005380 \n\
+/* 0803045a */ LDR R3, =gSpriteHandler \n\
 /* 0803045c */ LDR R0, [R3] \n\
 /* 0803045e */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 08030460 */ ADDS R3, 0x78 @ Add 0x78 to R3 \n\
@@ -108,7 +108,7 @@ branch_0803040a: \n\
 /* 0803047c */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803047e */ BL clappy_trio_get_anim \n\
 /* 08030482 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 08030484 */ LDR R3, =D_03005380 \n\
+/* 08030484 */ LDR R3, =gSpriteHandler \n\
 /* 08030486 */ LDR R0, [R3] \n\
 /* 08030488 */ MOV R6, R9 @ Set R6 to R9 \n\
 /* 0803048a */ ADDS R6, 0xA8 @ Add 0xA8 to R6 \n\
@@ -132,7 +132,7 @@ branch_0803040a: \n\
 /* 080304b0 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
 /* 080304b2 */ BL clappy_trio_get_anim \n\
 /* 080304b6 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 080304b8 */ LDR R2, =D_03005380 \n\
+/* 080304b8 */ LDR R2, =gSpriteHandler \n\
 /* 080304ba */ LDR R0, [R2] \n\
 /* 080304bc */ MOVS R2, 0x98 @ Set R2 to 0x98 \n\
 /* 080304be */ STR R2, [SP] \n\
@@ -148,7 +148,7 @@ branch_0803040a: \n\
 /* 080304d4 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
 /* 080304d6 */ BL clappy_trio_get_anim \n\
 /* 080304da */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 080304dc */ LDR R2, =D_03005380 \n\
+/* 080304dc */ LDR R2, =gSpriteHandler \n\
 /* 080304de */ LDR R0, [R2] \n\
 /* 080304e0 */ LDR R2, [SP, 0x14] \n\
 /* 080304e2 */ MOVS R3, 0x38 @ Set R3 to 0x38 \n\

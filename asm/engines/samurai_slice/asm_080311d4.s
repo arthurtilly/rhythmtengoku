@@ -45,7 +45,7 @@ branch_080311f0: \n\
 /* 08031222 */ STRB R0, [R4, 0x4] \n\
 /* 08031224 */ LDR R0, =0xfffffa00 \n\
 /* 08031226 */ STR R0, [R4, 0x2C] \n\
-/* 08031228 */ LDR R5, =D_03005380 \n\
+/* 08031228 */ LDR R5, =gSpriteHandler \n\
 /* 0803122a */ LDR R0, [R5] \n\
 /* 0803122c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803122e */ LDRSH R1, [R4, R2] \n\

@@ -32,7 +32,7 @@ branch_08044784: \n\
 /* 0804478a */ LDRB R0, [R0] \n\
 /* 0804478c */ BL func_08044208 \n\
 /* 08044790 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 08044792 */ LDR R4, =D_03005380 \n\
+/* 08044792 */ LDR R4, =gSpriteHandler \n\
 /* 08044794 */ LDR R0, [R4] \n\
 /* 08044796 */ LSLS R1, R5, 0x10 \n\
 /* 08044798 */ ASRS R1, R1, 0x10 \n\

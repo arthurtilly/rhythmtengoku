@@ -65,7 +65,7 @@ branch_08042336: \n\
 /* 0804238e */ LDR R3, =0x26f \n\
 /* 08042390 */ ADDS R0, R0, R3 @ Set R0 to R0 + R3 \n\
 /* 08042392 */ STRB R2, [R0] \n\
-/* 08042394 */ LDR R0, =D_03005380 \n\
+/* 08042394 */ LDR R0, =gSpriteHandler \n\
 /* 08042396 */ LDR R0, [R0] \n\
 /* 08042398 */ LDR R2, [R1] \n\
 /* 0804239a */ ADDS R1, R2, R4 @ Set R1 to R2 + R4 \n\
@@ -110,7 +110,7 @@ branch_080423c8: \n\
 /* 080423f6 */ STRB R0, [R5] \n\
  \n\
 branch_080423f8: \n\
-/* 080423f8 */ LDR R0, =D_03005380 \n\
+/* 080423f8 */ LDR R0, =gSpriteHandler \n\
 /* 080423fa */ LDR R0, [R0] \n\
 /* 080423fc */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 080423fe */ LDR R2, [R3] \n\

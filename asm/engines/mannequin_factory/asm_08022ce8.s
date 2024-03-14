@@ -16,7 +16,7 @@ thumb_func_start func_08022ce8 \n\
 /* 08022cfc */ B branch_08022daa \n\
  \n\
 branch_08022cfe: \n\
-/* 08022cfe */ LDR R5, =D_03005380 \n\
+/* 08022cfe */ LDR R5, =gSpriteHandler \n\
 /* 08022d00 */ LDR R0, [R5] \n\
 /* 08022d02 */ LDR R4, =gCurrentEngineData \n\
 /* 08022d04 */ LDR R1, [R4] \n\
@@ -31,7 +31,7 @@ branch_08022cfe: \n\
 .ltorg \n\
  \n\
 branch_08022d20: \n\
-/* 08022d20 */ LDR R0, =D_03005380 \n\
+/* 08022d20 */ LDR R0, =gSpriteHandler \n\
 /* 08022d22 */ LDR R0, [R0] \n\
 /* 08022d24 */ LDR R1, =gCurrentEngineData \n\
 /* 08022d26 */ LDR R1, [R1] \n\
@@ -46,7 +46,7 @@ branch_08022d28: \n\
 .ltorg \n\
  \n\
 branch_08022d3c: \n\
-/* 08022d3c */ LDR R5, =D_03005380 \n\
+/* 08022d3c */ LDR R5, =gSpriteHandler \n\
 /* 08022d3e */ LDR R0, [R5] \n\
 /* 08022d40 */ LDR R4, =gCurrentEngineData \n\
 /* 08022d42 */ LDR R1, [R4] \n\
@@ -71,7 +71,7 @@ branch_08022d3c: \n\
 .ltorg \n\
  \n\
 branch_08022d7c: \n\
-/* 08022d7c */ LDR R5, =D_03005380 \n\
+/* 08022d7c */ LDR R5, =gSpriteHandler \n\
 /* 08022d7e */ LDR R0, [R5] \n\
 /* 08022d80 */ LDR R4, =gCurrentEngineData \n\
 /* 08022d82 */ LDR R1, [R4] \n\

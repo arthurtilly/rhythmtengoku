@@ -59,7 +59,7 @@ branch_0803ab00: \n\
 /* 0803ab06 */ ADDS R1, 0x40 @ Add 0x40 to R1 \n\
 /* 0803ab08 */ MOVS R0, 0x7 @ Set R0 to 0x7 \n\
 /* 0803ab0a */ STRB R0, [R1] \n\
-/* 0803ab0c */ LDR R0, =D_03005380 \n\
+/* 0803ab0c */ LDR R0, =gSpriteHandler \n\
 /* 0803ab0e */ LDR R0, [R0] \n\
 /* 0803ab10 */ LDR R1, [R6] \n\
 /* 0803ab12 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
@@ -97,7 +97,7 @@ branch_0803ab40: \n\
 /* 0803ab52 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803ab54 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803ab56 */ BL scene_set_bg_layer_pos \n\
-/* 0803ab5a */ LDR R0, =D_03005380 \n\
+/* 0803ab5a */ LDR R0, =gSpriteHandler \n\
 /* 0803ab5c */ LDR R0, [R0] \n\
 /* 0803ab5e */ LDR R3, [R4] \n\
 /* 0803ab60 */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\

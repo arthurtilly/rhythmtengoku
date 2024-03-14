@@ -35,7 +35,7 @@ branch_0803db64: \n\
 /* 0803db66 */ LDRSB R0, [R6, R0] \n\
 /* 0803db68 */ BL tap_trial_get_anim \n\
 /* 0803db6c */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0803db6e */ LDR R0, =D_03005380 \n\
+/* 0803db6e */ LDR R0, =gSpriteHandler \n\
 /* 0803db70 */ LDR R0, [R0] \n\
 /* 0803db72 */ LDR R1, =gCurrentEngineData \n\
 /* 0803db74 */ LDR R1, [R1] \n\
@@ -98,7 +98,7 @@ branch_0803dbd0: \n\
 /* 0803dbe2 */ MOV R8, R2 @ Set R8 to R2 \n\
  \n\
 branch_0803dbe4: \n\
-/* 0803dbe4 */ LDR R0, =D_03005380 \n\
+/* 0803dbe4 */ LDR R0, =gSpriteHandler \n\
 /* 0803dbe6 */ LDR R0, [R0] \n\
 /* 0803dbe8 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0803dbea */ LDR R1, [R3] \n\
