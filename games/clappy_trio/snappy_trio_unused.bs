@@ -79,7 +79,7 @@ endstruct
 
 script script_snappy_trio_unused_main
     set_results_header D_0805ae34
-    import_marking_criteria D_089ef90c
+    import_marking_criteria snappy_trio_unused_marking_criteria
     set_tempo 120
     set_music_volume 256
     clappy_trio_crouch 0

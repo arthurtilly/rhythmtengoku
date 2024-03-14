@@ -235,7 +235,7 @@ return
 
 script script_remix_4_main
     set_results_header D_080680d4
-    import_marking_criteria D_08a53508
+    import_marking_criteria remix_4_marking_criteria
     forgive_x_misses 2
     assess_inputs 1
     set_marking_criteria 0

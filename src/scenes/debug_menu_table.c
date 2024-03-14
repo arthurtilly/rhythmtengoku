@@ -156,7 +156,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "レッスン（じっせん８）"
     },
     /* Studio Drummer */ {
-        /* Scene */ &D_089d48ec,
+        /* Scene */ &scene_drum_studio_ver0,
         /* Label */ "スタジオドラマー"
     },
     /* Rhythm Test (Click) */ {
@@ -192,7 +192,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ラップ　ウィメン（ｂｙ　ＹＯＮＥ）"
     },
     /* Rap Women (by KAZU) */ {
-        /* Scene */ &D_089d6534,
+        /* Scene */ &scene_rap_women_unused,
         /* Label */ "ラップ　ウィメン（ｂｙ　ＫＡＺＵ）"
     },
     /* Space Dance */ {
@@ -232,7 +232,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "トスボーイズ　２"
     },
     /* Drum Girls LIVE */ {
-        /* Scene */ &D_089d2f98,
+        /* Scene */ &scene_drum_girls_live_unused,
         /* Label */ "ドラムガールズ"
     },
     /* Power Calligraphy */ {
@@ -260,7 +260,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ウサギとび"
     },
     /* Dance Lesson 1 */ {
-        /* Scene */ &D_089d2670,
+        /* Scene */ &scene_remix_1_unused,
         /* Label */ "ダンスレッスン　１"
     },
     /* Wizard's Waltz */ {
@@ -436,7 +436,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "Ｒ－ＩＱ　（カウンセラー）"
     },
     /* Ending (from clearing Remix 6) */ {
-        /* Scene */ &D_089d6d74,
+        /* Scene */ &scene_staff_credit_remix_6,
         /* Label */ "エンディング（クリアご）"
     },
     /* Ending (from Game Select) */ {

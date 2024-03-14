@@ -522,7 +522,7 @@ script script_tap_trial_unused_practice
     print_text_f D_0805c1bc
     rest 24
     rest 24
-    run gameplay_set_tutorial D_089d1b78
+    run gameplay_set_tutorial scene_tap_trial_unused_skipped_practice
     rest 24
     rest 24
     rest 24
