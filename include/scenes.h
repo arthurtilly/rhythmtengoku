@@ -127,10 +127,10 @@ extern struct Scene scene_rhythm_test;
 
 // Unlabelled
 extern struct Scene D_089d48ec;
-extern struct Scene D_089d4464;
-extern struct Scene D_089d454c;
-extern struct Scene D_089d4634;
-extern struct Scene D_089d4804;
+extern struct Scene scene_rhythm_test_click;
+extern struct Scene scene_rhythm_test_cue;
+extern struct Scene scene_rhythm_test_trick;
+extern struct Scene scene_rhythm_test_opening;
 extern struct Scene D_089d6534;
 extern struct Scene scene_drum_samurai_opening_cutscene;
 extern struct Scene scene_drum_samurai_demo_cutscene;

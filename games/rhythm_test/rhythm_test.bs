@@ -92,16 +92,16 @@ define_gameplay_scene scene_rhythm_test, script_rhythm_test_entry
 
 
 
-@ Rhythm Test (Total) - Script Entry Point
+@ Rhythm Test (Opening) - Script Entry Point
 
-script script_rhythm_test_total_entry
+script script_rhythm_test_opening_entry
     set_tempo 124
     rest 24
     rest 24
     load_rhythm_test
     enable_play_inputs 1
     assess_inputs 1
-    call script_rhythm_test_total_main
+    call script_rhythm_test_opening_main
     enable_pause_menu 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -110,7 +110,7 @@ script script_rhythm_test_total_entry
     rest 24
 stop
 
-define_gameplay_scene scene_rhythm_test_total, script_rhythm_test_total_entry
+define_gameplay_scene scene_rhythm_test_opening, script_rhythm_test_opening_entry
 
 
 
@@ -988,7 +988,7 @@ script script_rhythm_test_main
     goto rhythm_test_sub_08a40cb4
 
 
-script script_rhythm_test_total_main
+script script_rhythm_test_opening_main
     set_tempo 120
     set_music_volume 256
     play_music s_check_machine_seqData

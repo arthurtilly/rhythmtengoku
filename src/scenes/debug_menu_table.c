@@ -159,20 +159,20 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Scene */ &D_089d48ec,
         /* Label */ "スタジオドラマー"
     },
-    /* Check Machine (Click) */ {
-        /* Scene */ &D_089d4464,
+    /* Rhythm Test (Click) */ {
+        /* Scene */ &scene_rhythm_test_click,
         /* Label */ "チェックマシン　（クリック）"
     },
     /* Rhythm Test (Cue) */ {
-        /* Scene */ &D_089d454c,
+        /* Scene */ &scene_rhythm_test_cue,
         /* Label */ "チェックマシン　（キューフ）"
     },
     /* Rhythm Test (Trick) */ {
-        /* Scene */ &D_089d4634,
+        /* Scene */ &scene_rhythm_test_trick,
         /* Label */ "チェックマシン　（トリッキー）"
     },
     /* Rhythm Test (Total) */ {
-        /* Scene */ &D_089d4804,
+        /* Scene */ &scene_rhythm_test_opening,
         /* Label */ "チェックマシン　（トータル）"
     },
     /* Reading Material */ {
