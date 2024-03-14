@@ -1,0 +1,58 @@
+.include "include/beatscript.inc"
+.include "games/drum_studio/macros.inc"
+
+
+
+.section .script.entry
+@ Drum Studio - Script Entry Point
+
+script script_drum_studio_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_studio_ver0
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_drum_studio_main
+    enable_pause_menu 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_studio, script_drum_studio_entry
+
+
+
+.section .script.main
+@ Drum Studio - Main Script
+
+script drum_studio_sub_08a40f00
+    rest 24
+    dms_event02 1
+    loop_start
+        set_tempo 140
+        set_music_volume 256
+        rest 24
+        .byte 0xb1, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        dms_get_next_script
+        .byte 0xb0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        dms_stop_bg_monitor
+        dms_event01 0
+        if_eq INT8, GLOBAL_VARIABLE, 0
+            run beatscript_disable_loops, 0
+        end_if
+    loop_end
+    dms_event02 0
+    dms_show_save_options
+    set_tempo 140
+    rest 12
+return
+
+
+script script_drum_studio_main
+    goto drum_studio_sub_08a40f00
+
+.end
