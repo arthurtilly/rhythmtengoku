@@ -62,7 +62,7 @@ script script_mannequin_factory_game_over
     rest 24
     rest 24
     rest 24
-    mannequin_factory_event05 0
+    mannequin_factory_event05
     play_sfx s_gameover_fan_seqData
     run set_pause_beatscript_scene, TRUE
     fade_music_out 48
@@ -84,38 +84,38 @@ script script_mannequin_factory_practice
     rest 6
     play_sfx_vol s_dontan_count_seqData, 96
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     play_sfx_vol s_dontan_count_seqData, 96
     rest 12
     rest 12
     play_sfx_vol s_dontan_count_seqData, 96
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     play_sfx_vol s_dontan_count_seqData, 96
     rest 12
     rest 12
     loop_start
         mannequin_factory_event06 0
-        mannequin_factory_event00 0
+        mannequin_factory_event00
         play_sfx_vol s_dontan_count_seqData, 96
         rest 12
-        mannequin_factory_event01 0
-        rest 12
-        play_sfx_vol s_dontan_count_seqData, 96
-        rest 12
-        rest 12
-        play_sfx_vol s_dontan_count_seqData, 96
-        rest 12
-        mannequin_factory_event01 0
+        mannequin_factory_event01
         rest 12
         play_sfx_vol s_dontan_count_seqData, 96
         rest 12
         rest 12
         play_sfx_vol s_dontan_count_seqData, 96
         rest 12
-        mannequin_factory_event01 0
+        mannequin_factory_event01
+        rest 12
+        play_sfx_vol s_dontan_count_seqData, 96
+        rest 12
+        rest 12
+        play_sfx_vol s_dontan_count_seqData, 96
+        rest 12
+        mannequin_factory_event01
         rest 12
         play_sfx_vol s_dontan_count_seqData, 96
         play_sfx s_ninja_furu_seqData
@@ -123,31 +123,23 @@ script script_mannequin_factory_practice
         rest 12
         play_sfx_vol s_dontan_count_seqData, 96
         rest 12
-        mannequin_factory_event01 0
+        mannequin_factory_event01
         rest 12
         play_sfx_vol s_dontan_count_seqData, 96
         rest 12
         rest 12
         mannequin_factory_event06 1
-        mannequin_factory_event00 0
+        mannequin_factory_event00
         play_sfx_vol s_dontan_count_seqData, 96
         rest 12
-        mannequin_factory_event01 0
+        mannequin_factory_event01
         rest 12
         play_sfx_vol s_dontan_count_seqData, 96
-        rest 12
-        rest 12
-        play_sfx_vol s_dontan_count_seqData, 96
-        rest 12
-        mannequin_factory_event01 0
-        rest 12
-        play_sfx_vol s_dontan_count_seqData, 96
-        play_sfx s_ninja_furu_seqData
         rest 12
         rest 12
         play_sfx_vol s_dontan_count_seqData, 96
         rest 12
-        mannequin_factory_event01 0
+        mannequin_factory_event01
         rest 12
         play_sfx_vol s_dontan_count_seqData, 96
         play_sfx s_ninja_furu_seqData
@@ -155,7 +147,15 @@ script script_mannequin_factory_practice
         rest 12
         play_sfx_vol s_dontan_count_seqData, 96
         rest 12
-        mannequin_factory_event01 0
+        mannequin_factory_event01
+        rest 12
+        play_sfx_vol s_dontan_count_seqData, 96
+        play_sfx s_ninja_furu_seqData
+        rest 12
+        rest 12
+        play_sfx_vol s_dontan_count_seqData, 96
+        rest 12
+        mannequin_factory_event01
         rest 12
         play_sfx_vol s_dontan_count_seqData, 96
         rest 12
@@ -166,12 +166,12 @@ return
 
 script mannequin_factory_sub_08a58aa0
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
@@ -180,46 +180,46 @@ return
 
 script mannequin_factory_sub_08a58b3c
     mannequin_factory_event06 0
-    mannequin_factory_event00 0
+    mannequin_factory_event00
     rest 12
-    mannequin_factory_event01 0
-    rest 12
-    rest 12
-    rest 12
-    rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     mannequin_factory_event06 1
-    mannequin_factory_event00 0
+    mannequin_factory_event00
     rest 12
-    mannequin_factory_event01 0
-    rest 12
-    rest 12
-    rest 12
-    rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
@@ -228,46 +228,46 @@ return
 
 script mannequin_factory_sub_08a58de8
     mannequin_factory_event06 2
-    mannequin_factory_event00 0
+    mannequin_factory_event00
     rest 12
-    mannequin_factory_event01 0
-    rest 12
-    rest 12
-    rest 12
-    rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     mannequin_factory_event06 2
-    mannequin_factory_event00 0
+    mannequin_factory_event00
     rest 12
-    mannequin_factory_event01 0
-    rest 12
-    rest 12
-    rest 12
-    rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
@@ -276,68 +276,68 @@ return
 
 script mannequin_factory_sub_08a59094
     mannequin_factory_event06 0
-    mannequin_factory_event00 0
+    mannequin_factory_event00
     rest 12
-    mannequin_factory_event01 0
-    rest 12
-    rest 12
-    rest 12
-    rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     mannequin_factory_event06 1
-    mannequin_factory_event00 0
+    mannequin_factory_event00
     rest 12
-    mannequin_factory_event01 0
-    rest 12
-    rest 12
+    mannequin_factory_event01
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     mannequin_factory_event06 0
-    mannequin_factory_event00 0
+    mannequin_factory_event00
     rest 12
-    mannequin_factory_event01 0
-    rest 12
-    rest 12
-    rest 12
-    rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
@@ -346,66 +346,66 @@ return
 
 script mannequin_factory_sub_08a59490
     mannequin_factory_event06 2
-    mannequin_factory_event00 0
+    mannequin_factory_event00
     rest 12
-    mannequin_factory_event01 0
-    rest 12
-    rest 12
-    rest 12
-    rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
-    rest 12
-    rest 12
-    rest 12
-    mannequin_factory_event00 0
-    rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event00 0
+    mannequin_factory_event00
     rest 12
-    mannequin_factory_event01 0
-    rest 12
-    rest 12
-    rest 12
-    rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event00
+    rest 12
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12
     rest 12
-    mannequin_factory_event01 0
+    mannequin_factory_event01
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01
     rest 12
     rest 12
     rest 12

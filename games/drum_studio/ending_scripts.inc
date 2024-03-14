@@ -9,7 +9,7 @@ load_drum_studio_labels
 
 @ Fade Out
 glabel D_089e2ad4
-    fade_music_out TO_TEMPO, 24
+    fade_music_out 24
     fade_screen_out 12, BLACK
     rest 24
 stop

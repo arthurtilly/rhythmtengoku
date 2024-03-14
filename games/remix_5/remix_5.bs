@@ -431,19 +431,19 @@ script script_remix_5_main
     ninja_bodyguard_event0B 1
     rest 24
     rest 12
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 24
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 24
     rest 24
     rest 24
     rest 24
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 12
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 24
@@ -458,20 +458,20 @@ script script_remix_5_main
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 2
     ninja_bodyguard_event0B 1
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 24
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 24
     rest 24
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 12
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     ninja_bodyguard_event0F 256

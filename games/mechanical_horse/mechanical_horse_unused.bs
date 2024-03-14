@@ -120,7 +120,7 @@ script script_mechanical_horse_unused_main
     beat_anim
     rest 16
     mechanical_horse_event02 D_0805c504
-    mechanical_horse_event04 1
+    mechanical_horse_event04 TRUE
     assess_inputs 1
     loop_start
         mechanical_horse_event05 0
@@ -138,7 +138,7 @@ script script_mechanical_horse_unused_main
         rest 16
     loop_end
     assess_inputs 0
-    mechanical_horse_event04 0
+    mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c508
     mechanical_horse_event01 1
     spawn_cue CUE_WALK
@@ -182,7 +182,7 @@ script script_mechanical_horse_unused_main
     beat_anim
     rest 24
     mechanical_horse_event02 D_0805c504
-    mechanical_horse_event04 1
+    mechanical_horse_event04 TRUE
     assess_inputs 1
     loop_start
         mechanical_horse_event05 1
@@ -200,7 +200,7 @@ script script_mechanical_horse_unused_main
         rest 24
     loop_end
     assess_inputs 0
-    mechanical_horse_event04 0
+    mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c508
     mechanical_horse_event01 2
     spawn_cue CUE_WALK
@@ -237,7 +237,7 @@ script script_mechanical_horse_unused_main
     rest 12
     rest 12
     mechanical_horse_event02 D_0805c504
-    mechanical_horse_event04 1
+    mechanical_horse_event04 TRUE
     assess_inputs 1
     loop_start
         mechanical_horse_event05 2
@@ -253,7 +253,7 @@ script script_mechanical_horse_unused_main
         rest 12
     loop_end
     assess_inputs 0
-    mechanical_horse_event04 0
+    mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c558
     mechanical_horse_event01 3
     spawn_cue CUE_WALK
@@ -299,7 +299,7 @@ script script_mechanical_horse_unused_main
     rest 12
     rest 12
     mechanical_horse_event02 D_0805c504
-    mechanical_horse_event04 1
+    mechanical_horse_event04 TRUE
     assess_inputs 1
     loop_start
         mechanical_horse_event05 3
@@ -320,7 +320,7 @@ script script_mechanical_horse_unused_main
     assess_inputs 0
     enable_pause_menu FALSE
     mechanical_horse_event03 1
-    mechanical_horse_event04 0
+    mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c58c
     spawn_cue CUE_WALK
     beat_anim

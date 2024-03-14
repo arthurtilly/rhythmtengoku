@@ -144,7 +144,7 @@ script script_power_calligraphy_main
     print_text_f NULL
     rest 24
     start_perfect_campaign
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f1e0
     rest 24
     rest 24
@@ -156,102 +156,102 @@ script script_power_calligraphy_main
     assess_inputs 1
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f264
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f534
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f594
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f1e0
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f264
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7da58
     set_marking_criteria 1
     call power_calligraphy_sub_08a7dadc
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f1e0
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f264
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f534
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f594
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f1e0
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f264
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7df08
     set_marking_criteria 0
     call power_calligraphy_sub_08a7df8c
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7da58
     set_marking_criteria 1
     call power_calligraphy_sub_08a7dadc
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7df08
     set_marking_criteria 0
     call power_calligraphy_sub_08a7df8c
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f1e0
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f264
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7e5f8
     set_marking_criteria 0
     call power_calligraphy_sub_08a7e67c
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7da58
     set_marking_criteria 1
     call power_calligraphy_sub_08a7dadc
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7df08
     set_marking_criteria 0
     call power_calligraphy_sub_08a7df8c
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f534
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f594
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7eb38
     set_marking_criteria 2
     call power_calligraphy_sub_08a7ebbc
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     power_calligraphy_event0B 1
     call power_calligraphy_sub_08a7f1e0
     set_tempo 161
     play_music s_shuji_bgm2_seqData
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f264
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f534
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f594
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7da58
     set_marking_criteria 1
     call power_calligraphy_sub_08a7dadc
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7e5f8
     set_marking_criteria 0
     call power_calligraphy_sub_08a7e67c
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f1e0
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f264
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7f534
     set_marking_criteria 0
     call power_calligraphy_sub_08a7f594
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7df08
     set_marking_criteria 0
     call power_calligraphy_sub_08a7df8c
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7eb38
     set_marking_criteria 2
     call power_calligraphy_sub_08a7ebbc
-    power_calligraphy_event03 1
+    power_calligraphy_event03 TRUE
     power_calligraphy_event0B 4
     call power_calligraphy_sub_08a7f810
     set_tempo 98
@@ -263,10 +263,10 @@ script script_power_calligraphy_main
     mod_music_volume 0, 84
     rest 24
     rest 24
-    power_calligraphy_event03 1
-    power_calligraphy_event00 7
+    power_calligraphy_event03 TRUE
+    power_calligraphy_event00 KANA_END_KANJI
     power_calligraphy_event01 0
-    power_calligraphy_event06 4156
+    power_calligraphy_event06 FALSE, 16, 60
     rest 24
     run scene_stop_music, 0
     rest 24
@@ -301,12 +301,12 @@ script script_power_calligraphy_practice
     print_text_f NULL
     rest 24
     print_text_f D_0805d318
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     loop_start
         run beatscript_disable_loops
         call power_calligraphy_sub_08a7f1e0
         call power_calligraphy_sub_08a7f264
-        power_calligraphy_event03 0
+        power_calligraphy_event03 FALSE
     loop_end
     print_text_f NULL
     rest 24
@@ -320,12 +320,12 @@ script script_power_calligraphy_practice
     rest 24
     rest 24
     rest 24
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     loop_start
         run beatscript_disable_loops
         call power_calligraphy_sub_08a7f534
         call power_calligraphy_sub_08a7f594
-        power_calligraphy_event03 0
+        power_calligraphy_event03 FALSE
     loop_end
     print_text_f NULL
     rest 24

@@ -206,7 +206,7 @@ script script_marching_orders_2_main
     call marching_orders_sub_08a83848
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
-    marching_orders_event03 0
+    marching_orders_event03
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0

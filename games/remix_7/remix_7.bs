@@ -326,7 +326,7 @@ script script_remix_7_main
     set_game_fade_in_time 0
 
     load_power_calligraphy
-    power_calligraphy_event03 0
+    power_calligraphy_event03 FALSE
     call power_calligraphy_sub_08a7da58
     call power_calligraphy_sub_08a7dadc
     beat_anim
@@ -512,7 +512,7 @@ script script_remix_7_main
     load_night_walk
     enable_play_inputs 1
     night_walk_set_drumtech_volume 0
-    night_walk_enable_swing 1
+    night_walk_enable_swing TRUE
     night_walk_set_cue_earliness 240
     spawn_cue CUE_KICK
     night_walk_set_cue_earliness 216

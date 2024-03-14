@@ -104,25 +104,25 @@ endstruct
 @ Polyrhythm - Main Script
 
 script polyrhythm_sub_089f2834
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_block 0, 1, 2
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
     spawn_cue CUE_8_DOWNSIDE
     rest 24
     rest 24
-    polyrhythm_spawn_block 4, 1, 2
+    polyrhythm_spawn_block 4, DOWNSIDE, PISTON_DOWNSIDE
     spawn_cue CUE_4_DOWNSIDE
     spawn_cue CUE_8_DOWNSIDE
     rest 24
     rest 24
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
     rest 24
     rest 24
     rest 24
     rest 12
-    polyrhythm_retract_pistons 1
+    polyrhythm_retract_pistons DOWNSIDE
     rest 12
     rest 24
     rest 24
@@ -131,34 +131,31 @@ script polyrhythm_sub_089f2834
     polyrhythm_play_applause_sfx
     rest 24
     rest 24
-    polyrhythm_retract_pistons 1
+    polyrhythm_retract_pistons DOWNSIDE
     rest 24
-    polyrhythm_despawn_blocks 1
+    polyrhythm_despawn_blocks DOWNSIDE
     rest 24
 return
 
 
 script polyrhythm_sub_089f2a2c
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_block 0, 1, 2
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
     rest 12
     rest 12
-    polyrhythm_spawn_block 2, 1, 2
+    polyrhythm_spawn_block 2, DOWNSIDE, PISTON_DOWNSIDE
     rest 12
     rest 12
-    polyrhythm_spawn_block 4, 1, 2
+    polyrhythm_spawn_block 4, DOWNSIDE, PISTON_DOWNSIDE
     rest 12
     rest 12
-    polyrhythm_spawn_block 6, 1, 2
-    rest 12
-    spawn_cue CUE_H_DOWNSIDE
-    rest 12
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_block 6, DOWNSIDE, PISTON_DOWNSIDE
     rest 12
     spawn_cue CUE_H_DOWNSIDE
     rest 12
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
     rest 12
     spawn_cue CUE_H_DOWNSIDE
     rest 12
@@ -166,7 +163,10 @@ script polyrhythm_sub_089f2a2c
     spawn_cue CUE_H_DOWNSIDE
     rest 12
     rest 12
-    polyrhythm_retract_pistons 1
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    polyrhythm_retract_pistons DOWNSIDE
     spawn_cue CUE_H_DOWNSIDE
     rest 12
     rest 12
@@ -183,38 +183,35 @@ script polyrhythm_sub_089f2a2c
     polyrhythm_play_applause_sfx
     rest 24
     rest 24
-    polyrhythm_retract_pistons 1
+    polyrhythm_retract_pistons DOWNSIDE
     rest 24
-    polyrhythm_despawn_blocks 0
-    polyrhythm_despawn_blocks 1
+    polyrhythm_despawn_blocks UPSIDE
+    polyrhythm_despawn_blocks DOWNSIDE
     rest 24
 return
 
 
 script polyrhythm_sub_089f2d20
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_block 0, 0, 1
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_block 0, UPSIDE, PISTON_UPSIDE
     rest 12
     rest 12
-    polyrhythm_spawn_block 2, 0, 1
+    polyrhythm_spawn_block 2, UPSIDE, PISTON_UPSIDE
     rest 12
     rest 12
-    polyrhythm_spawn_block 4, 0, 1
+    polyrhythm_spawn_block 4, UPSIDE, PISTON_UPSIDE
     rest 12
     rest 12
-    polyrhythm_spawn_block 6, 0, 1
-    rest 12
-    spawn_cue CUE_H_UPSIDE
-    rest 12
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_block 8, 0, 0
-    polyrhythm_spawn_block 9, 0, 0
-    polyrhythm_spawn_block 10, 0, 0
-    polyrhythm_spawn_block 11, 0, 0
-    polyrhythm_spawn_block 12, 0, 0
+    polyrhythm_spawn_block 6, UPSIDE, PISTON_UPSIDE
     rest 12
     spawn_cue CUE_H_UPSIDE
     rest 12
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_block 8, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 9, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 10, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 11, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 12, UPSIDE, PLATFORM
     rest 12
     spawn_cue CUE_H_UPSIDE
     rest 12
@@ -222,7 +219,10 @@ script polyrhythm_sub_089f2d20
     spawn_cue CUE_H_UPSIDE
     rest 12
     rest 12
-    polyrhythm_retract_pistons 0
+    spawn_cue CUE_H_UPSIDE
+    rest 12
+    rest 12
+    polyrhythm_retract_pistons UPSIDE
     spawn_cue CUE_H_UPSIDE
     rest 12
     rest 12
@@ -239,35 +239,35 @@ script polyrhythm_sub_089f2d20
     polyrhythm_play_applause_sfx
     rest 24
     rest 24
-    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons UPSIDE
     rest 24
-    polyrhythm_despawn_blocks 0
-    polyrhythm_despawn_blocks 1
+    polyrhythm_despawn_blocks UPSIDE
+    polyrhythm_despawn_blocks DOWNSIDE
     rest 24
 return
 
 
 script polyrhythm_sub_089f305c
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_block 0, 1, 2
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 0, 0, 0
-    polyrhythm_spawn_block 1, 0, 0
-    polyrhythm_spawn_block 2, 0, 1
+    polyrhythm_spawn_block 0, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 1, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 2, UPSIDE, PISTON_UPSIDE
     rest 24
-    polyrhythm_spawn_block 4, 1, 2
+    polyrhythm_spawn_block 4, DOWNSIDE, PISTON_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 6, 0, 1
+    polyrhythm_spawn_block 6, UPSIDE, PISTON_UPSIDE
     rest 12
     spawn_cue CUE_H_DOWNSIDE
     rest 12
-    polyrhythm_spawn_block 10, 0, 0
-    polyrhythm_spawn_block 11, 0, 0
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_rod 1
+    polyrhythm_spawn_block 10, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 11, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_rod DOWNSIDE
     rest 12
     spawn_cue CUE_H_UPSIDE
     rest 12
@@ -278,10 +278,10 @@ script polyrhythm_sub_089f305c
     spawn_cue CUE_H_UPSIDE
     rest 12
     rest 12
-    polyrhythm_retract_pistons 1
+    polyrhythm_retract_pistons DOWNSIDE
     spawn_cue CUE_H_DOWNSIDE
     rest 12
-    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons UPSIDE
     rest 12
     spawn_cue CUE_H_UPSIDE
     rest 12
@@ -296,45 +296,41 @@ script polyrhythm_sub_089f305c
     polyrhythm_play_applause_sfx
     rest 24
     rest 24
-    polyrhythm_retract_pistons 0
-    polyrhythm_retract_pistons 1
+    polyrhythm_retract_pistons UPSIDE
+    polyrhythm_retract_pistons DOWNSIDE
     rest 24
-    polyrhythm_despawn_blocks 0
-    polyrhythm_despawn_blocks 1
+    polyrhythm_despawn_blocks UPSIDE
+    polyrhythm_despawn_blocks DOWNSIDE
     rest 24
 return
 
 
 script polyrhythm_sub_089f33ec
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_block 0, 0, 1
-    polyrhythm_spawn_block 0, 1, 2
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_block 0, UPSIDE, PISTON_UPSIDE
+    polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 2, 0, 1
-    polyrhythm_spawn_block 2, 1, 2
+    polyrhythm_spawn_block 2, UPSIDE, PISTON_UPSIDE
+    polyrhythm_spawn_block 2, DOWNSIDE, PISTON_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 4, 0, 1
-    polyrhythm_spawn_block 4, 1, 2
+    polyrhythm_spawn_block 4, UPSIDE, PISTON_UPSIDE
+    polyrhythm_spawn_block 4, DOWNSIDE, PISTON_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 6, 0, 1
-    polyrhythm_spawn_block 6, 1, 2
+    polyrhythm_spawn_block 6, UPSIDE, PISTON_UPSIDE
+    polyrhythm_spawn_block 6, DOWNSIDE, PISTON_DOWNSIDE
     rest 12
     spawn_cue CUE_H_UPSIDE
     spawn_cue CUE_H_DOWNSIDE
     rest 12
-    polyrhythm_spawn_block 8, 0, 0
-    polyrhythm_spawn_block 9, 0, 0
-    polyrhythm_spawn_block 10, 0, 0
-    polyrhythm_spawn_block 11, 0, 0
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_rod 1
-    rest 12
-    spawn_cue CUE_H_UPSIDE
-    spawn_cue CUE_H_DOWNSIDE
-    rest 12
+    polyrhythm_spawn_block 8, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 9, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 10, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 11, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_rod DOWNSIDE
     rest 12
     spawn_cue CUE_H_UPSIDE
     spawn_cue CUE_H_DOWNSIDE
@@ -344,8 +340,12 @@ script polyrhythm_sub_089f33ec
     spawn_cue CUE_H_DOWNSIDE
     rest 12
     rest 12
-    polyrhythm_retract_pistons 0
-    polyrhythm_retract_pistons 1
+    spawn_cue CUE_H_UPSIDE
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    polyrhythm_retract_pistons UPSIDE
+    polyrhythm_retract_pistons DOWNSIDE
     spawn_cue CUE_H_UPSIDE
     spawn_cue CUE_H_DOWNSIDE
     rest 12
@@ -366,38 +366,38 @@ script polyrhythm_sub_089f33ec
     polyrhythm_play_applause_sfx
     rest 24
     rest 24
-    polyrhythm_retract_pistons 0
-    polyrhythm_retract_pistons 1
+    polyrhythm_retract_pistons UPSIDE
+    polyrhythm_retract_pistons DOWNSIDE
     rest 24
-    polyrhythm_despawn_blocks 0
-    polyrhythm_despawn_blocks 1
+    polyrhythm_despawn_blocks UPSIDE
+    polyrhythm_despawn_blocks DOWNSIDE
     rest 24
 return
 
 
 script polyrhythm_sub_089f383c
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_rod 1
-    polyrhythm_spawn_block 0, 1, 2
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_rod DOWNSIDE
+    polyrhythm_spawn_block 0, DOWNSIDE, PISTON_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 0, 0, 0
-    polyrhythm_spawn_block 1, 0, 0
-    polyrhythm_spawn_block 2, 0, 1
-    polyrhythm_spawn_block 2, 1, 2
+    polyrhythm_spawn_block 0, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 1, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 2, UPSIDE, PISTON_UPSIDE
+    polyrhythm_spawn_block 2, DOWNSIDE, PISTON_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 4, 1, 2
+    polyrhythm_spawn_block 4, DOWNSIDE, PISTON_DOWNSIDE
     rest 24
-    polyrhythm_spawn_block 6, 0, 1
-    polyrhythm_spawn_block 6, 1, 2
+    polyrhythm_spawn_block 6, UPSIDE, PISTON_UPSIDE
+    polyrhythm_spawn_block 6, DOWNSIDE, PISTON_DOWNSIDE
     rest 12
     spawn_cue CUE_H_DOWNSIDE
     rest 12
-    polyrhythm_spawn_block 10, 0, 0
-    polyrhythm_spawn_block 11, 0, 0
-    polyrhythm_spawn_block 8, 1, 0
-    polyrhythm_spawn_block 9, 1, 0
-    polyrhythm_spawn_rod 0
-    polyrhythm_spawn_rod 1
+    polyrhythm_spawn_block 10, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 11, UPSIDE, PLATFORM
+    polyrhythm_spawn_block 8, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_block 9, DOWNSIDE, PLATFORM
+    polyrhythm_spawn_rod UPSIDE
+    polyrhythm_spawn_rod DOWNSIDE
     rest 12
     spawn_cue CUE_H_UPSIDE
     spawn_cue CUE_H_DOWNSIDE
@@ -410,10 +410,10 @@ script polyrhythm_sub_089f383c
     spawn_cue CUE_H_DOWNSIDE
     rest 12
     rest 12
-    polyrhythm_retract_pistons 1
+    polyrhythm_retract_pistons DOWNSIDE
     spawn_cue CUE_H_DOWNSIDE
     rest 12
-    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons UPSIDE
     rest 12
     spawn_cue CUE_H_UPSIDE
     spawn_cue CUE_H_DOWNSIDE
@@ -430,11 +430,11 @@ script polyrhythm_sub_089f383c
     polyrhythm_play_applause_sfx
     rest 24
     rest 24
-    polyrhythm_retract_pistons 0
-    polyrhythm_retract_pistons 1
+    polyrhythm_retract_pistons UPSIDE
+    polyrhythm_retract_pistons DOWNSIDE
     rest 24
-    polyrhythm_despawn_blocks 0
-    polyrhythm_despawn_blocks 1
+    polyrhythm_despawn_blocks UPSIDE
+    polyrhythm_despawn_blocks DOWNSIDE
     rest 24
 return
 

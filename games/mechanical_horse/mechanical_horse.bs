@@ -121,7 +121,7 @@ script script_mechanical_horse_main
     beat_anim
     rest 16
     mechanical_horse_event02 D_0805c6d4
-    mechanical_horse_event04 1
+    mechanical_horse_event04 TRUE
     assess_inputs 1
     loop_start
         mechanical_horse_event05 0
@@ -139,7 +139,7 @@ script script_mechanical_horse_main
         rest 16
     loop_end
     assess_inputs 0
-    mechanical_horse_event04 0
+    mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c6d8
     mechanical_horse_event01 1
     spawn_cue CUE_WALK
@@ -182,7 +182,7 @@ script script_mechanical_horse_main
     beat_anim
     rest 24
     mechanical_horse_event02 D_0805c6d4
-    mechanical_horse_event04 1
+    mechanical_horse_event04 TRUE
     assess_inputs 1
     loop_start
         mechanical_horse_event05 1
@@ -200,7 +200,7 @@ script script_mechanical_horse_main
         rest 24
     loop_end
     assess_inputs 0
-    mechanical_horse_event04 0
+    mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c6d8
     mechanical_horse_event01 2
     spawn_cue CUE_WALK
@@ -234,7 +234,7 @@ script script_mechanical_horse_main
     rest 12
     rest 12
     mechanical_horse_event02 D_0805c6d4
-    mechanical_horse_event04 1
+    mechanical_horse_event04 TRUE
     assess_inputs 1
     loop_start
         mechanical_horse_event05 2
@@ -249,7 +249,7 @@ script script_mechanical_horse_main
         rest 12
     loop_end
     assess_inputs 0
-    mechanical_horse_event04 0
+    mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c728
     mechanical_horse_event01 3
     spawn_cue CUE_WALK
@@ -283,7 +283,7 @@ script script_mechanical_horse_main
     rest 12
     rest 12
     mechanical_horse_event02 D_0805c6d4
-    mechanical_horse_event04 1
+    mechanical_horse_event04 TRUE
     assess_inputs 1
     mechanical_horse_event06 160
     loop_start
@@ -295,7 +295,7 @@ script script_mechanical_horse_main
         rest 12
         spawn_cue CUE_WALK
         rest 12
-        mechanical_horse_event07 0
+        mechanical_horse_event07
         rest 12
         spawn_cue CUE_WALK
         rest 12
@@ -305,7 +305,7 @@ script script_mechanical_horse_main
         rest 12
         spawn_cue CUE_WALK
         rest 12
-        mechanical_horse_event07 0
+        mechanical_horse_event07
         rest 12
         spawn_cue CUE_WALK
         rest 12
@@ -315,7 +315,7 @@ script script_mechanical_horse_main
         rest 12
         spawn_cue CUE_WALK
         rest 12
-        mechanical_horse_event07 0
+        mechanical_horse_event07
         rest 12
         spawn_cue CUE_WALK
         rest 12
@@ -325,7 +325,7 @@ script script_mechanical_horse_main
         rest 12
         spawn_cue CUE_WALK
         rest 12
-        mechanical_horse_event07 0
+        mechanical_horse_event07
         rest 12
         spawn_cue CUE_WALK
         rest 12
@@ -335,7 +335,7 @@ script script_mechanical_horse_main
         rest 12
         spawn_cue CUE_WALK
         rest 12
-        mechanical_horse_event07 0
+        mechanical_horse_event07
         rest 12
         spawn_cue CUE_WALK
         rest 12
@@ -346,7 +346,7 @@ script script_mechanical_horse_main
         rest 12
         spawn_cue CUE_WALK
         rest 12
-        mechanical_horse_event07 0
+        mechanical_horse_event07
         rest 12
         spawn_cue CUE_WALK
         rest 12
@@ -356,7 +356,7 @@ script script_mechanical_horse_main
         rest 12
         spawn_cue CUE_WALK
         rest 12
-        mechanical_horse_event07 0
+        mechanical_horse_event07
         rest 12
         spawn_cue CUE_WALK
         rest 12
@@ -366,14 +366,14 @@ script script_mechanical_horse_main
         rest 12
         spawn_cue CUE_WALK
         rest 12
-        mechanical_horse_event07 0
+        mechanical_horse_event07
         rest 12
         run beatscript_enable_loops, 0
     loop_end
     assess_inputs 0
     enable_pause_menu FALSE
     mechanical_horse_event03 1
-    mechanical_horse_event04 0
+    mechanical_horse_event04 FALSE
     mechanical_horse_event02 D_0805c75c
     spawn_cue CUE_WALK
     rest 12

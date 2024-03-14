@@ -194,7 +194,7 @@ script script_marching_orders_main
     print_text_f D_0805c8b4
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
-    marching_orders_event03 0
+    marching_orders_event03
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
@@ -261,11 +261,11 @@ script script_marching_orders_practice
     loop_start
         run beatscript_disable_loops
         marching_orders_event02 3
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_migi_muke1_seqData
         rest 24
         rest 24
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_migi_seqData
         spawn_cue CUE_TURN_RIGHT
         beat_anim
@@ -275,11 +275,11 @@ script script_marching_orders_practice
         marching_orders_event02 -1
         rest 24
         marching_orders_event02 4
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_hidari_muke1_seqData
         rest 24
         rest 24
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_hidari_seqData
         spawn_cue CUE_TURN_LEFT
         beat_anim
@@ -291,11 +291,11 @@ script script_marching_orders_practice
     loop_end
     loop_start
         run beatscript_disable_loops
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_zentai1_seqData
         rest 24
         rest 24
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_susume_seqData
         rest 24
         marching_orders_event02 1
@@ -345,7 +345,7 @@ script script_marching_orders_practice
         beat_anim
         rest 24
         marching_orders_event02 -1
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_zentai1_seqData
         marching_orders_event00 8
         play_sfx s_guntai_foot1_seqData
@@ -358,7 +358,7 @@ script script_marching_orders_practice
         beat_anim
         rest 24
         marching_orders_event02 2
-        marching_orders_event01 0
+        marching_orders_event01
         play_sfx s_guntai_v_tomare_seqData
         marching_orders_event00 8
         play_sfx s_guntai_foot1_seqData

@@ -30,43 +30,43 @@ define_gameplay_scene scene_metronome, script_metronome_entry
 @ Metronome - Main Script
 
 script metronome_sub_08a19850
-    metronome_event00 0
+    metronome_event00 FALSE
     spawn_cue CUE_DEFAULT
     rest 12
-    metronome_event01 1
+    metronome_event01 TRUE
     rest 12
-    metronome_event00 1
+    metronome_event00 TRUE
     spawn_cue CUE_DEFAULT
     rest 12
-    metronome_event01 1
+    metronome_event01 TRUE
     rest 12
 return
 
 
 script metronome_sub_08a19904
-    metronome_event00 0
+    metronome_event00 FALSE
     spawn_cue CUE_DEFAULT
     rest 12
-    metronome_event01 1
+    metronome_event01 TRUE
     rest 12
-    metronome_event00 1
+    metronome_event00 TRUE
     spawn_cue CUE_DEFAULT
     rest 12
-    metronome_event01 0
+    metronome_event01 FALSE
     rest 12
 return
 
 
 script metronome_sub_08a199b8
-    metronome_event00 0
+    metronome_event00 FALSE
     spawn_cue CUE_DEFAULT
     rest 12
-    metronome_event01 0
+    metronome_event01 FALSE
     rest 12
-    metronome_event00 1
+    metronome_event00 TRUE
     spawn_cue CUE_DEFAULT
     rest 12
-    metronome_event01 0
+    metronome_event01 FALSE
     rest 12
 return
 
@@ -102,20 +102,20 @@ script script_metronome_main
         call metronome_sub_08a19850
         call metronome_sub_08a19850
         call metronome_sub_08a19850
-        metronome_event02 0
+        metronome_event02
     loop_end
     print_text_f 1
     assess_inputs 1
     run gameplay_assess_irrelevant_inputs, 1
-    metronome_event00 0
+    metronome_event00 FALSE
     spawn_cue CUE_DEFAULT
     rest 12
-    metronome_event01 1
+    metronome_event01 TRUE
     rest 12
-    metronome_event00 1
+    metronome_event00 TRUE
     spawn_cue CUE_DEFAULT
     rest 12
-    metronome_event01 1
+    metronome_event01 TRUE
     rest 12
     call metronome_sub_08a19850
     call metronome_sub_08a19850
@@ -131,7 +131,7 @@ script script_metronome_main
     call metronome_sub_08a19904
     loop_start
         call metronome_sub_08a199b8
-        metronome_event03 0
+        metronome_event03
     loop_end
     assess_inputs 0
     run gameplay_assess_irrelevant_inputs, 0

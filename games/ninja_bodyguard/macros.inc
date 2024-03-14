@@ -56,85 +56,102 @@
     ninja_bodyguard_event EVENT_00, \args
 .endm
 
+
 @ [Event 0x01] ?
-.macro ninja_bodyguard_event01 args
-    ninja_bodyguard_event EVENT_01, \args
+.macro ninja_bodyguard_event01
+    ninja_bodyguard_event EVENT_01, 0
 .endm
+
 
 @ [Event 0x02] ?
-.macro ninja_bodyguard_event02 args
-    ninja_bodyguard_event EVENT_02, \args
+.macro ninja_bodyguard_event02
+    ninja_bodyguard_event EVENT_02, 0
 .endm
+
 
 @ [Event 0x03] ?
-.macro ninja_bodyguard_event03 args
-    ninja_bodyguard_event EVENT_03, \args
+.macro ninja_bodyguard_event03
+    ninja_bodyguard_event EVENT_03, 0
 .endm
+
 
 @ [Event 0x04] ?
-.macro ninja_bodyguard_event04 args
-    ninja_bodyguard_event EVENT_04, \args
+.macro ninja_bodyguard_event04
+    ninja_bodyguard_event EVENT_04, 0
 .endm
+
 
 @ [Event 0x05] ?
-.macro ninja_bodyguard_event05 args
-    ninja_bodyguard_event EVENT_05, \args
+.macro ninja_bodyguard_event05
+    ninja_bodyguard_event EVENT_05, 0
 .endm
 
+
 @ [Event 0x06] ?
-.macro ninja_bodyguard_event06 args
-    ninja_bodyguard_event EVENT_06, \args
+.macro ninja_bodyguard_event06
+    ninja_bodyguard_event EVENT_06, 0
 .endm
+
 
 @ [Event 0x07] ?
 .macro ninja_bodyguard_event07 args
     ninja_bodyguard_event EVENT_07, \args
 .endm
 
+
 @ [Event 0x08] ?
-.macro ninja_bodyguard_event08 args
-    ninja_bodyguard_event EVENT_08, \args
+.macro ninja_bodyguard_event08
+    ninja_bodyguard_event EVENT_08, 0
 .endm
+
 
 @ [Event 0x09] ?
 .macro ninja_bodyguard_event09 args
     ninja_bodyguard_event EVENT_09, \args
 .endm
 
+
 @ [Event 0x0A] ?
-.macro ninja_bodyguard_event0A args
-    ninja_bodyguard_event EVENT_0A, \args
+.macro ninja_bodyguard_event0A
+    ninja_bodyguard_event EVENT_0A, 0
 .endm
+
 
 @ [Event 0x0B] ?
 .macro ninja_bodyguard_event0B args
     ninja_bodyguard_event EVENT_0B, \args
 .endm
 
+
 @ [Event 0x0C] ?
-.macro ninja_bodyguard_event0C args
-    ninja_bodyguard_event EVENT_0C, \args
+.macro ninja_bodyguard_event0C
+    ninja_bodyguard_event EVENT_0C, 0
 .endm
+
 
 @ [Event 0x0D] ?
 .macro ninja_bodyguard_event0D args
     ninja_bodyguard_event EVENT_0D, \args
 .endm
 
+
 @ [Event 0x0E] ?
 .macro ninja_bodyguard_event0E args
     ninja_bodyguard_event EVENT_0E, \args
 .endm
+
 
 @ [Event 0x0F] ?
 .macro ninja_bodyguard_event0F args
     ninja_bodyguard_event EVENT_0F, \args
 .endm
 
+
 @ [Event 0x10] ?
 .macro ninja_bodyguard_event10 args
     ninja_bodyguard_event EVENT_10, \args
 .endm
+
 
 @ [Event 0x11] ?
 .macro ninja_bodyguard_event11 args

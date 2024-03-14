@@ -43,37 +43,44 @@
     mechanical_horse_event EVENT_00, \args
 .endm
 
+
 @ [Event 0x01] ?
 .macro mechanical_horse_event01 args
     mechanical_horse_event EVENT_01, \args
 .endm
+
 
 @ [Event 0x02] ?
 .macro mechanical_horse_event02 args
     mechanical_horse_event EVENT_02, \args
 .endm
 
+
 @ [Event 0x03] ?
 .macro mechanical_horse_event03 args
     mechanical_horse_event EVENT_03, \args
 .endm
+
 
 @ [Event 0x04] ?
 .macro mechanical_horse_event04 args
     mechanical_horse_event EVENT_04, \args
 .endm
 
+
 @ [Event 0x05] ?
 .macro mechanical_horse_event05 args
     mechanical_horse_event EVENT_05, \args
 .endm
+
 
 @ [Event 0x06] ?
 .macro mechanical_horse_event06 args
     mechanical_horse_event EVENT_06, \args
 .endm
 
+
 @ [Event 0x07] ?
-.macro mechanical_horse_event07 args
-    mechanical_horse_event EVENT_07, \args
+.macro mechanical_horse_event07
+    mechanical_horse_event EVENT_07, 0
 .endm

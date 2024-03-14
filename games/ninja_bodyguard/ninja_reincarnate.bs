@@ -106,7 +106,7 @@ script ninja_reincarnate_sub_08a017c0
     set_marking_criteria 0
     play_music s_ninja_bgm1_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 1
     ninja_bodyguard_event0B 1
@@ -118,17 +118,17 @@ script ninja_reincarnate_sub_08a017c0
     rest 6
     rest 6
     rest 6
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 24
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     play_music s_ninja_bgm1_seqData
     set_music_key 2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -141,7 +141,7 @@ script ninja_reincarnate_sub_08a017c0
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
 return
 
@@ -150,7 +150,7 @@ script ninja_reincarnate_sub_08a01a24
     set_marking_criteria 0
     play_music s_ninja_bgm1_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 2
     ninja_bodyguard_event0B 1
@@ -162,21 +162,21 @@ script ninja_reincarnate_sub_08a01a24
     rest 6
     rest 6
     rest 6
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 12
     ninja_bodyguard_event0F 126
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 12
     ninja_bodyguard_event0F 256
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     play_music s_ninja_bgm1_seqData
     set_music_key 2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -192,7 +192,7 @@ script ninja_reincarnate_sub_08a01a24
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
 return
 
@@ -201,7 +201,7 @@ script ninja_reincarnate_sub_08a01d18
     set_marking_criteria 1
     play_music s_ninja_bgm1_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 3
     ninja_bodyguard_event0B 1
@@ -213,24 +213,24 @@ script ninja_reincarnate_sub_08a01d18
     rest 6
     rest 6
     rest 6
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 12
     ninja_bodyguard_event0F 126
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 96
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 256
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     play_music s_ninja_bgm1_seqData
     set_music_key 2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -249,7 +249,7 @@ script ninja_reincarnate_sub_08a01d18
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
 return
 
@@ -258,7 +258,7 @@ script ninja_reincarnate_sub_08a02078
     set_marking_criteria 1
     play_music s_ninja_bgm1_seqData
     set_music_key -3
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 2
     ninja_bodyguard_event0B 1
@@ -270,23 +270,23 @@ script ninja_reincarnate_sub_08a02078
     rest 6
     rest 6
     rest 6
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 6
     rest 6
     rest 6
     ninja_bodyguard_event0F 70
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 256
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     play_music s_ninja_bgm1_seqData
     set_music_key -2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -304,7 +304,7 @@ script ninja_reincarnate_sub_08a02078
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
 return
 
@@ -313,26 +313,26 @@ script ninja_reincarnate_sub_08a0239c
     set_marking_criteria 0
     play_music s_ninja_bgm2_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 1
     ninja_bodyguard_event0B 1
     rest 12
     rest 24
     rest 24
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 24
     rest 24
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     rest 24
     play_music s_ninja_bgm2_seqData
     set_music_key -2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -344,7 +344,7 @@ script ninja_reincarnate_sub_08a0239c
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
     rest 24
 return
@@ -354,7 +354,7 @@ script ninja_reincarnate_sub_08a025dc
     set_marking_criteria 2
     play_music s_ninja_bgm2_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 5
     ninja_bodyguard_event0B 1
@@ -366,29 +366,29 @@ script ninja_reincarnate_sub_08a025dc
     rest 6
     rest 6
     rest 6
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     ninja_bodyguard_event0F 256
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 100
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 100
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 130
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 6
     ninja_bodyguard_event0F 256
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 24
     play_music s_ninja_bgm2_seqData
     set_music_key -2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -412,7 +412,7 @@ script ninja_reincarnate_sub_08a025dc
     spawn_cue CUE_DEFAULT
     rest 24
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
 return
 
@@ -421,7 +421,7 @@ script ninja_reincarnate_sub_08a029fc
     set_marking_criteria 3
     play_music s_ninja_bgm2_seqData
     set_music_key 2
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
     ninja_bodyguard_event07 2
     ninja_bodyguard_event0B 1
@@ -433,22 +433,22 @@ script ninja_reincarnate_sub_08a029fc
     rest 6
     rest 6
     rest 6
-    ninja_bodyguard_event08 0
+    ninja_bodyguard_event08
     rest 12
     rest 12
     rest 23
     ninja_bodyguard_event0F 200
-    ninja_bodyguard_event09 0
+    ninja_bodyguard_event09 FALSE
     rest 1
     rest 1
     ninja_bodyguard_event0F 256
-    ninja_bodyguard_event09 1
+    ninja_bodyguard_event09 TRUE
     rest 23
     play_music s_ninja_bgm2_seqData
     set_music_key 0
-    ninja_bodyguard_event0C 0
+    ninja_bodyguard_event0C
     rest 12
-    ninja_bodyguard_event05 0
+    ninja_bodyguard_event05
     ninja_bodyguard_event0D 1
     ninja_bodyguard_event0B 0
     rest 12
@@ -465,7 +465,7 @@ script ninja_reincarnate_sub_08a029fc
     spawn_cue CUE_DEFAULT
     rest 23
     rest 12
-    ninja_bodyguard_event06 0
+    ninja_bodyguard_event06
     rest 12
 return
 
@@ -474,14 +474,14 @@ script script_ninja_reincarnate_main
     set_tempo 140
     ninja_bodyguard_event0B 3
     ninja_bodyguard_event00 0
-    ninja_bodyguard_event02 0
+    ninja_bodyguard_event02
     play_sfx s_ninja_wind_seqData
     rest 24
     enable_pause_menu TRUE
-    ninja_bodyguard_event03 0
+    ninja_bodyguard_event03
     rest 24
     rest 24
-    ninja_bodyguard_event04 0
+    ninja_bodyguard_event04
     rest 24
     rest 24
     start_perfect_campaign
