@@ -198,7 +198,7 @@ script script_drum_intro_unused_main
 
     load_drum_intro_play
     rest 24
-    dmi_event04 1
+    dmi_event04 TRUE
     dmi_event03 2
     print_text_s D_0805d568
     rest 48
@@ -209,7 +209,7 @@ script script_drum_intro_unused_main
     rest 96
     rest 96
     rest 96
-    dmi_event04 0
+    dmi_event04 FALSE
     rest 96
     set_tempo 120
     dmi_event03 2

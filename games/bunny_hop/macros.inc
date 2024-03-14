@@ -86,8 +86,8 @@
 .endm
 
 @ [Event 0x04] ?
-.macro bunny_hop_event04 args
-    bunny_hop_event EVENT_04, \args
+.macro bunny_hop_event04
+    bunny_hop_event EVENT_04, 0
 .endm
 
 @ [Event 0x05] ?
@@ -96,8 +96,8 @@
 .endm
 
 @ [Event 0x06] ?
-.macro bunny_hop_event06 args
-    bunny_hop_event EVENT_06, \args
+.macro bunny_hop_event06
+    bunny_hop_event EVENT_06, 0
 .endm
 
 @ [Event 0x07] ?

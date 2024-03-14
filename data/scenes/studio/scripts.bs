@@ -1336,7 +1336,7 @@ script script_studio_superb
 @ Silence
 script script_studio_silence_loop
     rest 24
-    dms_event06 0
+    dms_event06
     if_globalvar_eq TRUE
         return
     end_if

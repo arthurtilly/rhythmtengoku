@@ -125,22 +125,22 @@ script script_remix_3_main
     rest 12
     rest 24
     start_perfect_campaign
-    bunny_hop_event09 49168
+    bunny_hop_event09 0xC010
     print_text_s D_0806a0d4
     rest 24
     rest 24
     rest 24
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     bunny_hop_event01 1
     spawn_cue CUE_BUNNY_01
     spawn_cue CUE_BUNNY_02
     rest 24
-    bunny_hop_event02 1
+    bunny_hop_event02 TRUE
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
@@ -555,16 +555,16 @@ script script_remix_3_main
 
     load_bunny_hop_remix_3
     bunny_hop_event08 4
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
     rest 24
-    bunny_hop_event02 1
+    bunny_hop_event02 TRUE
     rest 24
     print_text_s D_0806a0fc
     rest 24

@@ -117,7 +117,7 @@ script script_drum_intro_unused_3_main
     run gameplay_reset_loop_counter
     loop_start
         run beatscript_disable_loops
-        dmi_event04 0
+        dmi_event04 FALSE
         switch_loop_counter
             case 0
                 break
@@ -129,7 +129,7 @@ script script_drum_intro_unused_3_main
                 play_sfx s_f_drumdr_miss_seqData
         end_switch
         dmi_event02 2
-        dmi_event00 134604064
+        dmi_event00 D_0805e520
         rest 24
         rest 24
         dmi_event02 0
@@ -176,10 +176,10 @@ script script_drum_intro_unused_3_main
         load_drum_intro_play
         rest 24
         rest 24
-        dmi_event00 134604148
+        dmi_event00 D_0805e574
         rest 24
         rest 24
-        dmi_event04 1
+        dmi_event04 TRUE
         call drum_intro_unused_3_sub_08a36a5c
         print_text_s 0
         dmi_event05 2
@@ -221,7 +221,7 @@ script script_drum_intro_unused_3_main
         rest 24
         run gameplay_increment_loop_counter
     loop_end
-    dmi_event04 0
+    dmi_event04 FALSE
     print_text_s D_0805e584
     play_sfx s_f_drumdr_ok_seqData
     rest 24
@@ -234,7 +234,7 @@ script script_drum_intro_unused_3_main
     rest 24
     rest 24
     dmi_event02 2
-    dmi_event00 134604260
+    dmi_event00 D_0805e5e4
     rest 12
     run gameplay_display_text_and_wait
     print_text_s 0
@@ -257,7 +257,7 @@ script script_drum_intro_unused_3_main
     run gameplay_reset_loop_counter
     loop_start
         run beatscript_disable_loops
-        dmi_event04 0
+        dmi_event04 FALSE
         switch_loop_counter
             case 0
                 break
@@ -269,7 +269,7 @@ script script_drum_intro_unused_3_main
                 play_sfx s_f_drumdr_miss_seqData
         end_switch
         dmi_event02 2
-        dmi_event00 134604484
+        dmi_event00 D_0805e6c4
         rest 24
         rest 24
         dmi_event02 0
@@ -316,10 +316,10 @@ script script_drum_intro_unused_3_main
         load_drum_intro_play
         rest 24
         rest 24
-        dmi_event00 134604148
+        dmi_event00 D_0805e574
         rest 24
         rest 24
-        dmi_event04 1
+        dmi_event04 TRUE
         call drum_intro_unused_3_sub_08a36a5c
         print_text_s 0
         dmi_event05 2
@@ -363,7 +363,7 @@ script script_drum_intro_unused_3_main
         rest 24
         run gameplay_increment_loop_counter
     loop_end
-    dmi_event04 0
+    dmi_event04 FALSE
     print_text_s D_0805e584
     play_sfx s_f_drumdr_ok_seqData
     rest 24
@@ -376,7 +376,7 @@ script script_drum_intro_unused_3_main
     rest 24
     rest 24
     dmi_event02 2
-    dmi_event00 134604592
+    dmi_event00 D_0805e730
     rest 12
     run gameplay_display_text_and_wait
     print_text_s 0
@@ -389,7 +389,7 @@ script script_drum_intro_unused_3_main
     run gameplay_reset_loop_counter
     loop_start
         run beatscript_disable_loops
-        dmi_event04 0
+        dmi_event04 FALSE
         switch_loop_counter
             case 0
                 break
@@ -401,7 +401,7 @@ script script_drum_intro_unused_3_main
                 play_sfx s_f_drumdr_miss_seqData
         end_switch
         dmi_event02 2
-        dmi_event00 134604688
+        dmi_event00 D_0805e790
         rest 24
         rest 24
         dmi_event02 0
@@ -454,10 +454,10 @@ script script_drum_intro_unused_3_main
         load_drum_intro_play
         rest 24
         rest 24
-        dmi_event00 134604720
+        dmi_event00 D_0805e7b0
         rest 24
         rest 24
-        dmi_event04 1
+        dmi_event04 TRUE
         call drum_intro_unused_3_sub_08a36a5c
         print_text_s 0
         dmi_event05 2
@@ -505,7 +505,7 @@ script script_drum_intro_unused_3_main
         rest 24
         run gameplay_increment_loop_counter
     loop_end
-    dmi_event04 0
+    dmi_event04 FALSE
     print_text_s D_0805e584
     play_sfx s_f_drumdr_ok_seqData
     rest 24
@@ -518,7 +518,7 @@ script script_drum_intro_unused_3_main
     rest 24
     rest 24
     dmi_event02 2
-    dmi_event00 134604868
+    dmi_event00 D_0805e844
     rest 12
     run gameplay_display_text_and_wait
     print_text_s 0

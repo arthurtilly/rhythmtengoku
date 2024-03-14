@@ -264,7 +264,7 @@ script drum_girls_live_unused_sub_08a1ff8c
     beat_anim
     rest 24
     dml_set_guitarist_next_state 0x3, 1
-    dml_event01 1
+    dml_event01 TRUE
     set_marking_criteria 0
     spawn_cue CUE_LIVE_00
     rest 6
@@ -287,7 +287,7 @@ script drum_girls_live_unused_sub_08a1ff8c
     spawn_cue CUE_LIVE_00
     rest 24
     dml_set_guitarist_next_state 0x3, 0
-    dml_event01 0
+    dml_event01 FALSE
 return
 
 
@@ -434,7 +434,7 @@ script drum_girls_live_unused_sub_08a20760
     beat_anim
     rest 24
     dml_set_guitarist_next_state 0x3, 1
-    dml_event01 1
+    dml_event01 TRUE
     set_marking_criteria 0
     spawn_cue CUE_LIVE_00
     rest 6
@@ -457,7 +457,7 @@ script drum_girls_live_unused_sub_08a20760
     spawn_cue CUE_LIVE_00
     rest 24
     dml_set_guitarist_next_state 0x3, 0
-    dml_event01 0
+    dml_event01 FALSE
 return
 
 

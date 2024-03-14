@@ -384,7 +384,7 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -399,7 +399,7 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -793,13 +793,13 @@ script script_remix_7_main
 
     load_bunny_hop
     bunny_hop_event08 3
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
     rest 24
-    bunny_hop_event02 1
+    bunny_hop_event02 TRUE
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
     rest 24

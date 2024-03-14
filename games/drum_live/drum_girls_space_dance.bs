@@ -52,7 +52,7 @@ script script_drum_girls_space_dance
     rest 6
     dml_set_disable_excitement FALSE
     dml_set_enable_boredom TRUE
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat08
     call drum_live_pat00
     call drum_live_pat00
@@ -85,7 +85,7 @@ script script_drum_girls_space_dance
     call drum_live_pat00
     call drum_live_pat00
     call drum_live_pat02
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat00
     call drum_live_pat00
     call drum_live_pat00
@@ -205,7 +205,7 @@ script script_drum_girls_space_dance
     call drum_live_pat13
     call drum_live_pat13
     call drum_live_pat06
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat00
     dml_set_guitarist_next_state 0x3, 0
     call drum_live_pat00
@@ -237,7 +237,7 @@ script script_drum_girls_space_dance
     call drum_live_pat00
     call drum_live_pat00
     call drum_live_pat00
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat09
     call drum_live_pat00
     call drum_live_pat00
@@ -272,7 +272,7 @@ script script_drum_girls_space_dance
     call drum_live_pat00
     call drum_live_pat00
     dml_set_enable_boredom FALSE
-    dml_event07 0
+    dml_event07
     call drum_live_pat00
     call drum_live_pat00
     rest 24

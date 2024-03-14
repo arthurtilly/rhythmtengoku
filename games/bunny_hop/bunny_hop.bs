@@ -191,7 +191,7 @@ script bunny_hop_sub_08a18b30
     spawn_cue CUE_BUNNY_01
     spawn_cue CUE_BUNNY_02
     set_marking_criteria 0
-    bunny_hop_event06 0
+    bunny_hop_event06
     rest 12
     mod_music_volume 256, 36
     rest 12
@@ -230,7 +230,7 @@ script bunny_hop_sub_08a18db8
     spawn_cue CUE_BUNNY_01
     spawn_cue CUE_BUNNY_02
     set_marking_criteria 0
-    bunny_hop_event06 0
+    bunny_hop_event06
     rest 24
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
@@ -255,7 +255,7 @@ script bunny_hop_sub_08a18fc8
     spawn_cue CUE_BUNNY_07
     rest 24
     rest 24
-    bunny_hop_event04 0
+    bunny_hop_event04
     bunny_hop_event03 D_0805cc80
     play_sfx s_rabbit_jet_seqData
     rest 12
@@ -271,7 +271,7 @@ script bunny_hop_sub_08a18fc8
     spawn_cue CUE_BUNNY_01
     spawn_cue CUE_BUNNY_02
     set_marking_criteria 0
-    bunny_hop_event06 0
+    bunny_hop_event06
     rest 24
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
@@ -303,60 +303,60 @@ script script_bunny_hop_main
     rest 24
     rest 24
     set_marking_criteria 0
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     rest 24
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     rest 24
     bunny_hop_event01 1
     spawn_cue CUE_BUNNY_01
     spawn_cue CUE_BUNNY_02
-    bunny_hop_event02 0
+    bunny_hop_event02 FALSE
     rest 24
-    bunny_hop_event02 1
+    bunny_hop_event02 TRUE
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18800
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18800
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18800
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18800
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18b30
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18800
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18800
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18b30
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18800
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18db8
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a188e4
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18800
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18fc8
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18fc8
-    bunny_hop_event04 0
+    bunny_hop_event04
     call bunny_hop_sub_08a188e4
-    bunny_hop_event04 0
+    bunny_hop_event04
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
     rest 24

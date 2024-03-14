@@ -97,7 +97,7 @@ define_gameplay_scene scene_drum_studio_listening, script_drum_studio_listening_
 
 script script_drum_studio_main
     rest 24
-    dms_event02 1
+    dms_event02 TRUE
     loop_start
         set_tempo 140
         set_music_volume 256
@@ -105,13 +105,13 @@ script script_drum_studio_main
         rest_reset
         dms_get_next_script
         call_result
-        dms_stop_bg_monitor
-        dms_event01 0
+        dms_stop_bg_monitor 0
+        dms_event01
         if_globalvar_eq 0
             run beatscript_disable_loops
         end_if
     loop_end
-    dms_event02 0
+    dms_event02 FALSE
     dms_show_save_options
     set_tempo 140
     rest 12

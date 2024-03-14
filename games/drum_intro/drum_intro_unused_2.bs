@@ -53,7 +53,7 @@ define_gameplay_scene scene_drum_intro_unused_2_skipped_intro, script_drum_intro
 script script_drum_intro_unused_2_main
     mod_music_volume 0, 192
     rest 24
-    dmi_event04 1
+    dmi_event04 TRUE
     dmi_event03 2
     print_text_s D_0805d8d8
     rest 96
@@ -99,7 +99,7 @@ script script_drum_intro_unused_2_main
     set_tempo 140
     assess_inputs 0
     dmi_event03 2
-    dmi_event06 0
+    dmi_event06
     rest 96
     dmi_event03 1
     print_text_s 0
@@ -149,7 +149,7 @@ script script_drum_intro_unused_2_main
     set_tempo 140
     assess_inputs 0
     dmi_event03 2
-    dmi_event06 0
+    dmi_event06
     rest 96
     dmi_event03 1
     print_text_s 0
@@ -209,7 +209,7 @@ script script_drum_intro_unused_2_main
     set_tempo 140
     assess_inputs 0
     dmi_event03 2
-    dmi_event06 0
+    dmi_event06
     rest 96
     dmi_event03 1
     print_text_s 0
@@ -260,12 +260,12 @@ script script_drum_intro_unused_2_main
     set_tempo 140
     assess_inputs 0
     dmi_event03 2
-    dmi_event06 0
+    dmi_event06
     rest 96
     dmi_event03 1
     print_text_s 0
     rest 24
-    dmi_event04 0
+    dmi_event04 FALSE
     set_tempo 120
     dmi_event03 2
     print_text_s D_0805d928

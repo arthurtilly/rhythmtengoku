@@ -611,8 +611,8 @@ script script_remix_5_main
     rest 24
     beat_anim
     rest 24
-    fireworks_set_pattern_mode 99
-    fireworks_set_default_pattern 14
+    fireworks_set_pattern_mode PATTERN_MODE_USE_DEFAULT
+    fireworks_set_default_pattern PATTERN_SP_STAR
     spawn_cue CUE_NORMAL_FIREWORK
     play_sfx_vol s_hanabi_wish1_seqData, 288
     beat_anim
@@ -721,8 +721,8 @@ script script_remix_5_main
     rest 24
     beat_anim
     rest 24
-    fireworks_set_pattern_mode 99
-    fireworks_set_default_pattern 15
+    fireworks_set_pattern_mode PATTERN_MODE_USE_DEFAULT
+    fireworks_set_default_pattern PATTERN_SP_CIRCLE
     spawn_cue CUE_NORMAL_FIREWORK
     play_sfx_vol s_hanabi_wish1_seqData, 288
     beat_anim
@@ -803,8 +803,8 @@ script script_remix_5_main
     rest 24
     beat_anim
     rest 24
-    fireworks_set_pattern_mode 99
-    fireworks_set_default_pattern 17
+    fireworks_set_pattern_mode PATTERN_MODE_USE_DEFAULT
+    fireworks_set_default_pattern PATTERN_SP_SMILE
     spawn_cue CUE_NORMAL_FIREWORK
     beat_anim
     rest 24

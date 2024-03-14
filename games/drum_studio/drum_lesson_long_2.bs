@@ -217,7 +217,7 @@ script script_drum_lesson_long_2_main
     dms_event08 4
     dms_event09 1
     rest 24
-    dms_event02 1
+    dms_event02 TRUE
     run drum_lesson_script_import_pattern, D_08a42d28
     call drum_lessons_sub_08a7d7a0
     run drum_lesson_script_import_pattern, D_08a42d38
@@ -227,8 +227,8 @@ script script_drum_lesson_long_2_main
     assess_inputs 1
     run drum_lesson_script_import_pattern, D_08a42d58
     call drum_lessons_sub_08a7d7a0
-    dms_show_dialogue 1
-    dms_set_teacher_exp 4
+    dms_show_dialogue TRUE
+    dms_set_teacher_exp TEACHER_EXP_GIVE_RANK
     dms_get_lesson_score
 return
 

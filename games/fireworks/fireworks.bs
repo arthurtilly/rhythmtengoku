@@ -211,13 +211,13 @@ script script_fireworks_main
     rest 24
     rest 24
     rest 12
-    fireworks_play_sfx 4
+    fireworks_play_sfx SFX_NUEI
     rest 12
     set_marking_criteria 1
     spawn_cue CUE_SPIRIT_SPARKLER
     rest 24
     rest 12
-    fireworks_play_sfx 4
+    fireworks_play_sfx SFX_NUEI
     rest 12
     spawn_cue CUE_SPIRIT_SPARKLER
     rest 24
@@ -227,7 +227,7 @@ script script_fireworks_main
     rest 24
     spawn_cue CUE_TAIKO_BOMBER
     rest 12
-    fireworks_play_sfx 4
+    fireworks_play_sfx SFX_NUEI
     rest 12
     spawn_cue CUE_SPIRIT_SPARKLER
     rest 24
@@ -246,67 +246,6 @@ script script_fireworks_main
     spawn_cue CUE_NORMAL_FIREWORK
     rest 24
     rest 24
-    rest 24
-    rest 24
-    set_marking_criteria 1
-    spawn_cue CUE_TAIKO_BOMBER
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    set_marking_criteria 0
-    spawn_cue CUE_NORMAL_FIREWORK
-    rest 24
-    rest 24
-    rest 12
-    fireworks_play_sfx 4
-    rest 12
-    spawn_cue CUE_SPIRIT_SPARKLER
-    rest 24
-    spawn_cue CUE_NORMAL_FIREWORK
-    rest 24
-    rest 24
-    rest 12
-    fireworks_play_sfx 4
-    rest 12
-    spawn_cue CUE_SPIRIT_SPARKLER
-    rest 24
-    spawn_cue CUE_NORMAL_FIREWORK
-    rest 24
-    rest 24
-    rest 12
-    fireworks_play_sfx 4
-    rest 12
-    spawn_cue CUE_SPIRIT_SPARKLER
-    rest 24
-    set_marking_criteria 1
-    spawn_cue CUE_TAIKO_BOMBER
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    set_marking_criteria 0
-    rest 24
-    rest 12
-    fireworks_play_sfx 4
-    rest 12
-    spawn_cue CUE_SPIRIT_SPARKLER
-    rest 24
-    rest 24
-    set_marking_criteria 0
-    rest 24
-    rest 12
-    fireworks_play_sfx 4
-    rest 12
-    spawn_cue CUE_SPIRIT_SPARKLER
-    rest 24
-    rest 24
-    set_marking_criteria 0
-    rest 24
-    rest 12
-    fireworks_play_sfx 4
-    rest 12
-    spawn_cue CUE_SPIRIT_SPARKLER
     rest 24
     rest 24
     set_marking_criteria 1
@@ -318,8 +257,69 @@ script script_fireworks_main
     set_marking_criteria 0
     spawn_cue CUE_NORMAL_FIREWORK
     rest 24
+    rest 24
     rest 12
-    fireworks_play_sfx 4
+    fireworks_play_sfx SFX_NUEI
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 12
+    fireworks_play_sfx SFX_NUEI
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 12
+    fireworks_play_sfx SFX_NUEI
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    rest 24
+    rest 12
+    fireworks_play_sfx SFX_NUEI
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    rest 24
+    rest 12
+    fireworks_play_sfx SFX_NUEI
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    rest 24
+    rest 12
+    fireworks_play_sfx SFX_NUEI
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 12
+    fireworks_play_sfx SFX_NUEI
     rest 12
     spawn_cue CUE_SPIRIT_SPARKLER
     rest 24
@@ -328,18 +328,18 @@ script script_fireworks_main
     spawn_cue CUE_NORMAL_FIREWORK
     rest 24
     rest 12
-    fireworks_play_sfx 4
+    fireworks_play_sfx SFX_NUEI
     rest 12
     spawn_cue CUE_SPIRIT_SPARKLER
     rest 24
     rest 12
-    fireworks_play_sfx 4
+    fireworks_play_sfx SFX_NUEI
     rest 12
     set_marking_criteria 0
     spawn_cue CUE_SPIRIT_SPARKLER
     rest 24
     rest 12
-    fireworks_play_sfx 4
+    fireworks_play_sfx SFX_NUEI
     rest 12
     spawn_cue CUE_SPIRIT_SPARKLER
     rest 24
@@ -349,7 +349,7 @@ script script_fireworks_main
     rest 24
     spawn_cue CUE_TAIKO_BOMBER
     rest 12
-    fireworks_play_sfx 4
+    fireworks_play_sfx SFX_NUEI
     rest 12
     spawn_cue CUE_SPIRIT_SPARKLER
     rest 24
@@ -421,7 +421,7 @@ script script_fireworks_practice
         print_text_f D_0805ce5c
         rest 24
         rest 24
-        fireworks_play_sfx 3
+        fireworks_play_sfx SFX_THREE
         play_sfx_synced s_hanabi_1_seqData, 150, 256
         print_text_f D_0805ce80
         spawn_cue CUE_NORMAL_FIREWORK
@@ -441,7 +441,7 @@ script script_fireworks_practice
         print_text_f D_0805ce5c
         rest 24
         rest 24
-        fireworks_play_sfx 3
+        fireworks_play_sfx SFX_THREE
         play_sfx_synced s_hanabi_1_seqData, 150, 256
         print_text_f D_0805ce80
         spawn_cue CUE_NORMAL_FIREWORK
@@ -462,7 +462,7 @@ script script_fireworks_practice
     rest 24
     rest 24
     rest 24
-    fireworks_set_pattern_mode 1
+    fireworks_set_pattern_mode PATTERN_MODE_1
     print_text_f D_0805cf10
     rest 24
     rest 24
@@ -482,7 +482,7 @@ script script_fireworks_practice
         rest 24
         rest 24
         rest 12
-        fireworks_play_sfx 4
+        fireworks_play_sfx SFX_NUEI
         print_text_f D_0805cf4c
         rest 4
         print_text_f D_0805cf6c
@@ -503,7 +503,7 @@ script script_fireworks_practice
         rest 24
         rest 24
         rest 12
-        fireworks_play_sfx 4
+        fireworks_play_sfx SFX_NUEI
         print_text_f D_0805cf4c
         rest 4
         print_text_f D_0805cf6c
@@ -524,7 +524,7 @@ script script_fireworks_practice
     rest 24
     rest 24
     rest 24
-    fireworks_set_pattern_mode 2
+    fireworks_set_pattern_mode PATTERN_MODE_TAIKO_BOMBER
     print_text_f D_0805cfec
     rest 24
     rest 24
@@ -584,7 +584,7 @@ script script_fireworks_practice
     rest 24
     rest 24
     rest 24
-    fireworks_set_pattern_mode 3
+    fireworks_set_pattern_mode PATTERN_MODE_USE_TABLE
     print_text_f D_0805d0d0
     rest 24
     rest 24
@@ -607,7 +607,7 @@ script script_fireworks_practice
 script script_fireworks_skipped_practice
     rest 24
     enable_pause_menu TRUE
-    fireworks_set_pattern_mode 3
+    fireworks_set_pattern_mode PATTERN_MODE_USE_TABLE
     goto script_fireworks_main
 
 .end

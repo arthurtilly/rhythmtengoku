@@ -235,27 +235,27 @@ script script_drum_lesson_basic_2_main
     dms_event09 1
     rest 24
     rest 24
-    dms_event02 1
+    dms_event02 TRUE
     rest 24
     dms_set_dialogue_text D_08061d18
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061d70
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061dbc
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061e04
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     rest 24
     run drum_lesson_script_import_pattern, D_08a42504
@@ -271,8 +271,8 @@ script script_drum_lesson_basic_2_main
     assess_inputs 1
     run drum_lesson_script_import_pattern, D_08a42554
     call drum_lessons_sub_08a7d7a0
-    dms_show_dialogue 1
-    dms_set_teacher_exp 4
+    dms_show_dialogue TRUE
+    dms_set_teacher_exp TEACHER_EXP_GIVE_RANK
     dms_get_lesson_score
 return
 

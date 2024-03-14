@@ -265,84 +265,84 @@ script script_drum_lesson_basic_1_main
     dms_event09 1
     rest 24
     rest 24
-    dms_event02 1
+    dms_event02 TRUE
     rest 24
     dms_set_dialogue_text D_08061704
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061740
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_0806178c
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     rest 24
     run drum_lesson_script_import_pattern, D_08a41e90
     call drum_lessons_sub_08a7d7a0
     run drum_lesson_script_import_pattern, D_08a41ea0
     call drum_lessons_sub_08a7d7a0
-    dms_show_dialogue 1
+    dms_show_dialogue TRUE
     dms_set_dialogue_text D_080617bc
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_080617f0
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_0806183c
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061884
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     run drum_lesson_script_import_pattern, D_08a41eb0
     call drum_lessons_sub_08a7d7a0
     run drum_lesson_script_import_pattern, D_08a41ec0
     call drum_lessons_sub_08a7d7a0
-    dms_show_dialogue 1
+    dms_show_dialogue TRUE
     dms_set_dialogue_text D_0806189c
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_080618d8
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061910
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061950
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     dms_set_dialogue_text D_08061980
     rest 12
-    dms_event15 0
-    dms_event16 0
+    dms_event15
+    dms_event16
     rest 12
     assess_inputs 1
     run drum_lesson_script_import_pattern, D_08a41ed0
     call drum_lessons_sub_08a7d7a0
-    dms_show_dialogue 1
-    dms_set_teacher_exp 4
+    dms_show_dialogue TRUE
+    dms_set_teacher_exp TEACHER_EXP_GIVE_RANK
     dms_get_lesson_score
 return
 

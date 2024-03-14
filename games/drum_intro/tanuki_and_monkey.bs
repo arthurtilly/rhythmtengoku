@@ -55,7 +55,7 @@ script tanuki_and_monkey_sub_08a2efe0
     assess_inputs 0
     beat_anim
     rest 24
-    dmi_event0C 0
+    dmi_event0C
     beat_anim
     rest 24
     beat_anim
@@ -141,15 +141,19 @@ struct tanuki_and_monkey_text_table_08a2f378
     .word D_08a2f220
     .word D_08a2f248
     .word D_08a2f278
+
     .word D_08a2f2a0
     .word D_08a2f248
     .word D_08a2f278
+
     .word D_08a2f2d4
     .word D_08a2f248
     .word D_08a2f278
+
     .word D_08a2f308
     .word D_08a2f248
     .word D_08a2f278
+
     .word D_08a2f340
     .word D_08a2f248
     .word D_08a2f278
@@ -179,8 +183,8 @@ return
 
 script script_tanuki_and_monkey_main
     set_tempo 120
-    dmi_event0D 0
-    dmi_event0B 144896888
+    dmi_event0D
+    dmi_event0B tanuki_and_monkey_text_table_08a2f378, 0
     loop_start
         call tanuki_and_monkey_sub_08a2efe0
         run beatscript_disable_loops
@@ -241,10 +245,10 @@ script script_tanuki_and_monkey_main
         beat_anim
         rest 24
         dmi_event09 -1
-        dmi_event0E 0
+        dmi_event0E
     loop_end
-    dmi_event0D 0
-    dmi_event0B 144896900
+    dmi_event0D
+    dmi_event0B tanuki_and_monkey_text_table_08a2f378, 1
     loop_start
         call tanuki_and_monkey_sub_08a2efe0
         run beatscript_disable_loops
@@ -313,10 +317,10 @@ script script_tanuki_and_monkey_main
         beat_anim
         rest 24
         dmi_event09 -1
-        dmi_event0E 0
+        dmi_event0E
     loop_end
-    dmi_event0D 0
-    dmi_event0B 144896912
+    dmi_event0D
+    dmi_event0B tanuki_and_monkey_text_table_08a2f378, 2
     loop_start
         call tanuki_and_monkey_sub_08a2efe0
         run beatscript_disable_loops
@@ -385,10 +389,10 @@ script script_tanuki_and_monkey_main
         beat_anim
         rest 24
         dmi_event09 -1
-        dmi_event0E 0
+        dmi_event0E
     loop_end
-    dmi_event0D 0
-    dmi_event0B 144896924
+    dmi_event0D
+    dmi_event0B tanuki_and_monkey_text_table_08a2f378, 3
     loop_start
         call tanuki_and_monkey_sub_08a2efe0
         run beatscript_disable_loops
@@ -459,10 +463,10 @@ script script_tanuki_and_monkey_main
         beat_anim
         rest 24
         dmi_event09 -1
-        dmi_event0E 0
+        dmi_event0E
     loop_end
-    dmi_event0D 0
-    dmi_event0B 144896936
+    dmi_event0D
+    dmi_event0B tanuki_and_monkey_text_table_08a2f378, 4
     loop_start
         call tanuki_and_monkey_sub_08a2efe0
         run beatscript_disable_loops
@@ -533,7 +537,7 @@ script script_tanuki_and_monkey_main
         beat_anim
         rest 24
         dmi_event09 -1
-        dmi_event0E 0
+        dmi_event0E
     loop_end
     assess_inputs 0
     rest 24
@@ -564,8 +568,8 @@ script script_tanuki_and_monkey_intro
     set_tempo 120
     set_music_volume 256
     assess_inputs 0
-    dmi_event04 1
-    dmi_event0F 144896948
+    dmi_event04 TRUE
+    dmi_event0F tanuki_and_monkey_sub_08a2f3b4
     rest 24
     print_text_s D_0805dd40
     rest 24
@@ -959,8 +963,8 @@ script script_tanuki_and_monkey_intro
 script script_tanuki_and_monkey_skipped_intro
     set_tempo 120
     set_music_volume 256
-    dmi_event04 1
-    dmi_event0F 144896948
+    dmi_event04 TRUE
+    dmi_event0F tanuki_and_monkey_sub_08a2f3b4
     rest 24
     rest 24
     goto script_tanuki_and_monkey_main

@@ -98,8 +98,8 @@
 .endm
 
 @ [Event 0x06] ?
-.macro dmi_event06 args
-    drum_intro_event EVENT_06, \args
+.macro dmi_event06
+    drum_intro_event EVENT_06, 0
 .endm
 
 @ [Event 0x07] ?
@@ -123,23 +123,23 @@
 .endm
 
 @ [Event 0x0B] ?
-.macro dmi_event0B args
-    drum_intro_event EVENT_0B, \args
+.macro dmi_event0B textTable, offset
+    drum_intro_event EVENT_0B, \textTable + (\offset * 0xC)
 .endm
 
 @ [Event 0x0C] ?
-.macro dmi_event0C args
-    drum_intro_event EVENT_0C, \args
+.macro dmi_event0C
+    drum_intro_event EVENT_0C, 0
 .endm
 
 @ [Event 0x0D] ?
-.macro dmi_event0D args
-    drum_intro_event EVENT_0D, \args
+.macro dmi_event0D
+    drum_intro_event EVENT_0D, 0
 .endm
 
 @ [Event 0x0E] ?
-.macro dmi_event0E args
-    drum_intro_event EVENT_0E, \args
+.macro dmi_event0E
+    drum_intro_event EVENT_0E, 0
 .endm
 
 @ [Event 0x0F] ?

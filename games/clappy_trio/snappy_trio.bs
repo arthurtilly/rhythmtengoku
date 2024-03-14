@@ -121,7 +121,7 @@ script script_snappy_trio_main
     rest 24
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 24
@@ -131,7 +131,7 @@ script script_snappy_trio_main
     rest 24
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -139,7 +139,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -147,7 +147,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -155,7 +155,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -163,7 +163,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -171,68 +171,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
-    rest 12
-    clappy_trio_do_clap 0
-    rest 12
-    clappy_trio_do_clap 1
-    spawn_cue CUE_HALF_BEAT
-    rest 12
-    rest 12
-    beat_anim
-    rest 12
-    rest 12
-    clappy_trio_crouch 0
-    rest 12
-    rest 12
-    clappy_trio_do_clap 0
-    rest 12
-    clappy_trio_do_clap 1
-    spawn_cue CUE_HALF_BEAT
-    rest 12
-    rest 12
-    rest 12
-    clappy_trio_crouch 0
-    rest 12
-    clappy_trio_do_clap 0
-    rest 12
-    clappy_trio_do_clap 1
-    spawn_cue CUE_HALF_BEAT
-    rest 12
-    rest 12
-    clappy_trio_crouch 0
-    rest 12
-    clappy_trio_do_clap 0
-    rest 12
-    clappy_trio_do_clap 1
-    spawn_cue CUE_HALF_BEAT
-    rest 12
-    rest 12
-    clappy_trio_crouch 0
-    rest 12
-    clappy_trio_do_clap 0
-    rest 12
-    clappy_trio_do_clap 1
-    spawn_cue CUE_HALF_BEAT
-    rest 12
-    rest 12
-    clappy_trio_crouch 0
-    rest 12
-    clappy_trio_do_clap 0
-    rest 12
-    clappy_trio_do_clap 1
-    spawn_cue CUE_HALF_BEAT
-    rest 12
-    rest 12
-    clappy_trio_crouch 0
-    rest 12
-    clappy_trio_do_clap 0
-    rest 12
-    clappy_trio_do_clap 1
-    spawn_cue CUE_HALF_BEAT
-    rest 12
-    rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -243,7 +182,7 @@ script script_snappy_trio_main
     beat_anim
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     rest 12
     clappy_trio_do_clap 0
@@ -253,23 +192,72 @@ script script_snappy_trio_main
     rest 12
     rest 12
     rest 12
-    beat_anim
-    rest 24
-    beat_anim
-    rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
     clappy_trio_do_clap 1
     spawn_cue CUE_HALF_BEAT
     rest 12
-    rest 24
+    rest 12
+    clappy_trio_crouch
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    beat_anim
+    rest 12
+    rest 12
+    clappy_trio_crouch
+    rest 12
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    rest 12
     beat_anim
     rest 24
     beat_anim
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -281,7 +269,7 @@ script script_snappy_trio_main
     rest 24
     beat_anim
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -293,7 +281,19 @@ script script_snappy_trio_main
     rest 24
     beat_anim
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -307,7 +307,7 @@ script script_snappy_trio_main
     beat_anim
     rest 8
     rest 4
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 8
     rest 4
     rest 8
@@ -325,7 +325,7 @@ script script_snappy_trio_main
     beat_anim
     rest 8
     rest 4
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 8
     rest 4
     rest 8
@@ -391,7 +391,7 @@ script script_snappy_trio_main
     beat_anim
     rest 24
     set_marking_criteria 0
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -399,7 +399,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -407,7 +407,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -415,7 +415,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -423,7 +423,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -431,7 +431,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -441,7 +441,7 @@ script script_snappy_trio_main
     rest 12
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 12
@@ -449,7 +449,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -457,7 +457,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -465,7 +465,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -473,7 +473,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -481,7 +481,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -489,7 +489,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -516,7 +516,7 @@ script script_snappy_trio_main
     beat_anim
     rest 24
     set_marking_criteria 0
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -524,7 +524,7 @@ script script_snappy_trio_main
     spawn_cue CUE_HALF_BEAT
     rest 12
     rest 12
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 12
     clappy_trio_do_clap 0
     rest 12
@@ -534,7 +534,7 @@ script script_snappy_trio_main
     rest 12
     beat_anim
     rest 24
-    clappy_trio_crouch 0
+    clappy_trio_crouch
     rest 24
     clappy_trio_do_clap 0
     rest 12

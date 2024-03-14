@@ -35,7 +35,7 @@ script script_drum_girls_night_walk
     run drum_girls_night_walk_play_count_in, 0
     rest 24
     run drum_girls_night_walk_play_count_in, 0
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat00
     play_music s_4beat_bgm_seqData
     call drum_live_pat00
@@ -48,7 +48,7 @@ script script_drum_girls_night_walk
     call drum_live_pat00
     dml_set_disable_excitement FALSE
     dml_set_enable_boredom TRUE
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat08
     call drum_live_pat00
     call drum_live_pat00
@@ -149,7 +149,7 @@ script script_drum_girls_night_walk
     call drum_live_pat10
     call drum_live_pat10
     call drum_live_pat10
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat08
     call drum_live_pat00
     call drum_live_pat00
@@ -189,7 +189,7 @@ script script_drum_girls_night_walk
     dml_set_guitarist_next_state 0x3, 2
     call drum_live_pat10
     dml_set_guitarist_next_state 0x3, 0
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat08
     call drum_live_pat00
     call drum_live_pat00
@@ -227,7 +227,7 @@ script script_drum_girls_night_walk
     call drum_live_pat10
     call drum_live_pat00
     call drum_live_pat00
-    dml_event07 0
+    dml_event07
     rest 24
     rest 24
     rest 24

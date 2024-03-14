@@ -55,8 +55,12 @@
 
 
 @ [Event 0x00] Crouch
-.macro clappy_trio_crouch unkParam
+.macro clappy_trio_crouch_param unkParam
     clappy_trio_event LIONS_CROUCH, \unkParam
+.endm
+
+.macro clappy_trio_crouch
+    clappy_trio_crouch_param 0
 .endm
 
 @ [Event 0x01] Crouch (Smirk)

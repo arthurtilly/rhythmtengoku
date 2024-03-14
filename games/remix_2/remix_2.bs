@@ -617,8 +617,7 @@ script script_remix_2_main
     set_game_fade_in_time 30
 
     load_bon_odori
-    bon_odori_lyrics_set_curr_line 1
-    bon_odori_lyrics_curr_line_print_center D_08067f90
+    bon_odori_lyrics_print_center 1, D_08067f90
     beat_anim
     rest 24
     beat_anim
@@ -631,18 +630,17 @@ script script_remix_2_main
     run remix2_sync_bon_vocal, s_bon_dondon1_1_seqData
     rest 12
     mute_music_track MIDI_TRACK_5
-    bon_odori_animate_all 3
-    bon_odori_lyrics_set_curr_line 1
-    bon_odori_lyrics_curr_line_start_highlight 93
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 1, 93
     rest 24
     spawn_cue CUE_FORWARD_CLAP
     rest 24
-    bon_odori_animate_npc 1
+    bon_odori_animate_npc ANIM_CLAP_S
     spawn_cue CUE_FORWARD_CLAP
     mod_music_track_volume MIDI_TRACK_5, 250, 48
     beat_anim
     rest 24
-    bon_odori_animate_npc 1
+    bon_odori_animate_npc ANIM_CLAP_S
     rest 24
     play_music L2_pat01_seqData
     set_game_fade_in_time 0
@@ -710,8 +708,7 @@ script script_remix_2_main
     set_game_fade_in_time 30
 
     load_bon_odori
-    bon_odori_lyrics_set_curr_line 1
-    bon_odori_lyrics_curr_line_print_center D_08067fcc
+    bon_odori_lyrics_print_center 1, D_08067fcc
     mute_music_track MIDI_TRACK_5
     beat_anim
     rest 24
@@ -724,15 +721,14 @@ script script_remix_2_main
     rest 24
     bon_odori_start_input_check
     run remix2_sync_bon_vocal, s_bon_dondon1_2_seqData
-    bon_odori_lyrics_set_curr_line 1
-    bon_odori_lyrics_curr_line_start_highlight 60
+    bon_odori_lyrics_start_highlight 1, 60
     spawn_cue CUE_FORWARD_CLAP
     beat_anim
     rest 24
-    bon_odori_animate_npc 1
+    bon_odori_animate_npc ANIM_CLAP_S
     spawn_cue CUE_FORWARD_CLAP
     rest 24
-    bon_odori_animate_npc 1
+    bon_odori_animate_npc ANIM_CLAP_S
     mod_music_track_volume MIDI_TRACK_5, 250, 48
     rest 24
     bon_odori_stop_input_check
@@ -981,8 +977,7 @@ script script_remix_2_main
     set_game_fade_in_time 30
 
     load_bon_odori
-    bon_odori_lyrics_set_curr_line 1
-    bon_odori_lyrics_curr_line_print_center D_08067f90
+    bon_odori_lyrics_print_center 1, D_08067f90
     bon_odori_darken_screen 1
     beat_anim
     rest 24
@@ -997,18 +992,17 @@ script script_remix_2_main
     run remix2_sync_bon_vocal, s_bon_dondon1_1_seqData
     rest 12
     mute_music_track MIDI_TRACK_5
-    bon_odori_animate_all 3
-    bon_odori_lyrics_set_curr_line 1
-    bon_odori_lyrics_curr_line_start_highlight 84
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 1, 84
     rest 24
     spawn_cue CUE_FORWARD_CLAP
     rest 24
-    bon_odori_animate_npc 1
+    bon_odori_animate_npc ANIM_CLAP_S
     spawn_cue CUE_FORWARD_CLAP
     mod_music_track_volume MIDI_TRACK_5, 250, 48
     beat_anim
     rest 24
-    bon_odori_animate_npc 1
+    bon_odori_animate_npc ANIM_CLAP_S
     mod_music_volume 250, 24
     rest 24
     set_game_fade_in_time 0

@@ -39,7 +39,7 @@ script script_drum_band_snappy_trio
     call drum_live_pat26
     call drum_live_pat26
     dml_set_enable_boredom TRUE
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat30
     call drum_live_pat26
     call drum_live_pat26
@@ -72,7 +72,7 @@ script script_drum_band_snappy_trio
     call drum_live_pat26
     call drum_live_pat26
     call drum_live_pat26
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat30
     call drum_live_pat26
     call drum_live_pat26
@@ -89,7 +89,7 @@ script script_drum_band_snappy_trio
     call drum_live_pat26
     call drum_live_pat26
     call drum_live_pat26
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat32
     call drum_live_pat27
     call drum_live_pat27
@@ -110,7 +110,7 @@ script script_drum_band_snappy_trio
     call drum_live_pat26
     call drum_live_pat26
     call drum_live_pat26
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat30
     call drum_live_pat32
     call drum_live_pat32
@@ -141,20 +141,20 @@ script script_drum_band_snappy_trio
     call drum_live_pat32
     call drum_live_pat30
     call drum_live_pat26
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat32
     call drum_live_pat26
-    dml_event06 0
+    dml_event06 FALSE
     dml_set_disable_excitement TRUE
     call drum_live_pat30
     call drum_live_pat26
     call drum_live_pat26
     call drum_live_pat26
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat26
     call drum_live_pat27
     call drum_live_pat27
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat30
     dml_set_enable_boredom FALSE
     rest 24

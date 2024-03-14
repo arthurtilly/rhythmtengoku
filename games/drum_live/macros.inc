@@ -95,8 +95,8 @@
 .endm
 
 @ [Event 0x07] ?
-.macro dml_event07 args
-    drum_live_event EVENT_07, \args
+.macro dml_event07
+    drum_live_event EVENT_07, 0
 .endm
 
 @ [Event 0x08] Set Enable Boredom Timer

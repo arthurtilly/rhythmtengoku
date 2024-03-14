@@ -29,7 +29,7 @@ script script_drum_boys_tap_trial
     run drum_boys_tap_trial_play_count_in, 0
     run drum_boys_tap_trial_stop_crowd_sfx
     dml_set_disable_excitement FALSE
-    dml_event06 1
+    dml_event06 TRUE
     dml_set_guitarist_next_state 0x3, 2
     call drum_live_pat08
     play_music s_tapdance_bgm_seqData
@@ -50,7 +50,7 @@ script script_drum_boys_tap_trial
     call drum_live_pat00
     call drum_live_pat00
     dml_set_enable_boredom TRUE
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat08
     call drum_live_pat00
     call drum_live_pat00
@@ -83,7 +83,7 @@ script script_drum_boys_tap_trial
     call drum_live_pat00
     call drum_live_pat00
     call drum_live_pat00
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat08
     call drum_live_pat00
     call drum_live_pat00
@@ -92,7 +92,7 @@ script script_drum_boys_tap_trial
     call drum_live_pat00
     call drum_live_pat00
     call drum_live_pat00
-    dml_event06 0
+    dml_event06 FALSE
     call drum_live_pat08
     call drum_live_pat00
     call drum_live_pat00
@@ -132,7 +132,7 @@ script script_drum_boys_tap_trial
     call drum_live_pat00
     run drum_boys_tap_trial_play_count_in, 96
     dml_set_guitarist_next_state 0x3, 2
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat08
     run drum_boys_tap_trial_stop_crowd_sfx
     dml_set_guitarist_next_state 0x3, 0
@@ -232,7 +232,7 @@ script script_drum_boys_tap_trial
     call drum_live_pat10
     dml_set_guitarist_next_state 0x3, 1
     call drum_live_pat10
-    dml_event06 0
+    dml_event06 FALSE
     dml_set_guitarist_next_state 0x3, 2
     call drum_live_pat08
     dml_set_guitarist_next_state 0x3, 0
@@ -255,7 +255,7 @@ script script_drum_boys_tap_trial
     call drum_live_pat13
     call drum_live_pat13
     call drum_live_pat13
-    dml_event06 1
+    dml_event06 TRUE
     call drum_live_pat08
     call drum_live_pat00
     call drum_live_pat00
@@ -273,7 +273,7 @@ script script_drum_boys_tap_trial
     call drum_live_pat00
     dml_set_guitarist_next_state 0x3, 1
     call drum_live_pat00
-    dml_event06 0
+    dml_event06 FALSE
     dml_set_guitarist_next_state 0x3, 2
     call drum_live_pat08
     dml_set_enable_boredom FALSE

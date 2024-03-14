@@ -98,8 +98,8 @@
 .endm
 
 @ [Event 0x01] ?
-.macro dms_event01 args
-    drum_studio_event EVENT_01, \args
+.macro dms_event01
+    drum_studio_event EVENT_01, 0
 .endm
 
 @ [Event 0x02] ?
@@ -118,13 +118,13 @@
 .endm
 
 @ [Event 0x05] Show "Save Replay" Options
-.macro dms_show_save_options noArgs
-    drum_studio_event SHOW_SAVE_OPTIONS, \noArgs
+.macro dms_show_save_options
+    drum_studio_event SHOW_SAVE_OPTIONS, 0
 .endm
 
 @ [Event 0x06] ?
-.macro dms_event06 args
-    drum_studio_event EVENT_06, \args
+.macro dms_event06
+    drum_studio_event EVENT_06, 0
 .endm
 
 @ [Event 0x07] ?
@@ -143,18 +143,18 @@
 .endm
 
 @ [Event 0x0A] ?
-.macro dms_event0A args
-    drum_studio_event EVENT_0A, \args
+.macro dms_event0A
+    drum_studio_event EVENT_0A, 0
 .endm
 
 @ [Event 0x0B] ?
-.macro dms_event0B args
-    drum_studio_event EVENT_0B, \args
+.macro dms_event0B
+    drum_studio_event EVENT_0B, 0
 .endm
 
 @ [Event 0x0C] ?
-.macro dms_event0C args
-    drum_studio_event EVENT_0C, \args
+.macro dms_event0C
+    drum_studio_event EVENT_0C, 0
 .endm
 
 @ [Event 0x0D] Set Lesson Dialogue Text
@@ -178,8 +178,8 @@
 .endm
 
 @ [Event 0x11] ?
-.macro dms_event11 args
-    drum_studio_event EVENT_11, \args
+.macro dms_event11
+    drum_studio_event EVENT_11, 0
 .endm
 
 @ [Event 0x12] Set Drum Samurai Expression
@@ -198,13 +198,13 @@
 .endm
 
 @ [Event 0x15] ?
-.macro dms_event15 args
-    drum_studio_event EVENT_15, \args
+.macro dms_event15
+    drum_studio_event EVENT_15, 0
 .endm
 
 @ [Event 0x16] ?
-.macro dms_event16 args
-    drum_studio_event EVENT_16, \args
+.macro dms_event16
+    drum_studio_event EVENT_16, 0
 .endm
 
 @ [Event 0x17] ?
