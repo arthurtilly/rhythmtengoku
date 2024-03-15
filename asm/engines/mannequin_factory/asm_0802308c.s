@@ -17,7 +17,7 @@ thumb_func_start func_0802308c \n\
 /* 080230a4 */ LSRS R1, R4, 0x8 \n\
 /* 080230a6 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
 /* 080230a8 */ ANDS R0, R4 @ Set R0 to R0 & R4 \n\
-/* 080230aa */ LDR R2, =0x089df404 \n\
+/* 080230aa */ LDR R2, =D_089df404 \n\
 /* 080230ac */ LSLS R0, R0, 0x2 \n\
 /* 080230ae */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 080230b0 */ LDR R0, [R0] \n\

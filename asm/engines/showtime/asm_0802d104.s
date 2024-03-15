@@ -49,7 +49,7 @@ thumb_func_start func_0802d104 \n\
 /* 0802d15c */ LDR R0, [R5] \n\
 /* 0802d15e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0802d160 */ LDRSH R1, [R2, R3] \n\
-/* 0802d162 */ LDR R2, =0x0802d0b9 \n\
+/* 0802d162 */ LDR R2, =func_0802d0b8 \n\
 /* 0802d164 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0802d166 */ BL sprite_set_callback \n\
 /* 0802d16a */ LDR R0, [R5] \n\
@@ -67,7 +67,7 @@ thumb_func_start func_0802d104 \n\
 /* 0802d184 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802d186 */ BL sprite_set_anim_speed \n\
 /* 0802d18a */ LDR R0, [R5] \n\
-/* 0802d18c */ LDR R1, =0x088cb774 \n\
+/* 0802d18c */ LDR R1, =anim_showtime_launcher \n\
 /* 0802d18e */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 0802d190 */ STR R2, [SP] \n\
 /* 0802d192 */ MOVS R3, 0x90 @ Set R3 to 0x90 \n\

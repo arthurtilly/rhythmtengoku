@@ -4,9 +4,10 @@ This is a decompilation of Rhythm Tengoku for the Gameboy Advance. It can build 
 
 This repository requires an unmodified ROM of Rhythm Tengoku (rev. 0) to build. This ROM will not be provided for you.
 
-When built in matching mode, it builds the following ROM:
+When built in matching mode, it builds the following ROMs:
 
 * **rhythmtengoku.gba** `sha1: 67f8adacff79c15d028fffd90de3a77d9ad0602d`
+* **rhythmtengoku_rev1.gba** `sha1: e0aaca45045e408e7e1072bde5b39278111e1952`
 
 
 ## Installation

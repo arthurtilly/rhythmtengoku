@@ -63,7 +63,7 @@ branch_08024344: \n\
 	LDR R4, =anim_drum_samurai_head \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_0802437e \n\
-	LDR R4, =0x088c2c20 \n\
+	LDR R4, =anim_drum_player_head \n\
  \n\
 branch_0802437e: \n\
 	BL func_08024bd0 \n\

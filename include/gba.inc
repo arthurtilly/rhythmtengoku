@@ -3,8 +3,6 @@
 
 .include "include/asm_macros.inc"
 
-.set func_0804e938, 0x0804e938
-
 .set BIOSROMBase,		0x00000000 @ To 0x00004000 (16kb)
 .set ExternWorkRAMBase,	0x02000000 @ To 0x02040000 (256kb)
 .set InternWorkRAMBase,	0x03000000 @ To 0x03008000 (32kb)

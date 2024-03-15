@@ -35,7 +35,11 @@ struct scene_game_select
     /* Start  */ .word func_0801d86c, sub_scene_game_select
     /* Update */ .word func_0801d8d8, 0
     /* Stop   */ .word NULL,          0
+#if REV < 1
     /* Memory */ .word 0x4FC
+#else
+    /* Memory */ .word 0x4F8
+#endif
 endstruct
 
 .end

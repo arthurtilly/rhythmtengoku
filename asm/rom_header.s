@@ -69,10 +69,14 @@
 /* 080000b5 */ .byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 
 @ Mask ROM Version
-/* 080000bc */ .byte 0x00
+/* 080000bc */ .byte REV
 
 @ Compliment Check
+#if REV < 1
 /* 080000bd */ .byte 0x25
+#else
+/* 080000bd */ .byte 0x24
+#endif
 
 @ Reserved Area
 /* 080000be */ .hword 0x0000

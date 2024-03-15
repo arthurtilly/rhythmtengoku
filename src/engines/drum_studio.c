@@ -319,7 +319,7 @@ void drum_lessons_update_lesson(void) {
     if (gDrumStudio->unk45C) {
         if (D_03004afc & A_BUTTON) {
             gDrumStudio->unk45C = 0;
-            play_sound((void *)0x08a9db84);
+            play_sound(&s_f_send_mes_seqData);
             set_pause_beatscript_scene(FALSE);
         }
     }

@@ -17,7 +17,7 @@ thumb_func_start func_080240a4 \n\
 /* 080240bc */ LDR R3, =anim_drum_samurai_use_splash \n\
 /* 080240be */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080240c0 */ BEQ branch_080240c4 \n\
-/* 080240c2 */ LDR R3, =0x088c2b00 \n\
+/* 080240c2 */ LDR R3, =anim_drum_player_use_splash \n\
  \n\
 branch_080240c4: \n\
 /* 080240c4 */ LDR R6, =gSpriteHandler \n\
