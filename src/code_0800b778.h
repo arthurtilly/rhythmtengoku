@@ -208,6 +208,15 @@ struct Struct_0800b71c {
     struct Struct_0800b71c_sub *objects;
 };
 
+struct struct_0800e75c {
+    const char **unk0;
+    s16 unk4;
+    s16 unk6;
+    u16 unk8;
+    u16 unkA;
+    s16 *unkC;
+};
+
 
 // FUNCTIONS
 extern u8 func_0800b634(s16 *arg0, s16 *arg1, s16 *arg2, s16 *arg3);
@@ -367,16 +376,16 @@ extern s32 scene_set_sprite_motion_sine_vel(s16 sprite, u32 mode, s16 startX, s1
 extern s32 scene_move_sprite_sine_vel(s16 sprite, u32 mode, s16 destX, s16 destY, u16 duration);
 extern s32 scene_set_sprite_motion_sine_wave(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s16 amplitude, u16 duration);
 extern s32 scene_move_sprite_sine_wave(s16 sprite, s16 destX, s16 destY, s16 amplitude, u16 duration);
-// extern ? func_0800e75c(?);
-// extern ? func_0800e768(?);
-// extern ? func_0800e7e8(?);
-// extern ? func_0800e830(?);
-// extern ? func_0800e850(?);
-// extern ? func_0800e86c(?);
-// extern ? func_0800e888(?);
-// extern ? func_0800e8b0(?);
-// extern ? func_0800e8d8(?);
-// extern ? func_0800e8f4(?);
+extern void func_0800e75c(struct struct_0800e75c *arg0);
+extern void func_0800e768(struct BitmapFontOBJ *textObj, struct struct_0800e75c *arg1);
+extern void func_0800e7e8(struct BitmapFontOBJ *textObj, struct struct_0800e75c *arg1);
+extern void func_0800e830(struct struct_0800e75c **arg0);
+extern void func_0800e850(struct BitmapFontOBJ *textObj, struct struct_0800e75c **arg1);
+extern void func_0800e86c(struct BitmapFontOBJ *textObj, struct struct_0800e75c **arg1);
+extern void func_0800e888(u32 arg0);
+extern void func_0800e8b0(u32 arg1);
+extern void func_0800e8d8(struct SpriteHandler *handler, s16 id, s8 *arg, u32 cel);
+extern void func_0800e8f4(s16 arg0, s8 *arg1);
 extern void func_0800e940_stub(void);
 extern void func_0800e944_stub(void);
 extern void func_0800e948(void);
@@ -403,9 +412,9 @@ extern void func_0800ed54_stub(void);
 extern void func_0800ed58_stub(void);
 extern void func_0800ed5c_stub(void);
 extern void func_0800ed60_stub(u32 speed);
-// extern ? func_0800ed64(?);
+extern u16 *func_0800ed64(u16 arg0, u16 arg1, u16 arg2);
 extern void func_0800edb8(void *data);
-// extern ? func_0800edc8(?);
+extern void func_0800edc8(u16 *gradientBuffer, u16 arg1, u16 arg2, u16 arg3);
 extern void func_0800edfc(void *bgPalette);
 extern void func_0800ee1c(void *objPalette);
 extern void func_0800ee3c(void *bgPalette);

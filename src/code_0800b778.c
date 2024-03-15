@@ -12,6 +12,7 @@
 #include "src/code_08007468.h"
 #include "src/midi/midi.h"
 #include "src/lib_0804ca80.h"
+#include "src/backdrop.h"
 
 // Could use better split
 
@@ -1708,25 +1709,102 @@ s32 scene_move_sprite_sine_wave(s16 sprite, s16 destX, s16 destY, s16 amplitude,
 }
 
 
-#include "asm/code_0800b778/asm_0800e75c.s"
+void func_0800e75c(struct struct_0800e75c *arg0) {
+    *arg0->unkC = -1;
+}
 
-#include "asm/code_0800b778/asm_0800e768.s"
 
-#include "asm/code_0800b778/asm_0800e7e8.s"
+void func_0800e768(struct BitmapFontOBJ *textObj, struct struct_0800e75c *arg1) {
+    const char *string;
+    struct PrintedTextAnim *textAnim;
+    
+    if (*arg1->unkC >= 0) {
+        return;
+    }
 
-#include "asm/code_0800b778/asm_0800e830.s"
+    string = arg1->unk0[scene_get_default_text_id()];
+    switch (arg1->unkA) {
+        case 0:
+            textAnim = bmp_font_obj_print_c_default(textObj, string);
+            break;
+        case 1:
+            textAnim = bmp_font_obj_print_l_default(textObj, string);
+            break;
+        case 2:
+            textAnim = bmp_font_obj_print_r_default(textObj, string);
+            break;
+    }
+    *arg1->unkC = sprite_create(gSpriteHandler, textAnim->frames, 0, 
+                    arg1->unk4, arg1->unk6, arg1->unk8, 0, 0, 0);
+}
 
-#include "asm/code_0800b778/asm_0800e850.s"
 
-#include "asm/code_0800b778/asm_0800e86c.s"
+void func_0800e7e8(struct BitmapFontOBJ *textObj, struct struct_0800e75c *arg1) {
+    struct Animation *textAnim;
+    
+    if (*arg1->unkC < 0) {
+        return;
+    }
 
-#include "asm/code_0800b778/asm_0800e888.s"
+    textAnim = sprite_get_anim(gSpriteHandler, *arg1->unkC);
+    sprite_delete(gSpriteHandler, *arg1->unkC);
+    bmp_font_obj_delete_printed_anim(textObj, textAnim);
+    *arg1->unkC = -1;
+}
 
-#include "asm/code_0800b778/asm_0800e8b0.s"
 
-#include "asm/code_0800b778/asm_0800e8d8.s"
+void func_0800e830(struct struct_0800e75c **arg0) {
+    while (*arg0 != NULL) {
+        *(*arg0)->unkC = -1;
+        arg0++;
+    }
+}
 
-#include "asm/code_0800b778/asm_0800e8f4.s"
+
+void func_0800e850(struct BitmapFontOBJ *textObj, struct struct_0800e75c **arg1) {
+    while (*arg1 != NULL) {
+        func_0800e768(textObj, *arg1);
+        arg1++;
+    }
+}
+
+
+void func_0800e86c(struct BitmapFontOBJ *textObj, struct struct_0800e75c **arg1) {
+    while (*arg1 != NULL) {
+        func_0800e7e8(textObj, *arg1);
+        arg1++;
+    }
+}
+
+
+void func_0800e888(u32 arg0) {
+    sprite_set_visible(gSpriteHandler, D_0300558c[arg0], TRUE);
+}
+
+
+void func_0800e8b0(u32 arg0) {
+    sprite_set_visible(gSpriteHandler, D_0300558c[arg0], FALSE);
+}
+
+
+void func_0800e8d8(struct SpriteHandler *handler, s16 id, s8 *arg, u32 cel) {
+    while (*arg >= 0) {
+        if (cel == *arg) {
+            return;
+        }
+        arg += 4;
+    }
+}
+
+
+void func_0800e8f4(s16 arg0, s8 *arg1) {
+    if (arg1) {
+        sprite_set_callback(gSpriteHandler, arg0, func_0800e8d8, (uintptr_t)arg1);
+        sprite_run_callback_every_cel(gSpriteHandler, arg0);
+    } else {
+        sprite_set_callback(gSpriteHandler, arg0, NULL, (uintptr_t)NULL);
+    }
+}
 
 
 // Stub
@@ -1977,7 +2055,12 @@ void func_0800ed60_stub(u32 speed) {
 }
 
 
-#include "asm/code_0800b778/asm_0800ed64.s"
+u16 *func_0800ed64(u16 arg0, u16 arg1, u16 arg2) {
+    u16 *gradientBuffer = mem_heap_alloc_id(get_current_mem_id(), 160 * sizeof(u16));
+    func_0800edc8(gradientBuffer, arg0, arg1, arg2);
+    func_0800402c(gradientBuffer, ((u16 *)PaletteRAMBase) + arg2, 1, 0);
+    //return gradientBuffer; // ?
+}
 
 
 // Deallocate Memory
@@ -1987,7 +2070,13 @@ void func_0800edb8(void *data) {
 }
 
 
-#include "asm/code_0800b778/asm_0800edc8.s"
+void func_0800edc8(u16 *gradientBuffer, u16 arg1, u16 arg2, u16 arg3) {
+    u32 i;
+
+    for (i = 0; i < 160; i++) {
+        gradientBuffer[i] = func_08002088(arg1, arg2, fast_divsi3(INT_TO_FIXED(i), INT_TO_FIXED(0.625)));
+    }
+}
 
 
 // Write BG Palette to Graphics Buffer (0-15)
