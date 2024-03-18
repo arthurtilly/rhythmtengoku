@@ -268,9 +268,9 @@ EngineEvent power_calligraphy_engine_events[] = {
     /* 0x07 */ func_080334ec,
     /* 0x08 */ func_08033558,
     /* 0x09 */ func_080335e8,
-    /* 0x0A */ func_08032c8c,
+    /* 0x0A */ power_calligraphy_start_ink_dots,
     /* 0x0B */ func_08032a64,
-    /* 0x0C */ func_08032a04,
+    /* 0x0C */ power_calligraphy_set_little_people_pos,
     /* 0x0D */ power_calligraphy_engine_event_stub
 };
 

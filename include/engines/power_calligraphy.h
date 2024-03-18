@@ -20,10 +20,65 @@ enum PowerCalligraphyInputsEnum {
     POWER_CALLIGRAPHY_INPUT_FACE1,
 };
 
+enum LittlePeopleEnum {
+    /* 00 */ LITTLE_PEOPLE_TYPE_M,
+    /* 01 */ LITTLE_PEOPLE_TYPE_W,
+
+    /* -- */ TOTAL_LITTLE_PEOPLE_TYPES
+};
+
 
 // Engine Types:
 struct PowerCalligraphyEngineData {
-    u8 pad[0x218];
+    u8 version;
+    s16 pattern1Sprite;
+    s16 pattern2Sprite;
+    u8 unk6;
+    u8 unk7;
+    u16 unk8;
+    u8 unkA;
+    u8 unkB;
+    u8 unkC;
+    u32 unk10;
+    u32 unk14;
+    u32 unk18;
+    u32 unk1C;
+    u32 unk20;
+    u32 unk24;
+    u32 unk28;
+    u32 unk2C;
+    u32 unk30;
+    u16 unk34;
+    /* 0x036 */
+    s16 brushSprite;
+    s16 brushChargeSprite;
+    /* 0x03C */
+    struct InkDot {
+        s16 sprite;
+        s8_8 angle;
+        s8_8 rotationSpeed;
+        s16 offset;
+        s16 cycleStartPos;
+    } inkDots[30];
+    /* 0x1A4 */
+    u8 inkDotEventIsActive;
+    u16 inkDotEventCurrentFrame;
+    u16 inkDotEventTotalFrames;
+    u16 unk1AA;
+    s16 skipIcon;
+    /* 0x1B0 */
+    struct LittlePeople {
+        s16 sprite;
+        u8 type;
+        u8 unk3;
+        s24_8 yPos;
+    } littlePeople[2 * 6];
+    /* 0x210 */
+    s8_8 danceTimer;
+    u8 danceSide;
+    u8 unk213;
+    u8 unk214;
+    u8 unk215;
 };
 
 struct PowerCalligraphyCue {
@@ -37,19 +92,34 @@ struct PowerCalligraphyBrushMotion {
 };
 
 
+// Engine Data:
+extern struct Vector2 power_calligraphy_people_start_pos[];
+extern struct Animation *power_calligraphy_people_dance_anim[][2];
+extern struct Animation *power_calligraphy_people_fall_anim[][2];
+extern struct Animation *power_calligraphy_people_bow_anim[][2];
+extern struct CompressedGraphics *power_calligraphy_buffered_textures[];
+extern struct GraphicsTable power_calligraphy_gfx_table[];
+extern struct Animation *power_calligraphy_pattern_anim[];
+extern struct Animation *power_calligraphy_pattern_input_anim[];
+extern struct Vector2 power_calligraphy_paper_motions[];
+extern struct PowerCalligraphyBrushMotion power_calligraphy_brush_motions[][3];
+extern struct SongHeader *power_calligraphy_input_hit_sfx[];
+extern struct SongHeader *power_calligraphy_input_barely_sfx[];
+
+
 // Functions:
-// extern ? func_080327d4(?);
-// extern ? func_080328b8(?);
-extern void func_08032a04(); // Engine Event 0C (?)
+extern void power_calligraphy_init_people(void);
+extern void power_calligraphy_update_people(void);
+extern void power_calligraphy_set_little_people_pos(); // Engine Event 0C (Set Y Position)
 extern void func_08032a64(); // Engine Event 0B (?)
-// extern ? func_08032bf8(?);
-extern void func_08032c8c(); // Engine Event 0A (?)
-// extern ? func_08032d34(?);
+extern void power_calligraphy_init_ink_dots(void);
+extern void power_calligraphy_start_ink_dots(u32 ticks); // Engine Event 0A (?)
+extern void power_calligraphy_update_ink_dots(void);
 extern void power_calligraphy_init_gfx3(void); // Graphics Init. 3
 extern void power_calligraphy_init_gfx2(void); // Graphics Init. 2
 extern void power_calligraphy_init_gfx1(void); // Graphics Init. 1
 extern void power_calligraphy_engine_start(u32 version); // Game Engine Start
-extern void power_calligraphy_engine_event_stub(); // Engine Event 0D (STUB)
+extern void power_calligraphy_engine_event_stub(void); // Engine Event 0D (STUB)
 extern void func_0803312c(); // Engine Event 00 (?)
 extern void func_0803316c(); // Engine Event 01 (?)
 extern void func_080331c0(); // Engine Event 02 (?)
