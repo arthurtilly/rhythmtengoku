@@ -836,8 +836,8 @@ script script_remix_4_main
     rest 24
 
     load_power_calligraphy
-    power_calligraphy_event0B 1
-    power_calligraphy_event0C 160
+    power_calligraphy_set_people_state LITTLE_PEOPLE_END_BOW LITTLE_PEOPLE_DANCE
+    power_calligraphy_set_people_pos LITTLE_PEOPLE_END_BOW 160
     power_calligraphy_event03 FALSE
     call power_calligraphy_remix_4_sub_08a80d88
     beat_anim

@@ -5,19 +5,19 @@
 @ Load Data
 .macro load_power_calligraphy_labels
     @ Game Events
-    .set EVENT_00,      0x00
-    .set EVENT_01,      0x01
-    .set EVENT_02,      0x02
-    .set EVENT_03,      0x03
-    .set EVENT_04,      0x04
-    .set EVENT_05,      0x05
-    .set EVENT_06,      0x06
-    .set EVENT_07,      0x07
-    .set EVENT_08,      0x08
-    .set EVENT_09,      0x09
-    .set EVENT_0A,      0x0A
-    .set EVENT_0B,      0x0B
-    .set EVENT_0C,      0x0C
+    .set SET_KANA,          0x00
+    .set EVENT_01,          0x01
+    .set EVENT_02,          0x02
+    .set EVENT_03,          0x03
+    .set EVENT_04,          0x04
+    .set EVENT_05,          0x05
+    .set SET_BRUSH,         0x06
+    .set EVENT_07,          0x07
+    .set EVENT_08,          0x08
+    .set EVENT_09,          0x09
+    .set START_INK_ORBIT,   0x0A
+    .set SET_PEOPLE_STATE,  0x0B
+    .set SET_PEOPLE_POS,    0x0C
 
     @ Cues
     .set CUE_DEFAULT, 0x00
@@ -31,6 +31,13 @@
     .set KANA_COMMA,        5
     .set KANA_FACE,         6
     .set KANA_END_KANJI,    7
+
+    @ Little People States
+    .set LITTLE_PEOPLE_NULL,    0
+    .set LITTLE_PEOPLE_DANCE,   1
+    .set LITTLE_PEOPLE_STUMBLE, 2
+    .set LITTLE_PEOPLE_BOW,     3
+    .set LITTLE_PEOPLE_END_BOW, 4
 .endm
 
 
@@ -50,9 +57,9 @@
 .endm
 
 
-@ [Event 0x00] ?
-.macro power_calligraphy_event00 args
-    power_calligraphy_event EVENT_00, \args
+@ [Event 0x00] Set Kana
+.macro power_calligraphy_set_kana kana
+    power_calligraphy_event SET_KANA, \kana
 .endm
 
 
@@ -86,9 +93,9 @@
 .endm
 
 
-@ [Event 0x06] ?
-.macro power_calligraphy_event06 arg1, arg2, arg3
-    power_calligraphy_event EVENT_06, ((\arg1 & 0xFF) << 16) | ((\arg2 & 0xFF) << 8) | (\arg3 & 0xFF)
+@ [Event 0x06] Set Brush Position & Animation Cel
+.macro power_calligraphy_set_brush x, y, cel
+    power_calligraphy_event SET_BRUSH, (\x & 0xFF) | ((\y & 0xFF) << 8) | ((\cel & 0xFF) << 16)
 .endm
 
 
@@ -110,19 +117,19 @@
 .endm
 
 
-@ [Event 0x0A] ?
-.macro power_calligraphy_event0A args
-    power_calligraphy_event EVENT_0A, \args
+@ [Event 0x0A] Start Ink Dot Charge Effect
+.macro power_calligraphy_start_ink_orbit_effect ticks
+    power_calligraphy_event START_INK_ORBIT, \ticks
 .endm
 
 
-@ [Event 0x0B] ?
-.macro power_calligraphy_event0B args
-    power_calligraphy_event EVENT_0B, \args
+@ [Event 0x0B] Set Little People State
+.macro power_calligraphy_set_people_state LITTLE_PEOPLE_END_BOW state
+    power_calligraphy_event SET_PEOPLE_STATE, \state
 .endm
 
 
-@ [Event 0x0C] ?
-.macro power_calligraphy_event0C args
-    power_calligraphy_event EVENT_0C, \args
+@ [Event 0x0C] Set Little People Position
+.macro power_calligraphy_set_people_pos LITTLE_PEOPLE_END_BOW pos
+    power_calligraphy_event SET_PEOPLE_POS, \pos
 .endm

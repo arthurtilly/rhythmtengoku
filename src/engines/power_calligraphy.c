@@ -32,7 +32,7 @@ void power_calligraphy_init_people(void) {
 
     gPowerCalligraphy->danceTimer = 0;
     gPowerCalligraphy->danceSide = 0;
-    gPowerCalligraphy->unk213 = 0;
+    gPowerCalligraphy->littlePeopleCurrentState = LITTLE_PEOPLE_STATE_NULL;
 }
 
 
@@ -49,8 +49,8 @@ void power_calligraphy_update_people(void) {
         swapSide = TRUE;
     }
 
-    switch (gPowerCalligraphy->unk213) {
-        case 1:
+    switch (gPowerCalligraphy->littlePeopleCurrentState) {
+        case LITTLE_PEOPLE_STATE_DANCE:
             person = gPowerCalligraphy->littlePeople;
             for (i = 0; i < ARRAY_COUNT(gPowerCalligraphy->littlePeople) / 2; i++) {
                 person->yPos += 32;
@@ -79,9 +79,9 @@ void power_calligraphy_update_people(void) {
             }
             break;
 
-        case 2:
-            if (--gPowerCalligraphy->unk215 == 0) {
-                func_08032a64(gPowerCalligraphy->unk214);
+        case LITTLE_PEOPLE_STATE_STUMBLE:
+            if (--gPowerCalligraphy->stumbleTimer == 0) {
+                power_calligraphy_set_little_people_state(gPowerCalligraphy->littlePeopleBaseState);
             }
             break;
     }
@@ -107,7 +107,55 @@ void power_calligraphy_set_little_people_pos(s32 y) {
 }
 
 
-#include "asm/engines/power_calligraphy/asm_08032a64.s"
+// Engine Event 0x0B (Set Little People State)
+void power_calligraphy_set_little_people_state(u32 state) {
+    struct LittlePeople *person = gPowerCalligraphy->littlePeople;
+    u32 i, j;
+
+    gPowerCalligraphy->littlePeopleCurrentState = state;
+
+    switch (state) {
+        case LITTLE_PEOPLE_STATE_DANCE:
+            gPowerCalligraphy->littlePeopleBaseState = LITTLE_PEOPLE_STATE_DANCE;
+            for (i = 0; i < 2; i++) {
+                for (j = 0; j < ARRAY_COUNT(gPowerCalligraphy->littlePeople) / 2; j++) {
+                    sprite_set_anim(gSpriteHandler, person->sprite, power_calligraphy_people_dance_anim[person->type][0], 0x7F, 1, 0x7F, 0);
+                    person++;
+                }
+            }
+            break;
+
+        case LITTLE_PEOPLE_STATE_STUMBLE:
+            gPowerCalligraphy->stumbleTimer = ticks_to_frames(48);
+            for (i = 0; i < 2; i++) {
+                for (j = 0; j < ARRAY_COUNT(gPowerCalligraphy->littlePeople) / 2; j++) {
+                    sprite_set_anim(gSpriteHandler, person->sprite, power_calligraphy_people_fall_anim[person->type][i], 0, 1, 0, 0);
+                    person++;
+                }
+            }
+            break;
+
+        case LITTLE_PEOPLE_STATE_BOW:
+            gPowerCalligraphy->littlePeopleBaseState = LITTLE_PEOPLE_STATE_BOW;
+            for (i = 0; i < 2; i++) {
+                for (j = 0; j < ARRAY_COUNT(gPowerCalligraphy->littlePeople) / 2; j++) {
+                    sprite_set_anim(gSpriteHandler, person->sprite, power_calligraphy_people_bow_anim[person->type][i], 0, 1, 0x7F, 0);
+                    person++;
+                }
+            }
+            break;
+
+        case LITTLE_PEOPLE_STATE_END_BOW:
+            gPowerCalligraphy->littlePeopleBaseState = LITTLE_PEOPLE_STATE_END_BOW;
+            for (i = 0; i < 2; i++) {
+                for (j = 0; j < ARRAY_COUNT(gPowerCalligraphy->littlePeople) / 2; j++) {
+                    sprite_set_anim(gSpriteHandler, person->sprite, power_calligraphy_people_bow_anim[person->type][i], 0, 0, 0, 0);
+                    person++;
+                }
+            }
+            break;
+    }
+}
 
 
 // Initialise Ink Dots
@@ -241,17 +289,17 @@ void power_calligraphy_engine_start(u32 version) {
     sprite_set_origin_x_y(gSpriteHandler, gPowerCalligraphy->brushSprite, &D_03004b10.BG_OFS[BG_LAYER_2].x, &D_03004b10.BG_OFS[BG_LAYER_2].y);
     gPowerCalligraphy->brushChargeSprite = sprite_create(gSpriteHandler, anim_power_calligraphy_brush_charge_effect, 0, 64, 64, 0x4737, 1, 0, 0x8000 | 2);
     sprite_set_origin_x_y(gSpriteHandler, gPowerCalligraphy->brushChargeSprite, &D_03004b10.BG_OFS[BG_LAYER_2].x, &D_03004b10.BG_OFS[BG_LAYER_2].y);
-    gPowerCalligraphy->pattern1Sprite = sprite_create(gSpriteHandler, anim_power_calligraphy_kokoro, 0, 120, 84, 0x8800, 0, 0, 0x8000);
-    sprite_set_origin_x_y(gSpriteHandler, gPowerCalligraphy->pattern1Sprite, &D_03004b10.BG_OFS[BG_LAYER_2].x, &D_03004b10.BG_OFS[BG_LAYER_2].y);
-    gPowerCalligraphy->pattern2Sprite = sprite_create(gSpriteHandler, anim_power_calligraphy_kokoro, 0, 120, 84, 0x4800, 0, 0, 0x8000);
-    sprite_set_origin_x_y(gSpriteHandler, gPowerCalligraphy->pattern2Sprite, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
+    gPowerCalligraphy->kana1Sprite = sprite_create(gSpriteHandler, anim_power_calligraphy_kokoro, 0, 120, 84, 0x8800, 0, 0, 0x8000);
+    sprite_set_origin_x_y(gSpriteHandler, gPowerCalligraphy->kana1Sprite, &D_03004b10.BG_OFS[BG_LAYER_2].x, &D_03004b10.BG_OFS[BG_LAYER_2].y);
+    gPowerCalligraphy->kana2Sprite = sprite_create(gSpriteHandler, anim_power_calligraphy_kokoro, 0, 120, 84, 0x4800, 0, 0, 0x8000);
+    sprite_set_origin_x_y(gSpriteHandler, gPowerCalligraphy->kana2Sprite, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
 
-    gPowerCalligraphy->unk6 = -1;
-    gPowerCalligraphy->unk7 = 0;
-    gPowerCalligraphy->unkA = -1;
-    gPowerCalligraphy->unkB = 0;
+    gPowerCalligraphy->currentKana = -1;
+    gPowerCalligraphy->paperIsMoving = FALSE;
+    gPowerCalligraphy->nextInputType = -1;
+    gPowerCalligraphy->nextInputSprite = 0;
     gPowerCalligraphy->unkC = 0;
-    gPowerCalligraphy->unk1AA = -1;
+    gPowerCalligraphy->textSprite = -1;
     gPowerCalligraphy->skipIcon = sprite_create(gSpriteHandler, anim_power_calligraphy_skip_icon, 0, 240, 160, 0x8800, 0, 0, 0x8000);
     power_calligraphy_init_ink_dots();
     power_calligraphy_init_people();
@@ -264,7 +312,11 @@ void power_calligraphy_engine_event_stub(void) {
 }
 
 
-#include "asm/engines/power_calligraphy/asm_0803312c.s"
+// Engine Event 0x00 (Set Kana)
+void power_calligraphy_set_kana(u32 kana) {
+    gPowerCalligraphy->currentKana = kana;
+    sprite_set_anim(gSpriteHandler, gPowerCalligraphy->kana1Sprite, power_calligraphy_pattern_anim[kana], 0, 0, 0, 0);
+}
 
 
 #include "asm/engines/power_calligraphy/asm_0803316c.s"
@@ -276,7 +328,28 @@ void power_calligraphy_engine_event_stub(void) {
 #include "asm/engines/power_calligraphy/asm_080331dc.s"
 
 
-#include "asm/engines/power_calligraphy/asm_08033370.s"
+// Update Paper Movement
+void power_calligraphy_update_paper_motion(void) {
+    s16 bgX, bgY;
+    s16 x, y;
+
+    if (!gPowerCalligraphy->paperIsMoving) {
+        return;
+    }
+
+    bgX = D_03004b10.BG_OFS[BG_LAYER_1].x;
+    x = gPowerCalligraphy->paperPosX + bgX;
+    bgY = D_03004b10.BG_OFS[BG_LAYER_1].y;
+    y = gPowerCalligraphy->paperPosY + bgY;
+
+    if (y < (0 - SCREEN_HEIGHT)) {
+        gPowerCalligraphy->paperIsMoving = FALSE;
+        scene_hide_bg_layer(BG_LAYER_1);
+        sprite_set_visible(gSpriteHandler, gPowerCalligraphy->kana2Sprite, FALSE);
+    } else {
+        scene_set_bg_layer_pos(BG_LAYER_1, x, y);
+    }
+}
 
 
 #include "asm/engines/power_calligraphy/asm_080333dc.s"
@@ -285,10 +358,21 @@ void power_calligraphy_engine_event_stub(void) {
 #include "asm/engines/power_calligraphy/asm_080333e8.s"
 
 
-#include "asm/engines/power_calligraphy/asm_08033468.s"
+// Set Brush
+void power_calligraphy_set_brush(s32 x, s32 y, u32 cel) {
+    sprite_set_anim(gSpriteHandler, gPowerCalligraphy->brushSprite, anim_power_calligraphy_brush, cel, 0, 0, 0);
+    sprite_set_x_y(gSpriteHandler, gPowerCalligraphy->brushSprite, 120 + x, 84 + y);
+}
 
 
-#include "asm/engines/power_calligraphy/asm_080334d4.s"
+// Engine Event 0x06 (Set Brush)
+void power_calligraphy_event_set_brush(u32 args) {
+    s8 x = args;
+    s8 y = args >> 8;
+    s8 cel = args >> 16;
+
+    power_calligraphy_set_brush(x, y, cel);
+}
 
 
 #include "asm/engines/power_calligraphy/asm_080334ec.s"
@@ -304,7 +388,7 @@ void power_calligraphy_engine_event_stub(void) {
 void power_calligraphy_engine_update(void) {
     s32 x, y;
 
-    func_08033370();
+    power_calligraphy_update_paper_motion();
     power_calligraphy_update_ink_dots();
     power_calligraphy_update_people();
 
@@ -314,37 +398,121 @@ void power_calligraphy_engine_update(void) {
 }
 
 
-#include "asm/engines/power_calligraphy/asm_0803369c.s"
+// Game Engine Stop
+void power_calligraphy_engine_stop(void) {
+}
 
 
-#include "asm/engines/power_calligraphy/asm_080336a0.s"
+// Express Cue Result
+void power_calligraphy_express_input(u32 inputStroke, s32 timingType) {
+    struct PowerCalligraphyBrushMotion *brushMotion;
+    struct Vector2 *paperMotion;
+    s16 sprite;
+
+    if (timingType < 0) {
+        return;
+    }
+
+    sprite = sprite_create(gSpriteHandler, power_calligraphy_pattern_input_anim[inputStroke], timingType, 120, 84, 0x87F6, 0, 0, 0);
+    sprite_set_origin_x_y(gSpriteHandler, sprite, &D_03004b10.BG_OFS[BG_LAYER_2].x, &D_03004b10.BG_OFS[BG_LAYER_2].y);
+    gPowerCalligraphy->inputSprites[gPowerCalligraphy->nextInputSprite] = sprite;
+    stop_sound(&s_f_shuji_v_funuue_seqData);
+
+    if (timingType != 0) {
+        play_sound(power_calligraphy_input_barely_sfx[inputStroke]);
+    } else {
+        paperMotion = &power_calligraphy_paper_motions[inputStroke];
+        func_080331c0((-paperMotion->x & 0xFF) | (-paperMotion->y & 0xFF) << 8);
+        play_sound(power_calligraphy_input_hit_sfx[inputStroke]);
+    }
+
+    gPowerCalligraphy->nextInputSprite++;
+    brushMotion = &power_calligraphy_brush_motions[inputStroke][timingType];
+    power_calligraphy_set_brush(brushMotion->x, brushMotion->y, brushMotion->cel);
+}
 
 
-#include "asm/engines/power_calligraphy/asm_08033790.s"
+// Cue - Spawn
+void power_calligraphy_cue_spawn(struct Cue *cue, struct PowerCalligraphyCue *info, u32 unused) {
+    info->inputStrokeType = gPowerCalligraphy->nextInputType;
+    gPowerCalligraphy->nextInputType = -1;
+}
 
 
-#include "asm/engines/power_calligraphy/asm_080337a4.s"
+// Cue - Update
+u32 power_calligraphy_cue_update(struct Cue *cue, struct PowerCalligraphyCue *info, u32 runningTime, u32 duration) {
+    if (runningTime > ticks_to_frames(48)) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 
 
-#include "asm/engines/power_calligraphy/asm_080337c0.s"
+// Cue - Despawn
+void power_calligraphy_cue_despawn(struct Cue *cue, struct PowerCalligraphyCue *info) {
+}
 
 
-#include "asm/engines/power_calligraphy/asm_080337c4.s"
+// Cue - Hit
+void power_calligraphy_cue_hit(struct Cue *cue, struct PowerCalligraphyCue *info, u32 pressed, u32 released) {
+    power_calligraphy_express_input(info->inputStrokeType, 0);
+}
 
 
-#include "asm/engines/power_calligraphy/asm_080337d4.s"
+// Cue - Barely
+void power_calligraphy_cue_barely(struct Cue *cue, struct PowerCalligraphyCue *info, u32 pressed, u32 released) {
+    power_calligraphy_express_input(info->inputStrokeType, (gameplay_get_last_hit_offset() < 0) ? 1 : 2);
+    beatscript_enable_loops();
+    power_calligraphy_set_little_people_state(LITTLE_PEOPLE_STATE_STUMBLE);
+}
 
 
-#include "asm/engines/power_calligraphy/asm_080337fc.s"
+// Cue - Miss
+void power_calligraphy_cue_miss(struct Cue *cue, struct PowerCalligraphyCue *info) {
+    sprite_set_playback(gSpriteHandler, gPowerCalligraphy->brushSprite, -1, 0, 0);
+    beatscript_enable_loops();
+}
 
 
-#include "asm/engines/power_calligraphy/asm_0803382c.s"
+// Input Event
+void power_calligraphy_input_event(u32 pressed, u32 released) {
+}
 
 
-#include "asm/engines/power_calligraphy/asm_08033830.s"
+// Common Event 0 (Beat Animation, Unimplemented)
+void power_calligraphy_common_beat_animation(void) {
+}
 
 
-#include "asm/engines/power_calligraphy/asm_08033834.s"
+// Common Event 1 (Display Text)
+void power_calligraphy_common_display_text(const char *string) {
+    struct Animation *textAnim;
+
+    if (gPowerCalligraphy->textSprite >= 0) {
+        textAnim = sprite_get_anim(gSpriteHandler, gPowerCalligraphy->textSprite);
+        text_printer_delete_anim(textAnim);
+        sprite_delete(gSpriteHandler, gPowerCalligraphy->textSprite);
+        gPowerCalligraphy->textSprite = -1;
+    }
+
+    if (string != NULL) {
+        dma3_fill(0, (u16 *)(VRAMBase + 0x17000), 0x800, 0x20, 0x200);
+        textAnim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, 28, TEXT_PRINTER_FONT_SMALL, string, TEXT_ANCHOR_BOTTOM_CENTER, 0, 0x100);
+        gPowerCalligraphy->textSprite = sprite_create(gSpriteHandler, textAnim, 0, 128, 146, 0x46D4, 0, 0, 0);
+        sprite_set_base_palette(gSpriteHandler, gPowerCalligraphy->textSprite, 9);
+    }
+}
 
 
-#include "asm/engines/power_calligraphy/asm_080338fc.s"
+// Common Event 2 (Initialise Tutorial)
+void power_calligraphy_common_init_tutorial(struct Scene *skipDest) {
+    if (skipDest != NULL) {
+        gameplay_enable_tutorial(TRUE);
+        gameplay_set_skip_destination(skipDest);
+        sprite_set_visible(gSpriteHandler, gPowerCalligraphy->skipIcon, TRUE);
+    } else {
+        gameplay_enable_tutorial(FALSE);
+        sprite_set_visible(gSpriteHandler, gPowerCalligraphy->skipIcon, FALSE);
+    }
+}
