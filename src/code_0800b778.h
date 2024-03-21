@@ -217,6 +217,72 @@ struct struct_0800e75c {
     s16 *unkC;
 };
 
+struct struct_0800f0b4_sub {
+    s16 unk0;
+    s32 unk4[3];
+    s32 unk10[3];
+    s16 unk1C[3];
+    s16 unk22;
+    s16 unk24;
+    struct Animation *unk28;
+    s32 unk2C;
+};
+
+struct struct_0800f0b4_sub1 {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+};
+
+struct struct_0800f0b4_sub2 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u32 unk8;
+    u32 unkC;
+};
+
+struct struct_0800f0b4_sub3 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
+    s16 unkE;
+    s16 unk10;
+};
+
+struct struct_0800f0b4 {
+    u16 unk0;
+    u16 *unk4;
+    struct struct_0800f0b4_sub2 *unk8;
+    struct struct_0800f0b4_sub1 unkC;
+    s16 unk18;
+    s16 unk1A;
+    s16 unk1C;
+    s16 unk1E;
+    struct struct_0800f0b4_sub3 unk20;
+    s32 unk34;
+    s32 unk38;
+    s32 unk3C;
+    s32 unk40;
+    s32 unk44;
+    u16 unk48;
+    u16 unk4A;
+    u16 unk4C;
+    u8 unk4E;
+    u8 unk4F;
+    struct struct_0800f0b4_sub *unk50;
+    s8 unk54[0x20];
+    void *unk74;
+    u16 unk78;
+    u8 unk7A;
+    u8 unk7B[1];
+    u8 pad7C[0x1E];
+};
+
 
 // FUNCTIONS
 extern u8 func_0800b634(s16 *arg0, s16 *arg1, s16 *arg2, s16 *arg3);
@@ -425,20 +491,20 @@ extern void func_0800eebc(char *dest, const char *src);
 extern void func_0800f070(u32 id, const char *string);
 extern void func_0800f084(void);
 extern void func_0800f09c(struct BitmapFontOBJ *objFont);
-// extern ? func_0800f0b4(?);
-// extern ? func_0800f180(?);
-// extern ? func_0800f1ec(?);
-// extern ? func_0800f218(?);
-// extern ? func_0800f22c(?);
-// extern ? func_0800f4a0(?);
-// extern ? func_0800f524(?);
-// extern ? func_0800f570(?);
-// extern ? func_0800f578(?);
-// extern ? func_0800f580(?);
-// extern ? func_0800f588(?);
-// extern ? func_0800f614(?);
-// extern ? func_0800f7c0(?);
-// extern ? func_0800f89c(?);
-// extern ? func_0800f8d8(?);
-// extern ? func_0800f8ec(?);
-// extern ? func_0800f8f8(?);
+extern struct struct_0800f0b4 *func_0800f0b4(u32 arg0, u32 arg1, u16 *arg2, u32 arg3, u16 arg4, s32 arg5);
+extern void func_0800f180(struct struct_0800f0b4 *arg0);
+extern void func_0800f1ec(struct struct_0800f0b4 *arg0);
+extern void func_0800f218(struct struct_0800f0b4 *arg0);
+extern void func_0800f22c(struct struct_0800f0b4 *arg0);
+extern void func_0800f4a0(struct struct_0800f0b4 *arg0, s32 *arg1, s32 *arg2);
+extern void func_0800f524(struct struct_0800f0b4 *arg0, s32 *arg1, u16 *arg2);
+extern void func_0800f570(struct struct_0800f0b4 *arg0, u32 arg1, u32 arg2, u32 arg3);
+extern void func_0800f578(struct struct_0800f0b4 *arg0, s32 arg1, s32 arg2);
+extern void func_0800f580(struct struct_0800f0b4 *arg0, s32 arg1, s32 arg2);
+extern void func_0800f588(struct struct_0800f0b4 *arg0, u32 arg1);
+extern void func_0800f614(struct struct_0800f0b4 *arg0);
+extern s16 func_0800f7c0(struct struct_0800f0b4 *arg0, struct Animation *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s16 arg6, s32 arg7, s32 arg8);
+extern void func_0800f89c(struct struct_0800f0b4 *arg0, s16 arg1);
+extern s16 func_0800f8d8(struct struct_0800f0b4 *arg0, s16 arg1);
+extern void func_0800f8ec(struct struct_0800f0b4 *arg0);
+extern void func_0800f8f8(struct struct_0800f0b4 *arg0, u32 arg1);
