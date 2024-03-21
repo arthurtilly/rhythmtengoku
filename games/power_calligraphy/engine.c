@@ -69,15 +69,15 @@ struct GraphicsTable power_calligraphy_gfx_table[] = {
 };
 
 // [D_089e49e8] Kana Animations
-struct Animation *power_calligraphy_pattern_anim[] = {
-    /* 0x00 */ anim_power_calligraphy_onore,
-    /* 0x01 */ anim_power_calligraphy_chikara,
-    /* 0x02 */ anim_power_calligraphy_sun,
-    /* 0x03 */ anim_power_calligraphy_kokoro,
-    /* 0x04 */ anim_power_calligraphy_re,
-    /* 0x05 */ anim_power_calligraphy_comma,
-    /* 0x06 */ anim_power_calligraphy_face,
-    /* 0x07 */ anim_power_calligraphy_end_kanji
+struct Animation *power_calligraphy_kana_anim[] = {
+    /* ONORE   */ anim_power_calligraphy_onore,
+    /* CHIKARA */ anim_power_calligraphy_chikara,
+    /* SUN     */ anim_power_calligraphy_sun,
+    /* KOKORO  */ anim_power_calligraphy_kokoro,
+    /* RE      */ anim_power_calligraphy_re,
+    /* COMMA   */ anim_power_calligraphy_comma,
+    /* FACE    */ anim_power_calligraphy_face,
+    /* END     */ anim_power_calligraphy_end_kanji
 };
 
 // [D_089e4a08] Player Brush Stroke Animations
@@ -95,7 +95,7 @@ struct Animation *power_calligraphy_pattern_input_anim[] = {
     /* FACE 1    */ anim_power_calligraphy_face_input1
 };
 
-// [D_089e4a34] Paper Motions (?)
+// [D_089e4a34] Paper Input Motions
 struct Vector2 power_calligraphy_paper_motions[] = {
     /* ONORE 1   */ {  0, -8 },
     /* CHIKARA 1 */ { -6, -6 },
@@ -110,7 +110,7 @@ struct Vector2 power_calligraphy_paper_motions[] = {
     /* FACE 1    */ {  6, -1 }
 };
 
-// [D_089e4a60] Brush Motions
+// [D_089e4a60] Brush Input Motions
 struct CalligraphyBrushMotion power_calligraphy_brush_motions[][3] = {
     /* ONORE 1 */ {
         /* Hit   */ {  31, -30, 0 },
@@ -268,7 +268,7 @@ EngineEvent power_calligraphy_engine_events[] = {
     /* 0x07 */ power_calligraphy_charge_brush,
     /* 0x08 */ power_calligraphy_set_charge_effect,
     /* 0x09 */ power_calligraphy_raise_brush,
-    /* 0x0A */ power_calligraphy_start_ink_dots,
+    /* 0x0A */ power_calligraphy_start_ink_swirl,
     /* 0x0B */ power_calligraphy_set_little_people_state,
     /* 0x0C */ power_calligraphy_set_little_people_pos,
     /* 0x0D */ power_calligraphy_engine_event_stub

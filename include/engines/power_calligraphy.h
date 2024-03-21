@@ -73,20 +73,18 @@ struct PowerCalligraphyEngineData {
     u16 inputExitSprites[10];
     s16 brushSprite;
     s16 brushEffectSprite;
-    /* 0x03C */
     struct InkDot {
         s16 sprite;
         s8_8 angle;
         s8_8 rotationSpeed;
         s16 offset;
-        s16 cycleStartPos;
+        s8_8 cycleStartPos;
     } inkDots[30];
     u8 inkSwirlActive;
     u16 inkSwirlCurrentFrame;
     u16 inkSwirlTotalFrames;
     s16 textSprite;
     s16 skipIcon;
-    /* 0x1B0 */
     struct LittlePerson {
         s16 sprite;
         u8 type;
@@ -117,7 +115,7 @@ extern struct Animation *power_calligraphy_people_fall_anim[][2];
 extern struct Animation *power_calligraphy_people_bow_anim[][2];
 extern struct CompressedGraphics *power_calligraphy_buffered_textures[];
 extern struct GraphicsTable power_calligraphy_gfx_table[];
-extern struct Animation *power_calligraphy_pattern_anim[];
+extern struct Animation *power_calligraphy_kana_anim[];
 extern struct Animation *power_calligraphy_pattern_input_anim[];
 extern struct Vector2 power_calligraphy_paper_motions[];
 extern struct CalligraphyBrushMotion power_calligraphy_brush_motions[][3];
@@ -126,13 +124,13 @@ extern struct SongHeader *power_calligraphy_input_barely_sfx[];
 
 
 // Functions:
-extern void power_calligraphy_init_people(void);
-extern void power_calligraphy_update_people(void);
+extern void power_calligraphy_init_little_people(void);
+extern void power_calligraphy_update_little_people(void);
 extern void power_calligraphy_set_little_people_pos(s32 y);         // Engine Event 0C (Set Little People Position)
 extern void power_calligraphy_set_little_people_state(u32 state);   // Engine Event 0B (Set Little People State)
-extern void power_calligraphy_init_ink_dots(void);
-extern void power_calligraphy_start_ink_dots(u32 ticks);    // Engine Event 0A (Ink Dot Effect)
-extern void power_calligraphy_update_ink_dots(void);
+extern void power_calligraphy_init_ink_swirl(void);
+extern void power_calligraphy_start_ink_swirl(u32 ticks);   // Engine Event 0A (Ink Dot Effect)
+extern void power_calligraphy_update_ink_swirl(void);
 extern void power_calligraphy_init_gfx3(void);
 extern void power_calligraphy_init_gfx2(void);
 extern void power_calligraphy_init_gfx1(void);

@@ -8,7 +8,7 @@
 
 
 // Initialise Little People
-void power_calligraphy_init_people(void) {
+void power_calligraphy_init_little_people(void) {
     struct LittlePerson *person = gPowerCalligraphy->littlePeople;
     u32 i, j;
     s32 x, y;
@@ -35,7 +35,7 @@ void power_calligraphy_init_people(void) {
 
 
 // Update Little People
-void power_calligraphy_update_people(void) {
+void power_calligraphy_update_little_people(void) {
     struct LittlePerson *person = gPowerCalligraphy->littlePeople; // useless assignment required for match
     u32 swapSide = FALSE;
     u32 i;
@@ -157,7 +157,7 @@ void power_calligraphy_set_little_people_state(u32 state) {
 
 
 // Initialise Ink Dots
-void power_calligraphy_init_ink_dots(void) {
+void power_calligraphy_init_ink_swirl(void) {
     u32 i;
 
     for (i = 0; i < ARRAY_COUNT(gPowerCalligraphy->inkDots); i++) {
@@ -173,7 +173,7 @@ void power_calligraphy_init_ink_dots(void) {
 
 
 // Engine Event 0x0A (Start Ink Dots)
-void power_calligraphy_start_ink_dots(u32 ticks) {
+void power_calligraphy_start_ink_swirl(u32 ticks) {
     struct InkDot *inkDot;
     u32 i;
 
@@ -193,13 +193,13 @@ void power_calligraphy_start_ink_dots(u32 ticks) {
         sprite_set_anim_cel(gSpriteHandler, inkDot->sprite, 0);
     }
 
-    power_calligraphy_update_ink_dots();
+    power_calligraphy_update_ink_swirl();
     gPowerCalligraphy->inkSwirlCurrentFrame = 0;
 }
 
 
 // Update Ink Dots
-void power_calligraphy_update_ink_dots(void) {
+void power_calligraphy_update_ink_swirl(void) {
     struct InkDot *inkDot;
     s24_8 progress;
     s32 distance;
@@ -299,8 +299,8 @@ void power_calligraphy_engine_start(u32 version) {
     gPowerCalligraphy->totalInputExitSprites = 0;
     gPowerCalligraphy->textSprite = -1;
     gPowerCalligraphy->skipIcon = sprite_create(gSpriteHandler, anim_power_calligraphy_skip_icon, 0, 240, 160, 0x8800, 0, 0, 0x8000);
-    power_calligraphy_init_ink_dots();
-    power_calligraphy_init_people();
+    power_calligraphy_init_ink_swirl();
+    power_calligraphy_init_little_people();
     gameplay_set_input_buttons(A_BUTTON, 0);
 }
 
@@ -313,7 +313,7 @@ void power_calligraphy_engine_event_stub(void) {
 // Engine Event 0x00 (Set Kana)
 void power_calligraphy_set_kana(u32 kana) {
     gPowerCalligraphy->currentKana = kana;
-    sprite_set_anim(gSpriteHandler, gPowerCalligraphy->kanaSprite, power_calligraphy_pattern_anim[kana], 0, 0, 0, 0);
+    sprite_set_anim(gSpriteHandler, gPowerCalligraphy->kanaSprite, power_calligraphy_kana_anim[kana], 0, 0, 0, 0);
 }
 
 
@@ -497,8 +497,8 @@ void power_calligraphy_engine_update(void) {
     s32 x, y;
 
     power_calligraphy_update_paper_motion();
-    power_calligraphy_update_ink_dots();
-    power_calligraphy_update_people();
+    power_calligraphy_update_ink_swirl();
+    power_calligraphy_update_little_people();
 
     x = sprite_get_x(gSpriteHandler, gPowerCalligraphy->brushSprite);
     y = sprite_get_y(gSpriteHandler, gPowerCalligraphy->brushSprite);
