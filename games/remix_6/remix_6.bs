@@ -611,7 +611,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    power_calligraphy_event03 FALSE
+    power_calligraphy_remove_paper FALSE
     call power_calligraphy_sub_08a7df08
     beat_anim
     rest 24

@@ -539,16 +539,16 @@ script script_remix_4_main
     rest 24
     rest 24
     rest 24
-    power_calligraphy_event03 FALSE
+    power_calligraphy_remove_paper FALSE
     call power_calligraphy_remix_4_sub_08a82060
     rest 24
     rest 24
     rest 24
-    call power_calligraphy_sub_08a7f264
-    power_calligraphy_event03 FALSE
+    call power_calligraphy_sub_re_main
+    power_calligraphy_remove_paper FALSE
     call power_calligraphy_remix_4_sub_08a808d8
     call power_calligraphy_remix_4_sub_08a8095c
-    power_calligraphy_event03 FALSE
+    power_calligraphy_remove_paper FALSE
     call power_calligraphy_remix_4_sub_08a80d88
     call power_calligraphy_remix_4_sub_08a80e0c
     rest 24
@@ -836,17 +836,17 @@ script script_remix_4_main
     rest 24
 
     load_power_calligraphy
-    power_calligraphy_set_people_state LITTLE_PEOPLE_END_BOW LITTLE_PEOPLE_DANCE
+    power_calligraphy_set_people_state LITTLE_PEOPLE_DANCE
     power_calligraphy_set_people_pos LITTLE_PEOPLE_END_BOW 160
-    power_calligraphy_event03 FALSE
+    power_calligraphy_remove_paper FALSE
     call power_calligraphy_remix_4_sub_08a80d88
     beat_anim
     rest 24
     set_tempo 128
     call power_calligraphy_remix_4_sub_08a80e0c
-    power_calligraphy_event03 FALSE
-    call power_calligraphy_remix_4_sub_08a819b8
-    call power_calligraphy_remix_4_sub_08a81a3c
+    power_calligraphy_remove_paper FALSE
+    call power_calligraphy_sub_swing_kokoro_init
+    call power_calligraphy_sub_swing_kokoro_main
     rest 24
     play_music L3_C41_end_seqData
     set_game_fade_in_time 20

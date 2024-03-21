@@ -111,7 +111,7 @@ struct Vector2 power_calligraphy_paper_motions[] = {
 };
 
 // [D_089e4a60] Brush Motions
-struct PowerCalligraphyBrushMotion power_calligraphy_brush_motions[][3] = {
+struct CalligraphyBrushMotion power_calligraphy_brush_motions[][3] = {
     /* ONORE 1 */ {
         /* Hit   */ {  31, -30, 0 },
         /* Early */ {  65, -14, 0 },
@@ -207,12 +207,12 @@ struct SongHeader *power_calligraphy_input_barely_sfx[] = {
 struct CueDefinition power_calligraphy_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
-    /* Total Duration  */ 0x18,
-    /* Hit Window      */ -0x04, 0x04,
-    /* Barely Window   */ -0x18, 0x0C,
+    /* Total Duration  */ 24,
+    /* Hit Window      */ -4, 4,
+    /* Barely Window   */ -24, 12,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct PowerCalligraphyCue),
     /* Func. Spawn     */ power_calligraphy_cue_spawn,
     /* Spawn Parameter */ 0,
     /* Func. Update    */ power_calligraphy_cue_update,
@@ -259,15 +259,15 @@ EngineEvent power_calligraphy_common_events[] = {
 // [D_089e4bc0] Engine Events
 EngineEvent power_calligraphy_engine_events[] = {
     /* 0x00 */ power_calligraphy_set_kana,
-    /* 0x01 */ func_0803316c,
-    /* 0x02 */ func_080331c0,
-    /* 0x03 */ func_080331dc,
-    /* 0x04 */ func_080333dc,
-    /* 0x05 */ func_080333e8,
+    /* 0x01 */ power_calligraphy_set_kana_cel,
+    /* 0x02 */ power_calligraphy_offset_paper,
+    /* 0x03 */ power_calligraphy_remove_paper,
+    /* 0x04 */ power_calligraphy_set_next_input,
+    /* 0x05 */ power_calligraphy_finish_input_kokoro2,
     /* 0x06 */ power_calligraphy_event_set_brush,
-    /* 0x07 */ func_080334ec,
-    /* 0x08 */ func_08033558,
-    /* 0x09 */ func_080335e8,
+    /* 0x07 */ power_calligraphy_charge_brush,
+    /* 0x08 */ power_calligraphy_set_charge_effect,
+    /* 0x09 */ power_calligraphy_raise_brush,
     /* 0x0A */ power_calligraphy_start_ink_dots,
     /* 0x0B */ power_calligraphy_set_little_people_state,
     /* 0x0C */ power_calligraphy_set_little_people_pos,
