@@ -327,8 +327,8 @@ script script_remix_7_main
 
     load_power_calligraphy
     power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_08a7da58
-    call power_calligraphy_sub_08a7dadc
+    call power_calligraphy_sub_chikara_init
+    call power_calligraphy_sub_chikara_main
     beat_anim
     rest 24
     play_music L2_pat09_seqData

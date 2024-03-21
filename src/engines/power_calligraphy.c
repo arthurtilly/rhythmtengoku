@@ -1,7 +1,5 @@
 #include "engines/power_calligraphy.h"
 
-asm(".include \"include/gba.inc\""); // Temporary
-
 // For readability.
 #define gPowerCalligraphy ((struct PowerCalligraphyEngineData *)gCurrentEngineData)
 
@@ -338,7 +336,7 @@ void power_calligraphy_offset_paper(s32 args) {
 
 
 // Engine Event 0x03 (Remove Paper)
-void power_calligraphy_remove_paper(u32 isLastKana) {
+void power_calligraphy_remove_paper(u32 slowly) {
     struct Animation *anim;
     s32 cel;
     s16 sprite;
@@ -346,7 +344,7 @@ void power_calligraphy_remove_paper(u32 isLastKana) {
 
     gPowerCalligraphy->paperExitActive = TRUE;
 
-    if (isLastKana) {
+    if (slowly) {
         gPowerCalligraphy->paperExitX = 0;
         gPowerCalligraphy->paperExitY = -1;
     } else {
@@ -459,11 +457,11 @@ void power_calligraphy_event_set_brush(u32 args) {
 // Engine Event 0x07 (Charge Brush)
 void power_calligraphy_charge_brush(u32 chargeType) {
     switch (chargeType) {
-        case 0:
+        case CALLIGRAPHY_BRUSH_CHARGE_DEFAULT:
             sprite_set_anim(gSpriteHandler, gPowerCalligraphy->brushSprite, anim_power_calligraphy_brush_charge1, 1, 1, 6, 0);
             break;
 
-        case 1:
+        case CALLIGRAPHY_BRUSH_CHARGE_COMMA:
             sprite_set_anim(gSpriteHandler, gPowerCalligraphy->brushSprite, anim_power_calligraphy_brush_charge2, 0, 1, 4, 0);
             break;
     }

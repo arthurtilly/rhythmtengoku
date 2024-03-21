@@ -10,7 +10,7 @@
     .set OFFSET_PAPER,      0x02
     .set REMOVE_PAPER,      0x03
     .set SET_INPUT_STROKE,  0x04
-    .set EVENT_05,          0x05
+    .set FINISH_KOKORO2,    0x05
     .set SET_BRUSH,         0x06
     .set CHARGE_BRUSH,      0x07
     .set CHARGE_EFFECT,     0x08
@@ -44,6 +44,10 @@
     .set KANA_INPUT_RE1,        8
     .set KANA_INPUT_COMMA1,     9
     .set KANA_INPUT_FACE1,      10
+
+    @ Brush States (Animation Cels)
+    .set BRUSH_RAISED,  0
+    .set BRUSH_DOWN,    1
 
     @ Little People States
     .set LITTLE_PEOPLE_NULL,    0
@@ -83,14 +87,14 @@
 
 
 @ [Event 0x02] Offset Paper
-.macro power_calligraphy_offset_paper y, x
+.macro power_calligraphy_offset_paper x, y
     power_calligraphy_event OFFSET_PAPER, (\x & 0xFF) | ((\y & 0xFF) << 8)
 .endm
 
 
 @ [Event 0x03] Remove Paper
-.macro power_calligraphy_remove_paper isLastKana
-    power_calligraphy_event REMOVE_PAPER, \isLastKana
+.macro power_calligraphy_remove_paper slowly
+    power_calligraphy_event REMOVE_PAPER, \slowly
 .endm
 
 
@@ -102,7 +106,7 @@
 
 @ [Event 0x05] Finish KANA_INPUT_KOKORO2 (unused)
 .macro power_calligraphy_finish_input_kokoro2
-    power_calligraphy_event EVENT_05, 0
+    power_calligraphy_event FINISH_KOKORO2, 0
 .endm
 
 

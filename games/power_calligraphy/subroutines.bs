@@ -8,69 +8,69 @@ load_power_calligraphy_labels
 .section .script.sub
 @ Power Calligraphy - Subroutines
 
-script power_calligraphy_sub_08a7da58
+script power_calligraphy_sub_chikara_init
     power_calligraphy_set_kana KANA_CHIKARA
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -21, -48, 0
+    power_calligraphy_set_brush -21, -48, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
 return
 
 
-script power_calligraphy_sub_08a7dadc
+script power_calligraphy_sub_chikara_main
     power_calligraphy_set_kana KANA_CHIKARA
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush -8, -25, 1
+    power_calligraphy_set_brush -8, -25, BRUSH_DOWN
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_start_seqData
     rest 10
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush 10, -33, 1
+    power_calligraphy_set_brush 10, -33, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush 35, -35, 1
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 35, -35, BRUSH_DOWN
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 8
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush 33, -28, 1
+    power_calligraphy_set_brush 33, -28, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 2
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 31, -27, 1
+    power_calligraphy_set_brush 31, -27, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx s_f_shuji_swing2_seqData
     rest 2
     power_calligraphy_set_kana_cel 6
-    power_calligraphy_set_brush 23, 10, 1
-    power_calligraphy_offset_paper -1, 0
+    power_calligraphy_set_brush 23, 10, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -1
     play_sfx NULL
     rest 24
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 1, -22, 0
+    power_calligraphy_set_brush 1, -22, BRUSH_RAISED
     power_calligraphy_offset_paper 3, 3
     play_sfx s_furi_seqData
     rest 12
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 9, -72, 0
+    power_calligraphy_set_brush 9, -72, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 12
     power_calligraphy_set_kana_cel 8
-    power_calligraphy_set_brush 13, -48, 1
+    power_calligraphy_set_brush 13, -48, BRUSH_DOWN
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_start_seqData
     rest 24
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_charge_brush FALSE
-    no_op
+    rest 0
     rest 24
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 2
+    power_calligraphy_set_next_input KANA_INPUT_CHIKARA2
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
@@ -78,98 +78,98 @@ script power_calligraphy_sub_08a7dadc
 return
 
 
-script power_calligraphy_sub_08a7df08
+script power_calligraphy_sub_onore_init
     power_calligraphy_set_kana KANA_ONORE
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -15, -57, 0
+    power_calligraphy_set_brush -15, -57, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
 return
 
 
-script power_calligraphy_sub_08a7df8c
+script power_calligraphy_sub_onore_main
     power_calligraphy_set_kana KANA_ONORE
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush -5, -38, 1
+    power_calligraphy_set_brush -5, -38, BRUSH_DOWN
     power_calligraphy_offset_paper -2, -2
     play_sfx s_f_shuji_start_seqData
     rest 24
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush 9, -40, 1
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 9, -40, BRUSH_DOWN
+    power_calligraphy_offset_paper -1, 0
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush 25, -39, 1
+    power_calligraphy_set_brush 25, -39, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 11
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush 23, -32, 1
-    power_calligraphy_offset_paper -1, 0
+    power_calligraphy_set_brush 23, -32, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -1
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 21, -23, 1
+    power_calligraphy_set_brush 21, -23, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 11
     power_calligraphy_set_kana_cel 6
-    power_calligraphy_set_brush -7, -19, 1
+    power_calligraphy_set_brush -7, -19, BRUSH_DOWN
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_start_seqData
     rest 24
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 7, -23, 1
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 7, -23, BRUSH_DOWN
+    power_calligraphy_offset_paper -1, 0
     play_sfx s_f_shuji_swing1_seqData
     rest 1
     power_calligraphy_set_kana_cel 8
-    power_calligraphy_set_brush 21, -23, 1
+    power_calligraphy_set_brush 21, -23, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 23
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    no_op
+    rest 0
     power_calligraphy_set_kana_cel 9
-    power_calligraphy_set_brush -13, 10, 1
-    power_calligraphy_offset_paper -2, 0
+    power_calligraphy_set_brush -13, 10, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -2
     play_sfx s_f_shuji_swing2_seqData
     rest 1
     power_calligraphy_set_kana_cel 10
-    power_calligraphy_set_brush -16, 2, 1
+    power_calligraphy_set_brush -16, 2, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 11
-    power_calligraphy_set_brush -14, 12, 1
+    power_calligraphy_set_brush -14, 12, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 12
-    power_calligraphy_set_brush -12, 19, 1
+    power_calligraphy_set_brush -12, 19, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 13
-    power_calligraphy_set_brush -6, 20, 1
+    power_calligraphy_set_brush -6, 20, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 14
-    power_calligraphy_set_brush 14, 18, 1
+    power_calligraphy_set_brush 14, 18, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 15
-    power_calligraphy_set_brush 31, 20, 1
-    power_calligraphy_offset_paper 0, -2
+    power_calligraphy_set_brush 31, 20, BRUSH_DOWN
+    power_calligraphy_offset_paper -2, 0
     play_sfx NULL
-    no_op
+    rest 0
     power_calligraphy_charge_brush FALSE
     rest 18
-    power_calligraphy_set_next_input 0
+    power_calligraphy_set_next_input KANA_INPUT_ONORE1
     power_calligraphy_charge_effect TRUE
     spawn_cue CUE_DEFAULT
     rest 24
@@ -178,76 +178,76 @@ script power_calligraphy_sub_08a7df8c
 return
 
 
-script power_calligraphy_sub_08a7e5f8
+script power_calligraphy_sub_sun_init
     power_calligraphy_set_kana KANA_SUN
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -25, -47, 0
+    power_calligraphy_set_brush -25, -47, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
 return
 
 
-script power_calligraphy_sub_08a7e67c
+script power_calligraphy_sub_sun_main
     power_calligraphy_set_kana KANA_SUN
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush -13, -25, 1
+    power_calligraphy_set_brush -13, -25, BRUSH_DOWN
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_start_seqData
     rest 12
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush -8, -25, 1
-    power_calligraphy_offset_paper 0, -2
+    power_calligraphy_set_brush -8, -25, BRUSH_DOWN
+    power_calligraphy_offset_paper -2, 0
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush 5, -29, 1
+    power_calligraphy_set_brush 5, -29, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush 39, -28, 1
+    power_calligraphy_set_brush 39, -28, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 8
     play_sfx s_f_shuji_swing2_seqData
     rest 2
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 15, -48, 1
+    power_calligraphy_set_brush 15, -48, BRUSH_DOWN
     power_calligraphy_offset_paper 1, 1
     play_sfx NULL
     rest 12
     power_calligraphy_set_kana_cel 6
-    power_calligraphy_set_brush 14, -43, 1
-    power_calligraphy_offset_paper -4, 0
+    power_calligraphy_set_brush 14, -43, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -4
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 14, -22, 1
+    power_calligraphy_set_brush 14, -22, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 8
-    power_calligraphy_set_brush 14, 21, 1
+    power_calligraphy_set_brush 14, 21, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 10
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    no_op
+    rest 0
     power_calligraphy_charge_brush FALSE
     rest 24
-    power_calligraphy_set_next_input 3
+    power_calligraphy_set_next_input KANA_INPUT_SUN1
     power_calligraphy_charge_effect TRUE
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
-    no_op
+    rest 0
     rest 24
-    power_calligraphy_set_brush -11, -27, 0
+    power_calligraphy_set_brush -11, -27, BRUSH_RAISED
     power_calligraphy_charge_brush TRUE
     play_sfx_vol_pitch s_rabbit_break2_seqData, 160, -512
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 4
+    power_calligraphy_set_next_input KANA_INPUT_SUN2
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
@@ -260,7 +260,7 @@ return
 script power_calligraphy_sub_kokoro_init
     power_calligraphy_set_kana KANA_KOKORO
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -24, -40, 0
+    power_calligraphy_set_brush -24, -40, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
@@ -270,84 +270,84 @@ return
 script power_calligraphy_sub_kokoro_main
     power_calligraphy_set_kana KANA_KOKORO
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush -26, -13, 1
-    power_calligraphy_offset_paper -2, 1
+    power_calligraphy_set_brush -26, -13, BRUSH_DOWN
+    power_calligraphy_offset_paper 1, -2
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush -31, -2, 1
+    power_calligraphy_set_brush -31, -2, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush -37, 5, 1
+    power_calligraphy_set_brush -37, 5, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 10
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush -7, -55, 0
-    power_calligraphy_offset_paper 2, 0
+    power_calligraphy_set_brush -7, -55, BRUSH_RAISED
+    power_calligraphy_offset_paper 0, 2
     play_sfx NULL
     rest 10
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    no_op
+    rest 0
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush -4, -7, 1
-    power_calligraphy_offset_paper -2, 0
+    power_calligraphy_set_brush -4, -7, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -2
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 8, 4, 1
+    power_calligraphy_set_brush 8, 4, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 6
-    power_calligraphy_set_brush 20, 6, 1
+    power_calligraphy_set_brush 20, 6, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 30, 7, 1
+    power_calligraphy_set_brush 30, 7, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 8
-    power_calligraphy_set_brush 40, 7, 1
+    power_calligraphy_set_brush 40, 7, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 9
-    power_calligraphy_set_brush 46, 6, 1
-    power_calligraphy_offset_paper 0, -3
+    power_calligraphy_set_brush 46, 6, BRUSH_DOWN
+    power_calligraphy_offset_paper -3, 0
     play_sfx NULL
     rest 7
     power_calligraphy_charge_brush FALSE
     rest 12
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 5
+    power_calligraphy_set_next_input KANA_INPUT_KOKORO1
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
     rest 12
-    power_calligraphy_set_brush 7, -68, 0
+    power_calligraphy_set_brush 7, -68, BRUSH_RAISED
     rest 12
-    no_op
+    rest 0
     power_calligraphy_set_kana_cel 11
-    power_calligraphy_set_brush 17, -34, 1
+    power_calligraphy_set_brush 17, -34, BRUSH_DOWN
     power_calligraphy_offset_paper -2, -2
     play_sfx s_f_shuji_start_seqData
     rest 12
     power_calligraphy_set_kana_cel 12
-    power_calligraphy_set_brush 31, -69, 0
-    power_calligraphy_offset_paper 2, 0
+    power_calligraphy_set_brush 31, -69, BRUSH_RAISED
+    power_calligraphy_offset_paper 0, 2
     play_sfx_vol s_furi_seqData, 128
     rest 12
     power_calligraphy_charge_brush TRUE
     play_sfx_vol_pitch s_rabbit_break2_seqData, 160, -512
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 7
+    power_calligraphy_set_next_input KANA_INPUT_KOKORO3
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
@@ -358,7 +358,7 @@ return
 script power_calligraphy_sub_re_init
     power_calligraphy_set_kana KANA_RE
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -5, -64, 0
+    power_calligraphy_set_brush -5, -64, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
@@ -368,39 +368,39 @@ return
 script power_calligraphy_sub_re_main
     power_calligraphy_set_kana KANA_RE
     play_sfx_vol s_shuji_ho_seqData, 256
-    power_calligraphy_set_brush -5, -62, 0
+    power_calligraphy_set_brush -5, -62, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -5, -63, 0
+    power_calligraphy_set_brush -5, -63, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -5, -64, 0
+    power_calligraphy_set_brush -5, -64, BRUSH_RAISED
     rest 20
     rest 24
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush -2, -32, 1
-    power_calligraphy_offset_paper -2, 0
+    power_calligraphy_set_brush -2, -32, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -2
     play_sfx s_f_shuji_start_seqData
     rest 23
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush -4, -24, 1
+    power_calligraphy_set_brush -4, -24, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx s_f_shuji_swing1_seqData
     rest 1
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush -4, -8, 1
+    power_calligraphy_set_brush -4, -8, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush -5, 18, 1
-    power_calligraphy_offset_paper -5, 1
+    power_calligraphy_set_brush -5, 18, BRUSH_DOWN
+    power_calligraphy_offset_paper 1, -5
     play_sfx NULL
     rest 23
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_charge_brush FALSE
-    no_op
+    rest 0
     rest 24
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 8
+    power_calligraphy_set_next_input KANA_INPUT_RE1
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
@@ -411,7 +411,7 @@ return
 script power_calligraphy_sub_comma_init
     power_calligraphy_set_kana KANA_COMMA
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -2, -36, 0
+    power_calligraphy_set_brush -2, -36, BRUSH_RAISED
     rest 24
 return
 
@@ -419,54 +419,54 @@ return
 script power_calligraphy_sub_comma_main
     power_calligraphy_set_kana KANA_COMMA
     play_sfx s_f_shuji_v_ha1_seqData
-    power_calligraphy_set_brush -2, -34, 0
+    power_calligraphy_set_brush -2, -34, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -35, 0
+    power_calligraphy_set_brush -2, -35, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -36, 0
+    power_calligraphy_set_brush -2, -36, BRUSH_RAISED
     rest 20
     rest 24
     play_sfx s_f_shuji_v_ha2_seqData
-    power_calligraphy_set_brush -2, -34, 0
+    power_calligraphy_set_brush -2, -34, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -35, 0
+    power_calligraphy_set_brush -2, -35, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -36, 0
+    power_calligraphy_set_brush -2, -36, BRUSH_RAISED
     rest 20
     play_sfx s_f_shuji_v_ha2_seqData
-    power_calligraphy_set_brush -2, -34, 0
+    power_calligraphy_set_brush -2, -34, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -35, 0
+    power_calligraphy_set_brush -2, -35, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -36, 0
+    power_calligraphy_set_brush -2, -36, BRUSH_RAISED
     rest 20
-    power_calligraphy_set_brush -2, -48, 0
+    power_calligraphy_set_brush -2, -48, BRUSH_RAISED
     play_sfx s_f_shuji_v_ha3_seqData
     rest 24
     power_calligraphy_charge_brush TRUE
     play_sfx_vol_pitch s_rabbit_break2_seqData, 160, -512
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 9
+    power_calligraphy_set_next_input KANA_INPUT_COMMA1
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
     rest 16
-    power_calligraphy_set_brush 12, -20, 0
+    power_calligraphy_set_brush 12, -20, BRUSH_RAISED
     rest 8
 return
 
 
-script power_calligraphy_sub_08a7f810
+script power_calligraphy_sub_face_init
     power_calligraphy_set_kana KANA_FACE
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -29, -60, 0
+    power_calligraphy_set_brush -29, -60, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
 return
 
 
-script power_calligraphy_sub_08a7f894
+script power_calligraphy_sub_face_main
     power_calligraphy_set_kana KANA_FACE
     rest 24
     rest 24
@@ -475,218 +475,218 @@ script power_calligraphy_sub_08a7f894
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush 2, -61, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 2, -61, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush 18, -67, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 18, -67, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush 32, -65, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 32, -65, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush 37, -57, 0
-    power_calligraphy_offset_paper 0, -2
+    power_calligraphy_set_brush 37, -57, BRUSH_RAISED
+    power_calligraphy_offset_paper -2, 0
     play_sfx NULL
     rest 19
     play_sfx s_f_shuji_swing2_seqData
     rest 2
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 5, -49, 0
-    power_calligraphy_offset_paper 1, 4
+    power_calligraphy_set_brush 5, -49, BRUSH_RAISED
+    power_calligraphy_offset_paper 4, 1
     play_sfx NULL
     rest 18
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 14, -31, 0
+    power_calligraphy_set_brush 14, -31, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 6
     power_calligraphy_set_kana_cel 6
-    power_calligraphy_set_brush 32, -33, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 32, -33, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx s_furi_seqData
     rest 12
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 22, -22, 0
-    power_calligraphy_offset_paper -1, 1
+    power_calligraphy_set_brush 22, -22, BRUSH_RAISED
+    power_calligraphy_offset_paper 1, -1
     play_sfx s_furi_seqData
     rest 10
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     power_calligraphy_set_kana_cel 8
-    power_calligraphy_set_brush 37, -18, 0
+    power_calligraphy_set_brush 37, -18, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 9
-    power_calligraphy_set_brush 26, -16, 0
+    power_calligraphy_set_brush 26, -16, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 10
-    power_calligraphy_set_brush 31, -21, 0
+    power_calligraphy_set_brush 31, -21, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 11
-    power_calligraphy_set_brush 32, -15, 0
-    power_calligraphy_offset_paper -1, 0
+    power_calligraphy_set_brush 32, -15, BRUSH_RAISED
+    power_calligraphy_offset_paper 0, -1
     play_sfx NULL
     rest 6
     power_calligraphy_set_kana_cel 11
-    power_calligraphy_set_brush -23, -48, 0
+    power_calligraphy_set_brush -23, -48, BRUSH_RAISED
     power_calligraphy_offset_paper 2, 2
     play_sfx NULL
     rest 4
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     power_calligraphy_set_kana_cel 12
-    power_calligraphy_set_brush -6, -48, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush -6, -48, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 13
-    power_calligraphy_set_brush 4, -49, 0
-    power_calligraphy_offset_paper 0, -2
+    power_calligraphy_set_brush 4, -49, BRUSH_RAISED
+    power_calligraphy_offset_paper -2, 0
     play_sfx NULL
     rest 5
     power_calligraphy_set_kana_cel 13
-    power_calligraphy_set_brush -28, -39, 0
+    power_calligraphy_set_brush -28, -39, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 14
-    power_calligraphy_set_brush -10, -40, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush -10, -40, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx s_f_shuji_swing1_seqData
     rest 1
     power_calligraphy_set_kana_cel 15
-    power_calligraphy_set_brush 0, -40, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 0, -40, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 16
-    power_calligraphy_set_brush 11, -40, 0
-    power_calligraphy_offset_paper 0, -2
+    power_calligraphy_set_brush 11, -40, BRUSH_RAISED
+    power_calligraphy_offset_paper -2, 0
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 16
-    power_calligraphy_set_brush -17, -39, 0
+    power_calligraphy_set_brush -17, -39, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 6
     power_calligraphy_set_kana_cel 17
-    power_calligraphy_set_brush -32, -22, 0
-    power_calligraphy_offset_paper -1, 1
+    power_calligraphy_set_brush -32, -22, BRUSH_RAISED
+    power_calligraphy_offset_paper 1, -1
     play_sfx s_f_shuji_swing2_seqData
     rest 6
     power_calligraphy_set_kana_cel 17
-    power_calligraphy_set_brush -4, -41, 0
-    power_calligraphy_offset_paper 1, -1
+    power_calligraphy_set_brush -4, -41, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 1
     play_sfx NULL
     rest 6
     power_calligraphy_set_kana_cel 18
-    power_calligraphy_set_brush 21, -27, 0
+    power_calligraphy_set_brush 21, -27, BRUSH_RAISED
     power_calligraphy_offset_paper -2, -2
     play_sfx s_f_shuji_swing2_seqData
     rest 6
     power_calligraphy_set_kana_cel 18
-    power_calligraphy_set_brush -16, -14, 0
+    power_calligraphy_set_brush -16, -14, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 6
     power_calligraphy_set_kana_cel 19
-    power_calligraphy_set_brush -20, -21, 0
+    power_calligraphy_set_brush -20, -21, BRUSH_RAISED
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_swing1_seqData
     rest 1
     power_calligraphy_set_kana_cel 20
-    power_calligraphy_set_brush -15, -23, 0
-    power_calligraphy_offset_paper 1, 0
+    power_calligraphy_set_brush -15, -23, BRUSH_RAISED
+    power_calligraphy_offset_paper 0, 1
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 21
-    power_calligraphy_set_brush -10, -22, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush -10, -22, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 22
-    power_calligraphy_set_brush -24, -11, 0
-    power_calligraphy_offset_paper -1, 1
+    power_calligraphy_set_brush -24, -11, BRUSH_RAISED
+    power_calligraphy_offset_paper 1, -1
     play_sfx NULL
     rest 3
     power_calligraphy_set_kana_cel 22
-    power_calligraphy_set_brush 1, -14, 0
+    power_calligraphy_set_brush 1, -14, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 6
     power_calligraphy_set_kana_cel 23
-    power_calligraphy_set_brush 0, -22, 0
+    power_calligraphy_set_brush 0, -22, BRUSH_RAISED
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_swing1_seqData
     rest 1
     power_calligraphy_set_kana_cel 24
-    power_calligraphy_set_brush 5, -23, 0
-    power_calligraphy_offset_paper 1, 0
+    power_calligraphy_set_brush 5, -23, BRUSH_RAISED
+    power_calligraphy_offset_paper 0, 1
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 25
-    power_calligraphy_set_brush 9, -21, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 9, -21, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 26
-    power_calligraphy_set_brush -10, -13, 0
-    power_calligraphy_offset_paper -1, 1
+    power_calligraphy_set_brush -10, -13, BRUSH_RAISED
+    power_calligraphy_offset_paper 1, -1
     play_sfx NULL
     rest 9
     power_calligraphy_set_kana_cel 27
-    power_calligraphy_set_brush -18, 0, 0
-    power_calligraphy_offset_paper -1, 1
+    power_calligraphy_set_brush -18, 0, BRUSH_RAISED
+    power_calligraphy_offset_paper 1, -1
     play_sfx NULL
     rest 2
     play_sfx s_furi_seqData
     rest 4
     power_calligraphy_set_kana_cel 28
-    power_calligraphy_set_brush -5, -2, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush -5, -2, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 2
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 28
-    power_calligraphy_set_brush -7, -8, 0
+    power_calligraphy_set_brush -7, -8, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 3
     power_calligraphy_set_kana_cel 29
-    power_calligraphy_set_brush -1, 1, 0
-    power_calligraphy_offset_paper -3, -1
+    power_calligraphy_set_brush -1, 1, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, -3
     play_sfx NULL
     rest 2
     play_sfx s_f_shuji_start_seqData
     rest 4
     power_calligraphy_set_kana_cel 29
-    power_calligraphy_set_brush -17, 2, 0
-    power_calligraphy_offset_paper 3, 2
+    power_calligraphy_set_brush -17, 2, BRUSH_RAISED
+    power_calligraphy_offset_paper 2, 3
     play_sfx NULL
     rest 8
     power_calligraphy_set_kana_cel 30
-    power_calligraphy_set_brush -13, 16, 1
-    power_calligraphy_offset_paper -4, 0
+    power_calligraphy_set_brush -13, 16, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -4
     play_sfx NULL
-    no_op
+    rest 0
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_charge_brush FALSE
-    no_op
+    rest 0
     rest 24
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 10
+    power_calligraphy_set_next_input KANA_INPUT_FACE1
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
@@ -697,69 +697,69 @@ return
 
 @ Power Calligraphy (Remix 4) - Subroutines
 
-script power_calligraphy_remix_4_sub_08a808d8
+script power_calligraphy_sub_swing_chikara_init
     power_calligraphy_set_kana KANA_CHIKARA
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -21, -48, 0
+    power_calligraphy_set_brush -21, -48, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
 return
 
 
-script power_calligraphy_remix_4_sub_08a8095c
+script power_calligraphy_sub_swing_chikara_main
     power_calligraphy_set_kana KANA_CHIKARA
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush -8, -25, 1
+    power_calligraphy_set_brush -8, -25, BRUSH_DOWN
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_start_seqData
     rest 14
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush 10, -33, 1
+    power_calligraphy_set_brush 10, -33, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush 35, -35, 1
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 35, -35, BRUSH_DOWN
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush 33, -28, 1
+    power_calligraphy_set_brush 33, -28, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 2
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 31, -27, 1
+    power_calligraphy_set_brush 31, -27, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx s_f_shuji_swing2_seqData
     rest 2
     power_calligraphy_set_kana_cel 6
-    power_calligraphy_set_brush 23, 10, 1
-    power_calligraphy_offset_paper -1, 0
+    power_calligraphy_set_brush 23, 10, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -1
     play_sfx NULL
     rest 24
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 1, -22, 0
+    power_calligraphy_set_brush 1, -22, BRUSH_RAISED
     power_calligraphy_offset_paper 3, 3
     play_sfx s_furi_seqData
     rest 12
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 9, -72, 0
+    power_calligraphy_set_brush 9, -72, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 12
     power_calligraphy_set_kana_cel 8
-    power_calligraphy_set_brush 13, -48, 1
+    power_calligraphy_set_brush 13, -48, BRUSH_DOWN
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_start_seqData
     rest 24
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_charge_brush FALSE
-    no_op
+    rest 0
     rest 24
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 2
+    power_calligraphy_set_next_input KANA_INPUT_CHIKARA2
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
@@ -767,98 +767,98 @@ script power_calligraphy_remix_4_sub_08a8095c
 return
 
 
-script power_calligraphy_remix_4_sub_08a80d88
+script power_calligraphy_sub_swing_onore_init
     power_calligraphy_set_kana KANA_ONORE
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -15, -57, 0
+    power_calligraphy_set_brush -15, -57, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
 return
 
 
-script power_calligraphy_remix_4_sub_08a80e0c
+script power_calligraphy_sub_swing_onore_main
     power_calligraphy_set_kana KANA_ONORE
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush -5, -38, 1
+    power_calligraphy_set_brush -5, -38, BRUSH_DOWN
     power_calligraphy_offset_paper -2, -2
     play_sfx s_f_shuji_start_seqData
     rest 24
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush 9, -40, 1
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 9, -40, BRUSH_DOWN
+    power_calligraphy_offset_paper -1, 0
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush 25, -39, 1
+    power_calligraphy_set_brush 25, -39, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 15
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush 23, -32, 1
-    power_calligraphy_offset_paper -1, 0
+    power_calligraphy_set_brush 23, -32, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -1
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 21, -23, 1
+    power_calligraphy_set_brush 21, -23, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 7
     power_calligraphy_set_kana_cel 6
-    power_calligraphy_set_brush -7, -19, 1
+    power_calligraphy_set_brush -7, -19, BRUSH_DOWN
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_start_seqData
     rest 24
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 7, -23, 1
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 7, -23, BRUSH_DOWN
+    power_calligraphy_offset_paper -1, 0
     play_sfx s_f_shuji_swing1_seqData
     rest 1
     power_calligraphy_set_kana_cel 8
-    power_calligraphy_set_brush 21, -23, 1
+    power_calligraphy_set_brush 21, -23, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 23
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    no_op
+    rest 0
     power_calligraphy_set_kana_cel 9
-    power_calligraphy_set_brush -13, 10, 1
-    power_calligraphy_offset_paper -2, 0
+    power_calligraphy_set_brush -13, 10, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -2
     play_sfx s_f_shuji_swing2_seqData
     rest 1
     power_calligraphy_set_kana_cel 10
-    power_calligraphy_set_brush -16, 2, 1
+    power_calligraphy_set_brush -16, 2, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 11
-    power_calligraphy_set_brush -14, 12, 1
+    power_calligraphy_set_brush -14, 12, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 12
-    power_calligraphy_set_brush -12, 19, 1
+    power_calligraphy_set_brush -12, 19, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 13
-    power_calligraphy_set_brush -6, 20, 1
+    power_calligraphy_set_brush -6, 20, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 14
-    power_calligraphy_set_brush 14, 18, 1
+    power_calligraphy_set_brush 14, 18, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 15
-    power_calligraphy_set_brush 31, 20, 1
-    power_calligraphy_offset_paper 0, -2
+    power_calligraphy_set_brush 31, 20, BRUSH_DOWN
+    power_calligraphy_offset_paper -2, 0
     play_sfx NULL
-    no_op
+    rest 0
     power_calligraphy_charge_brush FALSE
     rest 18
-    power_calligraphy_set_next_input 0
+    power_calligraphy_set_next_input KANA_INPUT_ONORE1
     power_calligraphy_charge_effect TRUE
     spawn_cue CUE_DEFAULT
     rest 24
@@ -867,76 +867,76 @@ script power_calligraphy_remix_4_sub_08a80e0c
 return
 
 
-script power_calligraphy_unk_sub_08a81478
+script power_calligraphy_sub_swing_sun_init
     power_calligraphy_set_kana KANA_SUN
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -25, -47, 0
+    power_calligraphy_set_brush -25, -47, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
 return
 
 
-script power_calligraphy_unk_sub_08a814fc
+script power_calligraphy_sub_swing_sun_main
     power_calligraphy_set_kana KANA_SUN
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush -13, -25, 1
+    power_calligraphy_set_brush -13, -25, BRUSH_DOWN
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_start_seqData
     rest 16
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush -8, -25, 1
-    power_calligraphy_offset_paper 0, -2
+    power_calligraphy_set_brush -8, -25, BRUSH_DOWN
+    power_calligraphy_offset_paper -2, 0
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush 5, -29, 1
+    power_calligraphy_set_brush 5, -29, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush 39, -28, 1
+    power_calligraphy_set_brush 39, -28, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 4
     play_sfx s_f_shuji_swing2_seqData
     rest 2
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 15, -48, 1
+    power_calligraphy_set_brush 15, -48, BRUSH_DOWN
     power_calligraphy_offset_paper 1, 1
     play_sfx NULL
     rest 16
     power_calligraphy_set_kana_cel 6
-    power_calligraphy_set_brush 14, -43, 1
-    power_calligraphy_offset_paper -4, 0
+    power_calligraphy_set_brush 14, -43, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -4
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 14, -22, 1
+    power_calligraphy_set_brush 14, -22, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 8
-    power_calligraphy_set_brush 14, 21, 1
+    power_calligraphy_set_brush 14, 21, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 6
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    no_op
+    rest 0
     power_calligraphy_charge_brush FALSE
     rest 24
-    power_calligraphy_set_next_input 3
+    power_calligraphy_set_next_input KANA_INPUT_SUN1
     power_calligraphy_charge_effect TRUE
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
-    no_op
+    rest 0
     rest 24
-    power_calligraphy_set_brush -11, -27, 0
+    power_calligraphy_set_brush -11, -27, BRUSH_RAISED
     power_calligraphy_charge_brush TRUE
     play_sfx_vol_pitch s_rabbit_break2_seqData, 160, -512
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 4
+    power_calligraphy_set_next_input KANA_INPUT_SUN2
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
@@ -949,7 +949,7 @@ return
 script power_calligraphy_sub_swing_kokoro_init
     power_calligraphy_set_kana KANA_KOKORO
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -24, -40, 0
+    power_calligraphy_set_brush -24, -40, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
@@ -959,84 +959,84 @@ return
 script power_calligraphy_sub_swing_kokoro_main
     power_calligraphy_set_kana KANA_KOKORO
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush -26, -13, 1
-    power_calligraphy_offset_paper -2, 1
+    power_calligraphy_set_brush -26, -13, BRUSH_DOWN
+    power_calligraphy_offset_paper 1, -2
     play_sfx s_furi_seqData
     rest 1
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush -31, -2, 1
+    power_calligraphy_set_brush -31, -2, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush -37, 5, 1
+    power_calligraphy_set_brush -37, 5, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 14
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush -7, -55, 0
-    power_calligraphy_offset_paper 2, 0
+    power_calligraphy_set_brush -7, -55, BRUSH_RAISED
+    power_calligraphy_offset_paper 0, 2
     play_sfx NULL
     rest 6
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
-    no_op
+    rest 0
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush -4, -7, 1
-    power_calligraphy_offset_paper -2, 0
+    power_calligraphy_set_brush -4, -7, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -2
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 8, 4, 1
+    power_calligraphy_set_brush 8, 4, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 6
-    power_calligraphy_set_brush 20, 6, 1
+    power_calligraphy_set_brush 20, 6, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 30, 7, 1
+    power_calligraphy_set_brush 30, 7, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 8
-    power_calligraphy_set_brush 40, 7, 1
+    power_calligraphy_set_brush 40, 7, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 9
-    power_calligraphy_set_brush 46, 6, 1
-    power_calligraphy_offset_paper 0, -3
+    power_calligraphy_set_brush 46, 6, BRUSH_DOWN
+    power_calligraphy_offset_paper -3, 0
     play_sfx NULL
     rest 11
     power_calligraphy_charge_brush FALSE
     rest 8
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 5
+    power_calligraphy_set_next_input KANA_INPUT_KOKORO1
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
     rest 16
-    power_calligraphy_set_brush 7, -68, 0
+    power_calligraphy_set_brush 7, -68, BRUSH_RAISED
     rest 8
-    no_op
+    rest 0
     power_calligraphy_set_kana_cel 11
-    power_calligraphy_set_brush 17, -34, 1
+    power_calligraphy_set_brush 17, -34, BRUSH_DOWN
     power_calligraphy_offset_paper -2, -2
     play_sfx s_f_shuji_start_seqData
     rest 16
     power_calligraphy_set_kana_cel 12
-    power_calligraphy_set_brush 31, -69, 0
-    power_calligraphy_offset_paper 2, 0
+    power_calligraphy_set_brush 31, -69, BRUSH_RAISED
+    power_calligraphy_offset_paper 0, 2
     play_sfx_vol s_furi_seqData, 128
     rest 8
     power_calligraphy_charge_brush TRUE
     play_sfx_vol_pitch s_rabbit_break2_seqData, 160, -512
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 7
+    power_calligraphy_set_next_input KANA_INPUT_KOKORO3
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
@@ -1044,52 +1044,52 @@ script power_calligraphy_sub_swing_kokoro_main
 return
 
 
-script power_calligraphy_remix_4_sub_08a82060
+script power_calligraphy_sub_swing_re_init
     power_calligraphy_set_kana KANA_RE
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -5, -64, 0
+    power_calligraphy_set_brush -5, -64, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
 return
 
 
-script power_calligraphy_sub_08a820e4_unused
+script power_calligraphy_sub_swing_re_main
     power_calligraphy_set_kana KANA_RE
     play_sfx_vol s_shuji_ho_seqData, 256
-    power_calligraphy_set_brush -5, -62, 0
+    power_calligraphy_set_brush -5, -62, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -5, -63, 0
+    power_calligraphy_set_brush -5, -63, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -5, -64, 0
+    power_calligraphy_set_brush -5, -64, BRUSH_RAISED
     rest 20
     rest 24
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush -2, -32, 1
-    power_calligraphy_offset_paper -2, 0
+    power_calligraphy_set_brush -2, -32, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -2
     play_sfx s_f_shuji_start_seqData
     rest 23
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush -4, -24, 1
+    power_calligraphy_set_brush -4, -24, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx s_f_shuji_swing1_seqData
     rest 1
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush -4, -8, 1
+    power_calligraphy_set_brush -4, -8, BRUSH_DOWN
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush -5, 18, 1
-    power_calligraphy_offset_paper -5, 1
+    power_calligraphy_set_brush -5, 18, BRUSH_DOWN
+    power_calligraphy_offset_paper 1, -5
     play_sfx NULL
     rest 23
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_charge_brush FALSE
-    no_op
+    rest 0
     rest 24
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 8
+    power_calligraphy_set_next_input KANA_INPUT_RE1
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
@@ -1097,65 +1097,65 @@ script power_calligraphy_sub_08a820e4_unused
 return
 
 
-script power_calligraphy_sub_08a823b4_unused
+script power_calligraphy_sub_swing_comma_init
     power_calligraphy_set_kana KANA_COMMA
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -2, -36, 0
+    power_calligraphy_set_brush -2, -36, BRUSH_RAISED
     rest 24
 return
 
 
-script power_calligraphy_sub_08a82414_unused
+script power_calligraphy_sub_swing_comma_main
     power_calligraphy_set_kana KANA_COMMA
     play_sfx s_f_shuji_v_ha1_seqData
-    power_calligraphy_set_brush -2, -34, 0
+    power_calligraphy_set_brush -2, -34, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -35, 0
+    power_calligraphy_set_brush -2, -35, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -36, 0
+    power_calligraphy_set_brush -2, -36, BRUSH_RAISED
     rest 20
     rest 24
     play_sfx s_f_shuji_v_ha2_seqData
-    power_calligraphy_set_brush -2, -34, 0
+    power_calligraphy_set_brush -2, -34, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -35, 0
+    power_calligraphy_set_brush -2, -35, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -36, 0
+    power_calligraphy_set_brush -2, -36, BRUSH_RAISED
     rest 20
     play_sfx s_f_shuji_v_ha2_seqData
-    power_calligraphy_set_brush -2, -34, 0
+    power_calligraphy_set_brush -2, -34, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -35, 0
+    power_calligraphy_set_brush -2, -35, BRUSH_RAISED
     rest 2
-    power_calligraphy_set_brush -2, -36, 0
+    power_calligraphy_set_brush -2, -36, BRUSH_RAISED
     rest 20
-    power_calligraphy_set_brush -2, -48, 0
+    power_calligraphy_set_brush -2, -48, BRUSH_RAISED
     play_sfx s_f_shuji_v_ha3_seqData
     rest 24
     power_calligraphy_charge_brush TRUE
     play_sfx_vol_pitch s_rabbit_break2_seqData, 160, -512
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 9
+    power_calligraphy_set_next_input KANA_INPUT_COMMA1
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE
     rest 16
-    power_calligraphy_set_brush 12, -20, 0
+    power_calligraphy_set_brush 12, -20, BRUSH_RAISED
     rest 8
 return
 
 
-script power_calligraphy_sub_08a82690_unused
+script power_calligraphy_sub_swing_face_init
     power_calligraphy_set_kana KANA_FACE
     power_calligraphy_set_kana_cel 0
-    power_calligraphy_set_brush -29, -60, 0
+    power_calligraphy_set_brush -29, -60, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 24
 return
 
 
-script power_calligraphy_sub_08a82714_unused
+script power_calligraphy_sub_swing_face_main
     power_calligraphy_set_kana KANA_FACE
     rest 24
     rest 24
@@ -1164,218 +1164,218 @@ script power_calligraphy_sub_08a82714_unused
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     power_calligraphy_set_kana_cel 1
-    power_calligraphy_set_brush 2, -61, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 2, -61, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 2
-    power_calligraphy_set_brush 18, -67, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 18, -67, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 3
-    power_calligraphy_set_brush 32, -65, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 32, -65, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 4
-    power_calligraphy_set_brush 37, -57, 0
-    power_calligraphy_offset_paper 0, -2
+    power_calligraphy_set_brush 37, -57, BRUSH_RAISED
+    power_calligraphy_offset_paper -2, 0
     play_sfx NULL
     rest 19
     play_sfx s_f_shuji_swing2_seqData
     rest 2
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 5, -49, 0
-    power_calligraphy_offset_paper 1, 4
+    power_calligraphy_set_brush 5, -49, BRUSH_RAISED
+    power_calligraphy_offset_paper 4, 1
     play_sfx NULL
     rest 18
     power_calligraphy_set_kana_cel 5
-    power_calligraphy_set_brush 14, -31, 0
+    power_calligraphy_set_brush 14, -31, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 6
     power_calligraphy_set_kana_cel 6
-    power_calligraphy_set_brush 32, -33, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 32, -33, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx s_furi_seqData
     rest 16
     power_calligraphy_set_kana_cel 7
-    power_calligraphy_set_brush 22, -22, 0
-    power_calligraphy_offset_paper -1, 1
+    power_calligraphy_set_brush 22, -22, BRUSH_RAISED
+    power_calligraphy_offset_paper 1, -1
     play_sfx s_furi_seqData
     rest 6
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     power_calligraphy_set_kana_cel 8
-    power_calligraphy_set_brush 37, -18, 0
+    power_calligraphy_set_brush 37, -18, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 9
-    power_calligraphy_set_brush 26, -16, 0
+    power_calligraphy_set_brush 26, -16, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 10
-    power_calligraphy_set_brush 31, -21, 0
+    power_calligraphy_set_brush 31, -21, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 11
-    power_calligraphy_set_brush 32, -15, 0
-    power_calligraphy_offset_paper -1, 0
+    power_calligraphy_set_brush 32, -15, BRUSH_RAISED
+    power_calligraphy_offset_paper 0, -1
     play_sfx NULL
     rest 6
     power_calligraphy_set_kana_cel 11
-    power_calligraphy_set_brush -23, -48, 0
+    power_calligraphy_set_brush -23, -48, BRUSH_RAISED
     power_calligraphy_offset_paper 2, 2
     play_sfx NULL
     rest 4
     play_sfx s_f_shuji_swing1_seqData
     rest 2
     power_calligraphy_set_kana_cel 12
-    power_calligraphy_set_brush -6, -48, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush -6, -48, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 13
-    power_calligraphy_set_brush 4, -49, 0
-    power_calligraphy_offset_paper 0, -2
+    power_calligraphy_set_brush 4, -49, BRUSH_RAISED
+    power_calligraphy_offset_paper -2, 0
     play_sfx NULL
     rest 5
     power_calligraphy_set_kana_cel 13
-    power_calligraphy_set_brush -28, -39, 0
+    power_calligraphy_set_brush -28, -39, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 8
     power_calligraphy_set_kana_cel 14
-    power_calligraphy_set_brush -10, -40, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush -10, -40, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx s_f_shuji_swing1_seqData
     rest 1
     power_calligraphy_set_kana_cel 15
-    power_calligraphy_set_brush 0, -40, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 0, -40, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 16
-    power_calligraphy_set_brush 11, -40, 0
-    power_calligraphy_offset_paper 0, -2
+    power_calligraphy_set_brush 11, -40, BRUSH_RAISED
+    power_calligraphy_offset_paper -2, 0
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 16
-    power_calligraphy_set_brush -17, -39, 0
+    power_calligraphy_set_brush -17, -39, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 2
     power_calligraphy_set_kana_cel 17
-    power_calligraphy_set_brush -32, -22, 0
-    power_calligraphy_offset_paper -1, 1
+    power_calligraphy_set_brush -32, -22, BRUSH_RAISED
+    power_calligraphy_offset_paper 1, -1
     play_sfx s_f_shuji_swing2_seqData
     rest 6
     power_calligraphy_set_kana_cel 17
-    power_calligraphy_set_brush -4, -41, 0
-    power_calligraphy_offset_paper 1, -1
+    power_calligraphy_set_brush -4, -41, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 1
     play_sfx NULL
     rest 10
     power_calligraphy_set_kana_cel 18
-    power_calligraphy_set_brush 21, -27, 0
+    power_calligraphy_set_brush 21, -27, BRUSH_RAISED
     power_calligraphy_offset_paper -2, -2
     play_sfx s_f_shuji_swing2_seqData
     rest 6
     power_calligraphy_set_kana_cel 18
-    power_calligraphy_set_brush -16, -14, 0
+    power_calligraphy_set_brush -16, -14, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 2
     power_calligraphy_set_kana_cel 19
-    power_calligraphy_set_brush -20, -21, 0
+    power_calligraphy_set_brush -20, -21, BRUSH_RAISED
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_swing1_seqData
     rest 1
     power_calligraphy_set_kana_cel 20
-    power_calligraphy_set_brush -15, -23, 0
-    power_calligraphy_offset_paper 1, 0
+    power_calligraphy_set_brush -15, -23, BRUSH_RAISED
+    power_calligraphy_offset_paper 0, 1
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 21
-    power_calligraphy_set_brush -10, -22, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush -10, -22, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 22
-    power_calligraphy_set_brush -24, -11, 0
-    power_calligraphy_offset_paper -1, 1
+    power_calligraphy_set_brush -24, -11, BRUSH_RAISED
+    power_calligraphy_offset_paper 1, -1
     play_sfx NULL
     rest 3
     power_calligraphy_set_kana_cel 22
-    power_calligraphy_set_brush 1, -14, 0
+    power_calligraphy_set_brush 1, -14, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 10
     power_calligraphy_set_kana_cel 23
-    power_calligraphy_set_brush 0, -22, 0
+    power_calligraphy_set_brush 0, -22, BRUSH_RAISED
     power_calligraphy_offset_paper 1, 1
     play_sfx s_f_shuji_swing1_seqData
     rest 1
     power_calligraphy_set_kana_cel 24
-    power_calligraphy_set_brush 5, -23, 0
-    power_calligraphy_offset_paper 1, 0
+    power_calligraphy_set_brush 5, -23, BRUSH_RAISED
+    power_calligraphy_offset_paper 0, 1
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 25
-    power_calligraphy_set_brush 9, -21, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush 9, -21, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 1
     power_calligraphy_set_kana_cel 26
-    power_calligraphy_set_brush -10, -13, 0
-    power_calligraphy_offset_paper -1, 1
+    power_calligraphy_set_brush -10, -13, BRUSH_RAISED
+    power_calligraphy_offset_paper 1, -1
     play_sfx NULL
     rest 5
     power_calligraphy_set_kana_cel 27
-    power_calligraphy_set_brush -18, 0, 0
-    power_calligraphy_offset_paper -1, 1
+    power_calligraphy_set_brush -18, 0, BRUSH_RAISED
+    power_calligraphy_offset_paper 1, -1
     play_sfx NULL
     rest 2
     play_sfx s_furi_seqData
     rest 5
     power_calligraphy_set_kana_cel 28
-    power_calligraphy_set_brush -5, -2, 0
-    power_calligraphy_offset_paper 0, -1
+    power_calligraphy_set_brush -5, -2, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, 0
     play_sfx NULL
     rest 3
     play_sfx s_furi_seqData
     rest 2
     power_calligraphy_set_kana_cel 28
-    power_calligraphy_set_brush -7, -8, 0
+    power_calligraphy_set_brush -7, -8, BRUSH_RAISED
     power_calligraphy_offset_paper 0, 0
     play_sfx NULL
     rest 3
     power_calligraphy_set_kana_cel 29
-    power_calligraphy_set_brush -1, 1, 0
-    power_calligraphy_offset_paper -3, -1
+    power_calligraphy_set_brush -1, 1, BRUSH_RAISED
+    power_calligraphy_offset_paper -1, -3
     play_sfx NULL
     rest 3
     play_sfx s_f_shuji_start_seqData
     rest 4
     power_calligraphy_set_kana_cel 29
-    power_calligraphy_set_brush -17, 2, 0
-    power_calligraphy_offset_paper 3, 2
+    power_calligraphy_set_brush -17, 2, BRUSH_RAISED
+    power_calligraphy_offset_paper 2, 3
     play_sfx NULL
     rest 4
     power_calligraphy_set_kana_cel 30
-    power_calligraphy_set_brush -13, 16, 1
-    power_calligraphy_offset_paper -4, 0
+    power_calligraphy_set_brush -13, 16, BRUSH_DOWN
+    power_calligraphy_offset_paper 0, -4
     play_sfx NULL
-    no_op
+    rest 0
     play_sfx_vol s_f_shuji_v_funuue_seqData, 256
     power_calligraphy_charge_brush FALSE
-    no_op
+    rest 0
     rest 24
     power_calligraphy_charge_effect TRUE
-    power_calligraphy_set_next_input 10
+    power_calligraphy_set_next_input KANA_INPUT_FACE1
     spawn_cue CUE_DEFAULT
     rest 24
     power_calligraphy_charge_effect FALSE

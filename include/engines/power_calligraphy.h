@@ -6,6 +6,17 @@
 #include "games/power_calligraphy/graphics/power_calligraphy_graphics.h"
 
 // Engine Macros/Enums:
+enum PowerCalligraphyKanaEnum {
+    /* 00 */ POWER_CALLIGRAPHY_KANA_ONORE,
+    /* 01 */ POWER_CALLIGRAPHY_KANA_CHIKARA,
+    /* 02 */ POWER_CALLIGRAPHY_KANA_SUN,
+    /* 03 */ POWER_CALLIGRAPHY_KANA_KOKORO,
+    /* 04 */ POWER_CALLIGRAPHY_KANA_RE,
+    /* 05 */ POWER_CALLIGRAPHY_KANA_COMMA,
+    /* 06 */ POWER_CALLIGRAPHY_KANA_FACE,
+    /* 07 */ POWER_CALLIGRAPHY_KANA_END_KANJI,
+};
+
 enum PowerCalligraphyInputsEnum {
     /* 00 */ POWER_CALLIGRAPHY_INPUT_ONORE1,
     /* 01 */ POWER_CALLIGRAPHY_INPUT_CHIKARA1,
@@ -33,6 +44,16 @@ enum LittlePeopleStatesEnum {
     /* 02 */ LITTLE_PEOPLE_STATE_STUMBLE,
     /* 03 */ LITTLE_PEOPLE_STATE_BOW,
     /* 04 */ LITTLE_PEOPLE_STATE_END_BOW,
+};
+
+enum CalligraphyBrushChargesEnum {
+    /* 00 */ CALLIGRAPHY_BRUSH_CHARGE_DEFAULT,
+    /* 01 */ CALLIGRAPHY_BRUSH_CHARGE_COMMA,
+};
+
+enum CalligraphyBrushStatesEnum {
+    /* 00 */ CALLIGRAPHY_BRUSH_STATE_UP,
+    /* 01 */ CALLIGRAPHY_BRUSH_STATE_DOWN,
 };
 
 
@@ -120,7 +141,7 @@ extern void power_calligraphy_engine_event_stub(void);      // Engine Event 0D (
 extern void power_calligraphy_set_kana(u32 kana);           // Engine Event 00 (Set Kana)
 extern void power_calligraphy_set_kana_cel(s32 cel);        // Engine Event 01 (Set Kana Current Cel)
 extern void power_calligraphy_offset_paper(s32 args);       // Engine Event 02 (Shift Paper)
-extern void power_calligraphy_remove_paper(u32 isLastKana); // Engine Event 03 (Remove Paper)
+extern void power_calligraphy_remove_paper(u32 slowly);     // Engine Event 03 (Remove Paper)
 extern void power_calligraphy_update_paper_motion(void);
 extern void power_calligraphy_set_next_input(u32 inputStrokeType);  // Engine Event 04 (Set Next Input Stroke Type)
 extern void power_calligraphy_finish_input_kokoro2(void);           // Engine Event 05 (Finish Unused Input KOKORO_2)
