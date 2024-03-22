@@ -70,7 +70,7 @@ void func_080035a0(struct struct_08003070 *arg0, struct struct_080035a0 *arg1, u
 extern void func_080036c4(struct struct_08003070 *arg0, u16 arg1, u16 arg2);
 extern void func_08003720(struct struct_08003070 *arg0, u16 arg1, u16 arg2);
 extern void func_0800387c(struct struct_0800387c *arg0, u8 *arg1);
-extern u32 func_080038b0(struct PaletteInterpolator *arg0, struct struct_0800387c *arg1, u32 arg2, u32 arg3, u8 *arg4);
+extern u32 func_080038b0(struct PaletteInterpolator *palInterps, struct struct_0800387c *arg1, u32 frames, u32 mode, u16 *palBuffer);
 extern void func_08003974(struct struct_0800387c *arg0);
 extern void func_08003980(struct struct_0800387c *arg0, struct struct_0800387c *arg1);
 extern void func_080039a8(struct struct_0800387c *arg0, struct struct_0800387c *arg1, u32 arg2);

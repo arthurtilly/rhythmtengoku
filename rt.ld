@@ -777,7 +777,7 @@ SECTIONS {
         build/data/__clz_tab.c.o(.rodata);
         build/data/agb_main_data.c.o(.data);
         build/data/math_tables.c.o(.data);
-        build/data/data_089363cc.c.o(.data);
+        build/src/palette.c.o(.data);
         build/src/graphics_table.c.o(.data);
         build/data/data_0893640c.c.o(.data);
         build/bin/karate_face_maps.bin.o(.rodata*);

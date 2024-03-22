@@ -20,7 +20,7 @@ branch_0800edd6: \n\
 /* 0800ede2 */ LSRS R2, R2, 0x10 \n\
 /* 0800ede4 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0800ede6 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0800ede8 */ BL func_08002088 \n\
+/* 0800ede8 */ BL get_blended_color \n\
 /* 0800edec */ STRH R0, [R4] \n\
 /* 0800edee */ ADDS R4, 0x2 @ Add 0x2 to R4 \n\
 /* 0800edf0 */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\

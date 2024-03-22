@@ -383,40 +383,47 @@ void func_0800387c(struct struct_0800387c *arg0, u8 *arg1) {
     }
 }
 
-u32 func_080038b0(struct PaletteInterpolator *arg0, struct struct_0800387c *arg1, u32 arg2, u32 arg3, u8 *arg4) {
-    u16 *temp_r5;
-    u16 *temp_r6;
-    u16 *temp;
-    u16 *temp1;
-    u32 tempret = 0;
-    
-    for (tempret = 0; arg1->unk0 != NULL; arg0++, arg1++, tempret++) {
-        while (arg0->isActive) {
-            arg0++;
+u32 func_080038b0(struct PaletteInterpolator *palInterps, struct struct_0800387c *arg1, u32 frames, u32 mode, u16 *palBuffer) {
+    u16 *dest;
+    u16 *buffer;
+    u16 *sourceA;
+    u16 *sourceB;
+    u32 i;
+
+    for (i = 0; arg1->unk0 != NULL; arg1++, i++) {
+        while (palInterps->isActive) {
+            palInterps++;
         }
 
-        temp_r5 = (u16 *)(((u8 *)PaletteRAMBase) +  arg1->unk4 * 32);
-        temp_r6 = (u16 *)(arg4 +  arg1->unk4 * 32);
-        switch (arg3) {
+        dest = ((u16 *)(PaletteRAMBase)) + (arg1->unk4 * 16);
+        buffer = (palBuffer + (arg1->unk4 * 16));
+
+        switch (mode) {
             case 0:
-                temp = (u16 *)arg1->unk0;
-                func_08001cd8(arg0, arg2, arg1->unk5, temp, NULL, temp_r5, temp_r6);
+                sourceA = (u16 *)arg1->unk0;
+                pal_interp_init_ptc(palInterps, frames, arg1->unk5, sourceA, COLOR_BLACK, dest, buffer);
                 break;
+
             case 1:
-                temp1 = (u16 *)arg1->unk0;
-                func_08001c64(arg0, arg2, arg1->unk5, NULL, temp1, temp_r5, temp_r6);
+                sourceB = (u16 *)arg1->unk0;
+                pal_interp_init_ctp(palInterps, frames, arg1->unk5, COLOR_BLACK, sourceB, dest, buffer);
                 break;
+
             case 2:
-                temp = (u16 *)arg1->unk0;
-                func_08001cd8(arg0, arg2, arg1->unk5, temp, (u16 *)0x7fff, temp_r5, temp_r6);
+                sourceA = (u16 *)arg1->unk0;
+                pal_interp_init_ptc(palInterps, frames, arg1->unk5, sourceA, COLOR_WHITE, dest, buffer);
                 break;
+
             case 3:
-                temp1 = (u16 *)arg1->unk0;
-                func_08001c64(arg0, arg2, arg1->unk5, (u16 *)0x7fff, temp1, temp_r5, temp_r6);
+                sourceB = (u16 *)arg1->unk0;
+                pal_interp_init_ctp(palInterps, frames, arg1->unk5, COLOR_WHITE, sourceB, dest, buffer);
                 break;
         }
+
+        palInterps++;
     }
-    return tempret;
+
+    return i;
 }
 
 void func_08003974(struct struct_0800387c *arg0) {
