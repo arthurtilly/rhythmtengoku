@@ -2075,7 +2075,7 @@ void func_0800edc8(u16 *gradientBuffer, u16 arg1, u16 arg2, u16 arg3) {
     u32 i;
 
     for (i = 0; i < 160; i++) {
-        gradientBuffer[i] = func_08002088(arg1, arg2, fast_divsi3(INT_TO_FIXED(i), INT_TO_FIXED(0.625)));
+        gradientBuffer[i] = get_blended_color(arg1, arg2, fast_divsi3(INT_TO_FIXED(i), INT_TO_FIXED(0.625)));
     }
 }
 
