@@ -85,10 +85,8 @@ struct Animation {
 
 
 /* Standard RGB555 colors. */
-enum Color {
-    COLOR_BLACK = 0x0000,
-    COLOR_WHITE = 0x7FFF,
-};
+#define COLOR_BLACK 0x0000
+#define COLOR_WHITE 0x7FFF
 
 typedef u16 Palette[16];
 typedef u16 FontPalette[4];
