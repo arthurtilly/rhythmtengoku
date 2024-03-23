@@ -144,8 +144,8 @@ script script_power_calligraphy_main
     clear_text_f
     rest 24
     start_perfect_campaign
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_re_init
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_re_init
     rest 24
     rest 24
     rest 24
@@ -155,115 +155,115 @@ script script_power_calligraphy_main
     set_marking_criteria 0
     start_tracking_inputs
     set_marking_criteria 0
-    call power_calligraphy_sub_re_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_comma_init
+    call script_power_calligraphy_sub_re
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_comma_init
     set_marking_criteria 0
-    call power_calligraphy_sub_comma_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_re_init
+    call script_power_calligraphy_sub_comma
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_re_init
     set_marking_criteria 0
-    call power_calligraphy_sub_re_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_chikara_init
+    call script_power_calligraphy_sub_re
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_chikara_init
     set_marking_criteria 1
-    call power_calligraphy_sub_chikara_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_re_init
+    call script_power_calligraphy_sub_chikara
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_re_init
     set_marking_criteria 0
-    call power_calligraphy_sub_re_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_comma_init
+    call script_power_calligraphy_sub_re
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_comma_init
     set_marking_criteria 0
-    call power_calligraphy_sub_comma_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_re_init
+    call script_power_calligraphy_sub_comma
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_re_init
     set_marking_criteria 0
-    call power_calligraphy_sub_re_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_onore_init
+    call script_power_calligraphy_sub_re
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_onore_init
     set_marking_criteria 0
-    call power_calligraphy_sub_onore_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_chikara_init
+    call script_power_calligraphy_sub_onore
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_chikara_init
     set_marking_criteria 1
-    call power_calligraphy_sub_chikara_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_onore_init
+    call script_power_calligraphy_sub_chikara
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_onore_init
     set_marking_criteria 0
-    call power_calligraphy_sub_onore_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_re_init
+    call script_power_calligraphy_sub_onore
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_re_init
     set_marking_criteria 0
-    call power_calligraphy_sub_re_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_sun_init
+    call script_power_calligraphy_sub_re
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_sun_init
     set_marking_criteria 0
-    call power_calligraphy_sub_sun_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_chikara_init
+    call script_power_calligraphy_sub_sun
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_chikara_init
     set_marking_criteria 1
-    call power_calligraphy_sub_chikara_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_onore_init
+    call script_power_calligraphy_sub_chikara
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_onore_init
     set_marking_criteria 0
-    call power_calligraphy_sub_onore_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_comma_init
+    call script_power_calligraphy_sub_onore
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_comma_init
     set_marking_criteria 0
-    call power_calligraphy_sub_comma_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_kokoro_init
+    call script_power_calligraphy_sub_comma
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_kokoro_init
     set_marking_criteria 2
-    call power_calligraphy_sub_kokoro_main
-    power_calligraphy_remove_paper FALSE
+    call script_power_calligraphy_sub_kokoro
+    power_calligraphy_remove_paper
     power_calligraphy_set_people_state LITTLE_PEOPLE_DANCE
-    call power_calligraphy_sub_re_init
+    call script_power_calligraphy_sub_re_init
     set_tempo 161
     play_music s_shuji_bgm2_seqData
     set_marking_criteria 0
-    call power_calligraphy_sub_re_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_comma_init
+    call script_power_calligraphy_sub_re
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_comma_init
     set_marking_criteria 0
-    call power_calligraphy_sub_comma_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_chikara_init
+    call script_power_calligraphy_sub_comma
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_chikara_init
     set_marking_criteria 1
-    call power_calligraphy_sub_chikara_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_sun_init
+    call script_power_calligraphy_sub_chikara
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_sun_init
     set_marking_criteria 0
-    call power_calligraphy_sub_sun_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_re_init
+    call script_power_calligraphy_sub_sun
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_re_init
     set_marking_criteria 0
-    call power_calligraphy_sub_re_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_comma_init
+    call script_power_calligraphy_sub_re
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_comma_init
     set_marking_criteria 0
-    call power_calligraphy_sub_comma_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_onore_init
+    call script_power_calligraphy_sub_comma
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_onore_init
     set_marking_criteria 0
-    call power_calligraphy_sub_onore_main
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_kokoro_init
+    call script_power_calligraphy_sub_onore
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_kokoro_init
     set_marking_criteria 2
-    call power_calligraphy_sub_kokoro_main
-    power_calligraphy_remove_paper TRUE
+    call script_power_calligraphy_sub_kokoro
+    power_calligraphy_remove_paper_slowly
     power_calligraphy_set_people_state LITTLE_PEOPLE_END_BOW
-    call power_calligraphy_sub_face_init
+    call script_power_calligraphy_sub_face_init
     set_tempo 98
     play_music s_shuji_bgm3_seqData
     power_calligraphy_set_people_state LITTLE_PEOPLE_BOW
     set_marking_criteria 3
-    call power_calligraphy_sub_face_main
+    call script_power_calligraphy_sub_face
     rest 24
     mod_music_volume 0, 84
     rest 24
     rest 24
-    power_calligraphy_remove_paper TRUE
+    power_calligraphy_remove_paper_slowly
     power_calligraphy_set_kana KANA_END_KANJI
     power_calligraphy_set_kana_cel 0
     power_calligraphy_set_brush 60, 16, 0
@@ -301,12 +301,12 @@ script script_power_calligraphy_practice
     clear_text_f
     rest 24
     print_text_f D_0805d318
-    power_calligraphy_remove_paper FALSE
+    power_calligraphy_remove_paper
     loop_start
         run beatscript_disable_loops
-        call power_calligraphy_sub_re_init
-        call power_calligraphy_sub_re_main
-        power_calligraphy_remove_paper FALSE
+        call script_power_calligraphy_sub_re_init
+        call script_power_calligraphy_sub_re
+        power_calligraphy_remove_paper
     loop_end
     clear_text_f
     rest 24
@@ -320,12 +320,12 @@ script script_power_calligraphy_practice
     rest 24
     rest 24
     rest 24
-    power_calligraphy_remove_paper FALSE
+    power_calligraphy_remove_paper
     loop_start
         run beatscript_disable_loops
-        call power_calligraphy_sub_comma_init
-        call power_calligraphy_sub_comma_main
-        power_calligraphy_remove_paper FALSE
+        call script_power_calligraphy_sub_comma_init
+        call script_power_calligraphy_sub_comma
+        power_calligraphy_remove_paper
     loop_end
     clear_text_f
     rest 24

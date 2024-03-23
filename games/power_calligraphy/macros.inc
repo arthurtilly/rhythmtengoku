@@ -49,6 +49,10 @@
     .set BRUSH_RAISED,  0
     .set BRUSH_DOWN,    1
 
+    @ Brush Charge Types
+    .set CHARGE_STROKE, 0
+    .set CHARGE_COMMA,  1
+
     @ Little People States
     .set LITTLE_PEOPLE_NULL,    0
     .set LITTLE_PEOPLE_DANCE,   1
@@ -93,8 +97,12 @@
 
 
 @ [Event 0x03] Remove Paper
-.macro power_calligraphy_remove_paper slowly
-    power_calligraphy_event REMOVE_PAPER, \slowly
+.macro power_calligraphy_remove_paper
+    power_calligraphy_event REMOVE_PAPER, FALSE
+.endm
+
+.macro power_calligraphy_remove_paper_slowly
+    power_calligraphy_event REMOVE_PAPER, TRUE
 .endm
 
 
@@ -115,16 +123,31 @@
     power_calligraphy_event SET_BRUSH, (\x & 0xFF) | ((\y & 0xFF) << 8) | ((\cel & 0xFF) << 16)
 .endm
 
+.macro power_calligraphy_set_brush_raised x, y
+    power_calligraphy_set_brush (\x), (\y), BRUSH_RAISED
+.endm
+
+.macro power_calligraphy_set_brush_down x, y
+    power_calligraphy_set_brush (\x), (\y), BRUSH_DOWN
+.endm
+
 
 @ [Event 0x07] Charge Brush
-.macro power_calligraphy_charge_brush chargeType
-    power_calligraphy_event CHARGE_BRUSH, \chargeType
+.macro power_calligraphy_charge_brush
+    power_calligraphy_event CHARGE_BRUSH, CHARGE_STROKE
+.endm
+.macro power_calligraphy_charge_brush_comma
+    power_calligraphy_event CHARGE_BRUSH, CHARGE_COMMA
 .endm
 
 
 @ [Event 0x08] Start/Stop Charge Effect
-.macro power_calligraphy_charge_effect start
-    power_calligraphy_event CHARGE_EFFECT, \start
+.macro power_calligraphy_start_charge_effect
+    power_calligraphy_event CHARGE_EFFECT, TRUE
+.endm
+
+.macro power_calligraphy_end_charge_effect
+    power_calligraphy_event CHARGE_EFFECT, FALSE
 .endm
 
 
@@ -134,8 +157,8 @@
 .endm
 
 
-@ [Event 0x0A] Start Ink Dot Charge Effect (Unused)
-.macro power_calligraphy_start_ink_orbit_effect ticks
+@ [Event 0x0A] Play Ink Dot Charge Effect (Unused)
+.macro power_calligraphy_play_ink_orbit_effect ticks
     power_calligraphy_event START_INK_ORBIT, \ticks
 .endm
 
@@ -147,6 +170,6 @@
 
 
 @ [Event 0x0C] Set Little People Position
-.macro power_calligraphy_set_people_pos LITTLE_PEOPLE_END_BOW pos
+.macro power_calligraphy_set_people_pos pos
     power_calligraphy_event SET_PEOPLE_POS, \pos
 .endm

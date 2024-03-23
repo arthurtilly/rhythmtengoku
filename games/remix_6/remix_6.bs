@@ -611,15 +611,15 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    power_calligraphy_remove_paper FALSE
-    call power_calligraphy_sub_onore_init
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_onore_init
     beat_anim
     rest 24
     beat_anim
     rest 24
     beat_anim
     rest 24
-    call power_calligraphy_sub_onore_main
+    call script_power_calligraphy_sub_onore
     beat_anim
     rest 24
     set_game_fade_in_time 0
