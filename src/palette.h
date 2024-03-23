@@ -3,6 +3,7 @@
 #include "global.h"
 #include "graphics.h"
 
+// TYPES:
 struct PaletteInterpolatorInputs {
     u8 duration;
     u8 totalPalettes;
@@ -10,6 +11,7 @@ struct PaletteInterpolatorInputs {
     const u16 *sourceB;
     u16 *outputDest;
 };
+
 struct PaletteInterpolator {
     u32 isActive:1;
     u32 duration:8;
@@ -23,24 +25,22 @@ struct PaletteInterpolator {
     u16 paletteMask;
 };
 
+
+// FUNCTIONS:
 extern void func_08001a24_stub(void);
-extern void func_08001a28(const u16 *sourceA, u32 valueB, u16 *outputDest, u32 totalColors, u32 progress);
-extern void func_08001a64(struct PaletteInterpolator *task, u32 indexOffset);
-extern void func_08001b48(struct PaletteInterpolator *task);
-extern void func_08001b98(struct PaletteInterpolator *task, u32 indexOffset);
-extern void func_08001bf8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputBackup, u16 *outputDest);
-extern void func_08001c64(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *valueA, const u16 *sourceB, u16 *outputBackup, u16 *outputDest);
-extern void func_08001cd8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *valueB, u16 *outputBackup, u16 *outputDest);
-extern void func_08001d44(struct PaletteInterpolator *task);
-extern void func_08001d74(struct PaletteInterpolator *task);
-extern void func_08001ddc(u8 alpha, u8 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputDest);
-extern void func_08001e4c(u8 alpha, u8 totalPalettes, u32 valueA, const u16 *sourceB, u16 *outputDest);
-extern void func_08001ec4(u8 alpha, u8 totalPalettes, const u16 *sourceA, u32 valueB, u16 *outputDest);
-extern struct PaletteInterpolator *func_08001f34(struct PaletteInterpolatorInputs *inputs);
-extern struct PaletteInterpolator *func_08001f64(struct PaletteInterpolatorInputs *inputs);
-extern struct PaletteInterpolator *func_08001f94(struct PaletteInterpolatorInputs *inputs);
-extern u32 func_08001fc4(struct PaletteInterpolator *task);
-extern s32 func_08001fe0(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputDest); // Interpolate Palette (Array->Array)
-extern s32 func_08002018(u16 memID, u8 duration, u8 totalPalettes, u32 valueA, const u16 *sourceB, u16 *outputDest); // Interpolate Palette (Color->Array)
-extern s32 func_08002050(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, u32 valueB, u16 *outputDest); // Interpolate Palette (Array->Color)
-extern u16 func_08002088(u16 col1, u16 col2, u16 blendAlpha);
+extern void fast_blend_pal_to_col(const u16 *sourceA, u32 valueB, u16 *outputDest, u32 totalColors, u24_8 progress);
+extern void pal_interp_blend(struct PaletteInterpolator *task, u32 startId);
+extern void pal_interp_update(struct PaletteInterpolator *task);
+extern void pal_interp_init_dest(struct PaletteInterpolator *task, u32 startId);
+extern void pal_interp_init_ptp(struct PaletteInterpolator *task, u32 frames, u32 totalPal, const u16 *srcPal1, const u16 *srcPal2, u16 *backup, u16 *dest);
+extern void pal_interp_init_ctp(struct PaletteInterpolator *task, u32 frames, u32 totalPal, u32 fadeCol, const u16 *srcPal, u16 *backup, u16 *dest);
+extern void pal_interp_init_ptc(struct PaletteInterpolator *task, u32 frames, u32 totalPal, const u16 *srcPal, u32 fadeCol, u16 *backup, u16 *dest);
+extern void pal_interp_write_backup(struct PaletteInterpolator *task);
+extern void pal_interp_update_masked(struct PaletteInterpolator *task);
+extern void blend_pal_to_pal(u8 alpha, u8 totalPal, const u16 *srcA, const u16 *srcB, u16 *dest);
+extern void blend_col_to_pal(u8 alpha, u8 totalPal, u32 valA, const u16 *srcB, u16 *dest);
+extern void blend_pal_to_col(u8 alpha, u8 totalPal, const u16 *srcA, u32 valB, u16 *dest);
+extern s32 palette_fade_to(u16 memID, u8 frames, u8 totalPal, const u16 *srcPal1, const u16 *srcPal2, u16 *dest);   // Array->Array
+extern s32 palette_fade_in(u16 memID, u8 frames, u8 totalPal, u32 fadeCol, const u16 *srcPal, u16 *dest);           // Color->Array
+extern s32 palette_fade_out(u16 memID, u8 frames, u8 totalPal, const u16 *srcPal, u32 fadeCol, u16 *dest);          // Array->Color
+extern u16 get_blended_color(u16 col1, u16 col2, u16 blendAlpha);

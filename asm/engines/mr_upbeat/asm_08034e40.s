@@ -23,7 +23,7 @@ branch_08034e52: \n\
 /* 08034e62 */ STR R1, [SP, 0x4] \n\
 /* 08034e64 */ MOVS R1, 0x14 @ Set R1 to 0x14 \n\
 /* 08034e66 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 08034e68 */ BL func_08002050 \n\
+/* 08034e68 */ BL palette_fade_out \n\
 /* 08034e6c */ LDR R1, [R4] \n\
 /* 08034e6e */ STR R0, [R1, 0x3C] \n\
 /* 08034e70 */ ADD SP, 0x8 \n\

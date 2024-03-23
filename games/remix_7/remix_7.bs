@@ -326,9 +326,9 @@ script script_remix_7_main
     set_game_fade_in_time 0
 
     load_power_calligraphy
-    power_calligraphy_event03 FALSE
-    call power_calligraphy_sub_08a7da58
-    call power_calligraphy_sub_08a7dadc
+    power_calligraphy_remove_paper
+    call script_power_calligraphy_sub_chikara_init
+    call script_power_calligraphy_sub_chikara
     beat_anim
     rest 24
     play_music L2_pat09_seqData

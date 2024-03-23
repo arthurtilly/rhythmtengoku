@@ -54,7 +54,7 @@ branch_0803093e: \n\
 /* 08030958 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 0803095a */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 0803095c */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
-/* 0803095e */ BL func_08002018 \n\
+/* 0803095e */ BL palette_fade_in \n\
 /* 08030962 */ BL get_current_mem_id \n\
 /* 08030966 */ LSLS R0, R0, 0x10 \n\
 /* 08030968 */ LSRS R0, R0, 0x10 \n\
@@ -67,7 +67,7 @@ branch_0803093e: \n\
 /* 08030976 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 08030978 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 0803097a */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
-/* 0803097c */ BL func_08002018 \n\
+/* 0803097c */ BL palette_fade_in \n\
 /* 08030980 */ LDR R0, [R6] \n\
 /* 08030982 */ STRB R7, [R0, 0x11] \n\
  \n\

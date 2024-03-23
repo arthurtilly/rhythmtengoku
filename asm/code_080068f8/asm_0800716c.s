@@ -26,7 +26,7 @@ thumb_func_start func_0800716c \n\
 /* 08007196 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08007198 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0800719a */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
-/* 0800719c */ BL func_08001a28 \n\
+/* 0800719c */ BL fast_blend_pal_to_col \n\
 /* 080071a0 */ B branch_0800723a \n\
 \n\
 .ltorg \n\

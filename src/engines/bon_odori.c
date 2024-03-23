@@ -168,8 +168,8 @@ void bon_odori_engine_start(u32 ver) {
     bon_odori_init_donpans();
     gBonOdori->srcObjPal = bon_odori_obj_palettes[gBonOdori->version];
     gBonOdori->srcBgPal = bon_odori_bg_palettes[gBonOdori->version];
-    func_08001ec4(12, 7, gBonOdori->srcObjPal, 0, gBonOdori->darkObjPalBuf[0]);
-    func_08001ec4(20, 7, gBonOdori->srcBgPal, 0, gBonOdori->darkBgPalBuf[0]);
+    blend_pal_to_col(12, 7, gBonOdori->srcObjPal, 0, gBonOdori->darkObjPalBuf[0]);
+    blend_pal_to_col(20, 7, gBonOdori->srcBgPal, 0, gBonOdori->darkBgPalBuf[0]);
     gameplay_set_input_buttons(A_BUTTON, 0);
     gBonOdori->playerClapTimer = 0;
 }
@@ -304,15 +304,15 @@ void bon_odori_lyrics_start_highlight(u32 duration) {
 
 // [func_08020d20] ENGINE Func_06 - Lighten Screen (Gradual)
 void bon_odori_screen_lighten(u32 duration) {
-    func_08001fe0(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->darkBgPalBuf[0], gBonOdori->srcBgPal, BG_PALETTE_BUFFER(0));
-    func_08001fe0(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->darkObjPalBuf[0], gBonOdori->srcObjPal, OBJ_PALETTE_BUFFER(0));
+    palette_fade_to(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->darkBgPalBuf[0], gBonOdori->srcBgPal, BG_PALETTE_BUFFER(0));
+    palette_fade_to(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->darkObjPalBuf[0], gBonOdori->srcObjPal, OBJ_PALETTE_BUFFER(0));
 }
 
 
 // [func_08020da0] ENGINE Func_07 - Darken Screen (Gradual)
 void bon_odori_screen_darken(u32 duration) {
-    func_08001fe0(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->srcBgPal, gBonOdori->darkBgPalBuf[0], BG_PALETTE_BUFFER(0));
-    func_08001fe0(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->srcObjPal, gBonOdori->darkObjPalBuf[0], OBJ_PALETTE_BUFFER(0));
+    palette_fade_to(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->srcBgPal, gBonOdori->darkBgPalBuf[0], BG_PALETTE_BUFFER(0));
+    palette_fade_to(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->srcObjPal, gBonOdori->darkObjPalBuf[0], OBJ_PALETTE_BUFFER(0));
 }
 
 

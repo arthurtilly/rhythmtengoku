@@ -57,7 +57,7 @@ thumb_func_start func_08040dd8 \n\
 /* 08040e40 */ LDR R2, =(D_03004b10 + 0x54) \n\
 /* 08040e42 */ STR R2, [SP, 0x4] \n\
 /* 08040e44 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
-/* 08040e46 */ BL func_08002050 \n\
+/* 08040e46 */ BL palette_fade_out \n\
 /* 08040e4a */ LDR R1, =func_08040d90 \n\
 /* 08040e4c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08040e4e */ BL run_func_after_task \n\

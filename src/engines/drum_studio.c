@@ -442,7 +442,7 @@ void drum_studio_start_monitor2(Palette *palette) {
     func_0800c604(0);
     scene_show_bg_layer(BG_LAYER_2);
     scene_show_bg_layer(BG_LAYER_3);
-    func_08002018(get_current_mem_id(), 0x40, 4, drum_lessons_bg_screen_pal[0][0], &palette[0][0], BG_PALETTE_BUFFER(0));
+    palette_fade_in(get_current_mem_id(), 0x40, 4, drum_lessons_bg_screen_pal[0][0], &palette[0][0], BG_PALETTE_BUFFER(0));
 }
 
 
@@ -488,7 +488,7 @@ void drum_studio_stop_monitor1(void) {
     }
 
     palette = drum_studio_bg_table[gDrumStudio->unk3F0].palette;
-    task = func_08002050(get_current_mem_id(), 0x20, 4, &palette[0][0], drum_lessons_bg_screen_pal[0][0], BG_PALETTE_BUFFER(0));
+    task = palette_fade_out(get_current_mem_id(), 0x20, 4, &palette[0][0], drum_lessons_bg_screen_pal[0][0], BG_PALETTE_BUFFER(0));
     run_func_after_task(task, drum_studio_stop_monitor2, 0);
     gDrumStudio->unk3F0 = -1;
 }

@@ -498,7 +498,7 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
                 break;
         }
         if (gKarateMan->version == KARATE_VER_SERIOUS) { // BG Flash ("Serious Mode" version)
-            func_08001fe0((u16)get_current_mem_id(), 0x0A, 1, karate_man_pal[6], karate_man_pal[5], BG_PALETTE_BUFFER(4));
+            palette_fade_to((u16)get_current_mem_id(), 0x0A, 1, karate_man_pal[6], karate_man_pal[5], BG_PALETTE_BUFFER(4));
         }
         karate_increment_flow(); // Increment Flow
     }

@@ -1312,7 +1312,7 @@ branch_0800d572: \n\
 /* 0800d59a */ STR R4, [SP] \n\
 /* 0800d59c */ STR R7, [SP, 0x4] \n\
 /* 0800d59e */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
-/* 0800d5a0 */ BL func_08002018 \n\
+/* 0800d5a0 */ BL palette_fade_in \n\
 /* 0800d5a4 */ BL branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1331,7 +1331,7 @@ branch_0800d5b0: \n\
 /* 0800d5c6 */ STR R5, [SP] \n\
 /* 0800d5c8 */ STR R7, [SP, 0x4] \n\
 /* 0800d5ca */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
-/* 0800d5cc */ BL func_08002050 \n\
+/* 0800d5cc */ BL palette_fade_out \n\
 /* 0800d5d0 */ BL branch_0800df9e \n\
  \n\
 branch_0800d5d4: \n\
@@ -1346,7 +1346,7 @@ branch_0800d5d4: \n\
 /* 0800d5e6 */ STR R3, [SP] \n\
 /* 0800d5e8 */ STR R7, [SP, 0x4] \n\
 /* 0800d5ea */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
-/* 0800d5ec */ BL func_08001fe0 \n\
+/* 0800d5ec */ BL palette_fade_to \n\
 /* 0800d5f0 */ BL branch_0800df9e \n\
 \n\
 jump_0800d5f4: \n\

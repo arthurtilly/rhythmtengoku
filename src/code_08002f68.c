@@ -376,173 +376,213 @@ void func_08003720(struct struct_08003070 *arg0, u16 arg1, u16 arg2) {
     }
 }
 
-void func_0800387c(struct struct_0800387c *arg0, u8 *arg1) {
-    while (arg0->unk0 != NULL) {
-        dma3_set(arg0->unk0, arg1 + arg0->unk4 * 32, arg0->unk5 * 32, 32, 256);
-        arg0++;
+
+// Write Palette Table to Memory
+void pal_table_write(struct PaletteTable *palTable, u16 *dest) {
+    while (palTable->source != NULL) {
+        dma3_set(palTable->source, dest + palTable->index * 16, palTable->total * 16 * 2, 0x20, 0x100);
+        palTable++;
     }
 }
 
-u32 func_080038b0(struct PaletteInterpolator *arg0, struct struct_0800387c *arg1, u32 arg2, u32 arg3, u8 *arg4) {
-    u16 *temp_r5;
-    u16 *temp_r6;
-    u16 *temp;
-    u16 *temp1;
-    u32 tempret = 0;
-    
-    for (tempret = 0; arg1->unk0 != NULL; arg0++, arg1++, tempret++) {
-        while (arg0->isActive) {
-            arg0++;
+
+// Interpolate Palette Table
+u32 pal_table_start_fade(struct PaletteInterpolator *palInterps, struct PaletteTable *palTable, u32 frames, u32 fadeType, u16 *palBuffer) {
+    u16 *dest, *buffer;
+    u16 *sourceA, *sourceB;
+    u32 i;
+
+    for (i = 0; palTable->source != NULL; palTable++, i++) {
+        while (palInterps->isActive) {
+            palInterps++;
         }
 
-        temp_r5 = (u16 *)(((u8 *)PaletteRAMBase) +  arg1->unk4 * 32);
-        temp_r6 = (u16 *)(arg4 +  arg1->unk4 * 32);
-        switch (arg3) {
-            case 0:
-                temp = (u16 *)arg1->unk0;
-                func_08001cd8(arg0, arg2, arg1->unk5, temp, NULL, temp_r5, temp_r6);
+        dest = ((u16 *)(PaletteRAMBase)) + (palTable->index * 16);
+        buffer = (palBuffer + (palTable->index * 16));
+
+        switch (fadeType) {
+            case PAL_TABLE_FADE_TO_BLACK:
+                sourceA = (u16 *)palTable->source;
+                pal_interp_init_ptc(palInterps, frames, palTable->total, sourceA, COLOR_BLACK, dest, buffer);
                 break;
-            case 1:
-                temp1 = (u16 *)arg1->unk0;
-                func_08001c64(arg0, arg2, arg1->unk5, NULL, temp1, temp_r5, temp_r6);
+
+            case PAL_TABLE_FADE_FROM_BLACK:
+                sourceB = (u16 *)palTable->source;
+                pal_interp_init_ctp(palInterps, frames, palTable->total, COLOR_BLACK, sourceB, dest, buffer);
                 break;
-            case 2:
-                temp = (u16 *)arg1->unk0;
-                func_08001cd8(arg0, arg2, arg1->unk5, temp, (u16 *)0x7fff, temp_r5, temp_r6);
+
+            case PAL_TABLE_FADE_TO_WHITE:
+                sourceA = (u16 *)palTable->source;
+                pal_interp_init_ptc(palInterps, frames, palTable->total, sourceA, COLOR_WHITE, dest, buffer);
                 break;
-            case 3:
-                temp1 = (u16 *)arg1->unk0;
-                func_08001c64(arg0, arg2, arg1->unk5, (u16 *)0x7fff, temp1, temp_r5, temp_r6);
+
+            case PAL_TABLE_FADE_FROM_WHITE:
+                sourceB = (u16 *)palTable->source;
+                pal_interp_init_ctp(palInterps, frames, palTable->total, COLOR_WHITE, sourceB, dest, buffer);
                 break;
         }
+
+        palInterps++;
     }
-    return tempret;
+
+    return i;
 }
 
-void func_08003974(struct struct_0800387c *arg0) {
-    arg0->unk0 = NULL;
-    arg0->unk5 = 0;
-    arg0->unk4 = 0;
+
+// Create Palette Table With No Entries
+void pal_table_init(struct PaletteTable *palTable) {
+    palTable->source = NULL;
+    palTable->total = 0;
+    palTable->index = 0;
 }
 
-void func_08003980(struct struct_0800387c *arg0, struct struct_0800387c *arg1) {
-    while (arg1->unk0 != NULL) {
-        arg0->unk0 = arg1->unk0;
-        arg0->unk4 = arg1->unk4;
-        arg0->unk5 = arg1->unk5;
-        arg0++;
-        arg1++;
+
+// Copy Palette Table
+void pal_table_set_copy(struct PaletteTable *palTable, struct PaletteTable *srcTable) {
+    while (srcTable->source != NULL) {
+        palTable->source = srcTable->source;
+        palTable->index = srcTable->index;
+        palTable->total = srcTable->total;
+        palTable++;
+        srcTable++;
     }
-    arg0->unk0 = NULL;
-    arg0->unk5 = 0;
-    arg0->unk4 = 0;
+    palTable->source = NULL;
+    palTable->total = 0;
+    palTable->index = 0;
 }
 
-void func_080039a8(struct struct_0800387c *arg0, struct struct_0800387c *arg1, u32 arg2) {
-    while ((arg1->unk0 != NULL) && (arg2 != 0)) {
-        arg0->unk0 = arg1->unk0;
-        arg0->unk4 = arg1->unk4;
-        arg0->unk5 = arg1->unk5;
-        arg0++;
-        arg1++;
-        arg2--;
+
+// Copy Palette Table (to Specified Length)
+void pal_table_set_copy_len(struct PaletteTable *palTable, struct PaletteTable *srcTable, u32 len) {
+    while ((srcTable->source != NULL) && (len > 0)) {
+        palTable->source = srcTable->source;
+        palTable->index = srcTable->index;
+        palTable->total = srcTable->total;
+        palTable++;
+        srcTable++;
+        len--;
     }
-    arg0->unk0 = NULL;
-    arg0->unk5 = 0;
-    arg0->unk4 = 0;
+
+    palTable->source = NULL;
+    palTable->total = 0;
+    palTable->index = 0;
 }
 
-void func_080039d4(struct struct_0800387c *arg0, u8 *arg1, u32 arg2, u32 arg3) {
-    arg0->unk0 = arg1;
-    arg0->unk4 = arg2;
-    arg0->unk5 = arg3;
-    arg0++;
-    arg0->unk0 = NULL;
-    arg0->unk5 = 0;
-    arg0->unk4 = 0;
+
+// Create Palette Table Entry
+void pal_table_set(struct PaletteTable *palTable, u16 *source, u32 index, u32 total) {
+    palTable->source = source;
+    palTable->index = index;
+    palTable->total = total;
+    palTable++;
+
+    palTable->source = NULL;
+    palTable->total = 0;
+    palTable->index = 0;
 }
 
-void func_080039e8(struct struct_0800387c *arg0, struct struct_0800387c *arg1) {
-    while (arg0->unk0 != NULL) {
-        arg0++;
+
+// Append Copy of Palette Table
+void pal_table_add_copy(struct PaletteTable *palTable, struct PaletteTable *srcTable) {
+    while (palTable->source != NULL) {
+        palTable++;
     }
-    func_08003980(arg0, arg1);
+
+    pal_table_set_copy(palTable, srcTable);
 }
 
-void func_08003a00(struct struct_0800387c *arg0, struct struct_0800387c *arg1, u32 arg2) {
-    while (arg0->unk0 != NULL) {
-        arg0++;
+
+// Append Copy of Palette Table (to Specified Length)
+void pal_table_add_copy_len(struct PaletteTable *palTable, struct PaletteTable *srcTable, u32 len) {
+    while (palTable->source != NULL) {
+        palTable++;
     }
-    func_080039a8(arg0, arg1, arg2);
+
+    pal_table_set_copy_len(palTable, srcTable, len);
 }
 
-void func_08003a18(struct struct_0800387c *arg0, u8 *arg1, u32 arg2, u32 arg3) {
-    while (arg0->unk0 != NULL) {
-        arg0++;
+
+// Append New Palette Table
+void pal_table_add(struct PaletteTable *palTable, u16 *source, u32 index, u32 total) {
+    while (palTable->source != NULL) {
+        palTable++;
     }
-    func_080039d4(arg0, arg1, arg2, arg3);
+
+    pal_table_set(palTable, source, index, total);
 }
 
-void func_08003a34(struct struct_0800387c *arg0, u32 arg1) {
-    u8 *temp = arg0->unk0;
 
-    *temp++ = arg1;
-    arg0->unk0 = temp;
+// Store Byte to Byte Stream (Increment After)
+void stream_push8(u8 **stream, u32 value) {
+    u8 *s = *stream;
+
+    *s++ = value;
+    *stream = s;
 }
 
-void func_08003a40(struct struct_0800387c *arg0, u32 arg1) {
-    u8 *temp = arg0->unk0;
 
-    *temp++ = arg1;
-    *temp++ = (arg1 >> 8);
-    arg0->unk0 = temp;
+// Store Short to Byte Stream (Increment After)
+void stream_push16(u8 **stream, u32 value) {
+    u8 *s = *stream;
+
+    *s++ = value;
+    *s++ = (value >> 8);
+    *stream = s;
 }
 
-void func_08003a50(struct struct_0800387c *arg0, u32 arg1) {
-    u8 *temp = arg0->unk0;
 
-    *temp++ = arg1;
-    *temp++ = (arg1 >> 8);
-    *temp++ = (arg1 >> 0x10);
-    *temp++ = (arg1 >> 0x18);
-    arg0->unk0 = temp;
+// Store Integer to Byte Stream (Increment After)
+void stream_push32(u8 **stream, u32 value) {
+    u8 *s = *stream;
+
+    *s++ = value;
+    *s++ = (value >> 8);
+    *s++ = (value >> 16);
+    *s++ = (value >> 24);
+    *stream = s;
 }
 
-u32 func_08003a6c(struct struct_0800387c *arg0) {
-    u8 *temp = arg0->unk0;
 
-    arg0->unk0 = (temp -= 1);
-    return temp[0];
+// Load Byte from Byte Stream (Decrement Before)
+u32 stream_pop8(u8 **stream) {
+    u8 *s = *stream;
+
+    *stream = (s -= 1);
+    return s[0];
 }
 
-u32 func_08003a78(struct struct_0800387c *arg0) {
-    u8 *temp = arg0->unk0;
 
-    arg0->unk0 = (temp -= 2);
-    return temp[0] | (temp[1] << 8);
+// Load Short from Byte Stream (Decrement Before)
+u32 stream_pop16(u8 **stream) {
+    u8 *s = *stream;
+
+    *stream = (s -= 2);
+    return s[0] | (s[1] << 8);
 }
 
-u32 func_08003a88(struct struct_0800387c *arg0) {
-    u8 *temp = arg0->unk0;
 
-    arg0->unk0 = (temp -= 4);
-    return temp[0] | (temp[1] << 8) | (temp[2] << 0x10) | (temp[3] << 0x18);
+// Load Integer from Byte Stream (Decrement Before)
+u32 stream_pop32(u8 **stream) {
+    u8 *s = *stream;
+
+    *stream = (s -= 4);
+    return s[0] | (s[1] << 8) | (s[2] << 16) | (s[3] << 24);
 }
 
 
 // Get Absolute Value (16 bits)
-s16 func_08003aa4(s16 value) {
+s16 math_abs16(s16 value) {
     return (value < 0) ? -value : value;
 }
 
 
 // Get Absolute Value (32 bits)
-s32 func_08003ab8(s32 value) {
+s32 math_abs32(s32 value) {
     return (value < 0) ? -value : value;
 }
 
 
-// Generate Shuffled Array of Values from MIN to MAX
+// Generate Shuffled Array of All Values from MIN to MAX
 void func_08003ac4(u16 *array, u16 min, u16 max) {
     u16 range;
     s32 i;

@@ -36,8 +36,8 @@ void drum_live_init_lighting(void) {
     dma3_set(drum_live_bg_palettes[gDrumLive->version][0], gDrumLive->bgPalBuf3, 0x80, 0x20, 0x200);
     dma3_set(drum_live_obj_palettes[gDrumLive->version][0], gDrumLive->objPalBuf4, 0x80, 0x20, 0x200);
     dma3_set(drum_live_bg_palettes[gDrumLive->version][0], gDrumLive->bgPalBuf4, 0x80, 0x20, 0x200);
-    func_08001e4c(0x08, 4, 0x294A, drum_live_obj_palettes[gDrumLive->version][0], gDrumLive->objPalBuf2);
-    func_08001e4c(0x08, 4, 0x7FFF, drum_live_bg_palettes[gDrumLive->version][0], gDrumLive->bgPalBuf2);
+    blend_col_to_pal(0x08, 4, 0x294A, drum_live_obj_palettes[gDrumLive->version][0], gDrumLive->objPalBuf2);
+    blend_col_to_pal(0x08, 4, 0x7FFF, drum_live_bg_palettes[gDrumLive->version][0], gDrumLive->bgPalBuf2);
 
     gDrumLive->totalActiveLights = 0;
 
@@ -131,16 +131,16 @@ void drum_live_flash_big_lights(s32 flashType) {
     switch (flashType) {
         case 0:
             gDrumLive->totalActiveLights++;
-            func_08001fe0(get_current_mem_id(), ticks_to_frames(72), 4, gDrumLive->objPalBuf2, gDrumLive->objPalBuf1, D_03004b10.objPalette[0]);
-            task = func_08001fe0(get_current_mem_id(), ticks_to_frames(72), 4, gDrumLive->bgPalBuf2, gDrumLive->bgPalBuf1, D_03004b10.bgPalette[0]);
+            palette_fade_to(get_current_mem_id(), ticks_to_frames(72), 4, gDrumLive->objPalBuf2, gDrumLive->objPalBuf1, D_03004b10.objPalette[0]);
+            task = palette_fade_to(get_current_mem_id(), ticks_to_frames(72), 4, gDrumLive->bgPalBuf2, gDrumLive->bgPalBuf1, D_03004b10.bgPalette[0]);
             run_func_after_task(task, drum_live_light_flash_callback, 0);
             drum_live_play_applause();
             break;
 
         case 1:
             gDrumLive->totalActiveLights++;
-            func_08001fe0(get_current_mem_id(), ticks_to_frames(72), 4, gDrumLive->objPalBuf2, gDrumLive->objPalBuf1, D_03004b10.objPalette[0]);
-            task = func_08001fe0(get_current_mem_id(), ticks_to_frames(72), 4, gDrumLive->bgPalBuf2, gDrumLive->bgPalBuf1, D_03004b10.bgPalette[0]);
+            palette_fade_to(get_current_mem_id(), ticks_to_frames(72), 4, gDrumLive->objPalBuf2, gDrumLive->objPalBuf1, D_03004b10.objPalette[0]);
+            task = palette_fade_to(get_current_mem_id(), ticks_to_frames(72), 4, gDrumLive->bgPalBuf2, gDrumLive->bgPalBuf1, D_03004b10.bgPalette[0]);
             run_func_after_task(task, drum_live_light_flash_callback, 0);
             drum_live_play_applause();
             break;
@@ -245,10 +245,10 @@ void drum_live_flash_beat_lights(void) {
             break;
     }
 
-    func_08001ddc(0x10, 4, gDrumLive->objPalBuf3, gDrumLive->objPalBuf4, gDrumLive->objPalBuf3);
-    func_08001ddc(0x10, 4, gDrumLive->bgPalBuf3, gDrumLive->bgPalBuf4, gDrumLive->bgPalBuf3);
-    func_08001fe0(get_current_mem_id(), ticks_to_frames(4), 4, gDrumLive->objPalBuf3, gDrumLive->objPalBuf4, gDrumLive->objPalBuf1);
-    func_08001fe0(get_current_mem_id(), ticks_to_frames(4), 4, gDrumLive->bgPalBuf3, gDrumLive->bgPalBuf4, gDrumLive->bgPalBuf1);
+    blend_pal_to_pal(0x10, 4, gDrumLive->objPalBuf3, gDrumLive->objPalBuf4, gDrumLive->objPalBuf3);
+    blend_pal_to_pal(0x10, 4, gDrumLive->bgPalBuf3, gDrumLive->bgPalBuf4, gDrumLive->bgPalBuf3);
+    palette_fade_to(get_current_mem_id(), ticks_to_frames(4), 4, gDrumLive->objPalBuf3, gDrumLive->objPalBuf4, gDrumLive->objPalBuf1);
+    palette_fade_to(get_current_mem_id(), ticks_to_frames(4), 4, gDrumLive->bgPalBuf3, gDrumLive->bgPalBuf4, gDrumLive->bgPalBuf1);
 }
 
 

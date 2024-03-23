@@ -26,7 +26,7 @@ void warning_scene_init_gfx3(void) {
     s32 task;
 
     func_08007324(TRUE);
-    task = func_08002018(0, ticks_to_frames(12), 1, 0x7FFF, &warning_pal[0][0], BG_PALETTE_BUFFER(0));
+    task = palette_fade_in(0, ticks_to_frames(12), 1, 0x7FFF, &warning_pal[0][0], BG_PALETTE_BUFFER(0));
     run_func_after_task(task, set_pause_beatscript_scene, FALSE);
 }
 

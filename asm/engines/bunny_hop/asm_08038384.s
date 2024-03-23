@@ -29,7 +29,7 @@ thumb_func_start func_08038384 \n\
 /* 080383b4 */ STR R4, [SP, 0x4] \n\
 /* 080383b6 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080383b8 */ MOVS R2, 0x9 @ Set R2 to 0x9 \n\
-/* 080383ba */ BL func_08001fe0 \n\
+/* 080383ba */ BL palette_fade_to \n\
 /* 080383be */ BL get_current_mem_id \n\
 /* 080383c2 */ LSLS R0, R0, 0x10 \n\
 /* 080383c4 */ LSRS R0, R0, 0x10 \n\
@@ -42,7 +42,7 @@ thumb_func_start func_08038384 \n\
 /* 080383d2 */ STR R4, [SP, 0x4] \n\
 /* 080383d4 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080383d6 */ MOVS R2, 0x9 @ Set R2 to 0x9 \n\
-/* 080383d8 */ BL func_08001fe0 \n\
+/* 080383d8 */ BL palette_fade_to \n\
 /* 080383dc */ ADD SP, 0x8 \n\
 /* 080383de */ POP {R3} \n\
 /* 080383e0 */ MOV R8, R3 @ Set R8 to R3 \n\

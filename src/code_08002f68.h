@@ -3,6 +3,17 @@
 #include "global.h"
 #include "palette.h"
 
+
+// VALUES:
+enum PaletteTableFade {
+    /* 00 */ PAL_TABLE_FADE_TO_BLACK,
+    /* 01 */ PAL_TABLE_FADE_FROM_BLACK,
+    /* 02 */ PAL_TABLE_FADE_TO_WHITE,
+    /* 03 */ PAL_TABLE_FADE_FROM_WHITE
+};
+
+
+// TYPES:
 struct struct_08003070 {
     u16 unk0_b0:1;
     u16 unk0_b1:1;
@@ -45,13 +56,15 @@ struct struct_080035a0 {
     u8 *unk10;
 };
 
-struct struct_0800387c {
-    u8 *unk0;
-    u8 unk4;
-    u8 unk5;
+// Palette Table Entry
+struct PaletteTable {
+    u16 *source;  // Source
+    u8 index;     // Palette ID (0-15 for BG, 16-31 for OBJ)
+    u8 total;     // Total Palettes
 };
 
 
+// FUNCTIONS:
 extern void init_math_sqrt(void); // Init. sqrt()
 extern u8 func_08002f9c(s16 arg0, s16 arg1);
 extern u16 func_08003004(s16 arg0, s16 arg1);
@@ -69,22 +82,24 @@ void func_080035a0(struct struct_08003070 *arg0, struct struct_080035a0 *arg1, u
                     u16 arg12, u16 arg13);
 extern void func_080036c4(struct struct_08003070 *arg0, u16 arg1, u16 arg2);
 extern void func_08003720(struct struct_08003070 *arg0, u16 arg1, u16 arg2);
-extern void func_0800387c(struct struct_0800387c *arg0, u8 *arg1);
-extern u32 func_080038b0(struct PaletteInterpolator *arg0, struct struct_0800387c *arg1, u32 arg2, u32 arg3, u8 *arg4);
-extern void func_08003974(struct struct_0800387c *arg0);
-extern void func_08003980(struct struct_0800387c *arg0, struct struct_0800387c *arg1);
-extern void func_080039a8(struct struct_0800387c *arg0, struct struct_0800387c *arg1, u32 arg2);
-extern void func_080039d4(struct struct_0800387c *arg0, u8 *arg1, u32 arg2, u32 arg3);
-extern void func_080039e8(struct struct_0800387c *arg0, struct struct_0800387c *arg1);
-extern void func_08003a00(struct struct_0800387c *arg0, struct struct_0800387c *arg1, u32 arg2);
-extern void func_08003a18(struct struct_0800387c *arg0, u8 *arg1, u32 arg2, u32 arg3);
-extern void func_08003a34(struct struct_0800387c *arg0, u32 arg1);
-extern void func_08003a40(struct struct_0800387c *arg0, u32 arg1);
-extern void func_08003a50(struct struct_0800387c *arg0, u32 arg1);
-extern u32 func_08003a6c(struct struct_0800387c *arg0);
-extern u32 func_08003a78(struct struct_0800387c *arg0);
-extern u32 func_08003a88(struct struct_0800387c *arg0);
 
-extern s16 func_08003aa4(s16 value); // Absolute Value (16 bits)
-extern s32 func_08003ab8(s32 value); // Absolute Value (32 bits)
+extern void pal_table_write(struct PaletteTable *palTable, u16 *dest);
+extern u32 pal_table_start_fade(struct PaletteInterpolator *palInterps, struct PaletteTable *palTable, u32 frames, u32 fadeType, u16 *palBuffer);
+extern void pal_table_init(struct PaletteTable *palTable);
+extern void pal_table_set_copy(struct PaletteTable *palTable, struct PaletteTable *srcTable);
+extern void pal_table_set_copy_len(struct PaletteTable *palTable, struct PaletteTable *srcTable, u32 len);
+extern void pal_table_set(struct PaletteTable *palTable, u16 *source, u32 index, u32 total);
+extern void pal_table_add_copy(struct PaletteTable *palTable, struct PaletteTable *srcTable);
+extern void pal_table_add_copy_len(struct PaletteTable *palTable, struct PaletteTable *srcTable, u32 len);
+extern void pal_table_add(struct PaletteTable *palTable, u16 *source, u32 index, u32 total);
+
+extern void stream_push8(u8 **stream, u32 value);
+extern void stream_push16(u8 **stream, u32 value);
+extern void stream_push32(u8 **stream, u32 value);
+extern u32 stream_pop8(u8 **stream);
+extern u32 stream_pop16(u8 **stream);
+extern u32 stream_pop32(u8 **stream);
+
+extern s16 math_abs16(s16 value); // Absolute Value (16 bits)
+extern s32 math_abs32(s32 value); // Absolute Value (32 bits)
 extern void func_08003ac4(u16 *array, u16 min, u16 max);
