@@ -1,5 +1,6 @@
 #include "global.h"
 #include "code_0800b778.h"
+#include "syscall.h"
 
 #include "src/code_08001360.h"
 #include "src/palette.h"
@@ -12,6 +13,7 @@
 #include "src/code_08007468.h"
 #include "src/midi/midi.h"
 #include "src/lib_0804ca80.h"
+#include "src/backdrop.h"
 
 // Could use better split
 
@@ -1708,25 +1710,102 @@ s32 scene_move_sprite_sine_wave(s16 sprite, s16 destX, s16 destY, s16 amplitude,
 }
 
 
-#include "asm/code_0800b778/asm_0800e75c.s"
+void func_0800e75c(struct struct_0800e75c *arg0) {
+    *arg0->unkC = -1;
+}
 
-#include "asm/code_0800b778/asm_0800e768.s"
 
-#include "asm/code_0800b778/asm_0800e7e8.s"
+void func_0800e768(struct BitmapFontOBJ *textObj, struct struct_0800e75c *arg1) {
+    const char *string;
+    struct PrintedTextAnim *textAnim;
+    
+    if (*arg1->unkC >= 0) {
+        return;
+    }
 
-#include "asm/code_0800b778/asm_0800e830.s"
+    string = arg1->unk0[scene_get_default_text_id()];
+    switch (arg1->unkA) {
+        case 0:
+            textAnim = bmp_font_obj_print_c_default(textObj, string);
+            break;
+        case 1:
+            textAnim = bmp_font_obj_print_l_default(textObj, string);
+            break;
+        case 2:
+            textAnim = bmp_font_obj_print_r_default(textObj, string);
+            break;
+    }
+    *arg1->unkC = sprite_create(gSpriteHandler, textAnim->frames, 0, 
+                    arg1->unk4, arg1->unk6, arg1->unk8, 0, 0, 0);
+}
 
-#include "asm/code_0800b778/asm_0800e850.s"
 
-#include "asm/code_0800b778/asm_0800e86c.s"
+void func_0800e7e8(struct BitmapFontOBJ *textObj, struct struct_0800e75c *arg1) {
+    struct Animation *textAnim;
+    
+    if (*arg1->unkC < 0) {
+        return;
+    }
 
-#include "asm/code_0800b778/asm_0800e888.s"
+    textAnim = sprite_get_anim(gSpriteHandler, *arg1->unkC);
+    sprite_delete(gSpriteHandler, *arg1->unkC);
+    bmp_font_obj_delete_printed_anim(textObj, textAnim);
+    *arg1->unkC = -1;
+}
 
-#include "asm/code_0800b778/asm_0800e8b0.s"
 
-#include "asm/code_0800b778/asm_0800e8d8.s"
+void func_0800e830(struct struct_0800e75c **arg0) {
+    while (*arg0 != NULL) {
+        *(*arg0)->unkC = -1;
+        arg0++;
+    }
+}
 
-#include "asm/code_0800b778/asm_0800e8f4.s"
+
+void func_0800e850(struct BitmapFontOBJ *textObj, struct struct_0800e75c **arg1) {
+    while (*arg1 != NULL) {
+        func_0800e768(textObj, *arg1);
+        arg1++;
+    }
+}
+
+
+void func_0800e86c(struct BitmapFontOBJ *textObj, struct struct_0800e75c **arg1) {
+    while (*arg1 != NULL) {
+        func_0800e7e8(textObj, *arg1);
+        arg1++;
+    }
+}
+
+
+void func_0800e888(u32 arg0) {
+    sprite_set_visible(gSpriteHandler, D_0300558c[arg0], TRUE);
+}
+
+
+void func_0800e8b0(u32 arg0) {
+    sprite_set_visible(gSpriteHandler, D_0300558c[arg0], FALSE);
+}
+
+
+void func_0800e8d8(struct SpriteHandler *handler, s16 id, s8 *arg, u32 cel) {
+    while (*arg >= 0) {
+        if (cel == *arg) {
+            return;
+        }
+        arg += 4;
+    }
+}
+
+
+void func_0800e8f4(s16 arg0, s8 *arg1) {
+    if (arg1) {
+        sprite_set_callback(gSpriteHandler, arg0, func_0800e8d8, (uintptr_t)arg1);
+        sprite_run_callback_every_cel(gSpriteHandler, arg0);
+    } else {
+        sprite_set_callback(gSpriteHandler, arg0, NULL, (uintptr_t)NULL);
+    }
+}
 
 
 // Stub
@@ -1977,7 +2056,12 @@ void func_0800ed60_stub(u32 speed) {
 }
 
 
-#include "asm/code_0800b778/asm_0800ed64.s"
+u16 *func_0800ed64(u16 arg0, u16 arg1, u16 arg2) {
+    u16 *gradientBuffer = mem_heap_alloc_id(get_current_mem_id(), 160 * sizeof(u16));
+    func_0800edc8(gradientBuffer, arg0, arg1, arg2);
+    func_0800402c(gradientBuffer, ((u16 *)PaletteRAMBase) + arg2, 1, 0);
+    //return gradientBuffer; // ?
+}
 
 
 // Deallocate Memory
@@ -1987,7 +2071,13 @@ void func_0800edb8(void *data) {
 }
 
 
-#include "asm/code_0800b778/asm_0800edc8.s"
+void func_0800edc8(u16 *gradientBuffer, u16 arg1, u16 arg2, u16 arg3) {
+    u32 i;
+
+    for (i = 0; i < 160; i++) {
+        gradientBuffer[i] = func_08002088(arg1, arg2, fast_divsi3(INT_TO_FIXED(i), INT_TO_FIXED(0.625)));
+    }
+}
 
 
 // Write BG Palette to Graphics Buffer (0-15)
@@ -2051,36 +2141,349 @@ void func_0800f09c(struct BitmapFontOBJ *objFont) {
 }
 
 
-#include "asm/code_0800b778/asm_0800f0b4.s"
+// Split here
 
-#include "asm/code_0800b778/asm_0800f180.s"
+struct struct_0800f0b4 *func_0800f0b4(u32 arg0, u32 arg1, u16 *arg2, u32 arg3, u16 arg4, s32 arg5) {
+    struct struct_0800f0b4 *temp_r7;
+    u32 i, i1;
 
-#include "asm/code_0800b778/asm_0800f1ec.s"
+    temp_r7 = scene_mem_heap_alloc(sizeof(struct struct_0800f0b4));
+    temp_r7->unk0 = get_current_mem_id();
+    temp_r7->unk4 = arg2;
+    temp_r7->unk48 = arg0;
+    temp_r7->unk4A = arg1;
+    temp_r7->unk4C = arg1 - arg0;
+    temp_r7->unk8 = scene_mem_heap_alloc(temp_r7->unk4C * 16);
+    temp_r7->unk4F = arg3;
+    temp_r7->unk78 = arg4;
+    temp_r7->unk50 = scene_mem_heap_alloc(arg3 * sizeof(struct struct_0800f0b4_sub));
+    for (i1 = 0; i1 < arg3; i1++) {
+        temp_r7->unk50[i1].unk0 |= -1;
+    }
 
-#include "asm/code_0800b778/asm_0800f218.s"
+    i = 0;
+    do {
+        s8 temp_r1 = func_08002194(get_current_mem_id());
+        if (temp_r1 < 0) {
+            break;
+        }
+        temp_r7->unk54[i] = temp_r1;
+        i++;
+    } while (i < arg5);
+    temp_r7->unk4E = i;
+    temp_r7->unk74 = scene_mem_heap_alloc(i * 8);
+    func_0800402c(arg2, (u16 *)&REG_BG2PA, 8, 0);
+    return temp_r7;
+}
 
-#include "asm/code_0800b778/asm_0800f22c.s"
 
-#include "asm/code_0800b778/asm_0800f4a0.s"
+void func_0800f180(struct struct_0800f0b4 *arg0) {
+    u32 i;
+    
+    func_08004058();
+    for (i = 0; i < arg0->unk4F; i++) {
+        func_0800f89c(arg0, (s16)i);
+    }
+    for (i = 0; i < arg0->unk4E; i++) {
+        func_080021b8(arg0->unk54[i]);
+    }
+    mem_heap_dealloc(arg0->unk8);
+    mem_heap_dealloc(arg0->unk50);
+    mem_heap_dealloc(arg0->unk74);
+    mem_heap_dealloc(arg0);
+}
 
-#include "asm/code_0800b778/asm_0800f524.s"
 
-#include "asm/code_0800b778/asm_0800f570.s"
+void func_0800f1ec(struct struct_0800f0b4 *arg0) {
+    dma3_set(arg0->unk8, &arg0->unk4[arg0->unk48 * 8], arg0->unk4C * 16, 32, 0x100);
+}
 
-#include "asm/code_0800b778/asm_0800f578.s"
 
-#include "asm/code_0800b778/asm_0800f580.s"
+void func_0800f218(struct struct_0800f0b4 *arg0) {
+    func_0800f22c(arg0);
+    func_0800f614(arg0);
+}
 
-#include "asm/code_0800b778/asm_0800f588.s"
 
-#include "asm/code_0800b778/asm_0800f614.s"
+#define sins3(x) D_08935fcc[(x)]
+#define coss3(x) D_089361cc[(x)]
 
-#include "asm/code_0800b778/asm_0800f7c0.s"
+void func_0800f22c(struct struct_0800f0b4 *arg0) {
+    struct struct_0800f0b4_sub1 *sp0;
+    struct struct_0800f0b4_sub2 *temp_r5;
+    struct struct_0800f0b4_sub3 *temp_r8;
+    s32 temp_r0;
+    s32 temp_r0_1;
+    s32 temp_r0_2;
+    s24_8 sp4;
+    s24_8 sp8;
+    s24_8 spC;
+    s24_8 sp10;
+    s24_8 sp14;
+    s24_8 sp18;
+    s24_8 sp1C;
+    s24_8 sp20;
+    s32 sp24;
+    s32 sp28;
+    s32 sp2C;
+    s32 temp_r4;
+    s32 sp30;
+    s32 temp_r9;
+    s32 sp34;
+    s32 sp38;
+    s32 temp_r6;
 
-#include "asm/code_0800b778/asm_0800f89c.s"
+    sp0 = &arg0->unkC;
 
-#include "asm/code_0800b778/asm_0800f8d8.s"
+    // something weird going on here
+    temp_r0 = *(u8 *)&arg0->unk18;
+    sp4 = sins2(*(u8 *)&arg0->unk18);
+    sp8 = coss2(*(u8 *)&arg0->unk18);
+    spC = sins2(arg0->unk1A);
+    sp10 = coss2(arg0->unk1A);
+    sp14 = sins3(arg0->unk1C >> 1);
+    sp18 = coss3(arg0->unk1C >> 1);
+    sp1C = sins3(arg0->unk1E >> 1);
+    sp20 = coss3(arg0->unk1E >> 1);
 
-#include "asm/code_0800b778/asm_0800f8ec.s"
+    sp24 = fast_divsi3(INT_TO_FIXED(sp0->unk4), -spC);
+    sp28 = Div(INT_TO_FIXED(sp18 * 15) * 8, sp14);
+    sp2C = fast_divsi3(sp0->unk4 * sp10, -spC);
+    temp_r4 = fast_divsi3(sp28 * sp1C, sp20);
+    sp30 = fast_divsi3(-temp_r4 - temp_r4, INT_TO_FIXED(0.625));
+    temp_r9 = temp_r4 + arg0->unk48 * sp30;
+    sp34 = -fast_divsi3(sp28 * sp14, sp18);
+    sp38 = (arg0->unk1A >= -arg0->unk1E) ? FIXED_TO_INT(fast_divsi3(sp28 * spC, sp10)) + 80 : 0;
 
-#include "asm/code_0800b778/asm_0800f8f8.s"
+    temp_r5 = arg0->unk8;
+    for (temp_r6 = arg0->unk48; temp_r6 < arg0->unk4A; temp_r6++) {
+        if (temp_r6 < sp38) {
+            temp_r5->unkC = 0;
+            temp_r5->unk8 = 0;
+            temp_r5->unk4 = 0;
+            temp_r5->unk0 = 0;
+        } else {
+            s32 temp_r0_l;
+            s32 temp_r2_l;
+            s32 temp_r3_l;
+            s32 temp_r4_l;
+
+            temp_r0_l = fast_divsi3(INT_TO_FIXED(sp24), FIXED_TO_INT((sp28 * spC) + (temp_r9 * sp10)));
+            temp_r4_l = FIXED_TO_INT(temp_r0_l * spC);
+            temp_r2_l = sp2C - FIXED_TO_INT(temp_r9 * temp_r0_l);
+            temp_r3_l = FIXED_TO_INT(sp34 * temp_r4_l);
+
+            temp_r5->unk8 = sp0->unk0 + FIXED_TO_INT((temp_r2_l * sp8) - (temp_r3_l * sp4));
+            temp_r5->unkC = sp0->unk8 + FIXED_TO_INT((temp_r2_l * sp4) + (temp_r3_l * sp8));
+            temp_r5->unk0 = FIXED_TO_INT(-temp_r4_l * sp4);
+            temp_r5->unk4 = FIXED_TO_INT(temp_r4_l * sp8);
+        }
+
+        temp_r9 += sp30;
+        temp_r5++;
+    }
+
+    temp_r8 = &arg0->unk20;
+    temp_r8->unk0 = FIXED_TO_INT(sp8 * sp10);
+    temp_r8->unk2 = spC;
+    temp_r8->unk4 = FIXED_TO_INT(sp4 * sp10);
+    temp_r8->unk6 = FIXED_TO_INT(-sp8 * spC);
+    temp_r8->unk8 = sp10;
+    temp_r8->unkA = FIXED_TO_INT(-sp4 * spC);
+    temp_r8->unkC = -sp4;
+    temp_r0 = 0;
+    temp_r8->unkE = 0;
+    temp_r8->unk10 = sp8;
+    arg0->unk34 = FIXED_TO_INT(sp8 * sp10);
+    arg0->unk38 = spC;
+    arg0->unk3C = FIXED_TO_INT(sp4 * sp10);
+    temp_r0_1 = fast_divsi3(((sp18 * 16) - sp18) * 8, sp14);
+    arg0->unk40 = ABS(temp_r0_1);
+    temp_r0_2 = fast_divsi3(INT_TO_FIXED((sp20 * 4) + sp20), sp1C);
+    arg0->unk44 = ABS(temp_r0_2);
+}
+
+
+void func_0800f4a0(struct struct_0800f0b4 *arg0, s32 *arg1, s32 *arg2) {
+    struct struct_0800f0b4_sub3 *temp_r3;
+    s32 temp_r4;
+    s32 temp_r5;
+    s32 temp_r6;
+    struct struct_0800f0b4_sub1 *temp_r8;
+
+    temp_r3 = &arg0->unk20;
+    temp_r8 = &arg0->unkC;
+    temp_r6 = arg1[0] - temp_r8->unk0;
+    temp_r4 = arg1[1] - temp_r8->unk4;
+    temp_r5 = arg1[2] - temp_r8->unk8;
+    arg2[0] = FIXED_TO_INT(temp_r3->unk0 * temp_r6 + temp_r3->unk2 * temp_r4 + temp_r3->unk4 * temp_r5);
+    arg2[1] = FIXED_TO_INT(temp_r3->unk6 * temp_r6 + temp_r3->unk8 * temp_r4 + temp_r3->unkA * temp_r5);
+    arg2[2] = FIXED_TO_INT(temp_r3->unkC * temp_r6 + temp_r3->unkE * temp_r4 + temp_r3->unk10 * temp_r5);
+}
+
+
+void func_0800f524(struct struct_0800f0b4 *arg0, s32 *arg1, u16 *arg2) {
+    if (arg1[0] <= 0) {
+        arg2[2] = 0;
+        arg2[1] = 0;
+        arg2[0] = 0;
+    } else {
+        arg2[0] = fast_divsi3(arg1[2] * arg0->unk40, arg1[0]) + 120;
+        arg2[1] = 80 - (fast_divsi3(arg1[1] * arg0->unk44, arg1[0]) >> 4);
+        arg2[2] = fast_divsi3(arg1[0], arg0->unk40);
+    }
+}
+
+
+void func_0800f570(struct struct_0800f0b4 *arg0, u32 arg1, u32 arg2, u32 arg3) {
+    arg0->unkC.unk0 = arg1;
+    arg0->unkC.unk4 = arg2;
+    arg0->unkC.unk8 = arg3;
+}
+
+
+void func_0800f578(struct struct_0800f0b4 *arg0, s32 arg1, s32 arg2) {
+    arg0->unk18 = arg1;
+    arg0->unk1A = arg2;
+}
+
+
+void func_0800f580(struct struct_0800f0b4 *arg0, s32 arg1, s32 arg2) {
+    arg0->unk1C = arg1;
+    arg0->unk1E = arg2;
+}
+
+
+void func_0800f588(struct struct_0800f0b4 *arg0, u32 arg1) {
+    s32 i1;
+    s32 i;
+    u8 *temp_r5;
+    struct struct_0800f0b4_sub *temp_r7;
+    
+    temp_r5 = arg0->unk7B;
+    temp_r7 = &arg0->unk50[arg1];
+
+    for (i = 0; i < arg0->unk7A; i++) {
+        u32 temp_r1 = temp_r5[i];
+        struct struct_0800f0b4_sub *temp_r0 = &arg0->unk50[temp_r1];
+        if (temp_r0->unk10[0] > temp_r7->unk10[0]) {
+            break;
+        }
+    }
+    if (i >= arg0->unk4E) {
+        return;
+    }
+    for (i1 = arg0->unk4E - 2; i1 >= i; i1--) {
+        temp_r5[i1 + 1] = temp_r5[i1];
+    }
+    temp_r5[i] = arg1;
+    if (arg0->unk7A < arg0->unk4E) {
+        arg0->unk7A++;
+    }
+}
+
+
+void func_0800f614(struct struct_0800f0b4 *arg0) {
+    struct struct_0800f0b4_sub *temp_r6;
+    u32 i;
+    s8 *temp_sl;
+
+    arg0->unk7A = 0;
+    temp_r6 = arg0->unk50;
+    for (i = 0; i < arg0->unk4F; i++, temp_r6++) {
+        if (temp_r6->unk0 >= 0) {
+            func_0800f4a0(arg0, temp_r6->unk4, temp_r6->unk10);
+            func_0800f524(arg0, temp_r6->unk10, temp_r6->unk1C);
+            if ((!temp_r6->unk1C[2]) || 
+                (temp_r6->unk1C[0] < (-0x400000 >> 0x10)) || (temp_r6->unk1C[0] > 0x130) || 
+                (temp_r6->unk1C[1] < (-0x400000 >> 0x10)) || (temp_r6->unk1C[1] > 0xe0)) {
+                continue;
+            }    
+            func_0800f588(arg0, i);
+        }
+    }
+    
+    temp_r6 = arg0->unk50;
+    for (i = 0; i < arg0->unk4F; temp_r6++, i++) {
+        s16 sprite = temp_r6->unk0;
+        if (sprite >= 0) {
+            sprite_set_visible(gSpriteHandler, sprite, FALSE);
+        }
+    }
+
+    temp_sl = arg0->unk54;
+    for (i = 0; i < arg0->unk7A; temp_sl++, i++) {
+        s16 temp_r4;
+        s16 sprite;
+        
+        temp_r6 = &arg0->unk50[arg0->unk7B[i]];
+        sprite = temp_r6->unk0;
+        sprite_set_x_y_z(gSpriteHandler, sprite, temp_r6->unk1C[0], temp_r6->unk1C[1], arg0->unk78 + i);
+        sprite_set_affine_params(gSpriteHandler, sprite, *temp_sl, (s16 *)func_08002520(*temp_sl));
+        temp_r4 = FIXED_TO_INT(temp_r6->unk1C[2] * temp_r6->unk24);
+        func_080024dc(*temp_sl, temp_r4, 0);
+        if (temp_r4 > 0xff) {
+            func_0804dc8c(gSpriteHandler, sprite, 1);
+            sprite_set_visible(gSpriteHandler, sprite, TRUE);
+        } else if (temp_r4 > 0x7f) {
+            func_0804dc8c(gSpriteHandler, sprite, 3);
+            sprite_set_visible(gSpriteHandler, sprite, TRUE);
+        } else {   
+            sprite_set_visible(gSpriteHandler, sprite, FALSE);
+        }
+    }
+}
+
+
+s16 func_0800f7c0(struct struct_0800f0b4 *arg0, struct Animation *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s16 arg6, s32 arg7, s32 arg8) {
+    s16 i;
+    struct struct_0800f0b4_sub *temp_r5;
+
+    temp_r5 = arg0->unk50;
+    for (i = 0; i < arg0->unk4F; i++, temp_r5++) {
+        if (temp_r5->unk0 < 0) {
+            u16 temp_r4;
+
+            temp_r4 = sprite_handler_get_mem_id(gSpriteHandler);
+            sprite_handler_set_mem_id(gSpriteHandler, arg0->unk0);
+            temp_r5->unk0 = sprite_create(gSpriteHandler, arg1, 0, 0, 0, 0, 1, SPRITE_PLAYBACK_NORMAL_LOOP, 0);
+            sprite_set_visible(gSpriteHandler, temp_r5->unk0, FALSE);
+            temp_r5->unk4[0] = arg3;
+            temp_r5->unk4[1] = arg4;
+            temp_r5->unk4[2] = arg5;
+            temp_r5->unk24 = arg6;
+            temp_r5->unk28 = arg1;
+            temp_r5->unk2C = arg2;
+            sprite_handler_set_mem_id(gSpriteHandler, temp_r4);
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+void func_0800f89c(struct struct_0800f0b4 *arg0, s16 arg1) {
+    if ((arg1 >= 0)) {
+        s16 sprite = arg0->unk50[arg1].unk0;
+
+        if (sprite >= 0) {
+            sprite_delete(gSpriteHandler, sprite);
+            arg0->unk50[arg1].unk0 = -1;
+        }
+    }
+}
+
+
+s16 func_0800f8d8(struct struct_0800f0b4 *arg0, s16 arg1) {
+    return arg0->unk50[arg1].unk0;
+}
+
+
+void func_0800f8ec(struct struct_0800f0b4 *arg0) {
+    func_0800f22c(arg0);
+}
+
+
+void func_0800f8f8(struct struct_0800f0b4 *arg0, u32 arg1) {
+    func_0800f588(arg0, arg1);
+}
