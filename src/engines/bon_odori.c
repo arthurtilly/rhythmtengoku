@@ -304,15 +304,15 @@ void bon_odori_lyrics_start_highlight(u32 duration) {
 
 // [func_08020d20] ENGINE Func_06 - Lighten Screen (Gradual)
 void bon_odori_screen_lighten(u32 duration) {
-    interp_pal_to_pal(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->darkBgPalBuf[0], gBonOdori->srcBgPal, BG_PALETTE_BUFFER(0));
-    interp_pal_to_pal(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->darkObjPalBuf[0], gBonOdori->srcObjPal, OBJ_PALETTE_BUFFER(0));
+    palette_fade_to(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->darkBgPalBuf[0], gBonOdori->srcBgPal, BG_PALETTE_BUFFER(0));
+    palette_fade_to(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->darkObjPalBuf[0], gBonOdori->srcObjPal, OBJ_PALETTE_BUFFER(0));
 }
 
 
 // [func_08020da0] ENGINE Func_07 - Darken Screen (Gradual)
 void bon_odori_screen_darken(u32 duration) {
-    interp_pal_to_pal(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->srcBgPal, gBonOdori->darkBgPalBuf[0], BG_PALETTE_BUFFER(0));
-    interp_pal_to_pal(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->srcObjPal, gBonOdori->darkObjPalBuf[0], OBJ_PALETTE_BUFFER(0));
+    palette_fade_to(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->srcBgPal, gBonOdori->darkBgPalBuf[0], BG_PALETTE_BUFFER(0));
+    palette_fade_to(get_current_mem_id(), ticks_to_frames(duration), 7, gBonOdori->srcObjPal, gBonOdori->darkObjPalBuf[0], OBJ_PALETTE_BUFFER(0));
 }
 
 

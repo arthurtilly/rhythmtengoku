@@ -471,12 +471,12 @@ void power_calligraphy_charge_brush(u32 chargeType) {
 // Engine Event 0x08 (Start/Stop Charge Effect)
 void power_calligraphy_set_charge_effect(u32 start) {
     if (start) {
-        interp_pal_to_pal(get_current_mem_id(), ticks_to_frames(12), 1,
+        palette_fade_to(get_current_mem_id(), ticks_to_frames(12), 1,
                         power_calligraphy_pal[11], power_calligraphy_pal[12], D_03004b10.objPalette[11]);
     } else {
         sprite_set_anim_cel(gSpriteHandler, gPowerCalligraphy->brushEffectSprite, 0);
         // sprite_set_visible(gSpriteHandler, gPowerCalligraphy->brushEffectSprite, TRUE);
-        interp_pal_to_pal(get_current_mem_id(), ticks_to_frames(12), 1,
+        palette_fade_to(get_current_mem_id(), ticks_to_frames(12), 1,
                         power_calligraphy_pal[13], power_calligraphy_pal[11], D_03004b10.objPalette[11]);
     }
 }

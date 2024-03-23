@@ -226,7 +226,7 @@ void wizards_waltz_cue_spawn(struct Cue *cue, struct WizardsWaltzCue *info, u32 
         doubleSize = FALSE;
     }
 
-    z = func_08003ab8(0x400 - (angle & 0x7ff)) / 8u;
+    z = math_abs32(0x400 - (angle & 0x7ff)) / 8u;
     info->position = z;
     z += 0x4002;
 

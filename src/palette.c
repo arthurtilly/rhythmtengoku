@@ -46,7 +46,7 @@ void fast_blend_pal_to_col(const u16 *sourceA, u32 valueB, u16 *outputDest, u32 
 
 
 // Blend Palette with Interpolator
-void pal_interp_task_blend(struct PaletteInterpolator *task, u32 startIndex) {
+void pal_interp_blend(struct PaletteInterpolator *task, u32 startIndex) {
     void (*interpolatePalette)() = (void *)(fast_blend_pal_code);
     s32 runningTime = task->runningTime;
     s32 duration = task->duration;
@@ -100,7 +100,7 @@ void pal_interp_update(struct PaletteInterpolator *task) {
         return;
     }
 
-    pal_interp_task_blend(task, 0);
+    pal_interp_blend(task, 0);
 }
 
 
@@ -208,7 +208,7 @@ void pal_interp_update_masked(struct PaletteInterpolator *task) {
 
     for (i = 0; i < 16; i++) {
         if (((task->paletteMask >> i) & 1) != 0) {
-            pal_interp_task_blend(task, i * 16);
+            pal_interp_blend(task, i * 16);
         }
     }
 }
@@ -227,7 +227,7 @@ void blend_pal_to_pal(u8 alpha, u8 totalPalettes, const u16 *sourceA, const u16 
     task.sourceType = SOURCE_TYPE_PAL_PAL;
     task.isActive = TRUE;
 
-    pal_interp_task_blend(&task, 0);
+    pal_interp_blend(&task, 0);
 }
 
 
@@ -244,7 +244,7 @@ void blend_col_to_pal(u8 alpha, u8 totalPalettes, u32 valueA, const u16 *sourceB
     task.sourceType = SOURCE_TYPE_COL_PAL;
     task.isActive = TRUE;
 
-    pal_interp_task_blend(&task, 0);
+    pal_interp_blend(&task, 0);
 }
 
 
@@ -261,7 +261,7 @@ void blend_pal_to_col(u8 alpha, u8 totalPalettes, const u16 *sourceA, u32 valueB
     task.sourceType = SOURCE_TYPE_PAL_COL;
     task.isActive = TRUE;
 
-    pal_interp_task_blend(&task, 0);
+    pal_interp_blend(&task, 0);
 }
 
 
@@ -313,7 +313,7 @@ static struct TaskMethods pal_interp_task_ptp = {
     NULL
 };
 
-s32 interp_pal_to_pal(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputDest) {
+s32 palette_fade_to(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputDest) {
     struct PaletteInterpolatorInputs info;
 
     info.duration = duration;
@@ -334,7 +334,7 @@ static struct TaskMethods pal_interp_task_ctp = {
     NULL
 };
 
-s32 interp_col_to_pal(u16 memID, u8 duration, u8 totalPalettes, u32 valueA, const u16 *sourceB, u16 *outputDest) {
+s32 palette_fade_in(u16 memID, u8 duration, u8 totalPalettes, u32 valueA, const u16 *sourceB, u16 *outputDest) {
     struct PaletteInterpolatorInputs info;
 
     info.duration = duration;
@@ -355,7 +355,7 @@ static struct TaskMethods pal_interp_task_ptc = {
     NULL
 };
 
-s32 interp_pal_to_col(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, u32 valueB, u16 *outputDest) {
+s32 palette_fade_out(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, u32 valueB, u16 *outputDest) {
     struct PaletteInterpolatorInputs info;
 
     info.duration = duration;
