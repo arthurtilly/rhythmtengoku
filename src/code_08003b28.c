@@ -3,8 +3,6 @@
 #include "memory_heap.h"
 #include "src/lib_0804ca80.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
-
 
 /* COMPRESSED BG MAP */
 
@@ -210,8 +208,41 @@ void func_08003e00(const u16 *srcData, u32 srcWidth, u32 srcHeight, u16 *destDat
 }
 
 
-#include "asm/code_08003980/asm_08003e64.s"
+extern s32 (*D_03004af0)(const u16 *src, u16 *dest, const u8 *rleData, u32 sizeData);
+extern u8 D_030053b0;
 
-#include "asm/code_08003980/asm_08003ea4.s"
+extern void *func_08000a00;
+extern void *func_08000a00_end;
 
-#include "asm/code_08003980/asm_08003eb8.s"
+// Load RLE Decompression Function to RAM
+void func_08003e64(void) {
+    dma3_set(&func_08000a00, D_030005c8, (uintptr_t)&func_08000a00_end - (uintptr_t)&func_08000a00, 16, 0x100);
+    D_03004af0 = (s32 (*)(const u16 *, u16 *, const u8 *, u32))D_030005c8;
+    D_030053b0 = FALSE;
+}
+
+s32 func_08003ea4(void) {
+   return ((s32 (*)(u32))D_03004af0)(0);
+}
+
+s32 func_08003eb8(struct CompressedGraphics *src, u16 *dest) {
+    struct CompressedGraphics *temp_r1;
+    const u16 *temp_r5;
+    s32 retval;
+
+    temp_r1 = func_0800869c(src);
+    src = temp_r1;
+    temp_r5 = temp_r1->data.raw;
+
+    if (temp_r1->doubleCompressed) {
+        const u16 *temp = temp_r5;
+        temp_r5 = (dest + temp_r1->rleOffset) - ((struct Huffman *)temp_r5)->size;
+        func_08008608(temp, temp_r5);
+    }
+    
+    retval = D_03004af0(temp_r5, dest, src->rleData, (src->rleSize << 0x10) | 0x8000);
+    while (D_030053b0) {
+        retval += ((s32 (*)(u32))D_03004af0)(0);
+    }
+    return retval;
+}
