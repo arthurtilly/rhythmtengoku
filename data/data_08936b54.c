@@ -127,7 +127,7 @@ struct TaskMethods D_08936c7c = {
 };
 
 // Delayed Function Call
-struct TaskMethods D_08936c8c = {
+struct TaskMethods delayed_function_call_task = {
     (TaskStartFunc)init_scheduled_function_task,
     (TaskUpdateFunc)update_scheduled_function_task,
     NULL,

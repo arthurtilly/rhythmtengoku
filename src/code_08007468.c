@@ -989,36 +989,37 @@ u32 func_08008464(struct unk_struct_08008420 *task) {
 /* SCHEDULED FUNCTION CALL */
 
 
-// D_08936c8c function 1
+// Initialise Scheduled Function Task
 struct ScheduledFunctionTask *init_scheduled_function_task(struct ScheduledFunctionTask *inputs) {
     struct ScheduledFunctionTask *task;
 
     task = mem_heap_alloc(sizeof(struct ScheduledFunctionTask));
-    task->unk0 = inputs->unk0;
-    task->unk4 = inputs->unk4;
-    task->unk8 = inputs->unk8;
+    task->function = inputs->function;
+    task->param = inputs->param;
+    task->delay = inputs->delay;
     return task;
 }
 
-// D_08936c8c function 2
+// Update Scheduled Function Task
 u32 update_scheduled_function_task(struct ScheduledFunctionTask *task) {
-    if (task->unk8) {
-        task->unk8--;
+    if (task->delay) {
+        task->delay--;
         return FALSE;
     }
-    if (task->unk0) {
-        task->unk0(task->unk4);
+    if (task->function) {
+        task->function(task->param);
     }
     return TRUE;
 }
 
+// Scheduled Function Call
 s32 schedule_function_call(u16 memID, void *function, s32 param, u32 delay) {
     struct ScheduledFunctionTask inputs;
 
-    inputs.unk0 = function;
-    inputs.unk4 = param;
-    inputs.unk8 = delay;
-    return start_new_task(memID, &D_08936c8c, &inputs, NULL, 0);
+    inputs.function = function;
+    inputs.param = param;
+    inputs.delay = delay;
+    return start_new_task(memID, &delayed_function_call_task, &inputs, NULL, 0);
 }
 
 
