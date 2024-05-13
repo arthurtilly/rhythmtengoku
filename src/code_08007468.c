@@ -990,12 +990,36 @@ u32 func_08008464(struct unk_struct_08008420 *task) {
 
 
 // D_08936c8c function 1
-#include "asm/code_08007468/asm_0800852c.s"
+struct ScheduledFunctionTask *init_scheduled_function_task(struct ScheduledFunctionTask *inputs) {
+    struct ScheduledFunctionTask *task;
+
+    task = mem_heap_alloc(sizeof(struct ScheduledFunctionTask));
+    task->unk0 = inputs->unk0;
+    task->unk4 = inputs->unk4;
+    task->unk8 = inputs->unk8;
+    return task;
+}
 
 // D_08936c8c function 2
-#include "asm/code_08007468/asm_08008548.s"
+u32 update_scheduled_function_task(struct ScheduledFunctionTask *task) {
+    if (task->unk8) {
+        task->unk8--;
+        return FALSE;
+    }
+    if (task->unk0) {
+        task->unk0(task->unk4);
+    }
+    return TRUE;
+}
 
-#include "asm/code_08007468/asm_0800856c.s"
+s32 schedule_function_call(u16 memID, void *function, s32 param, u32 delay) {
+    struct ScheduledFunctionTask inputs;
+
+    inputs.unk0 = function;
+    inputs.unk4 = param;
+    inputs.unk8 = delay;
+    return start_new_task(memID, &D_08936c8c, &inputs, NULL, 0);
+}
 
 
 /* BUFFERED TEXTURE */

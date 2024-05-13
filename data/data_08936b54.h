@@ -241,7 +241,11 @@ struct unk_struct_08008420 {
     u32 unk10;
 };
 
-struct ScheduledFunctionTask;
+struct ScheduledFunctionTask {
+    void (*unk0)(u32);
+    u32 unk4;
+    u32 unk8;
+};
 
 struct TextureLoaderInputs;
 struct TextureLoader;
