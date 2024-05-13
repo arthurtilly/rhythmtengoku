@@ -731,7 +731,7 @@ void interp_screen_window_size(u16 memID, u32 window, u32 duration,
 /* STRING */
 
 
-extern char D_08936c64[]; // "‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚X"
+extern char D_08936c64[]; // "ï¿½Oï¿½Pï¿½Qï¿½Rï¿½Sï¿½Tï¿½Uï¿½Vï¿½Wï¿½X"
 
 
 // Copy Substring
@@ -877,13 +877,113 @@ void strnintf(char *s, u32 n, u32 len) {
 /* ? */
 
 
-#include "asm/code_08007468/asm_08008370.s"
+void func_08008370(u32 *arg0, u32 *arg1, u32 arg2, u32 arg3) {
+    u32 temp_r1;
+    u32 temp;
+    u32 temp_r6;
+    u32 temp_r7;
+    u32 temp_ip;
+    u32 i;
+    
+    temp_ip = (arg2 + 3) >> 2;
+    arg0 += temp_ip;
+    arg1 += temp_ip * 2;
+    temp_r6 = 0x33333333; // constant 1100 bit pattern
+    temp_r1 = (arg3 << 0) | (arg3 << 4) | (arg3 << 8) | (arg3 << 0xc); // initial pattern
+    temp_r1 |= (temp_r1 << 0x10); // copy into high bytes
+    temp_r7 = (arg2 + 3) >> 4;
+    for (i = 0; i < temp_r7; i++) {
+        arg0 -= 4;
+        arg1 -= 4 * 2;
+
+        temp = arg0[3];
+        arg1[6] = (temp & temp_r6) + temp_r1;
+        arg1[7] = ((temp >> 2) & temp_r6) + temp_r1;
+        temp = arg0[2];
+        arg1[4] = (temp & temp_r6) + temp_r1;
+        arg1[5] = ((temp >> 2) & temp_r6) + temp_r1;
+        temp = arg0[1];
+        arg1[2] = (temp & temp_r6) + temp_r1;
+        arg1[3] = ((temp >> 2) & temp_r6) + temp_r1;
+        temp = arg0[0];
+        arg1[0] = (temp & temp_r6) + temp_r1;
+        arg1[1] = ((temp >> 2) & temp_r6) + temp_r1;
+    }
+    for (i = 0; i < temp_ip; i++) {
+        arg0 -= 1;
+        arg1 -= 1 * 2;
+
+        temp = arg0[0];
+        arg1[0] = (temp & temp_r6) + temp_r1;
+        arg1[1] = ((temp >> 2) & temp_r6) + temp_r1;
+    }
+}
+
 
 // D_08936c7c function 1
-#include "asm/code_08007468/asm_08008420.s"
+struct unk_struct_08008420 *func_08008420(struct unk_struct_08008420_init *inputs) {
+    struct unk_struct_08008420 *task;
+    u32 temp_r3;
+
+    task = mem_heap_alloc(sizeof(struct unk_struct_08008420));
+    task->unk8 = (inputs->unk8 + 3) >> 2;
+    task->unkC = (inputs->unkC + 3) >> 2;
+    task->unk0 = &inputs->unk0[task->unk8];
+    task->unk4 = &inputs->unk4[task->unk8 * 2];
+    temp_r3 = inputs->unk10;
+    temp_r3 = (temp_r3 << 0) | (temp_r3 << 4) | (temp_r3 << 8) | (temp_r3 << 0xc);
+    temp_r3 |= (temp_r3 << 0x10);
+    task->unk10 = temp_r3;
+    return task;
+}
 
 // D_08936c7c function 2
-#include "asm/code_08007468/asm_08008464.s"
+u32 func_08008464(struct unk_struct_08008420 *task) {
+    u32 *temp_r4 = task->unk0;
+    u32 *temp_r2 = task->unk4;
+    u32 temp_r5 = 0x33333333;
+    u32 temp_r3 = task->unk10;
+    u32 temp;
+    u32 i;
+    u32 temp_r8 = (task->unkC > task->unk8) ? task->unk8 : task->unkC;
+    u32 temp_ip = temp_r8 >> 2;
+    
+    for (i = 0; i < temp_ip; i++) {
+        temp_r4 -= 4;
+        temp_r2 -= 4 * 2;
+
+        temp = temp_r4[3];
+        temp_r2[6] = (temp & temp_r5) + temp_r3;
+        temp_r2[7] = ((temp >> 2) & temp_r5) + temp_r3;
+        temp = temp_r4[2];
+        temp_r2[4] = (temp & temp_r5) + temp_r3;
+        temp_r2[5] = ((temp >> 2) & temp_r5) + temp_r3;
+        temp = temp_r4[1];
+        temp_r2[2] = (temp & temp_r5) + temp_r3;
+        temp_r2[3] = ((temp >> 2) & temp_r5) + temp_r3;
+        temp = temp_r4[0];
+        temp_r2[0] = (temp & temp_r5) + temp_r3;
+        temp_r2[1] = ((temp >> 2) & temp_r5) + temp_r3;
+    }
+    for (i = 0; i < (temp_r8 & 3); i++) {
+        temp_r4 -= 1;
+        temp_r2 -= 1 * 2;
+
+        temp = temp_r4[0];
+        temp_r2[0] = (temp & temp_r5) + temp_r3;
+        temp_r2[1] = ((temp >> 2) & temp_r5) + temp_r3;
+    }
+    
+    task->unk0 = temp_r4;
+    task->unk4 = temp_r2;
+    task->unk8 -= temp_r8;
+    
+    if (task->unk8 > 0) {
+        return FALSE;
+    } else {
+        return TRUE;
+    }
+}
 
 
 /* SCHEDULED FUNCTION CALL */

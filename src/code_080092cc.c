@@ -2,8 +2,6 @@
 
 // Gyro/Rumble Library Interface
 
-asm(".include \"include/gba.inc\"");//Temporary
-
 static struct struct_0300443c D_03001110;
 static s32 D_03001134[22]; // ..?
 static u32 D_03001190;

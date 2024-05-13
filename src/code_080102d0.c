@@ -5,8 +5,6 @@
 #include "scenes/reading.h"
 #include "scenes/studio.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
-
 
 // [func_080102d0] Get Music Base Tempo
 u32 get_music_base_tempo(struct SongHeader *seqData) {

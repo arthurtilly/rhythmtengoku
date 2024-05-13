@@ -226,8 +226,20 @@ struct BlendControlsInterpolator {
     u16 flip;
 };
 
-struct unk_struct_08008420_init;
-struct unk_struct_08008420;
+struct unk_struct_08008420_init {
+    u32 *unk0;
+    u32 *unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+};
+struct unk_struct_08008420 {
+    u32 *unk0;
+    u32 *unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+};
 
 struct ScheduledFunctionTask;
 
