@@ -4,16 +4,23 @@
 // For readability.
 #define gBouncyRoad ((struct BouncyRoadEngineData *)gCurrentEngineData)
 
+enum BouncyBallState {
+    /* 00 */ BOUNCY_BALL_STATE_DEFAULT,
+    /* 01 */ BOUNCY_BALL_STATE_BOUNCING,
+    /* 02 */ BOUNCY_BALL_STATE_FALLING,
+};
+
 
 /* BOUNCY ROAD */
 
 
 // Initialise Balls
 void bouncy_road_init_balls(void) {
+    struct BouncyBall *ball;
     u32 i;
 
     for (i = 0; i < TOTAL_BOUNCY_BALLS; i++) {
-        struct BouncyBall *ball = &gBouncyRoad->balls[i];
+        ball = &gBouncyRoad->balls[i];
         ball->sprite = create_affine_sprite(anim_bouncy_road_ball, 0, 0, 0, 0, 0x100, 0, 0, 0, 0x8000, 0);
         ball->active = FALSE;
     }
@@ -49,7 +56,7 @@ void bouncy_road_deploy_ball(u32 ticksPerBounce) {
     ball->runningFrames = 0;
     ball->totalFrames = ticks_to_frames((pathLength - 1) * ticksPerBounce);
     ball->id = gBouncyRoad->nextBallId++;
-    ball->state = 0;
+    ball->state = BOUNCY_BALL_STATE_DEFAULT;
     ball->playGoalSfx = gBouncyRoad->nextBallPlaysGoalSFX;
     gBouncyRoad->nextBallPlaysGoalSFX = FALSE;
     ball->markingCriteria = gameplay_get_marking_criteria();
@@ -59,13 +66,13 @@ void bouncy_road_deploy_ball(u32 ticksPerBounce) {
 
 // Bounce Ball
 void bouncy_road_bounce_ball_sync(u32 id, s32 offsetFrames) {
+    struct BouncyBall *ball;
     u32 i;
 
     for (i = 0; i < TOTAL_BOUNCY_BALLS; i++) {
-        struct BouncyBall *ball = &gBouncyRoad->balls[i];
-
+        ball = &gBouncyRoad->balls[i];
         if (ball->active && (ball->id == id)) {
-            ball->state = 1;
+            ball->state = BOUNCY_BALL_STATE_BOUNCING;
             ball->arcCurrentFrame = 0;
             ball->arcTotalFrames = ticks_to_frames(ball->bounceTicks) + offsetFrames;
             return;
@@ -82,13 +89,13 @@ void bouncy_road_bounce_ball(u32 id) {
 
 // Bounce Ball (Miss)
 void bouncy_road_fumble_ball(u32 id) {
+    struct BouncyBall *ball;
     u32 i;
 
     for (i = 0; i < TOTAL_BOUNCY_BALLS; i++) {
-        struct BouncyBall *ball = &gBouncyRoad->balls[i];
-
+        ball = &gBouncyRoad->balls[i];
         if (ball->active && (ball->id == id)) {
-            ball->state = 2;
+            ball->state = BOUNCY_BALL_STATE_FALLING;
             ball->arcCurrentFrame = 0;
             ball->arcTotalFrames = ticks_to_frames(ball->bounceTicks);
             return;
@@ -142,13 +149,13 @@ void bouncy_road_play_bounce_sfx_none(void) {
 }
 
 
-// Get Ball Height (State 1)
+// Update Ball Bounce, Returning Height
 s32 bouncy_road_update_ball_bounce(struct BouncyBall *ball) {
     s32 maxHeight, midpoint, point;
 
     ball->arcCurrentFrame++;
     if (ball->arcCurrentFrame >= ball->arcTotalFrames) {
-        ball->state = 0;
+        ball->state = BOUNCY_BALL_STATE_DEFAULT;
         return 0;
     }
 
@@ -160,7 +167,7 @@ s32 bouncy_road_update_ball_bounce(struct BouncyBall *ball) {
 }
 
 
-// Get Ball Height (State 2)
+// Update Ball Fall, Returning Height
 s32 bouncy_road_update_ball_fall(struct BouncyBall *ball) {
     s32 maxHeight, midpoint, point;
 
@@ -189,7 +196,7 @@ void bouncy_road_update_ball(struct BouncyBall *ball) {
         affine_sprite_set_visible(ball->sprite, FALSE);
         ball->active = FALSE;
 
-        if (ball->state != 2) {
+        if (ball->state != BOUNCY_BALL_STATE_FALLING) {
             affine_sprite_set_anim_cel(gBouncyRoad->pathNodes[BOUNCY_PATH_NODE_LAST], 0);
             if (ball->playGoalSfx) {
                 bouncy_road_play_bounce_sfx_none();
@@ -231,10 +238,10 @@ void bouncy_road_update_ball(struct BouncyBall *ball) {
     bouncy_road_get_path_angle_range(&startAngle, &endAngle);
     angle = math_lerp(startAngle, endAngle, ball->runningFrames, ball->totalFrames);
     switch (ball->state) {
-        case 1:
+        case BOUNCY_BALL_STATE_BOUNCING:
             height = bouncy_road_update_ball_bounce(ball);
             break;
-        case 2:
+        case BOUNCY_BALL_STATE_FALLING:
             height = bouncy_road_update_ball_fall(ball);
             break;
         default:
@@ -243,7 +250,7 @@ void bouncy_road_update_ball(struct BouncyBall *ball) {
     }
 
     if (ball->active) {
-        bouncy_road_get_xyzs_on_path(angle, height, &x, &y, &z, &scale);
+        bouncy_road_project_to_screen_xyzs(angle, height, &x, &y, &z, &scale);
         affine_sprite_set_x_y_z(ball->sprite, x, y, z);
         affine_sprite_set_scale(ball->sprite, scale);
         affine_sprite_set_visible(ball->sprite, TRUE);
@@ -266,34 +273,34 @@ void bouncy_road_update_balls(void) {
 
 
 // Engine Event 0x02 (Enable Goal SFX for Next Ball)
-void func_0802e234(void) {
+void bouncy_road_enable_goal_sfx_for_next_ball(void) {
     gBouncyRoad->nextBallPlaysGoalSFX = TRUE;
 }
 
 
 // Engine Event 0x04 (Set Ball Palette)
-void func_0802e248(u32 palette) {
+void bouncy_road_set_ball_palette(u32 palette) {
     gBouncyRoad->nextBallPalette = palette;
 }
 
 
 // Engine Event 0x05 (Set Global Bounce Height Scale)
-void func_0802e25c(s32 heightScale) {
+void bouncy_road_set_bounce_height_scale(s32 heightScale) {
     gBouncyRoad->bounceHeightScale = heightScale;
 }
 
 
 // Project Path Position to Screen
-void bouncy_road_get_xyzs_on_path(s24_8 angle, s32 yOfs, s32 *xReq, s32 *yReq, s32 *zReq, s24_8 *scaleReq) {
+void bouncy_road_project_to_screen_xyzs(s24_8 angle, s32 yOfs, s32 *xReq, s32 *yReq, s32 *zReq, s24_8 *scaleReq) {
     s24_8 zoom;
     s32 x, y;
 
-    x = FIXED_POINT_MUL(356, coss(angle));
-    y = 140 + yOfs;
+    x = FIXED_POINT_MUL(BOUNCY_WORLD_WIDTH, coss(angle));
+    y = BOUNCY_WORLD_HEIGHT + yOfs;
     zoom = sins(angle) + INT_TO_FIXED(2.0);
 
-    *xReq = FIXED_POINT_DIV(x, zoom) + 8;
-    *yReq = FIXED_POINT_DIV(y, zoom) - 40;
+    *xReq = FIXED_POINT_DIV(x, zoom) + BOUNCY_PATH_SCREEN_X;
+    *yReq = FIXED_POINT_DIV(y, zoom) + BOUNCY_PATH_SCREEN_Y;
     *zReq = zoom;
     *scaleReq = FIXED_POINT_DIV(INT_TO_FIXED(1.0), zoom);
 }
@@ -305,8 +312,8 @@ void bouncy_road_init_path_nodes(void) {
     s32 angle, x, y, z, scale, i;
 
     for (i = 0; i < BOUNCY_PATH_LENGTH; i++) {
-        angle = BOUNCY_PATH_ANGLE_START + ((BOUNCY_PATH_ANGLE_END - BOUNCY_PATH_ANGLE_START) * i / BOUNCY_PATH_NODE_LAST);
-        bouncy_road_get_xyzs_on_path(angle, 2, &x, &y, &z, &scale);
+        angle = BOUNCY_WORLD_ANGLE_START + ((BOUNCY_WORLD_ANGLE_END - BOUNCY_WORLD_ANGLE_START) * i / BOUNCY_PATH_NODE_LAST);
+        bouncy_road_project_to_screen_xyzs(angle, 2, &x, &y, &z, &scale);
         anim = anim_bouncy_road_path;
         if (i == BOUNCY_PATH_NODE_A) {
             anim = anim_bouncy_road_player_a;
@@ -322,12 +329,12 @@ void bouncy_road_init_path_nodes(void) {
 
 // Get Path Start & End Angles
 void bouncy_road_get_path_angle_range(s24_8 *startReq, s24_8 *endReq) {
-    *startReq = BOUNCY_PATH_ANGLE_START;
-    *endReq = BOUNCY_PATH_ANGLE_END;
+    *startReq = BOUNCY_WORLD_ANGLE_START;
+    *endReq = BOUNCY_WORLD_ANGLE_END;
 }
 
 
-// return some significant number (probably path length)
+// Get Total Path Nodes
 u32 bouncy_road_get_path_length(void) {
     return BOUNCY_PATH_LENGTH;
 }
@@ -471,9 +478,9 @@ void bouncy_road_early_cue_callback(u32 ballId) {
 void bouncy_road_cue_hit(struct Cue *cue, struct BouncyRoadCue *info, u32 pressed, u32 released) {
     struct BouncyBall *ball = bouncy_road_get_ball(info->ballId);
     s32 timingOffset = gameplay_get_last_hit_offset();
-    u32 flag = ball->missed;
+    u32 missed = ball->missed;
 
-    if (!ball->active || flag) {
+    if (!ball->active || missed) {
         gameplay_ignore_this_cue_result();
         bouncy_road_input_event(pressed, 0);
         return;

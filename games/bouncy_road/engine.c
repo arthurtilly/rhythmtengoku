@@ -113,10 +113,10 @@ EngineEvent bouncy_road_common_events[] = {
 EngineEvent bouncy_road_engine_events[] = {
     /* 0x00 */ bouncy_road_deploy_ball,
     /* 0x01 */ bouncy_road_bounce_ball,
-    /* 0x02 */ func_0802e234,
+    /* 0x02 */ bouncy_road_enable_goal_sfx_for_next_ball,
     /* 0x03 */ bouncy_road_play_bounce_sfx_far,
-    /* 0x04 */ func_0802e248,
-    /* 0x05 */ func_0802e25c,
+    /* 0x04 */ bouncy_road_set_ball_palette,
+    /* 0x05 */ bouncy_road_set_bounce_height_scale,
     /* 0x06 */ bouncy_road_engine_event_stub
 };
 
