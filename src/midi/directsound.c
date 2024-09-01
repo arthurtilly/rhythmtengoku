@@ -4,8 +4,6 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-extern u32 __udivmoddi4(u64, u64);
-
 
 /* AUDIO LIBRARY - DIRECTSOUND */
 
@@ -121,7 +119,7 @@ void midi_sampler_load(u32 id, struct SampleData *sample) {
     baseKeyFrequency = midi_tuning_table[sample->pitch];
     baseKeySampleRate = gMidiDMASampleRate * baseKeyFrequency;
     sampleRate = (u64)sample->sampleRate << 28;
-    stream->rate = __udivmoddi4(sampleRate + baseKeySampleRate - 1, baseKeySampleRate);
+    stream->rate = (sampleRate + baseKeySampleRate - 1) / baseKeySampleRate;
 }
 
 
