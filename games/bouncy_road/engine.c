@@ -6,8 +6,8 @@
 
 // [D_089e3c04] Player Bouncer Animation Table (Unused)
 struct Animation *bouncy_road_player_bouncer_anim[] = {
-    /* 0x00 */ anim_bouncy_road_player_a,
-    /* 0x01 */ anim_bouncy_road_player_dpad
+    /* 00 */ anim_bouncy_road_player_a,
+    /* 01 */ anim_bouncy_road_player_dpad
 };
 
 
@@ -60,9 +60,9 @@ struct GraphicsTable *bouncy_road_gfx_tables[] = {
 struct CueDefinition bouncy_road_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
-    /* Total Duration  */ 0x18,
-    /* Hit Window      */ -0x03, 0x03,
-    /* Barely Window   */ -0x04, 0x04,
+    /* Total Duration  */ 24,
+    /* Hit Window      */ -3, 3,
+    /* Barely Window   */ -4, 4,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct BouncyRoadCue),
