@@ -35,7 +35,7 @@ typedef s32 s24_8;
 #define INT_TO_FIXED(x) ((s32)((x) * 256))
 // Convert fixed-point value to integer.
 #define FIXED_TO_INT(x) ((s32)((x) >> 8))
-// Multiply numbers, where at least one value is fixed-point.
+// Multiply two fixed-point values.
 #define FIXED_POINT_MUL(a, b) (((a) * (b)) >> 8)
 // Divide numbers, where 'd' is always fixed-point.
 #define FIXED_POINT_DIV(n, d) (((n) << 8) / (d))
