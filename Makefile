@@ -212,6 +212,8 @@ $(OFILES_JSON): $(BUILD)/%.c.o : $(BUILD)/%.c | $(BUILD_DIRS)
 $(BUILD)/%.c.o : %.c | $(BUILD_DIRS)
 	$(call build_c_file)
 
+build/src/udivdi3.c.o: CFLAGS := -Wparentheses -O2 -fhex-asm
+
 # ASM files
 $(BUILD)/%.s.o : %.s | $(BUILD_DIRS)
 	$(call print,Assembling:,$<,$@)

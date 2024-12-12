@@ -310,7 +310,7 @@ SECTIONS {
         *libgcc.a:_dvmd_tls.o(.text);
         *libgcc.a:_modsi3.o(.text);
         *libgcc.a:_muldi3.o(.text);
-        build/asm/udivmoddi4.s.o(.text);
+        build/src/udivdi3.c.o(.text);
         *libgcc.a:_udivsi3.o(.text);
         *libgcc.a:_umodsi3.o(.text);
         *libc.a:memcpy.o(.text);
