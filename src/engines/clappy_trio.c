@@ -25,7 +25,51 @@ struct Animation *clappy_trio_get_anim(enum ClappyTrioAnimationsEnum anim) {
 
 #include "asm/engines/clappy_trio/asm_0803055c.s"
 
-#include "asm/engines/clappy_trio/asm_08030588.s"
+void clappy_trio_engine_start(u32 ver) {
+    struct Lion *lion;
+    struct TextPrinter *printer;
+    
+    lion = &gClappyTrio->lion;
+
+    gClappyTrio->version = ver >> 2;
+    gClappyTrio->unk4 = ver & 3;
+    
+    func_0803055c();
+    scene_show_obj_layer();
+    
+    scene_hide_bg_layer(BG_LAYER_0);
+    scene_hide_bg_layer(BG_LAYER_2);
+    scene_hide_bg_layer(BG_LAYER_3);
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
+
+    func_080303a4(&gClappyTrio->lion);
+    
+    gClappyTrio->lionClapVolume = 0x80 << 1;
+    printer = text_printer_create_new(get_current_mem_id(), 1, 0xf0, 0x1e);
+    gClappyTrio->textPrinter = printer;    
+    
+    text_printer_set_x_y(gClappyTrio->textPrinter, 0, 0x36);
+    text_printer_center_by_content(gClappyTrio->textPrinter, TRUE);
+    text_printer_set_palette(gClappyTrio->textPrinter, 0);
+    text_printer_set_colors(gClappyTrio->textPrinter, 0);
+    
+    gClappyTrio->unk = sprite_create(gSpriteHandler, 
+        clappy_trio_get_anim(CLAPPY_TRIO_ANIM_TEXT_BOX), 
+        0, 
+        0x78, 
+        0x36, 
+        0x47F6, 
+        1, 
+        0, 
+        0x80 << 8
+    );
+    sprite_set_y(gSpriteHandler, gClappyTrio->unk, 0x36);
+
+    gClappyTrio->grayscale = 0;
+    gClappyTrio->unk3 = 0;
+    
+    gameplay_set_input_buttons(A_BUTTON, 0);
+}
 
 #include "asm/engines/clappy_trio/asm_0803068c.s"
 
