@@ -27,9 +27,13 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 #include "asm/engines/clappy_trio/asm_0803080c.s"
 
-#include "asm/engines/clappy_trio/asm_0803088c.s"
+void func_0803088c(u32 volume) {
+    gClappyTrio->lionClapVolume = volume;
+}
 
-#include "asm/engines/clappy_trio/asm_08030898.s"
+void func_08030898(u8 enable) {
+    gClappyTrio->grayscale = enable;
+}
 
 #include "asm/engines/clappy_trio/asm_080308a4.s"
 

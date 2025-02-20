@@ -25,7 +25,11 @@ enum ClappyTrioAnimationsEnum {
 
 // Engine Types:
 struct ClappyTrioEngineData {
-    u8 pad[0x1c];
+    u8 pad[0x10];
+    u8 grayscale;
+    u8 pad3[0x7];
+    u16 lionClapVolume;
+    u8 pad2[0x2];
 };
 
 struct ClappyTrioCue {
@@ -50,7 +54,7 @@ extern void func_0803068c(void); // Engine Event 00 (Crouch)
 extern void func_0803074c(void); // Engine Event 01 (Crouch - Smirk)
 extern void func_0803080c(u32 lion); // Engine Event 02 (Manual Clap)
 extern void func_0803088c(); // Engine Event 04 (Set Manual Clap Volume)
-extern void func_08030898(u32 enable); // Engine Event 03 (Enable Grayscale Effect)
+extern void func_08030898(u8 enable); // Engine Event 03 (Enable Grayscale Effect)
 extern void clappy_trio_engine_update(void); // Game Engine Update
 extern void clappy_trio_engine_stop(void); // Game Engine Stop
 extern void clappy_trio_cue_spawn(struct Cue *, struct ClappyTrioCue *, u32 smileAfter);
