@@ -10,7 +10,12 @@ asm(".include \"include/gba.inc\""); // Temporary
 /* THE CLAPPY TRIO */
 
 
-#include "asm/engines/clappy_trio/asm_08030384.s"
+struct Animation *clappy_trio_get_anim(enum ClappyTrioAnimationsEnum anim) {
+    struct Animation *animation;
+    animation = clappy_trio_anim_table[anim][gClappyTrio->version];
+
+    return animation;
+}
 
 #include "asm/engines/clappy_trio/asm_080303a4.s"
 
@@ -58,9 +63,23 @@ void clappy_trio_cue_despawn(void) {
 
 #include "asm/engines/clappy_trio/asm_080308f4.s"
 
-#include "asm/engines/clappy_trio/asm_080309a8.s"
+void clappy_trio_cue_barely(struct Cue *cue, struct ClappyTrioCue *info, u32 pressed, u32 released) {
+    struct Lion *lion = &gClappyTrio->lion;
+    struct Animation *clapAnim = clappy_trio_get_anim(CLAPPY_TRIO_ANIM_CLAP);
 
-#include "asm/engines/clappy_trio/asm_080309f4.s"
+    sprite_set_anim(gSpriteHandler, lion->sprite, clapAnim, 2, 1, 0x7F, 0);
+
+    play_sound(&s_tebyoushi_pati_seqData);
+
+    beatscript_enable_loops();
+}
+
+void clappy_trio_cue_miss(struct Cue *cue, struct ClappyTrioCue *info) {
+    struct Lion *lion = &gClappyTrio->lion;
+    lion->unk2 = 1;
+    lion->unk3 = 2;
+    beatscript_enable_loops();
+}
 
 void clappy_trio_input_event(u32 pressed, u32 released) {
     struct Lion *lion = &gClappyTrio->lion;

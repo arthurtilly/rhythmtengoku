@@ -25,7 +25,7 @@ enum ClappyTrioAnimationsEnum {
 
 // Engine Types:
 struct ClappyTrioEngineData {
-    u8 pad[0x1]; // other games seem to put version here. i assume this is the version.
+    u8 version;
     struct Lion {
         u8 pad2[0x6];
         s16 sprite;
@@ -69,7 +69,7 @@ extern u32  clappy_trio_cue_update(struct Cue *cue, struct ClappyTrioCue *data, 
 extern void clappy_trio_cue_despawn(void);
 extern void clappy_trio_cue_hit(struct Cue *, struct ClappyTrioCue *, u32 pressed, u32 released);
 extern void clappy_trio_cue_barely(struct Cue *, struct ClappyTrioCue *, u32 pressed, u32 released);
-extern void clappy_trio_cue_miss(struct Cue *, struct ClappyTrioCue *);
+extern void clappy_trio_cue_miss(struct Cue *cue, struct ClappyTrioCue *info);
 extern void clappy_trio_input_event(u32 pressed, u32 released); // Input Event
 extern void clappy_trio_common_beat_animation(void); // Common Event 0 (Beat Animation)
 extern void clappy_trio_common_display_text(char *text); // Common Event 1 (Display Text)
