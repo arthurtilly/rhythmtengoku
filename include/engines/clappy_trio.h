@@ -25,11 +25,12 @@ enum ClappyTrioAnimationsEnum {
 
 // Engine Types:
 struct ClappyTrioEngineData {
-    u8 pad[0x10];
+    u8 pad[0x11];
+    u16 unk; // something about the text printer sprite
+    struct TextPrinter *textPrinter;
     u8 grayscale;
-    u8 pad3[0x7];
     u16 lionClapVolume;
-    u8 pad2[0x2];
+    u8 pad2;
 };
 
 struct ClappyTrioCue {
@@ -65,6 +66,6 @@ extern void clappy_trio_cue_barely(struct Cue *, struct ClappyTrioCue *, u32 pre
 extern void clappy_trio_cue_miss(struct Cue *, struct ClappyTrioCue *);
 extern void clappy_trio_input_event(u32 pressed, u32 released); // Input Event
 extern void clappy_trio_common_beat_animation(void); // Common Event 0 (Beat Animation)
-extern void clappy_trio_common_display_text(const char *); // Common Event 1 (Display Text)
-extern void func_08030bf0(); // Engine Event 05 (Hide Text Box)
+extern void clappy_trio_common_display_text(char *text); // Common Event 1 (Display Text)
+extern void func_08030bf0(u32 enabled); // Engine Event 05 (Hide Text Box)
 extern void clappy_trio_common_init_tutorial(struct Scene *); // Common Event 2 (Init. Tutorial)

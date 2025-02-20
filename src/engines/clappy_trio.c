@@ -1,4 +1,5 @@
 #include "engines/clappy_trio.h"
+#include "src/text_printer.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 
@@ -55,8 +56,12 @@ void func_08030898(u8 enable) {
 
 #include "asm/engines/clappy_trio/asm_08030a60.s"
 
-#include "asm/engines/clappy_trio/asm_08030bd8.s"
+void clappy_trio_common_display_text(char *text) {
+    text_printer_set_string(gClappyTrio->textPrinter, text);
+}
 
-#include "asm/engines/clappy_trio/asm_08030bf0.s"
+void func_08030bf0(u32 enabled) {
+    sprite_set_visible(gSpriteHandler, gClappyTrio->unk, enabled);
+}
 
 #include "asm/engines/clappy_trio/asm_08030c14.s"
