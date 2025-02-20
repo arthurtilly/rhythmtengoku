@@ -65,8 +65,8 @@ extern void func_08030898(u8 enable); // Engine Event 03 (Enable Grayscale Effec
 extern void clappy_trio_engine_update(void); // Game Engine Update
 extern void clappy_trio_engine_stop(void); // Game Engine Stop
 extern void clappy_trio_cue_spawn(struct Cue *, struct ClappyTrioCue *, u32 smileAfter);
-extern u32  clappy_trio_cue_update(struct Cue *, struct ClappyTrioCue *, u32 runningTime, u32 duration);
-extern void clappy_trio_cue_despawn(struct Cue *, struct ClappyTrioCue *);
+extern u32  clappy_trio_cue_update(struct Cue *cue, struct ClappyTrioCue *data, u32 runningTime, u32 duration);
+extern void clappy_trio_cue_despawn(void);
 extern void clappy_trio_cue_hit(struct Cue *, struct ClappyTrioCue *, u32 pressed, u32 released);
 extern void clappy_trio_cue_barely(struct Cue *, struct ClappyTrioCue *, u32 pressed, u32 released);
 extern void clappy_trio_cue_miss(struct Cue *, struct ClappyTrioCue *);

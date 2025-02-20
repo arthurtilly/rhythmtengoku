@@ -268,7 +268,7 @@ void karate_cue_update_object(struct KarateManCue *cue) {
         sprite_set_visible(gSpriteHandler, cue->sprite, FALSE);
         sprite_set_visible(gSpriteHandler, cue->shadow, FALSE);
     }
-
+    
     x = cue->unkC;
     y = cue->unk10;
     sprite_set_x_y_z(gSpriteHandler, cue->sprite, FIXED_TO_INT(x), FIXED_TO_INT(y), (0x4700 + cue->unk28 + cue->unk2E));

@@ -36,15 +36,25 @@ void func_08030898(u8 enable) {
     gClappyTrio->grayscale = enable;
 }
 
-#include "asm/engines/clappy_trio/asm_080308a4.s"
+void clappy_trio_engine_update(void) {
+    text_printer_update(gClappyTrio->textPrinter);
+}
 
-#include "asm/engines/clappy_trio/asm_080308b8.s"
+void clappy_trio_engine_stop(void) {
+}
 
 #include "asm/engines/clappy_trio/asm_080308bc.s"
 
-#include "asm/engines/clappy_trio/asm_080308d4.s"
+u32 clappy_trio_cue_update(struct Cue *cue, struct ClappyTrioCue *data, u32 runningTime, u32 duration) {
+    if (runningTime > ticks_to_frames(0x78)) {
+        return TRUE;
+    }
 
-#include "asm/engines/clappy_trio/asm_080308f0.s"
+    return FALSE;
+}
+
+void clappy_trio_cue_despawn(void) {
+}
 
 #include "asm/engines/clappy_trio/asm_080308f4.s"
 
