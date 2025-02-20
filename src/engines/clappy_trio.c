@@ -52,7 +52,20 @@ void func_08030898(u8 enable) {
 
 #include "asm/engines/clappy_trio/asm_080309f4.s"
 
-#include "asm/engines/clappy_trio/asm_08030a10.s"
+void clappy_trio_input_event(u32 pressed, u32 released) {
+    struct Lion *lion = &gClappyTrio->lion;
+    struct Animation *clapAnim = clappy_trio_get_anim(CLAPPY_TRIO_ANIM_CLAP);
+
+    sprite_set_anim(gSpriteHandler, lion->sprite, clapAnim, 2, 1, 0x7F, 0);
+
+    play_sound(&s_witch_donats_seqData);
+
+    lion->unk2 = 1;
+    lion->unk3 = 2;
+    
+    beatscript_enable_loops();
+}
+
 
 #include "asm/engines/clappy_trio/asm_08030a60.s"
 
@@ -64,4 +77,13 @@ void func_08030bf0(u32 enabled) {
     sprite_set_visible(gSpriteHandler, gClappyTrio->unk, enabled);
 }
 
-#include "asm/engines/clappy_trio/asm_08030c14.s"
+void clappy_trio_common_init_tutorial(struct Scene *skipDestination) {
+    if (skipDestination != NULL) {
+        gameplay_enable_tutorial(TRUE);
+        gameplay_set_skip_destination(skipDestination);
+        gameplay_set_skip_icon(1, TRUE);
+    } else {
+        gameplay_enable_tutorial(FALSE);
+        gameplay_set_skip_icon(0, FALSE);
+    }
+}

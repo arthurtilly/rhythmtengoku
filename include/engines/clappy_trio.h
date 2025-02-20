@@ -25,12 +25,18 @@ enum ClappyTrioAnimationsEnum {
 
 // Engine Types:
 struct ClappyTrioEngineData {
-    u8 pad[0x11];
+    u8 pad[0x1]; // other games seem to put version here. i assume this is the version.
+    struct Lion {
+        u8 pad2[0x6];
+        s16 sprite;
+        u8 unk2;
+        u8 unk3;
+    } lion;
+    u8 grayscale;
     u16 unk; // something about the text printer sprite
     struct TextPrinter *textPrinter;
-    u8 grayscale;
+    
     u16 lionClapVolume;
-    u8 pad2;
 };
 
 struct ClappyTrioCue {
