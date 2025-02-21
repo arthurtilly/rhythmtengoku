@@ -29,7 +29,7 @@ define_gameplay_scene scene_bouncy_road_unused, script_bouncy_road_unused_entry
 .section .script.main
 @ Bouncy Road (Unused) - Main Script
 
-script bouncy_road_unused_sub_089fe07c
+script script_bouncy_road_unused_wait4
     beat_anim
     rest 24
     beat_anim
@@ -45,7 +45,7 @@ script script_bouncy_road_unused_main
     set_tempo 120
     set_music_volume 256
     play_music s_f_even_road_seqData
-    call bouncy_road_unused_sub_089fe07c
+    call script_bouncy_road_unused_wait4
     bouncy_road_enable_ball_goal_sfx
     bouncy_road_deploy_ball 24
     beat_anim
@@ -56,10 +56,10 @@ script script_bouncy_road_unused_main
     rest 24
     beat_anim
     rest 24
-    call bouncy_road_unused_sub_089fe07c
-    call bouncy_road_unused_sub_089fe07c
+    call script_bouncy_road_unused_wait4
+    call script_bouncy_road_unused_wait4
     play_music s_f_even_road_seqData
-    call bouncy_road_unused_sub_089fe07c
+    call script_bouncy_road_unused_wait4
     bouncy_road_enable_ball_goal_sfx
     bouncy_road_deploy_ball 24
     beat_anim
@@ -72,59 +72,6 @@ script script_bouncy_road_unused_main
     rest 24
     bouncy_road_enable_ball_goal_sfx
     bouncy_road_deploy_ball 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    play_music s_f_even_road_seqData
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    bouncy_road_deploy_ball 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    bouncy_road_deploy_ball 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    bouncy_road_enable_ball_goal_sfx
-    bouncy_road_deploy_ball 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
-    beat_anim
-    rest 24
     beat_anim
     rest 24
     beat_anim
@@ -150,8 +97,6 @@ script script_bouncy_road_unused_main
     rest 24
     beat_anim
     rest 24
-    bouncy_road_enable_ball_goal_sfx
-    bouncy_road_deploy_ball 12
     beat_anim
     rest 24
     beat_anim
@@ -160,43 +105,98 @@ script script_bouncy_road_unused_main
     rest 24
     beat_anim
     rest 24
+    bouncy_road_deploy_ball 24
     beat_anim
     rest 24
     beat_anim
     rest 24
+    bouncy_road_deploy_ball 24
     beat_anim
     rest 24
-    beat_anim
-    rest 24
-    bouncy_road_deploy_ball 12
-    beat_anim
-    rest 24
-    bouncy_road_deploy_ball 12
-    beat_anim
-    rest 24
-    bouncy_road_deploy_ball 12
-    beat_anim
-    rest 24
-    bouncy_road_deploy_ball 12
-    beat_anim
-    rest 24
-    bouncy_road_deploy_ball 12
-    beat_anim
-    rest 24
-    bouncy_road_deploy_ball 12
-    beat_anim
-    rest 24
-    bouncy_road_deploy_ball 12
-    beat_anim
-    rest 24
-    bouncy_road_deploy_ball 12
     beat_anim
     rest 24
     bouncy_road_enable_ball_goal_sfx
-    bouncy_road_deploy_ball 12
-    call bouncy_road_unused_sub_089fe07c
+    bouncy_road_deploy_ball 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
     play_music s_f_even_road_seqData
-    call bouncy_road_unused_sub_089fe07c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bouncy_road_enable_ball_goal_sfx
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_enable_ball_goal_sfx
+    bouncy_road_deploy_ball 12
+    call script_bouncy_road_unused_wait4
+    play_music s_f_even_road_seqData
+    call script_bouncy_road_unused_wait4
     beat_anim
     rest 24
     beat_anim
