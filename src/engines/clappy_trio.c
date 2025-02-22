@@ -4,12 +4,13 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
+
 #define gClappyTrio ((struct ClappyTrioEngineData *)gCurrentEngineData)
 
 
 /* THE CLAPPY TRIO */
 
-
+// Get Animation
 struct Animation *clappy_trio_get_anim(enum ClappyTrioAnimationsEnum anim) {
     struct Animation *animation;
     animation = clappy_trio_anim_table[anim][gClappyTrio->version];
@@ -17,21 +18,39 @@ struct Animation *clappy_trio_get_anim(enum ClappyTrioAnimationsEnum anim) {
     return animation;
 }
 
-#include "asm/engines/clappy_trio/asm_080303a4.s"
+#include "asm/engines/clappy_trio/asm_080303a4.s" // i believe this function initializes the lion sprites
 
-#include "asm/engines/clappy_trio/asm_0803050c.s"
+// Graphics Init. 3
+void clappy_trio_init_gfx3(void) {
+    func_0800c604(0);
+    gameplay_start_screen_fade_in();
+}
 
-#include "asm/engines/clappy_trio/asm_0803051c.s"
+// Graphics Init. 2
+void clappy_trio_init_gfx2(void) {
+    s32 task;
+    func_0800c604(0);
+    task = func_08002ee0(get_current_mem_id(), clappy_trio_gfx_tables[gClappyTrio->version], 0x2000);
+    run_func_after_task(task, clappy_trio_init_gfx3, 0);
+}
 
-#include "asm/engines/clappy_trio/asm_0803055c.s"
+// Graphics Init. 1
+void clappy_trio_init_gfx1(void) {
+    s32 task;
 
+    func_0800c604(0);
+    task = start_new_texture_loader(get_current_mem_id(), clappy_trio_buffered_textures);
+    run_func_after_task(task, clappy_trio_init_gfx2, 0);
+}
+
+// Game Engine Start
 void clappy_trio_engine_start(u32 ver) {
     struct TextPrinter *printer;
 
     gClappyTrio->version = ver >> 2;
     gClappyTrio->unk = ver & 3;
     
-    func_0803055c();
+    clappy_trio_init_gfx1();
     scene_show_obj_layer();
     
     scene_hide_bg_layer(BG_LAYER_0);
@@ -68,35 +87,52 @@ void clappy_trio_engine_start(u32 ver) {
     gameplay_set_input_buttons(A_BUTTON, 0);
 }
 
-void func_0803068c(u32 playSound) {
-    u16 *lions = gClappyTrio->trio.sprite;
+// Engine Event 00 (Crouch)
+void clappy_trio_crouch(u32 mute) {
+    u16 *lions = gClappyTrio->trio.sprites;
 
-    sprite_set_anim(gSpriteHandler, lions[0], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, playSound, 0x7f, 0);
-    sprite_set_anim(gSpriteHandler, lions[1], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, playSound, 0x7f, 0);
-    sprite_set_anim(gSpriteHandler, lions[2], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, playSound, 0x7f, 0);
-    sprite_set_anim(gSpriteHandler, lions[3], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, playSound, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, lions[0], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, mute, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, lions[1], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, mute, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, lions[2], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, mute, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, lions[3], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, mute, 0x7f, 0);
 
-    if (!playSound) { 
+    if (!mute) { 
         play_sound(&s_f_handclap_ready_seqData);
     }
 }
 
-#include "asm/engines/clappy_trio/asm_0803074c.s"
+// Engine Event 01 (Crouch - Smirk)
+void clappy_trio_crouch_smirk(u32 mute) {
+    u16 *lions = gClappyTrio->trio.sprites;
+
+    sprite_set_anim(gSpriteHandler, lions[0], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_SMIRK), 0, mute, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, lions[1], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_SMIRK), 0, mute, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, lions[2], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_SMIRK), 0, mute, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, lions[3], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_SMIRK), 0, mute, 0x7f, 0);
+
+    if (!mute) { 
+        play_sound(&s_f_handclap_ready_seqData);
+    }
+}
 
 #include "asm/engines/clappy_trio/asm_0803080c.s"
 
-void func_0803088c(u32 volume) {
+// Engine Event 04 (Set Manual Clap Volume)
+void clappy_trio_set_clap_volume(u32 volume) {
     gClappyTrio->lionClapVolume = volume;
 }
 
-void func_08030898(u8 enable) {
+// Engine Event 03 (Enable Grayscale Effect)
+void clappy_trio_enable_grayscale(u8 enable) {
     gClappyTrio->grayscale = enable;
 }
 
+// Game Engine Update
 void clappy_trio_engine_update(void) {
     text_printer_update(gClappyTrio->textPrinter);
 }
 
+// Game Engine Stop (Stub)
 void clappy_trio_engine_stop(void) {
 }
 
@@ -104,6 +140,7 @@ void clappy_trio_cue_spawn(struct Cue *cue, struct ClappyTrioCue *info, u32 smil
     info->unk0_b5 = smileAfter;
 }
 
+// Cue - Update
 u32 clappy_trio_cue_update(struct Cue *cue, struct ClappyTrioCue *data, u32 runningTime, u32 duration) {
     if (runningTime > ticks_to_frames(0x78)) {
         return TRUE;
@@ -112,6 +149,7 @@ u32 clappy_trio_cue_update(struct Cue *cue, struct ClappyTrioCue *data, u32 runn
     return FALSE;
 }
 
+// Cue - Despawn (Stub)
 void clappy_trio_cue_despawn(void) {
 }
 
@@ -121,13 +159,14 @@ void clappy_trio_cue_barely(struct Cue *cue, struct ClappyTrioCue *info, u32 pre
     struct Trio *trio = &gClappyTrio->trio;
     struct Animation *clapAnim = clappy_trio_get_anim(CLAPPY_TRIO_ANIM_CLAP);
 
-    sprite_set_anim(gSpriteHandler, trio->sprite[3], clapAnim, 2, 1, 0x7F, 0);
+    sprite_set_anim(gSpriteHandler, trio->sprites[3], clapAnim, 2, 1, 0x7F, 0);
 
     play_sound(&s_tebyoushi_pati_seqData);
 
     beatscript_enable_loops();
 }
 
+// Cue - Miss
 void clappy_trio_cue_miss(struct Cue *cue, struct ClappyTrioCue *info) {
     struct Trio *trio = &gClappyTrio->trio;
     trio->unk = 1;
@@ -135,11 +174,12 @@ void clappy_trio_cue_miss(struct Cue *cue, struct ClappyTrioCue *info) {
     beatscript_enable_loops();
 }
 
+// Input Event
 void clappy_trio_input_event(u32 pressed, u32 released) {
     struct Trio *trio = &gClappyTrio->trio;
     struct Animation *clapAnim = clappy_trio_get_anim(CLAPPY_TRIO_ANIM_CLAP);
     
-    sprite_set_anim(gSpriteHandler, trio->sprite[3], clapAnim, 2, 1, 0x7F, 0);
+    sprite_set_anim(gSpriteHandler, trio->sprites[3], clapAnim, 2, 1, 0x7F, 0);
 
     play_sound(&s_witch_donats_seqData);
     
@@ -151,14 +191,17 @@ void clappy_trio_input_event(u32 pressed, u32 released) {
 
 #include "asm/engines/clappy_trio/asm_08030a60.s"
 
+// Common Event 1 (Display Text)
 void clappy_trio_common_display_text(char *text) {
     text_printer_set_string(gClappyTrio->textPrinter, text);
 }
 
-void func_08030bf0(u32 enabled) {
+// Engine Event 05 (Set Text Box Visibility)
+void clappy_trio_set_textbox_visibility(u32 enabled) {
     sprite_set_visible(gSpriteHandler, gClappyTrio->textBox, enabled);
 }
 
+// Common Event 2 (Init. Tutorial)
 void clappy_trio_common_init_tutorial(struct Scene *skipDestination) {
     if (skipDestination != NULL) {
         gameplay_enable_tutorial(TRUE);
