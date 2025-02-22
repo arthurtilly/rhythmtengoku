@@ -26,27 +26,28 @@ enum ClappyTrioAnimationsEnum {
 // Engine Types:
 struct ClappyTrioEngineData {
     u8 version;
-    u8 unk4;
-    struct Lion {
-        u8 unk5;
-        u8 unk6;
-        u8 pad2[0x4];
-        s16 sprite;
-        u8 unk2;
-        u8 unk3;
-    } lion;
+    u8 unk;
+    u8 unk2;
+    struct Trio {
+        s16 sprite[4];
+        u8 unk;
+        u8 unk7;
+        u8 unk4;
+    } trio;
+    
     u8 grayscale;
     u8 unk3;
-    u16 unk; // something about the text printer sprite
+    u16 textBox;
     struct TextPrinter *textPrinter;
-    
     u16 lionClapVolume;
+    u16 pad;
 };
 
 struct ClappyTrioCue {
+    u16 unk0_b0:5;
+    u16 unk0_b5:4;
     /* add fields here */
 };
-
 
 // Engine Definition Data:
 extern struct Animation **clappy_trio_anim_table[];
@@ -61,7 +62,7 @@ extern struct Animation *clappy_trio_get_anim(u32 anim); // Get Animation
 // extern ? func_0803051c(?);
 // extern ? func_0803055c(?);
 extern void clappy_trio_engine_start(u32 version); // Game Engine Start
-extern void func_0803068c(void); // Engine Event 00 (Crouch)
+extern void func_0803068c(u32 playSound); // Engine Event 00 (Crouch)
 extern void func_0803074c(void); // Engine Event 01 (Crouch - Smirk)
 extern void func_0803080c(u32 lion); // Engine Event 02 (Manual Clap)
 extern void func_0803088c(); // Engine Event 04 (Set Manual Clap Volume)
