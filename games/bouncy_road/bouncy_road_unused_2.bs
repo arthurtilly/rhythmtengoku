@@ -29,7 +29,7 @@ define_gameplay_scene scene_bouncy_road_unused_2, script_bouncy_road_unused_2_en
 .section .script.main
 @ Bouncy Road (Unused 2) - Main Script
 
-script bouncy_road_unused_2_sub_089fe9a0
+script script_bouncy_road_unused_2_wait4
     beat_anim
     rest 24
     beat_anim
@@ -48,7 +48,7 @@ script script_bouncy_road_unused_2_main
     rest 24
     enable_pause_menu
     play_music s_f_even_road_seqData
-    call bouncy_road_unused_2_sub_089fe9a0
+    call script_bouncy_road_unused_2_wait4
     bouncy_road_enable_ball_goal_sfx
     bouncy_road_deploy_ball 12
     beat_anim
@@ -87,9 +87,9 @@ script script_bouncy_road_unused_2_main
     rest 24
     beat_anim
     rest 24
-    call bouncy_road_unused_2_sub_089fe9a0
+    call script_bouncy_road_unused_2_wait4
     play_music s_f_even_road_seqData
-    call bouncy_road_unused_2_sub_089fe9a0
+    call script_bouncy_road_unused_2_wait4
     bouncy_road_deploy_ball 8
     beat_anim
     rest 16
@@ -106,7 +106,7 @@ script script_bouncy_road_unused_2_main
     rest 16
     beat_anim
     rest 16
-    call bouncy_road_unused_2_sub_089fe9a0
+    call script_bouncy_road_unused_2_wait4
     bouncy_road_enable_ball_goal_sfx
     bouncy_road_deploy_ball 24
     bouncy_road_deploy_ball 12
@@ -131,8 +131,8 @@ script script_bouncy_road_unused_2_main
     rest 24
     beat_anim
     rest 24
-    call bouncy_road_unused_2_sub_089fe9a0
-    call bouncy_road_unused_2_sub_089fe9a0
+    call script_bouncy_road_unused_2_wait4
+    call script_bouncy_road_unused_2_wait4
     bouncy_road_deploy_ball 6
     beat_anim
     rest 12

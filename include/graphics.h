@@ -9,9 +9,9 @@
 #define SCREEN_CENTER_X (SCREEN_WIDTH / 2)
 #define SCREEN_CENTER_Y (SCREEN_HEIGHT / 2)
 
-#define BG_TILESET_BASE(offset)  (void *)(VRAMBase + offset)
-#define BG_MAP_BASE(offset)      (void *)(VRAMBase + offset)
-#define OBJ_TILESET_BASE(offset) (void *)(VRAMBase + 0x10000 + offset)
+#define BG_TILESET_BASE(offset)  (void *)(VRAMBase + (offset))
+#define BG_MAP_BASE(offset)      (void *)(VRAMBase + (offset))
+#define OBJ_TILESET_BASE(offset) (void *)(VRAMBase + 0x10000 + (offset))
 
 #define GET_BG_TILESET_ADDR(tileset, ofs) ((u16 *)(VRAMBase + ((tileset) << 14) + (ofs)))
 #define GET_BG_MAP_ADDR(map, x, y)        (((u16 *)VRAMBase) + ((map) << 10) + (x) + ((y) << 5))
@@ -244,8 +244,8 @@ typedef void (*GfxTableSrcFunc)(void *dest);
 /* For convenience, some Graphics Table entry types have one-line macros: */
 #define ADD_BG_TEXTURE(tex, tilesetNum)      { (tex),  BG_TILESET_BASE((tilesetNum) << 14),  COMPRESSED_GFX_SOURCE }
 #define ADD_OBJ_TEXTURE(tex, tilesetNum)     { (tex),  OBJ_TILESET_BASE((tilesetNum) << 14), COMPRESSED_GFX_SOURCE }
-#define ADD_BG_MAP(map, mapNum)              { (map),  BG_MAP_BASE((mapNum) << 10),          COMPRESSED_GFX_SOURCE }
-#define ADD_BG_MAP_S(map, mapNum, size)      { (map),  BG_MAP_BASE((mapNum) << 10),          (size)                }
+#define ADD_BG_MAP(map, mapNum)              { (map),  BG_MAP_BASE((mapNum) << 11),          COMPRESSED_GFX_SOURCE }
+#define ADD_BG_MAP_S(map, mapNum, size)      { (map),  BG_MAP_BASE((mapNum) << 11),          (size)                }
 #define ADD_BG_PALETTE(pal, palNum, colors)  { (pal),  BG_PALETTE_BUFFER((palNum)),          ((colors) << 1)       }
 #define ADD_OBJ_PALETTE(pal, palNum, colors) { (pal),  OBJ_PALETTE_BUFFER((palNum)),         ((colors) << 1)       }
 #define ADD_CUSTOM_GFX_LOADER(func, dest)    { (func), (dest),                               FUNCTION_GFX_SOURCE   }

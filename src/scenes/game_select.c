@@ -2311,7 +2311,7 @@ s32 game_select_start_new_icon_animator(u16 memID, const void *texture, u16 *til
 
 // Animate Level Icon Overlay Texture
 s32 game_select_animate_icon(struct GameSelectOverlay *overlay, u32 tilesetNum, u32 baseTileNum) {
-    void *tilesetBase = BG_TILESET_BASE((tilesetNum * 0x4000) + (baseTileNum * 0x20));
+    void *tilesetBase = (void *)(VRAMBase + (tilesetNum * 0x4000) + (baseTileNum * 0x20));
 
     return game_select_start_new_icon_animator(get_current_mem_id(), overlay->texture, tilesetBase, overlay->width * overlay->height * 0x20, overlay->animData);
 }
@@ -2346,7 +2346,7 @@ void game_select_print_icon_map(u32 baseMapNum, u32 mapSize, u32 tileX, u32 tile
             break;
     }
 
-    mapDest = GET_BG_MAP_ADDR(baseMapNum + mapNum, tileX, tileY);
+    mapDest = ((u16 *)VRAMBase) + ((baseMapNum + mapNum) << 10) + tileX + (tileY << 5);
     mapTile = (palette << 12) | tileNum;
 
     for (i = 0; i < height; i++) {
@@ -2466,7 +2466,7 @@ void game_select_print_icon_maps(u32 baseMap, u32 mapSize, u32 tileX, u32 tileY,
 
 // Write Level Icon Texture to VRAM
 void game_select_print_icon_texture(const void *texture, u32 tileset, u32 tileNum) {
-    dma3_set(texture, BG_TILESET_BASE((tileset * 0x4000) + (tileNum * 0x20)), 0x20 * 3 * 3, 0x20, 0x200);
+    dma3_set(texture, (void *)(VRAMBase + (tileset * 0x4000) + (tileNum * 0x20)), 0x20 * 3 * 3, 0x20, 0x200);
 }
 
 

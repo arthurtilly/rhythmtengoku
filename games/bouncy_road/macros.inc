@@ -52,7 +52,7 @@
 
 
 @ [Event 0x01] Bounce Ball
-.macro bouncy_road_bounce_ball ballID
+.macro bouncy_road_bounce_ball_sync ballID
     bouncy_road_event BOUNCE_BALL, \ballID
 .endm
 
