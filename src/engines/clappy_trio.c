@@ -77,7 +77,7 @@ void clappy_trio_engine_start(u32 ver) {
         0x47F6, 
         1, 
         0, 
-        0x80 << 8
+        0x8000
     );
     sprite_set_y(gSpriteHandler, gClappyTrio->textBox, 0x36);
 
@@ -115,7 +115,38 @@ void clappy_trio_crouch_smirk(u32 mute) {
     }
 }
 
-#include "asm/engines/clappy_trio/asm_0803080c.s"
+void clappy_trio_manual_clap(u32 lion) {
+    struct Trio *trio = &gClappyTrio->trio;
+    struct Animation *anim;
+    s16 sprite;
+    u16 volume;
+
+    switch(lion) {
+        case 0:
+            sprite = trio->sprites[1];
+            break;
+        case 1:
+            sprite = trio->sprites[2];
+            break;
+        case 2:
+            sprite = trio->sprites[3];
+            break;
+        case 3:
+            sprite = trio->sprites[0];
+            break;
+        default:
+            sprite = 0xffff;
+            break;
+    }
+
+    anim = clappy_trio_get_anim(CLAPPY_TRIO_ANIM_CLAP);
+    
+    sprite_set_anim(gSpriteHandler, sprite, anim, 0, 1, 0x7f, 0);
+
+    volume = (gClappyTrio->lionClapVolume * 5) >> 3;
+    
+    play_sound_w_pitch_volume(&s_HC_seqData, volume, 0x200);
+}
 
 // Engine Event 04 (Set Manual Clap Volume)
 void clappy_trio_set_clap_volume(u32 volume) {

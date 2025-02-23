@@ -232,7 +232,7 @@ EngineEvent clappy_trio_common_events[] = {
 EngineEvent clappy_trio_engine_events[] = {
     /* 0x00 */ clappy_trio_crouch,
     /* 0x01 */ clappy_trio_crouch_smirk,
-    /* 0x02 */ func_0803080c,
+    /* 0x02 */ clappy_trio_manual_clap,
     /* 0x03 */ clappy_trio_enable_grayscale,
     /* 0x04 */ clappy_trio_set_clap_volume,
     /* 0x05 */ clappy_trio_set_textbox_visibility

@@ -64,7 +64,7 @@ extern void clappy_trio_init_gfx1(void);
 extern void clappy_trio_engine_start(u32 version); // Game Engine Start
 extern void clappy_trio_crouch(u32 mute); // Engine Event 00 (Crouch)
 extern void clappy_trio_crouch_smirk(u32 mute); // Engine Event 01 (Crouch - Smirk)
-extern void func_0803080c(u32 lion); // Engine Event 02 (Manual Clap)
+extern void clappy_trio_manual_clap(u32 lion); // Engine Event 02 (Manual Clap)
 extern void clappy_trio_set_clap_volume(); // Engine Event 04 (Set Manual Clap Volume)
 extern void clappy_trio_enable_grayscale(u8 enable); // Engine Event 03 (Enable Grayscale Effect)
 extern void clappy_trio_engine_update(void); // Game Engine Update
