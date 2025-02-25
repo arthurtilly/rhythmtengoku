@@ -51,13 +51,7 @@ struct GraphicsTable clappy_trio_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette 0 */ {
-        /* Src.  */ {
-            clappy_trio_bg_pal_0, 
-            clappy_trio_bg_pal_1, 
-            clappy_trio_bg_pal_2, 
-            clappy_trio_bg_pal_3, 
-            clappy_trio_bg_pal_4
-        },
+        /* Src.  */ clappy_trio_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

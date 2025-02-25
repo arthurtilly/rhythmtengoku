@@ -7,6 +7,7 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 #define gClappyTrio ((struct ClappyTrioEngineData *)gCurrentEngineData)
 
+
 enum ClappyTrioBeatAnimationState {
     CLAPPY_TRIO_ANIM_STATE_BEAT,
     CLAPPY_TRIO_ANIM_STATE_GLARE,
@@ -23,7 +24,8 @@ struct Animation *clappy_trio_get_anim(enum ClappyTrioAnimationsEnum anim) {
     return animation;
 }
 
-#include "asm/engines/clappy_trio/asm_080303a4.s" // i believe this function initializes the lion sprites
+// Init. Lion Sprites (https://decomp.me/scratch/kp2vu)
+#include "asm/engines/clappy_trio/asm_080303a4.s"
 
 // Graphics Init. 3
 void clappy_trio_init_gfx3(void) {
@@ -86,8 +88,8 @@ void clappy_trio_engine_start(u32 ver) {
     );
     sprite_set_y(gSpriteHandler, gClappyTrio->textBox, 0x36);
 
-    gClappyTrio->grayscale = FALSE;
-    gClappyTrio->revertGrayscale = FALSE;
+    gClappyTrio->grayscale = 0;
+    gClappyTrio->revertGrayscale = 0;
     
     gameplay_set_input_buttons(A_BUTTON, 0);
 }
@@ -189,25 +191,11 @@ u32 clappy_trio_cue_update(struct Cue *cue, struct ClappyTrioCue *data, u32 runn
 void clappy_trio_cue_despawn(void) {
 }
 
-void clappy_trio_cue_hit(struct Cue *cue, struct ClappyTrioCue *info, u32 pressed, u32 released) {
-    struct Trio *trio = &gClappyTrio->trio;
-
-    sprite_set_anim(gSpriteHandler, trio->sprites[3], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_CLAP), 0, 1, 0x7f, 0);
-    play_sound_w_pitch_volume(&s_HC_seqData, 0x100, 0x400);
-        
-    switch (info->unk0_b5) {
-        case 1:
-            trio->beatAnimation = CLAPPY_TRIO_ANIM_STATE_SMILE;
-            trio->resetBeatAnimation = 2;
-            break;
-    }
-    
-    if (gClappyTrio->grayscale) {
-        palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal_4, BG_PALETTE_BUFFER(0));
-        palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal_1, BG_PALETTE_BUFFER(0x10));
-        gClappyTrio->revertGrayscale = TRUE;
-    }
-}
+// Cue - Hit (https://decomp.me/scratch/UAIPR)
+// This and clappy_trio_common_beat_animation match if clappy_trio_bg_pal 
+// is split into seperate variables, however doing so is bad practice
+// and should be attempted another way
+#include "asm/engines/clappy_trio/asm_080308f4.s"
 
 void clappy_trio_cue_barely(struct Cue *cue, struct ClappyTrioCue *info, u32 pressed, u32 released) {
     struct Trio *trio = &gClappyTrio->trio;
@@ -243,67 +231,9 @@ void clappy_trio_input_event(u32 pressed, u32 released) {
     beatscript_enable_loops();
 }
 
-void clappy_trio_common_beat_animation(void) {
-    struct Trio *trio = &gClappyTrio->trio;
-    struct Animation *anim;
-    
-    u32 otherLionsAnimation;
-    u32 unk2;
-    s32 playerAnimation;
-    s32 clapAnimation;
-
-    u32 playerAnimCel;
-    u32 playerTotalCels;
-
-    switch (trio->beatAnimation) {
-        case CLAPPY_TRIO_ANIM_STATE_GLARE: 
-            otherLionsAnimation = CLAPPY_TRIO_ANIM_GLARE;
-            break;
-        case CLAPPY_TRIO_ANIM_STATE_SMILE:
-            otherLionsAnimation = CLAPPY_TRIO_ANIM_SMILE;
-            break;
-        default:
-            otherLionsAnimation = CLAPPY_TRIO_ANIM_BEAT;
-            break;
-    }
-
-    anim = clappy_trio_get_anim(otherLionsAnimation);
-
-    if (!(--trio->resetBeatAnimation)) {
-        trio->beatAnimation = CLAPPY_TRIO_ANIM_STATE_BEAT;
-    }
-
-    sprite_set_anim(gSpriteHandler, trio->sprites[0], anim, 0, 1, 0x7f, 0);
-    sprite_set_anim(gSpriteHandler, trio->sprites[1], anim, 0, 1, 0x7f, 0);
-    sprite_set_anim(gSpriteHandler, trio->sprites[2], anim, 0, 1, 0x7f, 0);
-
-    playerAnimation = (s32)sprite_get_data(gSpriteHandler, trio->sprites[3], SPRITE_DATA_ANIMATION);
-    clapAnimation = (s32)clappy_trio_get_anim(CLAPPY_TRIO_ANIM_CLAP);
-
-    unk2 = TRUE;
-    if (playerAnimation == clapAnimation) {
-        playerTotalCels = sprite_get_data(gSpriteHandler, trio->sprites[3], SPRITE_DATA_TOTAL_CELS);
-        playerAnimCel = sprite_get_anim_cel(gSpriteHandler, trio->sprites[3]);
-
-        if (playerAnimCel < playerTotalCels - 1) { 
-            unk2 = FALSE;
-        }
-    }
-
-    if (anim == clappy_trio_get_anim(CLAPPY_TRIO_ANIM_GLARE)) {
-        anim = clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT);
-    }
-
-    if (unk2) {
-        sprite_set_anim(gSpriteHandler, trio->sprites[3], anim, 0, 1, 0x7f, 0);
-    }
-
-    if (gClappyTrio->revertGrayscale != FALSE) { 
-        palette_fade_to(get_current_mem_id(), 0x10, 8, clappy_trio_bg_pal_4, clappy_trio_bg_pal_0, BG_PALETTE_BUFFER(0));
-        palette_fade_to(get_current_mem_id(), 0x10, 8, clappy_trio_bg_pal_1, clappy_trio_obj_pal[0], BG_PALETTE_BUFFER(0x10));
-        gClappyTrio->revertGrayscale = FALSE;
-    }
-}
+// Common Event 0 (Beat Animation) (https://decomp.me/scratch/UuWC8)
+// This matches, but also has issues with the palettes
+#include "asm/engines/clappy_trio/asm_08030a60.s"
 
 // Common Event 1 (Display Text)
 void clappy_trio_common_display_text(char *text) {
