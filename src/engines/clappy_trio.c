@@ -184,7 +184,25 @@ u32 clappy_trio_cue_update(struct Cue *cue, struct ClappyTrioCue *data, u32 runn
 void clappy_trio_cue_despawn(void) {
 }
 
-#include "asm/engines/clappy_trio/asm_080308f4.s"
+void clappy_trio_cue_hit(struct Cue *cue, struct ClappyTrioCue *info, u32 pressed, u32 released) {
+    struct Trio *trio = &gClappyTrio->trio;
+
+    sprite_set_anim(gSpriteHandler, trio->sprites[3], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_CLAP), 0, 1, 0x7f, 0);
+    play_sound_w_pitch_volume(&s_HC_seqData, 0x100, 0x400);
+        
+    switch (info->unk0_b5) {
+        case 1:
+            trio->unk = 2; // these were set in clappy_trio_cue_miss as well, its probably sort of enum
+            trio->unk7 = 2;
+            break;
+    }
+    
+    if (gClappyTrio->grayscale) {
+        palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal_4, BG_PALETTE_BUFFER(0));
+        palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal_1, BG_PALETTE_BUFFER(0x10)); // basically completely lost here ...
+        gClappyTrio->unk3 = 1;
+    }
+}
 
 void clappy_trio_cue_barely(struct Cue *cue, struct ClappyTrioCue *info, u32 pressed, u32 released) {
     struct Trio *trio = &gClappyTrio->trio;

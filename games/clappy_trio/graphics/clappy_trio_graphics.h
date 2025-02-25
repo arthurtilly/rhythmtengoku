@@ -26,7 +26,11 @@ extern struct CompressedGraphics D_08c61654; // OBJ Tiles - The Clappy Trio
 /* THE CLAPPY TRIO - PALETTES */
 
 extern Palette clappy_trio_obj_pal[];
-extern Palette clappy_trio_bg_pal[];
+extern Palette clappy_trio_bg_pal_0;
+extern Palette clappy_trio_bg_pal_1;
+extern Palette clappy_trio_bg_pal_2;
+extern Palette clappy_trio_bg_pal_3;
+extern Palette clappy_trio_bg_pal_4;
 
 /* THE SNAPPY TRIO - ANIMATIONS */
 

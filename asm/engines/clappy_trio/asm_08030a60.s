@@ -144,8 +144,8 @@ branch_08030b66: \n\
 /* 08030b70 */ BL get_current_mem_id \n\
 /* 08030b74 */ LSLS R0, R0, 0x10 \n\
 /* 08030b76 */ LSRS R0, R0, 0x10 \n\
-/* 08030b78 */ LDR R3, =(clappy_trio_bg_pal + 0x80) \n\
-/* 08030b7a */ LDR R1, =clappy_trio_bg_pal \n\
+/* 08030b78 */ LDR R3, =(clappy_trio_bg_pal_4) \n\
+/* 08030b7a */ LDR R1, =clappy_trio_bg_pal_0 \n\
 /* 08030b7c */ STR R1, [SP] \n\
 /* 08030b7e */ LDR R4, =(D_03004b10 + 0x54) \n\
 /* 08030b80 */ STR R4, [SP, 0x4] \n\
@@ -155,7 +155,7 @@ branch_08030b66: \n\
 /* 08030b8a */ BL get_current_mem_id \n\
 /* 08030b8e */ LSLS R0, R0, 0x10 \n\
 /* 08030b90 */ LSRS R0, R0, 0x10 \n\
-/* 08030b92 */ LDR R3, =(clappy_trio_bg_pal + 0x20) \n\
+/* 08030b92 */ LDR R3, =(clappy_trio_bg_pal_1) \n\
 /* 08030b94 */ LDR R1, =clappy_trio_obj_pal \n\
 /* 08030b96 */ STR R1, [SP] \n\
 /* 08030b98 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
