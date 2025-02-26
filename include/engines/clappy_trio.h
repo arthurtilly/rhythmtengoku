@@ -46,7 +46,7 @@ struct ClappyTrioEngineData {
 struct ClappyTrioCue {
     u16 unk0_b0:5;
     u16 unk0_b5:4;
-    /* add fields here */
+    u32 unk4;
 };
 
 // Engine Definition Data:
