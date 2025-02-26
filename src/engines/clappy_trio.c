@@ -7,6 +7,11 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 #define gClappyTrio ((struct ClappyTrioEngineData *)gCurrentEngineData)
 
+enum ClappyTrioBeatAnimationState {
+    CLAPPY_TRIO_ANIM_STATE_BEAT,
+    CLAPPY_TRIO_ANIM_STATE_GLARE,
+    CLAPPY_TRIO_ANIM_STATE_SMILE
+};
 
 /* THE CLAPPY TRIO */
 
@@ -81,8 +86,8 @@ void clappy_trio_engine_start(u32 ver) {
     );
     sprite_set_y(gSpriteHandler, gClappyTrio->textBox, 0x36);
 
-    gClappyTrio->grayscale = 0;
-    gClappyTrio->unk3 = 0;
+    gClappyTrio->grayscale = FALSE;
+    gClappyTrio->revertGrayscale = FALSE;
     
     gameplay_set_input_buttons(A_BUTTON, 0);
 }
@@ -192,15 +197,15 @@ void clappy_trio_cue_hit(struct Cue *cue, struct ClappyTrioCue *info, u32 presse
         
     switch (info->unk0_b5) {
         case 1:
-            trio->unk = 2; // these were set in clappy_trio_cue_miss as well, its probably sort of enum
-            trio->unk7 = 2;
+            trio->beatAnimation = CLAPPY_TRIO_ANIM_STATE_SMILE;
+            trio->resetBeatAnimation = 2;
             break;
     }
     
     if (gClappyTrio->grayscale) {
         palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal_4, BG_PALETTE_BUFFER(0));
-        palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal_1, BG_PALETTE_BUFFER(0x10)); // basically completely lost here ...
-        gClappyTrio->unk3 = 1;
+        palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal_1, BG_PALETTE_BUFFER(0x10));
+        gClappyTrio->revertGrayscale = TRUE;
     }
 }
 
@@ -218,8 +223,8 @@ void clappy_trio_cue_barely(struct Cue *cue, struct ClappyTrioCue *info, u32 pre
 // Cue - Miss
 void clappy_trio_cue_miss(struct Cue *cue, struct ClappyTrioCue *info) {
     struct Trio *trio = &gClappyTrio->trio;
-    trio->unk = 1;
-    trio->unk7 = 2;
+    trio->beatAnimation = CLAPPY_TRIO_ANIM_STATE_GLARE;
+    trio->resetBeatAnimation = 2;
     beatscript_enable_loops();
 }
 
@@ -232,13 +237,73 @@ void clappy_trio_input_event(u32 pressed, u32 released) {
 
     play_sound(&s_witch_donats_seqData);
     
-    trio->unk = 1;
-    trio->unk7 = 2;
+    trio->beatAnimation = CLAPPY_TRIO_ANIM_STATE_GLARE;
+    trio->resetBeatAnimation = 2;
     
     beatscript_enable_loops();
 }
 
-#include "asm/engines/clappy_trio/asm_08030a60.s"
+void clappy_trio_common_beat_animation(void) {
+    struct Trio *trio = &gClappyTrio->trio;
+    struct Animation *anim;
+    
+    u32 otherLionsAnimation;
+    u32 unk2;
+    s32 playerAnimation;
+    s32 clapAnimation;
+
+    u32 playerAnimCel;
+    u32 playerTotalCels;
+
+    switch (trio->beatAnimation) {
+        case CLAPPY_TRIO_ANIM_STATE_GLARE: 
+            otherLionsAnimation = CLAPPY_TRIO_ANIM_GLARE;
+            break;
+        case CLAPPY_TRIO_ANIM_STATE_SMILE:
+            otherLionsAnimation = CLAPPY_TRIO_ANIM_SMILE;
+            break;
+        default:
+            otherLionsAnimation = CLAPPY_TRIO_ANIM_BEAT;
+            break;
+    }
+
+    anim = clappy_trio_get_anim(otherLionsAnimation);
+
+    if (!(--trio->resetBeatAnimation)) {
+        trio->beatAnimation = CLAPPY_TRIO_ANIM_STATE_BEAT;
+    }
+
+    sprite_set_anim(gSpriteHandler, trio->sprites[0], anim, 0, 1, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, trio->sprites[1], anim, 0, 1, 0x7f, 0);
+    sprite_set_anim(gSpriteHandler, trio->sprites[2], anim, 0, 1, 0x7f, 0);
+
+    playerAnimation = (s32)sprite_get_data(gSpriteHandler, trio->sprites[3], SPRITE_DATA_ANIMATION);
+    clapAnimation = (s32)clappy_trio_get_anim(CLAPPY_TRIO_ANIM_CLAP);
+
+    unk2 = TRUE;
+    if (playerAnimation == clapAnimation) {
+        playerTotalCels = sprite_get_data(gSpriteHandler, trio->sprites[3], SPRITE_DATA_TOTAL_CELS);
+        playerAnimCel = sprite_get_anim_cel(gSpriteHandler, trio->sprites[3]);
+
+        if (playerAnimCel < playerTotalCels - 1) { 
+            unk2 = FALSE;
+        }
+    }
+
+    if (anim == clappy_trio_get_anim(CLAPPY_TRIO_ANIM_GLARE)) {
+        anim = clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT);
+    }
+
+    if (unk2) {
+        sprite_set_anim(gSpriteHandler, trio->sprites[3], anim, 0, 1, 0x7f, 0);
+    }
+
+    if (gClappyTrio->revertGrayscale != FALSE) { 
+        palette_fade_to(get_current_mem_id(), 0x10, 8, clappy_trio_bg_pal_4, clappy_trio_bg_pal_0, BG_PALETTE_BUFFER(0));
+        palette_fade_to(get_current_mem_id(), 0x10, 8, clappy_trio_bg_pal_1, clappy_trio_obj_pal[0], BG_PALETTE_BUFFER(0x10));
+        gClappyTrio->revertGrayscale = FALSE;
+    }
+}
 
 // Common Event 1 (Display Text)
 void clappy_trio_common_display_text(char *text) {

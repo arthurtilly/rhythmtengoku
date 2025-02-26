@@ -30,13 +30,13 @@ struct ClappyTrioEngineData {
     u8 unk2;
     struct Trio {
         s16 sprites[4];
-        u8 unk;
-        u8 unk7;
-        u8 unk4;
+        u8 beatAnimation;
+        u8 resetBeatAnimation;
+        u8 unk4; // this is probably an unused value?
     } trio;
     
     u8 grayscale;
-    u8 unk3;
+    u8 revertGrayscale;
     u16 textBox;
     struct TextPrinter *textPrinter;
     u16 lionClapVolume;
