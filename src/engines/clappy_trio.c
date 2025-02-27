@@ -7,7 +7,6 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 #define gClappyTrio ((struct ClappyTrioEngineData *)gCurrentEngineData)
 
-
 enum ClappyTrioBeatAnimationState {
     CLAPPY_TRIO_ANIM_STATE_BEAT,
     CLAPPY_TRIO_ANIM_STATE_GLARE,
@@ -54,8 +53,8 @@ void clappy_trio_init_gfx1(void) {
 void clappy_trio_engine_start(u32 ver) {
     struct TextPrinter *printer;
 
-    gClappyTrio->version = ver >> 2;
-    gClappyTrio->unk = ver & 3;
+    gClappyTrio->version = ver >> 2; 
+    gClappyTrio->isQuartet = ver & 3;
     
     clappy_trio_init_gfx1();
     scene_show_obj_layer();
@@ -76,20 +75,12 @@ void clappy_trio_engine_start(u32 ver) {
     text_printer_set_palette(gClappyTrio->textPrinter, 0);
     text_printer_set_colors(gClappyTrio->textPrinter, 0);
     
-    gClappyTrio->textBox = sprite_create(gSpriteHandler, 
-        clappy_trio_get_anim(CLAPPY_TRIO_ANIM_TEXT_BOX), 
-        0, 
-        0x78, 
-        0x36, 
-        0x47F6, 
-        1, 
-        0, 
-        0x8000
-    );
-    sprite_set_y(gSpriteHandler, gClappyTrio->textBox, 0x36);
+    gClappyTrio->textBox = sprite_create(gSpriteHandler, clappy_trio_get_anim(CLAPPY_TRIO_ANIM_TEXT_BOX), 0, 120, 54, 0x47F6, 1, 0, 0x8000);
 
-    gClappyTrio->grayscale = 0;
-    gClappyTrio->revertGrayscale = 0;
+    sprite_set_y(gSpriteHandler, gClappyTrio->textBox, 54);
+
+    gClappyTrio->grayscale = FALSE;
+    gClappyTrio->revertGrayscale = FALSE;
     
     gameplay_set_input_buttons(A_BUTTON, 0);
 }
@@ -152,7 +143,7 @@ void clappy_trio_manual_clap(u32 lion) {
 
     volume = (gClappyTrio->lionClapVolume * 5) >> 3;
     
-    play_sound_w_pitch_volume(&s_HC_seqData, volume, 0x200);
+    play_sound_w_pitch_volume(&s_HC_seqData, volume, INT_TO_FIXED(2.0));
 }
 
 // Engine Event 04 (Set Manual Clap Volume)
@@ -175,7 +166,7 @@ void clappy_trio_engine_stop(void) {
 }
 
 void clappy_trio_cue_spawn(struct Cue *cue, struct ClappyTrioCue *info, u32 smileAfter) {
-    info->unk0_b5 = smileAfter;
+    info->smileAfter = smileAfter;
 }
 
 // Cue - Update
