@@ -89,6 +89,6 @@
 
 
 @ [Event 0x05] Set Textbox Visibility
-.macro clappy_trio_set_textbox_visibility enabled
+.macro clappy_trio_textbox_shown enabled
     clappy_trio_event SET_TEXTBOX_VISIBILITY, \enabled
 .endm

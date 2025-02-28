@@ -651,7 +651,7 @@ void fireworks_common_beat_animation(void) {
 // Common Event 1 (Display Text)
 void fireworks_common_display_text(char *text) {
     struct PrintedTextAnim *textAnim;
-    
+
     if (text == NULL) {
         sprite_set_visible(gSpriteHandler, gFireworks->textSprite, FALSE);
     } else {
