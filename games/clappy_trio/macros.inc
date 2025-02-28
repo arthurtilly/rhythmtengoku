@@ -10,7 +10,7 @@
     .set LION_CLAP,              0x02
     .set GRAYSCALE_ON_NEXT_HIT,  0x03
     .set SET_LION_CLAP_VOLUME,   0x04
-    .set SET_TEXTBOX_VISIBILITY, 0x05
+    .set TEXTBOX_SHOWN,          0x05
 
     @ Cues
     .set CUE_FULL_BEAT,          0x00
@@ -90,5 +90,5 @@
 
 @ [Event 0x05] Set Textbox Visibility
 .macro clappy_trio_textbox_shown enabled
-    clappy_trio_event SET_TEXTBOX_VISIBILITY, \enabled
+    clappy_trio_event TEXTBOX_SHOWN, \enabled
 .endm

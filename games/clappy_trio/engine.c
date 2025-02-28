@@ -235,7 +235,7 @@ EngineEvent clappy_trio_engine_events[] = {
     /* 0x02 */ clappy_trio_manual_clap,
     /* 0x03 */ clappy_trio_enable_grayscale,
     /* 0x04 */ clappy_trio_set_clap_volume,
-    /* 0x05 */ clappy_trio_set_textbox_visibility
+    /* 0x05 */ clappy_trio_textbox_shown
 };
 
 // [D_089e4778] The Clappy Trio Game Engine

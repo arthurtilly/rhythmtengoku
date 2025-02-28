@@ -354,7 +354,7 @@ void clappy_trio_common_display_text(char *text) {
 }
 
 // Engine Event 05 (Set Text Box Visibility)
-void clappy_trio_set_textbox_visibility(u32 enabled) {
+void clappy_trio_textbox_shown(u32 enabled) {
     sprite_set_visible(gSpriteHandler, gClappyTrio->textBox, enabled);
 }
 

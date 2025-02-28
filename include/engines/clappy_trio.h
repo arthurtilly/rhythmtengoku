@@ -77,5 +77,5 @@ extern void clappy_trio_cue_miss(struct Cue *cue, struct ClappyTrioCue *info);
 extern void clappy_trio_input_event(u32 pressed, u32 released); // Input Event
 extern void clappy_trio_common_beat_animation(void); // Common Event 0 (Beat Animation)
 extern void clappy_trio_common_display_text(char *text); // Common Event 1 (Display Text)
-extern void clappy_trio_set_textbox_visibility(u32 enabled); // Engine Event 05 (Set Text Box Visibility)
+extern void clappy_trio_textbox_shown(u32 enabled); // Engine Event 05 (Set Text Box Visibility)
 extern void clappy_trio_common_init_tutorial(struct Scene *skipDestination); // Common Event 2 (Init. Tutorial)
