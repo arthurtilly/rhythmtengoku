@@ -11,7 +11,30 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 #include "asm/engines/quiz_show/asm_0803709c.s"
 
-#include "asm/engines/quiz_show/asm_08037178.s"
+void func_08037178(void) {
+    u32 i;
+    
+    // isEndless?
+    if (gQuizShow->unk0 != 1) return;
+
+    gQuizShow->unk4a = 0;
+
+    gQuizShow->unk4c = D_030046a8->data.unk294[3];
+
+    sprite_create(gSpriteHandler, &anim_quiz_show_current_score_label, 0, 0xc0, 4, 0x800, 0, 0, 0);
+    sprite_create(gSpriteHandler, &anim_quiz_show_high_score_label, 0, 0x3a, 4, 0x800, 0, 0, 0);
+
+    for (i = 0; i < 2; i++) {
+        gQuizShow->curScoreSprites[i] = sprite_create(gSpriteHandler, &anim_quiz_show_score_num, 0, 0xc0 - (i*8), 4, 0x800, 0, 0x7f, 0);
+    }
+
+    
+    for (i = 0; i < 2; i++) {
+        gQuizShow->highScoreSprites[i] = sprite_create(gSpriteHandler, &anim_quiz_show_score_num, 0, 0x3a - (i*8), 4, 0x800, 0, 0x7f, 0);
+    }
+    
+    func_0803709c();
+}
 
 #include "asm/engines/quiz_show/asm_08037280.s"
 

@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "engines.h"
+#include "graphics.h"
 
 #include "games/quiz_show/graphics/quiz_show_graphics.h"
 
@@ -24,7 +25,13 @@ enum QuizShowHostArmsEnum {
 
 // Engine Types:
 struct QuizShowEngineData {
-    u8 pad[0x58];
+    u8 unk0;
+    u32 pad4[0x11];
+    u16 pad48;
+    u16 unk4a;
+    u16 unk4c;
+    s16 curScoreSprites[2];
+    s16 highScoreSprites[2];
 };
 
 struct QuizShowCue {
