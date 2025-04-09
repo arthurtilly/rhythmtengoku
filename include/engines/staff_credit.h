@@ -7,7 +7,20 @@
 
 // Engine Types:
 struct StaffCreditEngineData {
-    u8 pad[0x80];
+    u8 version;
+    u8 unk_1;
+    u8 unk_2;
+    struct StaffCreditUnkStruct {
+        s16 sprite;
+        s16 x;
+        s16 y;
+    } unk_4[0xe];
+    u8 unk_74;
+    u8 unk_75;
+    s16 unk_76;
+    s16 unk_78;
+    u32 unk_7c;
+    //u8 pad4[0x6];
 };
 
 struct StaffCreditCue {
@@ -29,16 +42,16 @@ extern struct CreditsTextStartPos D_089df628[];
 extern void staff_credit_init_gfx3(void); // Graphics Init. 3
 extern void staff_credit_init_gfx2(void); // Graphics Init. 2
 extern void staff_credit_init_gfx1(void); // Graphics Init. 1
-extern void staff_credit_engine_start(u32 version); // Game Engine Start
+extern void staff_credit_engine_start(u8 version); // Game Engine Start
 extern void staff_credit_engine_event_stub(); // Engine Event 0x04 (STUB)
 // extern ? func_08023694(?);
 // extern ? func_080236e4(?);
 extern void func_0802372c(); // Engine Event 0x00 (?)
-extern void func_080237ec(); // Engine Event 0x01 (?)
-extern void func_080237f8(); // Engine Event 0x02 (?)
+extern void func_080237ec(u8 arg0); // Engine Event 0x01 (?)
+extern void func_080237f8(u8 arg0); // Engine Event 0x02 (?)
 // extern ? func_08023808(?);
 extern void func_08023898(); // Engine Event 0x03 (?)
-// extern ? func_080238ac(?);
+extern void func_080238ac(void);
 // extern ? func_080238c0(?);
 extern void staff_credit_engine_update(void); // Game Engine Update
 extern void staff_credit_engine_stop(void); // Game Engine Stop
