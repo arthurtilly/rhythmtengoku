@@ -15,7 +15,7 @@ struct GraphicsTable staff_credit_gfx_table[] = {
 };
 
 // [D_089df628] Text Position/Alignment Data
-struct CreditsTextStartPos D_089df628[] = {
+struct CreditsTextStartPos staff_credit_text_positions[] = {
     /* Left-Aligned */ {
         /* Anchor */ TEXT_ANCHOR_BOTTOM_LEFT,
         /* X Pos. */ 100
@@ -89,10 +89,10 @@ EngineEvent staff_credit_common_events[] = {
 
 // [D_089df6b8] Engine Events
 EngineEvent staff_credit_engine_events[] = {
-    /* 0x00 */ func_0802372c,
-    /* 0x01 */ func_080237ec,
-    /* 0x02 */ func_080237f8,
-    /* 0x03 */ func_08023898,
+    /* 0x00 */ staff_credit_print_text,
+    /* 0x01 */ staff_credit_set_text_alignment,
+    /* 0x02 */ staff_credit_set_text_scroll,
+    /* 0x03 */ staff_credit_set_bg,
     /* 0x04 */ staff_credit_engine_event_stub
 };
 

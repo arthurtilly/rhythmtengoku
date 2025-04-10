@@ -1,7 +1,5 @@
 #include "engines/staff_credit.h"
 
-asm(".include \"include/gba.inc\""); // Temporary
-
 // For readability.
 #define gStaffCredit ((struct StaffCreditEngineData *)gCurrentEngineData)
 
@@ -35,13 +33,14 @@ void staff_credit_init_gfx1(void) {
     run_func_after_task(data, staff_credit_init_gfx2, 0);
 }
 
+// Game Engine Start
 void staff_credit_engine_start(u8 version) {
     gStaffCredit->version = version;
     
     staff_credit_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
-    func_08023694();
+    staff_credit_initialize_text();
 
     D_03004b10.DISPCNT |= 0x2000;
     D_03004b10.BLDMOD = 0xc2;
@@ -49,157 +48,171 @@ void staff_credit_engine_start(u8 version) {
     D_03004b10.WIN0V = 0xa0;
     D_03004b10.WININ = 0x3f;
 
-    gStaffCredit->unk_76 = 0x1000;
-    gStaffCredit->unk_78 = 0;
+    gStaffCredit->bgBrightness = 0x1000;
+    gStaffCredit->brightnessMod = 0;
 
-    D_03004b10.COLEY = (s16)gStaffCredit->unk_76 >> 8;
+    D_03004b10.COLEY = (s16)gStaffCredit->bgBrightness >> 8;
 
-    gStaffCredit->unk_7c = 0;
+    gStaffCredit->gfxTable = NULL;
     gameplay_set_input_buttons(0, 0);
 }
 
+// Engine Event 0x04 (Stub)
 void staff_credit_engine_event_stub(void) {
 }
 
-void func_08023694(void) {
+// Init. Text Structs
+void staff_credit_initialize_text(void) {
     u32 i;
-    struct StaffCreditUnkStruct *unk;
-    gStaffCredit->unk_1 = 0;
+    struct CreditsText *text;
+    gStaffCredit->currentText = 0;
 
-    for (i = 0; i < 0xe; i++) {
-        unk = &gStaffCredit->unk_4[i];
-        unk->sprite = 0xffff;
+    for (i = 0; i < STAFF_CREDIT_TEXT_AMOUNT; i++) {
+        text = &gStaffCredit->creditsText[i];
+        text->sprite = 0xffff;
     }
 
-    gStaffCredit->unk_74 = 1;
-    gStaffCredit->unk_75 = gStaffCredit->unk_74;
-    gStaffCredit->unk_2 = 1;
+    gStaffCredit->scrollText = TRUE;
+    gStaffCredit->scrollTimer = gStaffCredit->scrollText;
+    gStaffCredit->textAlignment = 1;
 }
 
-void func_080236e4(u32 arg0) {
-    struct StaffCreditUnkStruct *unk = &gStaffCredit->unk_4[arg0];
+// Clear Text Sprite
+void staff_credit_clear_text(u32 index) {
+    struct CreditsText *text = &gStaffCredit->creditsText[index];
 
-    if (unk->sprite >= 0) {
-        text_printer_delete_anim(sprite_get_data(gSpriteHandler, unk->sprite, SPRITE_DATA_ANIMATION));
-        sprite_delete(gSpriteHandler, unk->sprite);
-        unk->sprite = -1;
+    if (text->sprite >= 0) {
+        text_printer_delete_anim(sprite_get_data(gSpriteHandler, text->sprite, SPRITE_DATA_ANIMATION));
+        sprite_delete(gSpriteHandler, text->sprite);
+        text->sprite = -1;
     }
 }
 
-void func_0802372c(const char *arg0) {
-    struct StaffCreditUnkStruct *unk = &gStaffCredit->unk_4[gStaffCredit->unk_1];
+// Engine Event 0x00 (Print Scrolling Text)
+void staff_credit_print_text(const char *string) {
+    struct CreditsText *text = &gStaffCredit->creditsText[gStaffCredit->currentText];
     struct Animation *anim;
-    u32 unk3;
+    u32 currentTextId;
     u32 color;
     
-    unk3 = (u32)gStaffCredit->unk_1;
+    currentTextId = (u32)gStaffCredit->currentText;
     
-    func_080236e4(unk3);
+    staff_credit_clear_text(currentTextId);
     
     color = 0;
-    text_printer_fill_vram_tiles(0, unk3 * 2 + 4, 0x20, 2, color);
+    text_printer_fill_vram_tiles(0, currentTextId * 2 + 4, 0x20, 2, color);
     
     anim = text_printer_get_formatted_line_anim(
         get_current_mem_id(),
         0,
-        unk3 * 2 + 4,
+        currentTextId * 2 + 4,
         TEXT_PRINTER_FONT_SMALL,
-        &arg0,
-        D_089df628[gStaffCredit->unk_2].anchor,
+        &string,
+        staff_credit_text_positions[gStaffCredit->textAlignment].anchor,
         0, 
         0x100,
         0,
         0xFFFFFFFF
     );
 
-    unk->x = D_089df628[gStaffCredit->unk_2].xPos;
-    unk->y = 0xa8;
-    unk->sprite = sprite_create(gSpriteHandler, anim, 0, unk->x, 0xa8, 0x800, 0, 0, 0);
+    text->x = staff_credit_text_positions[gStaffCredit->textAlignment].xPos;
+    text->y = 0xa8;
+    text->sprite = sprite_create(gSpriteHandler, anim, 0, text->x, 0xa8, 0x800, 0, 0, 0);
 
-    unk3 = gStaffCredit->unk_1 + 1;
-    gStaffCredit->unk_1 = unk3;
+    currentTextId = gStaffCredit->currentText + 1;
+    gStaffCredit->currentText = currentTextId;
     
-    if ((u8)unk3 > 0xd) {
-        gStaffCredit->unk_1 = 0;
+    if ((u8)currentTextId >= STAFF_CREDIT_TEXT_AMOUNT) {
+        gStaffCredit->currentText = 0;
     }
 }
 
-void func_080237ec(u8 arg0) {
-    gStaffCredit->unk_2 = arg0;
+// Engine Event 0x01 (Set Text Alignment)
+void staff_credit_set_text_alignment(u8 alignment) {
+    gStaffCredit->textAlignment = alignment;
 }
 
-void func_080237f8(u8 arg0) {
-    gStaffCredit->unk_74 = arg0;
+// Engine Event 0x02 (Set Text Scrolling)
+void staff_credit_set_text_scroll(u8 enabled) {
+    gStaffCredit->scrollText = enabled;
 }
 
-void func_08023808(void) {
+// Update Text Scroll
+void staff_credit_update_text_scroll(void) {
     u32 i;
-    u32 unk2;
-    struct StaffCreditUnkStruct *unk;
+    u32 scrollTimer;
+    struct CreditsText *text;
     
-    if (gStaffCredit->unk_74 == FALSE) {
+    if (gStaffCredit->scrollText == FALSE) {
         return;
     }
 
-    unk2 = gStaffCredit->unk_75 - 1;
-    gStaffCredit->unk_75 = unk2;
+    scrollTimer = gStaffCredit->scrollTimer - 1;
+    gStaffCredit->scrollTimer = scrollTimer;
 
-    if ((u8)unk2 != 0xFF) {
+    if ((u8)scrollTimer != 0xFF) {
         return;
     }
 
-    gStaffCredit->unk_75 = gStaffCredit->unk_74;
+    gStaffCredit->scrollTimer = gStaffCredit->scrollText;
 
-    for (i = 0; i < 0xe; i++) {
-        unk = &gStaffCredit->unk_4[i];
+    for (i = 0; i < STAFF_CREDIT_TEXT_AMOUNT; i++) {
+        text = &gStaffCredit->creditsText[i];
 
-        if (unk->sprite < 0) {
+        if (text->sprite < 0) {
             continue;
         }
         
-        unk->y--;
+        text->y--;
 
-        if (unk->y < -8) {
-            func_080236e4(i);
+        if (text->y < -8) {
+            staff_credit_clear_text(i);
         } else {
-            sprite_set_x_y(gSpriteHandler, unk->sprite, unk->x, unk->y);
+            sprite_set_x_y(gSpriteHandler, text->sprite, text->x, text->y);
         }
     }
 }
 
-void func_08023898(u32 arg0) {
-    gStaffCredit->unk_78 = 0x33;
-    gStaffCredit->unk_7c = arg0;
+// Engine Event 0x03 (Set Background)
+void staff_credit_set_bg(u32 gfxTable) {
+    gStaffCredit->brightnessMod = 0x33;
+    gStaffCredit->gfxTable = gfxTable;
 }
 
-void func_080238ac(void) {
-    gStaffCredit->unk_78 = 0xffcd;
+// Background Fade In
+void staff_credit_bg_fade_in(void) {
+    gStaffCredit->brightnessMod = -0x33;
 }
 
-void func_080238c0(void) {
-    gStaffCredit->unk_76 += gStaffCredit->unk_78;
-    gStaffCredit->unk_76 = clamp_int32(gStaffCredit->unk_76, 0x400, 0x1000);
+// Update Background Brightness
+void staff_credit_update_bg_brightness(void) {
+    gStaffCredit->bgBrightness += gStaffCredit->brightnessMod;
+    gStaffCredit->bgBrightness = clamp_int32(gStaffCredit->bgBrightness, 0x400, 0x1000);
 
-    D_03004b10.COLEY = (s16)gStaffCredit->unk_76 >> 8;
+    D_03004b10.COLEY = (s16)gStaffCredit->bgBrightness >> 8;
 
-    if (gStaffCredit->unk_7c && gStaffCredit->unk_76 == 0x1000) {
-        run_func_after_task(func_08002ee0(get_current_mem_id(), gStaffCredit->unk_7c, 0x2000), func_080238ac, 0);
-        gStaffCredit->unk_7c = FALSE;
+    if (gStaffCredit->gfxTable && gStaffCredit->bgBrightness == 0x1000) {
+        run_func_after_task(func_08002ee0(get_current_mem_id(), gStaffCredit->gfxTable, 0x2000), staff_credit_bg_fade_in, 0);
+        gStaffCredit->gfxTable = NULL;
     } 
 }
 
+// Game Engine Update
 void staff_credit_engine_update(void) {
-    func_080238c0();
-    func_08023808();
+    staff_credit_update_bg_brightness();
+    staff_credit_update_text_scroll();
 }
 
+// Game Engine Stop
 void staff_credit_engine_stop(void) {
     D_03004b10.DISPCNT &= 0xdfff;
 }
 
+// Cue - Spawn
 void staff_credit_cue_spawn(struct Cue *cue, struct StaffCreditCue *info, u32 arg) {
 }
 
+// Cue - Update
 u32 staff_credit_cue_update(struct Cue *cue, struct StaffCreditCue *info, u32 runningTime, u32 released) {
     if (runningTime > ticks_to_frames(0x78)) {
         return TRUE;
@@ -208,26 +221,34 @@ u32 staff_credit_cue_update(struct Cue *cue, struct StaffCreditCue *info, u32 ru
     }
 }
 
+// Cue - Despawn
 void staff_credit_cue_despawn(struct Cue *cue, struct StaffCreditCue *info) {
 }
 
+// Cue - Hit
 void staff_credit_cue_hit(struct Cue *cue, struct StaffCreditCue *info, u32 pressed, u32 released) {
 }
 
+// Cue - Barely
 void staff_credit_cue_barely(struct Cue *cue, struct StaffCreditCue *info, u32 pressed, u32 released) {
 }
 
+// Cue - Miss
 void staff_credit_cue_miss(struct Cue *cue, struct StaffCreditCue *info) {
 }
 
+// Input Event
 void staff_credit_input_event(u32 pressed, u32 released) {
 }
 
+// Common Event 0 (Beat Animation, Unimplemented)
 void staff_credit_common_beat_animation(void) {
 }
 
+// Common Event 1 (Display Text, Unimplemented)
 void staff_credit_common_display_text(void) {
 }
 
+// Common Event 2 (Init. Tutorial, Unimplemented)
 void staff_credit_common_init_tutorial(void) {
 }

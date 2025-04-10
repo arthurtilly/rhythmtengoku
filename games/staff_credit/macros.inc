@@ -5,13 +5,18 @@
 @ Load Data
 .macro load_staff_credit_labels
     @ Game Events
-    .set EVENT_00,      0x00
-    .set EVENT_01,      0x01
-    .set EVENT_02,      0x02
-    .set EVENT_03,      0x03
+    .set PRINT_TEXT,          0x00
+    .set SET_TEXT_ALIGNMENT,  0x01
+    .set TOGGLE_TEXT_SCROLL,  0x02
+    .set SET_BACKGROUND,      0x03
 
     @ Cues
     .set CUE_DEFAULT, 0x00
+
+    @ [Event 0x01] Set Text Alignment
+    .set ALIGNMENT_LEFT,   0x00
+    .set ALIGNMENT_RIGHT,  0x01
+    .set ALIGNMENT_CENTER, 0x02
 .endm
 
 
@@ -31,25 +36,25 @@
 .endm
 
 
-@ [Event 0x00] ?
-.macro staff_credit_event00 args
-    staff_credit_event EVENT_00, \args
+@ [Event 0x00] Print Scrolling Text
+.macro staff_credit_print_text text
+    staff_credit_event PRINT_TEXT, \text
 .endm
 
 
-@ [Event 0x01] ?
-.macro staff_credit_event01 args
-    staff_credit_event EVENT_01, \args
+@ [Event 0x01] Set Text Alignment
+.macro staff_credit_set_text_alignment alignment
+    staff_credit_event SET_TEXT_ALIGNMENT, \alignment
 .endm
 
 
-@ [Event 0x02] ?
-.macro staff_credit_event02
-    staff_credit_event EVENT_02, 0
+@ [Event 0x02] Stop Text Scroll
+.macro staff_credit_stop_text_scroll
+    staff_credit_event TOGGLE_TEXT_SCROLL, 0
 .endm
 
 
-@ [Event 0x03] ?
-.macro staff_credit_event03 args
-    staff_credit_event EVENT_03, \args
+@ [Event 0x03] Set Background
+.macro staff_credit_set_bg gfxTable
+    staff_credit_event SET_BACKGROUND, \gfxTable
 .endm
