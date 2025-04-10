@@ -5,18 +5,18 @@
 @ Load Data
 .macro load_clappy_trio_labels
     @ Game Events
-    .set LIONS_CROUCH,          0x00
-    .set LIONS_CROUCH_SMIRK,    0x01
-    .set LION_CLAP,             0x02
-    .set GRAYSCALE_ON_NEXT_HIT, 0x03
-    .set SET_LION_CLAP_VOLUME,  0x04
-    .set HIDE_TEXTBOX,          0x05
+    .set LIONS_CROUCH,           0x00
+    .set LIONS_CROUCH_SMIRK,     0x01
+    .set LION_CLAP,              0x02
+    .set GRAYSCALE_ON_NEXT_HIT,  0x03
+    .set SET_LION_CLAP_VOLUME,   0x04
+    .set TEXTBOX_SHOWN,          0x05
 
     @ Cues
-    .set CUE_FULL_BEAT,         0x00
-    .set CUE_HALF_BEAT,         0x01
-    .set CUE_FULL_BEAT_W_SMILE, 0x04
-    .set CUE_HALF_BEAT_W_SMILE, 0x05
+    .set CUE_FULL_BEAT,          0x00
+    .set CUE_HALF_BEAT,          0x01
+    .set CUE_FULL_BEAT_W_SMILE,  0x04
+    .set CUE_HALF_BEAT_W_SMILE,  0x05
 .endm
 
 
@@ -55,8 +55,8 @@
 
 
 @ [Event 0x00] Crouch
-.macro clappy_trio_crouch_param unkParam
-    clappy_trio_event LIONS_CROUCH, \unkParam
+.macro clappy_trio_crouch_param playSound
+    clappy_trio_event LIONS_CROUCH, \playSound
 .endm
 
 .macro clappy_trio_crouch
@@ -88,7 +88,7 @@
 .endm
 
 
-@ [Event 0x05] Hide Textbox
-.macro clappy_trio_hide_textbox unkParam
-    clappy_trio_event HIDE_TEXTBOX, \unkParam
+@ [Event 0x05] Set Textbox Visibility
+.macro clappy_trio_textbox_shown enabled
+    clappy_trio_event TEXTBOX_SHOWN, \enabled
 .endm

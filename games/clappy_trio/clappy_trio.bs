@@ -147,7 +147,7 @@ script script_clappy_trio_main
     rest 24
     rest 24
     clear_text_f
-    clappy_trio_hide_textbox 0
+    clappy_trio_textbox_shown FALSE
     clappy_trio_crouch_smirk
     rest 24
     run scene_stop_music
@@ -522,7 +522,7 @@ script script_clappy_trio_practice
     rest 6
     init_tutorial scene_clappy_trio_skipped_practice
     print_text_f D_0805af14
-    clappy_trio_hide_textbox 1
+    clappy_trio_textbox_shown TRUE
     play_sfx_vol s_f_handclap_pi_G4_seqData, 50
     rest 24
     rest 24
