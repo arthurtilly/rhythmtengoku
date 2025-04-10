@@ -26,41 +26,6 @@ struct Animation *clappy_trio_get_anim(enum ClappyTrioAnimationsEnum anim) {
 // Init. Lion Sprites (https://decomp.me/scratch/kp2vu)
 #include "asm/engines/clappy_trio/asm_080303a4.s"
 
-/* some of the gClappyTrio field names are outdated
-void func_080303a4(struct Trio *trio) {
-    u16 offset;
-    s32 unk;
-    u16 gap;
-    u16 result;
-    
-    trio->sprites[0] = sprite_create(gSpriteHandler, clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, 0x40, 0x40, 0x4800, 1, 0x7f, 0);
-
-    if (gClappyTrio->isQuartet == TRUE) {
-        offset = 0x18;
-        unk = 1;
-    } else {
-        offset = 0;
-        sprite_set_visible(gSpriteHandler, trio->sprites[0], FALSE);
-        unk = 0;
-    }
-
-    // ... and now its all matching except for the registers in the subs being swapped
-    // as if its supposed to do offset - -gap
-    // but that doesn't work.. im so confused
-    
-    sprite_set_x_y(gSpriteHandler, trio->sprites[0], -gap + -offset, 0x88);
-    trio->sprites[1] = sprite_create(gSpriteHandler, clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, offset + 0x48, 0x88, 0x4800, 1, 0x7f, 0);
-    trio->sprites[2] = sprite_create(gSpriteHandler, clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, offset + 0x78, 0x88, 0x4800, 1, 0x7f, 0);
-    trio->sprites[3] = sprite_create(gSpriteHandler, clappy_trio_get_anim(CLAPPY_TRIO_ANIM_BEAT), 0, offset + 0xa8, 0x88, 0x4800, 1, 0x7f, 0);
-
-    trio->unk = 0;
-    trio->unk7 = 1;
-
-    sprite_create(gSpriteHandler, clappy_trio_get_anim(CLAPPY_TRIO_ANIM_YOU), 0, offset + 0xa8, 0x98, 0x4800, 0, 0, 0);
-    sprite_create(gSpriteHandler, clappy_trio_get_anim(CLAPPY_TRIO_ANIM_SIGN), unk, 0x78, 0x38, 0x4800, 0, 0, 0);
-}
-*/
-
 // Graphics Init. 3
 void clappy_trio_init_gfx3(void) {
     func_0800c604(0);
@@ -218,10 +183,9 @@ void clappy_trio_cue_despawn(void) {
 }
 
 // Cue - Hit (https://decomp.me/scratch/UAIPR)
-// This and clappy_trio_common_beat_animation match if clappy_trio_bg_pal 
-// is split into seperate variables, however doing so is bad practice
-// and should be attempted another way
 #include "asm/engines/clappy_trio/asm_080308f4.s"
+
+// This function works as intended when the Makefile's NONMATCHING is set to 1
 /*
 void clappy_trio_cue_hit(struct Cue *cue, struct ClappyTrioCue *info, u32 pressed, u32 released) {
     struct Trio *trio = &gClappyTrio->trio;
@@ -229,17 +193,17 @@ void clappy_trio_cue_hit(struct Cue *cue, struct ClappyTrioCue *info, u32 presse
     sprite_set_anim(gSpriteHandler, trio->sprites[3], clappy_trio_get_anim(CLAPPY_TRIO_ANIM_CLAP), 0, 1, 0x7f, 0);
     play_sound_w_pitch_volume(&s_HC_seqData, 0x100, 0x400);
         
-    switch (info->unk0_b5) {
+    switch (info->smileAfter) {
         case 1:
-            trio->unk = 2; // these were set in clappy_trio_cue_miss as well, its probably sort of enum
-            trio->unk7 = 2;
+            trio->beatAnimation = CLAPPY_TRIO_ANIM_STATE_SMILE;
+            trio->resetBeatAnimation = 2;
             break;
     }
     
     if (gClappyTrio->grayscale) {
-        palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal_4, BG_PALETTE_BUFFER(0));
-        palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal_1, BG_PALETTE_BUFFER(0x10)); // basically completely lost here ...
-        gClappyTrio->unk3 = 1;
+        palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal[4], BG_PALETTE_BUFFER(0));
+        palette_fade_in(get_current_mem_id(), 10, 8, 0x7fff, clappy_trio_bg_pal[1], BG_PALETTE_BUFFER(0x10));
+        gClappyTrio->revertGrayscale = TRUE;
     }
 }
 */
@@ -279,9 +243,9 @@ void clappy_trio_input_event(u32 pressed, u32 released) {
 }
 
 // Common Event 0 (Beat Animation) (https://decomp.me/scratch/UuWC8)
-// This matches, but also has issues with the palettes
 #include "asm/engines/clappy_trio/asm_08030a60.s"
 
+// This function works as intended when the Makefile's NONMATCHING is set to 1
 /*
 void clappy_trio_common_beat_animation(void) {
     struct Trio *trio = &gClappyTrio->trio;
@@ -295,7 +259,7 @@ void clappy_trio_common_beat_animation(void) {
     u32 playerAnimCel;
     u32 playerTotalCels;
 
-    switch (trio->unk) {
+    switch (trio->beatAnimation) {
         case 1:
             otherLionsAnimation = CLAPPY_TRIO_ANIM_GLARE;
             break;
@@ -309,9 +273,9 @@ void clappy_trio_common_beat_animation(void) {
 
     anim = clappy_trio_get_anim(otherLionsAnimation);
 
-    trio->unk7--;
-    if (!trio->unk7) {
-        trio->unk = 0;
+    trio->resetBeatAnimation--;
+    if (!trio->resetBeatAnimation) {
+        trio->beatAnimation = CLAPPY_TRIO_ANIM_BEAT;
     }
 
     sprite_set_anim(gSpriteHandler, trio->sprites[0], anim, 0, 1, 0x7f, 0);
@@ -338,15 +302,14 @@ void clappy_trio_common_beat_animation(void) {
     if (unk2) {
         sprite_set_anim(gSpriteHandler, trio->sprites[3], anim, 0, 1, 0x7f, 0);
     }
-
-    // unk3 is set in clappy_trio_cue_hit, i assume its the "un-grayscale" flag then
-    if (gClappyTrio->unk3) { 
-        palette_fade_to(get_current_mem_id(), 0x10, 8, clappy_trio_bg_pal_4, clappy_trio_bg_pal_0, BG_PALETTE_BUFFER(0));
-        palette_fade_to(get_current_mem_id(), 0x10, 8, clappy_trio_bg_pal_1, clappy_trio_obj_pal[0], BG_PALETTE_BUFFER(0x10));
-        gClappyTrio->unk3 = FALSE;
+    
+    if (gClappyTrio->revertGrayscale) { 
+        palette_fade_to(get_current_mem_id(), 0x10, 8, clappy_trio_bg_pal[4], clappy_trio_bg_pal[0], BG_PALETTE_BUFFER(0));
+        palette_fade_to(get_current_mem_id(), 0x10, 8, clappy_trio_bg_pal[1], clappy_trio_obj_pal[0], BG_PALETTE_BUFFER(0x10));
+        gClappyTrio->revertGrayscale = FALSE;
     }
-}
-*/
+}*/
+
 
 // Common Event 1 (Display Text)
 void clappy_trio_common_display_text(char *text) {
