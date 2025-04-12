@@ -51,7 +51,25 @@ enum RhythmToysDemoButtonsEnum {
 
 // Engine Types:
 struct RhythmToysEngineData {
-    u8 pad[0x384];
+    u8 version;
+    struct DrumTechController *drumtech;
+    u8 unused[0x34c];
+    s16 unk_354;
+    s16 unk_356;
+    u8 unk_358[6];
+    u8 unk_35e;
+    u8 unk_35f;
+    s16 unk_360;
+    u8 unk_362;
+    struct RhythmToysDemo *currentDemoAction;
+    s32 unk_368;
+    s16 unk_36c[6];
+    u8 unk_378;
+    u8 pad3[0x3];
+    struct SoundPlayer *unk_37c;
+    u8 unk_380;
+    u8 unk_381;
+    u16 unk_382;
 };
 
 struct RhythmToysCue {
