@@ -392,10 +392,10 @@ u8 rhythm_toys_machine_anim_ids[] = {
 
 // [D_089e9e58] Rhythm Toys Play Functions
 RhythmToysPlayFunc rhythm_toys_play_func_table[] = {
-    /* CAT1 */ func_08044014,
-    /* CAT2 */ func_08044014,
-    /* LOVE */ func_080441cc,
-    /* RAP  */ func_08044074
+    /* CAT1 */ rhythm_toys_cat_machine_play,
+    /* CAT2 */ rhythm_toys_cat_machine_play,
+    /* LOVE */ rhythm_toys_love_machine_play,
+    /* RAP  */ rhythm_toys_rap_machine_play
 };
 
 

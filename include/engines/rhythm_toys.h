@@ -54,22 +54,21 @@ struct RhythmToysEngineData {
     u8 version;
     struct DrumTechController *drumtech;
     u8 unused[0x34c];
-    s16 unk_354;
-    s16 unk_356;
-    u8 unk_358[6];
-    u8 unk_35e;
-    u8 unk_35f;
-    s16 unk_360;
-    u8 unk_362;
+    s16 characterSpriteR;
+    s16 characterSpriteL;
+    u8 buttonTimers[6];
+    u8 updateDisabled;
+    u8 hasNoDemo;
+    s16 demoSprite;
+    u8 demoEnabled;
     struct RhythmToysDemo *currentDemoAction;
-    s32 unk_368;
-    s16 unk_36c[6];
-    u8 unk_378;
-    u8 pad3[0x3];
-    struct SoundPlayer *unk_37c;
-    u8 unk_380;
-    u8 unk_381;
-    u16 unk_382;
+    s32 demoDeltaTime;
+    s16 buttonSprites[6];
+    u8 musicPlaying;
+    struct SoundPlayer *soundPlayer;
+    u8 rapMachineSfxTable;
+    u8 playAltRapMachineSong;
+    u16 changeRapMachineSfxTableTimer;
 };
 
 struct RhythmToysCue {
@@ -106,25 +105,25 @@ extern RhythmToysPlayFunc rhythm_toys_play_func_table[];
 
 
 // Functions:
-extern void func_08044014(u32 button); // Cat Machine Play Func.
-extern void func_08044074(u32 button); // Rap Machine Play Func.
-extern void func_080441cc(u32 button); // Confession Machine Play Func.
-// extern ? func_08044208(?);
-// extern ? func_08044228(?);
-// extern ? func_08044248(?);
-// extern ? func_08044268(?);
-// extern ? func_08044320(?);
-// extern ? func_080443c0(?);
-// extern ? func_0804442c(?);
+extern void rhythm_toys_cat_machine_play(u32 button); // Cat Machine Play Func.
+extern void rhythm_toys_rap_machine_play(u32 button); // Rap Machine Play Func.
+extern void rhythm_toys_love_machine_play(u32 button); // Confession Machine Play Func.
+extern struct Animation* rhythm_toys_get_sprite_anim(u32 sprite); // Get Sprite Animation
+extern u16 rhythm_toys_get_sprite_x(u32 sprite); // Get Sprite X
+extern u16 rhythm_toys_get_sprite_y(u32 sprite); // Get Sprite Y
+extern void rhythm_toys_init_demo(void); // Init. Demo
+extern void rhythm_toys_toggle_demo(u32 currentMachine); // Toggle Demo
+extern void rhythm_toys_end_demo(void); // End Demo
+extern void rhythm_toys_update_demo(void); // Update Demo
 extern void rhythm_toys_init_gfx3(void); // Graphics Init. 3
 extern void rhythm_toys_init_gfx2(void); // Graphics Init. 2
 extern void rhythm_toys_init_gfx1(void); // Graphics Init. 1
 extern void rhythm_toys_engine_start(u32 version); // Game Engine Start
 extern void rhythm_toys_engine_event_stub(void); // Engine Event 0x00 (STUB)
-// extern ? func_08044730(?);
-// extern ? func_0804475c(?);
-// extern ? func_080447f4(?);
-// extern ? func_08044810(?);
+extern void rhythm_toys_reset_button_timer(u32 button); // Reset Button Timer
+extern void rhythm_toys_button_press(s32 button); // Press Button
+extern void rhythm_toys_play_music(struct SongHeader *song); // Play Music
+extern void rhythm_toys_stop_music(void); // Stop Music
 extern void rhythm_toys_engine_update(void); // Game Engine Update
 extern void rhythm_toys_engine_stop(void); // Game Engine Stop
 extern void rhythm_toys_cue_spawn(struct Cue *, struct RhythmToysCue *, u32 param); // Cue - Spawn
