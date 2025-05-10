@@ -5,6 +5,7 @@
 #include "sound.h"
 #include "data/data_08936b54.h"
 #include "src/bitmap_font.h"
+#include "src/graphics_table.h"
 
 struct unk_struct_08008b00 {
     s16 unk0;
@@ -81,8 +82,8 @@ extern u32 update_scheduled_function_task(struct ScheduledFunctionTask *task);
 extern s32 schedule_function_call(u16 memID, void *function, s32 param, u32 delay);
 
 /* BUFFERED TEXTURE */
-// extern ? func_08008594(?);
-// extern ? func_080085e4(?);
+extern u32 decompress_gfx_init(struct CompressedGFX *gfx, u32 size, u32 limit, struct GFXDecompressProgress *progress);
+extern u32 decompress_gfx_resume(struct GFXDecompressProgress *progress);
 // extern ? func_08008608(?);
 // extern ? func_0800861c(?);
 // extern ? func_08008628(?);
@@ -92,7 +93,7 @@ extern s32 schedule_function_call(u16 memID, void *function, s32 param, u32 dela
 // extern ? func_08008720(?);
 extern struct TextureLoader *init_texture_loader_task(struct TextureLoaderInputs *inputs);
 extern u32 update_texture_loader_task(struct TextureLoader *task);
-extern u32 start_new_texture_loader(u16 memID, struct CompressedGraphics **textureList);
+extern u32 start_new_texture_loader(u16 memID, struct CompressedData **textureList);
 
 /* ? */
 extern s32 clamp_int32(s32 var, s32 min, s32 max); // Signed Clamp

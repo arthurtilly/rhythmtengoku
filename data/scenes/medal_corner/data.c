@@ -29,6 +29,6 @@ char medal_corner_locked_text[] = "ÅHÅHÅH";
 
 
 // [D_089dd79c] Buffered Textures List
-struct CompressedGraphics *medal_corner_buffered_textures[] = {
+struct CompressedData *medal_corner_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

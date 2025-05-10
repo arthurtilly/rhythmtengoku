@@ -17,7 +17,7 @@ struct BouncyRoadPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *bouncy_road_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *bouncy_road_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable bouncy_road_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

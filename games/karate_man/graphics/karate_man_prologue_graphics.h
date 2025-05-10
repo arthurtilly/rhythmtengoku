@@ -10,9 +10,9 @@ extern struct Animation anim_karate_man_prologue_kick[];
 
 /* PROLOGUE (KARATE MAN) - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08bea934;
-extern struct CompressedGraphics D_08beab8c;
-extern struct CompressedGraphics D_08be9f5c;
+extern struct CompressedData karate_man_prologue_bg_tiles;
+extern struct CompressedData karate_man_prologue_bg_map;
+extern struct CompressedData karate_man_prologue_obj;
 
 /* PROLOGUE (KARATE MAN) - PALETTES */
 

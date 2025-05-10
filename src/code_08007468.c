@@ -731,7 +731,7 @@ void interp_screen_window_size(u16 memID, u32 window, u32 duration,
 /* STRING */
 
 
-extern char D_08936c64[]; // "ï¿½Oï¿½Pï¿½Qï¿½Rï¿½Sï¿½Tï¿½Uï¿½Vï¿½Wï¿½X"
+extern char D_08936c64[]; // "?¿½O?¿½P?¿½Q?¿½R?¿½S?¿½T?¿½U?¿½V?¿½W?¿½X"
 
 
 // Copy Substring
@@ -1025,12 +1025,40 @@ s32 schedule_function_call(u16 memID, void *function, s32 param, u32 delay) {
 
 /* BUFFERED TEXTURE */
 
+static struct GFXDecompressProgress D_030010d0;
+extern u32 decompress_gfx_rom(struct GFXDecompressProgress *);
 
-static s32 D_030010d0[9]; // unknown type
+u32 decompress_gfx_init(struct CompressedGFX *gfx, u32 size, u32 limit, struct GFXDecompressProgress *progress) {
+    u32 (*decompress_gfx)(struct GFXDecompressProgress *);
 
-#include "asm/code_08007468/asm_08008594.s"
+    if (!progress) {
+        progress = &D_030010d0;
+    }
+    progress->data = gfx->data;
+    progress->size = size;
+    progress->count = ((gfx->count - 1) << 16) | 0x2020;
+    progress->curwin1 = *gfx->window1;
+    progress->curwin2 = *gfx->window2;
+    progress->win1 = gfx->window1 + 1;
+    progress->win2 = gfx->window2 + 1;
+    progress->lim1 = limit;
+    progress->lim2 = limit;
 
-#include "asm/code_08007468/asm_080085e4.s"
+    decompress_gfx = decompress_gfx_rom;
+    return decompress_gfx(progress);
+}
+
+u32 decompress_gfx_resume(struct GFXDecompressProgress *progress) {
+    u32 (*decompress_gfx)(struct GFXDecompressProgress *);
+
+    if (!progress) {
+        progress = &D_030010d0;
+    }
+    progress->lim1 = progress->lim2;
+
+    decompress_gfx = decompress_gfx_rom;
+    return decompress_gfx(progress);
+}
 
 #include "asm/code_08007468/asm_08008608.s"
 

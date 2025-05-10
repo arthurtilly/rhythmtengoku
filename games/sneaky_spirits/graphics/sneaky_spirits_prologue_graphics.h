@@ -9,9 +9,9 @@ extern struct Animation anim_sneaky_spirits_prologue_title[];
 
 /* PROLOGUE (SNEAKY SPIRITS) - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08be1c50;
-extern struct CompressedGraphics D_08be1dfc;
-extern struct CompressedGraphics D_08be0ff8;
+extern struct CompressedData sneaky_spirits_prologue_bg_tiles;
+extern struct CompressedData sneaky_spirits_prologue_bg_map;
+extern struct CompressedData sneaky_spirits_prologue_obj;
 
 /* PROLOGUE (SNEAKY SPIRITS) - PALETTES */
 

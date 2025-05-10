@@ -75,7 +75,7 @@ struct PolyrhythmCue {
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *polyrhythm_buffered_textures[];
+extern struct CompressedData *polyrhythm_buffered_textures[];
 extern struct GraphicsTable *polyrhythm_gfx_tables[];
 extern s16 polyrhythm_lane_start_x[2]; // Lane Start X Positions
 extern s16 polyrhythm_lane_start_y[2]; // Lane Start Y Positions

@@ -148,7 +148,7 @@ extern struct Animation *night_walk_star_anim[]; // Stars
 extern struct Animation *night_walk_star_expand_anim[]; // Star Flashes
 extern struct SongHeader *D_089e2ef8[];
 extern struct DrumTechInstrument drumtech_drum_bank[];
-extern struct CompressedGraphics *night_walk_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *night_walk_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable night_walk_gfx_table[]; // Graphics Table
 extern struct DrumTechNote drum_seq_night_walk_kick_barely[];
 extern struct DrumTechNote *night_walk_drum_seq_kick[];

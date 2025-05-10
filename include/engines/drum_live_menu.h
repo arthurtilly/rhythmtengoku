@@ -24,7 +24,7 @@ struct DrumLiveMenuCue {
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *drum_live_menu_buffered_textures[];
+extern struct CompressedData *drum_live_menu_buffered_textures[];
 extern struct GraphicsTable drum_live_menu_gfx_table[];
 extern const char *drum_live_menu_poster_desc[];
 

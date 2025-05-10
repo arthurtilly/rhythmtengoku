@@ -176,7 +176,7 @@ extern struct SpriteHandler *gSpriteHandler; // gSpriteHandler
 **  This is only ever used for textures/charsets, as the varied pixel data and
 **  sheer size makes RLE largely ineffective on its own.
 */
-struct Huffman {
+struct CompressedGFX {
     const u16 *data;
     u16 size;
     u16 count;
@@ -190,11 +190,8 @@ struct Huffman {
 **  further compressed in the format above. The former is used for BG Map data,
 **  while the latter is used for textures/charsets.
 */
-struct CompressedGraphics {
-    union {
-        const struct Huffman *huffman;
-        const u16 *raw;
-    } data;
+struct CompressedData {
+    const void *data;
     const u8 *rleData;
     u16 rleSize;
     u16 rleOffset;
@@ -202,7 +199,7 @@ struct CompressedGraphics {
 };
 
 /*
-** Textures can have their "Huffman" data decompressed and buffered to memory
+** Textures can have their data decompressed and buffered to memory
 ** for background loading and faster texture swapping. This has to be done
 ** before Graphics Tables are loaded to avoid redundancy.
 **  Scenes and Engines typically include a list of such textures, and code for

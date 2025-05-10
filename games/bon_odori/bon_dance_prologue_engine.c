@@ -5,24 +5,24 @@
 
 
 // [D_089ea3e4] Buffered Textures List
-struct CompressedGraphics *bon_dance_prologue_buffered_textures[] = {
+struct CompressedData *bon_dance_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ea3e8] Graphics Table
 struct GraphicsTable bon_dance_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08be694c,
+        /* Src.  */ &bon_dance_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08be6d70,
+        /* Src.  */ &bon_dance_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08be3e20,
+        /* Src.  */ &bon_dance_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

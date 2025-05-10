@@ -25,29 +25,29 @@ u16 mannequin_input_buttons[] = {
 };
 
 // [D_089df3ac] Buffered Textures List
-struct CompressedGraphics *mannequin_buffered_textures[] = {
+struct CompressedData *mannequin_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089df3b0] Graphics Table
 struct GraphicsTable mannequin_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c34478,
+        /* Src.  */ &mannequin_factory_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c35f18,
+        /* Src.  */ &mannequin_factory_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c360b0,
+        /* Src.  */ &mannequin_factory_bg_map_practice,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c35c9c,
+        /* Src.  */ &mannequin_factory_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

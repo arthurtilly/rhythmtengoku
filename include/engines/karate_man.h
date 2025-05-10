@@ -102,9 +102,9 @@ struct KarateManCue {
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *karate_buffered_textures[]; // Buffered Textures List
+extern struct CompressedData *karate_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable *karate_gfx_tables[]; // Graphics Table
-extern struct CompressedGraphics *karate_bg_face_textures[]; // BG Face Graphics
+extern struct CompressedData *karate_bg_face_textures[]; // BG Face Graphics
 extern u8 karate_flow_palette_low[];    // BG Palette Index (Low Flow)
 extern u8 karate_flow_palette_high[];    // BG Palette Index (High Flow)
 

@@ -37,10 +37,10 @@ extern struct Animation anim_game_select_perfect_rank[];
 
 /* GAME SELECT - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08cc9854;
-extern struct CompressedGraphics D_08cc9d14;
-extern struct CompressedGraphics D_08cc9e14;
-extern struct CompressedGraphics D_08cc9148;
+extern struct CompressedData game_select_bg_tiles;
+extern struct CompressedData game_select_bg_map_description;
+extern struct CompressedData game_select_bg_map_perfect_notice;
+extern struct CompressedData game_select_obj;
 
 /* GAME SELECT - PALETTES */
 

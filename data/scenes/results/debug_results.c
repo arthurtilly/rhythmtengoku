@@ -55,6 +55,6 @@ struct GraphicsTable debug_results_gfx_table[] = {
 };
 
 // [D_089d757c] Buffered Textures List
-struct CompressedGraphics *debug_results_buffered_textures[] = {
+struct CompressedData *debug_results_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

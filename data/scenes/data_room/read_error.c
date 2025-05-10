@@ -13,6 +13,6 @@ struct GraphicsTable read_error_gfx_table[] = {
 
 
 // [D_089d80f8] Buffered Textures List
-struct CompressedGraphics *read_error_buffered_textures[] = {
+struct CompressedData *read_error_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

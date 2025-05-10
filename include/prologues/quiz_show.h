@@ -16,7 +16,7 @@ struct QuizShowPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *quiz_show_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *quiz_show_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable quiz_show_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

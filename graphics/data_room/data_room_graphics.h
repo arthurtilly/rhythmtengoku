@@ -14,9 +14,9 @@ extern struct Animation anim_data_room_user_fall_asleep[];
 
 /* DATA ROOM (MENU) - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08cc77a4;
-extern struct CompressedGraphics D_08cc7a40;
-extern struct CompressedGraphics D_08cc7330;
+extern struct CompressedData data_room_bg_tiles;
+extern struct CompressedData data_room_bg_map;
+extern struct CompressedData data_room_obj;
 
 /* DATA ROOM (MENU) - PALETTES */
 
@@ -30,25 +30,25 @@ extern struct Animation anim_reading_icon_next[];
 
 /* DATA ROOM (READING) - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08cd29ac;
-extern struct CompressedGraphics D_08cd2cec;
-extern struct CompressedGraphics D_08cd1d28;
-extern struct CompressedGraphics D_08cd21cc;
-extern struct CompressedGraphics D_08cd31d8;
-extern struct CompressedGraphics D_08cd3470;
-extern struct CompressedGraphics D_08ccf798;
-extern struct CompressedGraphics D_08ccfa5c;
-extern struct CompressedGraphics D_08cd0a10;
-extern struct CompressedGraphics D_08cd0cf8;
-extern struct CompressedGraphics D_08ccd074;
-extern struct CompressedGraphics D_08ccd350;
-extern struct CompressedGraphics D_08cce92c;
-extern struct CompressedGraphics D_08cceb58;
-extern struct CompressedGraphics D_08cceda8;
-extern struct CompressedGraphics D_08ccef6c;
-extern struct CompressedGraphics D_08cce120;
-extern struct CompressedGraphics D_08cce57c;
-extern struct CompressedGraphics D_08cccb04;
+extern struct CompressedData reading_style_cherry_bg_tiles;
+extern struct CompressedData reading_style_cherry_bg_map;
+extern struct CompressedData reading_style_train_bg_tiles;
+extern struct CompressedData reading_style_train_bg_map;
+extern struct CompressedData reading_style_sea_bg_tiles;
+extern struct CompressedData reading_style_sea_bg_map;
+extern struct CompressedData reading_style_haiku_bg_tiles;
+extern struct CompressedData reading_style_haiku_bg_map;
+extern struct CompressedData reading_style_classroom_bg_tiles;
+extern struct CompressedData reading_style_classroom_bg_map;
+extern struct CompressedData reading_style_bulletin_bg_tiles;
+extern struct CompressedData reading_style_bulletin_bg_map;
+extern struct CompressedData reading_style_cooking_bg_tiles;
+extern struct CompressedData reading_style_cooking_bg_map;
+extern struct CompressedData reading_style_mail_bg_tiles;
+extern struct CompressedData reading_style_mail_bg_map;
+extern struct CompressedData reading_style_manzai_bg_tiles;
+extern struct CompressedData reading_style_manzai_bg_map;
+extern struct CompressedData reading_obj;
 
 /* DATA ROOM (READING) - PALETTES */
 
@@ -68,8 +68,8 @@ extern struct Animation anim_read_error_unk1[];
 
 /* READ ERROR - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08cd29ac;
-extern struct CompressedGraphics D_08cd2cec;
+extern struct CompressedData reading_style_cherry_bg_tiles;
+extern struct CompressedData reading_style_cherry_bg_map;
 
 /* READ ERROR - PALETTES */
 

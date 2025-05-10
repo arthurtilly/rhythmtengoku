@@ -57,7 +57,7 @@ struct SpriteVector3 {
 // Engine Definition Data:
 extern struct Animation **ninja_bodyguard_anim_table[];
 extern struct SpriteVector3 D_089e69cc[];
-extern struct CompressedGraphics *ninja_bodyguard_buffered_textures[];
+extern struct CompressedData *ninja_bodyguard_buffered_textures[];
 extern struct GraphicsTable *ninja_bodyguard_gfx_tables[];
 
 

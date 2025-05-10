@@ -19,7 +19,7 @@ struct PerfectSceneData {
 
 // DATA
 extern struct GraphicsTable perfect_certificate_gfx_table[];
-extern struct CompressedGraphics *perfect_certificate_buffered_textures[];
+extern struct CompressedData *perfect_certificate_buffered_textures[];
 extern const char *perfect_gift_directive_text[];
 extern s8 unassigned_campaign_gift_songs[];
 

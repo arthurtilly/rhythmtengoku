@@ -16,7 +16,7 @@ struct MarchingOrders2PrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *marching_orders_2_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *marching_orders_2_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable marching_orders_2_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

@@ -60,6 +60,6 @@ struct GraphicsTable debug_menu_gfx_table[] = {
 
 
 // [D_089ddb20] Buffered Textures List
-struct CompressedGraphics *debug_menu_buffered_textures[] = {
+struct CompressedData *debug_menu_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

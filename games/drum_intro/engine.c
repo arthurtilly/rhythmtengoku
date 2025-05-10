@@ -78,24 +78,24 @@ struct DrumTechKit *drum_intro_kits[] = {
 
 
 // [D_089e0024] Buffered Textures List
-struct CompressedGraphics *drum_intro_buffered_textures[] = {
+struct CompressedData *drum_intro_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e0028] Graphics Table (Unused Intro - Teacher Drumming)
 struct GraphicsTable gfx_table_drum_intro_talk[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c4cf00,
+        /* Src.  */ &drum_intro_talk_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c4d040,
+        /* Src.  */ &drum_intro_talk_bg_map,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c4cca8,
+        /* Src.  */ &drum_intro_talk_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -115,17 +115,17 @@ struct GraphicsTable gfx_table_drum_intro_talk[] = {
 // [D_089e0070] Graphics Table (Unused Intro - Player Drumming)
 struct GraphicsTable gfx_table_drum_intro_play[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c4af00,
+        /* Src.  */ &drum_intro_play_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c4b164,
+        /* Src.  */ &drum_intro_play_bg_map,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c4a970,
+        /* Src.  */ &drum_intro_play_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -145,27 +145,27 @@ struct GraphicsTable gfx_table_drum_intro_play[] = {
 // [D_089e00b8] Graphics Table (Tanuki & Monkey)
 struct GraphicsTable gfx_table_tanuki_and_monkey[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08ce6ebc,
+        /* Src.  */ &tanuki_and_monkey_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08ce707c,
+        /* Src.  */ &tanuki_and_monkey_bg_map,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08ce7188,
+        /* Src.  */ &tanuki_and_monkey_bg_map_blank,
         /* Dest. */ BG_MAP_BASE(0xF800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c4a970,
+        /* Src.  */ &drum_intro_play_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08ce6cbc,
+        /* Src.  */ &tanuki_and_monkey_obj,
         /* Dest. */ OBJ_TILESET_BASE(0x5000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -190,7 +190,7 @@ struct GraphicsTable gfx_table_tanuki_and_monkey[] = {
 // [D_089e0124] Graphics Table (Drum Samurai Cutscene)
 struct GraphicsTable gfx_table_drum_samurai_cutscene[] = {
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c4cca8,
+        /* Src.  */ &drum_intro_talk_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

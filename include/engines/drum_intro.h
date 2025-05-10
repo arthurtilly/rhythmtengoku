@@ -56,7 +56,7 @@ extern const char D_0805a06c[];
 extern struct DrumTechNote *tanuki_and_monkey_bgm_seq_table[];
 extern u16 D_089dfe94[];
 extern struct DrumTechKit *drum_intro_kits[];
-extern struct CompressedGraphics *drum_intro_buffered_textures[];
+extern struct CompressedData *drum_intro_buffered_textures[];
 extern struct GraphicsTable *drum_intro_gfx_tables[];
 extern struct Vector2 D_089e0164[];
 extern struct Animation *D_089e0170[][4];

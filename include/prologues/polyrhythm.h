@@ -16,7 +16,7 @@ struct PolyrhythmPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *polyrhythm_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *polyrhythm_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable polyrhythm_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

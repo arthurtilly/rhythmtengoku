@@ -9,9 +9,9 @@ extern struct Animation anim_remix_4_prologue_title[];
 
 /* PROLOGUE (REMIX 4) - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08c0dc88;
-extern struct CompressedGraphics D_08c0e168;
-extern struct CompressedGraphics D_08c0b644;
+extern struct CompressedData remix_4_prologue_bg_tiles;
+extern struct CompressedData remix_4_prologue_bg_map;
+extern struct CompressedData remix_4_prologue_obj;
 
 /* PROLOGUE (REMIX 4) - PALETTES */
 

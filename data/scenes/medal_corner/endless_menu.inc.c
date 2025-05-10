@@ -30,22 +30,22 @@ struct MedalCornerLevel endless_menu_levels[] = {
 // [D_089dd588] Endless Games Menu - Graphics Table
 struct GraphicsTable endless_menu_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08cc4670,
+        /* Src.  */ &endless_games_menu_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cc4a00,
+        /* Src.  */ &endless_games_menu_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cc3b7c,
+        /* Src.  */ &endless_games_menu_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cd8fa4,
+        /* Src.  */ &medal_corner_obj,
         /* Dest. */ OBJ_TILESET_BASE(0x5000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

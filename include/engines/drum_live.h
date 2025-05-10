@@ -186,7 +186,7 @@ extern u16 drum_live_color_masks[];
 extern u8 drum_live_brg_targets[];
 extern BgMapAnim *drum_live_crowd_bg_maps[];
 extern struct DrumTechKit *drum_live_kits[];
-extern struct CompressedGraphics *drum_live_buffered_textures[];
+extern struct CompressedData *drum_live_buffered_textures[];
 extern struct GraphicsTable *drum_live_gfx_tables[];
 extern struct Vector2 drum_live_performer_sprite_offsets[3][3];
 extern u8 drum_live_guitarist_anim_map_head[];

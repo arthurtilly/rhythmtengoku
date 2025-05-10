@@ -16,7 +16,7 @@ struct RhythmTweezersPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *rhythm_tweezers_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *rhythm_tweezers_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable rhythm_tweezers_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

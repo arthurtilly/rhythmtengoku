@@ -16,7 +16,7 @@ struct CosmicDancePrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *cosmic_dance_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *cosmic_dance_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable cosmic_dance_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

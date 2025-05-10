@@ -16,7 +16,7 @@ struct TapTrialPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *tap_trial_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *tap_trial_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable tap_trial_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

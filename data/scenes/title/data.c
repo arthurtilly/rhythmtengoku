@@ -40,17 +40,17 @@ struct TitleLogoCharData title_logo_char_data[TOTAL_TITLE_LOGO_BUBBLES] = {
 // [D_089dcfa4] Graphics Table
 struct GraphicsTable title_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08cd663c,
+        /* Src.  */ &title_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cd7ae0,
+        /* Src.  */ &title_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cd7948,
+        /* Src.  */ &title_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -69,6 +69,6 @@ struct GraphicsTable title_gfx_table[] = {
 
 
 // [D_089dcfec] Buffered Textures List
-struct CompressedGraphics *title_buffered_textures[] = {
+struct CompressedData *title_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

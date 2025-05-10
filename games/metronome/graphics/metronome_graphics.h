@@ -36,7 +36,7 @@ extern struct Animation anim_mr_upbeat_l_mope_l[];
 
 /* METRONOME - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08c702d0;
+extern struct CompressedData metronome_obj;
 
 /* METRONOME - PALETTES */
 

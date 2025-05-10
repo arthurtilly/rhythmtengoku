@@ -16,7 +16,7 @@ struct TossBoys2PrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *toss_boys_2_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *toss_boys_2_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable toss_boys_2_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

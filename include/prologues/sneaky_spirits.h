@@ -16,7 +16,7 @@ struct SneakySpiritsPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *sneaky_spirits_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *sneaky_spirits_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable sneaky_spirits_prologue_gfx_table[]; // Graphics Table
 
 // Functions:
