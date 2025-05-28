@@ -12,7 +12,7 @@ asm(".include \"include/gba.inc\"");//Temporary
 enum CompressionLevelsEnum {
     COMPRESSION_LEVEL_NONE,
     COMPRESSION_LEVEL_RLE,
-    COMPRESSION_LEVEL_HUFFMAN
+    COMPRESSION_LEVEL_DOUBLE
 };
 
 extern s32 (*D_03004af0)(const u16 *src, u16 *dest, const u8 *rleData, u32 sizeData);
@@ -58,12 +58,12 @@ void func_08002a6c(struct GfxTableLoader *info, const struct GraphicsTable *gfxT
         info->src = (void *)func_0800869c(info->src);
         info->compressionLevel = COMPRESSION_LEVEL_RLE;
         info->size = 1;
-        info->decodingRLE = FALSE;
+        info->decompressingRLE = FALSE;
 
-        // Double Compressed (Huffman + RLE)
-        if (((struct CompressedGraphics *)info->src)->doubleCompressed) {
-            info->compressionLevel = COMPRESSION_LEVEL_HUFFMAN;
-            info->decompressingHuffman = FALSE;
+        // Double Compressed
+        if (((struct CompressedData *)info->src)->doubleCompressed) {
+            info->compressionLevel = COMPRESSION_LEVEL_DOUBLE;
+            info->decompressingGFX = FALSE;
         }
     } else {
         info->active = FALSE;
@@ -75,8 +75,8 @@ void func_08002a6c(struct GfxTableLoader *info, const struct GraphicsTable *gfxT
 // Update GfxTableLoader
 void func_08002b10(struct GfxTableLoader *info) {
     const struct GraphicsTable *gfxTable;
-    const struct CompressedGraphics *comp;
-    const struct Huffman *huffman;
+    const struct CompressedData *compressed;
+    const struct CompressedGFX *compressedGfx;
     s32 processLimit;
     u32 size;
     u32 offset;
@@ -108,62 +108,61 @@ void func_08002b10(struct GfxTableLoader *info) {
                 if (info->size == 0) {
                     break;
                 }
-                (u32) info->src += size;
-                (u32) info->dest += size;
+                (void *)info->src += size;
+                (void *)info->dest += size;
                 continue;
 
             case COMPRESSION_LEVEL_RLE:
-                if (info->decodingRLE) {
+                if (info->decompressingRLE) {
                     D_030053b0 = TRUE;
                     for (i = 0; i < 8; i++) {
-                        D_03005390[i] = info->rleSaveState[i];
+                        D_03005390[i] = info->rleDecompressProgress[i];
                     }
                     size = func_08003ea4();
                 } else {
                     D_030053b0 = FALSE;
-                    comp = info->src;
-                    src = comp->data.raw;
-                    if (comp->doubleCompressed) {
-                        src = info->dest + comp->rleOffset - comp->data.huffman->size;
+                    compressed = info->src;
+                    src = compressed->data;
+                    if (compressed->doubleCompressed) {
+                        compressedGfx = compressed->data;
+                        src = info->dest + compressed->rleOffset - compressedGfx->size;
                     }
-                    size = D_03004af0(src, info->dest, comp->rleData, (comp->rleSize << 16) | (info->limit / 4));
+                    size = D_03004af0(src, info->dest, compressed->rleData, (compressed->rleSize << 16) | (info->limit / 4));
                 }
                 if (D_030053b0) {
-                    info->decodingRLE = TRUE;
+                    info->decompressingRLE = TRUE;
                     for (i = 0; i < 8; i++) {
-                        info->rleSaveState[i] = D_03005390[i];
+                        info->rleDecompressProgress[i] = D_03005390[i];
                     }
                     D_030053b0 = FALSE;
                 } else {
-                    info->decodingRLE = FALSE;
+                    info->decompressingRLE = FALSE;
                 }
                 processLimit -= size;
                 if (processLimit < 0) {
                     processLimit = 0;
                 }
-                if (info->decodingRLE) {
+                if (info->decompressingRLE) {
                     return;
                 }
                 info->size = 0;
                 break;
 
-            case COMPRESSION_LEVEL_HUFFMAN:
-                if (info->decompressingHuffman) {
-                    finished = func_080085e4(info->huffmanSaveState);
+            case COMPRESSION_LEVEL_DOUBLE:
+                if (info->decompressingGFX) {
+                    finished = decompress_gfx_resume(&info->gfxDecompressProgress);
                 } else {
-                    comp = info->src;
-                    info->decompressingHuffman = TRUE;
-                    // Fake-match below:
-                    size = (u32)comp->data.huffman;
-                    // <audible booing>
-                    finished = func_08008594(comp->data.huffman, (info->dest + comp->rleOffset - comp->data.huffman->size), info->limit, info->huffmanSaveState);
+                    compressed = info->src;
+                    info->decompressingGFX = TRUE;
+                    compressedGfx = compressed->data;
+                    finished = decompress_gfx_init(compressed->data, info->dest + compressed->rleOffset - compressedGfx->size, info->limit, &info->gfxDecompressProgress);
                 }
                 info->size -= info->limit;
                 if (info->size < 0) {
                     info->size = 0;
                 }
                 if (finished) {
-                    info->decompressingHuffman = FALSE;
+                    info->decompressingGFX = FALSE;
                     info->compressionLevel = COMPRESSION_LEVEL_RLE;
                 }
                 return;
@@ -186,12 +185,12 @@ void func_08002b10(struct GfxTableLoader *info) {
                 info->src = (void *)func_0800869c(gfxTable->src);
                 info->dest = (void *)func_08002a54(gfxTable->dest);
                 info->size = 1;
-                info->decodingRLE = FALSE;
+                info->decompressingRLE = FALSE;
 
-                comp = info->src;
-                if (comp->doubleCompressed) {
-                    info->compressionLevel = COMPRESSION_LEVEL_HUFFMAN;
-                    info->decompressingHuffman = FALSE;
+                compressed = info->src;
+                if (compressed->doubleCompressed) {
+                    info->compressionLevel = COMPRESSION_LEVEL_DOUBLE;
+                    info->decompressingGFX = FALSE;
                 }
             }
         } else {

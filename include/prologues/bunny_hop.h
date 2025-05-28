@@ -17,7 +17,7 @@ struct BunnyHopPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *bunny_hop_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *bunny_hop_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable bunny_hop_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

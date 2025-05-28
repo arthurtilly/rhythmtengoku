@@ -5,24 +5,24 @@
 
 
 // [D_089eaadc] Buffered Textures List
-struct CompressedGraphics *showtime_prologue_buffered_textures[] = {
+struct CompressedData *showtime_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eaae0] Graphics Table
 struct GraphicsTable showtime_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08bed0ec,
+        /* Src.  */ &showtime_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08bed4e4,
+        /* Src.  */ &showtime_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08bec134,
+        /* Src.  */ &showtime_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

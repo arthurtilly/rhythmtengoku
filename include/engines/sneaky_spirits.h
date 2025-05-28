@@ -62,7 +62,7 @@ extern const char D_08059f90[];   // Empty Default Text
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *sneaky_spirits_buffered_textures[]; // Buffered Textures List
+extern struct CompressedData *sneaky_spirits_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable *sneaky_spirits_gfx_tables[]; // Graphics Table
 
 

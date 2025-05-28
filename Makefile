@@ -32,7 +32,7 @@ CC1 := tools/agbcc/bin/agbcc
 # Verbose toggle
 V := @
 ifeq (VERBOSE, 1)
-	V=
+    V=
 endif
 
 # Colors
@@ -53,11 +53,18 @@ NONMATCHING ?= 0
 REV ?= 0
 
 ifeq ($(REV), 0)
-	TARGET := rhythmtengoku
-	TARGET_SHA1 := $(BASEROM_SHA1)
+    TARGET := rhythmtengoku
+    TARGET_SHA1 := $(BASEROM_SHA1)
 else
-	TARGET := rhythmtengoku_rev1
-	TARGET_SHA1 := $(REV1_SHA1)
+    TARGET := rhythmtengoku_rev1
+    TARGET_SHA1 := $(REV1_SHA1)
+    ifeq (,$(wildcard baserom_rev1.gba))
+        $(error No ROM provided. Please place an unmodified Revision 1 ROM named "baserom_rev1.gba" in the root folder)
+    endif
+
+    ifneq ($(shell sha1sum -t baserom_rev1.gba), $(REV1_SHA1)  baserom_rev1.gba)
+        $(error Provided Revision 1 ROM is not correct)
+    endif
 endif
 
 # Preprocessor defines
@@ -89,15 +96,16 @@ C_DIRS         := $(sort $(C_DIRS)) # remove duplicates
 
 ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(LEVEL_DATA)
 BS_DIRS        := $(GAME_DATA) $(SCENE_DATA)
+GFX_DIRS       := $(GRAPHICS)
 
 ALL_DIRS       := $(BIN) $(ASM_DIRS) $(C_DIRS) $(MUSIC) $(SFX)
 ALL_DIRS       := $(sort $(ALL_DIRS)) # remove duplicates
 BUILD_DIRS     := $(BUILD) $(addprefix $(BUILD)/,$(ALL_DIRS))
 
 ifeq ($(NONMATCHING), 0)
-	LD_SCRIPT := rt.ld
+    LD_SCRIPT := rt.ld
 else
-	LD_SCRIPT := rt_modern.ld
+    LD_SCRIPT := rt_modern.ld
 endif
 UNDEFINED_SYMS := undefined_syms.ld
 
@@ -107,18 +115,27 @@ export OUTPUT	:=	$(BUILD)/$(TARGET)
 
 CFILES		:=	$(foreach dir,$(C_DIRS),$(wildcard $(dir)/*.c))
 SFILES		:=	$(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s)) $(foreach dir,$(BS_DIRS),$(wildcard $(dir)/*.bs))
-BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid)) $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.bin))
+BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) \
+				$(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid)) \
+				$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.bin)) \
+				$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.raw.4bpp))
 WAVFILES    :=  $(foreach dir,$(SFX),$(wildcard $(dir)/*.wav))
+
+4BPPFILES   :=  $(filter-out $(BINFILES),$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.4bpp)))
+TILEMAPS	:=  $(foreach dir,$(GFX_DIRS),$(wildcard $(dir)/*.tilemap))
 JSONFILES   :=  $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.json))
 
 CFILES := $(filter-out %.inc.c, $(CFILES))
 
-PCMFILES    := $(addprefix $(BUILD)/,$(WAVFILES:.wav=.pcm))
-OFILES_JSON := $(addprefix $(BUILD)/,$(JSONFILES:.json=.json.c.o))
-OFILES_BIN  := $(addprefix $(BUILD)/,$(addsuffix .o,$(BINFILES)))
-OFILES_SOURCES := $(addprefix $(BUILD)/,$(addsuffix .o,$(SFILES))) $(addprefix $(BUILD)/,$(addsuffix .o,$(CFILES)))
+PCMFILES       := $(addprefix $(BUILD)/,$(WAVFILES:.wav=.pcm))
+OFILES_GENERATED := $(addprefix $(BUILD)/,$(addsuffix .s.o,$(JSONFILES))) \
+				    $(addprefix $(BUILD)/,$(addsuffix .s.o,$(4BPPFILES))) \
+				    $(addprefix $(BUILD)/,$(addsuffix .s.o,$(TILEMAPS)))
+OFILES_SOURCES   := $(addprefix $(BUILD)/,$(addsuffix .o,$(SFILES)))   \
+				    $(addprefix $(BUILD)/,$(addsuffix .o,$(CFILES)))   \
+				    $(addprefix $(BUILD)/,$(addsuffix .o,$(BINFILES)))
 
-OFILES := $(OFILES_BIN) $(OFILES_SOURCES) $(OFILES_JSON)
+OFILES := $(OFILES_SOURCES) $(OFILES_GENERATED)
 
 INCLUDE	:=	-I $(foreach dir,$(INCLUDES),$(wildcard $(dir)/*.h)) \
 			-I $(foreach dir,$(LIBDIRS),-I $(dir)/include) \
@@ -172,9 +189,9 @@ $(OUTPUT).gba	:	$(OUTPUT).elf
 	$(V)$(OBJCOPY) --pad-to=0x1000000 --gap-fill=0x00 -O binary $< $@
 	$(V)echo "ROM Assembled!"
 
-$(OUTPUT).elf	:	$(OFILES)
+$(OUTPUT).elf	:	$(OFILES) | $(BUILD)/$(LD_SCRIPT)
 	$(V)echo "Building ROM..."
-	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(LD_SCRIPT) -T $(UNDEFINED_SYMS) -Wl,--no-warn-rwx-segments,-Map $(@:.elf=.map) -nostartfiles -o $@
+	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(BUILD)/$(LD_SCRIPT) -T $(UNDEFINED_SYMS) -Wl,--no-warn-rwx-segments,-Map $(@:.elf=.map) -nostartfiles -o $@
 
 
 # Binary data
@@ -182,7 +199,10 @@ $(BUILD)/%.bin.o	$(BUILD)/%.bin.h :	%.bin | $(BUILD_DIRS)
 	$(call print,Copying binary file:,$<,$@)
 	$(V)bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
 
-# MIDI files
+$(BUILD)/%.raw.4bpp.o	$(BUILD)/%.raw.4bpp.h :	%.raw.4bpp | $(BUILD_DIRS)
+	$(call print,Copying uncompressed graphics file:,$<,$@)
+	$(V)bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
+
 $(BUILD)/%.mid.o	$(BUILD)/%.mid.h :	%.mid | $(BUILD_DIRS)
 	$(call print,Copying MIDI file:,$<,$@)
 	$(V)bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
@@ -191,7 +211,9 @@ $(BUILD)/%.mid.o	$(BUILD)/%.mid.h :	%.mid | $(BUILD_DIRS)
 $(BUILD)/%.pcm : %.wav | $(BUILD_DIRS)
 	$(call print,Converting WAV file to raw PCM audio:,$<,$@)
 	$(V)ffmpeg -y -loglevel quiet -i $< -f s8 $@
-    
+
+
+# C files
 define build_c_file
 	$(call print,Compiling:,$<,$@)
 	$(V)$(CPP) -MMD -MF $(BUILD)/$*.d -MT $@ $(CPPFLAGS) $< -o $(BUILD)/$*.i
@@ -200,19 +222,11 @@ define build_c_file
 	$(V)$(AS) -march=armv4t -o $@ $(BUILD)/$*.s
 endef
 
-# Autogenerated C files
-$(BUILD)/%.json.c : %.json $(PCMFILES) | $(BUILD_DIRS)
-	$(call print,Generating data table from JSON:,$<,$@)
-	$(V)python3 tools/sample_parser.py $< $@
-
-$(OFILES_JSON): $(BUILD)/%.c.o : $(BUILD)/%.c | $(BUILD_DIRS)
-	$(call build_c_file)
-	
-# C files
 $(BUILD)/%.c.o : %.c | $(BUILD_DIRS)
 	$(call build_c_file)
 
 build/src/udivdi3.c.o: CFLAGS := -Wparentheses -O2 -fhex-asm
+
 
 # ASM files
 $(BUILD)/%.s.o : %.s | $(BUILD_DIRS)
@@ -225,6 +239,29 @@ $(BUILD)/%.bs.o : %.bs | $(BUILD_DIRS)
 	$(call print,Assembling Beatscript:,$<,$@)
 	$(V)$(CPP) $(CPPFLAGS) -x assembler-with-cpp $< -o $(BUILD)/$*.bs
 	$(V)$(AS) -MD $(BUILD)/$*.d -march=armv4t -o $@ $(BUILD)/$*.bs
+
+# Preprocessed linker script
+$(BUILD)/$(LD_SCRIPT): $(LD_SCRIPT)
+	$(call print,Preprocessing linker script:,$<,$@)
+	$(V)$(CPP) $(CPPFLAGS) -x c $< -o $@
+
+
+# Autogenerated assembly data files
+$(BUILD)/%.json.s : %.json $(PCMFILES) | $(BUILD_DIRS)
+	$(call print,Generating data table from JSON:,$<,$@)
+	$(V)python3 tools/sample_parser.py $< $@
+
+$(BUILD)/%.4bpp.s : %.4bpp | $(BUILD_DIRS)
+	$(call print,Compressing graphics:,$<,$@)
+	$(V)python3 tools/compression.py $< $@ $(REV)
+
+$(BUILD)/%.tilemap.s : %.tilemap | $(BUILD_DIRS)
+	$(call print,Compressing tilemap:,$<,$@)
+	$(V)python3 tools/compression.py $< $@ $(REV)
+
+$(OFILES_GENERATED): $(BUILD)/%.s.o : $(BUILD)/%.s | $(BUILD_DIRS)
+	$(call print,Assembling:,$<,$@)
+	$(V)$(AS) -MD $(BUILD)/$*.d -march=armv4t -o $@ $(BUILD)/$*.s
 
 -include $(addprefix $(BUILD)/,$(CFILES:.c=.d))
 

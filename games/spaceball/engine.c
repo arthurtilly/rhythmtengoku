@@ -5,7 +5,7 @@
 
 
 // [D_089de93c] Buffered Textures List
-struct CompressedGraphics *spaceball_buffered_textures[] = {
+struct CompressedData *spaceball_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -13,17 +13,17 @@ struct CompressedGraphics *spaceball_buffered_textures[] = {
 // [D_089de940] Graphics Table
 struct GraphicsTable spaceball_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08bd5524,
+        /* Src.  */ &spaceball_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08bd5878,
+        /* Src.  */ &spaceball_bg_map,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08bd4e70,
+        /* Src.  */ &spaceball_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

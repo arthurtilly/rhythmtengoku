@@ -83,7 +83,7 @@ extern const char D_0805a8b8[];
 
 // Engine Definition Data:
 extern struct Animation **space_dance_anim_table[];
-extern struct CompressedGraphics *space_dance_buffered_textures[];
+extern struct CompressedData *space_dance_buffered_textures[];
 extern struct GraphicsTable *space_dance_gfx_tables[];
 extern u8 space_dancer_anim_map[];
 extern u8 space_gramps_anim_map[];

@@ -111,14 +111,14 @@ struct ResultsSkillData {
 // DATA
 extern union SceneObject debug_results_scene_objects[];
 extern struct GraphicsTable debug_results_gfx_table[];
-extern struct CompressedGraphics *debug_results_buffered_textures[];
+extern struct CompressedData *debug_results_buffered_textures[];
 extern struct GraphicsTable rank_results_gfx_table[];
-extern struct CompressedGraphics *rank_results_buffered_textures[];
+extern struct CompressedData *rank_results_buffered_textures[];
 extern struct SongHeader *rank_results_sfx[];
 extern struct SongHeader *rank_results_bgm[];
 extern union SceneObject score_results_scene_objects[];
 extern struct GraphicsTable score_results_gfx_table[];
-extern struct CompressedGraphics *score_results_buffered_textures[];
+extern struct CompressedData *score_results_buffered_textures[];
 extern const char *score_results_default_comments[];
 extern u16 score_results_default_thresholds[];
 extern struct SongHeader *score_results_reveal_sfx[];

@@ -81,7 +81,7 @@ extern struct SongHeader s_f_pause_quit_seqData;
 
 // Scene Data:
 extern struct GraphicsTable gameplay_common_gfx_table[]; // Graphics Table (Common Gameplay Graphics/Palettes, e.g. Pause Menu)
-extern struct CompressedGraphics *gameplay_common_buffered_textures[]; // Buffered Textures List
+extern struct CompressedData *gameplay_common_buffered_textures[]; // Buffered Textures List
 extern struct PauseMenuDefinition gameplay_pause_menu_data; // Pause Handler Definition
 extern struct Animation *gameplay_text_adv_icons[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
 

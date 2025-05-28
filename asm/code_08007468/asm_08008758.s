@@ -26,7 +26,7 @@ branch_08008764: \n\
 /* 0800877e */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08008780 */ LSLS R2, R2, 0x5 \n\
 /* 08008782 */ ADDS R3, R5, 0x4 @ Set R3 to R5 + 0x4 \n\
-/* 08008784 */ BL func_08008594 \n\
+/* 08008784 */ BL decompress_gfx_init \n\
 /* 08008788 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0800878a */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0800878c */ ADDS R1, 0x28 @ Add 0x28 to R1 \n\
@@ -40,7 +40,7 @@ branch_08008794: \n\
  \n\
 branch_08008798: \n\
 /* 08008798 */ ADDS R0, R5, 0x4 @ Set R0 to R5 + 0x4 \n\
-/* 0800879a */ BL func_080085e4 \n\
+/* 0800879a */ BL decompress_gfx_resume \n\
 /* 0800879e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
  \n\
 branch_080087a0: \n\

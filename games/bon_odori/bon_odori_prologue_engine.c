@@ -5,24 +5,24 @@
 
 
 // [D_089ea514] Buffered Textures List
-struct CompressedGraphics *bon_odori_prologue_buffered_textures[] = {
+struct CompressedData *bon_odori_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ea518] Graphics Table
 struct GraphicsTable bon_odori_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08be854c,
+        /* Src.  */ &bon_odori_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08be8828,
+        /* Src.  */ &bon_odori_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08be75b8,
+        /* Src.  */ &bon_odori_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

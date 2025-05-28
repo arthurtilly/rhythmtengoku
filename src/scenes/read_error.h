@@ -16,7 +16,7 @@ struct ReadErrorSceneData {
 
 // DATA
 extern struct GraphicsTable read_error_gfx_table[];
-extern struct CompressedGraphics *read_error_buffered_textures[];
+extern struct CompressedData *read_error_buffered_textures[];
 
 
 // FUNCTIONS

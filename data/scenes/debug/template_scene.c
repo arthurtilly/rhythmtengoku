@@ -20,6 +20,6 @@ struct GraphicsTable template_scene_gfx_table[] = {
 
 
 // [D_089de250] Buffered Textures List
-struct CompressedGraphics *template_scene_buffered_textures[] = {
+struct CompressedData *template_scene_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

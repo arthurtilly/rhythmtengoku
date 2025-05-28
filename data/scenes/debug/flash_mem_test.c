@@ -20,6 +20,6 @@ struct GraphicsTable flash_mem_test_gfx_table[] = {
 
 
 // [D_089ddfbc] Buffered Textures List
-struct CompressedGraphics *flash_mem_test_buffered_textures[] = {
+struct CompressedData *flash_mem_test_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

@@ -38,16 +38,16 @@ extern struct Animation anim_ninja1_cutscene_arrow[];
 
 /* NINJA BODYGUARD - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08cde4e0;
-extern struct CompressedGraphics D_08ce015c;
-extern struct CompressedGraphics D_08cdd9d4;
-extern struct CompressedGraphics D_08cdfc38;
-extern struct CompressedGraphics D_08cdfd48;
-extern struct CompressedGraphics D_08cdfaa4;
-extern struct CompressedGraphics D_08d1e358;
-extern struct CompressedGraphics D_08d1fab0;
-extern struct CompressedGraphics D_08d1fb70;
-extern struct CompressedGraphics D_08d1f700;
+extern struct CompressedData ninja_bodyguard_intro_bg_tiles;
+extern struct CompressedData ninja_bodyguard_intro_bg_map;
+extern struct CompressedData ninja_bodyguard_bg_tiles;
+extern struct CompressedData ninja_bodyguard_bg_map_r;
+extern struct CompressedData ninja_bodyguard_bg_map_l;
+extern struct CompressedData ninja_bodyguard_obj;
+extern struct CompressedData ninja_reincarnate_bg_tiles;
+extern struct CompressedData ninja_reincarnate_bg_map_r;
+extern struct CompressedData ninja_reincarnate_bg_map_l;
+extern struct CompressedData ninja_reincarnate_obj;
 
 /* NINJA BODYGUARD - PALETTES */
 

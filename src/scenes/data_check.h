@@ -23,7 +23,7 @@ struct DataCheckSceneData {
 // DATA
 extern union SceneObject data_check_scene_objects[];
 extern struct GraphicsTable data_check_gfx_table[];
-extern struct CompressedGraphics *data_check_buffered_textures[];
+extern struct CompressedData *data_check_buffered_textures[];
 extern struct Scene scene_debug_menu;
 
 

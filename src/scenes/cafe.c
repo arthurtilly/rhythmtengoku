@@ -811,7 +811,7 @@ u32 cafe_scene_inputs_enabled(void) {
 
 
 // Load BG Event Map (Script Function)
-void cafe_load_bg_event_map(struct CompressedGraphics *map) {
+void cafe_load_bg_event_map(struct CompressedData *map) {
     func_08003eb8(map, (VRAMBase + 0xF000));
 }
 

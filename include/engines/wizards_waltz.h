@@ -43,7 +43,7 @@ struct WizardsWaltzCue {
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *wizards_waltz_buffered_textures[];
+extern struct CompressedData *wizards_waltz_buffered_textures[];
 extern struct GraphicsTable gfx_table_wizards_waltz[];
 
 

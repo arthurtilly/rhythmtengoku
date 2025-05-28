@@ -163,25 +163,25 @@ extern Palette drum_samurai_band_bg_pal[];
 
 /* DRUM LIVE - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08c47038; // Drum Girls - BG Textures
-extern struct CompressedGraphics D_08c47dc4; // Drum Girls - BG Map
-extern struct CompressedGraphics D_08c45f10; // Drum Girls - OBJ Textures
-extern struct CompressedGraphics D_08c47930; // Crowd - BG Textures
-extern struct CompressedGraphics D_08c47ed4; // Crowd - BG Map 0
-extern struct CompressedGraphics D_08c47fdc; // Crowd - BG Map 1
-extern struct CompressedGraphics D_08c480e4; // Crowd - BG Map 2
-extern struct CompressedGraphics D_08c481f4; // Crowd - BG Map 3
-extern struct CompressedGraphics D_08c48328; // Crowd - BG Map 4
-extern struct CompressedGraphics D_08c48458; // Crowd - BG Map 5
-extern struct CompressedGraphics D_08c485a4; // Crowd - BG Map 6
-extern struct CompressedGraphics D_08c486f4; // Crowd - BG Map 7
-extern struct CompressedGraphics D_08c48874; // Crowd - BG Map 8
-extern struct CompressedGraphics D_08c489fc; // Crowd - BG Map 9
-extern struct CompressedGraphics D_08c48b84; // Crowd - BG Map 10
-extern struct CompressedGraphics D_08c48cfc; // Crowd - BG Map 11
-extern struct CompressedGraphics D_08c4356c; // Drum Boys - BG Textures
-extern struct CompressedGraphics D_08c439d0; // Drum Boys - BG Map
-extern struct CompressedGraphics D_08c4241c; // Drum Boys - OBJ Textures
-extern struct CompressedGraphics D_08bd7c30; // Drum Samurai Band - BG Textures
-extern struct CompressedGraphics D_08bd8060; // Drum Samurai Band - BG Map
-extern struct CompressedGraphics D_08bd6c44; // Drum Samurai Band - OBJ Textures
+extern struct CompressedData drum_girls_live_bg_tiles; // Drum Girls - BG Textures
+extern struct CompressedData drum_girls_live_bg_map; // Drum Girls - BG Map
+extern struct CompressedData drum_girls_live_obj; // Drum Girls - OBJ Textures
+extern struct CompressedData drum_live_bg_tiles; // Crowd - BG Textures
+extern struct CompressedData drum_live_bg_map; // Crowd - BG Map 0
+extern struct CompressedData drum_live_crowd_bg_map_1; // Crowd - BG Map 1
+extern struct CompressedData drum_live_crowd_bg_map_2; // Crowd - BG Map 2
+extern struct CompressedData drum_live_crowd_bg_map_3; // Crowd - BG Map 3
+extern struct CompressedData drum_live_crowd_bg_map_4; // Crowd - BG Map 4
+extern struct CompressedData drum_live_crowd_bg_map_5; // Crowd - BG Map 5
+extern struct CompressedData drum_live_crowd_bg_map_6; // Crowd - BG Map 6
+extern struct CompressedData drum_live_crowd_bg_map_7; // Crowd - BG Map 7
+extern struct CompressedData drum_live_crowd_bg_map_8; // Crowd - BG Map 8
+extern struct CompressedData drum_live_crowd_bg_map_9; // Crowd - BG Map 9
+extern struct CompressedData drum_live_crowd_bg_map_10; // Crowd - BG Map 10
+extern struct CompressedData drum_live_crowd_bg_map_11; // Crowd - BG Map 11
+extern struct CompressedData drum_boys_bg_tiles; // Drum Boys - BG Textures
+extern struct CompressedData drum_boys_live_bg_map; // Drum Boys - BG Map
+extern struct CompressedData drum_boys_live_obj; // Drum Boys - OBJ Textures
+extern struct CompressedData drum_samurai_live_bg_tiles; // Drum Samurai Band - BG Textures
+extern struct CompressedData drum_samurai_live_bg_map; // Drum Samurai Band - BG Map
+extern struct CompressedData drum_samurai_live_obj; // Drum Samurai Band - OBJ Textures

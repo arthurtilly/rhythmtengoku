@@ -5,24 +5,24 @@
 
 
 // [D_089eb9bc] Buffered Textures List
-struct CompressedGraphics *polyrhythm_prologue_buffered_textures[] = {
+struct CompressedData *polyrhythm_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eb9c0] Graphics Table
 struct GraphicsTable polyrhythm_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c0212c,
+        /* Src.  */ &polyrhythm_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c02628,
+        /* Src.  */ &polyrhythm_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c00010,
+        /* Src.  */ &polyrhythm_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

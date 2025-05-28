@@ -17,7 +17,7 @@ struct RhythmTestCue {
 
 // Engine Definition Data:
 extern struct DrumTechNote *rhythm_test_trick_drum_seq[];
-extern struct CompressedGraphics *rhythm_test_buffered_textures[];
+extern struct CompressedData *rhythm_test_buffered_textures[];
 extern struct GraphicsTable rhythm_test_gfx_table[];
 
 

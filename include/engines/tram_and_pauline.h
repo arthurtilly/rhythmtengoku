@@ -31,7 +31,7 @@ extern const u32 D_0805a91c[];
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *tram_pauline_buffered_textures[];
+extern struct CompressedData *tram_pauline_buffered_textures[];
 extern struct GraphicsTable *tram_pauline_gfx_tables[];
 extern struct Animation *tram_pauline_anim_table[][4][6];
 

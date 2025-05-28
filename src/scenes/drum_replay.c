@@ -144,7 +144,7 @@ struct DrumReplaySaveGraph *create_new_replay_memory_graph(u32 memID, struct Dru
     u32 i, j;
 
     objTexturesAddress = OBJ_TILESET_BASE(baseTile * 0x20);
-    func_08003eb8(&D_08cc4bcc, objTexturesAddress);
+    func_08003eb8(&studio_memory_usage_graph_bg_map, objTexturesAddress);
 
     srcPal = &studio_mem_chart_pal[0][1];
     destPal = &D_03004b10.objPalette[basePalette][1];

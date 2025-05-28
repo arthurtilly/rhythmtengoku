@@ -12,14 +12,14 @@ struct Animation *bouncy_road_player_bouncer_anim[] = {
 
 
 // [D_089e3c0c] Buffered Textures List
-struct CompressedGraphics *bouncy_road_buffered_textures[] = {
+struct CompressedData *bouncy_road_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 
 // [D_089e3c10] Graphics Table (Bouncy Road)
 struct GraphicsTable bouncy_road_1_gfx_table[] = {
-    ADD_OBJ_TEXTURE(&D_08c57a14, 0),
+    ADD_OBJ_TEXTURE(&bouncy_road_obj, 0),
     ADD_BG_PALETTE(bouncy_road_pal, 0, 160),
     ADD_OBJ_PALETTE(bouncy_road_pal, 0, 160),
     END_OF_GRAPHICS_TABLE
@@ -27,11 +27,11 @@ struct GraphicsTable bouncy_road_1_gfx_table[] = {
 
 // [D_089e3c40] Graphics Table (Remix 5)
 struct GraphicsTable bouncy_road_remix_5_gfx_table[] = {
-    ADD_BG_TEXTURE(&D_08c583bc, 0),
-    ADD_BG_MAP(&D_08c585a4, 29),
-    ADD_BG_MAP(&D_08c58738, 30),
-    ADD_BG_MAP(&D_08c58940, 31),
-    ADD_OBJ_TEXTURE(&D_08c57a14, 0),
+    ADD_BG_TEXTURE(&bouncy_road_remix_5_bg_tiles, 0),
+    ADD_BG_MAP(&bouncy_road_remix_5_bg_map_1, 29),
+    ADD_BG_MAP(&bouncy_road_remix_5_bg_map_2, 30),
+    ADD_BG_MAP(&bouncy_road_remix_5_bg_map_3, 31),
+    ADD_OBJ_TEXTURE(&bouncy_road_obj, 0),
     ADD_BG_PALETTE(bouncy_road_remix_5_bg_pal, 0, 160),
     ADD_OBJ_PALETTE(bouncy_road_remix_5_obj_pal, 0, 160),
     END_OF_GRAPHICS_TABLE
@@ -39,7 +39,7 @@ struct GraphicsTable bouncy_road_remix_5_gfx_table[] = {
 
 // [D_089e3ca0] Graphics Table (Bouncy Road 2)
 struct GraphicsTable bouncy_road_2_gfx_table[] = {
-    ADD_OBJ_TEXTURE(&D_08c57a14, 0),
+    ADD_OBJ_TEXTURE(&bouncy_road_obj, 0),
     ADD_BG_PALETTE(bouncy_road_2_pal, 0, 160),
     ADD_OBJ_PALETTE(bouncy_road_2_pal, 0, 160),
     END_OF_GRAPHICS_TABLE

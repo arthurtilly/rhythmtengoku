@@ -16,7 +16,7 @@ struct PowerCalligraphyPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *power_calligraphy_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *power_calligraphy_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable power_calligraphy_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

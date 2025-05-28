@@ -190,7 +190,7 @@ extern struct SongHeader *drum_lessons_rank_sfx[];
 extern struct DrumStudioMonitorData drum_studio_bg_table[];
 extern DrumPlayFunc D_089e2988[];
 extern struct DrumTechKit *drum_studio_kits[];
-extern struct CompressedGraphics *drum_studio_buffered_textures[];
+extern struct CompressedData *drum_studio_buffered_textures[];
 extern struct GraphicsTable drum_studio_gfx_table[];
 extern struct GraphicsTable drum_lessons_gfx_table[];
 extern struct Beatscript D_089e2ad4[];

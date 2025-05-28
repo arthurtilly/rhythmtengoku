@@ -29,24 +29,24 @@ struct Animation **clappy_trio_anim_table[] = {
 };
 
 // [D_089e4580] Buffered Textures List
-struct CompressedGraphics *clappy_trio_buffered_textures[] = {
+struct CompressedData *clappy_trio_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e4584] Graphics Table (The Clappy Trio)
 struct GraphicsTable clappy_trio_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c61e18,
+        /* Src.  */ &clappy_trio_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c6214c,
+        /* Src.  */ &clappy_trio_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c61654,
+        /* Src.  */ &clappy_trio_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -66,17 +66,17 @@ struct GraphicsTable clappy_trio_gfx_table[] = {
 // [D_089e45cc] Graphics Table (The Snappy Trio)
 struct GraphicsTable snappy_trio_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c635bc,
+        /* Src.  */ &snappy_trio_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c638e0,
+        /* Src.  */ &snappy_trio_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c62d18,
+        /* Src.  */ &snappy_trio_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

@@ -145,7 +145,7 @@ struct VirusAction {
 extern s16 sick_beats_particle_sfx_pitch[];
 extern struct Animation *sick_beats_microbe_event_anim[];
 extern u16 sick_beats_microbe_event_durations[];
-extern struct CompressedGraphics *sick_beats_buffered_textures[];
+extern struct CompressedData *sick_beats_buffered_textures[];
 extern struct GraphicsTable gfx_table_sick_beats[];
 extern struct VirusAction sick_beats_virus_actions[];
 extern u8 D_089e92f0[];

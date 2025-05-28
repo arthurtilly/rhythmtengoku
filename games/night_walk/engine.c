@@ -28,24 +28,24 @@ struct Animation *night_walk_star_expand_anim[] = {
 
 
 // [D_089e3380] Buffered Textures List
-struct CompressedGraphics *night_walk_buffered_textures[] = {
+struct CompressedData *night_walk_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e3384] Graphics Table
 struct GraphicsTable night_walk_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c52420,
+        /* Src.  */ &night_walk_obj,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c524fc,
+        /* Src.  */ &night_walk_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c52420,
+        /* Src.  */ &night_walk_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

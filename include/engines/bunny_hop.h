@@ -20,7 +20,7 @@ extern const char D_0805a8ac[];
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *bunny_hop_buffered_textures[];
+extern struct CompressedData *bunny_hop_buffered_textures[];
 extern struct GraphicsTable *bunny_hop_gfx_tables[];
 extern struct SongHeader *bunny_hop_bgm_harmony_parts[];
 extern struct SongHeader *bunny_hop_bgm_drum_fills[];

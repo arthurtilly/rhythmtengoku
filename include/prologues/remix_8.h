@@ -16,7 +16,7 @@ struct Remix8PrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *remix_8_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *remix_8_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable remix_8_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

@@ -118,7 +118,7 @@ extern const s32 fireworks_1_pattern_sequence[];
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *fireworks_buffered_textures[]; // Buffered Textures List
+extern struct CompressedData *fireworks_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable *fireworks_gfx_tables[]; // Graphics Table Index
 extern u16 fireworks_cue_durations[]; // Cue Expiration Times
 

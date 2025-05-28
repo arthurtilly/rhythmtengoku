@@ -19,7 +19,7 @@ struct DataClearSceneData {
 // DATA
 extern union SceneObject data_clear_scene_objects[];
 extern struct GraphicsTable data_clear_gfx_table[];
-extern struct CompressedGraphics *data_clear_buffered_textures[];
+extern struct CompressedData *data_clear_buffered_textures[];
 
 
 // FUNCTIONS

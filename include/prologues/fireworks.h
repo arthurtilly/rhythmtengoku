@@ -16,7 +16,7 @@ struct FireworksPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *fireworks_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *fireworks_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable fireworks_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

@@ -21,9 +21,9 @@ extern struct Animation anim_main_menu_blank3[];
 
 /* MAIN MENU - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08ccb374;
-extern struct CompressedGraphics D_08ccb840;
-extern struct CompressedGraphics D_08ccb298;
+extern struct CompressedData main_menu_bg_tiles;
+extern struct CompressedData main_menu_bg_map;
+extern struct CompressedData main_menu_obj;
 
 /* MAIN MENU - PALETTES */
 

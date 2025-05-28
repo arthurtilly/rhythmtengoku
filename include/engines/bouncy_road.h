@@ -65,7 +65,7 @@ struct BouncyRoadCue {
 
 // Engine Definition Data:
 extern struct Animation *bouncy_road_player_bouncer_anim[];
-extern struct CompressedGraphics *bouncy_road_buffered_textures[];
+extern struct CompressedData *bouncy_road_buffered_textures[];
 extern struct GraphicsTable *bouncy_road_gfx_tables[];
 
 
