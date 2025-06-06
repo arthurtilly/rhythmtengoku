@@ -13,7 +13,9 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 #include "asm/engines/mechanical_horse/asm_08040c58.s"
 
-#include "asm/engines/mechanical_horse/asm_08040cfc.s"
+void func_08040cfc() {
+    gMechanicalHorse->unk300 = 0;
+}
 
 #include "asm/engines/mechanical_horse/asm_08040d10.s"
 
@@ -30,9 +32,21 @@ void mechanical_horse_init_gfx3() {
     gameplay_start_screen_fade_in();
 }
 
-#include "asm/engines/mechanical_horse/asm_08040f10.s"
+void mechanical_horse_init_gfx2() {
+    s32 task;
 
-#include "asm/engines/mechanical_horse/asm_08040f40.s"
+    func_0800c604(0);
+    task = func_08002ee0(get_current_mem_id(), gfx_table_mechanical_horse, 0x2000);
+    run_func_after_task(task, mechanical_horse_init_gfx3, 0);
+}
+
+void mechanical_horse_init_gfx1() {
+    s32 task;
+
+    func_0800c604(0);
+    task = start_new_texture_loader(get_current_mem_id(), mechanical_horse_buffered_textures);
+    run_func_after_task(task, mechanical_horse_init_gfx2, 0);
+}
 
 #include "asm/engines/mechanical_horse/asm_08040f6c.s"
 
@@ -42,7 +56,9 @@ void mechanical_horse_init_gfx3() {
 
 #include "asm/engines/mechanical_horse/asm_080416cc.s"
 
-#include "asm/engines/mechanical_horse/asm_08041730.s"
+void func_08041730(u8 unk) {
+    gMechanicalHorse->unk2e8 = unk;
+}
 
 #include "asm/engines/mechanical_horse/asm_08041744.s"
 
@@ -70,7 +86,9 @@ void mechanical_horse_init_gfx3() {
 
 #include "asm/engines/mechanical_horse/asm_0804249c.s"
 
-#include "asm/engines/mechanical_horse/asm_080424f0.s"
+void func_080424f0(u16 unk) {
+    gMechanicalHorse->unk2ee = unk;
+}
 
 #include "asm/engines/mechanical_horse/asm_08042504.s"
 

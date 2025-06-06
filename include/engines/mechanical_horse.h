@@ -16,7 +16,13 @@ enum HorseLessonsEnum {
 
 // Engine Types:
 struct MechanicalHorseEngineData {
-    u8 pad[0x310];
+    u8 pad[0x2e8];
+    u8 unk2e8;
+    u8 pad2[5];
+    u16 unk2ee;
+    u8 pad4[0x10];
+    u8 unk300;
+    u8 pad3[0xf];
 };
 
 struct MechanicalHorseCue {
@@ -61,7 +67,7 @@ extern struct Animation *mechanical_horse_lesson_text_anim[][4];
 // Functions:
 // extern ? func_08040c2c(?);
 // extern ? func_08040c58(?);
-// extern ? func_08040cfc(?);
+extern void func_08040cfc(void);
 // extern ? func_08040d10(?);
 // extern ? func_08040d90(?);
 // extern ? func_08040dd8(?);
@@ -74,7 +80,7 @@ extern void mechanical_horse_engine_start(u32 version); // Game Engine Start
 extern void func_08041444(); // Engine Event 0x00 (?)
 extern void func_080415c0(); // Engine Event 0x01 (?)
 extern void func_080416cc(); // Engine Event 0x02 (?)
-extern void func_08041730(); // Engine Event 0x03 (?)
+extern void func_08041730(u8 unk); // Engine Event 0x03 (?)
 extern void func_08041744(); // Engine Event 0x04 (?)
 extern void func_080417ac(); // Engine Event 0x05 (?)
 // extern ? func_0804188c(?);
@@ -88,7 +94,7 @@ extern void func_080417ac(); // Engine Event 0x05 (?)
 // extern ? func_0804231c(?);
 // extern ? func_08042438(?);
 // extern ? func_0804249c(?);
-extern void func_080424f0(); // Engine Event 0x06 (?)
+extern void func_080424f0(u16 unk); // Engine Event 0x06 (?)
 extern void func_08042504(); // Engine Event 0x07 (?)
 // extern ? func_08042548(?);
 extern void mechanical_horse_engine_update(void); // Game Engine Update
