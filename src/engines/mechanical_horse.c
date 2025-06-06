@@ -25,7 +25,10 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 #include "asm/engines/mechanical_horse/asm_08040eb0.s"
 
-#include "asm/engines/mechanical_horse/asm_08040f00.s"
+void mechanical_horse_init_gfx3() {
+    func_0800c604(0);
+    gameplay_start_screen_fade_in();
+}
 
 #include "asm/engines/mechanical_horse/asm_08040f10.s"
 
@@ -75,22 +78,31 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 #include "asm/engines/mechanical_horse/asm_08042718.s"
 
-#include "asm/engines/mechanical_horse/asm_08042754.s"
+void mechanical_horse_engine_stop() {
+}
 
 #include "asm/engines/mechanical_horse/asm_08042758.s"
 
 #include "asm/engines/mechanical_horse/asm_080427b0.s"
 
-#include "asm/engines/mechanical_horse/asm_080427e8.s"
+void mechanical_horse_cue_despawn(struct Cue *cue, struct MechanicalHorseCue *data) {
+}
 
 #include "asm/engines/mechanical_horse/asm_080427ec.s"
 
-#include "asm/engines/mechanical_horse/asm_08042820.s"
+void mechanical_horse_cue_barely(struct Cue *cue, struct MechanicalHorseCue *data, u32 pressed, u32 released) {
+    mechanical_horse_cue_hit(cue, data, pressed, released);
+}
 
-#include "asm/engines/mechanical_horse/asm_0804282c.s"
+void mechanical_horse_cue_miss(struct Cue *cue, struct MechanicalHorseCue *data) {
+    gameplay_ignore_this_cue_result();
+    func_08042020();
+}
 
 #include "asm/engines/mechanical_horse/asm_0804283c.s"
 
-#include "asm/engines/mechanical_horse/asm_0804285c.s"
+void mechanical_horse_common_beat_animation() {
+}
 
-#include "asm/engines/mechanical_horse/asm_08042860.s"
+void mechanical_horse_common_display_text() {
+}
