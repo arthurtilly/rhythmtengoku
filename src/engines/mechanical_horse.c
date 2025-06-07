@@ -54,7 +54,11 @@ void mechanical_horse_init_gfx1() {
 
 #include "asm/engines/mechanical_horse/asm_080415c0.s"
 
-#include "asm/engines/mechanical_horse/asm_080416cc.s"
+// prints specified text?
+void func_080416cc(const char* string) {
+    delete_bmp_font_obj_text_anim(gMechanicalHorse->textFont, gMechanicalHorse->textSprite);
+    sprite_set_anim(gSpriteHandler, gMechanicalHorse->textSprite, (struct Animation*)bmp_font_obj_print_c(gMechanicalHorse->textFont, string, 1, 0xc), 0, 1, 0, 0);
+}
 
 void func_08041730(u8 unk) {
     gMechanicalHorse->unk2e8 = unk;
@@ -190,7 +194,13 @@ void mechanical_horse_cue_miss(struct Cue *cue, struct MechanicalHorseCue *data)
     func_08042020();
 }
 
-#include "asm/engines/mechanical_horse/asm_0804283c.s"
+void mechanical_horse_input_event(u32 pressed, u32 released) {
+    if (gMechanicalHorse->unk6 == 0) {
+        func_08041c98();
+    } else {
+        func_08041f80();
+    }
+}
 
 void mechanical_horse_common_beat_animation() {
 }

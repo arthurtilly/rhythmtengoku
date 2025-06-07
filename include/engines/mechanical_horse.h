@@ -20,7 +20,9 @@ struct MechanicalHorseSub2 {
 
 // Engine Types:
 struct MechanicalHorseEngineData {
-    u8 pad0[0xc];
+    u8 pad0[6];
+    u8 unk6;
+    u8 pad7[5];
     u24_8 unkc;
     u8 pad10[0x14];
     u24_8 unk24;
@@ -37,7 +39,10 @@ struct MechanicalHorseEngineData {
     } unk3c[20];
     u8 pad[0x60];
     u8 unk2cc;
-    u8 pad2cd[0x1b];
+    u8 pad2cd[0xf];
+    struct BitmapFontOBJ* textFont;
+    s16 textSprite;
+    u8 pad2e2[6];
     u8 unk2e8;
     u8 pad2e9[5];
     u16 unk2ee;
@@ -100,8 +105,8 @@ extern void mechanical_horse_init_gfx1(void); // Graphics Init. 1
 extern void mechanical_horse_engine_start(u32 version); // Game Engine Start
 extern void func_08041444(); // Engine Event 0x00 (?)
 extern void func_080415c0(); // Engine Event 0x01 (?)
-extern void func_080416cc(); // Engine Event 0x02 (?)
-extern void func_08041730(u8 unk); // Engine Event 0x03 (?)
+extern void func_080416cc(const char* string); // Engine Event 0x02 (?)
+extern void func_08041730(u8); // Engine Event 0x03 (?)
 extern void func_08041744(); // Engine Event 0x04 (?)
 extern void func_080417ac(); // Engine Event 0x05 (?)
 // extern ? func_0804188c(?);
@@ -115,7 +120,7 @@ extern void func_08041970();
 // extern ? func_0804231c(?);
 // extern ? func_08042438(?);
 // extern ? func_0804249c(?);
-extern void func_080424f0(u16 unk); // Engine Event 0x06 (?)
+extern void func_080424f0(u16); // Engine Event 0x06 (?)
 extern void func_08042504(); // Engine Event 0x07 (?)
 // extern ? func_08042548(?);
 extern void mechanical_horse_engine_update(void); // Game Engine Update
