@@ -13,16 +13,37 @@ enum HorseLessonsEnum {
     HORSE_LESSON_4_GALLOP
 };
 
+struct MechanicalHorseSub2 {
+    u32 unk0;
+    u32 unk1;
+};
 
 // Engine Types:
 struct MechanicalHorseEngineData {
-    u8 pad[0x2e8];
+    u8 pad0[0xc];
+    u24_8 unkc;
+    u8 pad10[0x14];
+    u24_8 unk24;
+    u8 pad28[0x14];
+    struct MechanicalHorseSub {
+        s16 sprite;
+        u8 unk2;
+        u8 unk3;
+        u8 unk4;
+        s24_8 pos_x;
+        s24_8 pos_y;
+        u32 pos_z;
+        s24_8 unk14[2];
+    } unk3c[20];
+    u8 pad[0x60];
+    u8 unk2cc;
+    u8 pad2cd[0x1b];
     u8 unk2e8;
-    u8 pad2[5];
+    u8 pad2e9[5];
     u16 unk2ee;
-    u8 pad4[0x10];
+    u8 pad2f0[0x10];
     u8 unk300;
-    u8 pad3[0xf];
+    u8 pad301[0xf];
 };
 
 struct MechanicalHorseCue {
@@ -46,7 +67,7 @@ extern const char D_0805a9fc[];
 extern const s32 D_0805aa00[];
 extern const s32 D_0805aa10[];
 extern const s32 D_0805aa20[];
-extern const s32 D_0805aa40[];
+extern const s24_8 D_0805aa40[][2];
 extern const u32 D_0805aa60[][4];
 extern const s32 D_0805aaa0[];
 extern const s32 D_0805aab0[][4];
@@ -85,7 +106,7 @@ extern void func_08041744(); // Engine Event 0x04 (?)
 extern void func_080417ac(); // Engine Event 0x05 (?)
 // extern ? func_0804188c(?);
 // extern ? func_08041940(?);
-// extern ? func_08041970(?);
+extern void func_08041970();
 // extern ? func_08041c98(?);
 // extern ? func_08041ddc(?);
 // extern ? func_08041f80(?);

@@ -68,7 +68,80 @@ void func_08041730(u8 unk) {
 
 #include "asm/engines/mechanical_horse/asm_08041940.s"
 
-#include "asm/engines/mechanical_horse/asm_08041970.s"
+void func_08041970(void) {
+    u8 i;
+    u8 temp1;
+    u32 temp2;
+    for (i = 0; i < 20; i++) {
+        switch (gMechanicalHorse->unk3c[i].unk2) {
+            case 2:
+            case 3:
+                temp1 = FALSE;
+                if (gMechanicalHorse->unk3c[i].unk2 == 2) {
+                    temp1 = TRUE;
+                }
+
+                if (temp1) {
+                    gMechanicalHorse->unk3c[i].pos_x = gMechanicalHorse->unkc;
+                    gMechanicalHorse->unk3c[i].pos_z = INT_TO_FIXED(128.0078125);
+                } else {
+                    gMechanicalHorse->unk3c[i].pos_x = gMechanicalHorse->unk24;
+                    gMechanicalHorse->unk3c[i].pos_z = INT_TO_FIXED(128.01953125);
+                }
+                gMechanicalHorse->unk3c[i].pos_y = INT_TO_FIXED(96);
+                gMechanicalHorse->unk3c[i].unk14[0] = D_0805aa40[gMechanicalHorse->unk2cc][0];
+                gMechanicalHorse->unk3c[i].unk14[1] = D_0805aa40[gMechanicalHorse->unk2cc][1];
+                gMechanicalHorse->unk3c[i].unk4 = 0;
+                if (gMechanicalHorse->unk2cc == 0) {
+                    if (gMechanicalHorse->unk3c[i].unk3 == 0 || gMechanicalHorse->unk3c[i].unk3 == 2) {
+                        sprite_set_anim(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, anim_horse_text_pak, 0, 0, 0, 0);
+                    } else {
+                        sprite_set_anim(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, anim_horse_text_ka, 0, 0, 0, 0);
+                    }
+                } else {
+                    if (gMechanicalHorse->unk2cc == 1) {                    
+                        sprite_set_anim(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, anim_horse_text_tot, 0, 0, 0, 0);
+                    } else if (gMechanicalHorse->unk2cc == 2) {
+                        if (gMechanicalHorse->unk3c[i].unk3 == 0) {
+                            sprite_set_anim(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, anim_horse_text_pa, 0, 0, 0, 0);
+                        } else if (gMechanicalHorse->unk3c[i].unk3 == 1) {
+                            sprite_set_anim(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, anim_horse_text_ka, 0, 0, 0, 0); 
+                        } else {
+                            sprite_set_anim(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, anim_horse_text_rap, 0, 0, 0, 0);
+                        }
+                    } else {
+                        if (gMechanicalHorse->unk3c[i].unk3 <= 2) {
+                             sprite_set_anim(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, anim_horse_text_do, 0, 0, 0, 0);
+                        } else {
+                             sprite_set_anim(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, anim_horse_text_dod, 0, 0, 0, 0);
+                        }
+                    }
+                }
+                sprite_set_x_y_z(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, FIXED_TO_INT(gMechanicalHorse->unk3c[i].pos_x), FIXED_TO_INT(gMechanicalHorse->unk3c[i].pos_y), gMechanicalHorse->unk3c[i].pos_z);
+                sprite_set_visible(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, 1);
+                gMechanicalHorse->unk3c[i].unk2 = 4;
+                break;
+            case 4:
+                gMechanicalHorse->unk3c[i].pos_x += gMechanicalHorse->unk3c[i].unk14[0];
+                gMechanicalHorse->unk3c[i].pos_y += gMechanicalHorse->unk3c[i].unk14[1];
+                gMechanicalHorse->unk3c[i].unk14[1] += INT_TO_FIXED(0.125); 
+                sprite_set_x_y(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, FIXED_TO_INT(gMechanicalHorse->unk3c[i].pos_x), FIXED_TO_INT(gMechanicalHorse->unk3c[i].pos_y));
+                if ((gMechanicalHorse->unk3c[i].pos_x < INT_TO_FIXED(-16)) || (gMechanicalHorse->unk3c[i].pos_y > INT_TO_FIXED(112))) {
+                    gMechanicalHorse->unk3c[i].unk2 = 0;
+                    sprite_set_visible(gSpriteHandler, gMechanicalHorse->unk3c[i].sprite, 0);
+                }
+                break;
+            case 1:
+                if (gMechanicalHorse->unk3c[i].unk4-- > 0) {
+                    break;
+                }
+                gMechanicalHorse->unk3c[i].unk2 = 3;
+                break;
+            case 0:
+                break;
+        }
+    }
+}
 
 #include "asm/engines/mechanical_horse/asm_08041c98.s"
 

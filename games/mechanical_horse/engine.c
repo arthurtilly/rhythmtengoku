@@ -139,9 +139,11 @@ const s32 D_0805aa20[] = {
 };
 
 // ?
-const s32 D_0805aa40[] = {
-    -0x200, -0x280, -0x300, -0x300,
-    -0x400, -0x380, -0x500, -0x400
+const s24_8 D_0805aa40[][2] = {
+    {INT_TO_FIXED(-2), INT_TO_FIXED(-2.5)},
+    {INT_TO_FIXED(-3), INT_TO_FIXED(-3)},
+    {INT_TO_FIXED(-4), INT_TO_FIXED(-3.5)},
+    {INT_TO_FIXED(-5), INT_TO_FIXED(-4)}
 };
 
 // ? (duration values)
