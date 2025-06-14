@@ -17,7 +17,12 @@ void func_08040cfc() {
     gMechanicalHorse->unk300 = 0;
 }
 
-#include "asm/engines/mechanical_horse/asm_08040d10.s"
+void func_08040d10(void) {
+    u16 a = get_current_mem_id();
+    s32 task = palette_fade_in(a, gMechanicalHorse->unk304, 2, gMechanicalHorse->unk302, &mechanical_horse_backgrounds[gMechanicalHorse->unk2ff].palette[0][0], D_03004b10.bgPalette[0]);
+    run_func_after_task(task, func_08040cfc, 0);
+    gMechanicalHorse->unk2fe = gMechanicalHorse->unk2ff;
+}
 
 #include "asm/engines/mechanical_horse/asm_08040d90.s"
 
@@ -70,7 +75,15 @@ void func_08041730(u8 unk) {
 
 #include "asm/engines/mechanical_horse/asm_0804188c.s"
 
-#include "asm/engines/mechanical_horse/asm_08041940.s"
+u8 func_08041940(void) {
+    u8 i;
+    for (i = 0; i < 20; i++) {
+        if (gMechanicalHorse->unk3c[i].unk2 == 0) {
+            return i;
+        }  
+    }
+    return 0;
+}
 
 void func_08041970(void) {
     u8 i;
@@ -171,7 +184,17 @@ void func_080424f0(u16 unk) {
 
 #include "asm/engines/mechanical_horse/asm_08042548.s"
 
-#include "asm/engines/mechanical_horse/asm_08042718.s"
+void mechanical_horse_engine_update() {
+    func_080420c0();
+    func_0804188c();
+    func_08041970();
+    func_0804231c();
+    func_08042548();
+    func_08042438();
+    func_08040e80();
+    func_0804249c();
+    scene_set_music_volume(gMechanicalHorse->musicVolume);
+}
 
 void mechanical_horse_engine_stop() {
 }

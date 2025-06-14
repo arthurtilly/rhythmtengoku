@@ -35,7 +35,7 @@ struct MechanicalHorseEngineData {
         s24_8 pos_x;
         s24_8 pos_y;
         u32 pos_z;
-        s24_8 unk14[2];
+        s24_8 unk14[2]; // velocity?
     } unk3c[20];
     u8 pad[0x60];
     u8 unk2cc;
@@ -44,11 +44,16 @@ struct MechanicalHorseEngineData {
     s16 textSprite;
     u8 pad2e2[6];
     u8 unk2e8;
-    u8 pad2e9[5];
+    u8 pad2e9[3];
+    u16 musicVolume;
     u16 unk2ee;
-    u8 pad2f0[0x10];
+    u8 pad2f0[0xe];
+    s8 unk2fe; // current bg?
+    s8 unk2ff; // next bg?
     u8 unk300;
-    u8 pad301[0xf];
+    u16 unk302;
+    u8 unk304;
+    u8 pad305[0xb];    
 };
 
 struct MechanicalHorseCue {
