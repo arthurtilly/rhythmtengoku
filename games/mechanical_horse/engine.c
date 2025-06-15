@@ -235,59 +235,51 @@ struct GraphicsTable gfx_table_mechanical_horse[] = {
 
 
 // [D_089e8e60] Horse Clops (Player)
-struct SongHeader *mechanical_horse_player_horse_sfx[][4] = {
-    /* WALK */ {
+struct SongHeader *mechanical_horse_player_horse_sfx[] = {
+    /* WALK */
         /* 0x00 */ &s_uma_walk1_seqData,
         /* 0x01 */ &s_uma_walk2_seqData,
         /* 0x02 */ &s_uma_walk3_seqData,
-        /* 0x03 */ &s_uma_walk4_seqData
-    },
-    /* TROT */ {
+        /* 0x03 */ &s_uma_walk4_seqData,
+    /* TROT */
         /* 0x00 */ &s_uma_trot1_seqData,
         /* 0x01 */ &s_uma_trot2_seqData,
         /* 0x02 */ &s_uma_trot1_seqData,
-        /* 0x03 */ &s_uma_trot2_seqData
-    },
-    /* CANTER */ {
+        /* 0x03 */ &s_uma_trot2_seqData,
+    /* CANTER */
         /* 0x00 */ &s_uma_canter1_seqData,
         /* 0x01 */ &s_uma_canter2_seqData,
         /* 0x02 */ &s_uma_canter3_seqData,
-        /* 0x03 */ &s_uma_hihin_seqData
-    },
-    /* GALLOP */ {
+        /* 0x03 */ &s_uma_hihin_seqData,
+    /* GALLOP */
         /* 0x00 */ &s_uma_galop1_seqData,
         /* 0x01 */ &s_uma_galop2_seqData,
         /* 0x02 */ &s_uma_galop3_seqData,
         /* 0x03 */ &s_uma_galop4_seqData
-    }
 };
 
 // [D_089e8ea0] Horse Clops (Teacher)
-struct SongHeader *mechanical_horse_teacher_horse_sfx[][4] = {
-    /* WALK */ {
+struct SongHeader *mechanical_horse_teacher_horse_sfx[] = {
+    /* WALK */ 
         /* 0x00 */ &s_uma_walk1_t_seqData,
         /* 0x01 */ &s_uma_walk2_t_seqData,
         /* 0x02 */ &s_uma_walk3_t_seqData,
-        /* 0x03 */ &s_uma_walk4_t_seqData
-    },
-    /* TROT */ {
-        /* 0x00 */ &s_uma_trot1_t_seqData,
-        /* 0x01 */ &s_uma_trot2_t_seqData,
-        /* 0x02 */ &s_uma_trot1_t_seqData,
-        /* 0x03 */ &s_uma_trot2_t_seqData
-    },
-    /* CANTER */ {
-        /* 0x00 */ &s_uma_canter1_t_seqData,
-        /* 0x01 */ &s_uma_canter2_t_seqData,
-        /* 0x02 */ &s_uma_canter3_t_seqData,
-        /* 0x03 */ &s_uma_hihin_seqData
-    },
-    /* GALLOP */ {
-        /* 0x00 */ &s_uma_galop1_t_seqData,
-        /* 0x01 */ &s_uma_galop2_t_seqData,
-        /* 0x02 */ &s_uma_galop3_t_seqData,
-        /* 0x03 */ &s_uma_galop4_t_seqData
-    }
+        /* 0x03 */ &s_uma_walk4_t_seqData,
+    /* TROT */ 
+        /* 0x04 */ &s_uma_trot1_t_seqData,
+        /* 0x05 */ &s_uma_trot2_t_seqData,
+        /* 0x06 */ &s_uma_trot1_t_seqData,
+        /* 0x07 */ &s_uma_trot2_t_seqData,
+    /* CANTER */
+        /* 0x08 */ &s_uma_canter1_t_seqData,
+        /* 0x09 */ &s_uma_canter2_t_seqData,
+        /* 0x0a */ &s_uma_canter3_t_seqData,
+        /* 0x0b */ &s_uma_hihin_seqData,
+    /* GALLOP */ 
+        /* 0x0c */ &s_uma_galop1_t_seqData,
+        /* 0x0d */ &s_uma_galop2_t_seqData,
+        /* 0x0e */ &s_uma_galop3_t_seqData,
+        /* 0x0f */ &s_uma_galop4_t_seqData
 };
 
 // [D_089e8ee0] Lesson BGM

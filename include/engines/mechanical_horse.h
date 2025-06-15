@@ -13,20 +13,24 @@ enum HorseLessonsEnum {
     HORSE_LESSON_4_GALLOP
 };
 
-struct MechanicalHorseSub2 {
-    u32 unk0;
-    u32 unk1;
-};
-
 // Engine Types:
 struct MechanicalHorseEngineData {
-    u8 pad0[6];
-    u8 unk6;
-    u8 pad7[5];
-    u24_8 unkc;
-    u8 pad10[0x14];
-    u24_8 unk24;
-    u8 pad28[0x14];
+    struct MechanicalHorseSub2 {
+        u8 pad0[4];
+        s16 unk4;
+        u8 unk6;
+        u8 unk7;
+        u8 unk8;
+        s24_8 unkc;
+        u8 pad10[0x4];
+        u32 unk14;
+    } unk0[2]; // horses?
+    u32 pad30;
+    struct MechanicalHorseHorseGfx {
+        s16 sprite;
+        u8 pad2;
+        u8 cel;
+    } horseGfx[2];
     struct MechanicalHorseSub {
         s16 sprite;
         u8 unk2;
@@ -35,8 +39,8 @@ struct MechanicalHorseEngineData {
         s24_8 pos_x;
         s24_8 pos_y;
         u32 pos_z;
-        s24_8 unk14[2]; // velocity?
-    } unk3c[20];
+        s24_8 unk14[2];
+    } unk3c[20]; // clip clop text?
     u8 pad[0x60];
     u8 unk2cc;
     u8 pad2cd[0xf];
@@ -87,8 +91,8 @@ extern const s32 D_0805aab0[][4];
 extern struct MechanicalHorseBG mechanical_horse_backgrounds[];
 extern struct CompressedGraphics *mechanical_horse_buffered_textures[];
 extern struct GraphicsTable gfx_table_mechanical_horse[];
-extern struct SongHeader *mechanical_horse_player_horse_sfx[][4];
-extern struct SongHeader *mechanical_horse_teacher_horse_sfx[][4];
+extern struct SongHeader *mechanical_horse_player_horse_sfx[];
+extern struct SongHeader *mechanical_horse_teacher_horse_sfx[];
 extern struct SongHeader *mechanical_horse_lesson_bgm[];
 extern struct Animation *mechanical_horse_anim[];
 extern struct Animation *mechanical_horse_jockey_anim[];

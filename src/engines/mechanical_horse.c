@@ -87,22 +87,22 @@ u8 func_08041940(void) {
 
 void func_08041970(void) {
     u8 i;
-    u8 temp1;
+    boolean isPlayer;
     u32 temp2;
     for (i = 0; i < 20; i++) {
         switch (gMechanicalHorse->unk3c[i].unk2) {
             case 2:
             case 3:
-                temp1 = FALSE;
+                isPlayer = FALSE;
                 if (gMechanicalHorse->unk3c[i].unk2 == 2) {
-                    temp1 = TRUE;
+                    isPlayer = TRUE;
                 }
 
-                if (temp1) {
-                    gMechanicalHorse->unk3c[i].pos_x = gMechanicalHorse->unkc;
+                if (isPlayer) {
+                    gMechanicalHorse->unk3c[i].pos_x = gMechanicalHorse->unk0[0].unkc;
                     gMechanicalHorse->unk3c[i].pos_z = INT_TO_FIXED(128.0078125);
                 } else {
-                    gMechanicalHorse->unk3c[i].pos_x = gMechanicalHorse->unk24;
+                    gMechanicalHorse->unk3c[i].pos_x = gMechanicalHorse->unk0[1].unkc;
                     gMechanicalHorse->unk3c[i].pos_z = INT_TO_FIXED(128.01953125);
                 }
                 gMechanicalHorse->unk3c[i].pos_y = INT_TO_FIXED(96);
@@ -218,7 +218,7 @@ void mechanical_horse_cue_miss(struct Cue *cue, struct MechanicalHorseCue *data)
 }
 
 void mechanical_horse_input_event(u32 pressed, u32 released) {
-    if (gMechanicalHorse->unk6 == 0) {
+    if (gMechanicalHorse->unk0[0].unk6 == 0) {
         func_08041c98();
     } else {
         func_08041f80();
