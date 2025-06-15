@@ -9,15 +9,39 @@ asm(".include \"include/gba.inc\""); // Temporary
 /* MECHANICAL HORSE */
 
 
-#include "asm/engines/mechanical_horse/asm_08040c2c.s"
+void func_08040c2c() {
+    gMechanicalHorse->unk2fe = 0;
+    gMechanicalHorse->unk306 = -1;
+    gMechanicalHorse->unk300 = 0;
+}
 
-#include "asm/engines/mechanical_horse/asm_08040c58.s"
+void func_08040c58() {
+    u32* temp;
+    switch (gMechanicalHorse->unk2fe) {
+        case 0:
+        case 1:
+        case 2:
+            gMechanicalHorse->unk30c += (s32)(gMechanicalHorse->unk2d0 + ((gMechanicalHorse->unk2d0) >> 0x1f)) >> 1;
+            break;
+        case 3:
+            gMechanicalHorse->unk30c += INT_TO_FIXED(13);
+            break;
+        case 4:
+            gMechanicalHorse->unk30c = 0;
+            break;
+        case 5:
+            gMechanicalHorse->unk30c = 0;
+            break;
+    }
+    scene_set_bg_layer_pos(0, FIXED_TO_INT(gMechanicalHorse->unk30c), 0);
+}
+
 
 void func_08040cfc() {
     gMechanicalHorse->unk300 = 0;
 }
 
-void func_08040d10(void) {
+void func_08040d10() {
     u16 a = get_current_mem_id();
     s32 task = palette_fade_in(a, gMechanicalHorse->unk304, 2, gMechanicalHorse->unk302, &mechanical_horse_backgrounds[gMechanicalHorse->unk2ff].palette[0][0], D_03004b10.bgPalette[0]);
     run_func_after_task(task, func_08040cfc, 0);
@@ -28,7 +52,12 @@ void func_08040d10(void) {
 
 #include "asm/engines/mechanical_horse/asm_08040dd8.s"
 
-#include "asm/engines/mechanical_horse/asm_08040e80.s"
+void func_08040e80() {
+    if (gMechanicalHorse->unk300 == 0 && gMechanicalHorse->unk306 >= 0) {
+        func_08040dd8();
+    }
+    func_08040c58();
+}
 
 #include "asm/engines/mechanical_horse/asm_08040eb0.s"
 

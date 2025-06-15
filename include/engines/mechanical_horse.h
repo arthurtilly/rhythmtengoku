@@ -30,7 +30,7 @@ struct MechanicalHorseEngineData {
         s16 sprite;
         u8 pad2;
         u8 cel;
-    } horseGfx[2];
+    } horseGfx[2]; // may be the rider instead?
     struct MechanicalHorseSub {
         s16 sprite;
         u8 unk2;
@@ -43,7 +43,8 @@ struct MechanicalHorseEngineData {
     } unk3c[20]; // clip clop text?
     u8 pad[0x60];
     u8 unk2cc;
-    u8 pad2cd[0xf];
+    u32 unk2d0;
+    u32 pad2d4[2];
     struct BitmapFontOBJ* textFont;
     s16 textSprite;
     u8 pad2e2[6];
@@ -57,7 +58,10 @@ struct MechanicalHorseEngineData {
     u8 unk300;
     u16 unk302;
     u8 unk304;
-    u8 pad305[0xb];    
+    u8 pad305;
+    s8 unk306;
+    u8 pad307[0x5];
+    u24_8 unk30c;
 };
 
 struct MechanicalHorseCue {
@@ -100,13 +104,13 @@ extern struct Animation *mechanical_horse_lesson_text_anim[][4];
 
 
 // Functions:
-// extern ? func_08040c2c(?);
-// extern ? func_08040c58(?);
+extern void func_08040c2c(void);
+extern void func_08040c58(void);
 extern void func_08040cfc(void);
 // extern ? func_08040d10(?);
 // extern ? func_08040d90(?);
 // extern ? func_08040dd8(?);
-// extern ? func_08040e80(?);
+extern void func_08040e80(void);
 // extern ? func_08040eb0(?);
 extern void mechanical_horse_init_gfx3(void); // Graphics Init. 3
 extern void mechanical_horse_init_gfx2(void); // Graphics Init. 2
@@ -119,8 +123,8 @@ extern void func_08041730(u8); // Engine Event 0x03 (?)
 extern void func_08041744(); // Engine Event 0x04 (?)
 extern void func_080417ac(); // Engine Event 0x05 (?)
 // extern ? func_0804188c(?);
-// extern ? func_08041940(?);
-extern void func_08041970();
+extern u8 func_08041940(void);
+extern void func_08041970(void);
 // extern ? func_08041c98(?);
 // extern ? func_08041ddc(?);
 // extern ? func_08041f80(?);
