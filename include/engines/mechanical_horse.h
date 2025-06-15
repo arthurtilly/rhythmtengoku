@@ -43,7 +43,7 @@ struct MechanicalHorseEngineData {
     } unk3c[20]; // clip clop text?
     u8 pad[0x60];
     u8 unk2cc;
-    u32 unk2d0;
+    s32 unk2d0;
     u32 pad2d4[2];
     struct BitmapFontOBJ* textFont;
     s16 textSprite;

@@ -21,7 +21,7 @@ void func_08040c58() {
         case 0:
         case 1:
         case 2:
-            gMechanicalHorse->unk30c += (s32)(gMechanicalHorse->unk2d0 + ((gMechanicalHorse->unk2d0) >> 0x1f)) >> 1;
+            gMechanicalHorse->unk30c += gMechanicalHorse->unk2d0 / 2;
             break;
         case 3:
             gMechanicalHorse->unk30c += INT_TO_FIXED(13);
