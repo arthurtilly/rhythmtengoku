@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "engines.h"
+#include "src/affine_sprite.h"
 
 #include "games/mechanical_horse/graphics/mechanical_horse_graphics.h"
 
@@ -15,22 +16,22 @@ enum HorseLessonsEnum {
 
 // Engine Types:
 struct MechanicalHorseEngineData {
-    struct MechanicalHorseSub2 {
-        u8 pad0[4];
-        s16 unk4;
-        u8 unk6;
-        u8 unk7;
-        u8 unk8;
-        s24_8 unkc;
-        u8 pad10[0x4];
-        u32 unk14;
-    } unk0[2]; // horses?
-    u32 pad30;
-    struct MechanicalHorseHorseGfx {
+    u8 version;
+    struct MechanicalHorseHorse {
         s16 sprite;
-        u8 pad2;
+        u8 unk2;
         u8 cel;
-    } horseGfx[2]; // may be the rider instead?
+        u8 unk4;
+        s24_8 pos_x;
+        s24_8 pos_y;
+        u32 unk10;
+        u32 unk14;
+    } horse[2];
+    struct MechanicalHorseJockey {
+        s16 sprite;
+        u8 unk2;
+        u8 cel;
+    } jockey[2];
     struct MechanicalHorseSub {
         s16 sprite;
         u8 unk2;
@@ -41,19 +42,33 @@ struct MechanicalHorseEngineData {
         u32 pos_z;
         s24_8 unk14[2];
     } unk3c[20]; // clip clop text?
-    u8 pad[0x60];
+    struct MechanicalHorseSub4 {
+        s16 sprite;
+        u8 unk2;
+        u8 unk3;
+        u8 unk4;
+        s24_8 pos_x;
+        s24_8 pos_y;
+        u32 unk10;
+        u32 unk14;
+    } unk26c[4]; // no clue
     u8 unk2cc;
     s32 unk2d0;
-    u32 pad2d4[2];
-    struct BitmapFontOBJ* textFont;
-    s16 textSprite;
-    u8 pad2e2[6];
+    u32 unk2d4;
+    u32 unk2d8;
+    struct BitmapFontOBJ* text_font;
+    s16 text_sprite;
+    u32 unk2e4;
     u8 unk2e8;
     u8 unk2e9;
-    u8 pad2ea[2];
-    u16 musicVolume;
+    u8 unk2ea;
+    u8 unk2eb;
+    u16 music_volume;
     u16 unk2ee;
-    u8 pad2f0[0xe];
+    u16 unk2f0;
+    struct AffineSprite* tachometer_hand;
+    struct AffineSprite* speedometer_hand;
+    s16 high_speed_light_sprite;
     s8 unk2fe; // current bg?
     s8 unk2ff; // next bg?
     u8 unk300;
