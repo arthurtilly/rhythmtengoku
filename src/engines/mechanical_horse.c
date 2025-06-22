@@ -84,7 +84,54 @@ void mechanical_horse_init_gfx1() {
 
 #include "asm/engines/mechanical_horse/asm_08040f6c.s"
 
-#include "asm/engines/mechanical_horse/asm_08041444.s"
+void func_08041444(int arg0) {
+    u32 temp;
+    u8 temp4;
+    struct SoundPlayer* temp1;
+    if (arg0 == 0) {
+        temp1 = play_sound(mechanical_horse_player_horse_sfx[gMechanicalHorse->unk2cc * 4 + gMechanicalHorse->unk0[0].unk7]);
+    } else {
+        u24_8 temp2;
+        s24_8 temp3;
+        
+        temp1 = play_sound(mechanical_horse_teacher_horse_sfx[gMechanicalHorse->unk2cc * 4 + gMechanicalHorse->unk0[arg0].unk7]);
+        
+        if (gMechanicalHorse->unk0[0].unk6 == 1) {
+            temp2 = INT_TO_FIXED(0.25);
+        } else {
+            temp2 = INT_TO_FIXED(1);
+        }
+        
+        temp3 = FIXED_TO_INT(gMechanicalHorse->unk0[1].unkc) - 128;
+        temp3 = ABS(temp3);
+        if (temp3 >= 128) {
+            temp2 = clamp_int32(128 - temp3 + temp2, INT_TO_FIXED(0.25), INT_TO_FIXED(1));
+        }
+        
+        set_soundplayer_volume(temp1, temp2);
+    }
+
+    sprite_set_anim_cel(gSpriteHandler, gMechanicalHorse->unk0[arg0].unk4, gMechanicalHorse->unk0[arg0].unk7);
+
+    temp4 = gMechanicalHorse->unk0[arg0].unk7 += 1;
+
+    if (temp4 > D_0805aa00[gMechanicalHorse->unk2cc]) {
+        gMechanicalHorse->unk0[arg0].unk7 = 0;
+    }
+
+    sprite_set_anim_cel(gSpriteHandler, gMechanicalHorse->horseGfx[arg0].sprite, gMechanicalHorse->horseGfx[arg0].cel);
+
+
+    if (((gMechanicalHorse->horseGfx[arg0].cel += 1) & 0xff) > D_0805aa10[gMechanicalHorse->unk2cc]) {
+        gMechanicalHorse->horseGfx[arg0].cel = 0;
+    }
+
+    if (arg0 == 1) {
+        gMechanicalHorse->unk0[1].unk8 = 0;
+        gMechanicalHorse->unk0[1].unk14 += D_0805aa20[gMechanicalHorse->unk2cc];
+    }
+
+}
 
 #include "asm/engines/mechanical_horse/asm_080415c0.s"
 
@@ -235,7 +282,15 @@ void mechanical_horse_engine_stop() {
 void mechanical_horse_cue_despawn(struct Cue *cue, struct MechanicalHorseCue *data) {
 }
 
-#include "asm/engines/mechanical_horse/asm_080427ec.s"
+void mechanical_horse_cue_hit(struct Cue *cue, struct MechanicalHorseCue *data, u32 pressed, u32 released) {
+    if (gMechanicalHorse->unk2e9 == 0) {
+        gameplay_ignore_this_cue_result();
+    } else if (gMechanicalHorse->unk0[0].unk6 == 0) {
+        func_08041c98();
+    } else {
+        func_08041ddc();
+    }
+}
 
 void mechanical_horse_cue_barely(struct Cue *cue, struct MechanicalHorseCue *data, u32 pressed, u32 released) {
     mechanical_horse_cue_hit(cue, data, pressed, released);

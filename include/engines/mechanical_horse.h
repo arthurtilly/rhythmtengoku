@@ -49,7 +49,8 @@ struct MechanicalHorseEngineData {
     s16 textSprite;
     u8 pad2e2[6];
     u8 unk2e8;
-    u8 pad2e9[3];
+    u8 unk2e9;
+    u8 pad2ea[2];
     u16 musicVolume;
     u16 unk2ee;
     u8 pad2f0[0xe];
