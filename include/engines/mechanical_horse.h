@@ -123,7 +123,7 @@ extern struct Animation *mechanical_horse_lesson_text_anim[][4];
 extern void func_08040c2c(void);
 extern void func_08040c58(void);
 extern void func_08040cfc(void);
-// extern ? func_08040d10(?);
+extern void func_08040d10(void);
 // extern ? func_08040d90(?);
 // extern ? func_08040dd8(?);
 extern void func_08040e80(void);
@@ -136,7 +136,7 @@ extern void func_08041444(); // Engine Event 0x00 (?)
 extern void func_080415c0(); // Engine Event 0x01 (?)
 extern void func_080416cc(const char* string); // Engine Event 0x02 (?)
 extern void func_08041730(u8); // Engine Event 0x03 (?)
-extern void func_08041744(); // Engine Event 0x04 (?)
+extern void func_08041744(u32); // Engine Event 0x04 (?)
 extern void func_080417ac(); // Engine Event 0x05 (?)
 // extern ? func_0804188c(?);
 extern u8 func_08041940(void);
@@ -147,8 +147,8 @@ extern void func_08041970(void);
 // extern ? func_08042020(?);
 // extern ? func_080420c0(?);
 // extern ? func_0804231c(?);
-// extern ? func_08042438(?);
-// extern ? func_0804249c(?);
+extern void func_08042438(void);
+extern void func_0804249c(void);
 extern void func_080424f0(u16); // Engine Event 0x06 (?)
 extern void func_08042504(); // Engine Event 0x07 (?)
 // extern ? func_08042548(?);

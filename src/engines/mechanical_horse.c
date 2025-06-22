@@ -226,7 +226,16 @@ void func_08041730(u8 unk) {
     gMechanicalHorse->unk2e8 = unk;
 }
 
-#include "asm/engines/mechanical_horse/asm_08041744.s"
+void func_08041744(u32 arg0) {
+    u8 i;
+    gMechanicalHorse->unk2e9 = arg0;
+    for (i = 0; i < 4; i++) {
+        sprite_set_visible(gSpriteHandler, gMechanicalHorse->unk26c[i].sprite, arg0);
+    }
+    if (arg0 == 0 && gMechanicalHorse->unk2cc == 3) {
+        gMechanicalHorse->unk2e9 = 1;
+    }
+}
 
 #include "asm/engines/mechanical_horse/asm_080417ac.s"
 
@@ -329,9 +338,25 @@ void func_08041970(void) {
 
 #include "asm/engines/mechanical_horse/asm_0804231c.s"
 
-#include "asm/engines/mechanical_horse/asm_08042438.s"
+void func_08042438(void) {
+    gMechanicalHorse->unk2d0 = gMechanicalHorse->unk2f0 * gMechanicalHorse->horse[0].unk10;
+    gMechanicalHorse->unk2d4;
+}
 
-#include "asm/engines/mechanical_horse/asm_0804249c.s"
+void func_0804249c(void) {
+    u32 temp = gMechanicalHorse->unk2e4;
+    u32 temp1;
+    u16 temp2;
+    u8 temp3 = gMechanicalHorse->unk2e8;
+    temp1 = temp + 0x40;
+    if (temp3) {
+        temp1 -= 0x80;
+    }
+    gMechanicalHorse->unk2e4 = temp1;
+    gMechanicalHorse->unk2e4 = clamp_int32(gMechanicalHorse->unk2e4, 0, 0x1000);
+    temp2 = FIXED_TO_INT(gMechanicalHorse->unk2e4);
+    D_03004b10.COLEV = temp2 | INT_TO_FIXED(16 - temp2);
+}
 
 void func_080424f0(u16 unk) {
     gMechanicalHorse->unk2ee = unk;
