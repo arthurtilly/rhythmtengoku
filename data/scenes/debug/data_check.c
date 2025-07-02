@@ -20,6 +20,6 @@ struct GraphicsTable data_check_gfx_table[] = {
 
 
 // [D_089cda38] Buffered Textures List
-struct CompressedGraphics *data_check_buffered_textures[] = {
+struct CompressedData *data_check_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

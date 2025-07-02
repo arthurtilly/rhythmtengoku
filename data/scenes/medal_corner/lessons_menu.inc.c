@@ -120,22 +120,22 @@ struct MedalCornerLevel lessons_menu_levels[] = {
 // [D_089dd71c] Drum Lessons Menu - Graphics Table
 struct GraphicsTable lessons_menu_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08cc6914,
+        /* Src.  */ &drum_lessons_menu_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cc6ccc,
+        /* Src.  */ &drum_lessons_menu_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cc5e8c,
+        /* Src.  */ &drum_lessons_menu_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cd8fa4,
+        /* Src.  */ &medal_corner_obj,
         /* Dest. */ OBJ_TILESET_BASE(0x5000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

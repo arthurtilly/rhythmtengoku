@@ -64,7 +64,7 @@ extern const char D_0805a3cc[];
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *showtime_buffered_textures[]; // Buffered Textures List
+extern struct CompressedData *showtime_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable *showtime_gfx_tables[]; // Graphics Table Index
 extern struct Animation *showtime_penguin_beat_anim[];
 extern struct Animation *showtime_penguin_jump_prepare_anim[];

@@ -18,7 +18,7 @@ struct NightWalkPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *night_walk_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *night_walk_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable night_walk_prologue_gfx_table[]; // Graphics Table
 
 

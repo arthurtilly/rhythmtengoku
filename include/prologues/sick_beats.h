@@ -17,7 +17,7 @@ struct SickBeatsPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *sick_beats_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *sick_beats_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable sick_beats_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

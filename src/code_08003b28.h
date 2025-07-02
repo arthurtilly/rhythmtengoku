@@ -84,4 +84,4 @@ extern void bg_anim_set_pause(struct BgAnimator *animator, u32 paused);
 extern void func_08003e00(const u16 *srcData, u32 srcWidth, u32 srcHeight, u16 *destData, u32 targetX, u32 targetY, u32 destWidth);
 extern void func_08003e64(void); // Load RLE Decompression Function to RAM
 // extern ? func_08003ea4(?);
-// extern ? func_08003eb8(struct CompressedGraphics *src, u16 *dest);
+// extern ? func_08003eb8(struct CompressedData *src, u16 *dest);

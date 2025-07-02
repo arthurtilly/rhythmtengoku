@@ -16,7 +16,7 @@ struct ClappyTrioPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *clappy_trio_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *clappy_trio_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable clappy_trio_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

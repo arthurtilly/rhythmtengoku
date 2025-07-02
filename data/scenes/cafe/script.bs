@@ -45,65 +45,65 @@ script script_scene_cafe
         switch FUNC, cafe_get_bg_event
             case 1
                 play_sfx s_hakushu_solo_seqData
-                run cafe_load_bg_event_map, D_08cc15c4
+                run cafe_load_bg_event_map, cafe_bg_map_clap_1
                 rest 12
-                run cafe_load_bg_event_map, D_08cc1a30
+                run cafe_load_bg_event_map, cafe_bg_map_clap_2
                 rest 12
-                run cafe_load_bg_event_map, D_08cc15c4
+                run cafe_load_bg_event_map, cafe_bg_map_clap_1
                 rest 12
-                run cafe_load_bg_event_map, D_08cc1a30
+                run cafe_load_bg_event_map, cafe_bg_map_clap_2
                 rest 12
-                run cafe_load_bg_event_map, D_08cc15c4
+                run cafe_load_bg_event_map, cafe_bg_map_clap_1
                 rest 12
-                run cafe_load_bg_event_map, D_08cc1a30
+                run cafe_load_bg_event_map, cafe_bg_map_clap_2
                 rest 12
-                run cafe_load_bg_event_map, D_08cc15c4
+                run cafe_load_bg_event_map, cafe_bg_map_clap_1
                 rest 12
-                run cafe_load_bg_event_map, D_08cc1a30
+                run cafe_load_bg_event_map, cafe_bg_map_clap_2
                 rest 12
-                run cafe_load_bg_event_map, D_08cc1158
+                run cafe_load_bg_event_map, cafe_bg_map
                 rest 12
                 rest 12
                 break
             case 2
-                run cafe_load_bg_event_map, D_08cc2c18
+                run cafe_load_bg_event_map, cafe_bg_map_helping_1
                 rest 72
-                run cafe_load_bg_event_map, D_08cc2790
+                run cafe_load_bg_event_map, cafe_bg_map_helping_2
                 rest 24
                 play_sfx s_toss_red_red_seqData
-                run cafe_load_bg_event_map, D_08cc30a0
+                run cafe_load_bg_event_map, cafe_bg_map_helping_3
                 rest 24
-                run cafe_load_bg_event_map, D_08cc2c18
+                run cafe_load_bg_event_map, cafe_bg_map_helping_1
                 rest 72
                 break
             case 3
                 play_sfx s_kansei_seqData
-                run cafe_load_bg_event_map, D_08cc1e9c
+                run cafe_load_bg_event_map, cafe_bg_map_cheer_1
                 rest 12
-                run cafe_load_bg_event_map, D_08cc2308
+                run cafe_load_bg_event_map, cafe_bg_map_cheer_2
                 rest 12
-                run cafe_load_bg_event_map, D_08cc1e9c
+                run cafe_load_bg_event_map, cafe_bg_map_cheer_1
                 rest 12
-                run cafe_load_bg_event_map, D_08cc2308
+                run cafe_load_bg_event_map, cafe_bg_map_cheer_2
                 rest 12
-                run cafe_load_bg_event_map, D_08cc1e9c
+                run cafe_load_bg_event_map, cafe_bg_map_cheer_1
                 rest 12
-                run cafe_load_bg_event_map, D_08cc2308
+                run cafe_load_bg_event_map, cafe_bg_map_cheer_2
                 rest 12
-                run cafe_load_bg_event_map, D_08cc1e9c
+                run cafe_load_bg_event_map, cafe_bg_map_cheer_1
                 rest 12
-                run cafe_load_bg_event_map, D_08cc2308
+                run cafe_load_bg_event_map, cafe_bg_map_cheer_2
                 rest 12
-                run cafe_load_bg_event_map, D_08cc1e9c
+                run cafe_load_bg_event_map, cafe_bg_map_cheer_1
                 rest 12
-                run cafe_load_bg_event_map, D_08cc2308
+                run cafe_load_bg_event_map, cafe_bg_map_cheer_2
                 rest 48
-                run cafe_load_bg_event_map, D_08cc1158
+                run cafe_load_bg_event_map, cafe_bg_map
                 rest 12
                 rest 12
                 break
             default
-                run cafe_load_bg_event_map, D_08cc1158
+                run cafe_load_bg_event_map, cafe_bg_map
                 rest 12
         end_switch
     loop_end

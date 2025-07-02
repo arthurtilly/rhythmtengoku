@@ -5,24 +5,24 @@
 
 
 // [D_089edcf4] Buffered Textures List
-struct CompressedGraphics *sick_beats_prologue_buffered_textures[] = {
+struct CompressedData *sick_beats_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089edcf8] Graphics Table
 struct GraphicsTable sick_beats_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c33214,
+        /* Src.  */ &sick_beats_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c3355c,
+        /* Src.  */ &sick_beats_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c31e6c,
+        /* Src.  */ &sick_beats_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

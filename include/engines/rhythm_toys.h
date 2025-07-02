@@ -96,7 +96,7 @@ extern struct SongHeader **rap_machine_sfx_pool[];
 extern struct SongHeader *const *love_machine_sfx_table[];
 extern struct RhythmToysSpriteData *rhythm_toys_sprite_table[];
 extern struct RhythmToysDemo *rhythm_toys_demo_table[];
-extern struct CompressedGraphics *rhythm_toys_buffered_textures[];
+extern struct CompressedData *rhythm_toys_buffered_textures[];
 extern struct GraphicsTable *rhythm_toys_gfx_tables[];
 extern u8 rhythm_toys_button_anim_ids[];
 extern u16 *rhythm_toys_demo_bpm_table[];

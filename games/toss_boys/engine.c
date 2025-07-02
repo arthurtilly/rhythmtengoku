@@ -335,34 +335,34 @@ struct DrumTechInstrument toss_boys_drumtech_bank[] = {
 
 
 // [D_089e8528] Buffered Textures List
-struct CompressedGraphics *toss_boys_buffered_textures[] = {
+struct CompressedData *toss_boys_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e852c] Graphics Table (Toss Boys)
 struct GraphicsTable gfx_table_toss_boys[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08cf961c,
+        /* Src.  */ &toss_boys_action_lines_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0x8000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cfa60c,
+        /* Src.  */ &toss_boys_action_lines_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Tileset */ {
-        /* Src.  */ &D_08cf8918,
+        /* Src.  */ &toss_boys_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cf97d0,
+        /* Src.  */ &toss_boys_bg_map,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cf86dc,
+        /* Src.  */ &toss_boys_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -382,27 +382,31 @@ struct GraphicsTable gfx_table_toss_boys[] = {
 // [D_089e858c] Graphics Table (Remix 5)
 struct GraphicsTable gfx_table_toss_boys_remix_5[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08cf961c,
+        /* Src.  */ &toss_boys_action_lines_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0x8000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cfa60c,
+        /* Src.  */ &toss_boys_action_lines_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Tileset */ {
-        /* Src.  */ &D_08cfa810,
+        /* Src.  */ &toss_boys_remix_5_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cfcb9c,
+        /* Src.  */ &toss_boys_remix_5_bg_map,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cfc9e8,
+#if REV < 1
+        /* Src.  */ &toss_boys_remix_5_obj,
+#else
+        /* Src.  */ &toss_boys_remix_5_obj_rev1,
+#endif
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -422,27 +426,27 @@ struct GraphicsTable gfx_table_toss_boys_remix_5[] = {
 // [D_089e85ec] Graphics Table (Toss Boys 2)
 struct GraphicsTable gfx_table_toss_boys_2[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08cff0bc,
+        /* Src.  */ &toss_boys_2_action_lines_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0x8000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d00158,
+        /* Src.  */ &toss_boys_2_action_lines_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Tileset */ {
-        /* Src.  */ &D_08cfe3b8,
+        /* Src.  */ &toss_boys_2_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cff31c,
+        /* Src.  */ &toss_boys_2_bg_map,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cfdcc4,
+        /* Src.  */ &toss_boys_2_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

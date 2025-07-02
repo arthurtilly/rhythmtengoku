@@ -16,7 +16,7 @@ struct BonOdoriPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *bon_odori_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *bon_odori_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable bon_odori_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

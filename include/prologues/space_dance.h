@@ -18,7 +18,7 @@ struct SpaceDancePrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *space_dance_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *space_dance_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable space_dance_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

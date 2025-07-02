@@ -16,7 +16,7 @@ struct RapWomenPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *rap_women_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *rap_women_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable rap_women_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

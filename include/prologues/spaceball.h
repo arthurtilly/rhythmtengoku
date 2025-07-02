@@ -17,7 +17,7 @@ struct SpaceballPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *spaceball_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *spaceball_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable spaceball_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

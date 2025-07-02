@@ -58,12 +58,12 @@ extern Palette rap_machine_pal[];
 
 /* RHYTHM TOYS - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08cda118;
-extern struct CompressedGraphics D_08cda400;
-extern struct CompressedGraphics D_08cd9a44;
-extern struct CompressedGraphics D_08cdd0d4;
-extern struct CompressedGraphics D_08cdd5b8;
-extern struct CompressedGraphics D_08cdc884;
-extern struct CompressedGraphics D_08cdbacc;
-extern struct CompressedGraphics D_08cdbe6c;
-extern struct CompressedGraphics D_08cdae78;
+extern struct CompressedData cat_machine_bg_tiles;
+extern struct CompressedData cat_machine_bg_map;
+extern struct CompressedData cat_machine_obj;
+extern struct CompressedData love_machine_bg_tiles;
+extern struct CompressedData love_machine_bg_map;
+extern struct CompressedData love_machine_obj;
+extern struct CompressedData rap_machine_bg_tiles;
+extern struct CompressedData rap_machine_bg_map;
+extern struct CompressedData rap_machine_obj;

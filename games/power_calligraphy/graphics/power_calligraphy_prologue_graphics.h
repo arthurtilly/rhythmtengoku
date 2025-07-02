@@ -11,9 +11,9 @@ extern struct Animation anim_power_calligraphy_prologue_artist[];
 
 /* PROLOGUE (POWER CALLIGRAPHY) - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08bf984c;
-extern struct CompressedGraphics D_08bf9b14;
-extern struct CompressedGraphics D_08bf8a30;
+extern struct CompressedData power_calligraphy_prologue_bg_tiles;
+extern struct CompressedData power_calligraphy_prologue_bg_map;
+extern struct CompressedData power_calligraphy_prologue_obj;
 
 /* PROLOGUE (POWER CALLIGRAPHY) - PALETTES */
 

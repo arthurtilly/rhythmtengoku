@@ -626,34 +626,34 @@ struct DrumTechNote *rhythm_test_trick_drum_seq[] = {
 
 
 // [D_089e4f70] Buffered Textures List
-struct CompressedGraphics *rhythm_test_buffered_textures[] = {
+struct CompressedData *rhythm_test_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e4f74] Graphics Table
 struct GraphicsTable rhythm_test_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c6a638,
+        /* Src.  */ &rhythm_test_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c6a830,
+        /* Src.  */ &rhythm_test_bg_map_chart,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c6a9c4,
+        /* Src.  */ &rhythm_test_bg_map_foreground,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c6ab24,
+        /* Src.  */ &rhythm_test_bg_map,
         /* Dest. */ BG_MAP_BASE(0xF800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c6a350,
+        /* Src.  */ &rhythm_test_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

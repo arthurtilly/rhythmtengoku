@@ -16,7 +16,7 @@ struct BonDancePrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *bon_dance_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *bon_dance_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable bon_dance_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

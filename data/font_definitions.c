@@ -119,22 +119,22 @@ struct BitmapFontData bitmap_font_warioware_outline[] = {
             /* Spacing Width */ 0,
 
         /* GLYPHS: PUNCTUATION/SYMBOLS */
-            /* Textures */ warioware_outline_large_symbol_glyphs_bin,
+            /* Textures */ warioware_outline_large_symbol_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_symbol_widths,
         /* GLYPHS: ARABIC NUMERALS */
-            /* Textures */ warioware_outline_large_numeral_wide_glyphs_bin,
+            /* Textures */ warioware_outline_large_numeral_wide_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_numeral_wide_widths,
         /* GLYPHS: LATIN ALPHABET (UPPERCASE) */
-            /* Textures */ warioware_outline_large_latin_upper_glyphs_bin,
+            /* Textures */ warioware_outline_large_latin_upper_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_latin_upper_widths,
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
-            /* Textures */ warioware_outline_large_latin_lower_glyphs_bin,
+            /* Textures */ warioware_outline_large_latin_lower_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_latin_lower_widths,
         /* GLYPHS: HIRAGANA */
-            /* Textures */ warioware_outline_large_hiragana_glyphs_bin,
+            /* Textures */ warioware_outline_large_hiragana_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_hiragana_widths,
         /* GLYPHS: KATAKANA */
-            /* Textures */ warioware_outline_large_katakana_glyphs_bin,
+            /* Textures */ warioware_outline_large_katakana_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_katakana_widths,
     },
 
@@ -147,22 +147,22 @@ struct BitmapFontData bitmap_font_warioware_outline[] = {
             /* Spacing Width */ -1,
 
         /* GLYPHS: PUNCTUATION/SYMBOLS */
-            /* Textures */ warioware_outline_small_symbol_glyphs_bin,
+            /* Textures */ warioware_outline_small_symbol_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_small_symbol_widths,
         /* GLYPHS: ARABIC NUMERALS */
-            /* Textures */ warioware_outline_small_numeral_glyphs_bin,
+            /* Textures */ warioware_outline_small_numeral_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_small_numeral_widths,
         /* GLYPHS: LATIN ALPHABET (UPPERCASE) */
-            /* Textures */ warioware_outline_small_latin_upper_glyphs_bin,
+            /* Textures */ warioware_outline_small_latin_upper_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_small_latin_upper_widths,
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
-            /* Textures */ warioware_outline_small_latin_lower_glyphs_bin,
+            /* Textures */ warioware_outline_small_latin_lower_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_small_latin_lower_widths,
         /* GLYPHS: HIRAGANA */
-            /* Textures */ warioware_outline_small_hiragana_glyphs_bin,
+            /* Textures */ warioware_outline_small_hiragana_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_small_hiragana_widths,
         /* GLYPHS: KATAKANA */
-            /* Textures */ warioware_outline_small_katakana_glyphs_bin,
+            /* Textures */ warioware_outline_small_katakana_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_small_katakana_widths,
     },
 
@@ -175,22 +175,22 @@ struct BitmapFontData bitmap_font_warioware_outline[] = {
             /* Spacing Width */ 0,
 
         /* GLYPHS: PUNCTUATION/SYMBOLS */
-            /* Textures */ warioware_outline_large_symbol_glyphs_bin,
+            /* Textures */ warioware_outline_large_symbol_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_symbol_widths,
         /* GLYPHS: ARABIC NUMERALS */
-            /* Textures */ warioware_outline_large_numeral_narrow_glyphs_bin,
+            /* Textures */ warioware_outline_large_numeral_narrow_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_numeral_narrow_widths,
         /* GLYPHS: LATIN ALPHABET (UPPERCASE) */
-            /* Textures */ warioware_outline_large_latin_upper_glyphs_bin,
+            /* Textures */ warioware_outline_large_latin_upper_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_latin_upper_widths,
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
-            /* Textures */ warioware_outline_large_latin_lower_glyphs_bin,
+            /* Textures */ warioware_outline_large_latin_lower_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_latin_lower_widths,
         /* GLYPHS: HIRAGANA */
-            /* Textures */ warioware_outline_large_hiragana_glyphs_bin,
+            /* Textures */ warioware_outline_large_hiragana_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_hiragana_widths,
         /* GLYPHS: KATAKANA */
-            /* Textures */ warioware_outline_large_katakana_glyphs_bin,
+            /* Textures */ warioware_outline_large_katakana_glyphs_raw_4bpp,
             /* Widths   */ bitmap_font_warioware_outline_large_katakana_widths,
     }
 };
@@ -206,22 +206,22 @@ struct BitmapFontData bitmap_font_warioware_body[] = {
             /* Spacing Width */ 0,
 
         /* GLYPHS: PUNCTUATION/SYMBOLS */
-            /* Textures */ warioware_body_text_symbol_glyphs_bin,
+            /* Textures */ warioware_body_text_symbol_glyphs_raw_4bpp,
             /* Widths   */ NULL,
         /* GLYPHS: ARABIC NUMERALS */
-            /* Textures */ warioware_body_text_numeral_glyphs_bin,
+            /* Textures */ warioware_body_text_numeral_glyphs_raw_4bpp,
             /* Widths   */ NULL,
         /* GLYPHS: LATIN ALPHABET (UPPERCASE) */
-            /* Textures */ warioware_body_text_latin_upper_glyphs_bin,
+            /* Textures */ warioware_body_text_latin_upper_glyphs_raw_4bpp,
             /* Widths   */ NULL,
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
-            /* Textures */ warioware_body_text_latin_lower_glyphs_bin,
+            /* Textures */ warioware_body_text_latin_lower_glyphs_raw_4bpp,
             /* Widths   */ NULL,
         /* GLYPHS: HIRAGANA */
-            /* Textures */ warioware_body_text_hiragana_glyphs_bin,
+            /* Textures */ warioware_body_text_hiragana_glyphs_raw_4bpp,
             /* Widths   */ NULL,
         /* GLYPHS: KATAKANA */
-            /* Textures */ warioware_body_text_katakana_glyphs_bin,
+            /* Textures */ warioware_body_text_katakana_glyphs_raw_4bpp,
             /* Widths   */ NULL,
     },
 
@@ -234,22 +234,22 @@ struct BitmapFontData bitmap_font_warioware_body[] = {
             /* Spacing Width */ 0,
 
         /* GLYPHS: PUNCTUATION/SYMBOLS */
-            /* Textures */ warioware_body_text_symbol_glyphs_bin,
+            /* Textures */ warioware_body_text_symbol_glyphs_raw_4bpp,
             /* Widths   */ NULL,
         /* GLYPHS: ARABIC NUMERALS */
-            /* Textures */ warioware_body_icon_numeral_glyphs_bin,
+            /* Textures */ warioware_body_icon_numeral_glyphs_raw_4bpp,
             /* Widths   */ NULL,
         /* GLYPHS: LATIN ALPHABET (UPPERCASE) */
-            /* Textures */ warioware_body_icon_latin_upper_glyphs_bin,
+            /* Textures */ warioware_body_icon_latin_upper_glyphs_raw_4bpp,
             /* Widths   */ NULL,
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
-            /* Textures */ warioware_body_text_latin_lower_glyphs_bin,
+            /* Textures */ warioware_body_text_latin_lower_glyphs_raw_4bpp,
             /* Widths   */ NULL,
         /* GLYPHS: HIRAGANA */
-            /* Textures */ warioware_body_text_hiragana_glyphs_bin,
+            /* Textures */ warioware_body_text_hiragana_glyphs_raw_4bpp,
             /* Widths   */ NULL,
         /* GLYPHS: KATAKANA */
-            /* Textures */ warioware_body_text_katakana_glyphs_bin,
+            /* Textures */ warioware_body_text_katakana_glyphs_raw_4bpp,
             /* Widths   */ NULL,
     }
 };

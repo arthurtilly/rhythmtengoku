@@ -5,24 +5,24 @@
 
 
 // [D_089eac18] Buffered Textures List
-struct CompressedGraphics *bouncy_road_prologue_buffered_textures[] = {
+struct CompressedData *bouncy_road_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eac1c] Graphics Table
 struct GraphicsTable bouncy_road_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08bee468,
+        /* Src.  */ &bouncy_road_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08bee52c,
+        /* Src.  */ &bouncy_road_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08bee430,
+        /* Src.  */ &bouncy_road_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

@@ -34,7 +34,7 @@ extern const struct SamuraiSlice_0805a5d4 D_0805a5d4[];
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *samurai_slice_buffered_textures[];
+extern struct CompressedData *samurai_slice_buffered_textures[];
 extern struct GraphicsTable samurai_slice_gfx_table[];
 extern struct Animation *samurai_slicing_anim[];
 extern struct Animation *samurai_beat_anim[];

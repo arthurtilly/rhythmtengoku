@@ -4,12 +4,12 @@
 // [D_0805a924] Mechanical Horse BG - Graphics Table 0
 const struct GraphicsTable D_0805a924[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08d11ef4,
+        /* Src.  */ &mechanical_horse_photo_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0x8000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d17708,
+        /* Src.  */ &mechanical_horse_photo_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -19,12 +19,12 @@ const struct GraphicsTable D_0805a924[] = {
 // [D_0805a948] Mechanical Horse BG - Graphics Table 1
 const struct GraphicsTable D_0805a948[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08d10b60,
+        /* Src.  */ &mechanical_horse_space_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0x8000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d1737c,
+        /* Src.  */ &mechanical_horse_space_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -34,12 +34,12 @@ const struct GraphicsTable D_0805a948[] = {
 // [D_0805a96c] Mechanical Horse BG - Graphics Table 2
 const struct GraphicsTable D_0805a96c[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08d0ef74,
+        /* Src.  */ &mechanical_horse_blur_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0x8000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d17048,
+        /* Src.  */ &mechanical_horse_blur_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -49,12 +49,12 @@ const struct GraphicsTable D_0805a96c[] = {
 // [D_0805a990] Mechanical Horse BG - Graphics Table 3
 const struct GraphicsTable D_0805a990[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08d0c580,
+        /* Src.  */ &mechanical_horse_city_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0x8000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d16c34,
+        /* Src.  */ &mechanical_horse_city_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -64,12 +64,12 @@ const struct GraphicsTable D_0805a990[] = {
 // [D_0805a9b4] Mechanical Horse BG - Graphics Table 4
 const struct GraphicsTable D_0805a9b4[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08d0bfc8,
+        /* Src.  */ &mechanical_horse_road_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0x8000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d16998,
+        /* Src.  */ &mechanical_horse_road_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -79,12 +79,12 @@ const struct GraphicsTable D_0805a9b4[] = {
 // [D_0805a9d8] Mechanical Horse BG - Graphics Table 5
 const struct GraphicsTable D_0805a9d8[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08d0af74,
+        /* Src.  */ &mechanical_horse_trees_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0x8000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d16648,
+        /* Src.  */ &mechanical_horse_trees_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -164,34 +164,34 @@ const s32 D_0805aab0[][4] = {
 };
 
 // [D_089e8dcc] Buffered Textures List
-struct CompressedGraphics *mechanical_horse_buffered_textures[] = {
+struct CompressedData *mechanical_horse_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e8dd0] Graphics Table
 struct GraphicsTable gfx_table_mechanical_horse[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08d16210,
+        /* Src.  */ &mechanical_horse_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d17a60,
+        /* Src.  */ &mechanical_horse_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d17c24,
+        /* Src.  */ &mechanical_horse_bg_map_ground,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d17d24,
+        /* Src.  */ &mechanical_horse_bg_map_speedometer,
         /* Dest. */ BG_MAP_BASE(0xF800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08d08208,
+        /* Src.  */ &mechanical_horse_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -206,12 +206,12 @@ struct GraphicsTable gfx_table_mechanical_horse[] = {
         /* Size  */ 0x140
     },
     /* BG Tileset */ {
-        /* Src.  */ &D_08d0af74,
+        /* Src.  */ &mechanical_horse_trees_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0x8000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08d16648,
+        /* Src.  */ &mechanical_horse_trees_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

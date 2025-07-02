@@ -48,7 +48,7 @@ extern const s32 D_0805aab0[][4];
 
 // Engine Definition Data:
 extern struct MechanicalHorseBG mechanical_horse_backgrounds[];
-extern struct CompressedGraphics *mechanical_horse_buffered_textures[];
+extern struct CompressedData *mechanical_horse_buffered_textures[];
 extern struct GraphicsTable gfx_table_mechanical_horse[];
 extern struct SongHeader *mechanical_horse_player_horse_sfx[][4];
 extern struct SongHeader *mechanical_horse_teacher_horse_sfx[][4];

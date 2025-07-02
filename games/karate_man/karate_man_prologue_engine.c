@@ -5,24 +5,24 @@
 
 
 // [D_089ea650] Buffered Textures List
-struct CompressedGraphics *karate_man_prologue_buffered_textures[] = {
+struct CompressedData *karate_man_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ea654] Graphics Table
 struct GraphicsTable karate_man_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08bea934,
+        /* Src.  */ &karate_man_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08beab8c,
+        /* Src.  */ &karate_man_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08be9f5c,
+        /* Src.  */ &karate_man_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

@@ -349,8 +349,8 @@ arm_func_start fast_udivsi3_rom
 glabel fast_udivsi3_rom_end
 
 
-@ Huffman Decompression
-arm_func_start func_08000f08
+@ Graphics Decompression
+arm_func_start decompress_gfx_rom
     push    {r4, r5, r6, r7, r8, r9, r10, r11, r12, lr}
     stmfd   sp!, {r0}
     ldm     r0, {r1, r2, r3, r4, r5, r6, r7, r8}
@@ -499,7 +499,7 @@ branch_08001118:
 branch_08001124:
     pop     {r4, r5, r6, r7, r8, r9, r10, r11, r12, lr}
     bx      lr
-glabel func_08000f08_end
+glabel gfx_decompress_rom_end
 
 
 @ Memory Heap Allocation

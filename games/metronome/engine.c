@@ -5,14 +5,14 @@
 
 
 // [D_089e585c] Buffered Textures List
-struct CompressedGraphics *metronome_buffered_textures[] = {
+struct CompressedData *metronome_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e5860] Graphics Table
 struct GraphicsTable metronome_gfx_table[] = {
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c702d0,
+        /* Src.  */ &metronome_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

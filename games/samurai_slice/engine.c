@@ -5,34 +5,34 @@
 
 
 // [D_089e4798] Buffered Textures List
-struct CompressedGraphics *samurai_slice_buffered_textures[] = {
+struct CompressedData *samurai_slice_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e479c] Graphics Table (Samurai Slice)
 struct GraphicsTable samurai_slice_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c66b54,
+        /* Src.  */ &samurai_slice_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c66fbc,
+        /* Src.  */ &samurai_slice_bg_map_fog_bottom,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c66d24,
+        /* Src.  */ &samurai_slice_bg_map_fog_top,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c67314,
+        /* Src.  */ &samurai_slice_bg_map,
         /* Dest. */ BG_MAP_BASE(0xD800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c658dc,
+        /* Src.  */ &samurai_slice_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

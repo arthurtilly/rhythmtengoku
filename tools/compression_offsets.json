@@ -1,0 +1,1403 @@
+{
+    "rap_women_obj": [
+        13118724,
+        13118672
+    ],
+    "rap_men_prologue_bg_tiles": [
+        12711108,
+        12711056,
+        4
+    ],
+    "rap_men_prologue_obj": [
+        12710680,
+        12710628
+    ],
+    "rap_women_bg_tiles": [
+        13126900,
+        13126848,
+        44
+    ],
+    "rap_women_prologue_obj": [
+        12715996,
+        12715944
+    ],
+    "rap_women_prologue_bg_tiles": [
+        12716508,
+        12716456,
+        4
+    ],
+    "rap_men_obj": [
+        13107808,
+        13107756
+    ],
+    "rap_men_bg_tiles": [
+        13117216,
+        13117164,
+        44
+    ],
+    "clappy_trio_prologue_obj": [
+        12522220,
+        12522172
+    ],
+    "snappy_trio_prologue_bg_tiles": [
+        12531548,
+        12531500,
+        4
+    ],
+    "snappy_trio_obj": [
+        12984668,
+        12984616
+    ],
+    "clappy_trio_obj": [
+        12978612,
+        12978560
+    ],
+    "clappy_trio_prologue_bg_tiles": [
+        12523204,
+        12523156,
+        4
+    ],
+    "snappy_trio_bg_tiles": [
+        12987688,
+        12987636,
+        44
+    ],
+    "snappy_trio_prologue_obj": [
+        12530652,
+        12530604
+    ],
+    "clappy_trio_bg_tiles": [
+        12981860,
+        12981808,
+        44
+    ],
+    "showtime_prologue_obj": [
+        12499940,
+        12499892
+    ],
+    "showtime_bg_tiles": [
+        12930956,
+        12930904
+    ],
+    "showtime_obj": [
+        12920076,
+        12920024
+    ],
+    "showtime_prologue_bg_tiles": [
+        12501316,
+        12501268,
+        8
+    ],
+    "showtime_remix_3_bg_tiles": [
+        12931576,
+        12931524,
+        112
+    ],
+    "bunny_hop_prologue_obj": [
+        12709112,
+        12709060
+    ],
+    "bunny_hop_bg_tiles": [
+        13106120,
+        13106068,
+        80
+    ],
+    "bunny_hop_obj": [
+        13097772,
+        13097720
+    ],
+    "bunny_hop_prologue_bg_tiles": [
+        12710436,
+        12710384,
+        8
+    ],
+    "bon_dance_bg_tiles": [
+        12424764,
+        12424716,
+        144
+    ],
+    "bon_odori_bg_tiles_blank": [
+        12435704,
+        12435656,
+        144
+    ],
+    "bon_odori_bg_tiles": [
+        12434608,
+        12434560
+    ],
+    "bon_odori_prologue_bg_tiles": [
+        12481992,
+        12481944,
+        4
+    ],
+    "bon_dance_obj": [
+        12419184,
+        12419136
+    ],
+    "bon_dance_prologue_obj": [
+        12465064,
+        12465016
+    ],
+    "bon_odori_obj": [
+        12428372,
+        12428324
+    ],
+    "bon_dance_prologue_bg_tiles": [
+        12467760,
+        12467712,
+        4
+    ],
+    "bon_odori_prologue_obj": [
+        12479872,
+        12479824
+    ],
+    "bouncy_road_prologue_obj": [
+        12506356,
+        12506308
+    ],
+    "bouncy_road_obj": [
+        12941288,
+        12941236
+    ],
+    "bouncy_road_remix_5_bg_tiles": [
+        12941860,
+        12941808,
+        16
+    ],
+    "bouncy_road_prologue_bg_tiles": [
+        12510272,
+        12510224,
+        16
+    ],
+    "drum_intro_play_obj": [
+        12881164,
+        12881112
+    ],
+    "drum_intro_unused_bg_tiles": [
+        12889872,
+        12889820,
+        112
+    ],
+    "tanuki_and_monkey_bg_tiles": [
+        13528268,
+        13528216,
+        48
+    ],
+    "drum_intro_talk_bg_tiles": [
+        12897464,
+        12897412,
+        104
+    ],
+    "drum_intro_talk_obj": [
+        12890900,
+        12890848
+    ],
+    "tanuki_and_monkey_obj": [
+        13525640,
+        13525588
+    ],
+    "drum_intro_play_bg_tiles": [
+        12888448,
+        12888396
+    ],
+    "drum_samurai_live_bg_tiles": [
+        12414036,
+        12413988,
+        184
+    ],
+    "drum_boys_live_obj": [
+        12844716,
+        12844664
+    ],
+    "drum_live_menu_obj": [
+        13077012,
+        13076960,
+        16
+    ],
+    "drum_boys_bg_tiles": [
+        12854316,
+        12854264,
+        176
+    ],
+    "drum_samurai_live_obj": [
+        12408968,
+        12408920
+    ],
+    "drum_girls_live_obj": [
+        12859872,
+        12859820
+    ],
+    "drum_live_bg_tiles": [
+        12873800,
+        12873748,
+        176
+    ],
+    "drum_girls_live_bg_tiles": [
+        12869408,
+        12869356
+    ],
+    "drum_studio_hearts_bg_tiles": [
+        13043372,
+        13043320
+    ],
+    "drum_studio_japan_bg_tiles": [
+        13044572,
+        13044520
+    ],
+    "drum_studio_bg_tiles": [
+        12907964,
+        12907912
+    ],
+    "drum_studio_city_bg_tiles": [
+        13042616,
+        13042564
+    ],
+    "drum_studio_obj": [
+        12898384,
+        12898332
+    ],
+    "drum_studio_stationery_bg_tiles": [
+        13048700,
+        13048648
+    ],
+    "drum_studio_unused_bg_tiles": [
+        12909652,
+        12909600
+    ],
+    "drum_studio_circles_bg_tiles": [
+        13042936,
+        13042884
+    ],
+    "drum_studio_checkerboard_bg_tiles": [
+        13042848,
+        13042796
+    ],
+    "drum_studio_fruit_bg_tiles": [
+        13048088,
+        13048036
+    ],
+    "drum_studio_clouds_bg_tiles": [
+        13043088,
+        13043036
+    ],
+    "drum_studio_flowers_bg_tiles": [
+        13047400,
+        13047348
+    ],
+    "drum_studio_stars_bg_tiles": [
+        13046008,
+        13045956
+    ],
+    "drum_lessons_bg_tiles": [
+        12906484,
+        12906432
+    ],
+    "drum_studio_fish_bg_tiles": [
+        13046608,
+        13046556
+    ],
+    "drum_studio_squares_bg_tiles": [
+        13042512,
+        13042460
+    ],
+    "drum_studio_beach_bg_tiles": [
+        13048988,
+        13048936
+    ],
+    "drum_lessons_obj": [
+        12910296,
+        12910244,
+        312
+    ],
+    "drum_studio_sparkles_bg_tiles": [
+        13044152,
+        13044100
+    ],
+    "drum_studio_lines_bg_tiles": [
+        13049460,
+        13049408
+    ],
+    "fireworks_obj": [
+        12960688,
+        12960636
+    ],
+    "fireworks_remix_5_bg_tiles_3": [
+        12970972,
+        12970920
+    ],
+    "fireworks_prologue_obj": [
+        12513980,
+        12513932
+    ],
+    "fireworks_remix_5_bg_tiles_4": [
+        12972684,
+        12972632,
+        64
+    ],
+    "fireworks_remix_5_bg_tiles_2": [
+        12968476,
+        12968424
+    ],
+    "fireworks_prologue_bg_tiles": [
+        12514928,
+        12514880,
+        8
+    ],
+    "fireworks_remix_5_bg_tiles_1": [
+        12966536,
+        12966484
+    ],
+    "karate_man_bg_tiles_serious_unused": [
+        12437832,
+        12437784
+    ],
+    "karate_man_prologue_bg_tiles": [
+        12492652,
+        12492604,
+        8
+    ],
+    "karate_man_bg_tiles_unused_face_3": [
+        12442780,
+        12442732
+    ],
+    "karate_man_bg_tiles": [
+        12436784,
+        12436736
+    ],
+    "karate_man_prologue_obj": [
+        12486712,
+        12486664
+    ],
+    "karate_man_obj": [
+        12443876,
+        12443828,
+        92
+    ],
+    "karate_man_bg_tiles_unused_face_1": [
+        12439512,
+        12439464
+    ],
+    "karate_man_bg_tiles_unused_face_2": [
+        12440848,
+        12440800
+    ],
+    "karate_man_bg_tiles_serious": [
+        12438644,
+        12438596
+    ],
+    "mannequin_factory_bg_tiles": [
+        12795764,
+        12795712
+    ],
+    "mannequin_factory_obj": [
+        12797064,
+        12797012,
+        132
+    ],
+    "marching_orders_prologue_bg_tiles": [
+        12558868,
+        12558816,
+        4
+    ],
+    "marching_orders_bg_tiles": [
+        13026920,
+        13026868,
+        68
+    ],
+    "marching_orders_remix_7_bg_tiles": [
+        13523788,
+        13523736,
+        92
+    ],
+    "marching_orders_obj": [
+        13019956,
+        13019904
+    ],
+    "marching_orders_2_prologue_bg_tiles": [
+        12568836,
+        12568784,
+        4
+    ],
+    "marching_orders_2_bg_tiles": [
+        13035748,
+        13035696,
+        68
+    ],
+    "marching_orders_remix_7_obj": [
+        13517436,
+        13517384
+    ],
+    "marching_orders_2_prologue_obj": [
+        12567048,
+        12566996
+    ],
+    "marching_orders_2_obj": [
+        13028848,
+        13028796
+    ],
+    "marching_orders_prologue_obj": [
+        12557092,
+        12557040
+    ],
+    "mechanical_horse_blur_bg_tiles": [
+        13682064,
+        13682012
+    ],
+    "sick_beats_obj": [
+        13729076,
+        13729024
+    ],
+    "mechanical_horse_city_bg_tiles": [
+        13680600,
+        13680548
+    ],
+    "mechanical_horse_bg_tiles": [
+        13704964,
+        13704912,
+        96
+    ],
+    "mechanical_horse_obj": [
+        13656784,
+        13656732
+    ],
+    "mechanical_horse_road_bg_tiles": [
+        13676420,
+        13676368
+    ],
+    "mechanical_horse_space_bg_tiles": [
+        13692804,
+        13692752
+    ],
+    "mechanical_horse_trees_bg_tiles": [
+        13664792,
+        13664740
+    ],
+    "mechanical_horse_photo_bg_tiles": [
+        13699952,
+        13699900
+    ],
+    "metronome_obj": [
+        13037516,
+        13037464,
+        112
+    ],
+    "night_walk_prologue_bg_tiles": [
+        12499560,
+        12499512,
+        12
+    ],
+    "night_walk_obj": [
+        12916172,
+        12916120,
+        176
+    ],
+    "night_walk_prologue_obj": [
+        12498076,
+        12498028
+    ],
+    "ninja_reincarnate_bg_tiles": [
+        13752552,
+        13752500
+    ],
+    "ninja_bodyguard_obj": [
+        13493488,
+        13493436,
+        120
+    ],
+    "ninja_bodyguard_prologue_obj": [
+        12724676,
+        12724624
+    ],
+    "ninja_reincarnate_obj": [
+        13755240,
+        13755188,
+        120
+    ],
+    "ninja_bodyguard_prologue_bg_tiles": [
+        12726004,
+        12725952,
+        4
+    ],
+    "ninja_bodyguard_intro_bg_tiles": [
+        13490660,
+        13490608
+    ],
+    "ninja_bodyguard_bg_tiles": [
+        13489608,
+        13489556
+    ],
+    "ninja_reincarnate_prologue_bg_tiles": [
+        12730896,
+        12730844,
+        4
+    ],
+    "ninja_reincarnate_prologue_obj": [
+        12729568,
+        12729516
+    ],
+    "polyrhythm_prologue_bg_tiles": [
+        12582944,
+        12582892,
+        4
+    ],
+    "polyrhythm_obj": [
+        13070932,
+        13070880,
+        64
+    ],
+    "polyrhythm_prologue_obj": [
+        12580628,
+        12580576
+    ],
+    "power_calligraphy_obj_dancers": [
+        13012340,
+        13012288,
+        160
+    ],
+    "power_calligraphy_prologue_obj": [
+        12549908,
+        12549856
+    ],
+    "power_calligraphy_prologue_bg_tiles": [
+        12552768,
+        12552716,
+        12
+    ],
+    "power_calligraphy_bg_tiles": [
+        13012268,
+        13012216
+    ],
+    "power_calligraphy_obj": [
+        13005604,
+        13005552
+    ],
+    "quiz_show_obj": [
+        13081552,
+        13081500
+    ],
+    "quiz_show_prologue_obj": [
+        12592696,
+        12592644
+    ],
+    "quiz_show_prologue_bg_tiles": [
+        12593732,
+        12593680,
+        4
+    ],
+    "quiz_show_bg_tiles": [
+        13093104,
+        13093052,
+        168
+    ],
+    "rat_race_obj": [
+        13128408,
+        13128356
+    ],
+    "rat_race_bg_tiles": [
+        13135492,
+        13135440,
+        120
+    ],
+    "rat_race_prologue_bg_tiles": [
+        12722072,
+        12722020,
+        8
+    ],
+    "rat_race_prologue_obj": [
+        12718692,
+        12718640
+    ],
+    "remix_1_prologue_bg_tiles": [
+        12603388,
+        12603336,
+        4
+    ],
+    "remix_1_prologue_obj": [
+        12601680,
+        12601628
+    ],
+    "remix_2_prologue_obj": [
+        12609688,
+        12609636
+    ],
+    "remix_2_prologue_bg_tiles": [
+        12611460,
+        12611408,
+        4
+    ],
+    "remix_3_prologue_bg_tiles": [
+        12620528,
+        12620476,
+        4
+    ],
+    "remix_3_prologue_obj": [
+        12618760,
+        12618708
+    ],
+    "remix_4_prologue_obj": [
+        12627808,
+        12627756
+    ],
+    "remix_4_prologue_bg_tiles": [
+        12629588,
+        12629536,
+        4
+    ],
+    "remix_5_prologue_obj": [
+        12640632,
+        12640580
+    ],
+    "remix_5_prologue_bg_tiles": [
+        12642420,
+        12642368,
+        4
+    ],
+    "remix_6_prologue_bg_tiles": [
+        12661776,
+        12661724,
+        4
+    ],
+    "remix_6_prologue_obj": [
+        12659980,
+        12659928
+    ],
+    "remix_7_prologue_bg_tiles": [
+        12678096,
+        12678044,
+        4
+    ],
+    "remix_7_prologue_obj": [
+        12676384,
+        12676332
+    ],
+    "remix_8_prologue_bg_tiles": [
+        12690572,
+        12690520,
+        4
+    ],
+    "remix_8_prologue_obj": [
+        12688740,
+        12688688
+    ],
+    "rhythm_test_obj": [
+        13015124,
+        13015072
+    ],
+    "rhythm_test_bg_tiles": [
+        13017952,
+        13017900,
+        40
+    ],
+    "cat_machine_bg_tiles": [
+        13474388,
+        13474336
+    ],
+    "rap_machine_obj": [
+        13476880,
+        13476828
+    ],
+    "cat_machine_obj": [
+        13472556,
+        13472504
+    ],
+    "love_machine_obj": [
+        13483644,
+        13483592
+    ],
+    "love_machine_bg_tiles": [
+        13486228,
+        13486176
+    ],
+    "rap_machine_bg_tiles": [
+        13479560,
+        13479508
+    ],
+    "rhythm_tweezers_prologue_bg_tiles": [
+        12510780,
+        12510732,
+        4
+    ],
+    "rhythm_tweezers_no_peeking_sign_bg_tiles": [
+        12955412,
+        12955360,
+        60
+    ],
+    "rhythm_tweezers_obj": [
+        12945744,
+        12945692
+    ],
+    "rhythm_tweezers_bg_tiles": [
+        12947820,
+        12947768
+    ],
+    "rhythm_tweezers_prologue_obj": [
+        12510524,
+        12510476
+    ],
+    "sick_beats_prologue_obj": [
+        12784972,
+        12784920
+    ],
+    "sick_beats_prologue_bg_tiles": [
+        12787324,
+        12787272,
+        12
+    ],
+    "sick_beats_bg_tiles": [
+        13736140,
+        13736088,
+        164
+    ],
+    "sneaky_spirits_obj": [
+        12389592,
+        12389544
+    ],
+    "sneaky_spirits_prologue_bg_tiles": [
+        12455944,
+        12455896,
+        4
+    ],
+    "sneaky_spirits_bg_tiles": [
+        12395628,
+        12395580,
+        80
+    ],
+    "sneaky_spirits_prologue_obj": [
+        12455160,
+        12455112
+    ],
+    "cosmic_dance_prologue_bg_tiles": [
+        12496776,
+        12496728,
+        8
+    ],
+    "space_dance_obj": [
+        13500780,
+        13500728
+    ],
+    "cosmic_dance_bg_tiles": [
+        12816240,
+        12816188,
+        164
+    ],
+    "space_dance_prologue_obj": [
+        12732436,
+        12732384
+    ],
+    "cosmic_dance_prologue_obj": [
+        12495772,
+        12495724
+    ],
+    "space_dance_prologue_bg_tiles": [
+        12734320,
+        12734268,
+        12
+    ],
+    "cosmic_dance_obj": [
+        12804288,
+        12804236
+    ],
+    "space_dance_remix_3_bg_tiles": [
+        13511872,
+        13511820,
+        144
+    ],
+    "space_dance_bg_tiles": [
+        13511036,
+        13510984
+    ],
+    "spaceball_prologue_obj": [
+        12459532,
+        12459484
+    ],
+    "spaceball_bg_tiles": [
+        12406400,
+        12406352,
+        88
+    ],
+    "spaceball_prologue_bg_tiles": [
+        12460712,
+        12460664,
+        4
+    ],
+    "spaceball_obj": [
+        12397832,
+        12397784
+    ],
+    "staff_credit_drums_2_bg_tiles": [
+        12839772,
+        12839720
+    ],
+    "staff_credit_karate_man_bg_tiles": [
+        12820656,
+        12820604
+    ],
+    "staff_credit_bon_odori_bg_tiles": [
+        12834564,
+        12834512
+    ],
+    "staff_credit_clappy_trio_bg_tiles": [
+        12822720,
+        12822668
+    ],
+    "staff_credit_drums_bg_tiles": [
+        12838168,
+        12838116
+    ],
+    "staff_credit_toss_boys_bg_tiles": [
+        12828276,
+        12828224
+    ],
+    "staff_credit_tap_trial_bg_tiles": [
+        12831328,
+        12831276
+    ],
+    "staff_credit_spaceball_bg_tiles": [
+        12825900,
+        12825848
+    ],
+    "tap_trial_obj": [
+        13529496,
+        13529444
+    ],
+    "tap_trial_2_obj": [
+        13579348,
+        13579296
+    ],
+    "tap_trial_2_bg_tiles": [
+        13589788,
+        13589736,
+        136
+    ],
+    "tap_trial_prologue_bg_tiles": [
+        12739408,
+        12739356,
+        8
+    ],
+    "tap_trial_bg_tiles": [
+        13539500,
+        13539448,
+        136
+    ],
+    "tap_trial_prologue_obj": [
+        12737208,
+        12737156
+    ],
+    "tap_trial_remix_7_obj": [
+        13553220,
+        13553168
+    ],
+    "tap_trial_remix_8_obj": [
+        13541652,
+        13541600
+    ],
+    "tap_trial_2_prologue_obj": [
+        12746292,
+        12746240
+    ],
+    "tap_trial_remix_8_bg_tiles": [
+        13551848,
+        13551796,
+        136
+    ],
+    "tap_trial_2_prologue_bg_tiles": [
+        12748836,
+        12748784,
+        8
+    ],
+    "tap_trial_remix_5_bg_tiles": [
+        13567748,
+        13567696
+    ],
+    "tap_trial_remix_5_obj": [
+        13569760,
+        13569708,
+        136
+    ],
+    "tap_trial_remix_7_bg_tiles": [
+        13562760,
+        13562708,
+        136
+    ],
+    "tram_pauline_prologue_obj": [
+        12779608,
+        12779556
+    ],
+    "tram_pauline_remix_3_obj": [
+        13631848,
+        13631796
+    ],
+    "tram_pauline_obj": [
+        13643568,
+        13643516
+    ],
+    "tram_pauline_bg_tiles": [
+        13652704,
+        13652652,
+        156
+    ],
+    "tram_pauline_prologue_bg_tiles": [
+        12781856,
+        12781804,
+        8
+    ],
+    "tram_pauline_remix_3_bg_tiles": [
+        13639952,
+        13639900
+    ],
+    "tram_pauline_unused_bg_tiles": [
+        13641844,
+        13641792,
+        140
+    ],
+    "wizards_waltz_prologue_obj": [
+        12793196,
+        12793144
+    ],
+    "wizards_waltz_prologue_bg_tiles": [
+        12793424,
+        12793372,
+        4
+    ],
+    "wizards_waltz_obj": [
+        13742108,
+        13742056
+    ],
+    "wizards_waltz_bg_tiles": [
+        13751252,
+        13751200,
+        72
+    ],
+    "samurai_slice_obj": [
+        12990704,
+        12990652
+    ],
+    "samurai_slice_prologue_bg_tiles": [
+        12543624,
+        12543572,
+        4
+    ],
+    "samurai_slice_prologue_obj": [
+        12542168,
+        12542120
+    ],
+    "samurai_slice_bg_tiles": [
+        12998892,
+        12998840,
+        128
+    ],
+    "samurai_slice_prologue_obj_rev1": [
+        12542168,
+        12542120
+    ],
+    "toss_boys_bg_tiles": [
+        13600492,
+        13600440
+    ],
+    "toss_boys_prologue_bg_tiles": [
+        12755480,
+        12755428,
+        4
+    ],
+    "toss_boys_2_prologue_obj": [
+        12769648,
+        12769596
+    ],
+    "toss_boys_2_action_lines_bg_tiles": [
+        13624264,
+        13624212,
+        164
+    ],
+    "toss_boys_prologue_obj": [
+        12754168,
+        12754116
+    ],
+    "toss_boys_remix_5_obj_rev1": [
+        13608992,
+        13608940,
+        180
+    ],
+    "toss_boys_remix_5_obj": [
+        13608992,
+        13608940,
+        180
+    ],
+    "toss_boys_obj": [
+        13595288,
+        13595236
+    ],
+    "toss_boys_remix_5_bg_tiles": [
+        13608476,
+        13608424
+    ],
+    "toss_boys_action_lines_bg_tiles": [
+        13601064,
+        13601012,
+        152
+    ],
+    "toss_boys_2_obj": [
+        13618092,
+        13618040
+    ],
+    "toss_boys_2_bg_tiles": [
+        13622484,
+        13622432
+    ],
+    "toss_boys_2_prologue_bg_tiles": [
+        12770960,
+        12770908,
+        4
+    ],
+    "arrival_bg_tiles": [
+        13363008,
+        13362956,
+        8
+    ],
+    "cafe_obj": [
+        13365236,
+        13365184
+    ],
+    "cafe_bg_tiles": [
+        13365496,
+        13365444,
+        16
+    ],
+    "reading_style_cooking_bg_tiles": [
+        13428108,
+        13428056
+    ],
+    "reading_obj": [
+        13421200,
+        13421148,
+        12
+    ],
+    "reading_style_classroom_bg_tiles": [
+        13433452,
+        13433400
+    ],
+    "reading_style_train_bg_tiles": [
+        13438216,
+        13438164
+    ],
+    "reading_style_mail_bg_tiles": [
+        13429608,
+        13429556
+    ],
+    "data_room_bg_tiles": [
+        13398848,
+        13398796,
+        24
+    ],
+    "reading_style_cherry_bg_tiles": [
+        13443548,
+        13443496,
+        8
+    ],
+    "reading_style_bulletin_bg_tiles": [
+        13421344,
+        13421292
+    ],
+    "reading_style_manzai_bg_tiles": [
+        13423456,
+        13423404
+    ],
+    "reading_style_haiku_bg_tiles": [
+        13430652,
+        13430600
+    ],
+    "reading_style_sea_bg_tiles": [
+        13446428,
+        13446376
+    ],
+    "data_room_obj": [
+        13397212,
+        13397160
+    ],
+    "marching_orders_2_epilogue_bg_tiles": [
+        13227856,
+        13227804
+    ],
+    "remix_5_epilogue_bg_tiles": [
+        13284812,
+        13284760
+    ],
+    "quiz_show_epilogue_bg_tiles": [
+        13235444,
+        13235392
+    ],
+    "rat_race_epilogue_bg_tiles": [
+        13257876,
+        13257824
+    ],
+    "cosmic_dance_epilogue_bg_tiles": [
+        13169188,
+        13169136
+    ],
+    "snappy_trio_epilogue_bg_tiles": [
+        13206616,
+        13206564
+    ],
+    "night_walk_epilogue_bg_tiles": [
+        13177796,
+        13177744
+    ],
+    "fireworks_epilogue_bg_tiles": [
+        13196444,
+        13196392
+    ],
+    "bon_odori_epilogue_bg_tiles": [
+        13158764,
+        13158712
+    ],
+    "bunny_hop_epilogue_bg_tiles": [
+        13243188,
+        13243136
+    ],
+    "space_dance_epilogue_bg_tiles": [
+        13319256,
+        13319204
+    ],
+    "toss_boys_epilogue_bg_tiles": [
+        13335240,
+        13335188
+    ],
+    "remix_3_epilogue_bg_tiles": [
+        13271788,
+        13271736
+    ],
+    "tap_trial_epilogue_bg_tiles": [
+        13325372,
+        13325320
+    ],
+    "rap_men_epilogue_bg_tiles": [
+        13249024,
+        13248972
+    ],
+    "samurai_slice_epilogue_bg_tiles": [
+        13211396,
+        13211344
+    ],
+    "remix_2_epilogue_bg_tiles": [
+        13265368,
+        13265316
+    ],
+    "polyrhythm_epilogue_bg_tiles": [
+        13231956,
+        13231904
+    ],
+    "remix_7_epilogue_bg_tiles": [
+        13295616,
+        13295564
+    ],
+    "karate_man_epilogue_bg_tiles": [
+        13163032,
+        13162980
+    ],
+    "wizards_waltz_epilogue_bg_tiles": [
+        13356968,
+        13356916
+    ],
+    "bon_dance_epilogue_bg_tiles": [
+        13152604,
+        13152552
+    ],
+    "remix_6_epilogue_bg_tiles": [
+        13289752,
+        13289700
+    ],
+    "showtime_epilogue_bg_tiles": [
+        13181076,
+        13181024
+    ],
+    "remix_8_epilogue_bg_tiles": [
+        13303032,
+        13302980
+    ],
+    "power_calligraphy_epilogue_bg_tiles": [
+        13215904,
+        13215852
+    ],
+    "placeholder_epilogue_bg_tiles": [
+        13361416,
+        13361364
+    ],
+    "marching_orders_epilogue_bg_tiles": [
+        13221464,
+        13221412
+    ],
+    "ninja_bodyguard_epilogue_bg_tiles": [
+        13310744,
+        13310692
+    ],
+    "rap_women_epilogue_bg_tiles": [
+        13253528,
+        13253476
+    ],
+    "tram_pauline_epilogue_bg_tiles": [
+        13345788,
+        13345736
+    ],
+    "sick_beats_epilogue_bg_tiles": [
+        13351240,
+        13351188
+    ],
+    "bouncy_road_epilogue_bg_tiles": [
+        13185872,
+        13185820
+    ],
+    "clappy_trio_epilogue_bg_tiles": [
+        13202156,
+        13202104
+    ],
+    "spaceball_epilogue_bg_tiles": [
+        13147620,
+        13147568
+    ],
+    "remix_4_epilogue_bg_tiles": [
+        13277964,
+        13277912
+    ],
+    "sneaky_spirits_epilogue_bg_tiles": [
+        13141312,
+        13141260
+    ],
+    "tap_trial_2_epilogue_bg_tiles": [
+        13329316,
+        13329264
+    ],
+    "remix_1_epilogue_bg_tiles": [
+        13261280,
+        13261228
+    ],
+    "rhythm_tweezers_epilogue_bg_tiles": [
+        13189236,
+        13189184
+    ],
+    "toss_boys_2_epilogue_bg_tiles": [
+        13341300,
+        13341248
+    ],
+    "drum_live_epilogue_bg_tiles": [
+        13175072,
+        13175020
+    ],
+    "ninja_reincarnate_epilogue_bg_tiles": [
+        13315292,
+        13315240
+    ],
+    "game_select_bg_tiles": [
+        13406552,
+        13406500,
+        116
+    ],
+    "game_select_obj": [
+        13400656,
+        13400604
+    ],
+    "main_menu_obj": [
+        13409852,
+        13409800
+    ],
+    "main_menu_bg_tiles": [
+        13415080,
+        13415028,
+        52
+    ],
+    "endless_games_menu_bg_tiles": [
+        13384588,
+        13384536,
+        16
+    ],
+    "drum_lessons_menu_bg_tiles": [
+        13393564,
+        13393512,
+        92
+    ],
+    "medal_corner_obj": [
+        13471152,
+        13471100,
+        40
+    ],
+    "drum_lessons_menu_obj": [
+        13388772,
+        13388720
+    ],
+    "endless_games_menu_obj": [
+        13381808,
+        13381756
+    ],
+    "rhythm_toys_menu_bg_tiles": [
+        13468568,
+        13468516
+    ],
+    "rhythm_toys_menu_obj": [
+        13466352,
+        13466300
+    ],
+    "options_obj": [
+        13067024,
+        13066972
+    ],
+    "options_bg_tiles": [
+        13069492,
+        13069440,
+        44
+    ],
+    "perfect_certificate_bg_tiles": [
+        13416528,
+        13416476
+    ],
+    "score_results_obj": [
+        13453948,
+        13453896,
+        24
+    ],
+    "rank_results_obj": [
+        13448320,
+        13448268,
+        28
+    ],
+    "studio_obj": [
+        13455232,
+        13455180
+    ],
+    "studio_bg_tiles": [
+        13456024,
+        13455972,
+        56
+    ],
+    "title_bg_tiles": [
+        13460548,
+        13460496
+    ],
+    "title_obj": [
+        13461068,
+        13461016,
+        76
+    ],
+    "gameplay_obj": [
+        13419436,
+        13419384,
+        36
+    ],
+    "studio_memory_usage_graph_bg_map": [
+        13388304,
+        13388252,
+        8
+    ],
+    "placeholder_prologue_obj": [
+        12794916,
+        12794864,
+        4
+    ],
+    "gameplay_unused_warioware_obj": [
+        13761408,
+        13761356,
+        64
+    ],
+    "warning_bg_tiles": [
+        13738800,
+        13738748,
+        4
+    ]
+}

@@ -5,24 +5,24 @@
 
 
 // [D_089eae84] Buffered Textures List
-struct CompressedGraphics *fireworks_prologue_buffered_textures[] = {
+struct CompressedData *fireworks_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eae88] Graphics Table
 struct GraphicsTable fireworks_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08bf0eb8,
+        /* Src.  */ &fireworks_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08bf12dc,
+        /* Src.  */ &fireworks_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08bef660,
+        /* Src.  */ &fireworks_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

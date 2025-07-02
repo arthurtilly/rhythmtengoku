@@ -23,13 +23,13 @@ extern struct Animation anim_veg_face_potato[];
 
 /* RHYTHM TWEEZERS - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08c5af04; // BG Tiles - Vegetables
-extern struct CompressedGraphics D_08c5bd6c; // BG Map - Onion
-extern struct CompressedGraphics D_08c5bf7c; // BG Map - Turnip
-extern struct CompressedGraphics D_08c5c134; // BG Map - Potato
-extern struct CompressedGraphics D_08c5915c; // OBJ Tiles
-extern struct CompressedGraphics D_08c5badc; // BG Tiles - Mask
-extern struct CompressedGraphics D_08c5c3a0; // BG Map - Mask
+extern struct CompressedData rhythm_tweezers_bg_tiles; // BG Tiles - Vegetables
+extern struct CompressedData rhythm_tweezers_bg_map_onion; // BG Map - Onion
+extern struct CompressedData rhythm_tweezers_bg_map_turnip; // BG Map - Turnip
+extern struct CompressedData rhythm_tweezers_bg_map_potato; // BG Map - Potato
+extern struct CompressedData rhythm_tweezers_obj; // OBJ Tiles
+extern struct CompressedData rhythm_tweezers_no_peeking_sign_bg_tiles; // BG Tiles - Mask
+extern struct CompressedData rhythm_tweezers_no_peeking_sign_bg_map; // BG Map - Mask
 
 /* RHYTHM TWEEZERS - PALETTES */
 

@@ -5,24 +5,24 @@
 
 
 // [D_089eb814] Buffered Textures List
-struct CompressedGraphics *marching_orders_2_prologue_buffered_textures[] = {
+struct CompressedData *marching_orders_2_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eb818] Graphics Table
 struct GraphicsTable marching_orders_2_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08bff238,
+        /* Src.  */ &marching_orders_2_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08bff704,
+        /* Src.  */ &marching_orders_2_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08bfc8f4,
+        /* Src.  */ &marching_orders_2_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

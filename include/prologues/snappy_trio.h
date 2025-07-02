@@ -16,7 +16,7 @@ struct SnappyTrioPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *snappy_trio_prologue_buffered_textures[]; // Buffered Textures List
+extern struct CompressedData *snappy_trio_prologue_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable snappy_trio_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

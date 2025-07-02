@@ -31,14 +31,14 @@ extern struct Animation anim_karate_joe_smug_low[];
 
 /* KARATE MAN - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08bdd500; // BG Textures (Face)
-extern struct CompressedGraphics D_08bddc8c; // BG Textures (Face)
-extern struct CompressedGraphics D_08bde0d4; // BG Textures (Face)
-extern struct CompressedGraphics D_08bdcfc8; // BG Textures (Serious Mode)
-extern struct CompressedGraphics D_08be0ce8; // BG Map (Serious Mode)
-extern struct CompressedGraphics D_08bdc938; // BG Textures
-extern struct CompressedGraphics D_08be08e0; // BG Map
-extern struct CompressedGraphics D_08be0480; // OBJ Textures
+extern struct CompressedData karate_man_bg_tiles_unused_face_1; // BG Textures (Face)
+extern struct CompressedData karate_man_bg_tiles_unused_face_2; // BG Textures (Face)
+extern struct CompressedData karate_man_bg_tiles_unused_face_3; // BG Textures (Face)
+extern struct CompressedData karate_man_bg_tiles_serious; // BG Textures (Serious Mode)
+extern struct CompressedData karate_man_bg_map_serious; // BG Map (Serious Mode)
+extern struct CompressedData karate_man_bg_tiles; // BG Textures
+extern struct CompressedData karate_man_bg_map; // BG Map
+extern struct CompressedData karate_man_obj; // OBJ Textures
 
 /* KARATE MAN - PALETTES */
 

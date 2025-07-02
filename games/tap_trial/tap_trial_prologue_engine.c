@@ -5,24 +5,24 @@
 
 
 // [D_089ed548] Buffered Textures List
-struct CompressedGraphics *tap_trial_prologue_buffered_textures[] = {
+struct CompressedData *tap_trial_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ed54c] Graphics Table
 struct GraphicsTable tap_trial_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c279e0,
+        /* Src.  */ &tap_trial_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c27e24,
+        /* Src.  */ &tap_trial_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c26340,
+        /* Src.  */ &tap_trial_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

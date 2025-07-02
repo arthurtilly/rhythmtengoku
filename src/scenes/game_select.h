@@ -239,7 +239,7 @@ extern const u8 *level_icon_texture_table[];
 extern struct GameSelectGridEntry game_select_grid_data[];
 extern u8 level_icon_palette_table[];
 extern struct GraphicsTable game_select_gfx_table[];
-extern struct CompressedGraphics *game_select_buffered_textures[];
+extern struct CompressedData *game_select_buffered_textures[];
 extern struct Animation *game_select_stage_title_anim[];
 extern const char *game_select_rank_text[];
 extern u8 game_select_rank_palette[];

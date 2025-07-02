@@ -19,7 +19,7 @@ struct TemplateSceneData {
 // DATA
 extern union SceneObject template_scene_objects[];
 extern struct GraphicsTable template_scene_gfx_table[];
-extern struct CompressedGraphics *template_scene_buffered_textures[];
+extern struct CompressedData *template_scene_buffered_textures[];
 
 
 // FUNCTIONS

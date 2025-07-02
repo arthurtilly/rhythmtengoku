@@ -32,7 +32,7 @@ void bg_anim_write_to_vram(struct BgAnimator *animator) {
 
             // Compressed (RLE)
             case BG_ANIM_WRITE_COMP:
-                func_08003eb8((struct CompressedGraphics *)animator->srcBG, animator->destBG);
+                func_08003eb8((struct CompressedData *)animator->srcBG, animator->destBG);
                 break;
 
             // Uncompressed, with Specified XY Offset
@@ -76,7 +76,7 @@ void bg_anim_set_func_arg(struct BgAnimator *animator, s32 arg) {
 
 // Update Script Reading
 void bg_anim_update_script(struct BgAnimator *animator) {
-    struct CompressedGraphics *compBg;
+    struct CompressedData *compBg;
     u32 offsetBgPos;
     u32 readStopped;
     u32 event;
@@ -169,7 +169,7 @@ void bg_anim_update_script(struct BgAnimator *animator) {
                 animator->framesRead++;
                 animator->clockPos += animator->frameTime;
                 offsetBgPos = TRUE;
-                compBg = (struct CompressedGraphics *)value;
+                compBg = (struct CompressedData *)value;
                 break;
         }
     }
@@ -225,18 +225,18 @@ s32 func_08003ea4(void) {
    return ((s32 (*)(u32))D_03004af0)(0);
 }
 
-s32 func_08003eb8(struct CompressedGraphics *src, u16 *dest) {
-    struct CompressedGraphics *temp_r1;
+s32 func_08003eb8(struct CompressedData *src, u16 *dest) {
+    struct CompressedData *temp_r1;
     const u16 *temp_r5;
     s32 retval;
 
     temp_r1 = func_0800869c(src);
     src = temp_r1;
-    temp_r5 = temp_r1->data.raw;
+    temp_r5 = temp_r1->data;
 
     if (temp_r1->doubleCompressed) {
         const u16 *temp = temp_r5;
-        temp_r5 = (dest + temp_r1->rleOffset) - ((struct Huffman *)temp_r5)->size;
+        temp_r5 = (dest + temp_r1->rleOffset) - ((struct CompressedGFX *)temp_r5)->size;
         func_08008608(temp, temp_r5);
     }
     

@@ -5,24 +5,24 @@
 
 
 // [D_089eb014] Buffered Textures List
-struct CompressedGraphics *clappy_trio_prologue_buffered_textures[] = {
+struct CompressedData *clappy_trio_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eb018] Graphics Table
 struct GraphicsTable clappy_trio_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08bf2f64,
+        /* Src.  */ &clappy_trio_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08bf33cc,
+        /* Src.  */ &clappy_trio_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08bf16b4,
+        /* Src.  */ &clappy_trio_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

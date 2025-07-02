@@ -196,7 +196,7 @@ extern const char *studio_mem_warnings_text[];
 extern const char **studio_options_text[];
 extern u8 studio_total_options[];
 extern struct GraphicsTable studio_gfx_table[];
-extern struct CompressedGraphics *studio_buffered_textures[];
+extern struct CompressedData *studio_buffered_textures[];
 extern u16 studio_menu_x_ofs[];
 extern u8 studio_menu_unused_table[];
 extern struct Beatscript script_scene_studio_idle[];

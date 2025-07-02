@@ -29,7 +29,7 @@ extern const char D_0805a6c8[];
 
 
 // Engine Definition Data:
-extern struct CompressedGraphics *metronome_buffered_textures[];
+extern struct CompressedData *metronome_buffered_textures[];
 extern struct GraphicsTable metronome_gfx_table[];
 extern struct MetronomeUnknownMovementData D_089e5890[];
 extern struct MetronomeUnknownMovementData D_089e58a0[];

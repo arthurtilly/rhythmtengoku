@@ -12,11 +12,11 @@ extern struct Animation anim_bouncy_road_path[];
 
 /* BOUNCY ROAD - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08c57a14;
-extern struct CompressedGraphics D_08c583bc;
-extern struct CompressedGraphics D_08c585a4;
-extern struct CompressedGraphics D_08c58738;
-extern struct CompressedGraphics D_08c58940;
+extern struct CompressedData bouncy_road_obj;
+extern struct CompressedData bouncy_road_remix_5_bg_tiles;
+extern struct CompressedData bouncy_road_remix_5_bg_map_1;
+extern struct CompressedData bouncy_road_remix_5_bg_map_2;
+extern struct CompressedData bouncy_road_remix_5_bg_map_3;
 
 /* BOUNCY ROAD - PALETTES */
 

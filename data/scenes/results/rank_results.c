@@ -16,7 +16,7 @@ union SceneObject rank_results_scene_objects[] = {
 // [D_089d7654] Graphics Table
 struct GraphicsTable rank_results_gfx_table[] = {
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cd4a50,
+        /* Src.  */ &rank_results_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -34,7 +34,7 @@ struct GraphicsTable rank_results_gfx_table[] = {
 };
 
 // [D_089d7684] Buffered Textures List
-struct CompressedGraphics *rank_results_buffered_textures[] = {
+struct CompressedData *rank_results_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

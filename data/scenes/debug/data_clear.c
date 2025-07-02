@@ -20,6 +20,6 @@ struct GraphicsTable data_clear_gfx_table[] = {
 
 
 // [D_089de088] Buffered Textures List
-struct CompressedGraphics *data_clear_buffered_textures[] = {
+struct CompressedData *data_clear_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

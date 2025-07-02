@@ -113,7 +113,7 @@ extern struct Vector2 power_calligraphy_people_start_pos[];
 extern struct Animation *power_calligraphy_people_dance_anim[][2];
 extern struct Animation *power_calligraphy_people_fall_anim[][2];
 extern struct Animation *power_calligraphy_people_bow_anim[][2];
-extern struct CompressedGraphics *power_calligraphy_buffered_textures[];
+extern struct CompressedData *power_calligraphy_buffered_textures[];
 extern struct GraphicsTable power_calligraphy_gfx_table[];
 extern struct Animation *power_calligraphy_kana_anim[];
 extern struct Animation *power_calligraphy_pattern_input_anim[];

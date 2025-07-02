@@ -20,7 +20,7 @@ struct EpilogueSceneData {
 
 // DATA
 extern union SceneObject epilogue_scene_objects[];
-extern struct CompressedGraphics *epilogue_buffered_textures[];
+extern struct CompressedData *epilogue_buffered_textures[];
 extern struct Beatscript epilogue_end_script[];
 extern struct SongHeader *epilogue_jingles[];
 

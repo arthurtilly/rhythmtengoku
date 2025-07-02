@@ -60,7 +60,7 @@ struct OptionsSceneData {
 
 // DATA
 extern struct GraphicsTable options_gfx_table[];
-extern struct CompressedGraphics *options_buffered_textures[];
+extern struct CompressedData *options_buffered_textures[];
 extern const char options_data_clear_confirm_text[];
 extern const char *options_desc_text[];
 extern struct Animation *options_sound_mode_anim[][2];

@@ -44,12 +44,12 @@ extern struct Animation anim_bon_odori_yagura_frown[];
 
 /* BON ODORI - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08bdc118; // BG Textures (Text Window?)
-extern struct CompressedGraphics D_08bdc520; // BG Map (Text Window?)
-extern struct CompressedGraphics D_08bdc0e8; // BG Textures (The Bon Odori)
-extern struct CompressedGraphics D_08bdc4f0; // BG Map (The Bon Odori)
-extern struct CompressedGraphics D_08bdc3ac; // BG Map (The Bon Odori)
-extern struct CompressedGraphics D_08bdbca0; // OBJ Textures (The Bon Odori)
+extern struct CompressedData bon_odori_bg_tiles_blank; // BG Textures (Text Window?)
+extern struct CompressedData bon_odori_bg_map_blank; // BG Map (Text Window?)
+extern struct CompressedData bon_odori_bg_tiles; // BG Textures (The Bon Odori)
+extern struct CompressedData bon_odori_bg_map_lanterns; // BG Map (The Bon Odori)
+extern struct CompressedData bon_odori_bg_map; // BG Map (The Bon Odori)
+extern struct CompressedData bon_odori_obj; // OBJ Textures (The Bon Odori)
 
 /* BON ODORI - PALETTES */
 
@@ -97,10 +97,10 @@ extern struct Animation anim_bon_dance_yagura_frown[];
 
 /* BON DANCE - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08bd9f1c; // BG Textures (Bon Dance)
-extern struct CompressedGraphics D_08bda444; // BG Map (Bon Dance)
-extern struct CompressedGraphics D_08bda300; // BG Map (Bon Dance)
-extern struct CompressedGraphics D_08bd962c; // OBJ Textures (Bon Dance)
+extern struct CompressedData bon_dance_bg_tiles; // BG Textures (Bon Dance)
+extern struct CompressedData bon_dance_bg_map_lanterns; // BG Map (Bon Dance)
+extern struct CompressedData bon_dance_bg_map; // BG Map (Bon Dance)
+extern struct CompressedData bon_dance_obj; // OBJ Textures (Bon Dance)
 
 /* BON DANCE - PALETTES */
 

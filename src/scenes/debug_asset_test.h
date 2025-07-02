@@ -19,7 +19,7 @@ struct AssetTestSceneData {
 // DATA
 extern union SceneObject asset_test_scene_objects[];
 extern struct GraphicsTable asset_test_gfx_table[];
-extern struct CompressedGraphics *asset_test_buffered_textures[];
+extern struct CompressedData *asset_test_buffered_textures[];
 extern struct GraphicsTable asset_test_gfx_table_dupe[];
 
 

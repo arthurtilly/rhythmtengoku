@@ -3,6 +3,20 @@
 #include "global.h"
 #include "graphics.h"
 
+#include "src/graphics_table.h"
+
+struct GFXDecompressProgress {
+    const u16 *data;
+    u32 size;
+    u32 count;
+    u32 curwin1;
+    u32 curwin2;
+    const u32 *win1;
+    const u32 *win2;
+    u32 lim1;
+    u32 lim2;
+};
+
 struct LoadGfxTableTaskInputs {
     const struct GraphicsTable *gfxTable;
     u32 limit;
@@ -10,15 +24,15 @@ struct LoadGfxTableTaskInputs {
 struct GfxTableLoader {
     u16 active:1;
     u16 compressionLevel:2;
-    u16 decodingRLE:1;
-    u16 decompressingHuffman:12;
+    u16 decompressingRLE:1;
+    u16 decompressingGFX:12;
     u32 limit;
     const struct GraphicsTable *gfxTable;
     const void *src;
     u16 *dest;
     s32 size;
-    u32 rleSaveState[8];
-    u32 huffmanSaveState[9];
+    u32 rleDecompressProgress[8];
+    struct GFXDecompressProgress gfxDecompressProgress;
 };
 
 extern void *func_08002a54(void *dest);

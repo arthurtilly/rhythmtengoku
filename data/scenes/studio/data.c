@@ -10,22 +10,22 @@
 // [D_089d8448] Graphics Table
 struct GraphicsTable studio_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08cd5d64,
+        /* Src.  */ &studio_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cd62ec,
+        /* Src.  */ &studio_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cd6434,
+        /* Src.  */ &studio_bg_map_warning,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cd5288,
+        /* Src.  */ &studio_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -44,7 +44,7 @@ struct GraphicsTable studio_gfx_table[] = {
 
 
 // [D_089d849c] Buffered Textures List
-struct CompressedGraphics *studio_buffered_textures[] = {
+struct CompressedData *studio_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

@@ -5,24 +5,24 @@
 
 
 // [D_089ecb60] Buffered Textures List
-struct CompressedGraphics *bunny_hop_prologue_buffered_textures[] = {
+struct CompressedData *bunny_hop_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ecb64] Graphics Table
 struct GraphicsTable bunny_hop_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c1f24c,
+        /* Src.  */ &bunny_hop_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c1f308,
+        /* Src.  */ &bunny_hop_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c1f214,
+        /* Src.  */ &bunny_hop_prologue_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

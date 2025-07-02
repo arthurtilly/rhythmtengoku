@@ -28,7 +28,7 @@ struct MainMenuSceneData {
 // DATA
 extern union SceneObject main_menu_scene_objects[];
 extern struct GraphicsTable main_menu_gfx_table[];
-extern struct CompressedGraphics *main_menu_buffered_textures[];
+extern struct CompressedData *main_menu_buffered_textures[];
 extern struct Animation *main_menu_button_on_anim[];
 extern struct Animation *main_menu_button_off_anim[];
 

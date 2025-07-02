@@ -15,7 +15,7 @@ extern struct Animation anim_rank_results_comment_append[];
 
 /* RESULTS (RANK) - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08cd4a50;
+extern struct CompressedData rank_results_obj;
 
 /* RESULTS (RANK) - PALETTES */
 
@@ -32,7 +32,7 @@ extern struct Animation anim_score_results_dec_num[];
 
 /* RESULTS (SCORE) - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08cd4f58;
+extern struct CompressedData score_results_obj;
 
 /* RESULTS (SCORE) - PALETTES */
 

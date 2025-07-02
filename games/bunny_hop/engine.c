@@ -5,34 +5,34 @@
 
 
 // [D_089e5ee0] Buffered Textures List
-struct CompressedGraphics *bunny_hop_buffered_textures[] = {
+struct CompressedData *bunny_hop_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e5ee4] Graphics Table (Bunny Hop)
 struct GraphicsTable bunny_hop_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c7fda8,
+        /* Src.  */ &bunny_hop_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c7fe58,
+        /* Src.  */ &bunny_hop_bg_map_water,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c80250,
+        /* Src.  */ &bunny_hop_bg_map,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c7fefc,
+        /* Src.  */ &bunny_hop_bg_map_ground,
         /* Dest. */ BG_MAP_BASE(0xD000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c7fbb8,
+        /* Src.  */ &bunny_hop_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -57,27 +57,27 @@ struct GraphicsTable bunny_hop_gfx_table[] = {
 // [D_089e5f50] Graphics Table (Remix 3)
 struct GraphicsTable bunny_hop_remix_3_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08c7fda8,
+        /* Src.  */ &bunny_hop_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c7fe58,
+        /* Src.  */ &bunny_hop_bg_map_water,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c80250,
+        /* Src.  */ &bunny_hop_bg_map,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08c7fefc,
+        /* Src.  */ &bunny_hop_bg_map_ground,
         /* Dest. */ BG_MAP_BASE(0xD000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08c7fbb8,
+        /* Src.  */ &bunny_hop_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

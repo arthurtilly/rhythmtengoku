@@ -16,7 +16,7 @@ struct SamuraiSlicePrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *samurai_slice_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *samurai_slice_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable samurai_slice_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

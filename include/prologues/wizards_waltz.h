@@ -16,7 +16,7 @@ struct WizardsWaltzPrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *wizards_waltz_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *wizards_waltz_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable wizards_waltz_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

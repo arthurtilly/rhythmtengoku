@@ -10,17 +10,17 @@
 // [D_089cdaf4] Graphics Table
 struct GraphicsTable data_room_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08cc77a4,
+        /* Src.  */ &data_room_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08cc7a40,
+        /* Src.  */ &data_room_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08cc7330,
+        /* Src.  */ &data_room_obj,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
@@ -38,6 +38,6 @@ struct GraphicsTable data_room_gfx_table[] = {
 };
 
 // [D_089cdb3c] Buffered Textures List
-struct CompressedGraphics *data_room_buffered_textures[] = {
+struct CompressedData *data_room_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };

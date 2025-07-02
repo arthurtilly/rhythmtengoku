@@ -16,7 +16,7 @@ struct TramPaulinePrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *tram_pauline_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *tram_pauline_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable tram_pauline_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

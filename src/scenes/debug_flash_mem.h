@@ -20,7 +20,7 @@ struct FlashMemoryTestSceneData {
 // DATA
 extern union SceneObject flash_mem_test_scene_objects[];
 extern struct GraphicsTable flash_mem_test_gfx_table[];
-extern struct CompressedGraphics *flash_mem_test_buffered_textures[];
+extern struct CompressedData *flash_mem_test_buffered_textures[];
 
 
 // FUNCTIONS

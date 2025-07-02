@@ -63,7 +63,7 @@ extern const char D_0805a8b0[]; // Empty Default Text
 
 // Engine Definition Data:
 extern struct Animation **rap_men_anim_table[]; // Animation Index (index of pairs of animation pointers; 0 = Rap Men; 1 = Rap Women)
-extern struct CompressedGraphics *rap_men_buffered_textures[]; // Buffered Textures List
+extern struct CompressedData *rap_men_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable *rap_men_gfx_tables[]; // Graphics Table Index
 extern u8 rapping_anim_map[];
 extern u8 rapping_anim_durations[];

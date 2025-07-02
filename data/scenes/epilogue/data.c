@@ -14,7 +14,7 @@ union SceneObject epilogue_scene_objects[] = {
 };
 
 // [D_089d7b54] Buffered Textures List
-struct CompressedGraphics *epilogue_buffered_textures[] = {
+struct CompressedData *epilogue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

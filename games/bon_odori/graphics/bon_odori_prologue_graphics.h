@@ -9,9 +9,9 @@ extern struct Animation anim_bon_odori_prologue_title[];
 
 /* PROLOGUE (BON ODORI) - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08be694c;
-extern struct CompressedGraphics D_08be6d70;
-extern struct CompressedGraphics D_08be3e20;
+extern struct CompressedData bon_dance_prologue_bg_tiles;
+extern struct CompressedData bon_dance_prologue_bg_map;
+extern struct CompressedData bon_dance_prologue_obj;
 
 /* PROLOGUE (BON ODORI) - PALETTES */
 
@@ -24,9 +24,9 @@ extern struct Animation anim_bon_dance_prologue_title[];
 
 /* PROLOGUE (BON DANCE) - COMPRESSED GRAPHICS */
 
-extern struct CompressedGraphics D_08be854c;
-extern struct CompressedGraphics D_08be8828;
-extern struct CompressedGraphics D_08be75b8;
+extern struct CompressedData bon_odori_prologue_bg_tiles;
+extern struct CompressedData bon_odori_prologue_bg_map;
+extern struct CompressedData bon_odori_prologue_obj;
 
 /* PROLOGUE (BON DANCE) - PALETTES */
 

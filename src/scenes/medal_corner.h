@@ -103,7 +103,7 @@ struct MedalCornerMenu {
 extern struct MedalCornerMenu *medal_corner_menu_table[];
 extern struct Animation *lessons_menu_rank_icons[];
 extern char medal_corner_locked_text[];
-extern struct CompressedGraphics *medal_corner_buffered_textures[];
+extern struct CompressedData *medal_corner_buffered_textures[];
 
 
 // FUNCTIONS

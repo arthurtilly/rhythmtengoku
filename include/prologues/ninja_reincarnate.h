@@ -16,7 +16,7 @@ struct NinjaReincarnatePrologueEngineData {
 };
 
 // Assets:
-extern struct CompressedGraphics *ninja_reincarnate_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedData *ninja_reincarnate_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable ninja_reincarnate_prologue_gfx_table[]; // Graphics Table
 
 // Functions:

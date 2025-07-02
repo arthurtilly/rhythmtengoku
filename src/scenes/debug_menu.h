@@ -31,7 +31,7 @@ struct DebugMenuEntry {
 // DATA
 extern union SceneObject debug_menu_scene_objects[];
 extern struct GraphicsTable debug_menu_gfx_table[];
-extern struct CompressedGraphics *debug_menu_buffered_textures[];
+extern struct CompressedData *debug_menu_buffered_textures[];
 extern struct DebugMenuEntry debug_menu_entry_table[];
 extern char debug_menu_counter_digits[];
 

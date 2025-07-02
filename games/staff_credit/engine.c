@@ -5,7 +5,7 @@
 
 
 // [D_089df618] Buffered Textures List
-struct CompressedGraphics *staff_credit_buffered_textures[] = {
+struct CompressedData *staff_credit_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
