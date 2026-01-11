@@ -338,10 +338,8 @@ void func_08041970(void) {
 
 #include "asm/engines/mechanical_horse/asm_0804231c.s"
 
-void func_08042438(void) {
-    gMechanicalHorse->unk2d0 = gMechanicalHorse->unk2f0 * gMechanicalHorse->horse[0].unk10;
-    gMechanicalHorse->unk2d4;
-}
+// https://decomp.me/scratch/58myn
+#include "asm/engines/mechanical_horse/asm_08042438.s"
 
 void func_0804249c(void) {
     u32 temp = gMechanicalHorse->unk2e4;
