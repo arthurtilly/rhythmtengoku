@@ -483,7 +483,7 @@ void cafe_print_dialogue(void) {
                     strcat(s, "\0051" "\0015");
                     strcat(s, levelName);
                     strcat(s, "\0054" "\0018" "...\n");
-                    strcat(s, "Has the medal been giving you some trouble?\n" "\n");
+                    strcat(s, "Has the medal been giving you some\ntrouble?\n");
                     string = s;
                     dialogue = cafe_dialogue_keep_trying;
                     activity->levelID = LEVEL_NULL;
@@ -561,8 +561,8 @@ void cafe_print_dialogue(void) {
             string = "Because I can make it so you\n"
                      "can just ""\0051" "\0015" "skip that game\n"
                      """\0051" "\0015""altogether. ""\0054" "\0018" "What do you say?\n"
-                     "　　　　　　　　　　　　　　\"Please!\"\n"
-                     "　　　　　　　　　　　　　　\"No, thanks.\"";
+                     "　　　　　　　　　　　　　　Please!\n"
+                     "　　　　　　　　　　　　　　No, thanks.";
             gCafe->queryEnabled = TRUE;
             gCafe->queryResult = CAFE_OPT_YES;
             dialogueTask++;
@@ -624,11 +624,15 @@ void cafe_print_dialogue(void) {
             //
             //         "That's right."
             //         "Not right now."
+            #ifdef PARADISE
+            string = "\0054" "\0018" "Are you just practising so\n"
+            #else
             string = "\0054" "\0018" "Are you just practicing so\n"
+            #endif
                      "\0054" "\0018" "you can have a go " "\0051" "\0015" "at\n"
                      "\0051" "\0015" "getting a Perfect?" "\0054" "\0018" "\n"
                      "　　　　　　　　　　　　　That's right!\n"
-                     "　　　　　　　　　　　　　No, I'm not.";
+                     "　　　　　　　　　　　　　Not really.";
             gCafe->queryEnabled = TRUE;
             gCafe->queryResult = CAFE_OPT_YES;
             dialogueTask++;
