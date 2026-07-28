@@ -51,7 +51,6 @@ define_gameplay_scene scene_drum_intro_unused_2_skipped_intro, script_drum_intro
 @ Drum Intro (Unused 2) - Main Script
 
 script script_drum_intro_unused_2_main
-    enable_pause_menu
     mod_music_volume 0, 192
     rest 24
     dmi_event04 TRUE
@@ -78,14 +77,16 @@ script script_drum_intro_unused_2_main
     rest 24
     play_sfx s_intro_two_seqData
     dmi_event03 3
-    rest 24
+    rest 23
     play_sfx s_intro_three_seqData
     dmi_event03 3
+    rest 1
     rest 12
-    play_sfx s_intro_four_seqData
-    rest 12
-    dmi_event03 3
     play_music s_intro_pat1_seqData
+    rest 8
+    play_sfx s_intro_four_seqData
+    dmi_event03 3
+    rest 4
     spawn_cue CUE_KICK
     no_op
     spawn_cue CUE_CYMBAL
@@ -129,11 +130,10 @@ script script_drum_intro_unused_2_main
     dmi_event03 3
     rest 23
     play_sfx_vol s_intro_three_seqData, 96
-    rest 1
     dmi_event03 3
-    rest 12
-    play_sfx_vol s_intro_four_seqData, 160
-    rest 12
+    rest 1
+    rest 24
+    play_sfx_vol s_intro_uh_seqData, 160
     dmi_event03 3
     no_op
     spawn_cue CUE_KICK
@@ -184,12 +184,12 @@ script script_drum_intro_unused_2_main
     dmi_event03 3
     rest 23
     play_sfx_vol s_intro_three_seqData, 128
+    dmi_event03 3
     rest 1
-    dmi_event03 3
-    rest 12
+    rest 24
     play_sfx_vol s_intro_one_seqData, 160
-    rest 12
     dmi_event03 3
+    rest 24
     play_sfx_vol s_intro_two_seqData, 192
     dmi_event03 3
     rest 24
@@ -239,22 +239,21 @@ script script_drum_intro_unused_2_main
     rest 24
     play_sfx s_intro_two_seqData
     dmi_event03 3
-    rest 24
+    rest 23
     play_sfx s_intro_three_seqData
     dmi_event03 3
+    rest 1
     rest 12
+    rest 8
     play_sfx s_intro_four_seqData
-    rest 12
     dmi_event03 3
+    rest 4
     spawn_cue CUE_KICK
     no_op
     spawn_cue CUE_CYMBAL
     no_op
     rest 24
     set_music_volume 256
-    #ifdef PLUS
-    play_music s_kawasemi_frase_seqData
-    #endif
     rest_beats 6
     mod_music_volume 0, 144
     rest_beats 6
@@ -298,7 +297,6 @@ script script_drum_intro_unused_2_intro
     set_tempo 120
     set_music_volume 0
     mod_music_volume 256, 192
-    enable_pause_menu
     stop_tracking_inputs
     rest 24
     rest 24

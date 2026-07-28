@@ -41,14 +41,6 @@ const char D_0805c8c4[] = "Ｆａｌｌ　ｉｎ！";
 
 const char D_0805c8e0[] = "Ｔｉｍｅ　ｆｏｒ　ｔｈｅ　ｒｅａｌ　ｔｈｉｎｇ！";
 
-const char D_0805c8e1[] = "Ｒｉｇｈｔ！";
-
-const char D_0805c8e2[] = "Ｌｅｆｔ！";
-
-const char D_0805c8e3[] = "Ｍａｒｃｈ！";
-
-const char D_0805c8e4[] = "Ｈａｌｔ！";
-
 const char D_0805c8f4[] = "You still don't have the basics down!";
 
 const char D_0805c910[] = "That wasn't half bad!";

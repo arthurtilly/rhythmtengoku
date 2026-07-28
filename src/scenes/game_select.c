@@ -3,7 +3,6 @@
 #include "graphics/game_select/game_select_graphics.h"
 
 #include "levels.h"
-#include "src/code_080092cc.h"
 #include "src/scenes/reading.h"
 #include "src/scenes/studio.h"
 
@@ -49,6 +48,7 @@ static u8 sPlayCreditsAfterEpilogue; // Currently playing through Remix 6 for th
 
 extern u32 D_03005590; // Unused
 extern u32 D_030055d4; // Unused
+
 
 // Clear sPlayAltBGM
 void disable_game_select_2_bgm(void) {
@@ -111,8 +111,8 @@ void get_all_uncleared_campaigns(void) {
 
     notice->totalAvailable = 0;
 
-    for (i = 0; i < ACTIVE_AVAILABLE_CAMPAIGNS; i++) {
-        if (!get_campaign_cleared(&D_030046a8->data, i)) {
+    for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
+        if (!D_030046a8->data.campaignsCleared[i]) {
             if (get_level_state_from_grid_xy(gift->x, gift->y) == LEVEL_STATE_HAS_MEDAL) {
                 notice->indexes[notice->totalAvailable] = i;
                 notice->totalAvailable++;
@@ -135,13 +135,13 @@ void start_new_campaign(void) {
     }
 
     playsUntilNewCampaign = 0;
-    if (D_030046a8->data.totalMedals < BASE_CAMPAIGN_MEDAL_GATE) {
+    if (D_030046a8->data.totalMedals < MAX_MEDALS) {
         playsUntilNewCampaign = 1;
     }
-    if (D_030046a8->data.totalMedals < (BASE_CAMPAIGN_MEDAL_GATE - 3)) {
+    if (D_030046a8->data.totalMedals < (MAX_MEDALS - 3)) {
         playsUntilNewCampaign = agb_random(2) + 2;
     }
-    if (D_030046a8->data.totalMedals < (BASE_CAMPAIGN_MEDAL_GATE - 18)) {
+    if (D_030046a8->data.totalMedals < (MAX_MEDALS - 18)) {
         playsUntilNewCampaign = agb_random(4) + 3;
     }
 
@@ -180,8 +180,8 @@ void init_campaign_notice(void) {
     notice->textAdvSprite = sprite_create(gSpriteHandler, anim_game_select_text_button, 0, 64, 64, 0x800, 1, 0, 0x8000);
     sprite_set_origin_x_y(gSpriteHandler, notice->textAdvSprite, &vector->x, &vector->y);
 
-    notice->printer = text_printer_create_new(get_current_mem_id(), 5, 120, 26);
-    text_printer_set_x_y(notice->printer, 104, 308);
+    notice->printer = text_printer_create_new(get_current_mem_id(), 4, 120, 26);
+    text_printer_set_x_y(notice->printer, 104, 320);
     text_printer_set_layer(notice->printer, 0x800);
     text_printer_set_colors(notice->printer, 0);
     text_printer_set_palette(notice->printer, 1);
@@ -207,7 +207,7 @@ void init_campaign_notice(void) {
         case CAMPAIGN_STATE_ACTIVE:
             if ((D_030046a8->data.campaignAttemptsLeft > 0)
              && (D_030046a8->data.unk26A < 3)
-             && (!get_campaign_cleared(&D_030046a8->data, D_030046a8->data.currentCampaign))) {
+             && (!D_030046a8->data.campaignsCleared[D_030046a8->data.currentCampaign])) {
                 notice->id = D_030046a8->data.currentCampaign;
                 notice->x = campaign_gifts_table[notice->id].x;
                 notice->y = campaign_gifts_table[notice->id].y;
@@ -281,21 +281,22 @@ void start_campaign_notice(s32 id) {
     notice->y = campaign_gifts_table[id].y;
     level = get_level_data_from_grid_xy(notice->x, notice->y);
     string = notice->text;
-    memcpy(string, "\001C" "If you get a Perfect on\n", 45); // [Right now]
+    memcpy(string, "If you get a Perfect in\n", 45); // [Right now]
     strcat(string, level->name); // "<game_name>"
-    strcat(string, "\nright now, you'll earn "); // Get a perfect on this
-    if (giftType == CAMPAIGN_GIFT_DRUM_KIT || giftType == CAMPAIGN_GIFT_READING_MATERIAL) {
-        strcat(string, "the following bonus:\n"); // received as a present!!
+    strcat(string, " right\n"); // Get a perfect on this
+	if (giftType == CAMPAIGN_GIFT_DRUM_KIT || giftType == CAMPAIGN_GIFT_READING_MATERIAL) {
+        strcat(string, "now, you'll earn the bonus:\n"); // received as a present!!
     }
     if (isSong) {
         if(isSpecialSong) {
-            strcat(string, "the following song:\n");
+            strcat(string, "now, you'll earn the song:\n");
         } else {
-            strcat(string, "the game's song, also titled\n");
+            strcat(string, "now, you'll earn the song:\n");
     }
     }
+    strcat(string, ""); // "
     strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
-    strcat(string, ".\n");
+    strcat(string, "");
     text_printer_set_string(notice->printer, string);
 
     sprite_set_visible(gSpriteHandler, gGameSelect->selectionBorderSprite, FALSE);
@@ -372,7 +373,6 @@ void update_campaign_notice(void) {
             sprite_set_visible(gSpriteHandler, gGameSelect->selectionBorderSprite, TRUE);
             gGameSelect->hideStageTitle = FALSE;
             play_sound(&s_menu_kettei2_seqData);
-            rumble_play_menu_confirm();
             scene_interpolate_music_volume(INT_TO_FIXED(1.0), ticks_to_frames(0x18));
             gGameSelect->sceneState = GS_STATE_MAIN;
         }
@@ -406,14 +406,7 @@ void hide_campaign_icon_border(void) {
 
 // Get Level Name from Campaign ID
 const char *get_level_name_from_campaign(s32 id) {
-    struct LevelData *levelData;
-
-    levelData = get_level_data_from_campaign(id);
-    if (levelData == NULL) {
-        return "n/a";
-    }
-
-    return levelData->name;
+    return get_level_data_from_grid_xy(campaign_gifts_table[id].x, campaign_gifts_table[id].y)->name;
 }
 
 
@@ -443,7 +436,7 @@ s32 get_campaign_from_level_id(s32 id) {
 
 // Get Level ID from Grid Position
 s32 get_level_id_from_grid_xy(s32 x, s32 y) {
-    if ((x >= 0) && (x < (s32)GS_GRID_WIDTH) && (y >= 0) && (y < (s32)GS_GRID_HEIGHT)) {
+    if ((x < GS_GRID_WIDTH) && (y < GS_GRID_HEIGHT)) {
         return game_select_grid_data[x + (y * GS_GRID_WIDTH)].id;
     }
 
@@ -460,14 +453,6 @@ struct LevelData *get_level_data_from_id(s32 id) {
     return &level_data_table[id];
 }
 
-// Get Level Data from Campaign ID
-struct LevelData *get_level_data_from_campaign(s32 id) {
-    if ((id < 0) || (id >= TOTAL_PERFECT_CAMPAIGNS)) {
-        return NULL;
-    }
-
-    return get_level_data_from_grid_xy(campaign_gifts_table[id].x, campaign_gifts_table[id].y);
-}
 
 // Get Level Completion State from Level ID
 s32 get_level_state_from_id(s32 id) {
@@ -477,73 +462,7 @@ s32 get_level_state_from_id(s32 id) {
         return LEVEL_STATE_NULL;
     }
 
-    return get_level_state(saveData, id);
-}
-
-
-// Check if this level still has a queued "Perfect" reveal event.
-static u32 game_select_has_pending_perfect_event(s32 levelID) {
-    struct TengokuSaveData *saveData = &D_030046a8->data;
-    u32 queueID, totalQueued;
-    u32 i;
-
-    if (levelID < 0) {
-        return FALSE;
-    }
-
-    if ((saveData->recentLevelState == LEVEL_STATE_PERFECT)
-      && (get_level_id_from_grid_xy(saveData->recentLevelX, saveData->recentLevelY) == levelID)) {
-        return TRUE;
-    }
-
-    if (saveData->recentLevelState != LEVEL_STATE_NULL) {
-        return FALSE;
-    }
-
-    totalQueued = gGameSelect->totalLevelEventsQueued;
-    if (totalQueued > ARRAY_COUNT(gGameSelect->levelEventsQueue)) {
-        totalQueued = ARRAY_COUNT(gGameSelect->levelEventsQueue);
-    }
-
-    queueID = gGameSelect->levelEventDequeueID;
-
-    for (i = 0; i < totalQueued; i++) {
-        struct QueuedLevelEvent *event = &gGameSelect->levelEventsQueue[queueID];
-
-        if ((event->state == LEVEL_STATE_PERFECT)
-          && (get_level_id_from_grid_xy(event->x, event->y) == levelID)) {
-            return TRUE;
-        }
-
-        if (++queueID >= ARRAY_COUNT(gGameSelect->levelEventsQueue)) {
-            queueID = 0;
-        }
-    }
-
-    return FALSE;
-}
-
-
-// Get Level Completion State from Level ID (with Perfect Detection)
-s32 get_level_state_with_perfect_from_id(s32 id) {
-    struct TengokuSaveData *saveData = &D_030046a8->data;
-    s32 levelState;
-
-    if (id < 0) {
-        return LEVEL_STATE_NULL;
-    }
-
-    levelState = get_level_state(saveData, id);
-
-#ifdef PLUS
-    // make sure you don't overlay a perfect medal on top of a regular one if the perfect event is still pending
-    if (!game_select_has_pending_perfect_event(id)
-      && get_campaign_cleared(saveData, get_campaign_from_level_id(id))) {
-        levelState = LEVEL_STATE_PERFECT;
-    }
-#endif
-
-    return levelState;
+    return saveData->levelStates[id];
 }
 
 
@@ -559,20 +478,13 @@ s32 get_level_state_from_grid_xy(s32 x, s32 y) {
 }
 
 
-// Get Level Completion State from Grid Position (with Perfect Detection)
-s32 get_level_state_with_perfect_from_grid_xy(s32 x, s32 y) {
-    return get_level_state_with_perfect_from_id(get_level_id_from_grid_xy(x, y));
-}
-
-
 // Get Grid Position from Level ID
 void get_grid_xy_from_level_id(s32 id, s32 *xReq, s32 *yReq) {
     s32 x, y;
 
-    *xReq = -1;
-    *yReq = -1;
-
     if (id < 0) {
+        *xReq = -1;
+        *yReq = -1;
         return;
     }
 
@@ -603,7 +515,7 @@ void init_game_select_grid_gfx(void) {
     dma3_fill((0x0100 << 16) | 0x0100, iconOverlayMapBase, 0x2000, 0x20, 0x200);
 
     tileNum = 1;
-    for (i = 0; i < TOTAL_LEVELS; i++) {
+    for (i = 0; i < 54; i++) {
         game_select_print_icon_texture(level_icon_texture_table[i], 0, tileNum);
         tileNum += (3 * 3);
     }
@@ -622,12 +534,7 @@ void init_game_select_grid_gfx(void) {
 
                 levelData = &level_data_table[levelID];
                 levelType = levelData->type;
-                // Only use perfect detection for actual playable levels (like medal system)
-                if (levelType == LEVEL_TYPE_GAME || levelType == LEVEL_TYPE_REMIX) {
-                    levelState = get_level_state_with_perfect_from_id(levelID);
-                } else {
-                    levelState = get_level_state_from_id(levelID);
-                }
+                levelState = saveData->levelStates[levelID];
                 overlay = level_icon_overlays_map[levelType][levelState];
                 if (levelState != LEVEL_STATE_HIDDEN) {
                     tileNum = 1 + (levelData->icon * 3 * 3);
@@ -635,13 +542,7 @@ void init_game_select_grid_gfx(void) {
                     game_select_print_icon_maps(28, 3, tileX, tileY, 3, 3, tileNum, palette);
                 }
                 tileNum = 1 + (overlay * 3 * 3) + 0x100;
-                
-                // Adjust position for perfect overlay (move right 1 tile)
-                if (overlay == LEVEL_ICON_OVERLAY_PERFECT) {
-                    game_select_print_icon_maps(24, 3, tileX + 1, tileY, 3, 3, tileNum, 8);
-                } else {
-                    game_select_print_icon_maps(24, 3, tileX, tileY, 3, 3, tileNum, 8);
-                }
+                game_select_print_icon_maps(24, 3, tileX, tileY, 3, 3, tileNum, 7);
             }
         }
     }
@@ -660,70 +561,11 @@ void save_level_state_from_grid_xy(s32 x, s32 y, s32 state) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
     s32 id;
 
-    if ((x >= 0) && (x < (s32)GS_GRID_WIDTH) && (y >= 0) && (y < (s32)GS_GRID_HEIGHT)) {
+    if ((x < GS_GRID_WIDTH) && (y < GS_GRID_HEIGHT)) {
         id = game_select_grid_data[x + (y * GS_GRID_WIDTH)].id;
 
         if (id >= 0) {
-            set_level_state(saveData, id, state);
-        }
-    }
-}
-
-static void game_select_repair_unlock_progress(void) {
-    struct TengokuSaveData *saveData = &D_030046a8->data;
-    u32 pass;
-
-    for (pass = 0; pass < (GS_GRID_WIDTH * GS_GRID_HEIGHT); pass++) {
-        u32 x, y;
-        u32 changes = 0;
-
-        for (y = 0; y < GS_GRID_HEIGHT; y++) {
-            for (x = 0; x < GS_GRID_WIDTH; x++) {
-                struct GameSelectGridEntry *gridEntry;
-                s32 id, state, newState;
-
-                gridEntry = game_select_grid_data + x + (y * GS_GRID_WIDTH);
-                id = gridEntry->id;
-
-                if (id < 0) {
-                    continue;
-                }
-
-                if (level_data_table[id].flags & LEVEL_DATA_FLAG_IS_EXTRA) {
-                    continue;
-                }
-
-                state = get_level_state(saveData, id);
-                if (state == LEVEL_STATE_APPEARING) {
-                    state = LEVEL_STATE_HIDDEN;
-                    set_level_state(saveData, id, state);
-                    changes++;
-                }
-
-                if (state >= LEVEL_STATE_OPEN) {
-                    continue;
-                }
-
-                newState = LEVEL_STATE_NULL;
-                if (game_select_check_level_event_req(x, y, LEVEL_STATE_OPEN)) {
-                    if (gridEntry->flags & LEVEL_EVENT_CLEAR_BY_DEFAULT) {
-                        newState = LEVEL_STATE_CLEARED;
-                    } else {
-                        newState = LEVEL_STATE_OPEN;
-                    }
-                } else if (game_select_check_level_event_req(x, y, LEVEL_STATE_CLOSED)) {
-                    newState = LEVEL_STATE_CLOSED;
-                }
-
-                if (newState > state) {
-                    set_level_state(saveData, id, newState);
-                    changes++;
-                }
-            }
-        }
-
-        if (changes == 0) {
-            break;
+            saveData->levelStates[id] = state;
         }
     }
 }
@@ -811,7 +653,6 @@ void game_select_update_bg_colors(void) {
 void game_select_scene_init_memory(void) {
     D_030055d4 = 0;
     D_03005590 = 0;
-    sReplayingCampaign = FALSE; 
     clear_current_campaign();
     game_select_disable_credits_after_epilogue();
     disable_game_select_2_bgm();
@@ -827,7 +668,6 @@ void game_select_scene_init_gfx4(void) {
     init_game_select_grid_gfx();
     game_select_init_icon_overlays();
     gGameSelect->loadingSceneGfx = FALSE;
-    game_select_set_stage_title(gGameSelect->cursorX);
 }
 
 
@@ -867,10 +707,7 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     s32 recentLevelState, previousLevelState;
     s16 bgOfsX, bgOfsY;
     s32 prevX, prevY;
-    s32 i;
 
-    game_select_repair_unlock_progress();
-    
     // Init. Graphics
     gGameSelect->loadingSceneGfx = TRUE;
     func_08007324(FALSE);
@@ -906,6 +743,7 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     gGameSelect->unk18 = 0;
     gGameSelect->hideStageTitle = FALSE;
     gGameSelect->stageTitlePersistTime = 0;
+    game_select_set_stage_title(gGameSelect->cursorX);
 
     // Init. Various
     init_campaign_notice();
@@ -927,8 +765,7 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     previousLevelState = get_level_state_from_grid_xy(prevX, prevY);
     gGameSelect->baristaLevelEventPending = FALSE;
     gGameSelect->baristaLevelEventTimer = 0;
-    gGameSelect->modelCornerHidden = FALSE;
-    
+
     if (recentLevelState > previousLevelState) {
         game_select_start_level_events(60);
         game_select_enqueue_level_event(prevX, prevY, recentLevelState);
@@ -944,25 +781,17 @@ void game_select_scene_start(void *sVar, s32 dArg) {
             enable_game_select_2_bgm();
         }
     } else {
-        #ifdef TEMPOUP
-        if (game_select_try_queue_tempo_up_unlock(TRUE)) {
-            gGameSelect->runningLevelEvents = TRUE;
-        } else
-        #endif
-        {
-            gGameSelect->runningLevelEvents = FALSE;
-            gGameSelect->levelEventTimer = 0;
-            write_game_save_data();
+        gGameSelect->runningLevelEvents = FALSE;
+        gGameSelect->levelEventTimer = 0;
+        write_game_save_data();
 
-            if (gGameSelect->campaignNotice.hasNewCampaign) {
-                start_campaign_notice(D_030046a8->data.currentCampaign);
-                gGameSelect->campaignNotice.hasNewCampaign = FALSE;
-            } else {
-                gGameSelect->sceneState = GS_STATE_MAIN;
-            }
+        if (gGameSelect->campaignNotice.hasNewCampaign) {
+            start_campaign_notice(D_030046a8->data.currentCampaign);
+            gGameSelect->campaignNotice.hasNewCampaign = FALSE;
+        } else {
+            gGameSelect->sceneState = GS_STATE_MAIN;
         }
     }
-
 
     saveData->recentLevelState = LEVEL_STATE_NULL;
     saveData->recentLevelClearedByBarista = FALSE;
@@ -1026,8 +855,6 @@ void game_select_scroll_info_pane(s32 x, s32 y, s24_8 rate) {
 // Update Screen Scroll
 void game_select_update_bg_scroll(void) {
     s24_8 x, y;
-    s16 gridX, gridY;
-    s32 i;
 
     if (gGameSelect->gridPaneIsMoving) {
         gGameSelect->gridPaneMotionTime = FIXED_POINT_MUL(gGameSelect->gridPaneMotionTime, gGameSelect->gridPaneMotionDecay);
@@ -1056,9 +883,8 @@ void game_select_update_bg_scroll(void) {
 
 // Set Selection Border Sprite Z/Layer
 void game_select_set_cursor_border_z(void) {
-    s32 levelState = get_level_state_with_perfect_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
-    // Adjust Z level to place selection border under the medal/perfect icon (if present).
-    if ((levelState == LEVEL_STATE_HAS_MEDAL) || (levelState == LEVEL_STATE_PERFECT)) {
+    // Adjust Z level to place selection border under the medal icon (if present).
+    if (get_level_state_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY) == LEVEL_STATE_HAS_MEDAL) {
         sprite_set_z(gSpriteHandler, gGameSelect->selectionBorderSprite, 0x8800);
     } else {
         sprite_set_z(gSpriteHandler, gGameSelect->selectionBorderSprite, 0x4800);
@@ -1125,9 +951,7 @@ u32 game_select_get_next_valid_xy(s32 *xReq, s32 *yReq, s32 dx, s32 dy) {
 // Read Directional Inputs
 void game_select_read_dpad_inputs(void) {
     s16 screenX, screenY;
-    s32 levelID;
     s32 x, y, dx, dy;
-    s32 i;
 
     // Get horizontal and vertical movement.
     dx = dy = 0;
@@ -1159,7 +983,6 @@ void game_select_read_dpad_inputs(void) {
 
     // If the movement is invalid or zero, exit.
     if (!game_select_get_next_valid_xy(&x, &y, dx, dy)) {
-        rumble_play_menu_limit();
         return;
     }
 
@@ -1173,6 +996,7 @@ void game_select_read_dpad_inputs(void) {
         game_select_set_stage_title(x);
     }
 
+<<<<<<< Updated upstream
     levelID = get_level_id_from_grid_xy(x, y);
     #ifdef PLUS
     if ((levelID > LEVEL_NULL) && (get_campaign_from_level_id(levelID) == D_030046a8->data.currentCampaign)){
@@ -1196,6 +1020,9 @@ void game_select_read_dpad_inputs(void) {
             rumble_play_menu_move();
         }
     #endif
+=======
+    play_sound(&s_menu_cursor1_seqData);
+>>>>>>> Stashed changes
 }
 
 
@@ -1213,9 +1040,6 @@ void game_select_read_inputs_sub2(void) {
 void game_select_read_inputs(void) {
     struct LevelData *levelData;
     s32 levelState, levelID;
-#ifdef PLUS
-    s32 replayCampaignID;
-#endif
     u32 canHaveCampaign;
 
     if (!game_select_scene_inputs_enabled()) {
@@ -1232,7 +1056,7 @@ void game_select_read_inputs(void) {
         levelState = get_level_state_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
 
         /* If the level can be opened: */
-        if ((levelState == LEVEL_STATE_OPEN) || (levelState == LEVEL_STATE_CLEARED) || (levelState == LEVEL_STATE_HAS_MEDAL) || (levelState == LEVEL_STATE_PERFECT)) {
+        if ((levelState == LEVEL_STATE_OPEN) || (levelState == LEVEL_STATE_CLEARED) || (levelState == LEVEL_STATE_HAS_MEDAL)) {
             D_030046a8->data.gsCursorX = gGameSelect->cursorX;
             D_030046a8->data.gsCursorY = gGameSelect->cursorY;
             levelID = get_level_id_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
@@ -1251,18 +1075,6 @@ void game_select_read_inputs(void) {
                         sPlayCreditsAfterEpilogue = TRUE;
                     }
                     canHaveCampaign = TRUE;
-                    #ifdef PLUS
-                    // hold select to replay a cleared campaign level
-                    replayCampaignID = get_campaign_from_level_id(levelID);
-                    if ((replayCampaignID >= 0)
-                     && get_campaign_cleared(&D_030046a8->data, replayCampaignID)
-                     && (D_03004ac0 & SELECT_BUTTON)) {
-                        set_current_campaign(replayCampaignID);
-                        sReplayingCampaign = TRUE;
-                    } else {
-                        sReplayingCampaign = FALSE;
-                    }
-                    #endif
                     break;
 
                 case LEVEL_TYPE_BONUS:
@@ -1283,10 +1095,7 @@ void game_select_read_inputs(void) {
             D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelect->cursorY;
             D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
 
-            if (canHaveCampaign
-             && !sReplayingCampaign
-             && (D_030046a8->data.campaignState == CAMPAIGN_STATE_ACTIVE)
-             && (gGameSelect->campaignNotice.id >= 0)) {
+            if (canHaveCampaign && (D_030046a8->data.campaignState == CAMPAIGN_STATE_ACTIVE) && (gGameSelect->campaignNotice.id >= 0)) {
                 if ((gGameSelect->cursorX == gGameSelect->campaignNotice.x) && (gGameSelect->cursorY == gGameSelect->campaignNotice.y)) {
                     set_current_campaign(gGameSelect->campaignNotice.id);
                     D_030046a8->data.campaignAttemptsLeft--;
@@ -1296,20 +1105,15 @@ void game_select_read_inputs(void) {
                 }
             }
 
+            write_game_save_data();
             set_pause_beatscript_scene(FALSE);
             gGameSelect->inputsEnabled = FALSE;
             play_sound(&s_menu_kettei1_seqData);
-            if (levelData->type == LEVEL_TYPE_BONUS) {
-                rumble_play_menu_bonus();
-            } else {
-                rumble_play_menu_confirm();
-            }
             return;
         }
 
         /* If the level cannot be opened: */
         play_sound(&s_menu_error_seqData);
-        rumble_play_menu_error();
         return;
     }
 
@@ -1320,10 +1124,10 @@ void game_select_read_inputs(void) {
         D_030046a8->data.gsCursorX = D_030046a8->data.recentLevelX = gGameSelect->cursorX;
         D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelect->cursorY;
         D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
+        write_game_save_data();
         set_pause_beatscript_scene(FALSE);
         gGameSelect->inputsEnabled = FALSE;
         play_sound(&s_menu_cancel3_seqData);
-        rumble_play_menu_cancel();
     }
 }
 
@@ -1397,8 +1201,6 @@ void game_select_update_stage_title_pos(void) {
 
 // Set Stage Title
 void game_select_set_stage_title(s32 x) {
-    s32 i;
-
     sprite_set_anim(gSpriteHandler, gGameSelect->stageTitleText, game_select_stage_title_anim[x], 0, 1, 0x7f, 0);
     gGameSelect->stageTitlePersistTime = 100;
 }
@@ -1419,7 +1221,6 @@ void game_select_link_sprite_xy_to_bg(s16 sprite) {
 // Scene Update (Active)
 void game_select_scene_update(void *sVar, s32 dArg) {
     s16 bgOfsX, bgOfsY;
-    s32 i;
 
     if (gGameSelect->loadingSceneGfx) {
         return;
@@ -1453,27 +1254,6 @@ void game_select_scene_update(void *sVar, s32 dArg) {
     game_select_update_icon_squares();
     game_select_update_flow_pane();
     game_select_update_medal_pane();
-
-    if(D_03004b10.BG_OFS[BG_LAYER_3].x >= (9 * 40) - 39){
-        if(!gGameSelect->modelCornerHidden) {
-            for(i = 6; i < 12; i++){
-                game_select_clear_bg_tiles(28, 3, 1 + (1 * 5), 4 + (i * 3), 3, 3, 0, 0);
-                game_select_clear_bg_tiles(24, 3, 1 + (1 * 5), 4 + (i * 3), 3, 3, 1280, 0);
-            }
-            game_select_clear_bg_tiles(28, 3, 1 + (2 * 5), 4 + (6 * 3), 3, 3, 0, 0);
-            game_select_clear_bg_tiles(24, 3, 1 + (2 * 5), 4 + (6 * 3), 3, 3, 1280, 0);
-            gGameSelect->modelCornerHidden = TRUE;
-        }
-    } else {
-        if(gGameSelect->modelCornerHidden) {
-            for (i = 6; i < 12; i++) {
-                game_select_set_icon_map_after_level_event(1, i);
-            }
-            game_select_set_icon_map_after_level_event(2, 6);
-            gGameSelect->modelCornerHidden = FALSE;
-        }
-    }
-
 }
 
 
@@ -1575,7 +1355,7 @@ u32 game_select_check_level_event_req(s32 x, s32 y, s32 newState) {
         return FALSE;
     }
 
-    state = get_level_state(saveData, gridEntry->id);
+    state = saveData->levelStates[gridEntry->id];
     requirements = NULL;
 
     switch (state) {
@@ -1600,14 +1380,6 @@ u32 game_select_check_level_event_req(s32 x, s32 y, s32 newState) {
             return TRUE;
         }
 
-        if (requirements[0] == LEVEL_EVENT_REQ_TOTAL_MEDALS) {
-            if (saveData->totalMedals < (u8)requirements[1]) {
-                return FALSE;
-            }
-            requirements += 3;
-            continue;
-        }
-
         x = requirements[1];
         y = requirements[2];
         gridEntry = game_select_grid_data + x + (y * GS_GRID_WIDTH);
@@ -1616,7 +1388,7 @@ u32 game_select_check_level_event_req(s32 x, s32 y, s32 newState) {
             return FALSE;
         }
 
-        state = get_level_state(saveData, gridEntry->id);
+        state = saveData->levelStates[gridEntry->id];
 
         switch (requirements[0]) {
             case LEVEL_STATE_HAS_MEDAL:
@@ -1668,12 +1440,7 @@ void game_select_set_icon_map_after_level_event(s32 x, s32 y) {
     tileY = 4 + (y * 3);
     levelData = &level_data_table[id];
     type = levelData->type;
-    // Only use perfect detection for actual playable levels (like medal system)
-    if (type == LEVEL_TYPE_GAME || type == LEVEL_TYPE_REMIX) {
-        state = get_level_state_with_perfect_from_id(id);
-    } else {
-        state = get_level_state_from_id(id);
-    }
+    state = saveData->levelStates[id];
     overlay = level_icon_overlays_map[type][state];
 
     if ((state == LEVEL_STATE_HIDDEN) || (state == LEVEL_STATE_APPEARING)) {
@@ -1685,13 +1452,7 @@ void game_select_set_icon_map_after_level_event(s32 x, s32 y) {
     game_select_print_icon_maps(28, 3, tileX, tileY, 3, 3, tileNum, palette);
 
     tileNum = 1 + (overlay * 9) + 0x100;
-    
-    // Adjust position for perfect overlay (move right 1 tile)
-    if (overlay == LEVEL_ICON_OVERLAY_PERFECT) {
-        game_select_print_icon_maps(24, 3, tileX + 1, tileY, 3, 3, tileNum, 8);
-    } else {
-        game_select_print_icon_maps(24, 3, tileX, tileY, 3, 3, tileNum, 8);
-    }
+    game_select_print_icon_maps(24, 3, tileX, tileY, 3, 3, tileNum, 7);
 }
 
 
@@ -1787,7 +1548,7 @@ u32 game_select_process_level_events(void) {
     struct GameSelectGridEntry *gridEntry;
     const s8 *eventTargets;
     s16 screenX, screenY;
-    s32 x, y, state, saveState, id;
+    s32 x, y, state, id;
     s16 sprite;
 
     if (gGameSelect->levelEventPending) {
@@ -1803,7 +1564,6 @@ u32 game_select_process_level_events(void) {
 
     id = get_level_id_from_grid_xy(x, y);
     get_pixel_xy_from_grid_xy(x, y, &screenX, &screenY);
-    saveState = state;
 
     switch (state) {
         case LEVEL_STATE_OPEN:
@@ -1822,43 +1582,28 @@ u32 game_select_process_level_events(void) {
             play_sound(&s_f_clear_game_seqData);
 
             cafe_session_remove_level(id);
-            set_level_first_ok(&D_030046a8->data, id, get_level_total_plays(&D_030046a8->data, id));
+            D_030046a8->data.levelFirstOK[id] = D_030046a8->data.levelTotalPlays[id];
             break;
 
         case LEVEL_STATE_HAS_MEDAL:
             screenX += 47;
             screenY += 68;
-            sprite = sprite_create(gSpriteHandler, anim_game_select_get_superb, 0, screenX, screenY, 0x8864, 1, 0, 3);
+            sprite = sprite_create(gSpriteHandler, anim_game_select_get_superb, 0, screenX, screenY, 0x4864, 1, 0, 3);
             game_select_link_sprite_xy_to_bg(sprite);
             play_sound_w_pitch_volume(&s_f_clear_game_seqData, INT_TO_FIXED(0.5), INT_TO_FIXED(2.0));
             play_sound(&s_f_get_medal_seqData);
 
             D_030046a8->data.totalMedals++;
             game_select_refresh_medal_count(127);
-            #ifdef TEMPOUP
-            game_select_try_queue_tempo_up_unlock(FALSE);
-            #endif
             cafe_session_remove_level(id);
-            set_level_first_superb(&D_030046a8->data, id, get_level_total_plays(&D_030046a8->data, id));
-            if(get_level_first_ok(&D_030046a8->data, id) == 0) {
-                set_level_first_ok(&D_030046a8->data, id, get_level_total_plays(&D_030046a8->data, id));
+            D_030046a8->data.levelFirstSuperb[id] = D_030046a8->data.levelTotalPlays[id];
+            if (D_030046a8->data.levelFirstOK[id] == 0) {
+                D_030046a8->data.levelFirstOK[id] = D_030046a8->data.levelTotalPlays[id];
             }
-            break;
-
-        case LEVEL_STATE_PERFECT:
-            screenX += 47;
-            screenY += 68;
-            sprite = sprite_create(gSpriteHandler, anim_game_select_get_superb, 0, screenX, screenY, 0x8864, 1, 0, 3);
-            game_select_link_sprite_xy_to_bg(sprite);
-            play_sound_w_pitch_volume(&s_f_clear_game_seqData, INT_TO_FIXED(0.5), INT_TO_FIXED(2.0));
-            play_sound(&s_f_get_medal_seqData);
-
-            saveState = LEVEL_STATE_HAS_MEDAL;
-            cafe_session_remove_level(id);
             break;
     }
 
-    save_level_state_from_grid_xy(x, y, saveState);
+    save_level_state_from_grid_xy(x, y, state);
     game_select_set_icon_map_after_level_event(x, y);
 
     if ((x == gGameSelect->cursorX) && (y == gGameSelect->cursorY)) {
@@ -1868,7 +1613,7 @@ u32 game_select_process_level_events(void) {
 
     gridEntry = game_select_grid_data + x + (y * GS_GRID_WIDTH);
 
-    if ((state == LEVEL_STATE_CLEARED) || (state == LEVEL_STATE_HAS_MEDAL) || (state == LEVEL_STATE_PERFECT)) {
+    if ((state == LEVEL_STATE_CLEARED) || (state == LEVEL_STATE_HAS_MEDAL)) {
         if ((gridEntry->flags & LEVEL_EVENT_DELAY_CLEAR)) {
             gGameSelect->levelEventTimer = 60;
         }
@@ -1993,6 +1738,7 @@ void game_select_update_level_events(void) {
         save_level_state_from_grid_xy(gGameSelect->manualUnlockX, gGameSelect->manualUnlockY, LEVEL_STATE_OPEN);
     }
 #endif
+
     write_game_save_data();
 
     if (gGameSelect->campaignNotice.hasNewCampaign) {
@@ -2010,7 +1756,7 @@ void game_select_set_medal_count(u32 total) {
 
     sprite_set_anim_cel(gSpriteHandler, gGameSelect->medalPaneDigit1, total % 10);
     sprite_set_anim_cel(gSpriteHandler, gGameSelect->medalPaneDigit2, (total < 10) ? 10 : (total / 10));
-    sprite_set_x(gSpriteHandler, gGameSelect->medalPaneDigit1, (total < 10) ? 163 : 167);
+    sprite_set_x(gSpriteHandler, gGameSelect->medalPaneDigit1, (total < 10) ? 164 : 168);
 }
 
 
@@ -2018,10 +1764,10 @@ void game_select_set_medal_count(u32 total) {
 void game_select_init_medal_pane(void) {
     struct Vector2 *bgOfs = &D_03004b10.BG_OFS[BG_LAYER_1];
 
-    gGameSelect->medalPaneTitle = sprite_create(gSpriteHandler, anim_game_select_medal_text, 0, 161, 151, 0x800, 0, 0, 0);
+    gGameSelect->medalPaneTitle = sprite_create(gSpriteHandler, anim_game_select_medal_text, 0, 162, 151, 0x800, 0, 0, 0);
     gGameSelect->medalPaneDigit1 = sprite_create(gSpriteHandler, anim_game_select_medal_num, 0, 168, 151, 0x800, 0, 0x7f, 0);
     gGameSelect->medalPaneDigit2 = sprite_create(gSpriteHandler, anim_game_select_medal_num, 0, 168, 151, 0x800, 0, 0x7f, 0);
-    sprite_set_x_y(gSpriteHandler, gGameSelect->medalPaneDigit2, 160, 151);
+    sprite_set_x_y(gSpriteHandler, gGameSelect->medalPaneDigit2, 161, 151);
 
     sprite_set_origin_x_y(gSpriteHandler, gGameSelect->medalPaneTitle, &bgOfs->x, &bgOfs->y);
     sprite_set_origin_x_y(gSpriteHandler, gGameSelect->medalPaneDigit1, &bgOfs->x, &bgOfs->y);
@@ -2065,24 +1811,16 @@ void game_select_init_info_pane(void) {
     gGameSelect->infoPaneName = -1;
     gGameSelect->infoPaneRank = -1;
     gGameSelect->infoPaneDesc = text_printer_create_new(get_current_mem_id(), 4, 104, 32);
-    text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 50);
+    text_printer_set_x_y(gGameSelect->infoPaneDesc, 128, 55);
     text_printer_set_layer(gGameSelect->infoPaneDesc, 0x800);
     text_printer_set_colors(gGameSelect->infoPaneDesc, 0);
     text_printer_set_palette(gGameSelect->infoPaneDesc, 8);
-    text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 15);
+    text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
     text_printer_center_by_content(gGameSelect->infoPaneDesc, 1);
     text_printer_set_x_y_controller(gGameSelect->infoPaneDesc, &bgOfs->x, &bgOfs->y);
     text_printer_set_shadow_colors(gGameSelect->infoPaneDesc, -1);
-    gGameSelect->perfectClearedSprite = sprite_create(gSpriteHandler, anim_game_select_perfect_rank, 0, 187, 112, 0x80A, 1, 0, 0x8000);
+    gGameSelect->perfectClearedSprite = sprite_create(gSpriteHandler, anim_game_select_perfect_rank, 0, 138, 115, 0x80A, 1, 0, 0x8000);
     sprite_set_origin_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, &bgOfs->x, &bgOfs->y);
-    gGameSelect->noPracticeSprite = sprite_create(gSpriteHandler, anim_game_select_no_practice, 0, 188, 94, 0x80A, 1, 0, 0x8000);
-    sprite_set_origin_x_y(gSpriteHandler, gGameSelect->noPracticeSprite, &bgOfs->x, &bgOfs->y);
-    #ifdef TEMPOUP
-    gGameSelect->tempoUpSprite = sprite_create(gSpriteHandler, anim_game_select_tempo_up, 0, 154, 38, 0x80A, 1, 0, 0x8000);
-    sprite_set_origin_x_y(gSpriteHandler, gGameSelect->tempoUpSprite, &bgOfs->x, &bgOfs->y);
-    #else
-    gGameSelect->tempoUpSprite = -1;
-    #endif
     gGameSelect->infoPaneIsClear = TRUE;
     gGameSelect->infoPaneTask = INFO_PANE_TASK_NONE;
 }
@@ -2113,13 +1851,6 @@ void game_select_clear_info_pane(void) {
     game_select_delete_info_pane_sprite(&gGameSelect->infoPaneRank);
     text_printer_clear(gGameSelect->infoPaneDesc);
     sprite_set_visible(gSpriteHandler, gGameSelect->perfectClearedSprite, FALSE);
-    sprite_set_visible(gSpriteHandler, gGameSelect->noPracticeSprite, FALSE);
-    #ifdef TEMPOUP
-    sprite_set_visible(gSpriteHandler, gGameSelect->tempoUpSprite, FALSE);
-    #endif
-    sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 112);
-    text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 50);
-    text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 15);
     gGameSelect->infoPaneIsClear = TRUE;
 }
 
@@ -2132,7 +1863,7 @@ void game_select_print_level_name(struct LevelData *levelData) {
     text_printer_fill_vram_tiles(0, 26, 16, 2, 0);
     string = levelData->name;
     anim = text_printer_get_formatted_line_anim(get_current_mem_id(), 0, 26, TEXT_PRINTER_FONT_SMALL, &string, TEXT_ANCHOR_BOTTOM_CENTER, 0, 104, 0, -1);
-    gGameSelect->infoPaneName = sprite_create(gSpriteHandler, anim, 0, 180, 30, 0x800, 1, 0, 0x8000);
+    gGameSelect->infoPaneName = sprite_create(gSpriteHandler, anim, 0, 180, 37, 0x800, 1, 0, 0x8000);
     sprite_set_base_palette(gSpriteHandler, gGameSelect->infoPaneName, 7);
     gGameSelect->infoPaneIsClear = FALSE;
 }
@@ -2149,45 +1880,24 @@ void game_select_print_level_desc(struct LevelData *levelData) {
 void game_select_print_level_rank(s32 levelState) {
     struct Animation *anim;
     const char *string;
-    u32 i;
-    u32 found = FALSE;
-    u32 hasNoPracticeIcon = FALSE;
 
-    if (get_level_score(&D_030046a8->data, gGameSelect->infoPaneLevelID) == DEFAULT_LEVEL_SCORE) {
+    if (D_030046a8->data.levelScores[gGameSelect->infoPaneLevelID] == DEFAULT_LEVEL_SCORE) {
         levelState = LEVEL_STATE_OPEN;
     }
-
-    // Check if the game has been perfected
-    if (get_campaign_cleared(&D_030046a8->data, get_campaign_from_level_id(gGameSelect->infoPaneLevelID))) {
-        levelState = LEVEL_STATE_PERFECT; // Use the new "perfect" rank
-    }
-
-#ifdef PLUS
-    hasNoPracticeIcon = (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) != 0;
-#endif
-
-    #ifdef TEMPOUP
-    found = ((gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_IS_EXTRA) != 0) || hasNoPracticeIcon;
-    #else
-    found = hasNoPracticeIcon;
-    #endif
 
     text_printer_fill_vram_tiles(16, 26, 16, 2, 0);
     string = game_select_rank_text[levelState];
     anim = text_printer_get_formatted_line_anim(get_current_mem_id(), 16, 26, TEXT_PRINTER_FONT_SMALL, &string, TEXT_ANCHOR_BOTTOM_RIGHT, 0, 104, 0, -1);
-    gGameSelect->infoPaneRank = sprite_create(gSpriteHandler, anim, 0, 228, found ? 116 : 113, 0x800, 1, 0, 0x8000);
+    gGameSelect->infoPaneRank = sprite_create(gSpriteHandler, anim, 0, 228, 116, 0x800, 1, 0, 0x8000);
     sprite_set_base_palette(gSpriteHandler, gGameSelect->infoPaneRank, game_select_rank_palette[levelState]);
     gGameSelect->infoPaneIsClear = FALSE;
-
 }
+
 
 // Update Level Info Pane
 void game_select_process_info_pane(void) {
     struct Vector2 *bgOfs = &D_03004b10.BG_OFS[BG_LAYER_1];
     s32 campaign;
-    u32 i;
-
-    // Set the flag for the current info pane level
 
     switch (gGameSelect->infoPaneTask) {
         case INFO_PANE_TASK_DELAY:
@@ -2211,19 +1921,7 @@ void game_select_process_info_pane(void) {
         case INFO_PANE_TASK_PRINT_DESC:
             game_select_print_level_desc(gGameSelect->infoPaneLevelData);
             gGameSelect->infoPaneTask = INFO_PANE_TASK_RENDER;
-
-            #ifdef TEMPOUP
-            if(gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_IS_EXTRA) {
-                text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
-                text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 60);
-            } else
-            #endif
-            #ifdef PLUS
-            if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) {
-                text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
-                text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 47);
-            }
-            #endif
+            break;
 
         case INFO_PANE_TASK_RENDER:
             if (!text_printer_is_busy(gGameSelect->infoPaneDesc)) {
@@ -2231,29 +1929,11 @@ void game_select_process_info_pane(void) {
                 sprite_set_origin_x_y(gSpriteHandler, gGameSelect->infoPaneName, &bgOfs->x, &bgOfs->y);
                 sprite_set_visible(gSpriteHandler, gGameSelect->infoPaneRank, TRUE);
                 sprite_set_origin_x_y(gSpriteHandler, gGameSelect->infoPaneRank, &bgOfs->x, &bgOfs->y);
-                sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 112);
 
                 campaign = get_campaign_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
-                if ((campaign >= 0) && get_campaign_cleared(&D_030046a8->data, campaign)) {
+                if ((campaign >= 0) && D_030046a8->data.campaignsCleared[campaign]) {
                     sprite_set_visible(gSpriteHandler, gGameSelect->perfectClearedSprite, TRUE);
                 }
-
-                #ifdef TEMPOUP
-                if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_IS_EXTRA) {
-                    sprite_set_visible(gSpriteHandler, gGameSelect->tempoUpSprite, TRUE);
-                    sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 115);
-                    text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
-                    text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 60);
-                } else
-                #endif
-                #ifdef PLUS
-                if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) {
-                    sprite_set_visible(gSpriteHandler, gGameSelect->noPracticeSprite, TRUE);
-                    sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 115);
-                    text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
-                    text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 47);
-                }
-                #endif
 
                 gGameSelect->infoPaneTask = INFO_PANE_TASK_NONE;
             }
@@ -2289,13 +1969,12 @@ u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
     s24_8 completionModifier;
     u32 modifiedScore;
-    u32 clampedGames;
     u32 totalGames = 0;
     u32 totalScore = 0;
     u32 i;
 
     for (i = 0; i < TOTAL_LEVELS; i++) {
-        u32 score = get_level_score(saveData, i);
+        u32 score = saveData->levelScores[i];
 
         if (score != DEFAULT_LEVEL_SCORE) {
             totalGames++;
@@ -2307,15 +1986,9 @@ u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq) {
         return 0;
     }
 
-    clampedGames = totalGames;
-    if (clampedGames > BASE_CAMPAIGN_MILESTONE_TOTAL) {
-        clampedGames = BASE_CAMPAIGN_MILESTONE_TOTAL;
-    }
-
     // Min = 0.7 (0 levels played)
-    // Max = 1.4 (48+ levels played)
-    completionModifier = INT_TO_FIXED((BASE_CAMPAIGN_MILESTONE_TOTAL + clampedGames) * 7)
-                        / (BASE_CAMPAIGN_MILESTONE_TOTAL * 10);
+    // Max = 1.4 (48 levels played)
+    completionModifier = INT_TO_FIXED((TOTAL_RHYTHM_GAMES + totalGames) * 7) / (TOTAL_RHYTHM_GAMES * 10);
 
     // Min = 0 (0 * 0.7)
     // Max = 1400 (1000 * 1.4)
@@ -2343,7 +2016,7 @@ u32 game_select_calculate_flow_old(void) {
     u32 i;
 
     for (i = 0; i < TOTAL_LEVELS; i++) {
-        u32 score = get_level_score(saveData, i);
+        u32 score = saveData->levelScores[i];
 
         if (score != DEFAULT_LEVEL_SCORE) {
             totalGames++;
@@ -2404,7 +2077,7 @@ u32 game_select_update_scores(void) {
 
     // Save new score.
     if (levelID >= 0) {
-        score = get_level_score(saveData, levelID);
+        score = saveData->levelScores[levelID];
 
         if (score == DEFAULT_LEVEL_SCORE) {
             // New scores have a weight of 100%.
@@ -2417,7 +2090,7 @@ u32 game_select_update_scores(void) {
             score = ((newScore + (score * 3)) / 4) & 0xFFFFFF;
         }
 
-        set_level_score(saveData, levelID, score);
+        saveData->levelScores[levelID] = score;
     }
 
     saveData->recentLevelScore = DEFAULT_LEVEL_SCORE;
@@ -2429,10 +2102,10 @@ u32 game_select_update_scores(void) {
             u32 scoreBonus = (INT_TO_FIXED(prevModScore) / modifier) - average + 1;
 
             for (i = 0; i < TOTAL_LEVELS; i++) {
-                score = get_level_score(saveData, i);
+                score = saveData->levelScores[i];
 
                 if (score != DEFAULT_LEVEL_SCORE) {
-                    set_level_score(saveData, i, clamp_int32(score + scoreBonus, 0, MAX_LEVEL_SCORE));
+                    saveData->levelScores[i] = clamp_int32(score + scoreBonus, 0, MAX_LEVEL_SCORE);
                 }
             }
         }
@@ -2458,14 +2131,14 @@ void game_select_init_flow_pane(void) {
     u32 i;
 
     for (i = 0; i < ARRAY_COUNT(flowPane->digits); i++) {
-        flowPane->digits[i] = sprite_create(gSpriteHandler, anim_game_select_flow_num, 10, 212 - (i * 8), 128, 0, 0, 0, 0);
+        flowPane->digits[i] = sprite_create(gSpriteHandler, anim_game_select_flow_num, 10, 208 - (i * 8), 128, 0, 0, 0, 0);
         sprite_set_origin_x_y(gSpriteHandler, flowPane->digits[i], &bgOfs->x, &bgOfs->y);
     }
 
-    flowPane->title = sprite_create(gSpriteHandler, anim_game_select_flow_text, 0, 130, 128, 0, 0, 0, 0);
+    flowPane->title = sprite_create(gSpriteHandler, anim_game_select_flow_text, 0, 128, 128, 0, 0, 0, 0);
     sprite_set_origin_x_y(gSpriteHandler, flowPane->title, &bgOfs->x, &bgOfs->y);
 
-    flowPane->arrow = sprite_create(gSpriteHandler, anim_game_select_flow_arrow, 0, 226, 128, 0, 0, 0, 0x8000);
+    flowPane->arrow = sprite_create(gSpriteHandler, anim_game_select_flow_arrow, 0, 224, 128, 0, 0, 0, 0x8000);
     sprite_set_origin_x_y(gSpriteHandler, flowPane->arrow, &bgOfs->x, &bgOfs->y);
 
     updateFlow = game_select_update_scores();
@@ -2583,7 +2256,6 @@ void game_select_scene_stop(void *sVar, s32 dArg) {
     func_08004058();
     func_08006d80();
     func_08007014(0);
-    write_game_save_data();
 }
 
 
@@ -3042,134 +2714,3 @@ u32 game_select_check_for_icon_squares(void) {
 void game_select_update_bg_squares(s32 dx, s32 dy) {
     game_select_update_bg_squares_motion(dx, dy);
 }
-
-void game_select_clear_bg_tiles(u32 baseMap, u32 mapSize, u32 tileX, u32 tileY, u32 width, u32 height, u32 tileNum, u32 palette) {
-    u32 mapX, mapY, mapNum;
-    u16 mapTile;
-    u16 *mapDest;
-    u16 *newMapDest;
-    u32 i, j;
-
-    mapX = tileX >> 5;
-    mapY = tileY >> 5;
-    tileX &= 0x1F;
-    tileY &= 0x1F;
-
-    switch (mapSize) {
-        case 0:
-            mapNum = 0;
-            break;
-        case 1:
-            mapNum = mapX & 1;
-            break;
-        case 2:
-            mapNum = mapY & 1;
-            break;
-        case 3:
-            mapNum = (mapX & 1) + ((mapY & 1) << 1);
-            break;
-        default:
-            mapNum = 0;
-            break;
-    }
-
-    mapDest = ((u16 *)VRAMBase) + ((baseMap + mapNum) << 10) + tileX + (tileY << 5);
-    mapTile = (palette << 12) | tileNum;
-
-    for (i = 0; i < height; i++) {
-        if ((tileY + i) >= 32) {
-/*
-i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware 
-i hate the gba hardware 
-i hate the gba hardware i hate the gba hardware 
-i hate the gba hardware i hate the gba hardware i hate the gba hardware 
-i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware 
-i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware https://www.coranac.com/tonc/text/regbg.htm
-https://www.coranac.com/tonc/text/regbg.htm
-https://www.coranac.com/tonc/text/regbg.htmhttps://www.coranac.com/tonc/text/regbg.htm
-https://www.coranac.com/tonc/text/regbg.htmhttps://www.coranac.com/tonc/text/regbg.htm
-https://www.coranac.com/tonc/text/regbg.htmhttps://www.coranac.com/tonc/text/regbg.htm
-https://www.coranac.com/tonc/text/regbg.htm
-*/
-
-            u32 newMapY = (tileY + i) >> 5;
-            u32 newTileY = (tileY + i) & 0x1F;
-            u32 newMapNum;
-            
-            switch (mapSize) {
-                case 0:
-                    newMapNum = 0;
-                    break;
-                case 1:
-                    newMapNum = mapX & 1;
-                    break;
-                case 2:
-                    newMapNum = newMapY & 1;
-                    break;
-                case 3:
-                    newMapNum = (mapX & 1) + ((newMapY & 1) << 1);
-                    break;
-                default:
-                    newMapNum = 0;
-                    break;
-            }
-            
-            newMapDest = ((u16 *)VRAMBase) + ((baseMap + newMapNum) << 10) + tileX + (newTileY << 5);
-            
-            for (j = 0; j < width; j++) {
-                if ((tileX + j) < 32) {
-                    newMapDest[j] = mapTile;
-                }
-            }
-        } else {
-            for (j = 0; j < width; j++) {
-                if ((tileX + j) < 32) {
-                    mapDest[j] = mapTile;
-                }
-            }
-            mapDest += 0x20;
-        }
-    }
-}
-
-#ifdef TEMPOUP
-u32 game_select_try_queue_tempo_up_unlock(u32 startEvents) {
-    s32 x, y;
-    s32 state;
-
-    if (D_030046a8->data.totalMedals < BASE_CAMPAIGN_MEDAL_GATE) {
-        return FALSE;
-    }
-
-    get_grid_xy_from_level_id(LEVEL_KARATE_MAN_EXTRA, &x, &y);
-    state = get_level_state_from_grid_xy(x, y);
-
-    if (state >= LEVEL_STATE_OPEN) {
-        return FALSE;
-    }
-
-    if (state == LEVEL_STATE_HIDDEN) {
-        if (!game_select_check_level_event_req(x, y, LEVEL_STATE_CLOSED)) {
-            return FALSE;
-        }
-        if (startEvents) {
-            game_select_start_level_events(60);
-        }
-        game_select_enqueue_level_event(x, y, LEVEL_STATE_CLOSED);
-        return TRUE;
-    }
-
-    if (state == LEVEL_STATE_CLOSED) {
-        if (!game_select_check_level_event_req(x, y, LEVEL_STATE_OPEN)) {
-            return FALSE;
-        }
-        if (startEvents) {
-            game_select_start_level_events(60);
-        }
-        game_select_enqueue_level_event(x, y, LEVEL_STATE_OPEN);
-        return TRUE;
-    }
-
-    return FALSE;
-}
-#endif

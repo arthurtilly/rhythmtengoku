@@ -53,8 +53,8 @@ void clappy_trio_init_gfx1(void) {
 void clappy_trio_engine_start(u32 ver) {
     struct TextPrinter *printer;
 
-    gClappyTrio->version = ver / 2; 
-    gClappyTrio->isQuartet = ver % 2;
+    gClappyTrio->version = ver >> 2; 
+    gClappyTrio->isQuartet = ver & 3;
     
     clappy_trio_init_gfx1();
     scene_show_obj_layer();

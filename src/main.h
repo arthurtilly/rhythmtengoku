@@ -22,7 +22,6 @@ extern void *interrupt_handler_jtbl[14];
 extern struct Scene *D_08935fac; // Pointer to Title Screen
 extern struct Scene *D_08935fb0; // Pointer to Title Screen (again)
 extern struct Scene scene_soft_reset; // Soft Reset Scene
-extern struct Scene scene_gbp_handshake;
 extern struct Scene scene_warning;
 
 extern void init_scene_static_var(void);

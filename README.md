@@ -1,166 +1,87 @@
+# Rhythm Tengoku
 
-# Rhythm Heaven Advance
+This is a decompilation of Rhythm Tengoku for the Gameboy Advance. It can build either a fully byte-for-byte matching ROM from scratch, or rebuild a different functionally equivalent ROM with a different memory layout to be easier to mod with. This can be controlled with the `NONMATCHING` parameter when building.
 
-![Rhythm Heaven Advance](media/rha.png?raw=true "Rhythm Heaven Advance")
+This repository requires an unmodified ROM of Rhythm Tengoku (rev. 0) to build. This ROM will not be provided for you.
 
-An unofficial English localization patch for *Rhythm Tengoku (リズム天国)* on the Game Boy Advance.
+When built in matching mode, it builds the following ROMs:
 
-## About
+* **rhythmtengoku.gba** `sha1: 67f8adacff79c15d028fffd90de3a77d9ad0602d`
+* **rhythmtengoku_rev1.gba** `sha1: e0aaca45045e408e7e1072bde5b39278111e1952`
 
-**Rhythm Heaven Advance** is a fan-made localization project for *Rhythm Tengoku*. This project provides a complete English translation patch for the game.
-
-Feel free to join our [Discord server](https://discord.gg/8PET8w8PU8) if you have any questions or suggestions, or if you would like to follow the project and participate!
 
 ## Installation
 
-### Requirements
+To install the decomp, you need access to a Linux terminal. If you are on Windows 10 or 11, you can access a Linux terminal easily by installing **WSL (Windows Subsystem for Linux)**. If you are already on Linux, you can skip to the **Installing Dependencies** section. Otherwise, follow this guide to install WSL:
 
-- A legally obtained ROM of *Rhythm Tengoku* **(Rev 0)** with CRC32 checksum: `349D7025`
-- A ROM patcher tool (recommended: [ROM Patcher JS](https://www.marcrobledo.com/RomPatcher.js/))
+#### Installing WSL
 
-### Steps
+To install WSL, first open up either a Command Prompt or Windows PowerShell window as an administrator. Run the command `wsl --install` to automatically install WSL defaulting to the Ubuntu distribution. Once the process finishes, restart your computer to finish the installation.
 
-1. Download the latest `.bps` patch file from the [Releases](https://github.com/RHAdvance/RhythmHeavenAdvance/releases) page or download the latest nightly page at [our website](https://rhadvance.github.io/)
-2. Open your BPS patcher tool
-3. Select your *Rhythm Tengoku* ROM
-4. Apply the downloaded patch
-5. Load the patched ROM in your emulator or flashcard
+*Note: you will need to have virtualization enabled in your BIOS settings to use WSL, so if you encounter issues, check how to boot into BIOS and enable virtualization for your computer. For any other issues with installation, you can refer to the [official installation guide](https://docs.microsoft.com/en-us/windows/wsl/install).*
+<br>
+Once WSL is installed, upon opening it you will be prompted for a username and password. Note that when typing in the password, the characters will not show up, not even as asterisks, so type carefully as you will need to remember your password.
 
-## Building from Source
+Once you've created a user, you should run two more commands to finish setting up your terminal. First, run `sudo apt update`, and then after this command has finished, run `sudo apt upgrade`. These commands will require you to enter your password. When prompted with `Do you want to continue? [Y/n]`, simply enter `y`. After doing this, WSL should be fully set up and ready to use.
+<br>
+It is also recommended to mount WSL to a drive letter to access your WSL filesystem from Windows more easily. To do this, follow [this guide](https://github.com/HackerN64/HackerSM64/wiki/Mounting-WSL-to-Drive).
 
-### Prerequisites
+If you are not familiar with the Linux terminal, a helpful command to know is `cd` which will change the current working directory. `cd ~/` will take you to your home directory, where it is recommended to store the repository. Additionally, copy and pasting in the WSL terminal is done through right-clicking instead of Ctrl+C / Ctrl+V, so to paste commands from this guide into your terminal, simply copy them with Ctrl+C, and then right click in your terminal to paste.
 
-All platforms require:
-- A legally obtained ROM of *Rhythm Tengoku* **(Rev 0)** (CRC32: `349D7025`)
-- Git
-- Python 3
 
-### Platform setup
+#### Installing Dependencies
 
-#### Windows
+To install the required dependencies for the decomp, first run this command:
 
-Use the [Linux instructions](#linux) via Windows Subsystem for Linux (WSL). Debian or Ubuntu distributions are recommended.
+`sudo apt install build-essential binutils-arm-none-eabi git libpng-dev ffmpeg`
 
-To set up WSL:
-```bash
-wsl --install
-```
+After this, you should also run this command:
 
-Then use the Linux setup below, followed by the build instructions.
+`sudo ln -s /proc/self/mounts /etc/mtab`
 
-#### Linux
+This command can help with issues with WSL when installing devkitPro. It is not always necessary to run, and may throw an error. If it does error, don't worry and just move on to the next step.
 
-Install the required packages (Ubuntu/Debian):
-```bash
-sudo apt update
-sudo apt install build-essential binutils-arm-none-eabi git libpng-dev ffmpeg python3
-```
+After this, you will need to install devkitPro. This process is very involved, so just run all these listed commands in this order, entering your password when prompted:
 
-Install devkitPro:
-```bash
-wget https://www.shaffy.fr/install-devkitpro-pacman
-chmod +x ./install-devkitpro-pacman
-sudo ./install-devkitpro-pacman
-```
+`wget https://apt.devkitpro.org/install-devkitpro-pacman`
+`chmod +x ./install-devkitpro-pacman`
+`sudo ./install-devkitpro-pacman`
+`export DEVKITPRO=/opt/devkitpro`
+`export DEVKITARM=/opt/devkitpro/devkitARM`
+`export DEVKITPPC=/opt/devkitpro/devkitPPC`
+`sudo dkp-pacman -Sy`
+`sudo dkp-pacman -S gba-dev`
 
-#### macOS
+After running the final command, press enter and then type `y` to finish installing.
 
-Install [Homebrew](https://brew.sh/) if you haven't already, then install the required packages:
-```bash
-xcode-select --install
-brew install libpng ffmpeg python
-```
 
-Download `devkitpro-pacman-installer.pkg` from the [devkitPro/pacman releases](https://github.com/devkitPro/pacman/releases), then install it:
-```bash
-sudo installer -pkg /path/to/devkitpro-pacman-installer.pkg -target /
-```
+#### Cloning the Repository
 
-Open a new terminal after installing devkitPro pacman, or add it to your current shell:
-```bash
-export PATH=/opt/devkitpro/pacman/bin:$PATH
-```
+Now you are ready to clone the repository. First, navigate to your home directory with `cd ~/` and then run this command:
 
-### Build instructions
+`git clone https://github.com/arthurtilly/rhythmtengoku rt`
 
-#### Set environment variables
+This will clone the repository into a folder named `rt` in your home directory. You can change `rt` to some other name if you wish to name the repository folder something else.
 
-Set the devkitPro environment variables:
-```bash
-export DEVKITPRO=/opt/devkitpro
-export DEVKITARM=/opt/devkitpro/devkitARM
-export DEVKITPPC=/opt/devkitpro/devkitPPC
-```
+Before building the ROM, you will also need to install agbcc, the compiler used for Rhythm Tengoku. Make sure you are still in your home directory, and run
 
-To keep these settings for future terminals, add them to your shell profile. For the default macOS shell:
-```bash
-echo 'export DEVKITPRO=/opt/devkitpro' >> ~/.zshrc
-echo 'export DEVKITARM=/opt/devkitpro/devkitARM' >> ~/.zshrc
-echo 'export DEVKITPPC=/opt/devkitpro/devkitPPC' >> ~/.zshrc
-echo 'export PATH=/opt/devkitpro/pacman/bin:$PATH' >> ~/.zshrc
-```
+`git clone https://github.com/pret/agbcc`
 
-If your shell is bash, use `~/.bashrc` instead of `~/.zshrc`.
+After this, navigate to the agbcc directory with `cd ~/agbcc` and build the compiler by running `./build.sh`. Finally, install the compiler into the Rhythm Tengoku decomp repository by running `./install.sh ~/rt`.
 
-#### Install GBA development tools
+Lastly, you will need to acquire an unmodified rev0 Rhythm Tengoku ROM in order to build the decomp. This ROM is not provided, and you must source it yourself. Once you obtain this ROM, rename it to `baserom.gba` and place it in the `rt` directory.
 
-```bash
-sudo dkp-pacman -Sy
-sudo dkp-pacman -S gba-dev
-```
 
-#### Clone and build
+#### Building the ROM
 
-1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/RHAdvance/RhythmHeavenAdvance.git
-   ```
+You are finally ready to build the repository! Navigate to the repository folder with `cd ~/rt`, and build the ROM by running `make -j`. (The `-j` parameter makes the build process able to run on multiple cores of your CPU, heavily speeding up the process.) Once the ROM has finished building, it will output a file at `build/rhythmtengoku.gba`! This is your compiled ROM.
 
-2. **Set up agbcc:**
-   ```bash
-   git clone https://github.com/pret/agbcc.git
-   cd agbcc
-   ./build.sh
-   ./install.sh ../RhythmHeavenAdvance
-   cd ../RhythmHeavenAdvance
-   ```
+## Using the decomp to mod Rhythm Tengoku
 
-3. **Place your ROM:**
-   - Copy your *Rhythm Tengoku* ROM into the project root directory
-   - Rename it to `baserom.gba` (or as specified in the Makefile)
+If you wish to create mods for Rhythm Tengoku, you should install a code editor in order to be able to easily edit code files. The recommended editor is **VSCode**. Once you install VSCode, you should also install the WSL and C/C++ extensions from the sidebar. Open a WSL window by clicking on the very bottom-left of the VSCode window, and open your `rt` repository.
 
-4. **Build the project:**
-   On Linux:
-   ```bash
-   make -j$(nproc)
-   ```
+When modding, it is recommended to compile the ROM in nonmatching mode in order to make adding new files easier. To do this, open the `Makefile` file in the root of the repository. Find the line near the top that reads `NONMATCHING ?= 0` and change this to `NONMATCHING ?= 1`. This will set up your repository to focus on being easy to use for modding rather than building a matching ROM byte-for-byte.
 
-   On macOS:
-   ```bash
-   make -j$(sysctl -n hw.logicalcpu)
-   ```
+Now you are free to make any changes! After you make a change, run `make -j` to rebuild the ROM and see your changes in action. By default the `make` command will only rebuild changed files in order to save time when building. This can occasionally lead to dependency issues, so you can run `make clean` to force the repository to build from scratch to occasionally help with strange issues when building.
 
-The built ROM will be generated at `build/rhythmheavenadvance.gba`.
-
-To create a BPS patch instead, install [Floating IPS](https://github.com/Alcaro/Flips), make sure `flips` is in your `PATH`, then run:
-```bash
-make patch
-```
-
-The patch will be generated at `build/rhythmheavenadvance.bps`.
-
-## Credits
-Check out the full credits [here](CREDITS.md)!
-
-## Contact
-
-- **Discord:** https://discord.gg/8PET8w8PU8
-- **GitHub Issues:** [Report bugs](https://github.com/RHAdvance/RhythmHeavenAdvance/issues)
-
-## Disclaimer
-
-This is an unofficial fan project and is not affiliated with, endorsed by, or associated with Nintendo. All trademarks and copyrights belong to their respective owners. This patch is intended for personal use only with legally obtained copies of the game.
-
-You are NOT permitted to use the patch for commercial purposes.
-
-All rights concerning the assets or source code are reserved by the original authors and Nintendo for Rhythm Tengoku.
+If you have any other questions or concerns, join the [RHModding discord server](https://discord.com/invite/ps4rq53)!

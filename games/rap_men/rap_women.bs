@@ -250,6 +250,7 @@ script script_rap_women_main
     clear_text_f
     beat_anim
     rest 24
+<<<<<<< Updated upstream
     #ifdef SFX
     rest 17
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
@@ -262,6 +263,13 @@ script script_rap_women_main
     print_text_f text_rap_women_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
     #endif
+=======
+    rest 24
+    rest 2
+    set_marking_criteria 2
+    print_text_f text_rap_women_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+>>>>>>> Stashed changes
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -558,6 +566,7 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
+<<<<<<< Updated upstream
     #ifdef SFX
     rest 16
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
@@ -570,6 +579,12 @@ script script_rap_women_main
     print_text_f text_rap_women_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
     #endif
+=======
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+>>>>>>> Stashed changes
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -666,6 +681,7 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
+<<<<<<< Updated upstream
     #ifdef SFX
     rest 16
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
@@ -678,6 +694,12 @@ script script_rap_women_main
     print_text_f text_rap_women_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
     #endif
+=======
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+>>>>>>> Stashed changes
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -794,6 +816,7 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
+<<<<<<< Updated upstream
     #ifdef SFX
     rest 16
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
@@ -806,6 +829,12 @@ script script_rap_women_main
     print_text_f text_rap_women_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
     #endif
+=======
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+>>>>>>> Stashed changes
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24

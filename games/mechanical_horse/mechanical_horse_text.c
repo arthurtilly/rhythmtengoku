@@ -13,7 +13,7 @@ const char D_0805c40c[] = "Try lesson 2 again.";
 
 const char D_0805c428[] = "Lesson 2 was perfect!";
 
-const char D_0805c444[] = "Try lesson 3 again.ÅD";
+const char D_0805c444[] = "Try lesson 3 again.";
 
 const char D_0805c460[] = "Lesson 3 was perfect!";
 

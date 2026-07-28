@@ -260,15 +260,6 @@ struct Animation anim_game_select_stage8[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902e20] EXTRA
-struct Animation anim_game_select_stage9[] = {
-    /* 000 */ { game_select_cel128, 30 },
-    /* 001 */ { game_select_cel129, 3 },
-    /* 002 */ { game_select_cel130, 3 },
-    /* 003 */ { game_select_cel131, 40 },
-    /* End */ END_ANIMATION
-};
-
 // [D_08902e48] Perfect Campaign Border (2 Attempts Remaining)
 struct Animation anim_game_select_border_perfect2[] = {
     /* 000 */ { game_select_cel100, 4 },
@@ -299,13 +290,3 @@ struct Animation anim_game_select_perfect_rank[] = {
     /* 000 */ { game_select_cel126, 4 },
     /* End */ END_ANIMATION
 };
-
-struct Animation anim_game_select_no_practice[] = {
-    /* 000 */ { game_select_cel127, 1 },
-    /* End */ END_ANIMATION
-};
-
-struct Animation anim_game_select_tempo_up[] = {
-    /* 000 */ { game_select_cel132, 1 },
-    /* End */ END_ANIMATION
-};  

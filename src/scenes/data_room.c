@@ -2,7 +2,6 @@
 #include "data_room.h"
 #include "graphics/data_room/data_room_graphics.h"
 #include "src/scenes/reading.h"
-#include "src/code_080092cc.h"
 
 
 /* RHYTHM DATA ROOM SCENE */
@@ -23,7 +22,7 @@ void dataroom_scene_init_gfx3(void) {
     s32 task;
 
     func_0800c604(0);
-    task = start_new_texture_loader(get_current_mem_id(), data_room_buffered_textures); // Start new texture loader and store the results in tasks, impressive
+    task = start_new_texture_loader(get_current_mem_id(), data_room_buffered_textures);
     run_func_after_task(task, set_pause_beatscript_scene, FALSE);
 }
 
@@ -48,10 +47,11 @@ void dataroom_scene_init_gfx1(void) {
 
 // Listbox - Get Item Name
 const char *dataroom_listbox_get_item_name(u32 item) {
-    if (item >= TOTAL_READING_MATERIALS) {
+    if (item >= 20) {
         return NULL;
     }
-    return get_reading_material_unlocked(&D_030046a8->data, item)
+
+    return D_030046a8->data.readingMaterialUnlocked[item]
         ? reading_material_table[item].title : "???";
 }
 
@@ -118,9 +118,7 @@ void dataroom_scene_start(void *sVar, s32 dArg) {
 
     gDataRoom->listbox = create_new_listbox(
             get_current_mem_id(), 10, 128, 30, 0, 1, 3,
-            80, 16, 0x8800, 16, sListSelItem,
-            TOTAL_READING_MATERIALS,
-            anim_data_room_cursor, 3, 4, sListSelLine,
+            80, 16, 0x8800, 16, sListSelItem, 20, anim_data_room_cursor, 3, 4, sListSelLine,
             dataroom_listbox_get_item_name, NULL);
     listbox_run_func_on_scroll(gDataRoom->listbox, dataroom_listbox_on_scroll, 0);
     listbox_run_func_on_finish(gDataRoom->listbox, dataroom_listbox_on_finish, 0);
@@ -194,9 +192,8 @@ void dataroom_scene_update(void *sVar, s32 dArg) {
 
     switch (event) {
         case DATAROOM_EV_CONFIRM:
-            if (!get_reading_material_unlocked(&D_030046a8->data, listbox_get_sel_item(gDataRoom->listbox))) {
+            if (!D_030046a8->data.readingMaterialUnlocked[listbox_get_sel_item(gDataRoom->listbox)]) {
                 play_sound(&s_menu_error_seqData);
-                rumble_play_menu_error();
             } else {
                 func_080006f0(get_scene_trans_target(&scene_data_room), get_scene_trans_var(&scene_data_room));
                 set_next_scene(&scene_reading);
@@ -205,31 +202,21 @@ void dataroom_scene_update(void *sVar, s32 dArg) {
                 play_sound(&s_menu_kettei2_seqData);
                 set_pause_beatscript_scene(FALSE);
                 gDataRoom->inputsEnabled = FALSE;
-                rumble_play_menu_confirm();
             }
             break;
 
         case DATAROOM_EV_SCROLL_UP:
-            if (listbox_get_sel_item(gDataRoom->listbox) <= 0) {
-                rumble_play_menu_limit();
-            } else {
-                listbox_scroll_up(gDataRoom->listbox);
-            }
+            listbox_scroll_up(gDataRoom->listbox);
             break;
 
         case DATAROOM_EV_SCROLL_DOWN:
-            if (listbox_get_sel_item(gDataRoom->listbox) >= (gDataRoom->listbox->totalItems - 1)) {
-                rumble_play_menu_limit();
-            } else {
-                listbox_scroll_down(gDataRoom->listbox);
-            }
+            listbox_scroll_down(gDataRoom->listbox);
             break;
 
         case DATAROOM_EV_CANCEL:
             play_sound(&s_menu_cancel3_seqData);
             set_pause_beatscript_scene(FALSE);
             gDataRoom->inputsEnabled = FALSE;
-            rumble_play_menu_cancel();
             break;
     }
 

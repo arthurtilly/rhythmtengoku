@@ -6,9 +6,6 @@
 #include "cues.h"
 #include "src/scenes/game_select.h"
 
-const struct MarkingCriteria *genericMarkingCriteria[] = {
-    NULL,
-};
 
 /* RESULTS */
 
@@ -62,7 +59,7 @@ void results_save_to_cart(u32 levelState) {
     cafe_session_add_level(levelID);
 
     if (levelID >= 0) {
-        set_level_total_plays(saveData, levelID, get_level_total_plays(saveData, levelID) + 1);
+        D_030046a8->data.levelTotalPlays[levelID]++;
     }
 
     flush_save_buffer_to_sram();
@@ -893,12 +890,6 @@ void results_publish_comments(void) {
     s16 textSprite;
     u32 totalCriteriaFailed, averageCriteriaSucceeded;
     u32 previousResult;
-
-    // bye bye crashes~!
-    if(criteriaTable == NULL) {
-        criteriaTable = genericMarkingCriteria;
-        score_handler->markingData = criteriaTable;
-    }
 
     update_plays_until_next_campaign();
 

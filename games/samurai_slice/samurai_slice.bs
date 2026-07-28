@@ -210,9 +210,7 @@ script samurai_slice_sub_08a04934
     beat_anim
     rest 24
     beat_anim
-    rest 23
-    samurai_slice_event05 D_0805bcc4
-    rest 1
+    rest 24
     samurai_slice_event05 D_0805bd88
     beat_anim
     rest 24
@@ -270,9 +268,7 @@ script samurai_slice_sub_08a04b5c
     beat_anim
     rest 24
     beat_anim
-    rest 23
-    samurai_slice_event05 D_0805bcc4
-    rest 1
+    rest 24
     samurai_slice_event05 D_0805bda4
     beat_anim
     rest 24
@@ -515,7 +511,6 @@ script script_samurai_slice_main
     play_music s_iai_result_seqData
     set_music_volume 256
     stop_tracking_perfect_campaign
-    disable_play_inputs
     samurai_slice_event06 1
     rest 24
     rest 24

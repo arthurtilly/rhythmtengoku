@@ -109,6 +109,7 @@ struct InstrumentSubRhythm instrument_rhy_0205 = {
     /* Base Key  */ 36,
     /* Sub-Bank  */ inst_bank_54
 };
+<<<<<<< Updated upstream
 
 extern struct SampleData sdance_one_data;
 struct InstrumentPCM instrument_pcm_sdon = {
@@ -184,3 +185,5 @@ struct InstrumentPCM instrument_pcm_mrup = {
     /* ADSR Fade */ 0x000000,
     /* ADSR Rel  */ 0x13E350,
 };
+=======
+>>>>>>> Stashed changes

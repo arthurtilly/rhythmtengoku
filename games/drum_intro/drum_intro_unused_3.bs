@@ -46,13 +46,14 @@ script drum_intro_unused_3_sub_08a36930
     rest 24
     play_sfx s_intro_two_seqData
     beat_anim
-    rest 24
+    rest 23
     play_sfx s_intro_three_seqData
+    rest 1
     beat_anim
-    rest 12
+    rest 20
     play_sfx s_intro_four_seqData
-    rest 12
     beat_anim
+    rest 4
 return
 
 
@@ -73,18 +74,18 @@ script drum_intro_unused_3_sub_08a36a5c
     rest 24
     play_sfx s_intro_two_seqData
     dmi_event03 3
-    rest 24
+    rest 23
     play_sfx s_intro_three_seqData
+    rest 1
     dmi_event03 3
-    rest 12
+    rest 20
     play_sfx s_intro_four_seqData
-    rest 12
+    rest 4
     dmi_event03 3
 return
 
 
 script script_drum_intro_unused_3_main
-    enable_pause_menu
     set_tempo 120
     set_music_volume 40
     mod_music_volume 156, 96
@@ -137,9 +138,6 @@ script script_drum_intro_unused_3_main
         clear_text_s
         rest 24
         set_music_volume 156
-        #ifdef PLUS
-        play_music s_kawasemi_bgm_seqData
-        #endif
         mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
         dmi_event01 2
         rest 24
@@ -185,11 +183,7 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36a5c
         clear_text_s
         dmi_event05 2
-        rest 24
         start_tracking_inputs
-        #ifdef PLUS
-        play_music s_kawasemi_bgm_seqData
-        #endif
         spawn_cue CUE_KICK
         rest 24
         spawn_cue CUE_SNARE
@@ -221,8 +215,8 @@ script script_drum_intro_unused_3_main
         rest 24
         spawn_cue CUE_KICK
         rest 24
-        run scene_stop_music
         rest 24
+        run scene_stop_music
         rest 24
         rest 24
         run gameplay_increment_loop_counter
@@ -283,9 +277,6 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36930
         clear_text_s
         rest 24
-        #ifdef PLUS
-        play_music s_kawasemi_bgm_seqData
-        #endif
         mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
         dmi_event01 256
         dmi_event01 2
@@ -332,11 +323,7 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36a5c
         clear_text_s
         dmi_event05 2
-        rest 24
         start_tracking_inputs
-        #ifdef PLUS
-        play_music s_kawasemi_bgm_seqData
-        #endif
         spawn_cue CUE_CYMBAL
         no_op
         spawn_cue CUE_KICK
@@ -370,8 +357,8 @@ script script_drum_intro_unused_3_main
         rest 24
         spawn_cue CUE_KICK
         rest 24
-        run scene_stop_music
         rest 24
+        run scene_stop_music
         rest 24
         rest 24
         run gameplay_increment_loop_counter
@@ -422,9 +409,6 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36930
         clear_text_s
         rest 24
-        #ifdef PLUS
-        play_music s_kawasemi_bgm_seqData
-        #endif
         mute_music_track (MIDI_TRACK_1 | MIDI_TRACK_5)
         dmi_event01 256
         dmi_event01 2
@@ -477,11 +461,7 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36a5c
         clear_text_s
         dmi_event05 2
-        rest 24
         start_tracking_inputs
-        #ifdef PLUS
-        play_music s_kawasemi_bgm_seqData
-        #endif
         spawn_cue CUE_CYMBAL
         no_op
         spawn_cue CUE_KICK

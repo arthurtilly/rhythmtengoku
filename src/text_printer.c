@@ -3,7 +3,6 @@
 
 #include "src/memory_heap.h"
 #include "src/lib_0804ca80.h"
-#include "src/code_080092cc.h"
 #include "data/text_printer_data.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
@@ -216,19 +215,6 @@ s32 text_glyph_is_end_punctuation(const char *c) {
     return FALSE;
 }
 
-extern u8 haveSeenDisclaimer;
-
-// since no cart reseller with 2 functioning braincells will fall for this, i took the liberty
-// of replacing the messages with stuff that won't traumatize people!!!
-char* badBoyMessages[7] = {
-    "oh noes anti piracy",
-    "hello world",
-    "rhythm rhythm rhythm",
-    "i love tap!",
-    "super mario",
-    "38000 yen",
-    "tangotronic 300"
-};
 
 // Print Formatted Line to VRAM (return width in pixels)
 s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStream, s32 maxWidth, s32 lineColors, s32 indentWidth, s32 shadowColors) {
@@ -239,20 +225,8 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
     s32 maxWidthExceeded;
     s32 glyphID;
     u32 i;
-    char buffer[20];
 
-    if (!haveSeenDisclaimer) {
-        u16 funValue = agb_random(ARRAY_COUNT(badBoyMessages) + 1);
-        if (funValue >= ARRAY_COUNT(badBoyMessages)) {
-            snprintf(buffer, sizeof(buffer), "%i yen", agb_random(38000));
-            stream = buffer;
-        } else {
-            stream = funValue[badBoyMessages];
-        }
-    } else {
-        stream = *charStream;
-    }
-    
+    stream = *charStream;
     spacing = D_089380ac[font].glyphSpacing;
     fGlyphData = sGlyphBuffer;
     totalGlyphs = 0;
@@ -346,59 +320,34 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
     }
 
     if (maxWidthExceeded && (totalGlyphs != 0)) {
-        s32 lastSpace = -1;
-        for (i = totalGlyphs - 1; i >= 0; i--) {
-            if (*sGlyphBuffer[i].charSrc == ' ') {
-                lastSpace = i;
-                break;
-            }
-        }
-
-        if (lastSpace > 0) {
-            stream = sGlyphBuffer[lastSpace + 1].formatSrc;
-            totalGlyphs = lastSpace;
-
-            while (*stream == ' ') {
-                stream++;
-            }
-
-            if (totalGlyphs > 0) {
-                struct FormattedGlyph *lastGlyph = &sGlyphBuffer[totalGlyphs - 1];
-                totalWidth = lastGlyph->xOffset + lastGlyph->width;
-            } else {
-                totalWidth = 0;
-            }
-        } else {
-            // if there are no spaces, do it like originally (useful for japanese)
-            if (text_glyph_is_open_bracket(sGlyphBuffer[totalGlyphs - 1].charSrc)) {
+        if (text_glyph_is_open_bracket(sGlyphBuffer[totalGlyphs - 1].charSrc)) {
+            fGlyphData--;
+            totalGlyphs--;
+            totalWidth -= (fGlyphData->width + fGlyphData->spacing);
+            stream = fGlyphData->formatSrc;
+        } else if (text_glyph_is_end_punctuation(stream)) {
+            do {
                 fGlyphData--;
                 totalGlyphs--;
                 totalWidth -= (fGlyphData->width + fGlyphData->spacing);
-                stream = fGlyphData->formatSrc;
-            } else if (text_glyph_is_end_punctuation(stream)) {
-                do {
-                    fGlyphData--;
-                    totalGlyphs--;
-                    totalWidth -= (fGlyphData->width + fGlyphData->spacing);
-                } while ((totalGlyphs != 0) && text_glyph_is_end_punctuation(fGlyphData->charSrc));
-                stream = fGlyphData->formatSrc;
+            } while ((totalGlyphs != 0) && text_glyph_is_end_punctuation(fGlyphData->charSrc));
+            stream = fGlyphData->formatSrc;
+        }
+
+        if (totalGlyphs != 0) {
+            struct FormattedGlyph *lastGlyph;
+            s32 xStart, w1, w2;
+
+            lastGlyph = &sGlyphBuffer[totalGlyphs] - 1;
+            xStart = sGlyphBuffer[0].xOffset;
+            w1 = clamp_int32((maxWidth - lastGlyph->width - xStart), 0, maxWidth);
+            w2 = clamp_int32((lastGlyph->xOffset - xStart), 0, maxWidth);
+
+            for (i = 0; i < totalGlyphs; i++) {
+                sGlyphBuffer[i].xOffset = xStart + ((sGlyphBuffer[i].xOffset - xStart) * w1 / w2);
             }
 
-            if (totalGlyphs != 0) {
-                struct FormattedGlyph *lastGlyph;
-                s32 xStart, w1, w2;
-
-                lastGlyph = &sGlyphBuffer[totalGlyphs] - 1;
-                xStart = sGlyphBuffer[0].xOffset;
-                w1 = clamp_int32((maxWidth - lastGlyph->width - xStart), 0, maxWidth);
-                w2 = clamp_int32((lastGlyph->xOffset - xStart), 0, maxWidth);
-
-                for (i = 0; i < totalGlyphs; i++) {
-                    sGlyphBuffer[i].xOffset = xStart + ((sGlyphBuffer[i].xOffset - xStart) * w1 / w2);
-                }
-
-                totalWidth = w1 + lastGlyph->width;
-            }
+            totalWidth = w1 + lastGlyph->width;
         }
     }
 
@@ -1476,7 +1425,6 @@ void listbox_scroll_up(struct Listbox *listbox) {
 
     listbox->selItem--;
     func_0800ae3c(listbox, listbox->unk12);
-    rumble_play_menu_move();
 
     if (listbox->onScroll != NULL) {
         listbox->onScroll(listbox->onScrollArg, listbox->selItem, listbox->selItem + 1);
@@ -1525,7 +1473,6 @@ void listbox_scroll_down(struct Listbox *listbox) {
 
     listbox->selItem++;
     func_0800ae3c(listbox, listbox->unk12);
-    rumble_play_menu_move();
 
     if (listbox->onScroll != NULL) {
         listbox->onScroll(listbox->onScrollArg, listbox->selItem, listbox->selItem - 1);

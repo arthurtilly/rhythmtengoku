@@ -1,24 +1,6 @@
 #include "code_080092cc.h"
-#include "code_08001360.h"
-#ifdef RUMBLE
-#include "rumble_backend.h"
-#endif
-#include "memory.h"
 
 // Gyro/Rumble Library Interface
-
-#define RUMBLE_MAX_INTENSITY 0xFF
-
-#ifdef RUMBLE
-#define RUMBLE_MENU_MOVE_INTENSITY 96
-#define RUMBLE_MENU_CONFIRM_INTENSITY 120
-#define RUMBLE_MENU_CANCEL_INTENSITY 84
-#define RUMBLE_MENU_LIMIT_INTENSITY 72
-#define RUMBLE_MENU_LIMIT_PULSE_COUNT 2
-#define RUMBLE_MENU_LIMIT_GAP_TICKS 14
-#define RUMBLE_MENU_ERROR_INTENSITY 84
-#define RUMBLE_MENU_BONUS_INTENSITY 144
-#endif
 
 static struct struct_0300443c D_03001110;
 static s32 D_03001134[22]; // ..?
@@ -40,27 +22,8 @@ static volatile u16 D_0300120c;
 static volatile u16 D_0300120e;
 static volatile u32 *D_03001210;
 static s32 D_03001214; // ..?
-static u8 sRumbleQueuedPulseCount;
-static u8 sRumbleQueuedPulseGap;
-static u8 sRumbleQueuedPulseDelay;
-static u32 sRumbleQueuedPulseIntensity;
-static u16 sRumblePatternReleaseMask;
-static u8 sRumblePatternLastPulseCount;
-static u8 sRumblePatternLastGap;
-static u32 sRumblePatternLastIntensity;
 
 extern u32 (*fast_udivsi3)(u32 dividend, u32 divisor); // move into a header
-
-static void rumble_gpio_init(void);
-static void rumble_set_hardware_state(u32 enabled);
-static u32 rumble_clamp_intensity(u32 intensity);
-static void rumble_begin_pulse(u32 intensity);
-static void rumble_queue_pattern(u32 intensity, u32 pulseCount, u32 gapTicks);
-static void rumble_clear_pattern(void);
-static void rumble_unlock_pattern_repeat(void);
-static u32 rumble_pattern_repeat_is_locked(u32 intensity, u32 pulseCount, u32 gapTicks);
-static void rumble_cancel_pulse(void);
-static void rumble_set_enabled(u32 enable);
 
 void func_080092cc(void) {
     func_0804e640(&D_03001110);
@@ -186,16 +149,11 @@ void func_08009548(void) {
     func_0804e914(FALSE);
 }
 
-void rumble_request_pulse(u32 arg0) {
+void func_08009564(u32 arg0) {
     s24_8 temp_r4;
-#ifdef RUMBLE
-    rumble_unlock_pattern_repeat();
-    rumble_clear_pattern();
-    rumble_begin_pulse(arg0);
-    return;
-#endif
-    if (arg0 > RUMBLE_MAX_INTENSITY) {
-        arg0 = RUMBLE_MAX_INTENSITY;
+
+    if (arg0 > 0x18) {
+        arg0 = 0x18;
     }
     temp_r4 = INT_TO_FIXED(arg0) * 16;
     if (((D_030011a4 & 1) == 0) || (D_030011ac <= temp_r4)) {
@@ -204,48 +162,6 @@ void rumble_request_pulse(u32 arg0) {
     if (D_030011a8 < D_030011ac) {
         D_030011a4 |= 1;
     }
-}
-
-void rumble_play_menu_move(void) {
-#ifdef RUMBLE
-    rumble_request_pulse(RUMBLE_MENU_MOVE_INTENSITY);
-#endif
-}
-
-void rumble_play_menu_confirm(void) {
-#ifdef RUMBLE
-    rumble_request_pulse(RUMBLE_MENU_CONFIRM_INTENSITY);
-#endif
-}
-
-void rumble_play_menu_cancel(void) {
-#ifdef RUMBLE
-    rumble_request_pulse(RUMBLE_MENU_CANCEL_INTENSITY);
-#endif
-}
-
-void rumble_play_menu_limit(void) {
-#ifdef RUMBLE
-    rumble_queue_pattern(RUMBLE_MENU_LIMIT_INTENSITY, RUMBLE_MENU_LIMIT_PULSE_COUNT, RUMBLE_MENU_LIMIT_GAP_TICKS);
-#endif
-}
-
-void rumble_play_menu_error(void) {
-#ifdef RUMBLE
-    rumble_queue_pattern(RUMBLE_MENU_ERROR_INTENSITY, RUMBLE_MENU_LIMIT_PULSE_COUNT, RUMBLE_MENU_LIMIT_GAP_TICKS);
-#endif
-}
-
-void rumble_play_menu_bonus(void) {
-#ifdef RUMBLE
-    rumble_request_pulse(RUMBLE_MENU_BONUS_INTENSITY);
-#endif
-}
-
-void rumble_play_long(void) {
-#ifdef RUMBLE
-    rumble_request_pulse(RUMBLE_MAX_INTENSITY);
-#endif
 }
 
 void func_080095a8(void) {
@@ -300,129 +216,27 @@ void func_08009668(u32 arg0) {
     D_030046b0 = arg0;
 }
 
-static void rumble_gpio_init(void) {
-#ifdef RUMBLE
-    return;
-#else
-    REG_GPIO_CNT = 1;
+void func_08009674(void) {
     D_0300120c = 2 | 1;
     REG_GPIO_DATA = D_0300120c;
     D_0300120e = 2 | 1;
     D_0300120e |= 8;
     REG_GPIO_DIR = D_0300120e;
-#endif
 }
 
-static void rumble_set_hardware_state(u32 arg0) {
+void func_080096a4(u32 arg0) {
     if (!D_03001200) {
         arg0 = FALSE;
     }
-#ifdef RUMBLE
-    rumble_backend_set_state(arg0);
-#else
-    REG_GPIO_CNT = 1;
     D_0300120c &= ~8;
     D_0300120c |= arg0 << 3;
     REG_GPIO_DATA = D_0300120c;
-#endif
 }
-
-static u32 rumble_clamp_intensity(u32 intensity) {
-    if (intensity > RUMBLE_MAX_INTENSITY) {
-        intensity = RUMBLE_MAX_INTENSITY;
-    }
-
-    return intensity;
-}
-
-
-static void rumble_begin_pulse(u32 arg0) {
-    s24_8 targetIntensity;
-    
-    if(CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_DISABLE_RUMBLE)) {
-        return;
-    }
-
-    arg0 = rumble_clamp_intensity(arg0);
-    targetIntensity = INT_TO_FIXED(arg0) * 16;
-    if (((D_03001201 & 1) == 0) || (D_03001208 <= targetIntensity)) {
-        D_03001208 = targetIntensity;
-    }
-    if (D_03001204 < D_03001208) {
-        D_03001201 |= 1;
-    }
-}
-
-
-static void rumble_unlock_pattern_repeat(void) {
-    sRumblePatternReleaseMask = 0;
-    sRumblePatternLastIntensity = 0;
-    sRumblePatternLastPulseCount = 0;
-    sRumblePatternLastGap = 0;
-}
-
-
-static u32 rumble_pattern_repeat_is_locked(u32 intensity, u32 pulseCount, u32 gapTicks) {
-    u16 pressedKeys;
-
-    pressedKeys = D_03004ac0;
-
-    if ((sRumblePatternReleaseMask != 0)
-        && ((pressedKeys & sRumblePatternReleaseMask) == 0)) {
-        rumble_unlock_pattern_repeat();
-    }
-
-    if ((sRumblePatternReleaseMask != 0)
-        && (sRumblePatternLastIntensity == intensity)
-        && (sRumblePatternLastPulseCount == pulseCount)
-        && (sRumblePatternLastGap == gapTicks)) {
-        return TRUE;
-    }
-
-    sRumblePatternLastIntensity = intensity;
-    sRumblePatternLastPulseCount = pulseCount;
-    sRumblePatternLastGap = gapTicks;
-    sRumblePatternReleaseMask = pressedKeys;
-    return FALSE;
-}
-
-
-static void rumble_queue_pattern(u32 intensity, u32 pulseCount, u32 gapTicks) {
-    if (pulseCount == 0) {
-        rumble_clear_pattern();
-        rumble_unlock_pattern_repeat();
-        return;
-    }
-
-    intensity = rumble_clamp_intensity(intensity);
-    if (rumble_pattern_repeat_is_locked(intensity, pulseCount, gapTicks)) {
-        return;
-    }
-
-    rumble_clear_pattern();
-
-    rumble_begin_pulse(intensity);
-    if (pulseCount > 1) {
-        sRumbleQueuedPulseCount = pulseCount - 1;
-        sRumbleQueuedPulseGap = gapTicks;
-        sRumbleQueuedPulseDelay = gapTicks;
-        sRumbleQueuedPulseIntensity = intensity;
-    }
-}
-
-
-static void rumble_clear_pattern(void) {
-    sRumbleQueuedPulseCount = 0;
-    sRumbleQueuedPulseGap = 0;
-    sRumbleQueuedPulseDelay = 0;
-    sRumbleQueuedPulseIntensity = 0;
-}
-
 
 // partial copy of func_08009458 
-void rumble_timer_isr(void) {
+void func_080096e0(void) {
     if (D_03001201 & 1) {
-        rumble_set_hardware_state(TRUE);
+        func_080096a4(TRUE);
         D_03001204 += 0xaaa;
         if (D_03001204 >= D_03001208) {
             D_03001201 &= ~1;
@@ -431,55 +245,54 @@ void rumble_timer_isr(void) {
             }
         }
     } else {
-        rumble_set_hardware_state(FALSE);
+        func_080096a4(FALSE);
         D_03001204 -= 0x375;
         if (D_03001204 < 0) {
             D_03001204 = 0;
         }
     }
-
-    if (((D_03001201 & 1) == 0) && (D_03001204 == 0) && (sRumbleQueuedPulseCount != 0)) {
-        if (sRumbleQueuedPulseDelay != 0) {
-            sRumbleQueuedPulseDelay--;
-        } else {
-            rumble_begin_pulse(sRumbleQueuedPulseIntensity);
-            sRumbleQueuedPulseCount--;
-            sRumbleQueuedPulseDelay = sRumbleQueuedPulseGap;
-        }
-    }
-
     *D_03001210 = ((TIMER_ENABLE | TIMER_IRQ | TIMER_FREQUENCY_1024_PULSES) << 16) | 0xfff0;
 }
 
-void rumble_init(u32 arg0) {
+void func_08009760(u32 arg0) {
     D_03001210 = &(&(REG_TM0))[arg0];
-    rumble_gpio_init();
+    func_08009674();
     *D_03001210 = ((TIMER_ENABLE | TIMER_IRQ | TIMER_FREQUENCY_1024_PULSES) << 16) | 0xfff0;
-    rumble_set_hardware_state(FALSE);
+    func_080096a4(FALSE);
     D_03001201 = 0;
     D_03001204 = 0;
     D_03001208 = 0;
     D_03001200 = 1;
-    rumble_clear_pattern();
-    rumble_unlock_pattern_repeat();
 }
 
-void rumble_shutdown(void) {
+void func_080097b4(void) {
     *D_03001210 = 0;
-    rumble_cancel_pulse();
-    rumble_set_enabled(FALSE);
+    func_08009814();
+    func_0800982c(FALSE);
 }
 
-static void rumble_cancel_pulse(void) {
-    rumble_set_hardware_state(FALSE);
+// copy of func_08009564
+void func_080097d0(u32 arg0) {
+    s24_8 temp_r4;
+
+    if (arg0 > 0x18) {
+        arg0 = 0x18;
+    }
+    temp_r4 = INT_TO_FIXED(arg0) * 16;
+    if (((D_03001201 & 1) == 0) || (D_03001208 <= temp_r4)) {
+        D_03001208 = temp_r4;
+    }
+    if (D_03001204 < D_03001208) {
+        D_03001201 |= 1;
+    }
+}
+
+void func_08009814(void) {
+    func_080096a4(FALSE);
     D_03001201 = 0;
-    D_03001204 = 0;
-    D_03001208 = 0;
-    rumble_clear_pattern();
-    rumble_unlock_pattern_repeat();
 }
 
-static void rumble_set_enabled(u32 arg0) {
-    rumble_set_hardware_state(FALSE);
+void func_0800982c(u32 arg0) {
+    func_080096a4(FALSE);
     D_03001200 = arg0;
 }

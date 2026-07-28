@@ -248,11 +248,15 @@ struct StudioEntry studio_song_table[] = {
         /* Drum Script */ script_studio_game_select_2
     },
     /* CAFE */ {
+<<<<<<< Updated upstream
         #ifdef PARADISE
         /* Full Title  */ "Caf‡Q Counselling",
         #else
         /* Full Title  */ "Caf‡Q Counseling",
         #endif
+=======
+        /* Full Title  */ "Caf‡Q Counseling",
+>>>>>>> Stashed changes
         /* Short Title */ NULL,
         /* Drum Script */ script_studio_cafe
     },

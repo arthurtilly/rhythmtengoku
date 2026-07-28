@@ -23,14 +23,14 @@ const char D_0805d2dc[] = "Get writing!";
 
 const char D_0805d2f0[] = "Instructor Feedback";
 
-const char D_0805d300[] = "Welcome to Power Calligraphy 101.";
+const char D_0805d300[] = "Power Calligraphy 101";
 
-const char D_0805d318[] = "Press ‡M at the peak of your power!";
+const char D_0805d318[] = "Press ‡M when the power builds up enough.";
 
 const char D_0805d33c[] = "Excellent brushmanship!";
 
-const char D_0805d350[] = "Try the next technique.";
+const char D_0805d350[] = "Try again.";
 
-const char D_0805d374[] = "Good.";
+const char D_0805d374[] = "OK.";
 
-const char D_0805d37c[] = "I think you've got it.";
+const char D_0805d37c[] = "Looks like you've got it.";

@@ -491,7 +491,6 @@ void sick_beats_update_doctor(void) {
 
 // Game Engine Update
 void sick_beats_engine_update(void) {
-    gSickBeats->highestPriorityState = 0; // Reset priority each frame
     sick_beats_update_yellow_microbe();
     sick_beats_update_forks();
     sick_beats_update_virus();
@@ -588,53 +587,7 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
             if (isVirusHit) {
                 break;
             }
-            #ifdef PLUS
-            {
-                
-                struct SoundPlayer *player;
-                s8 panning;
-                s16 pitch;
-                u8 priority;
-                
-                // Priority: RIGHT(4) > DOWN(3) > LEFT(2) > UP(1)
-                if (info->virusState == SICK_BEATS_VIRUS_STATE_RIGHT_APPEAR) 
-                    priority = 4;
-                else if (info->virusState == SICK_BEATS_VIRUS_STATE_DOWN_APPEAR)
-                    priority = 3;
-                else if (info->virusState == SICK_BEATS_VIRUS_STATE_LEFT_APPEAR)
-                    priority = 2;
-                else 
-                    priority = 1; // UP_APPEAR
-                
-                // Update highest priority
-                if (priority > gSickBeats->highestPriorityState) {
-                    gSickBeats->highestPriorityState = priority;
-                }
-                
-                // Set panning and pitch based on highest priority state
-                if (gSickBeats->highestPriorityState == 4) {
-                    panning = 0;                    // RIGHT (DOWN button) - center
-                    pitch = INT_TO_FIXED(-4.0);     // Lower pitch
-                } else if (gSickBeats->highestPriorityState == 3) {
-                    panning = -60;                 // DOWN (LEFT button) - left
-                    pitch = 0;                      // Normal pitch
-                } else if (gSickBeats->highestPriorityState == 2) {
-                    panning = 0;                    // LEFT (UP button) - center
-                    pitch = 0;                      // Normal pitch
-                } else {
-                    panning = 60;                  // UP (RIGHT button) - right
-                    pitch = 0;                      // Normal pitch
-                }
-                
-                player = play_sound_in_player(SFX_PLAYER_0, &s_f_virus_uhihi_seqData);
-                if (player) {
-                    midi_player_set_panning(player, 0xFFFF, panning);
-                    midi_player_set_pitch(player, 0xFFFF, pitch);
-                }
-            }
-            #else
             play_sound(&s_f_virus_uhihi_seqData);
-            #endif
             break;
         case SICK_BEATS_VIRUS_STATE_UP_DASH_INVULN:
         case SICK_BEATS_VIRUS_STATE_LEFT_DASH_INVULN:

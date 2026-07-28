@@ -3,6 +3,7 @@
 #---------------------------------------------------------------------------------
 
 BASEROM_SHA1 := 67f8adacff79c15d028fffd90de3a77d9ad0602d
+REV1_SHA1 := e0aaca45045e408e7e1072bde5b39278111e1952
 
 ifeq ($(strip $(DEVKITARM)),)
     $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM")
@@ -28,17 +29,10 @@ LD := $(CROSS)gcc
 AS := $(CROSS)as
 CC1 := tools/agbcc/bin/agbcc
 
-# normal, verbose, quiet
-MAKE_OUTPUT ?= normal
-VERBOSE ?= 0
-
-ifeq ($(VERBOSE),1)
-MAKE_OUTPUT := verbose
-endif
-
+# Verbose toggle
 V := @
-ifeq ($(MAKE_OUTPUT),verbose)
-V :=
+ifeq (VERBOSE, 1)
+    V=
 endif
 
 # Colors
@@ -47,43 +41,45 @@ GREEN   := \033[0;32m
 BLUE    := \033[0;34m
 YELLOW  := \033[0;33m
 
-define step
-	$(V)echo -e "$(GREEN)[STEP] $(1)$(NO_COL)"
+# Generic print function for make rules
+define print
+  $(V)echo -e "$(GREEN)$(1) $(YELLOW)$(2)$(GREEN) -> $(BLUE)$(3)$(NO_COL)"
 endef
 
-# Generic print function for make rules
-ifeq ($(MAKE_OUTPUT),quiet)
-define print
-	$(V)true
-endef
+# Whether to build a byte-for-byte matching ROM
+NONMATCHING ?= 0
+
+# Revision to build
+REV ?= 0
+
+ifeq ($(REV), 0)
+    TARGET := rhythmparadise
+    TARGET_SHA1 := $(BASEROM_SHA1)
 else
-define print
-	$(V)echo -e "$(GREEN)$(1) $(YELLOW)$(2)$(if $(strip $(3)),$(GREEN) -> $(BLUE)$(3),)$(NO_COL)"
-endef
+    TARGET := rhythmparadise_rev1
+    TARGET_SHA1 := $(REV1_SHA1)
+    ifeq (,$(wildcard baserom_rev1.gba))
+        $(error No ROM provided. Please place an unmodified Revision 1 ROM named "baserom_rev1.gba" in the root folder)
+    endif
+
+    ifneq ($(shell sha1sum -t baserom_rev1.gba), $(REV1_SHA1)  baserom_rev1.gba)
+        $(error Provided Revision 1 ROM is not correct)
+    endif
 endif
 
-TARGET := rhythmheavenadvance
-REV    := 0 # Note the REV 1 is not supported by the team and bugs or issues related to it will not be fixed.
-
 # Preprocessor defines
+<<<<<<< Updated upstream
 
 # Features: SFX, PLUS, PLAYTEST, PARADISE, RUMBLE
 FEATURES ?= 
 DEFINES := REV=$(REV) $(FEATURES)
+=======
+DEFINES := REV=$(REV)
+>>>>>>> Stashed changes
 C_DEFINES := $(foreach d,$(DEFINES),-D$(d))
 
-ifdef GIT_COMMIT
-C_DEFINES += -DGIT_COMMIT_STR=\"$(GIT_COMMIT)\"
-endif
-
-CFLAGS := -mthumb-interwork -Wparentheses -fhex-asm
+CFLAGS := -mthumb-interwork -Wparentheses -O2 -fhex-asm
 CPPFLAGS := -I tools/agbcc -I tools/agbcc/include -I . -iquote include -nostdinc -undef $(C_DEFINES)
-
-ifeq ($(DEBUG), 1)
-	CFLAGS += -ffix-debug-line -O0 -g
-else
-	CFLAGS += -O2
-endif
 
 #---------------------------------------------------------------------------------
 
@@ -113,7 +109,11 @@ ALL_DIRS       := $(BIN) $(ASM_DIRS) $(C_DIRS) $(MUSIC) $(SFX)
 ALL_DIRS       := $(sort $(ALL_DIRS)) # remove duplicates
 BUILD_DIRS     := $(BUILD) $(addprefix $(BUILD)/,$(ALL_DIRS))
 
-LD_SCRIPT := advance.ld
+ifeq ($(NONMATCHING), 0)
+    LD_SCRIPT := rt.ld
+else
+    LD_SCRIPT := rt_modern.ld
+endif
 
 #---------------------------------------------------------------------------------
 
@@ -126,13 +126,6 @@ BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) \
 				$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.bin)) \
 				$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.raw.4bpp))
 WAVFILES    :=  $(foreach dir,$(SFX),$(wildcard $(dir)/*.wav))
-
-RUMBLE_BINFILES := bin/gbp_logo_palette.bin bin/gbp_logo_tiles.bin bin/gbp_logo_pixels.bin
-ifneq ($(filter RUMBLE,$(FEATURES)),)
-    BINFILES := $(sort $(BINFILES))
-else
-    BINFILES := $(filter-out $(RUMBLE_BINFILES),$(BINFILES))
-endif
 
 4BPPFILES   :=  $(filter-out $(BINFILES),$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.4bpp)))
 TILEMAPS	:=  $(foreach dir,$(GFX_DIRS),$(wildcard $(dir)/*.tilemap))
@@ -155,33 +148,37 @@ INCLUDE	:=	-I $(foreach dir,$(INCLUDES),$(wildcard $(dir)/*.h)) \
 			-I $(CURDIR)/$(BUILD)
 
 #---------------------------------------------------------------------------------
-.PHONY: default clean distclean rebuild patch
+.PHONY: default clean distclean rebuild
 .SECONDARY:
 #---------------------------------------------------------------------------------
 
+# If nonmatching, print a generic message
+# otherwise check if the ROM matches the official ROM
 default: $(OUTPUT).gba
-	$(call step,Build succeeded!)
+	$(V)if [ "$(NONMATCHING)" = "1" ]; then \
+		echo "Build succeeded!"; \
+	else \
+		if [ "$(shell sha1sum -t $(OUTPUT).gba)" = "$(TARGET_SHA1)  $(OUTPUT).gba" ]; then \
+			echo "$(TARGET).gba: OK"; \
+		else \
+			echo "The build succeeded, but did not match the official ROM."; \
+		fi; \
+	fi \
 
 #---------------------------------------------------------------------------------
 
 clean:
-	$(call step,clean...)
-	$(V)rm -fr build/asm build/bin build/data build/games build/graphics build/src
-	$(V)rm -f build/advance.ld build/*.elf build/*.map build/*.gba
+	$(V)echo clean ...
+	$(V)rm -fr $(filter-out build/audio, $(wildcard build/*))
+	$(V)rm -fr $(filter-out build/audio/samples build/audio/sequences, $(wildcard build/audio/*))
 
 distclean:
-	$(call step,full clean...)
+	$(V)echo full clean ...
 	$(V)rm -fr $(BUILD)
 
 #---------------------------------------------------------------------------------
 
 rebuild: clean default
-
-#---------------------------------------------------------------------------------
-
-patch: $(OUTPUT).gba
-	$(call step,Creating BPS patch...)
-	$(V)flips --create baserom.gba $< $(OUTPUT).bps
 
 #---------------------------------------------------------------------------------
 
@@ -191,12 +188,12 @@ patch: $(OUTPUT).gba
 #---------------------------------------------------------------------------------
 
 $(BUILD_DIRS):
-	$(call print,Creating build directory:,$@,)
+	$(V)echo -e "$(GREEN)Creating build directory: $(YELLOW)$@$(NO_COL)"
 	$(V)mkdir -p $@
 
 $(OUTPUT).gba	:	$(OUTPUT).elf
-	$(V)$(OBJCOPY) --pad-to=0x2000000 --gap-fill=0x00 -O binary $< $@
-	$(call step,ROM Assembled!)
+	$(V)$(OBJCOPY) --pad-to=0x1000000 --gap-fill=0x00 -O binary $< $@
+	$(V)echo "ROM Assembled!"
 
 $(OUTPUT).elf	:	$(OFILES) | $(BUILD)/$(LD_SCRIPT)
 	$(V)echo "Building ROM..."
@@ -206,15 +203,15 @@ $(OUTPUT).elf	:	$(OFILES) | $(BUILD)/$(LD_SCRIPT)
 # Binary data
 $(BUILD)/%.bin.o	$(BUILD)/%.bin.h :	%.bin | $(BUILD_DIRS)
 	$(call print,Copying binary file:,$<,$@)
-	$(V){ bin2s -a 4 -H $(BUILD)/$<.h $<; printf '\n'; } | $(AS) -o $(BUILD)/$<.o
+	$(V)bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
 
 $(BUILD)/%.raw.4bpp.o	$(BUILD)/%.raw.4bpp.h :	%.raw.4bpp | $(BUILD_DIRS)
 	$(call print,Copying uncompressed graphics file:,$<,$@)
-	$(V){ bin2s -a 4 -H $(BUILD)/$<.h $<; printf '\n'; } | $(AS) -o $(BUILD)/$<.o
+	$(V)bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
 
 $(BUILD)/%.mid.o	$(BUILD)/%.mid.h :	%.mid | $(BUILD_DIRS)
 	$(call print,Copying MIDI file:,$<,$@)
-	$(V){ bin2s -a 4 -H $(BUILD)/$<.h $<; printf '\n'; } | $(AS) -o $(BUILD)/$<.o
+	$(V)bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
 
 # WAV files
 $(BUILD)/%.pcm : %.wav | $(BUILD_DIRS)

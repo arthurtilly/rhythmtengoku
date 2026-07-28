@@ -437,4 +437,7 @@ struct InstrumentPCM instrument_pcm_1713 = {
     /* ADSR Fade */ 0x000000,
     /* ADSR Rel  */ 0x1FC000,
 };
+<<<<<<< Updated upstream
 #endif
+=======
+>>>>>>> Stashed changes

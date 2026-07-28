@@ -37,7 +37,7 @@ const char D_0805c1d0[] = "Ｐｒａｃｔｉｃｅ　ｆｉｒｓｔ！";
 
 const char D_0805c1e8[] = "Ｊｕｓｔ　ｃｏｐｙ　ｕｓ！";
 
-const char D_0805c1f8[] = "ＯＫ，　ｈｅｒｅ’ｓ　ａｎｏｔｈｅｒ　ｓｔｅｐ！";
+const char D_0805c1f8[] = "ＯＫ，　ｎｅｗ　ｓｔｅｐ！";
 
 const char D_0805c210[] = "Ｎｉｃｅ！　Ｏｎｅ　ｍｏｒｅ！　";
 
@@ -61,7 +61,7 @@ const char D_0805c2d4[] = "Did you lose focus at the end?";
 
 const char D_0805c2e8[] = "";
 
-const char D_0805c2ec[] = "Monkey feedback:";
+const char D_0805c2ec[] = "Talent Scout Report";
 
 const char D_0805c300[] = "Ｌｅｔ’ｓ　ｄａｎｃｅ！";
 
@@ -78,7 +78,7 @@ const char D_0805c35c[] = "Ｐｒａｃｔｉｃｅ　ｆｉｒｓｔ！";
 #endif
 const char D_0805c374[] = "Ｊｕｓｔ　ｃｏｐｙ　ｕｓ！";
 
-const char D_0805c384[] = "ＯＫ，　ｈｅｒｅ’ｓ　ａｎｏｔｈｅｒ　ｓｔｅｐ！";
+const char D_0805c384[] = "ＯＫ，　ｎｅｗ　ｓｔｅｐ！";
 
 const char D_0805c39c[] = "Ｎｉｃｅ！　Ｏｎｅ　ｍｏｒｅ！　";
 

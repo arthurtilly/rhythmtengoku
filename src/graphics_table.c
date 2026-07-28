@@ -12,7 +12,7 @@ asm(".include \"include/gba.inc\"");//Temporary
 enum CompressionLevelsEnum {
     COMPRESSION_LEVEL_NONE,
     COMPRESSION_LEVEL_RLE,
-    COMPRESSION_LEVEL_DOUBLE,
+    COMPRESSION_LEVEL_DOUBLE
 };
 
 extern s32 (*D_03004af0)(const u16 *src, u16 *dest, const u8 *rleData, u32 sizeData);

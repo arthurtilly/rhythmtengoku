@@ -1,13 +1,10 @@
 #include "global.h"
 #include "debug_menu.h"
 #include "src/scenes/medal_corner.h"
-#include "src/code_080092cc.h"
 
 
 /* DEBUG MENU SCENE */
 
-/* EXTERNS */
-extern struct LevelData *get_level_data_from_id(s32 id);
 
 static s8 sMenuPage;
 static s8 sMenuRow;
@@ -20,8 +17,8 @@ void debug_menu_scene_init_memory(void) {
 
     for (i = 0; entries[i].scene != NULL; i++) {
         if (entries[i].scene == &scene_title) {
-            sMenuPage = i / DEBUG_MENU_ENTRY_PER_PAGE;
-            sMenuRow = i % DEBUG_MENU_ENTRY_PER_PAGE;
+            sMenuPage = i / 8;
+            sMenuRow = i % 8;
             return;
         }
     }
@@ -79,7 +76,7 @@ void debug_menu_scene_start(void *sVar, s32 dArg) {
     import_all_scene_objects(gSpriteHandler, gDebugMenu->objFont, debug_menu_scene_objects, D_0300558c);
     debug_menu_scene_init_gfx1();
 
-    textAnim = bmp_font_obj_print_l(gDebugMenu->objFont, "Ｄｅｂｕｇ　Ｍｅｎｕ", 1, 6); // Sequence Test
+    textAnim = bmp_font_obj_print_l(gDebugMenu->objFont, "シーケンス　テスト", 1, 6); // Sequence Test
     sprite_create(gSpriteHandler, textAnim->frames, 0, 0, 8, 0x800, 0, 0, 0);
 
     textAnim = bmp_font_obj_print_l(gDebugMenu->objFont, "＊", 1, 7);
@@ -91,7 +88,7 @@ void debug_menu_scene_start(void *sVar, s32 dArg) {
     gDebugMenu->page = -1;
     gDebugMenu->row = 0;
 
-    for (i = 0; i < DEBUG_MENU_ENTRY_PER_PAGE; i++) {
+    for (i = 0; i < 8; i++) {
         gDebugMenu->textLines[i] = -1;
     }
 
@@ -128,51 +125,31 @@ void debug_menu_scene_update(void *sVar, s32 dArg) {
     }
 
     for (maxRow = 0; gDebugMenu->textLines[maxRow] > -1; maxRow++) {
-        if (maxRow > DEBUG_MENU_ENTRY_PER_PAGE-1) {
+        if (maxRow > 7) {
             break;
         }
     }
 
     if (D_030053b8 & DPAD_UP) {
         debug_menu_render_table(gDebugMenu->page, (gDebugMenu->row > 0) ? gDebugMenu->row - 1 : maxRow - 1);
-        play_sound(&s_menu_cursor1_seqData);
-        rumble_play_menu_move();
-    } else if (D_030053b8 & DPAD_DOWN) {
+    }
+
+    if (D_030053b8 & DPAD_DOWN) {
         debug_menu_render_table(gDebugMenu->page, (gDebugMenu->row < maxRow - 1) ? gDebugMenu->row + 1 : 0);
-        play_sound(&s_menu_cursor1_seqData);
-        rumble_play_menu_move();
     }
 
     if (D_030053b8 & DPAD_LEFT) {
         debug_menu_render_table(gDebugMenu->page - 1, gDebugMenu->row);
-        play_sound(&s_f_pause_cursor_seqData);
-        rumble_play_menu_move();
-    } else if (D_030053b8 & DPAD_RIGHT) {
+    }
+
+    if (D_030053b8 & DPAD_RIGHT) {
         debug_menu_render_table(gDebugMenu->page + 1, gDebugMenu->row);
-        play_sound(&s_f_pause_cursor_seqData);
-        rumble_play_menu_move();
     }
 
     if (D_03004afc & (START_BUTTON | A_BUTTON)) {
-        set_next_scene(debug_menu_entry_table[(gDebugMenu->page * DEBUG_MENU_ENTRY_PER_PAGE) + gDebugMenu->row].scene);
-        if(debug_menu_entry_table[(gDebugMenu->page * DEBUG_MENU_ENTRY_PER_PAGE) + gDebugMenu->row].seeEpilogue) {
-            set_scene_trans_target(&scene_results_ver_rank, &scene_debug_menu);
-            set_scene_trans_target(&scene_results_ver_score, &scene_debug_menu);
-            set_scene_trans_target(&scene_epilogue, &scene_debug_menu);
-            set_scene_trans_var(&scene_epilogue, (s32)get_level_data_from_id(agb_random(TOTAL_BASE_LEVELS))); // yes it's on purpose that PC2 might show up here, it'll show the debug one
-        } else {
-            set_scene_trans_target(debug_menu_entry_table[(gDebugMenu->page * DEBUG_MENU_ENTRY_PER_PAGE) + gDebugMenu->row].scene, &scene_debug_menu);
-        }
+        set_next_scene(debug_menu_entry_table[(gDebugMenu->page * 8) + gDebugMenu->row].scene);
         set_pause_beatscript_scene(FALSE);
         gDebugMenu->inputsEnabled = FALSE;
-        play_sound(&s_menu_kettei1_seqData);
-        rumble_play_menu_confirm();
-    } else if (D_03004afc & B_BUTTON) {
-        set_next_scene(&scene_main_menu);
-        set_pause_beatscript_scene(FALSE);
-        gDebugMenu->inputsEnabled = FALSE;
-        play_sound(&s_menu_cancel3_seqData);
-        rumble_play_menu_cancel();
     }
 }
 

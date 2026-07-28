@@ -50,8 +50,6 @@ void midi_channel_update_mod(struct MidiBus *midiBus, u32 track) {
     }
 }
 
-// add a comment here it's confusing
-
 
 // Update MidiChannel Modulation (All)
 void midi_channel_update_mod_all(struct MidiBus *midiBus) {
@@ -128,35 +126,11 @@ void midi_channel_stop_all(struct MidiBus *midiBus) {
 }
 
 
-// PSG Channel Stop
-void midi_channel_stop_psg(struct MidiBus *midiBus, u32 track) {
-    struct MidiChannel *midiChannel = &midiBus->midiChannel[track];
-    u32 i;
-
-    for (i = 0; i < TOTAL_PSG_CHANNELS; i++) {
-        if (gMidiPSGChannelPool[i].active && (gMidiPSGChannelPool[i].midiChannel == midiChannel)) {
-            gMidiPSGChannelPool[i].adsr.stage = ADSR_STAGE_RELEASE;
-            gMidiPSGChannelPool[i].adsr.envelope = 0;
-        }
-    }
-}
-
-
-// PSG Channel Stop (All)
-void midi_channel_stop_psg_all(struct MidiBus *midiBus) {
-    u32 i;
-
-    for (i = 0; i < midiBus->totalChannels; i++) {
-        midi_channel_stop_psg(midiBus, i);
-    }
-}
-
-
 // Set MidiBus Priority
 void midi_bus_set_priority(struct MidiBus *midiBus, u8 priority) {
     u32 i;
 
-    midiBus->priority = priority; // and here too
+    midiBus->priority = priority;
 
     for (i = 0; i < midiBus->totalChannels; i++) {
         midi_channel_set_priority(midiBus, i, 0);
@@ -200,9 +174,6 @@ void midi_channel_init(struct MidiChannel *midiChannel) {
     midiChannel->keyModDepth = 0;
     midiChannel->keyModInterval = 0;
     midiChannel->keyModCount = 0;
-    
-    // too much text
-
 }
 
 
@@ -219,7 +190,6 @@ void midi_bus_init(struct MidiBus *midiBus, u32 totalChannels, struct MidiChanne
     midiBus->unk8 = (20 << 8);
     midiBus->tuningTable = midi_tuning_table;
     midiBus->totalChannels = totalChannels;
-    midiBus->isPaused = FALSE;
     midiBus->midiChannel = midiChannelArray;
 
     for (i = 0; i < totalChannels; i++) {
@@ -455,10 +425,6 @@ void midi_note_update_id(u32 id) {
     struct SoundChannel *soundChannel = &gMidiSoundChannelPool[id];
 
     if (!soundChannel->active) {
-        return;
-    }
-
-    if (soundChannel->midiBus->isPaused) {
         return;
     }
 

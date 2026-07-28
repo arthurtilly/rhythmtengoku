@@ -1,7 +1,6 @@
 #include "global.h"
 #include "studio.h"
 #include "graphics/studio/studio_graphics.h"
-#include "src/code_080092cc.h"
 
 
 /* STUDIO OPTIONS LIST */
@@ -188,7 +187,6 @@ void studio_option_list_update(void) {
                             studio_option_list_warning_no_checks_result, 0,
                             &s_menu_kettei2_seqData);
                     play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
-                    rumble_play_menu_confirm();
                 } else {
                     songItem = listbox_get_sel_item(gStudio->songList);
 
@@ -202,11 +200,9 @@ void studio_option_list_update(void) {
                                 studio_option_list_warning_unchecked_result, 0,
                                 &s_menu_se24_seqData);
                         play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
-                        rumble_play_menu_confirm();
                     } else {
                         studio_option_list_exit_to_listening();
                         play_sound_in_player(MUSIC_PLAYER_2, &s_menu_se24_seqData);
-                        rumble_play_menu_confirm();
                     }
                 }
             }
@@ -214,14 +210,12 @@ void studio_option_list_update(void) {
             if (listbox_get_sel_item(gStudio->optionList) == STUDIO_OPTION_DRUM) {
                 if (gStudio->optionListState == 0) {
                     play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
-                    rumble_play_menu_confirm();
                     listbox_hide_sel_sprite(gStudio->optionList);
                     listbox_show_sel_sprite(gStudio->drumList);
                     studio_scene_pan_to_menu(STUDIO_MENU_DRUM_LIST);
                     gStudio->sceneState = STUDIO_STATE_NAV_DRUM_LIST;
                 } else {
                     play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
-                    rumble_play_menu_confirm();
                     studio_warning_create(
                             STUDIO_WARNING_OPT_N,
                             // You'll erase this performance
@@ -235,7 +229,6 @@ void studio_option_list_update(void) {
 
             if (listbox_get_sel_item(gStudio->optionList) == STUDIO_OPTION_SORT) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
-                rumble_play_menu_confirm();
                 listbox_hide_sel_sprite(gStudio->optionList);
                 listbox_show_sel_sprite(gStudio->songList);
                 gStudio->selectedItem = listbox_get_sel_item(gStudio->songList);
@@ -260,21 +253,17 @@ void studio_option_list_update(void) {
 
                     if (D_030046a8->data.studioSongs[songItem].unk3 & 2) {
                         play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
-                        rumble_play_menu_cancel();
                     } else {
                         play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
-                        rumble_play_menu_confirm();
                     }
                 } else {
                     play_sound_in_player(MUSIC_PLAYER_2, &s_menu_error_seqData);
-                    rumble_play_menu_error();
                 }
             }
             break;
 
         case STUDIO_LIST_EV_CANCEL:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
-            rumble_play_menu_cancel();
             studio_scene_clear_music();
             listbox_hide_sel_sprite(gStudio->optionList);
             listbox_show_sel_sprite(gStudio->songList);
@@ -284,19 +273,11 @@ void studio_option_list_update(void) {
             break;
 
         case STUDIO_LIST_EV_SCROLL_UP:
-            if (listbox_get_sel_item(gStudio->optionList) <= 0) {
-                rumble_play_menu_limit();
-            } else {
-                listbox_scroll_up(gStudio->optionList);
-            }
+            listbox_scroll_up(gStudio->optionList);
             break;
 
         case STUDIO_LIST_EV_SCROLL_DOWN:
-            if (listbox_get_sel_item(gStudio->optionList) >= (gStudio->optionList->totalItems - 1)) {
-                rumble_play_menu_limit();
-            } else {
-                listbox_scroll_down(gStudio->optionList);
-            }
+            listbox_scroll_down(gStudio->optionList);
             break;
     }
 }
@@ -328,7 +309,6 @@ void studio_option_list_update_w_selection(void) {
             if (songItem != gStudio->selectedItem) {
                 studio_song_list_move_item(gStudio->selectedItem, songItem);
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
-                rumble_play_menu_confirm();
                 sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, FALSE);
                 listbox_set_sel_sprite(gStudio->songList, anim_studio_selection_item);
                 listbox_show_sel_sprite(gStudio->optionList);
@@ -339,7 +319,6 @@ void studio_option_list_update_w_selection(void) {
 
         case STUDIO_LIST_EV_CANCEL:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
-            rumble_play_menu_cancel();
             sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, FALSE);
             listbox_set_sel_sprite(gStudio->songList, anim_studio_selection_item);
             listbox_show_sel_sprite(gStudio->optionList);
@@ -348,19 +327,11 @@ void studio_option_list_update_w_selection(void) {
             break;
 
         case STUDIO_LIST_EV_SCROLL_UP:
-            if (listbox_get_sel_item(gStudio->songList) <= 0) {
-                rumble_play_menu_limit();
-            } else {
-                listbox_scroll_up(gStudio->songList);
-            }
+            listbox_scroll_up(gStudio->songList);
             break;
 
         case STUDIO_LIST_EV_SCROLL_DOWN:
-            if (listbox_get_sel_item(gStudio->songList) >= (gStudio->songList->totalItems - 1)) {
-                rumble_play_menu_limit();
-            } else {
-                listbox_scroll_down(gStudio->songList);
-            }
+            listbox_scroll_down(gStudio->songList);
             break;
     }
 }

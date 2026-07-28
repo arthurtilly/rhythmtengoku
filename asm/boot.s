@@ -17,7 +17,7 @@ glabel entry_point
 /* 080000f0 */ STR R0, [R1] @ Save the address of the interrupt handler to REG_INTERUPT
 
 @ Jump into main code
-/* 080000f4 */ LDR R1, =flash_check @ Begin processing THUMB code
+/* 080000f4 */ LDR R1, =agb_main @ Begin processing THUMB code
 /* 080000f8 */ MOV LR, PC @ Set LR to PC
 /* 080000fc */ BX R1
 /* 08000100 */ B entry_point
@@ -110,16 +110,8 @@ glabel interrupt_handler_jtbl_rom
 /* 0804f310 */ .word interrupt_default @ INTERRUPT_TIMER0
 /* 0804f314 */ .word interrupt_default @ INTERRUPT_TIMER1
 /* 0804f318 */ .word interrupt_default @ INTERRUPT_TIMER2
-#ifdef RUMBLE
-/* 0804f31c */ .word rumble_timer_isr @ INTERRUPT_TIMER3
-#else
 /* 0804f31c */ .word interrupt_default @ INTERRUPT_TIMER3
-#endif
-#ifdef RUMBLE
-/* 0804f320 */ .word rumble_backend_serial_isr @ INTERRUPT_COMM
-#else
 /* 0804f320 */ .word interrupt_default @ INTERRUPT_COMM
-#endif
 /* 0804f324 */ .word interrupt_default @ INTERRUPT_DMA0
 /* 0804f328 */ .word interrupt_default @ INTERRUPT_DMA1
 /* 0804f32c */ .word interrupt_default @ INTERRUPT_DMA3

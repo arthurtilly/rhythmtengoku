@@ -129,9 +129,7 @@ script bunny_hop_sub_08a188e4
     bunny_hop_event03 D_0805cc68
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
-    rest 23
-    bunny_hop_event03 D_0805cc80
-    rest 1
+    rest 24
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
     bunny_hop_event03 D_0805cc70
@@ -170,9 +168,7 @@ script bunny_hop_sub_08a18b30
     bunny_hop_event03 D_0805cc68
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
-    rest 23
-    bunny_hop_event03 D_0805cc80
-    rest 1
+    rest 24
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
     bunny_hop_event03 D_0805cc84
@@ -182,19 +178,13 @@ script bunny_hop_sub_08a18b30
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
     rest 24
-    rest 23
-    bunny_hop_event03 D_0805cc80
-    rest 1
+    rest 24
     bunny_hop_event03 D_0805cc94
     rest 12
     bunny_hop_event05 0
-    rest 11
-    bunny_hop_event03 D_0805cc80
-    rest 1
+    rest 12
     bunny_hop_event03 D_0805cc98
-    rest 23
-    bunny_hop_event03 D_0805cc80
-    rest 1
+    rest 24
     bunny_hop_event03 D_0805cc9c
     bunny_hop_event01 1
     set_marking_criteria 2
@@ -219,9 +209,7 @@ script bunny_hop_sub_08a18db8
     bunny_hop_event03 D_0805cc68
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
-    rest 23
-    bunny_hop_event03 D_0805cc80
-    rest 1
+    rest 24
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
     bunny_hop_event03 D_0805cc84
@@ -256,10 +244,7 @@ script bunny_hop_sub_08a18fc8
     bunny_hop_event03 D_0805cc68
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
-    rest 23
-    bunny_hop_event03 D_0805cc80
-    rest 1
-    bunny_hop_event03 D_0805cc80
+    rest 24
     bunny_hop_event01 0
     spawn_cue CUE_BUNNY_00
     bunny_hop_event03 D_0805cca4
@@ -306,44 +291,6 @@ script script_bunny_hop_main
     start_perfect_campaign
     rest 24
     enable_pause_menu
-    #ifdef PLUS
-    bunny_hop_event03 D_0805ccb8
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    bunny_hop_event03 D_0805cc80
-    rest 24
-    rest 24
-    bunny_hop_event03 D_0805ccc5
-    rest 24
-    rest 23
-    bunny_hop_event03 D_0805cc80
-    rest 1
-    set_marking_criteria 0
-    bunny_hop_event03 D_0805cc9c
-    bunny_hop_event02 FALSE
-    rest 23
-    bunny_hop_event03 D_0805cc80
-    rest 1
-    bunny_hop_event03 D_0805cc98
-    bunny_hop_event02 FALSE
-    rest 23
-    bunny_hop_event03 D_0805cc80
-    rest 1
-    bunny_hop_event03 D_0805cc94
-    bunny_hop_event01 1
-    spawn_cue CUE_BUNNY_01
-    spawn_cue CUE_BUNNY_02
-    bunny_hop_event02 FALSE
-    rest 23
-    bunny_hop_event03 D_0805cc80
-    rest 1
-    bunny_hop_event03 D_0805ccb9
-    #else
     rest 24
     rest 24
     rest 24
@@ -365,12 +312,10 @@ script script_bunny_hop_main
     spawn_cue CUE_BUNNY_02
     bunny_hop_event02 FALSE
     rest 24
-    #endif
     bunny_hop_event02 TRUE
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
-    bunny_hop_event03 D_0805cc80
     bunny_hop_event04
     call bunny_hop_sub_08a18800
     call bunny_hop_sub_08a18800

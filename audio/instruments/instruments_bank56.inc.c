@@ -1124,11 +1124,15 @@ struct InstrumentPCM instrument_pcm_1554 = {
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
+<<<<<<< Updated upstream
     #ifdef SFX
     /* Sample    */ &ninja_bodyguard_huh_data,
     #else
     /* Sample    */ &sample_432_data,
     #endif
+=======
+    /* Sample    */ &sample_432_data,
+>>>>>>> Stashed changes
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -1457,66 +1461,6 @@ struct InstrumentPCM instrument_pcm_1576 = {
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
     /* Sample    */ &sample_346_data,
-    /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x600000,
-    /* ADSR Dec  */ 0x208000,
-    /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x16554D,
-};
-
-extern struct SampleData hit_data;
-struct InstrumentPCM instrument_pcm_1577 = {
-    /* Type      */ INSTRUMENT_PCM_ALIGNED,
-    /* Key       */ 0x3C,
-    /* Fast Read */ FALSE,
-    /* Panning   */ 127,
-    /* Sample    */ &hit_data,
-    /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x600000,
-    /* ADSR Dec  */ 0x208000,
-    /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x16554D,
-};
-
-extern struct SampleData three_data;
-struct InstrumentPCM instrument_pcm_1578 = {
-    /* Type      */ INSTRUMENT_PCM_ALIGNED,
-    /* Key       */ 0x3C,
-    /* Fast Read */ FALSE,
-    /* Panning   */ 127,
-    /* Sample    */ &three_data,
-    /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x600000,
-    /* ADSR Dec  */ 0x208000,
-    /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x16554D,
-};
-
-extern struct SampleData two_data;
-struct InstrumentPCM instrument_pcm_1579 = {
-    /* Type      */ INSTRUMENT_PCM_ALIGNED,
-    /* Key       */ 0x3C,
-    /* Fast Read */ FALSE,
-    /* Panning   */ 127,
-    /* Sample    */ &two_data,
-    /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x600000,
-    /* ADSR Dec  */ 0x208000,
-    /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x16554D,
-};
-
-extern struct SampleData four_data;
-struct InstrumentPCM instrument_pcm_4000 = {
-    /* Type      */ INSTRUMENT_PCM_ALIGNED,
-    /* Key       */ 0x3C,
-    /* Fast Read */ FALSE,
-    /* Panning   */ 127,
-    /* Sample    */ &four_data,
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,

@@ -147,8 +147,6 @@ extern struct SongHeader s_tran_jump_seqData;
 extern struct SongHeader s_tran_henge_seqData;
 extern struct SongHeader s_tran_seino_seqData;
 extern struct SongHeader s_tran_hensin_seqData;
-extern struct SongHeader s_tran_jump_se_left_seqData;
-extern struct SongHeader s_tran_jump_se_right_seqData;
 extern struct SongHeader s_tran_jump_se_seqData;
 extern struct SongHeader s_toss_red_blue1_seqData;
 extern struct SongHeader s_toss_red_blue2_seqData;
@@ -261,10 +259,6 @@ extern struct SongHeader s_ghost_dash_seqData;
 extern struct SongHeader s_ghost_warai_seqData;
 extern struct SongHeader s_ghost_gosha_seqData;
 extern struct SongHeader s_ghost_rain_seqData;
-
-// --- Space Dance SFX -----------------------------------------
-
-// Japanese Space Dance SFX
 extern struct SongHeader s_space_ikeo_turn_seqData;
 extern struct SongHeader s_space_ikeo_right_seqData;
 extern struct SongHeader s_space_ikeo_lets_seqData;
@@ -272,7 +266,6 @@ extern struct SongHeader s_space_ikeo_sit_seqData;
 extern struct SongHeader s_space_ikeo_down_seqData;
 extern struct SongHeader s_space_ikeo_pa_seqData;
 extern struct SongHeader s_space_ikeo_punch_seqData;
-
 extern struct SongHeader s_space_kou_turn_seqData;
 extern struct SongHeader s_space_kou_right_seqData;
 extern struct SongHeader s_space_kou_lets_seqData;
@@ -280,34 +273,9 @@ extern struct SongHeader s_space_kou_sit_seqData;
 extern struct SongHeader s_space_kou_down_seqData;
 extern struct SongHeader s_space_kou_pa_seqData;
 extern struct SongHeader s_space_kou_punch_seqData;
-
+extern struct SongHeader s_space_miss_seqData;
 extern struct SongHeader s_space_ikeo_turn_swing_seqData;
 extern struct SongHeader s_space_kou_turn_swing_seqData;
-
-// English Space Dance SFX
-extern struct SongHeader s_space_ikeo_turn_en_seqData;
-extern struct SongHeader s_space_ikeo_right_en_seqData;
-extern struct SongHeader s_space_ikeo_lets_en_seqData;
-extern struct SongHeader s_space_ikeo_sit_en_seqData;
-extern struct SongHeader s_space_ikeo_down_en_seqData;
-extern struct SongHeader s_space_ikeo_pa_en_seqData;
-extern struct SongHeader s_space_ikeo_punch_en_seqData;
-
-extern struct SongHeader s_space_kou_turn_en_seqData;
-extern struct SongHeader s_space_kou_right_en_seqData;
-extern struct SongHeader s_space_kou_lets_en_seqData;
-extern struct SongHeader s_space_kou_sit_en_seqData;
-extern struct SongHeader s_space_kou_down_en_seqData;
-extern struct SongHeader s_space_kou_pa_en_seqData;
-extern struct SongHeader s_space_kou_punch_en_seqData;
-
-extern struct SongHeader s_space_ikeo_turn_swing_en_seqData;
-extern struct SongHeader s_space_kou_turn_swing_en_seqData;
-
-extern struct SongHeader s_space_miss_seqData;
-
-// -------------------------------------------------------------
-
 extern struct SongHeader s_guntai1_seqData;
 extern struct SongHeader s_guntai2_seqData;
 extern struct SongHeader s_guntai_foot1_seqData;
@@ -316,17 +284,17 @@ extern struct SongHeader s_guntai_v_zentai_a_seqData;
 extern struct SongHeader s_guntai_v_zentai1_seqData;
 extern struct SongHeader s_guntai_v_zentai2_seqData;
 extern struct SongHeader s_guntai_v_susume_seqData;
-extern struct SongHeader s_guntai_v_susume_2_seqData;
-extern struct SongHeader s_guntai_v_susume_3_seqData;
 extern struct SongHeader s_guntai_v_tomare_seqData;
 extern struct SongHeader s_guntai_v_migi_muke1_seqData;
-extern struct SongHeader s_guntai_v_migi_muke1_face_seqData;
 extern struct SongHeader s_guntai_v_migi_muke2_seqData;
 extern struct SongHeader s_guntai_v_hidari_muke1_seqData;
+<<<<<<< Updated upstream
 extern struct SongHeader s_guntai_v_hidari_muke1_face_seqData;
 extern struct SongHeader s_guntai_v_migi_muke1_jp_seqData;
 extern struct SongHeader s_guntai_v_migi_muke2_jp_seqData;
 extern struct SongHeader s_guntai_v_hidari_muke1_jp_seqData;
+=======
+>>>>>>> Stashed changes
 extern struct SongHeader s_guntai_v_hidari_muke2_seqData;
 extern struct SongHeader s_guntai_v_migi_seqData;
 extern struct SongHeader s_guntai_v_hidari_seqData;
@@ -437,7 +405,6 @@ extern struct SongHeader s_karate_fan_seqData;
 extern struct SongHeader s_datumo_nuki_seqData;
 extern struct SongHeader s_datumo_kegire_seqData;
 extern struct SongHeader s_datumo_bgm_seqData;
-extern struct SongHeader s_rap_two_seqData;
 extern struct SongHeader s_rap_bgm_renshu_seqData;
 extern struct SongHeader s_rap_bgm_seqData;
 extern struct SongHeader s_rap_jazz_bgm_seqData;
@@ -454,8 +421,6 @@ extern struct SongHeader s_rap_oyatuha_saiko_seqData;
 extern struct SongHeader s_rap_kibunha_saiko_seqData;
 extern struct SongHeader s_rap_orette_saiko_seqData;
 extern struct SongHeader s_rap_kimitte_saiko_seqData;
-extern struct SongHeader s_rap_kimitte_saiko_slow_seqData;
-extern struct SongHeader s_rap_honto_desuka_slow_seqData;
 extern struct SongHeader s_rap_oyatuga_naiyo_seqData;
 extern struct SongHeader s_rap_oresira_naiyo_seqData;
 extern struct SongHeader s_rap_un_seqData;
@@ -750,7 +715,6 @@ extern struct SongHeader s_f_base_1note_seqData;
 extern struct SongHeader s_f_drumtech_miss_seqData;
 extern struct SongHeader s_f_drumtech_fall_seqData;
 extern struct SongHeader s_f_drumtech_damage_seqData;
-extern struct SongHeader s_f_shock_seqData;
 extern struct SongHeader s_f_neko1_seqData;
 extern struct SongHeader s_f_neko2_seqData;
 extern struct SongHeader s_f_neko3_seqData;
@@ -762,12 +726,11 @@ extern struct SongHeader s_f_marcher2_v_susume_seqData;
 extern struct SongHeader s_f_marcher2_v_tomare_seqData;
 extern struct SongHeader s_f_marcher2_v_migimukeL_seqData;
 extern struct SongHeader s_f_marcher2_v_migimukeS_seqData;
-extern struct SongHeader s_f_marcher2_v_migimukeS2_seqData;
 extern struct SongHeader s_f_marcher2_v_migi_seqData;
 extern struct SongHeader s_f_marcher2_v_hidarimukeL_seqData;
 extern struct SongHeader s_f_marcher2_v_hidarimukeS_seqData;
-extern struct SongHeader s_f_marcher2_v_hidarimukeS2_seqData;
 extern struct SongHeader s_f_marcher2_v_hidari_seqData;
+<<<<<<< Updated upstream
 extern struct SongHeader s_guntai_v_zentai_ten_seqData;
 extern struct SongHeader s_guntai_v_zentai_ttion_seqData;
 extern struct SongHeader s_f_marcher2_v_zentai_ten_seqData;
@@ -800,3 +763,5 @@ extern struct SongHeader marching_orders_tempo_seqData;
 extern struct SongHeader spaceball_tempo_mpart_seqData;
 extern struct SongHeader spaceball_tempo_cymbal_seqData;
 extern struct SongHeader rhythmtweezers_tempo_seqData;
+=======
+>>>>>>> Stashed changes

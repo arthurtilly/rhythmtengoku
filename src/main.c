@@ -1,12 +1,8 @@
 #include "main.h"
 #include "memory.h"
 #include "code_08003b28.h"
-#include "code_080092cc.h"
-#include "rumble_backend.h"
 #include "bitmap_font.h"
 #include "memory_heap.h"
-
-extern u8 haveSeenDisclaimer;
 
 
 static struct Scene *gCurrentScene;
@@ -16,13 +12,7 @@ static u8 D_03000080;
 static struct Scene *D_03000084;
 static s32 D_03000088;
 
-COMMON_DATA u8 sIsBadFlashCart = 0;
 
-#ifdef DEBUG
-#define INITIAL_SCENE &scene_debug_menu
-#else
-#define INITIAL_SCENE &scene_title
-#endif
 
 // Default Interrupt Procedure (Do Nothing)
 void interrupt_default(void) {
@@ -47,10 +37,6 @@ void func_08000224(void) {
 	init_key_listener();
 	init_time_keeper();
 	init_fast_udivsi3();
-#ifdef RUMBLE
-	rumble_backend_init();
-	rumble_init(3);
-#endif
 	init_math_sqrt();
 	mem_heap_init(get_memory_heap_start(), get_memory_heap_length());
 	task_pool_init();
@@ -68,14 +54,7 @@ void func_08000224(void) {
 			flush_save_buffer_to_sram();
 		}
 	}
-#ifdef PLAYTEST
-	set_playtest_save_data();
-#endif
 	flush_save_buffer_to_sram_backup();
-
-	// Initialize disclaimer flag from save data
-	haveSeenDisclaimer = CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAIMER);
-	
 	set_sound_mode(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
 	set_scene_object_current_text_id(scene_get_default_text_id());
 	init_scene_static_var();
@@ -84,6 +63,7 @@ void func_08000224(void) {
 	func_080091d8();
 	D_03004498 = TRUE;
 }
+
 
 void agb_main(void) {
 	REG_WAITCNT = (WAITCNT_SRAM_8
@@ -109,7 +89,7 @@ void agb_main(void) {
 	REG_IME = 0;
 
 	D_03004498 = FALSE;
-    
+
 	init_ewram();
 	func_08000224();
 	debug_menu_scene_init_memory();
@@ -118,32 +98,19 @@ void agb_main(void) {
 	set_sound_mode(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
 
 	REG_DISPSTAT = 8;
-	REG_IE = (INTERRUPT_CART | INTERRUPT_DMA2 | INTERRUPT_TIMER3 | INTERRUPT_VBLANK
-	);
+	REG_IE = (INTERRUPT_CART | INTERRUPT_DMA2 | INTERRUPT_TIMER3 | INTERRUPT_VBLANK);
 	REG_IF = 0xFFFF;
 	REG_IME = 1;
 
 	func_0801d860(FALSE); // Init. Script Operator (Init. Static Variables)
-	#ifdef RUMBLE
 	init_scenes(&scene_warning);
-	set_scene_trans_target(&scene_warning, &scene_gbp_handshake);
-	set_scene_trans_target(&scene_gbp_handshake, (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? INITIAL_SCENE : &scene_disclaimer));
-	#else
-	init_scenes(&scene_warning);
-	set_scene_trans_target(&scene_warning, (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? INITIAL_SCENE : &scene_disclaimer));
-	#endif
-    set_scene_trans_target(&scene_disclaimer, INITIAL_SCENE);
-
+	set_scene_trans_target(&scene_warning, D_08935fac); // Title Screen
 	update_key_listener();
 
 	while (TRUE) {
 		func_080013a8();
-		update_save_buffer_sram_writes();
 		get_agb_random_var();
 		update_key_listener();
-		#ifdef RUMBLE
-		rumble_backend_update();
-		#endif
 		D_030046a0 += 1;
 		process_scenes();
 
@@ -153,9 +120,7 @@ void agb_main(void) {
 			if ((keysPressed & RESET_BUTTON_COMBO) == RESET_BUTTON_COMBO) {
 				key_rec_set_mode(0, 0x3ff, 0, 0);
 				set_current_scene(&scene_soft_reset);
-				#ifdef RUMBLE
-				rumble_shutdown();
-				#endif
+				func_08009548();
 				D_03004498 = FALSE;
 			}
 		}
@@ -372,37 +337,4 @@ void func_080006f0(struct Scene *target, s32 variable) {
 // Get Current Scene
 struct Scene *get_current_scene(void) {
 	return gCurrentScene;
-}
-
-// basically swidelay from the DS
-void delay_loop(u32 count) {
-	__asm__ volatile (
-		"1:\n"
-		"sub %0, %0, #1\n"
-		"bne 1b\n"
-		: "+r" (count)
-		:
-		: "cc", "memory"
-	);
-}
-
-void flash_check(void) {
-	const char data[] = {
-		0x77, 0x65, 0x20, 0x64, 0x6F, 0x6E, 0x74, 0x20, 0x73, 0x75, 0x70, 0x70,
-		0x6F, 0x72, 0x74, 0x20, 0x63, 0x68, 0x65, 0x61, 0x70, 0x20, 0x62, 0x6F,
-		0x6F, 0x74, 0x6C, 0x65, 0x67, 0x20, 0x20, 0x20, 0x66, 0x6C, 0x61, 0x73,
-		0x68, 0x63, 0x61, 0x72, 0x74, 0x73, 0x2C, 0x20, 0x20, 0x20, 0x20, 0x20,
-		0x74, 0x68, 0x69, 0x65, 0x66, 0x2E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-	};
-
-	GBAROM[0xC0] = 33;
-	delay_loop(1000);
-
-	// really low quality flashcart - warn the user
-	if(GBAROM[0xC0] != 0) {
-		GBAROM[0xC0] = 0;
-		sIsBadFlashCart = 1;
-	}
-	
-	agb_main();
 }

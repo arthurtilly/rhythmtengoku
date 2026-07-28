@@ -5,7 +5,6 @@
 @ Script
 script script_scene_debug_menu
     set_tempo 140
-    play_music s_studio_bgm_seqData
     pause_scene
 
     run func_08007324 TRUE

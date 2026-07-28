@@ -1,81 +1,12 @@
 #include "global.h"
 #include "gameplay.h"
 #include "graphics/gameplay/gameplay_graphics.h"
-#ifdef RUMBLE
-#include "src/code_080092cc.h"
-#endif
 
 asm(".include \"include/gba.inc\"");//Temporary
 
 
 // For readability.
 #define gGameplay ((struct GameplaySceneData *)gCurrentSceneData)
-
-#ifdef RUMBLE
-#define RUMBLE_CUE_DUE_INTENSITY 120
-#define RUMBLE_CUE_BARELY_INTENSITY 108
-#define RUMBLE_CUE_HIT_INTENSITY 144
-
-extern void drum_live_engine_update(void);
-
-static u16 sDrumLiveRumbleBeatGate;
-
-static u32 gameplay_is_drum_live_engine(void) {
-    return (gGameplay->gameEngine != NULL) && (gGameplay->gameEngine->updateFunc == drum_live_engine_update);
-}
-
-static u16 gameplay_get_beat_gate_frames(void) {
-    u32 beatFrames;
-
-    beatFrames = ticks_to_frames(24);
-    if (beatFrames == 0) {
-        beatFrames = 1;
-    }
-
-    return beatFrames;
-}
-
-static void gameplay_update_drum_live_rumble_gate(void) {
-    if (sDrumLiveRumbleBeatGate != 0) {
-        sDrumLiveRumbleBeatGate--;
-    }
-}
-
-static void gameplay_rumble_cue_event(u32 intensity) {
-    if (!gameplay_is_drum_live_engine()) {
-        sDrumLiveRumbleBeatGate = 0;
-        rumble_request_pulse(intensity);
-        return;
-    }
-
-    if (sDrumLiveRumbleBeatGate != 0) {
-        return;
-    }
-
-    rumble_request_pulse(intensity);
-    sDrumLiveRumbleBeatGate = gameplay_get_beat_gate_frames();
-}
-
-static void gameplay_trigger_due_cue_rumble(void) {
-    struct Cue *cue;
-
-    if (!gameplay_inputs_are_enabled()) {
-        return;
-    }
-
-    cue = gGameplay->cues;
-    while (cue != NULL) {
-        struct CueDefinition *cueDef;
-
-        cueDef = &cue->data;
-        if (!cue->unk48_b0 && !cue->hasExpired && ((cueDef->buttonFilter & ~0x8000) != 0) && (cue->runningTime == cue->duration)) {
-            gameplay_rumble_cue_event(RUMBLE_CUE_DUE_INTENSITY);
-            return;
-        }
-        cue = cue->prev;
-    }
-}
-#endif
 
 #define PAUSE_MENU_PALETTE_MOD 0x3DEF3DEF // Equivalent to RGB #7F7F7F
 
@@ -86,7 +17,6 @@ enum PauseMenuOptionsEnum {
 
 extern const struct Beatscript D_089cfda4[]; // Generic Fade-Out Sequence
 
-extern u8 sReplayingCampaign;
 
 /* MAIN GAMEPLAY SCENE */
 
@@ -188,10 +118,6 @@ void gameplay_start_scene(void) {
     gGameplay->latenessRangeMin = 1;
     gGameplay->earlinessRangeMin = -0x80;
     gGameplay->latenessRangeMax = 0x7f;
-    gGameplay->autoplayEnabled = FALSE;
-#ifdef RUMBLE
-    sDrumLiveRumbleBeatGate = 0;
-#endif
     midi_player_set_reverb(35, 2, 2, 4);
     if (get_current_scene_trans_target() == NULL) {
         set_next_scene(&scene_results_ver_rank);
@@ -217,89 +143,44 @@ void gameplay_update_scene(void) {
         }
     }
 
-    // if L and R are held then enable auto play else disable auto play
-    #ifdef AUTOPLAY
-    if ((D_03004ac0 & (LEFT_SHOULDER_BUTTON | RIGHT_SHOULDER_BUTTON)) == (LEFT_SHOULDER_BUTTON | RIGHT_SHOULDER_BUTTON)) {
-        gGameplay->autoplayEnabled = TRUE;
-    } else {
-        gGameplay->autoplayEnabled = FALSE;
-    }
-    #endif
+    pressed = D_03004afc & gGameplay->buttonPressFilter;
+    released = D_03004b00 & gGameplay->buttonReleaseFilter;
 
-    #ifdef RUMBLE
-    gameplay_update_drum_live_rumble_gate();
-    gameplay_trigger_due_cue_rumble();
-    #endif
-
-    if(gGameplay->autoplayEnabled){
-        struct Cue *cue = gGameplay->cues;
-        while (cue != NULL) {
-            struct CueDefinition *cueDef = &cue->data;
-            s32 runningTime = cue->runningTime;
-            s32 duration = cue->duration;
-            if (!cue->unk48_b0 && !cue->hasExpired && runningTime == duration) {
-                u16 input = (cueDef->buttonFilter & 0x8000) ? 0 : cueDef->buttonFilter;
-                u16 release = (cueDef->buttonFilter & 0x8000) ? cueDef->buttonFilter : 0;
-
-                // ok so checks if there are multiple buttons
-                // and if there is then only keep the lowest button
-                // (else it registers as a miss for the... wrong button... thanks drum lessons!)
-                if (input & (input - 1)) {
-                    input &= (u16)(0 - input);
+    if (gGameplay->dpadCannotOverlap == TRUE) {
+        if (gGameplay->dpadIsOpen) {
+            if (pressed & DPAD_ALL) {
+                buttonsOnly = pressed & ~DPAD_ALL;
+                if (pressed & DPAD_UP) {
+                    pressed = DPAD_UP;
                 }
-                if (release & (release - 1)) {
-                    release &= (u16)(0 - release);
+                if (pressed & DPAD_DOWN) {
+                    pressed = DPAD_DOWN;
                 }
-                
-                if (gameplay_inputs_are_enabled()) { // if play inputs are enabled
-                    if ((input != 0) || (release != 0)) {
-                        gameplay_update_inputs(input, release); // Update Inputs
-                    }
+                if (pressed & DPAD_LEFT) {
+                    pressed = DPAD_LEFT;
                 }
+                if (pressed & DPAD_RIGHT) {
+                    pressed = DPAD_RIGHT;
+                }
+                pressed |= buttonsOnly;
+                gGameplay->dpadIsOpen = FALSE;
+                gGameplay->dpadClosedTimer = 10;
             }
-            cue = cue->prev;
-        }
-    } else {
-        pressed = D_03004afc & gGameplay->buttonPressFilter;
-        released = D_03004b00 & gGameplay->buttonReleaseFilter;
-
-        if (gGameplay->dpadCannotOverlap == TRUE) {
-            if (gGameplay->dpadIsOpen) {
-                if (pressed & DPAD_ALL) {
-                    buttonsOnly = pressed & ~DPAD_ALL;
-                    if (pressed & DPAD_UP) {
-                        pressed = DPAD_UP;
-                    }
-                    if (pressed & DPAD_DOWN) {
-                        pressed = DPAD_DOWN;
-                    }
-                    if (pressed & DPAD_LEFT) {
-                        pressed = DPAD_LEFT;
-                    }
-                    if (pressed & DPAD_RIGHT) {
-                        pressed = DPAD_RIGHT;
-                    }
-                    pressed |= buttonsOnly;
-                    gGameplay->dpadIsOpen = FALSE;
-                    gGameplay->dpadClosedTimer = 10;
-                }
-            } else {
-                pressed &= ~DPAD_ALL;
-                if (D_03004ac0 & DPAD_ALL) {
-                    if (--gGameplay->dpadClosedTimer == 0) {
-                        gGameplay->dpadIsOpen = TRUE;
-                    }
-                } else {
+        } else {
+            pressed &= ~DPAD_ALL;
+            if (D_03004ac0 & DPAD_ALL) {
+                if (--gGameplay->dpadClosedTimer == 0) {
                     gGameplay->dpadIsOpen = TRUE;
                 }
+            } else {
+                gGameplay->dpadIsOpen = TRUE;
             }
         }
+    }
 
-
-        if (gameplay_inputs_are_enabled()) { // if play inputs are enabled
-            if ((pressed != 0) || (released != 0)) {
-                gameplay_update_inputs(pressed, released); // Update Inputs
-            }
+    if (gameplay_inputs_are_enabled()) { // if play inputs are enabled
+        if ((pressed != 0) || (released != 0)) {
+            gameplay_update_inputs(pressed, released); // Update Inputs
         }
     }
 
@@ -367,9 +248,6 @@ void gameplay_set_current_engine(const struct GameEngine *engine, u32 version) {
     gameplay_prevent_dpad_overlap(TRUE);
     gGameplay->sfxTempo = 0;
     gGameplay->gameEngine = engine;
-#ifdef RUMBLE
-    sDrumLiveRumbleBeatGate = 0;
-#endif
 
     if (engine == NULL) {
         return;
@@ -716,7 +594,7 @@ void gameplay_stop_scene(void) {
         }
         stop_all_soundplayers(); // Sound
     } else {
-        if (gGameplay->goingForPerfect && !gGameplay->perfectFailed && !sReplayingCampaign) {
+        if (gGameplay->goingForPerfect && !gGameplay->perfectFailed) {
             set_next_scene(&scene_perfect);
             set_scene_trans_target(&scene_perfect, get_scene_trans_target(&scene_epilogue));
         }
@@ -793,20 +671,9 @@ void gameplay_add_cue_result(u32 markingCriteria, u32 cueResult, s32 timingOffse
     // Perfect Campaign
     if (cueResult == CUE_RESULT_HIT) {
         gameplay_register_perfect_input();
-    } 
-    #ifdef PLUS
-    else if ((cueResult == CUE_RESULT_BARELY) || (cueResult == CUE_RESULT_MISS)) {
-        gameplay_register_imperfect_input();
-    } else if (cueResult == CUE_RESULT_NONE) {
-        if (gGameplay->cues != NULL) {
-            gameplay_register_imperfect_input();
-        }
-    }
-    #else
-    else if (cueResult < 4) {
+    } else if (cueResult < 4) {
         gameplay_register_imperfect_input();
     }
-    #endif
 }
 
 
@@ -1060,16 +927,10 @@ s32 gameplay_calculate_input_timing(struct Cue *cue, u16 pressed, u16 released, 
 void gameplay_register_hit_barely(struct Cue *cue, s32 timingLevel, s32 offset, u32 pressed, u32 released) {
     struct CueDefinition *cueDef = &cue->data;
     CueHitEvent hitEvent;
-    u32 rumbleIntensity;
 
     gGameplay->ignoreThisCueResult = FALSE;
     cue->unk48_b0 = TRUE;
     gGameplay->lastCueInputOffset = offset;
-
-    #ifdef RUMBLE
-    rumbleIntensity = (timingLevel == CUE_TIMING_HIT) ? RUMBLE_CUE_HIT_INTENSITY : RUMBLE_CUE_BARELY_INTENSITY;
-    gameplay_rumble_cue_event(rumbleIntensity);
-    #endif
 
     if (timingLevel == CUE_TIMING_HIT) {
         hitEvent = cueDef->hitFunc;
@@ -1381,24 +1242,14 @@ void gameplay_start_pause_menu(void) {
 s32 gameplay_update_pause_menu(void) {
     if (!gGameplay->unpausing) {
         if (D_03004afc & DPAD_LEFT) {
-            if (gGameplay->currentPauseOption == PAUSE_OPTION_CONTINUE) {
-                rumble_play_menu_limit();
-            } else {
-                gGameplay->currentPauseOption = PAUSE_OPTION_CONTINUE;
-                sprite_set_anim(gSpriteHandler, gGameplay->pauseOptionsSprite, anim_gameplay_pause_option1, 0, 1, 0, 0);
-                play_sound(&s_f_pause_cursor_seqData);
-                rumble_play_menu_move();
-            }
+            gGameplay->currentPauseOption = PAUSE_OPTION_CONTINUE;
+            sprite_set_anim(gSpriteHandler, gGameplay->pauseOptionsSprite, anim_gameplay_pause_option1, 0, 1, 0, 0);
+            play_sound(&s_f_pause_cursor_seqData);
         }
         if (D_03004afc & DPAD_RIGHT) {
-            if (gGameplay->currentPauseOption == PAUSE_OPTION_QUIT) {
-                rumble_play_menu_limit();
-            } else {
-                gGameplay->currentPauseOption = PAUSE_OPTION_QUIT;
-                sprite_set_anim(gSpriteHandler, gGameplay->pauseOptionsSprite, anim_gameplay_pause_option2, 0, 1, 0, 0);
-                play_sound(&s_f_pause_cursor_seqData);
-                rumble_play_menu_move();
-            }
+            gGameplay->currentPauseOption = PAUSE_OPTION_QUIT;
+            sprite_set_anim(gSpriteHandler, gGameplay->pauseOptionsSprite, anim_gameplay_pause_option2, 0, 1, 0, 0);
+            play_sound(&s_f_pause_cursor_seqData);
         }
         if (D_03004afc & A_BUTTON) {
             sprite_set_visible(gSpriteHandler, gGameplay->pauseSprite, FALSE);
@@ -1406,12 +1257,10 @@ s32 gameplay_update_pause_menu(void) {
             if (gGameplay->currentPauseOption == PAUSE_OPTION_CONTINUE) {
                 gGameplay->unpausing = TRUE;
                 play_sound(&s_f_pause_continue_seqData);
-                rumble_play_menu_confirm();
                 return PAUSE_MENU_SELECTION_PENDING;
             } else {
                 gGameplay->perfectFailed = TRUE;
                 set_next_scene(D_03001328);
-                rumble_play_menu_cancel();
                 return PAUSE_MENU_SELECTION_QUIT;
             }
         }
@@ -1420,7 +1269,6 @@ s32 gameplay_update_pause_menu(void) {
             sprite_set_visible(gSpriteHandler, gGameplay->pauseOptionsSprite, FALSE);
             gGameplay->unpausing = TRUE;
             play_sound(&s_f_pause_continue_seqData);
-            rumble_play_menu_cancel();
             return PAUSE_MENU_SELECTION_PENDING;
         }
         return PAUSE_MENU_SELECTION_PENDING;

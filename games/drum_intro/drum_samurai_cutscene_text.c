@@ -8,11 +8,15 @@
 const char D_0805df4c[] =
     "Welcome to the\n"
     "funky world of\n"
+<<<<<<< Updated upstream
     #ifdef PARADISE
     "Rhythm Paradise Advance!";
     #else
     "Rhythm Heaven Advance!";
     #endif
+=======
+    "Rhythm Paradise!";
+>>>>>>> Stashed changes
 
 const char D_0805df88[] =
     "I hope you enjoy your time\n"

@@ -4,8 +4,7 @@
 
 @ Script
 script script_scene_warning
-    @ set tempo to over 1000 to bypass randomized tempo
-    set_tempo 1120
+    set_tempo 120
     pause_scene
 
     rest 12
@@ -15,11 +14,7 @@ script script_scene_warning
     pause_scene
 
     fade_music_out 48
-#ifdef RUMBLE
-    fade_screen_out 12, WHITE
-#else
     fade_screen_out 12, BLACK
-#endif
     rest 12
     rest 12
     stop

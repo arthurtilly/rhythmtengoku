@@ -283,16 +283,8 @@ script script_remix_8_main
     rest 24
     spawn_cue CUE_POT
     beat_anim
-    #ifdef SFX
-    print_text_f 3
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_three_sfx_seqData
-    #else
     rest 24
     print_text_f 3
-    #endif
     beat_anim
     rest 24
     clear_text_f
@@ -448,17 +440,8 @@ script script_remix_8_main
     rest 24
     rest 24
     spawn_cue CUE_ROCK
-    #ifdef SFX
-    print_text_f 3
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_three_sfx_seqData
-    #else
     rest 24
     print_text_f 3
-    #endif
-    beat_anim
     rest 24
     clear_text_f
     spawn_cue CUE_ROCK
@@ -526,13 +509,13 @@ script script_remix_8_main
     rest 24
     beat_anim
     rest 22
-    play_sfx_localized s_space_ikeo_turn_seqData, s_space_ikeo_turn_en_seqData
+    play_sfx s_space_ikeo_turn_seqData
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 22
-    play_sfx_localized s_space_ikeo_right_seqData, s_space_ikeo_right_en_seqData
+    play_sfx s_space_ikeo_right_seqData
     rest 2
     space_dance_event00 0
     beat_anim

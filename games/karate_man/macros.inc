@@ -49,12 +49,6 @@
     load_game karate_man_engine, 3
 .endm
 
-@ Load Game: Karate Man (Extra)
-.macro load_karate_man_extra
-    load_karate_labels
-    load_game karate_man_engine, 4
-.endm
-
 
 /* ---------------- Game Engine Events ---------------- */
 

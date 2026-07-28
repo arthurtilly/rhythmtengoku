@@ -75,7 +75,7 @@ struct Animation *game_select_stage_title_anim[] = {
     /* 07 */ anim_game_select_stage6,
     /* 08 */ anim_game_select_stage7,
     /* 09 */ anim_game_select_stage8,
-    /* 10 */ anim_game_select_stage9,
+    /* 10 */ anim_game_select_stage0,
     /* 11 */ anim_game_select_stage0,
     /* 12 */ anim_game_select_stage0,
     /* 13 */ anim_game_select_stage0,
@@ -89,9 +89,8 @@ const char *game_select_rank_text[] = {
     /* INVALID   */ "",
     /* CLOSED    */ "",
     /* UNCLEARED */ "",
-    /* CLEARED   */ "\0020" "\0010" "\0051" "\0015" "Rank:                             " "\x87\x52" "\0022" "\0012" "\0053" "\0017" "OK",
-    /* HAS_MEDAL */ "\0020" "\0010" "\0051" "\0015" "Rank:                    " "\x87\x53" "\0022" "\0012" "\0053" "\0017" "Superb",
-    /* PERFECT   */ "\0020" "\0010" "\0051" "\0015" "Rank:                    " "\x87\x53" "\0022" "\0012" "\0053" "\0017" "Perfect"
+    /* CLEARED   */ "\0020" "\0010" "\0051" "\0015" "Rank:                      " "\0022" "\0012" "\0053" "\0017" "OK",
+    /* HAS_MEDAL */ "\0020" "\0010" "\0051" "\0015" "Rank:             " "\0022" "\0012" "\0053" "\0017" "Superb"
 };
 
 
@@ -102,6 +101,5 @@ u8 game_select_rank_palette[] = {
     /* CLOSED    */ 0,
     /* UNCLEARED */ 0,
     /* CLEARED   */ 9,
-    /* HAS_MEDAL */ 10,
-    /* PERFECT   */ 10
+    /* HAS_MEDAL */ 10
 };

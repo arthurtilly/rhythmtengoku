@@ -179,9 +179,6 @@ script script_remix_3_main
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
-    #ifdef PLUS
-    bunny_hop_event07 s_rabbit_break_seqData
-    #endif
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
@@ -232,9 +229,6 @@ script script_remix_3_main
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
-    #ifdef PLUS
-    bunny_hop_event07 s_rabbit_break_seqData
-    #endif
     bunny_hop_event01 5
     spawn_cue CUE_BUNNY_06
     spawn_cue CUE_BUNNY_07
@@ -265,17 +259,17 @@ script script_remix_3_main
     beat_anim
     rest 24
     space_dance_event00 4
-    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
+    play_sfx s_space_ikeo_pa_seqData
     rest 12
     space_dance_event00 5
-    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
+    play_sfx s_space_ikeo_pa_seqData
     rest 12
     space_dance_event00 4
-    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
+    play_sfx s_space_ikeo_pa_seqData
     spawn_cue CUE_PUNCH
     rest 12
     space_dance_event00 1
-    play_sfx_localized s_space_ikeo_punch_seqData, s_space_ikeo_punch_en_seqData
+    play_sfx s_space_ikeo_punch_seqData
     rest 12
     beat_anim
     rest 24
@@ -341,18 +335,16 @@ script script_remix_3_main
     rest 24
     beat_anim
     rest 21
-    play_sfx_localized s_space_ikeo_lets_seqData, s_space_ikeo_lets_en_seqData
+    play_sfx s_space_ikeo_lets_seqData
     rest 3
     space_dance_event00 6
     spawn_cue CUE_SIT_DOWN
     beat_anim
-
-    rest_localized 10, 6
-    play_sfx_localized s_space_ikeo_sit_seqData, s_space_ikeo_sit_en_seqData
-    rest_localized 14, 18
-
+    rest 10
+    play_sfx s_space_ikeo_sit_seqData
+    rest 14
     space_dance_event00 2
-    play_sfx_localized s_space_ikeo_down_seqData, s_space_ikeo_down_en_seqData
+    play_sfx s_space_ikeo_down_seqData
     beat_anim
     rest 24
     set_game_fade_in_time 0
@@ -458,13 +450,13 @@ script script_remix_3_main
     rest 12
     beat_anim
     rest 22
-    play_sfx_localized s_space_ikeo_turn_seqData, s_space_ikeo_turn_en_seqData
+    play_sfx s_space_ikeo_turn_seqData
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 22
-    play_sfx_localized s_space_ikeo_right_seqData, s_space_ikeo_right_en_seqData
+    play_sfx s_space_ikeo_right_seqData
     rest 2
     space_dance_event00 0
     beat_anim
@@ -489,17 +481,17 @@ script script_remix_3_main
     rest 6
     rest 12
     beat_anim
-    rest 21
-    play_sfx_localized s_space_ikeo_lets_seqData, s_space_ikeo_lets_en_seqData
-    rest 3
+    rest 22
+    play_sfx s_space_ikeo_lets_seqData
+    rest 2
     space_dance_event00 6
     spawn_cue CUE_SIT_DOWN
     beat_anim
-    rest_localized 10, 6
-    play_sfx_localized s_space_ikeo_sit_seqData, s_space_ikeo_sit_en_seqData
-    rest_localized 14, 18
+    rest 10
+    play_sfx s_space_ikeo_sit_seqData
+    rest 14
     space_dance_event00 2
-    play_sfx_localized s_space_ikeo_down_seqData, s_space_ikeo_down_en_seqData
+    play_sfx s_space_ikeo_down_seqData
     beat_anim
     rest 24
 
@@ -523,13 +515,13 @@ script script_remix_3_main
     rest 12
     beat_anim
     rest 22
-    play_sfx_localized s_space_ikeo_turn_seqData, s_space_ikeo_turn_en_seqData
+    play_sfx s_space_ikeo_turn_seqData
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 22
-    play_sfx_localized s_space_ikeo_right_seqData, s_space_ikeo_right_en_seqData
+    play_sfx s_space_ikeo_right_seqData
     rest 2
     space_dance_event00 0
     beat_anim
@@ -568,9 +560,6 @@ script script_remix_3_main
     bunny_hop_event02 FALSE
     rest 24
     bunny_hop_event02 FALSE
-    #ifdef PLUS
-    bunny_hop_event07 s_rabbit_break_seqData
-    #endif
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
@@ -594,9 +583,6 @@ script script_remix_3_main
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
-    #ifdef PLUS
-    bunny_hop_event07 s_rabbit_break_seqData
-    #endif
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
@@ -620,9 +606,6 @@ script script_remix_3_main
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
-    #ifdef PLUS
-    bunny_hop_event07 s_rabbit_break_seqData
-    #endif
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
@@ -646,9 +629,6 @@ script script_remix_3_main
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
-    #ifdef PLUS
-    bunny_hop_event07 s_rabbit_break_seqData
-    #endif
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
@@ -656,13 +636,7 @@ script script_remix_3_main
     rest 24
     rest 24
     rest 24
-    #ifdef PLUS
-    run stop_sound, s_rabbit_HC_seqData
-    #endif
     rest 24
-    #ifdef PLUS
-    bunny_hop_event07 s_rabbit_break_seqData
-    #endif
     bunny_hop_event01 5
     spawn_cue CUE_BUNNY_06
     spawn_cue CUE_BUNNY_07

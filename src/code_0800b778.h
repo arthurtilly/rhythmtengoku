@@ -190,10 +190,14 @@ enum BeatscriptCommandsEnum {
     /* AF */ BS_CMD_INCREASE_SPEED,
     /* B0 */ BS_CMD_CALL_RESULT,
     /* B1 */ BS_CMD_REST_RESET,
+<<<<<<< Updated upstream
     /* B2 */ BS_CMD_PLAY_SFX_SYNCED,
     /* B3 */ BS_CMD_SET_LOCALIZED,
     /* B4 */ BS_CMD_REST_LOCALIZED,
     /* B5 */ BS_CMD_PLAY_SFX_LOCALIZED
+=======
+    /* B2 */ BS_CMD_PLAY_SFX_SYNCED
+>>>>>>> Stashed changes
 };
 
 

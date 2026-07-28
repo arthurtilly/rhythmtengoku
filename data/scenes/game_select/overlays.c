@@ -119,11 +119,11 @@ struct GameSelectOverlay game_select_icon_overlay_medal = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_medal_bin,
     /* Anim. Data */ (s8[]) {
+        /* 000 */ 0, 40,
         /* 001 */ 1, 3,
         /* 002 */ 2, 3,
         /* 003 */ 3, 3,
         /* 004 */ 4, 3,
-        /* 000 */ 0, 40,
         /* End */ LEVEL_ICON_ANIM_LOOP
     }
 };
@@ -141,23 +141,7 @@ struct GameSelectOverlay game_select_icon_overlay_bonus = {
     }
 };
 
-// [D_089cfa74] Perfect Cleared
-struct GameSelectOverlay game_select_icon_overlay_perfect = {
-    /* Dimensions */ 3, 4,
-    /* Texture    */ icon_overlay_perfect_bin,
-    /* Anim. Data */ (s8[]) {
-        /* 000 */ 1, 1,
-        /* 001 */ 2, 2,
-        /* 002 */ 3, 2,
-        /* 003 */ 4, 2,
-        /* 004 */ 5, 2,
-        /* 005 */ 1, 1,
-        /* 006 */ 0, 42,
-        /* End */ LEVEL_ICON_ANIM_LOOP
-    }
-};
-
-// [D_089cfa80] Overlay Data Table
+// [D_089cfa74] Overlay Data Table
 struct GameSelectOverlay *level_icon_overlay_data[] = {
     /* 00 */ &game_select_icon_overlay_hidden,
     /* 01 */ &game_select_icon_overlay_closed,
@@ -167,8 +151,7 @@ struct GameSelectOverlay *level_icon_overlay_data[] = {
     /* 05 */ &game_select_icon_overlay_remix_closed,
     /* 06 */ &game_select_icon_overlay_remix_uncleared,
     /* 07 */ &game_select_icon_overlay_bonus,
-    /* 08 */ &game_select_icon_overlay_perfect,
-    /* 09 */ NULL
+    /* 08 */ NULL
 };
 
 
@@ -179,8 +162,7 @@ u8 game_level_icon_overlays_map[] = {
     /* CLOSED    */ LEVEL_ICON_OVERLAY_CLOSED,
     /* UNCLEARED */ LEVEL_ICON_OVERLAY_UNCLEARED,
     /* CLEARED   */ LEVEL_ICON_OVERLAY_CLEARED,
-    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL,
-    /* PERFECT   */ LEVEL_ICON_OVERLAY_PERFECT
+    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL
 };
 
 // [D_089cfa9e] Icon Overlay Map (Remix)
@@ -190,8 +172,7 @@ u8 remix_level_icon_overlays_map[] = {
     /* CLOSED    */ LEVEL_ICON_OVERLAY_REMIX_CLOSED,
     /* UNCLEARED */ LEVEL_ICON_OVERLAY_REMIX_UNCLEARED,
     /* CLEARED   */ LEVEL_ICON_OVERLAY_CLEARED,
-    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL,
-    /* PERFECT   */ LEVEL_ICON_OVERLAY_PERFECT
+    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL
 };
 
 // [D_089cfaa4] Icon Overlay Map (Medal Corner)
@@ -201,8 +182,7 @@ u8 bonus_level_icon_overlays_map[] = {
     /* CLOSED    */ LEVEL_ICON_OVERLAY_CLOSED,
     /* UNCLEARED */ LEVEL_ICON_OVERLAY_UNCLEARED,
     /* CLEARED   */ LEVEL_ICON_OVERLAY_BONUS,
-    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL,
-    /* PERFECT   */ LEVEL_ICON_OVERLAY_PERFECT
+    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL
 };
 
 // [D_089cfaac] Icon Overlay Map

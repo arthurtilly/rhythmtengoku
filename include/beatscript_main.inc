@@ -104,7 +104,7 @@ struct \name
     /* Init Func   */ .word func_0801d86c, sub_\name
     /* Update Func */ .word func_0801d8d8, NULL
     /* End Func    */ .word NULL,          NULL
-    /* Memory      */ .hword 0x5BD
+    /* Memory      */ .hword 0x5BC
 endstruct
 .endm
 
@@ -694,6 +694,7 @@ endstruct
 .macro play_sfx_synced sound, baseBPM, volume
     play_sfx_synced_pitch \sound, \baseBPM, \volume, 0
 .endm
+<<<<<<< Updated upstream
 
 
 @ [0xB3] Set Localized Condition Flag
@@ -715,3 +716,5 @@ endstruct
 .macro play_sfx_localized jp_sound, en_sound
     beatscript_cmd 0xB5, 0, \en_sound, \jp_sound
 .endm
+=======
+>>>>>>> Stashed changes

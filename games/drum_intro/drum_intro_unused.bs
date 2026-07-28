@@ -45,17 +45,18 @@ script drum_intro_unused_sub_08a21294
     rest 24
     play_sfx s_intro_two_seqData
     beat_anim
-    rest 24
+    rest 23
     play_sfx s_intro_three_seqData
+    rest 1
     beat_anim
-    rest 12
+    rest 20
 return
 
 
 script drum_intro_unused_sub_08a21390
     call drum_intro_unused_sub_08a21294
     play_sfx s_intro_four_seqData
-    rest 12
+    rest 4
     beat_anim
     rest 24
 return
@@ -150,7 +151,6 @@ return
 
 
 script script_drum_intro_unused_main
-    enable_pause_menu
     set_tempo 120
     set_music_volume 0
     mod_music_volume 256, 192
@@ -235,6 +235,7 @@ script script_drum_intro_unused_main
     run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
+    run set_next_scene, scene_game_select
 return
 
 .end

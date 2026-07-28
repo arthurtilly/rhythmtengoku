@@ -286,6 +286,7 @@ struct InstrumentPCM instrument_pcm_1722 = {
 };
 #endif
 
+<<<<<<< Updated upstream
 #ifdef SFX
 extern struct SampleData RAPWOMEN_EN_sample_944_data;
 struct InstrumentPCM instrument_pcm_1723 = {
@@ -302,6 +303,8 @@ struct InstrumentPCM instrument_pcm_1723 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 #else
+=======
+>>>>>>> Stashed changes
 extern struct SampleData sample_944_data;
 struct InstrumentPCM instrument_pcm_1723 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
@@ -765,6 +768,7 @@ struct InstrumentPCM instrument_pcm_1739 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
+<<<<<<< Updated upstream
 #ifdef SFX
 extern struct SampleData march_ord_w_7_data;
 struct InstrumentPCM instrument_pcm_mWLn = {
@@ -815,6 +819,8 @@ struct InstrumentPCM instrument_pcm_mWRf = {
 #ifdef SFX
 extern struct SampleData march_ord_w_12_data;
 #else
+=======
+>>>>>>> Stashed changes
 extern struct SampleData sample_961_data;
 #endif
 struct InstrumentPCM instrument_pcm_1740 = {

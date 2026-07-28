@@ -12,7 +12,6 @@
 #define GameROMImage2Base	0x0C000000 // To 0x0E000000 (32mb) Cartridge ROM Mirror 2
 #define CartRAMBase		0x0E000000 // To 0x0E010000 (64kb) Save data
 
-#define GBAROM        ((volatile u8*)GameROMBase) // Pointer to the Game ROM
 
 #define VideoBuffer     (VRAMBase + 0x0)
 #define BackBuffer		(VRAMBase + 0xA000)

@@ -2,10 +2,10 @@
 
 #include "global.h"
 #include "levels.h"
-#include "reading_materials.h"
 
 #define SAVE_BUFFER_SIZE sizeof(struct SaveBuffer)
 
+<<<<<<< Updated upstream
 #define EXTRA_SAVE_DATA_MAGIC   "ENOT" // extra not original thing <3
 #define EXTRA_SAVE_DATA_VERSION 0x0001
 
@@ -30,6 +30,8 @@ enum AdvanceGameFlagsEnum {
     /* 02 */ ADVANCE_GAME_FLAG_NON_JP_MUSIC             = (1 << 1),
 };
 
+=======
+>>>>>>> Stashed changes
 extern struct SaveBuffer {
     /* [0x000] Header */
     struct SaveBufferHeader {
@@ -44,12 +46,11 @@ extern struct SaveBuffer {
         s8 recentLevelX, recentLevelY;
         s8 recentLevelState;
         u8 recentLevelClearedByBarista;
-        u8 levelStates[TOTAL_BASE_LEVELS];
+        u8 levelStates[TOTAL_LEVELS];
         u16 recentLevelScore;
-        u16 levelScores[TOTAL_BASE_LEVELS];
+        u16 levelScores[TOTAL_LEVELS];
         u16 currentFlow;
-        u8 unkB0;
-        u8 advanceFlags;
+        u16 unkB0;
         u8 totalSongs;
         u8 unkB3; // above
         struct StudioSongData {
@@ -58,24 +59,24 @@ extern struct SaveBuffer {
             u8 drumKitID;
             u8 unk3;
         } studioSongs[45 + 10];
-        u8 levelTotalPlays[TOTAL_BASE_LEVELS]; 
-        u8 levelFirstOK[TOTAL_BASE_LEVELS];
-        u8 levelFirstSuperb[TOTAL_BASE_LEVELS];
+        u8 levelTotalPlays[TOTAL_LEVELS];
+        u8 levelFirstOK[TOTAL_LEVELS];
+        u8 levelFirstSuperb[TOTAL_LEVELS];
         u8 totalPerfects;
-        u8 campaignsCleared[TOTAL_BASE_PERFECT_CAMPAIGNS];
+        u8 campaignsCleared[TOTAL_PERFECT_CAMPAIGNS];
         u8 campaignState;
         u8 campaignAttemptsLeft;
         u8 playsUntilNextCampaign;
         u8 currentCampaign;
         u8 unk26A;
-        u8 readingMaterialUnlocked[TOTAL_BASE_READING_MATERIALS];
+        u8 readingMaterialUnlocked[20];
         u8 drumKitsUnlocked[15];
         u8 totalMedals;
         u8 unk28F;
         u8 minFailsForBaristaHelp;
         u8 unk291;
         u32 unk294[16];
-        /* why is this commented and not unpacked??????
+        /*
             u32 highScoreMrUpbeat;
             u32 highScoreMannequinFactory;
             u32 highScoreSickBeatsSP;
@@ -99,21 +100,6 @@ extern struct SaveBuffer {
             u16 replaySizes[10];
             u8 saveMemory[0x38][0x100];
         } drumReplaysAlloc;
-
-        // Used for Tempo Up and other extra content.
-        struct ExtraTengokuSaveData {
-            u32 checksum;   // magic and below
-            char magic[4];  // "ENOT"
-            u16 version;    // convinient if upgrade needed (new games and other similar things)
-            u16 extraLevelScores[TOTAL_EXTRA_LEVELS];
-            u16 extraLevelStates[TOTAL_EXTRA_LEVELS];
-            u16 extraLevelTotalPlays[TOTAL_EXTRA_LEVELS];
-            u16 extraLevelFirstOK[TOTAL_EXTRA_LEVELS];
-            u16 extraLevelFirstSuperb[TOTAL_EXTRA_LEVELS];
-            u16 extraCampaignsCleared[TOTAL_EXTRA_PERFECT_CAMPAIGNS];
-            u16 extraReadingMaterialUnlocked[TOTAL_EXTRA_READING_MATERIALS];
-            u8 gameFlags[TOTAL_LEVELS];
-        } extraData;
     } data;
 } *D_030046a8;
 
@@ -124,10 +110,8 @@ extern void *get_save_buffer_end(void);
 extern void *get_memory_heap_start(void);
 extern u32 get_memory_heap_length(void);
 extern s32 generate_save_buffer_checksum(s32 *buffer, u32 size);
-extern void on_extra_save_upgrade(u16 oldVersion, struct ExtraTengokuSaveData *extra);
 extern void init_save_buffer(void);
 extern void clear_save_data(void);
-extern void set_playtest_save_data(void);
 extern s32 copy_to_save_buffer(u8 *cartRAM);
 extern s32 copy_sram_to_save_buffer(void);
 extern s32 copy_sram_backup_to_save_buffer(void);
@@ -137,27 +121,7 @@ extern void write_save_buffer_header_to_sram(u8 *cartRAM);
 extern void write_save_buffer_data_to_sram(u8 *buffer, u32 size);
 extern void flush_save_buffer_to_sram(void);
 extern void flush_save_buffer_to_sram_backup(void);
-extern void update_save_buffer_sram_writes(void);
-extern void finish_save_buffer_sram_writes(void);
 extern void func_080009c8_stub(void);
 extern void func_080009cc_stub(void);
 extern s32 func_080009d0(s16 *);
 extern s32 func_080009fc(void);
-
-extern u8 get_level_state(struct TengokuSaveData *data, u32 levelID);
-extern u16 get_level_score(struct TengokuSaveData *data, u32 levelID);
-extern u8 get_level_total_plays(struct TengokuSaveData *data, u32 levelID);
-extern u8 get_level_first_ok(struct TengokuSaveData *data, u32 levelID);
-extern u8 get_level_first_superb(struct TengokuSaveData *data, u32 levelID);
-extern u8 get_campaign_cleared(struct TengokuSaveData *data, u32 campaignID);
-extern u32 get_total_base_cleared_campaigns(struct TengokuSaveData *data);
-extern u32 get_total_active_cleared_campaigns(struct TengokuSaveData *data);
-extern u8 get_reading_material_unlocked(struct TengokuSaveData *data, u32 materialID);
-
-extern void set_level_state(struct TengokuSaveData *data, u32 levelID, u8 state);
-extern void set_level_score(struct TengokuSaveData *data, u32 levelID, u16 score);
-extern void set_level_total_plays(struct TengokuSaveData *data, u32 levelID, u8 totalPlays);
-extern void set_level_first_ok(struct TengokuSaveData *data, u32 levelID, u8 firstOK);
-extern void set_level_first_superb(struct TengokuSaveData *data, u32 levelID, u8 firstSuperb);
-extern void set_campaign_cleared(struct TengokuSaveData *data, u32 campaignID, u8 cleared);
-extern void set_reading_material_unlocked(struct TengokuSaveData *data, u32 materialID, u8 unlocked);

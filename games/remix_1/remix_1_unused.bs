@@ -262,16 +262,8 @@ script script_remix_1_unused_main
     beat_anim
     rest 24
     beat_anim
-    #ifdef SFX
-    print_text_f 2
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_two_sfx_seqData
-    #else
     rest 24
     print_text_f 2
-    #endif
     beat_anim
     rest 24
     clear_text_f
@@ -315,16 +307,8 @@ script script_remix_1_unused_main
     beat_anim
     rest 24
     beat_anim
-    #ifdef SFX
-    print_text_f 2
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_two_sfx_seqData
-    #else
     rest 24
     print_text_f 2
-    #endif
     beat_anim
     rest 24
     clear_text_f
@@ -372,16 +356,8 @@ script script_remix_1_unused_main
     beat_anim
     rest 24
     beat_anim
-    #ifdef SFX
-    print_text_f 2
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_two_sfx_seqData
-    #else
     rest 24
     print_text_f 2
-    #endif
     beat_anim
     rest 24
     clear_text_f
@@ -473,16 +449,8 @@ script script_remix_1_unused_main
     beat_anim
     rest 24
     beat_anim
-    #ifdef SFX
-    print_text_f 2
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_two_sfx_seqData
-    #else
     rest 24
     print_text_f 2
-    #endif
     beat_anim
     rest 24
     clear_text_f
@@ -549,16 +517,8 @@ script script_remix_1_unused_main
     beat_anim
     rest 24
     beat_anim
-    #ifdef SFX
-    print_text_f 2
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_two_sfx_seqData
-    #else
     rest 24
     print_text_f 2
-    #endif
     beat_anim
     rest 24
     clear_text_f
@@ -904,7 +864,6 @@ script script_remix_1_unused_main
     rest 24
     beat_anim
     rest 24
-    run gameplay_set_next_cue_hit_sfx, s_f_boxing_just_rock_nc_seqData
     spawn_cue CUE_ROCK
     beat_anim
     rest 24
@@ -914,7 +873,6 @@ script script_remix_1_unused_main
     load_clappy_trio
     clappy_trio_crouch_smirk
     rest 12
-    run stop_sound, s_f_boxing_just_rock_nc_seqData
     clappy_trio_do_clap 0
     rest 12
     clappy_trio_do_clap 1
@@ -947,15 +905,8 @@ script script_remix_1_unused_main
     rest 24
 
     load_karate_man
-    print_text_f 5
-    #ifdef SFX
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_four_sfx_seqData
-    #else
+    print_text_f 4
     rest 24
-    #endif
     rest 24
     clear_text_f
     spawn_cue CUE_POT

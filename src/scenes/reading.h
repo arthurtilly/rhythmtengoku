@@ -2,9 +2,31 @@
 
 #include "global.h"
 #include "scenes.h"
-#include "../text_printer.h"
 
-#include "reading_materials.h"
+
+// VALUES
+enum ReadingMaterialEnum {
+    /* 00 */ READING_MATERIAL_WELCOME,
+    /* 01 */ READING_MATERIAL_MANUAL,
+    /* 02 */ READING_MATERIAL_CAFE,
+    /* 03 */ READING_MATERIAL_RHYTHM_TWEEZERS,
+    /* 04 */ READING_MATERIAL_NIGHT_WALK,
+    /* 05 */ READING_MATERIAL_SPACEBALL,
+    /* 06 */ READING_MATERIAL_MECHANICAL_HORSE,
+    /* 07 */ READING_MATERIAL_MARCHING_ORDERS,
+    /* 08 */ READING_MATERIAL_RAP_MEN,
+    /* 09 */ READING_MATERIAL_BON_ODORI,
+    /* 10 */ READING_MATERIAL_REMIX3,
+    /* 11 */ READING_MATERIAL_REMIX5,
+    /* 12 */ READING_MATERIAL_REMIX8,
+    /* 13 */ READING_MATERIAL_NINJA_BODYGUARD,
+    /* 14 */ READING_MATERIAL_TOSS_BOYS,
+    /* 15 */ READING_MATERIAL_FAN_MAIL,
+    /* 16 */ READING_MATERIAL_RHYTHM_FORMULA,
+    /* 17 */ READING_MATERIAL_RHYTHM_DIAGNOSIS,
+    /* 18 */ READING_MATERIAL_RHYTHM_POEM,
+    /* 19 */ READING_MATERIAL_RHYTHM_HAIKU
+};
 
 enum ReadingEventsEnum {
     /* 00 */ READING_EV_NONE,
@@ -42,7 +64,7 @@ struct ReadingMaterial {
 
 
 // DATA
-extern struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS];
+extern struct ReadingMaterial reading_material_table[];
 extern struct GraphicsTable reading_gfx_table[];
 extern struct CompressedData *reading_buffered_textures[];
 extern struct ReadingMaterial reading_material_error;

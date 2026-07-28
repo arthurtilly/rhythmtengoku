@@ -66,12 +66,6 @@
     load_game marching_orders_engine, 3
 .endm
 
-@ Load Game: Marching Orders (Extra)
-.macro load_marching_orders_extra
-    load_marching_orders_labels
-    load_game marching_orders_engine, 4
-.endm
-
 
 /* ---------------- Game Engine Events ---------------- */
 

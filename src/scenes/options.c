@@ -1,26 +1,6 @@
 #include "global.h"
 #include "options.h"
 #include "graphics/options/options_graphics.h"
-#include "src/bitmap_font.h"
-#include "src/code_0800b778.h"
-#include "src/code_080092cc.h"
-
-extern u8 haveSeenDisclaimer;
-
-static void options_scene_refresh_classic_visuals(void);
-static const char *options_scene_bitmap_get_value(s32 entry);
-static void options_scene_bitmap_build_line_text(s32 line, u32 lineBuffer);
-static void options_scene_bitmap_delete_line_sprite(u32 lineIndex);
-static void options_scene_bitmap_refresh_visible_lines(void);
-static void options_scene_bitmap_refresh_line(s32 itemIndex);
-static void options_scene_bitmap_position_lines(s16 yOffset);
-static void options_scene_bitmap_set_description(u32 selected);
-static void options_scene_set_page(u32 page);
-static void options_scene_update_main_classic(void);
-static void options_scene_update_main_bitmap(void);
-static void options_scene_shoulder_hold_cb(struct SpriteHandler *handler, s16 sprite, u32 arg);
-static void options_scene_rshoulder_switch_cb(struct SpriteHandler *handler, s16 sprite, u32 arg);
-static void options_scene_lshoulder_switch_cb(struct SpriteHandler *handler, s16 sprite, u32 arg);
 
 
 /* OPTIONS MENU SCENE */
@@ -58,6 +38,7 @@ void options_scene_init_gfx1(void) {
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, BGCNT_PRIORITY(1));
 }
 
+<<<<<<< Updated upstream
 static void options_scene_refresh_classic_visuals(void) {
     if (gOptionsMenu->cursorPos == OPTIONS_BUTTON_SOUND_MODE) {
         sprite_set_y(gSpriteHandler, gOptionsMenu->uiBarista, OPTIONS_CURSOR_SOUND_MODE_Y);
@@ -379,37 +360,27 @@ static void options_scene_lshoulder_switch_cb(struct SpriteHandler *handler, s16
     gOptionsMenu->inputsEnabled = TRUE;
 }
 
+=======
+>>>>>>> Stashed changes
 
 // Scene Start
 void options_scene_start(void *sVar, s32 dArg) {
     struct TextPrinter *printer;
-    u32 i;
 
     func_08007324(FALSE);
     func_080073f0();
     options_scene_init_gfx1();
 
     sprite_create(gSpriteHandler, anim_options_banner, 0, 120, 16, 0x4800, 1, 0, 0);
-    gOptionsMenu->uiBarista = sprite_create(gSpriteHandler, anim_options_cursor_barista, 0,
-        OPTIONS_CURSOR_CLASSIC_X, 64, 0x4800, 1, 0, 0);
+    gOptionsMenu->uiBarista = sprite_create(gSpriteHandler, anim_options_cursor_barista, 0, 104, 64, 0x4800, 1, 0, 0);
     gOptionsMenu->soundMode = D_030046a8->data.unk294[8];
-    gOptionsMenu->uiSoundMode = sprite_create(gSpriteHandler, anim_options_select_stereo, 0x7F,
-        OPTIONS_CURSOR_CLASSIC_X, OPTIONS_CURSOR_SOUND_MODE_Y, 0x4800, 1, 0x7F, 0);
-    gOptionsMenu->uiDataClear = sprite_create(gSpriteHandler, anim_options_select_data_clear, 0x7F,
-        OPTIONS_CURSOR_CLASSIC_X, OPTIONS_CURSOR_DATA_CLEAR_Y, 0x4800, 1, 0x7F, 0);
+    gOptionsMenu->uiSoundMode = sprite_create(gSpriteHandler, anim_options_select_stereo, 0x7F, 104, 56, 0x4800, 1, 0x7F, 0);
+    gOptionsMenu->uiDataClear = sprite_create(gSpriteHandler, anim_options_select_data_clear, 0x7F, 104, 84, 0x4800, 1, 0x7F, 0);
     sprite_create(gSpriteHandler, anim_options_desc_box, 0, 120, 116, 0x4F00, 0, 0, 0);
     sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0x7F, 1, 0x7F, 0);
     sprite_set_anim(gSpriteHandler, gOptionsMenu->uiDataClear, anim_options_off_data_clear, 0, 0, 0, 0);
-    sprite_set_x_y(gSpriteHandler, gOptionsMenu->uiBarista, OPTIONS_CURSOR_CLASSIC_X, OPTIONS_CURSOR_SOUND_MODE_Y);
+    sprite_set_x_y(gSpriteHandler, gOptionsMenu->uiBarista, 104, 56);
     gOptionsMenu->cursorPos = OPTIONS_BUTTON_SOUND_MODE;
-
-    gOptionsMenu->uiRShoulder = sprite_create(gSpriteHandler, anim_options_rshoulder, 4, 120, 80, 0x5000, 0, 0, SPRITE_PLAYBACK_NORMAL_LOOP);
-    gOptionsMenu->uiLShoulder = sprite_create(gSpriteHandler, anim_options_lshoulder, 4, 120, 80, 0x5000, 0, 0, SPRITE_PLAYBACK_NORMAL_LOOP);
-
-    sprite_set_anim_cel(gSpriteHandler, gOptionsMenu->uiRShoulder, 0);
-    sprite_set_paused(gSpriteHandler, gOptionsMenu->uiRShoulder, TRUE);
-    sprite_set_anim_cel(gSpriteHandler, gOptionsMenu->uiLShoulder, 0);
-    sprite_set_paused(gSpriteHandler, gOptionsMenu->uiLShoulder, TRUE);
 
     printer = text_printer_create_new(get_current_mem_id(), 3, 208, 32);
     text_printer_set_x_y(printer, 16, 117);
@@ -424,7 +395,7 @@ void options_scene_start(void *sVar, s32 dArg) {
 
     gOptionsMenu->uiWarningPane = sprite_create(gSpriteHandler, anim_options_warning_box, 0, 120, 74, 0x440A, 1, 0, 0x8000);
     gOptionsMenu->uiWarningCursor = sprite_create(gSpriteHandler, anim_options_cursor_default, 0, 64, 64, 0x4400, 1, 0, 0x8000);
-    sprite_set_x(gSpriteHandler, gOptionsMenu->uiWarningCursor, OPTIONS_WARNING_CURSOR_X);
+    sprite_set_x(gSpriteHandler, gOptionsMenu->uiWarningCursor, 104);
 
     printer = text_printer_create_new(get_current_mem_id(), 3, 80, 26);
     text_printer_set_x_y(printer, 80, 75);
@@ -438,29 +409,10 @@ void options_scene_start(void *sVar, s32 dArg) {
     text_printer_set_string(printer, options_data_clear_confirm_text);
     gOptionsMenu->warningText = printer;
 
-    gOptionsMenu->bitmapFont = scene_create_obj_font_printer(OPTIONS_BITMAP_FONT_BASE_TILE, OPTIONS_BITMAP_FONT_TILE_ROWS);
-    gOptionsMenu->bitmapCursor = 0;
-    gOptionsMenu->bitmapSelected = 0;
-    gOptionsMenu->bitmapTopIndex = 0;
-    gOptionsMenu->bitmapCursorY = OPTIONS_BITMAP_LINE_START_Y;
-    gOptionsMenu->bitmapCursorTargetY = OPTIONS_BITMAP_LINE_START_Y;
-
-    for (i = 0; i < OPTIONS_BITMAP_LINE_SPRITE_COUNT; i++) {
-        gOptionsMenu->bitmapLineSprites[i] = -1;
-    }
-
-    options_scene_bitmap_refresh_visible_lines();
-
     gOptionsMenu->inputsEnabled = FALSE;
     gOptionsMenu->state = OPTIONS_SCENE_STATE_MAIN;
     gOptionsMenu->clearDataOnExit = FALSE;
     gOptionsMenu->canceledDataClear = FALSE;
-    options_scene_set_page(OPTIONS_PAGE_CLASSIC);
-
-    sprite_set_paused(gSpriteHandler, gOptionsMenu->uiRShoulder, FALSE);
-    sprite_set_callback(gSpriteHandler, gOptionsMenu->uiRShoulder, options_scene_shoulder_hold_cb, 4);
-    sprite_set_anim(gSpriteHandler, gOptionsMenu->uiRShoulder, anim_options_rshoulder,
-            0, 1, 4, SPRITE_PLAYBACK_NORMAL_CALLBACK);
 }
 
 
@@ -476,43 +428,22 @@ void options_scene_move_warning_cursor(u32 index) {
 
 
 // Update (State 1)
-static void options_scene_update_main_classic(void) {
+void options_scene_update_main(void) {
     u32 event = OPTIONS_EV_NONE;
 
     if (!options_scene_inputs_enabled()) {
         return;
     }
 
-    if (D_03004afc & RIGHT_SHOULDER_BUTTON) {
-        gOptionsMenu->inputsEnabled = FALSE;
-
-        sprite_set_paused(gSpriteHandler, gOptionsMenu->uiLShoulder, FALSE);
-        sprite_set_callback(gSpriteHandler, gOptionsMenu->uiLShoulder, options_scene_shoulder_hold_cb, 4);
-        sprite_set_anim(gSpriteHandler, gOptionsMenu->uiLShoulder, anim_options_lshoulder,
-            0, 1, 4, SPRITE_PLAYBACK_NORMAL_CALLBACK);
-
-        sprite_set_paused(gSpriteHandler, gOptionsMenu->uiRShoulder, FALSE);
-        sprite_set_callback(gSpriteHandler, gOptionsMenu->uiRShoulder, options_scene_rshoulder_switch_cb, 0);
-        sprite_set_anim(gSpriteHandler, gOptionsMenu->uiRShoulder, anim_options_rshoulder,
-            4, -1, 0, SPRITE_PLAYBACK_NORMAL_CALLBACK);
-        play_sound(&s_menu_cursor2_seqData);
-        rumble_play_menu_move();
-        return;
-    }
-
     if (D_03004afc & DPAD_UP) {
         if (gOptionsMenu->cursorPos >= OPTIONS_BUTTON_DATA_CLEAR) {
             event = OPTIONS_EV_CURSOR_UP;
-        } else {
-            rumble_play_menu_limit();
         }
     }
 
     if (D_03004afc & DPAD_DOWN) {
         if (gOptionsMenu->cursorPos <= OPTIONS_BUTTON_SOUND_MODE) {
             event = OPTIONS_EV_CURSOR_DOWN;
-        } else {
-            rumble_play_menu_limit();
         }
     }
 
@@ -527,24 +458,26 @@ static void options_scene_update_main_classic(void) {
     switch (event) {
         case OPTIONS_EV_CURSOR_UP:
             gOptionsMenu->cursorPos = OPTIONS_BUTTON_SOUND_MODE;
-            options_scene_refresh_classic_visuals();
+            sprite_set_y(gSpriteHandler, gOptionsMenu->uiBarista, 56);
+            sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0x7F, 1, 0x7F, 0);
+            sprite_set_anim(gSpriteHandler, gOptionsMenu->uiDataClear, anim_options_off_data_clear, 0, 0, 0, 0);
             text_printer_set_string(gOptionsMenu->descText, options_desc_text[OPTIONS_BUTTON_SOUND_MODE]);
             play_sound(&s_menu_cursor2_seqData);
-            rumble_play_menu_move();
             break;
 
         case OPTIONS_EV_CURSOR_DOWN:
             gOptionsMenu->cursorPos = OPTIONS_BUTTON_DATA_CLEAR;
-            options_scene_refresh_classic_visuals();
+            sprite_set_y(gSpriteHandler, gOptionsMenu->uiBarista, 84);
+            sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_OFF], 0, 0, 0, 0);
+            sprite_set_anim(gSpriteHandler, gOptionsMenu->uiDataClear, anim_options_select_data_clear, 0, 0, 0, 0);
             text_printer_set_string(gOptionsMenu->descText, options_desc_text[OPTIONS_BUTTON_DATA_CLEAR]);
             play_sound(&s_menu_cursor2_seqData);
-            rumble_play_menu_move();
             break;
 
         case OPTIONS_EV_CONFIRM:
             if (gOptionsMenu->cursorPos == OPTIONS_BUTTON_SOUND_MODE) {
                 gOptionsMenu->soundMode ^= 1;
-                options_scene_refresh_classic_visuals();
+                sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0, 1, 0x7F, 0);
                 D_030046a8->data.unk294[8] = gOptionsMenu->soundMode;
                 set_sound_mode(gOptionsMenu->soundMode);
                 write_game_save_data();
@@ -557,7 +490,6 @@ static void options_scene_update_main_classic(void) {
                 gOptionsMenu->state = OPTIONS_SCENE_STATE_WARNING;
             }
             play_sound(&s_menu_kettei2_seqData);
-            rumble_play_menu_confirm();
             break;
 
         case OPTIONS_EV_CANCEL:
@@ -566,12 +498,12 @@ static void options_scene_update_main_classic(void) {
             set_pause_beatscript_scene(FALSE);
             gOptionsMenu->inputsEnabled = FALSE;
             play_sound(&s_menu_cancel3_seqData);
-            rumble_play_menu_cancel();
             break;
     }
 }
 
 
+<<<<<<< Updated upstream
 // Update Main (Bitmap Page)
 static void options_scene_update_main_bitmap(void) {
     u32 event = OPTIONS_BITMAP_EV_NONE;
@@ -747,6 +679,8 @@ void options_scene_update_main(void) {
 }
 
 
+=======
+>>>>>>> Stashed changes
 // Update Warning
 void options_scene_update_warning(void) {
     if (!options_scene_inputs_enabled()) {
@@ -759,7 +693,6 @@ void options_scene_update_warning(void) {
         sprite_set_visible(gSpriteHandler, gOptionsMenu->uiWarningCursor, FALSE);
         text_printer_show_text(gOptionsMenu->warningText, FALSE);
         gOptionsMenu->state = OPTIONS_SCENE_STATE_MAIN;
-        rumble_play_menu_cancel();
         return;
     }
 
@@ -771,7 +704,6 @@ void options_scene_update_warning(void) {
             gOptionsMenu->inputsEnabled = FALSE;
             gOptionsMenu->state = OPTIONS_SCENE_STATE_EXIT;
             play_sound(&s_menu_kettei2_seqData);
-            rumble_play_menu_confirm();
             return;
         } else {
             sprite_set_visible(gSpriteHandler, gOptionsMenu->uiWarningPane, FALSE);
@@ -779,7 +711,6 @@ void options_scene_update_warning(void) {
             text_printer_show_text(gOptionsMenu->warningText, FALSE);
             play_sound(&s_menu_cancel2_seqData);
             gOptionsMenu->state = OPTIONS_SCENE_STATE_MAIN;
-            rumble_play_menu_cancel();
         }
     }
 
@@ -789,9 +720,6 @@ void options_scene_update_warning(void) {
             options_scene_move_warning_cursor(gOptionsMenu->warningCursorPos);
             sprite_set_anim_cel(gSpriteHandler, gOptionsMenu->uiWarningCursor, 0);
             play_sound(&s_menu_cursor1_seqData);
-            rumble_play_menu_move();
-        } else {
-            rumble_play_menu_limit();
         }
     }
 
@@ -801,9 +729,6 @@ void options_scene_update_warning(void) {
             options_scene_move_warning_cursor(gOptionsMenu->warningCursorPos);
             sprite_set_anim_cel(gSpriteHandler, gOptionsMenu->uiWarningCursor, 0);
             play_sound(&s_menu_cursor1_seqData);
-            rumble_play_menu_move();
-        } else {
-            rumble_play_menu_limit();
         }
     }
 }
@@ -839,25 +764,11 @@ u32 options_scene_inputs_enabled(void) {
 
 // Scene Stop
 void options_scene_stop(void *sVar, s32 dArg) {
-    u32 i;
-
-    for (i = 0; i < OPTIONS_BITMAP_LINE_SPRITE_COUNT; i++) {
-        options_scene_bitmap_delete_line_sprite(i);
-    }
-
-    if (gOptionsMenu->bitmapFont != NULL) {
-        delete_bmp_font_obj(gOptionsMenu->bitmapFont);
-        gOptionsMenu->bitmapFont = NULL;
-    }
-
     func_08008628();
     func_08004058();
 
     if (gOptionsMenu->clearDataOnExit) {
         clear_save_data();
-#ifdef PLAYTEST
-        set_playtest_save_data();
-#endif
         flush_save_buffer_to_sram();
         set_sound_mode(D_030046a8->data.unk294[8]);
         init_scene_static_var();

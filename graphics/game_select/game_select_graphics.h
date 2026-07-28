@@ -30,13 +30,10 @@ extern struct Animation anim_game_select_stage0[];
 extern struct Animation anim_game_select_stage6[];
 extern struct Animation anim_game_select_stage7[];
 extern struct Animation anim_game_select_stage8[];
-extern struct Animation anim_game_select_stage9[];
 extern struct Animation anim_game_select_border_perfect2[];
 extern struct Animation anim_game_select_border_perfect1[];
 extern struct Animation anim_game_select_cursor[];
 extern struct Animation anim_game_select_perfect_rank[];
-extern struct Animation anim_game_select_no_practice[];
-extern struct Animation anim_game_select_tempo_up[];
 
 /* GAME SELECT - COMPRESSED GRAPHICS */
 
@@ -106,12 +103,6 @@ extern const u8 icon_bouncy_road_2_bin[];
 extern const u8 icon_polyrhythm_2_bin[];
 extern const u8 icon_spaceball_2_bin[];
 extern const u8 icon_sneaky_spirits_2_bin[];
-extern const u8 icon_karate_man_extra_bin[];
-extern const u8 icon_rhythm_tweezers_extra_bin[];
-extern const u8 icon_marching_orders_extra_bin[];
-extern const u8 icon_spaceball_extra_bin[];
-extern const u8 icon_clappy_trio_extra_bin[];
-extern const u8 icon_remix1_extra_bin[];
 
 /* GAME SELECT ICONS - PALETTES */
 
@@ -126,7 +117,6 @@ extern const u8 icon_overlay_blank1_bin[]; // Blank
 extern const u8 icon_overlay_medal_bin[]; // Medal
 extern const u8 icon_overlay_new_game_bin[]; // New Game/Remix Circular Spotlight
 extern const u8 icon_overlay_blank2_bin[]; // Blank
-extern const u8 icon_overlay_perfect_bin[]; // Perfect
 
 /* GAME SELECT ICON OVERLAYS - PALETTES */
 

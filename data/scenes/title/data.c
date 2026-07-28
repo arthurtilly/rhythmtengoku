@@ -8,6 +8,7 @@
 
 
 // [D_089dcf68] Title Logo Characters
+<<<<<<< Updated upstream
 #ifdef PARADISE
 struct TitleLogoCharData title_logo_char_data[TOTAL_TITLE_LOGO_BUBBLES] = {
     /* RH */ {
@@ -50,6 +51,11 @@ struct TitleLogoCharData title_logo_char_data[TOTAL_TITLE_LOGO_BUBBLES] = {
 struct TitleLogoCharData title_logo_char_data[TOTAL_TITLE_LOGO_BUBBLES] = {
     /* RH */ {
         /* Anim. */ anim_title_logo_ri,
+=======
+struct TitleLogoCharData title_logo_char_data[TOTAL_TITLE_LOGO_BUBBLES] = {
+    /* RH */ {
+        /* Anim. */ anim_title_logo_ri,
+>>>>>>> Stashed changes
         /* X, Y  */ 75, 70,
         /* Angle */ 157
     },
@@ -85,6 +91,7 @@ struct TitleLogoCharData title_logo_char_data[TOTAL_TITLE_LOGO_BUBBLES] = {
     }
 };
 #endif
+
 
 // [D_089dcfa4] Graphics Table
 struct GraphicsTable title_gfx_table[] = {

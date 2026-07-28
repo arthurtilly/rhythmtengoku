@@ -42,13 +42,13 @@ struct CompressedData *reading_buffered_textures[] = {
 // [D_089d7fe8] Default Reading Material (Error Case)
 struct ReadingMaterial reading_material_error = {
     /* TITLE ---------------------------------------------------------- */
-        "\0023" "\0013" "\001C" "Error",
+        "\0023" "\0013" "\001C" "エラー",
     /* BODY ----------------------------------------------------------- */
         "\001C" "\0032" "\001l" "\n"
         "\n"
         "\n"
         "\n"
-        "Invalid Data",
+        "無効データ",
     /* STYLE ---------------------------------------------------------- */
         /* GFX */ (struct GraphicsTable[]) {
             /* BG Tileset */ {

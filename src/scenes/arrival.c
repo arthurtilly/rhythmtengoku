@@ -2,7 +2,6 @@
 #include "arrival.h"
 #include "graphics/arrival/arrival_graphics.h"
 #include "reading.h"
-#include "src/code_080092cc.h"
 
 
 /* READING NOTIFICATION SCENE */
@@ -67,19 +66,19 @@ void arrival_scene_start(void *sVar, s32 dArg) {
 
     printer = text_printer_create_new(get_current_mem_id(), 1, 240, 32);
     text_printer_set_x_y(printer, 24, 48);
-    text_printer_set_string(printer, "        Notification from the Rhythm Archives:"); // "Notification from the Rhythm Reference Room"
+    text_printer_set_string(printer, "　リズム資料室からお知らせ"); // "Notification from the Rhythm Reference Room"
     text_printer_update(printer);
     text_printer_update(printer);
 
     printer = text_printer_create_new(get_current_mem_id(), 1, 240, 30);
     text_printer_set_x_y(printer, 24, 96);
-    text_printer_set_string(printer, "　　　　　　　　　　　　　　　　　　　　        has been received!"); // "You have received [_______]."
+    text_printer_set_string(printer, "　　　　　　　　　　　　　　　　　　　　を入荷しました。"); // "You have received [_______]."
     text_printer_update(printer);
     text_printer_update(printer);
 
-    memcpy(message, "\"", 5);
+    memcpy(message, "「　", 5);
     strcat(message, title);
-    strcat(message, "\"");
+    strcat(message, "　」");
 
     printer = text_printer_create_new(get_current_mem_id(), 1, 240, 28);
     text_printer_set_x_y(printer, 0, 72);
@@ -120,9 +119,6 @@ void arrival_scene_update(void *sVar, s32 dArg) {
     if (option != gArrival->selectedOption) {
         gArrival->selectedOption = option;
         sprite_set_anim(gSpriteHandler, gArrival->dialogOptions, arrival_option_anim[option], 0, 1, 0, 0);
-        rumble_play_menu_move();
-    } else if (D_03004afc & (DPAD_LEFT | DPAD_RIGHT)) {
-        rumble_play_menu_limit();
     }
 
     if (D_03004afc & A_BUTTON) {
@@ -134,7 +130,6 @@ void arrival_scene_update(void *sVar, s32 dArg) {
 
         set_pause_beatscript_scene(FALSE);
         gArrival->inputsEnabled = FALSE;
-        rumble_play_menu_confirm();
     }
 }
 

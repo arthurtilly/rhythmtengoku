@@ -283,7 +283,7 @@ script sneaky_spirits_sub_08a02f24
     sneaky_spirits_show_ghost 6
     beat_anim
     rest 24
-    sneaky_spirits_print_text D_0805bb9D
+    sneaky_spirits_print_text D_0805bb78
     sneaky_spirits_freeze_slow_rain TRUE
     sneaky_spirits_set_rain_slowmo TRUE
     sneaky_spirits_show_tutorial_ghost TRUE

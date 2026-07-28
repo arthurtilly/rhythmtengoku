@@ -5,22 +5,22 @@
 
 
 // [D_089e50d8] All Animations
-struct Animation *marching_anim[][5] = {
-    /* 0x00 */ { anim_marching1_turn_l, anim_space_rabbit_turn_l, anim_marching1_turn_l, anim_marching2_turn_l, anim_marching_extra_turn_l },
-    /* 0x01 */ { anim_marching1_turn_r, anim_space_rabbit_turn_r, anim_marching1_turn_r, anim_marching2_turn_r, anim_marching_extra_turn_r },
-    /* 0x02 */ { anim_marching1_point_l, anim_space_rabbit_point_l, anim_marching1_point_l, anim_marching2_point_l, anim_marching_extra_point_l },
-    /* 0x03 */ { anim_marching1_point_r, anim_space_rabbit_point_r, anim_marching1_point_r, anim_marching2_point_r, anim_marching_extra_point_r },
-    /* 0x04 */ { anim_marching1_commander_angry, anim_space_rabbit_commander_angry, anim_marching1_commander_angry, anim_marching2_commander_angry, anim_marching_extra_commander_angry },
-    /* 0x05 */ { anim_marching1_stop_beat, anim_space_rabbit_stop_beat, anim_marching1_stop_beat, anim_marching2_stop_beat, anim_marching_extra_stop_beat },
-    /* 0x06 */ { anim_marching1_beat, anim_space_rabbit_beat, anim_marching1_beat, anim_marching2_beat, anim_marching_extra_beat },
-    /* 0x07 */ { anim_marching1_step_r, anim_space_rabbit_step_r, anim_marching1_step_r, anim_marching2_step_r, anim_marching_extra_step_r },
-    /* 0x08 */ { anim_marching1_step_l, anim_space_rabbit_step_l, anim_marching1_step_l, anim_marching2_step_l, anim_marching_extra_step_l },
-    /* 0x09 */ { anim_marching1_head_turn_r, anim_space_rabbit_head_turn_r, anim_marching1_head_turn_r, anim_marching2_head_turn_r, anim_marching_extra_head_turn_r },
-    /* 0x0A */ { anim_marching1_head_turn_l, anim_space_rabbit_head_turn_l, anim_marching1_head_turn_l, anim_marching2_head_turn_l, anim_marching_extra_head_turn_l },
-    /* 0x0B */ { anim_marching1_tutorial_icons, anim_space_rabbit_tutorial_icons, anim_marching1_tutorial_icons, anim_marching2_tutorial_icons, anim_marching_extra_tutorial_icons },
-    /* 0x0C */ { anim_marching1_angry_puff, anim_space_rabbit_angry_puff, anim_marching1_angry_puff, anim_marching2_angry_puff, anim_marching_extra_angry_puff },
-    /* 0x0D */ { anim_marching1_clap, anim_space_rabbit_clap, anim_marching1_clap, anim_marching2_clap, anim_marching_extra_clap },
-    /* 0x0E */ { anim_marching1_commander_annoyed, anim_space_rabbit_commander_annoyed, anim_marching1_commander_annoyed, anim_marching2_commander_annoyed, anim_marching_extra_commander_annoyed }
+struct Animation *marching_anim[][4] = {
+    /* 0x00 */ { anim_marching1_turn_l, anim_space_rabbit_turn_l, anim_marching1_turn_l, anim_marching2_turn_l },
+    /* 0x01 */ { anim_marching1_turn_r, anim_space_rabbit_turn_r, anim_marching1_turn_r, anim_marching2_turn_r },
+    /* 0x02 */ { anim_marching1_point_l, anim_space_rabbit_point_l, anim_marching1_point_l, anim_marching2_point_l },
+    /* 0x03 */ { anim_marching1_point_r, anim_space_rabbit_point_r, anim_marching1_point_r, anim_marching2_point_r },
+    /* 0x04 */ { anim_marching1_commander_angry, anim_space_rabbit_commander_angry, anim_marching1_commander_angry, anim_marching2_commander_angry },
+    /* 0x05 */ { anim_marching1_stop_beat, anim_space_rabbit_stop_beat, anim_marching1_stop_beat, anim_marching2_stop_beat },
+    /* 0x06 */ { anim_marching1_beat, anim_space_rabbit_beat, anim_marching1_beat, anim_marching2_beat },
+    /* 0x07 */ { anim_marching1_step_r, anim_space_rabbit_step_r, anim_marching1_step_r, anim_marching2_step_r },
+    /* 0x08 */ { anim_marching1_step_l, anim_space_rabbit_step_l, anim_marching1_step_l, anim_marching2_step_l },
+    /* 0x09 */ { anim_marching1_head_turn_r, anim_space_rabbit_head_turn_r, anim_marching1_head_turn_r, anim_marching2_head_turn_r },
+    /* 0x0A */ { anim_marching1_head_turn_l, anim_space_rabbit_head_turn_l, anim_marching1_head_turn_l, anim_marching2_head_turn_l },
+    /* 0x0B */ { anim_marching1_tutorial_icons, anim_space_rabbit_tutorial_icons, anim_marching1_tutorial_icons, anim_marching2_tutorial_icons },
+    /* 0x0C */ { anim_marching1_angry_puff, anim_space_rabbit_angry_puff, anim_marching1_angry_puff, anim_marching2_angry_puff },
+    /* 0x0D */ { anim_marching1_clap, anim_space_rabbit_clap, anim_marching1_clap, anim_marching2_clap },
+    /* 0x0E */ { anim_marching1_commander_annoyed, anim_space_rabbit_commander_annoyed, anim_marching1_commander_annoyed, anim_marching2_commander_annoyed }
 };
 
 // [D_089e51c8] Animation Table
@@ -110,11 +110,6 @@ struct GraphicsTable marching_orders_remix_7_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &marching_orders_remix_7_bg_map_text_bubble,
-        /* Dest. */ BG_MAP_BASE(0xF000),
-        /* Size  */ COMPRESSED_GFX_SOURCE
-    },
-    /* BG Map */ {
         /* Src.  */ &marching_orders_remix_7_bg_map_floor,
         /* Dest. */ BG_MAP_BASE(0xF800),
         /* Size  */ COMPRESSED_GFX_SOURCE
@@ -160,11 +155,6 @@ struct GraphicsTable marching_orders_2_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &marching_orders_bg_map_text_bubble,
-        /* Dest. */ BG_MAP_BASE(0xF000),
-        /* Size  */ COMPRESSED_GFX_SOURCE
-    },
-    /* BG Map */ {
         /* Src.  */ &marching_orders_2_bg_map_floor,
         /* Dest. */ BG_MAP_BASE(0xF800),
         /* Size  */ COMPRESSED_GFX_SOURCE
@@ -197,63 +187,12 @@ struct GraphicsTable marching_orders_2_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-// [D_089e5208] Graphics Table (Marching Orders)
-struct GraphicsTable marching_orders_extra_gfx_table[] = {
-    /* BG Tileset */ {
-        /* Src.  */ &marching_orders_extra_bg_tiles,
-        /* Dest. */ BG_TILESET_BASE(0),
-        /* Size  */ COMPRESSED_GFX_SOURCE 
-    },
-    /* BG Map */ {
-        /* Src.  */ &marching_orders_extra_bg_map,
-        /* Dest. */ BG_MAP_BASE(0xE800),
-        /* Size  */ COMPRESSED_GFX_SOURCE
-    },
-    /* BG Map */ {
-        /* Src.  */ &marching_orders_extra_bg_map_text_bubble,
-        /* Dest. */ BG_MAP_BASE(0xF000),
-        /* Size  */ COMPRESSED_GFX_SOURCE
-    },
-    /* BG Map */ {
-        /* Src.  */ &marching_orders_extra_bg_map_floor,
-        /* Dest. */ BG_MAP_BASE(0xF800),
-        /* Size  */ COMPRESSED_GFX_SOURCE
-    },
-    /* OBJ Tileset */ {
-        /* Src.  */ &marching_orders_extra_obj,
-        /* Dest. */ OBJ_TILESET_BASE(0),
-        /* Size  */ COMPRESSED_GFX_SOURCE
-    },
-    /* BG Palette */ {
-        /* Src.  */ marching_orders_extra_bg_pal,
-        /* Dest. */ BG_PALETTE_BUFFER(0),
-        /* Size  */ 0x140
-    },
-    /* OBJ Palette */ {
-        /* Src.  */ marching_orders_extra_obj_pal,
-        /* Dest. */ OBJ_PALETTE_BUFFER(0),
-        /* Size  */ 0x140
-    },
-    /* OBJ Palette */ {
-        /* Src.  */ D_089ccbc8[0],
-        /* Dest. */ OBJ_PALETTE_BUFFER(12.5),
-        /* Size  */ 0x8
-    },
-    /* OBJ Palette */ {
-        /* Src.  */ D_089ccbc8[4],
-        /* Dest. */ OBJ_PALETTE_BUFFER(13.5),
-        /* Size  */ 0x8
-    },
-    END_OF_GRAPHICS_TABLE
-};
-
 // [D_089e5358] Graphics Table Index
 struct GraphicsTable *marching_gfx_tables[] = {
     /* 0x00 */ marching_orders_1_gfx_table,
     /* 0x01 */ marching_orders_remix_7_gfx_table,
     /* 0x02 */ marching_orders_1_gfx_table,
-    /* 0x03 */ marching_orders_2_gfx_table,
-    /* 0x04 */ marching_orders_extra_gfx_table,
+    /* 0x03 */ marching_orders_2_gfx_table
 };
 
 // [D_089e5368] Position of <sprite> per Animation Frame
@@ -423,12 +362,12 @@ EngineEvent marching_common_events[] = {
 
 // [D_089e54fc] Engine Events
 EngineEvent marching_engine_events[] = {
-    /* 0x00 */ marching_play_action,
-    /* 0x01 */ marching_set_commander_action,
-    /* 0x02 */ marching_set_tutorial_icon,
-    /* 0x03 */ marching_enable_conveyor,
-    /* 0x04 */ marching_set_marchers_pointing,
-    /* 0x05 */ marching_play_sound,
+    /* 0x00 */ func_08034544,
+    /* 0x01 */ func_080346e0,
+    /* 0x02 */ func_080347c0,
+    /* 0x03 */ func_0803481c,
+    /* 0x04 */ func_08034850,
+    /* 0x05 */ func_08034ae4,
     /* 0x06 */ marching_engine_event_stub
 };
 
@@ -818,6 +757,7 @@ struct MarchingSfxData marching_sfx_table[][18] = {
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         }
+<<<<<<< Updated upstream
     },
     /* ver4 */ {
         /* SHOUT_START */ {
@@ -1450,6 +1390,8 @@ struct MarchingSfxData marching_sfx_table[][20] = {
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         }
+=======
+>>>>>>> Stashed changes
     }
 };
 #endif

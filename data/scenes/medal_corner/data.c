@@ -10,15 +10,6 @@
 extern struct MedalCornerMenu toys_menu_data;
 extern struct MedalCornerMenu endless_menu_data;
 extern struct MedalCornerMenu lessons_menu_data;
-extern const u8 endlessgames_bg_bin;
-extern const u8 endlessgames_bg_map_bin;
-extern const u8 endlessgames_obj_bin;
-extern const u8 rhythmtoys_bg_bin;
-extern const u8 rhythmtoys_bg_map_bin;
-extern const u8 rhythmtoys_obj_bin;
-extern const u8 drumlessons_bg_bin;
-extern const u8 drumlessons_bg_map_bin;
-extern const u8 drumlessons_obj_bin;
 
 // [D_089dd498] Medal Corner Menus
 struct MedalCornerMenu *medal_corner_menu_table[] = {

@@ -1,7 +1,6 @@
 #include "global.h"
 #include "studio.h"
 #include "graphics/studio/studio_graphics.h"
-#include "src/code_080092cc.h"
 
 
 /* STUDIO DRUM LIST */
@@ -101,18 +100,18 @@ const char *studio_mem_warnings_text[] = {
     /* NO MEMORY -------------------------------------- */
         // [ You can't save any more data. ]
         // [ Perform without saving? ]
-        "Your memory is full.\n"
-        "Perform anyway?",
+        "メモリがいっぱいです。\n"
+        "データは残らないけど演奏する？",
     /* TOO MANY REPLAYS ------------------------------- */
         // [ You can only save 10 recitals. ]
         // [ Perform without saving? ]
-        "There's no more room for\n"
-        "saving. Perform anyway?",
+        "演奏データは10コしか残せません。\n"
+        "データは残らないけど演奏する？",
     /* LOW MEMORY ------------------------------------- */
         // [ There's not much memory left. ]
         // [ Perform anyway? ]
-        "Save memory is running low.\n"
-        "Do you want to perform anyway?"
+        "メモリが少なくなってきてます。\n"
+        "このまま演奏する？"
     /* ------------------------------------------------ */
 };
 
@@ -142,7 +141,6 @@ void studio_drum_list_update(void) {
         case STUDIO_LIST_EV_CONFIRM:
             if (!D_030046a8->data.drumKitsUnlocked[listbox_get_sel_item(gStudio->drumList)]) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_error_seqData);
-                rumble_play_menu_error();
             } else {
                 remaining = get_remaining_replay_data_space(&D_030046a8->data.drumReplaysAlloc) >> 8;
                 if (remaining != 0) {
@@ -159,18 +157,15 @@ void studio_drum_list_update(void) {
                 if (warningReason != 0) {
                     studio_warning_create(STUDIO_WARNING_OPT_Y, studio_mem_warnings_text[warningReason], studio_drum_list_warning_memory_result, 0, &s_menu_se24_seqData);
                     play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
-                    rumble_play_menu_confirm();
                 } else {
                     studio_drum_list_exit_to_drumming();
                     play_sound_in_player(MUSIC_PLAYER_2, &s_menu_se24_seqData);
-                    rumble_play_menu_confirm();
                 }
             }
             break;
 
         case STUDIO_LIST_EV_CANCEL:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
-            rumble_play_menu_cancel();
             listbox_hide_sel_sprite(gStudio->drumList);
             listbox_show_sel_sprite(gStudio->optionList);
             studio_scene_pan_to_menu(STUDIO_MENU_OPTION_LIST);
@@ -178,19 +173,11 @@ void studio_drum_list_update(void) {
             break;
 
         case STUDIO_LIST_EV_SCROLL_UP:
-            if (listbox_get_sel_item(gStudio->drumList) <= 0) {
-                rumble_play_menu_limit();
-            } else {
-                listbox_scroll_up(gStudio->drumList);
-            }
+            listbox_scroll_up(gStudio->drumList);
             break;
 
         case STUDIO_LIST_EV_SCROLL_DOWN:
-            if (listbox_get_sel_item(gStudio->drumList) >= (gStudio->drumList->totalItems - 1)) {
-                rumble_play_menu_limit();
-            } else {
-                listbox_scroll_down(gStudio->drumList);
-            }
+            listbox_scroll_down(gStudio->drumList);
             break;
     }
 }

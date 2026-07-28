@@ -31,51 +31,51 @@ define_gameplay_scene scene_rap_women_unused, script_rap_women_unused_entry
 @ Rap Women (Unused) - Text
 
 text text_rap_women_unused_juji_desu_ka
-    .asciz ".b:1Ｉｔ’ｓ　１０　ＡＭ，　.b:0ｈｕｈ？.8:1"
+    .asciz ".b:1ＡＭ１０：００　です:0か？"
 endtext
 
 text text_rap_women_unused_oyatsu_desu_ka
-    .asciz ".b:1Ｉｔ’ｓ　ｓｎａｃｋ　ｔｉｍｅ，　.b:0ｈｕｈ？.8:1"
+    .asciz ".b:1おやつ　です:0か？"
 endtext
 
 text text_rap_women_unused_naisho_desu_ka
-    .asciz ".b:1Ｗｈｏ’ｓ　ｔｏ　ｋｎｏｗ，　.b:0ｈｕｈ？.8:1"
+    .asciz ".b:1ナイショです:0か？"
 endtext
 
 text text_rap_women_unused_kare_no_oyatsu_da_ne
-    .asciz ".9:1Ｔｈｅｓｅ　ａｒｅ　ａｌｌ　ｔｈｅｉｒ　ｓｎａｃｋｓ，.9:0　ｙａ　ｓｅｅ？.8:1"
+    .asciz ".9:1カレのおやつ　だ:0ね"
 endtext
 
 text text_rap_women_unused_tabeteii_kamo_ne
-    .asciz ".9:1Ｅａｔ　’ｅｍ　ａｌｌ　ｕｐ，　.9:0ｙａ　ｆｅｅｌ　ｍｅ？.8:1"
+    .asciz ".9:1たべていー　かも:0ネ"
 endtext
 
 text text_rap_women_unused_aketeii_kamo_ne
-    .asciz ".9:1Ｏｐｅｎ　’ｅｍ　ｕｐ，　.9:0ｙａ　ｆｅｅｌ　ｍｅ？.8:1"
+    .asciz ".9:1あけていー　かも:0ネ"
 endtext
 
 text text_rap_women_unused_oyatsu_wa_saikou
-    .asciz ".a:1Ｓｎａｃｋｉｎｇ　ｉｓ　.a:0ｓｏ　ＡＷＥＳＯＭＥ！.8:1"
+    .asciz ".a:1おやつは　:0サイコー！！"
 endtext
 
 text text_rap_women_unused_kibun_wa_saikou
-    .asciz ".a:1Ｉ　ｆｅｅｌ　.a:0ｓｏ　ＡＷＥＳＯＭＥ！.8:1"
+    .asciz ".a:1きぶんは　:0サイコー！！"
 endtext
 
 text text_rap_women_unused_amakute_saikou
-    .asciz ".a:1Ｓｗｅｅｔｓ　ａｒｅ　.a:0ｓｏ　ＡＷＥＳＯＭＥ！.8:1"
+    .asciz ".a:1あまくて　:0サイコー！！"
 endtext
 
 text text_rap_women_unused_betsubara_saikou
-    .asciz ".a:1Ｃａｋｅｓ　ａｒｅ　.a:0ｓｏ　ＡＷＥＳＯＭＥ！.8:1"
+    .asciz ".a:1べつばら　:0サイコー！！"
 endtext
 
 text text_rap_women_unused_kare_ni_wa_naisho
-    .asciz ".a:1Ｃｌｕｅｌｅｓｓ　ｔｈａｔ　ｗｅ　.a:0ＳＴＯＬＥ　’ＥＭ！.8:1"
+    .asciz ".a:1カレには　:0ナイショー！！"
 endtext
 
 text text_rap_women_unused_dare_ni_mo_naisho
-    .asciz ".a:1Ｔｅｌｌ　’ｅｍ　ｗｅ　ａｒｅ　.a:0ＬＯＡＴＨＳＯＭＥ！.8:1"
+    .asciz ".a:1ダレにも　:0ナイショー！！"
 endtext
 
 
@@ -214,6 +214,7 @@ script script_rap_women_unused_main
     clear_text_f
     beat_anim
     rest 24
+<<<<<<< Updated upstream
     #ifdef SFX
     rest 16
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
@@ -226,6 +227,12 @@ script script_rap_women_unused_main
     print_text_f text_rap_women_unused_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
     #endif
+=======
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+>>>>>>> Stashed changes
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -245,6 +252,7 @@ script script_rap_women_unused_main
     rest 24
     beat_anim
     rest 24
+<<<<<<< Updated upstream
     #ifdef SFX
     rest 16
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
@@ -257,6 +265,12 @@ script script_rap_women_unused_main
     print_text_f text_rap_women_unused_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
     #endif
+=======
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+>>>>>>> Stashed changes
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -651,6 +665,7 @@ script script_rap_women_unused_main
     clear_text_f
     beat_anim
     rest 24
+<<<<<<< Updated upstream
     #ifdef SFX
     rest 16
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
@@ -663,6 +678,12 @@ script script_rap_women_unused_main
     print_text_f text_rap_women_unused_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
     #endif
+=======
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+>>>>>>> Stashed changes
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -779,6 +800,7 @@ script script_rap_women_unused_main
     rest 24
     beat_anim
     rest 24
+<<<<<<< Updated upstream
     #ifdef SFX
     rest 16
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
@@ -791,6 +813,12 @@ script script_rap_women_unused_main
     print_text_f text_rap_women_unused_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
     #endif
+=======
+    rest 24
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+>>>>>>> Stashed changes
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24

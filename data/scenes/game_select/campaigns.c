@@ -11,7 +11,7 @@
 
 
 // [D_089cdf24] Perfect Campaign Gifts
-struct CampaignGiftData campaign_gifts_table[TOTAL_PERFECT_CAMPAIGNS] = {
+struct CampaignGiftData campaign_gifts_table[] = {
     /* REMIX1 */ {
         /* Grid Pos. */ 2, 6,
         /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
@@ -252,36 +252,6 @@ struct CampaignGiftData campaign_gifts_table[TOTAL_PERFECT_CAMPAIGNS] = {
         /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
         /* Gift ID   */ STUDIO_DRUM_TECHNO
     },
-    /* KARATE_MAN_EXTRA */ {
-        /* Grid Pos. */ 10, 11,
-        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
-        /* Gift ID   */ READING_MATERIAL_CREDITS
-    },
-    /* RHYTHM_TWEEZERS_EXTRA */ {
-        /* Grid Pos. */ 10, 10,
-        /* Gift Type */ CAMPAIGN_GIFT_SONG,
-        /* Gift ID   */ STUDIO_SONG_SILENCE
-    },
-    /* MARCHNG_ORDERS_EXTRA */ {
-        /* Grid Pos. */ 10, 9,
-        /* Gift Type */ CAMPAIGN_GIFT_SONG,
-        /* Gift ID   */ STUDIO_SONG_SILENCE
-    },
-    /* SPACEBALL_EXTRA */ {
-        /* Grid Pos. */ 10, 8,
-        /* Gift Type */ CAMPAIGN_GIFT_SONG,
-        /* Gift ID   */ STUDIO_SONG_SILENCE
-    },
-    /* CLAPPY_TRIO_EXTRA */ {
-        /* Grid Pos. */ 10, 7,
-        /* Gift Type */ CAMPAIGN_GIFT_SONG,
-        /* Gift ID   */ STUDIO_SONG_SILENCE
-    },
-    /* REMIX_1_EXTRA */ {
-        /* Grid Pos. */ 10, 6,
-        /* Gift Type */ CAMPAIGN_GIFT_SONG,
-        /* Gift ID   */ STUDIO_SONG_SILENCE
-    }
 };
 
 

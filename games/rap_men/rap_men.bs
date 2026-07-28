@@ -887,9 +887,12 @@ script script_rap_men_practice
     rest 24
     disable_play_inputs
     clear_text_f
+<<<<<<< Updated upstream
     #ifdef PLUS
     print_text_f text_rap_men_wakarimasu_ka
     #endif
+=======
+>>>>>>> Stashed changes
     play_sfx s_rap_wakari_desuka_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
@@ -904,14 +907,16 @@ script script_rap_men_practice
     rest 24
     spawn_cue CUE_UN
     rest 24
-    clear_text_f
     play_sfx s_intro_uh_seqData
     beat_anim
     rest 24
     rest 24
+<<<<<<< Updated upstream
     #ifdef PLUS
     print_text_f text_rap_men_wakarimasu_ka
     #endif
+=======
+>>>>>>> Stashed changes
     play_sfx s_rap_wakari_desuka_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
@@ -926,7 +931,6 @@ script script_rap_men_practice
     rest 24
     spawn_cue CUE_UN
     rest 24
-    clear_text_f
     play_sfx s_intro_uh_seqData
     beat_anim
     rest 24
@@ -976,9 +980,12 @@ script script_rap_men_practice
         rest 24
         rest 24
         clear_text_f
+<<<<<<< Updated upstream
         #ifdef PLUS
         print_text_f text_rap_men_wakarimasu_ka
         #endif
+=======
+>>>>>>> Stashed changes
         play_sfx s_rap_wakari_desuka_seqData
         rap_men_animate_rapper ANIM_DESUKA
         beat_anim
@@ -998,10 +1005,13 @@ script script_rap_men_practice
         beat_anim
         rest 24
         rest 24
+<<<<<<< Updated upstream
         clear_text_f
         #ifdef PLUS
         print_text_f text_rap_men_wakarimasu_ka
         #endif
+=======
+>>>>>>> Stashed changes
         play_sfx s_rap_wakari_desuka_seqData
         rap_men_animate_rapper ANIM_DESUKA
         beat_anim
@@ -1021,10 +1031,13 @@ script script_rap_men_practice
         beat_anim
         rest 24
         rest 24
+<<<<<<< Updated upstream
         clear_text_f
         #ifdef PLUS
         print_text_f text_rap_men_wakarimasu_ka
         #endif
+=======
+>>>>>>> Stashed changes
         play_sfx s_rap_wakari_desuka_seqData
         rap_men_animate_rapper ANIM_DESUKA
         beat_anim
@@ -1130,9 +1143,12 @@ script script_rap_men_practice
         rest 24
         rest 24
         clear_text_f
+<<<<<<< Updated upstream
         #ifdef PLUS
         print_text_f text_rap_men_tanoshii_kamo_ne
         #endif
+=======
+>>>>>>> Stashed changes
         play_sfx s_rap_tanosi_kamone_seqData
         rap_men_animate_rapper ANIM_HONTO
         beat_anim
@@ -1153,9 +1169,12 @@ script script_rap_men_practice
         rest 24
         play_sfx s_intro_uh_seqData
         rest 24
+<<<<<<< Updated upstream
         #ifdef PLUS
         print_text_f text_rap_men_tanoshii_kamo_ne
         #endif
+=======
+>>>>>>> Stashed changes
         play_sfx s_rap_tanosi_kamone_seqData
         rap_men_animate_rapper ANIM_HONTO
         beat_anim
@@ -1176,9 +1195,12 @@ script script_rap_men_practice
         rest 24
         play_sfx s_intro_uh_seqData
         rest 24
+<<<<<<< Updated upstream
         #ifdef PLUS
         print_text_f text_rap_men_tanoshii_kamo_ne
         #endif
+=======
+>>>>>>> Stashed changes
         play_sfx s_rap_tanosi_kamone_seqData
         rap_men_animate_rapper ANIM_HONTO
         beat_anim
@@ -1259,9 +1281,12 @@ script script_rap_men_practice
         rest 24
         rest 24
         clear_text_f
+<<<<<<< Updated upstream
         #ifdef PLUS
         print_text_f text_rap_men_kimi_tte_saikou
         #endif
+=======
+>>>>>>> Stashed changes
         play_sfx s_rap_kimitte_saiko_seqData
         rap_men_animate_rapper ANIM_SAIKO
         beat_anim
@@ -1282,9 +1307,12 @@ script script_rap_men_practice
         beat_anim
         rest 24
         rest 24
+<<<<<<< Updated upstream
         #ifdef PLUS
         print_text_f text_rap_men_kimi_tte_saikou
         #endif
+=======
+>>>>>>> Stashed changes
         play_sfx s_rap_kimitte_saiko_seqData
         rap_men_animate_rapper ANIM_SAIKO
         beat_anim
@@ -1305,9 +1333,12 @@ script script_rap_men_practice
         beat_anim
         rest 24
         rest 24
+<<<<<<< Updated upstream
         #ifdef PLUS
         print_text_f text_rap_men_kimi_tte_saikou
         #endif
+=======
+>>>>>>> Stashed changes
         play_sfx s_rap_kimitte_saiko_seqData
         rap_men_animate_rapper ANIM_SAIKO
         beat_anim

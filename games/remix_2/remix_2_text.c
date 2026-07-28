@@ -29,6 +29,7 @@ const char D_08068008[] = "Ｄｏｎ’ｔ　ｆａｌｌ　ｂａｃｋ！";
 
 const char D_08068018[] = "Ｋｅｅｐ　ｕｐ　ｔｈｅ　ｐａｃｅ！";
 
+<<<<<<< Updated upstream
 const char D_08068019[] = "１";
 
 const char D_0806801B[] = "２";
@@ -39,4 +40,6 @@ const char D_0806801D[] = "Ｎｏｗ！";
 
 const char D_0806801F[] = "Ｂａｃｋ　ｔｏ　ｎｏｒｍａｌ，　ｂｅ　ｒｅａｄｙ！";
 
+=======
+>>>>>>> Stashed changes
 const char D_08068028[] = "";

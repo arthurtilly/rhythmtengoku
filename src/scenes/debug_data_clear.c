@@ -49,9 +49,6 @@ void data_clear_scene_start(void *sVar, s32 *dArg) {
     gDataClear->inputsEnabled = FALSE;
 
     clear_save_data();
-#ifdef PLAYTEST
-    set_playtest_save_data();
-#endif
     flush_save_buffer_to_sram();
     set_next_scene(&scene_title);
 }

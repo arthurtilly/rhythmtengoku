@@ -149,29 +149,10 @@ void midi_player_stop(struct SoundPlayer *soundPlayer) {
 
 // Set Pause
 void midi_player_set_pause(struct SoundPlayer *soundPlayer, u8 pause) {
-    struct MidiBus *midiBus = soundPlayer->midiBus;
-    u32 i;
-
     soundPlayer->isPaused = pause;
 
     if (pause) {
-        midiBus->isPaused = TRUE;
-
-        for (i = 0; i < gMidiSoundChannelCount; i++) {
-            if (gMidiSoundChannelPool[i].active && (gMidiSoundChannelPool[i].midiBus == midiBus)) {
-                midi_sampler_stop(i);
-            }
-        }
-
-        midi_channel_stop_psg_all(midiBus);
-    } else {
-        midiBus->isPaused = FALSE;
-
-        for (i = 0; i < gMidiSoundChannelCount; i++) {
-            if (gMidiSoundChannelPool[i].active && (gMidiSoundChannelPool[i].midiBus == midiBus)) {
-                gMidiSamplerPool[i].active = TRUE;
-            }
-        }
+        midi_channel_stop_all(soundPlayer->midiBus);
     }
 }
 

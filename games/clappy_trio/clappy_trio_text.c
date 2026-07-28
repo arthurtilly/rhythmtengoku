@@ -5,7 +5,7 @@
 /* Game Text - The Clappy Trio */
 
 
-const char D_0805ad94[] = "Work on your basics.";
+const char D_0805ad94[] = "You need to learn the basics.";
 
 const char D_0805adb0[] = "";
 
@@ -21,7 +21,7 @@ const char D_0805ae1c[] = "You couldn't keep up in the fast parts.";
 
 const char D_0805ae34[] = "Peer Review";
 
-const char D_0805ae40[] = "Work on your basics.";
+const char D_0805ae40[] = "You need to learn the basics.";
 
 const char D_0805ae5c[] = "";
 
@@ -39,9 +39,9 @@ const char D_0805aee8[] = "You were on top of the fast parts!";
 
 const char D_0805af08[] = "Peer Review";
 
-const char D_0805af14[] = "Hi, we're the Clappy Trio!";
+const char D_0805af14[] = "We're the Clappy Trio!";
 
-const char D_0805af30[] = "We clap our hands on a steady beat.";
+const char D_0805af30[] = "Nobody claps like us!";
 
 const char D_0805af48[] = "You do the third clap, OK?";
 
@@ -51,7 +51,7 @@ const char D_0805af60[] = "Let's practise!";
 const char D_0805af60[] = "Let's practice!";
 #endif
 
-const char D_0805af7c[] = "Press ‡M for the third clap.";
+const char D_0805af7c[] = "Press ‡M to clap.";
 
 const char D_0805afa0[] = "OK.";
 
@@ -61,4 +61,4 @@ const char D_0805afb8[] = "Let's speed it up a bit.";
 
 const char D_0805afd0[] = "OK.";
 
-const char D_0805afd4[] = "It's time for our show! Clap like you mean it!";
+const char D_0805afd4[] = "All right, it's showtime!";

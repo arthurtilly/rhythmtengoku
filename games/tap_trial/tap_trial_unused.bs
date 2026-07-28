@@ -222,7 +222,6 @@ script script_tap_trial_unused_main
     start_tracking_inputs
     set_tempo 120
     set_music_volume 180
-    enable_pause_menu
     set_marking_criteria 0
     print_text_f D_0805c174
     beat_anim
@@ -520,7 +519,6 @@ return
 
 script script_tap_trial_unused_practice
     set_tempo 120
-    enable_pause_menu
     print_text_f D_0805c1bc
     rest 24
     rest 24

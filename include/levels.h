@@ -72,41 +72,18 @@ enum PerfectCampaignsEnum {
     /* 45 */ CAMPAIGN_SNAPPY_TRIO,
     /* 46 */ CAMPAIGN_KARATE_MAN_2,
     /* 47 */ CAMPAIGN_BOUNCY_ROAD_2,
+    /* <insert new campaigns here> */
 
-    /* -- */ TOTAL_BASE_PERFECT_CAMPAIGNS,
-
-    /* -- */ START_EXTRA_PERFECT_CAMPAIGNS = TOTAL_BASE_PERFECT_CAMPAIGNS,
-
-    /* 48 */ CAMPAIGN_KARATE_MAN_EXTRA = START_EXTRA_PERFECT_CAMPAIGNS,
-    /* 49 */ CAMPAIGN_RHYTHM_TWEEZERS_EXTRA,
-    /* 50 */ CAMPAIGN_MARCHING_ORDERS_EXTRA,
-    /* 51 */ CAMPAIGN_SPACEBALL_EXTRA,
-    /* 52 */ CAMPAIGN_CLAPPY_TRIO_EXTRA,
-    /* 53 */ CAMPAIGN_REMIX_1_EXTRA,
-
-    /* -- */ END_EXTRA_PERFECT_CAMPAIGNS,
-
-    /* -- */ TOTAL_PERFECT_CAMPAIGNS = END_EXTRA_PERFECT_CAMPAIGNS,
-    /* -- */ TOTAL_EXTRA_PERFECT_CAMPAIGNS = END_EXTRA_PERFECT_CAMPAIGNS - START_EXTRA_PERFECT_CAMPAIGNS
+    /* -- */ TOTAL_PERFECT_CAMPAIGNS
 };
 
 
-#define BASE_CAMPAIGN_MILESTONE_TOTAL ((u32)TOTAL_BASE_PERFECT_CAMPAIGNS)
-
-#ifdef TEMPOUP
-#define ACTIVE_AVAILABLE_CAMPAIGNS ((u32)TOTAL_PERFECT_CAMPAIGNS)
-#else
-#define ACTIVE_AVAILABLE_CAMPAIGNS ((u32)TOTAL_BASE_PERFECT_CAMPAIGNS)
-#endif
-
-
-#define BASE_CAMPAIGN_MEDAL_GATE (BASE_CAMPAIGN_MILESTONE_TOTAL)
-
-#define TOTAL_RHYTHM_GAMES (ACTIVE_AVAILABLE_CAMPAIGNS)
+// Total standard games and remixes, i.e. those within the main campaign.
+#define TOTAL_RHYTHM_GAMES ((u32)TOTAL_PERFECT_CAMPAIGNS)
 
 
 // Total Medals to collect.
-#define MAX_MEDALS (TOTAL_RHYTHM_GAMES)
+#define MAX_MEDALS TOTAL_RHYTHM_GAMES
 
 
 // Default score for Levels.
@@ -114,7 +91,7 @@ enum PerfectCampaignsEnum {
 
 
 // Maximum score for Levels.
-#define MAX_LEVEL_SCORE (1000)
+#define MAX_LEVEL_SCORE 1000
 
 
 // Types of Levels, relevant to scene transitions and icon borders.
@@ -133,8 +110,7 @@ enum LevelCompletionStatesEnum {
     /* 02 */ LEVEL_STATE_CLOSED,
     /* 03 */ LEVEL_STATE_OPEN,
     /* 04 */ LEVEL_STATE_CLEARED,
-    /* 05 */ LEVEL_STATE_HAS_MEDAL,
-    /* 06 */ LEVEL_STATE_PERFECT
+    /* 05 */ LEVEL_STATE_HAS_MEDAL
 };
 
 
@@ -196,20 +172,7 @@ enum RhythmGameLevelsEnum {
     /* 52 */ LEVEL_DRUM_LESSONS,
     /* 53 */ LEVEL_STAFF_CREDIT,
     /* 54 */ LEVEL_LIVE_MENU,
+    /* <insert new levels here> */
 
-    /* -- */ TOTAL_BASE_LEVELS,
-    
-    /* -- */ START_EXTRA_LEVELS = TOTAL_BASE_LEVELS,
-
-    /* 55 */ LEVEL_KARATE_MAN_EXTRA = START_EXTRA_LEVELS,
-    /* 56 */ LEVEL_RHYTHM_TWEEZERS_EXTRA,
-    /* 57 */ LEVEL_MARCHING_ORDERS_EXTRA,
-    /* 58 */ LEVEL_SPACEBALL_EXTRA,
-    /* 59 */ LEVEL_CLAPPY_TRIO_EXTRA,
-    /* 60 */ LEVEL_REMIX_1_EXTRA,
-
-    /* -- */ END_EXTRA_LEVELS,
-
-    /* -- */ TOTAL_LEVELS = END_EXTRA_LEVELS,
-    /* -- */ TOTAL_EXTRA_LEVELS = END_EXTRA_LEVELS - START_EXTRA_LEVELS,
+    /* -- */ TOTAL_LEVELS
 };

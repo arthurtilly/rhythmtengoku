@@ -66,24 +66,6 @@
     load_game rhythm_tweezers_engine, 5
 .endm
 
-@ Load Game: Rhythm Tweezers (Extra) (First Vegetable: Onion)
-.macro load_rhythm_tweezers_extra
-    load_rhythm_tweezers_labels
-    load_game rhythm_tweezers_engine, 6
-.endm
-
-@ Load Game: Rhythm Tweezers (Extra) (First Vegetable: Turnip)
-.macro load_rhythm_tweezers_extra_turnip
-    load_rhythm_tweezers_labels
-    load_game rhythm_tweezers_engine, 7
-.endm
-
-@ Load Game: Rhythm Tweezers (Extra) (First Vegetable: Potato)
-.macro load_rhythm_tweezers_extra_potato
-    load_rhythm_tweezers_labels
-    load_game rhythm_tweezers_engine, 8
-.endm
-
 
 /* ---------------- Game Engine Events ---------------- */
 

@@ -14,10 +14,6 @@
 #include "src/midi/midi.h"
 #include "src/lib_0804ca80.h"
 #include "src/backdrop.h"
-#include "src/code_080092cc.h"
-#include "src/scenes/gameplay.h"
-#include "src/scenes/game_select.h"
-#include "src/memory.h"
 
 // Could use better split
 
@@ -124,7 +120,6 @@ void start_beatscript_scene(u32 mode) {
     D_030053c0.bypassLoops = FALSE;
     D_030053c0.exitLoopNextUpdate = FALSE;
     D_030053c0.paused = FALSE;
-    D_030053c0.isLocalized = FALSE;
     D_030053c0.musicPlayer = NULL;
     D_030053c0.unk0_b7 = FALSE;
     D_030053c0.unk0_b6 = FALSE;
@@ -418,21 +413,10 @@ void stop_beatscript_scene(void) {
     }
 }
 
-extern u8 haveSeenDisclaimer;
 
 // Set Tempo
 void set_beatscript_tempo(u16 tempo) {
     s32 speed;
-
-    if (tempo > 1000) {
-        tempo -= 1000;
-    } else if (!haveSeenDisclaimer) {
-        if (agb_random(2) == 0) {
-            tempo = agb_random(60) + 1;
-        } else {
-            tempo = agb_random(200) + 240;
-        }
-    }
 
     D_030053c0.scriptBaseBPM = tempo;
     if (D_030053c0.unk0_b6 && D_030053c0.unk0_b7) {
@@ -1054,7 +1038,7 @@ void func_0800c694(u32 arg) {
         arg = 24;
     }
 
-    rumble_request_pulse(arg);
+    func_08009564(arg);
 }
 
 
@@ -1319,6 +1303,7 @@ s16 beatscript_stream_get_sprite_for_motion(s16 *spritePool, s16 args, s16 *dest
 }
 
 
+<<<<<<< Updated upstream
 enum BeatScriptArgumentFormat {
     BEATSCRIPT_ARG_TYPE_32,
     BEATSCRIPT_ARG_TYPE_16,
@@ -2272,6 +2257,10 @@ void func_0800cb28(u32 arg) { // r10
             return;
     }
 }
+=======
+// Beatscript Stream - Update
+#include "asm/code_0800b778/asm_0800cb28.s"
+>>>>>>> Stashed changes
 
 
 // Stub

@@ -23,7 +23,7 @@ const char D_08067778[] = "The audience says...";
 
 const char text_bon_odori_ha[] = ".0:0" "Ｈａａ～";
 
-const char text_bon_odori_hanabi_agare_ba[] = ".0:0" "Ｈａｎａｂｉ　ａｇａｒｅ　ｂａ～";
+const char text_bon_odori_hanabi_agare_ba[] = ".0:0" "Ｏｈ　ｗｈｅｎ　ｔｈｅ　ｆｉｒｅｗｏｒｋｓ　ｆｌｙ～";
 
 const char text_bon_odori_don_don_pan_pan[] = ".1:0" "Ｄｏ－ｎ　ｄｏ－ｎ　" ".2:0" "ｐａ－ｎ　ｐａ－ｎ";
 
@@ -31,21 +31,21 @@ const char text_bon_odori_dondo_pan_pan[] = ".1:0" "Ｄｏｎｄｏ　" ".2:0" "ｐａ－
 
 const char text_bon_odori_haa[] = ".0:0" "Ｈａａ～　Ａｈ～";
 
-const char text_bon_odori_kansei_agaru[] = ".0:0" "Ｋａｎｓｅｉ　ａｇａｒｕ～";
+const char text_bon_odori_kansei_agaru[] = ".0:0" "Ｗｅ’ｌｌ　ｓｅｎｄ　ｏｕｒ　ｃｈｅｅｒｓ　ｕｐ　ｈｉｇｈ～";
 
-const char text_bon_odori_ninki_agare_ba[] = ".0:0" "Ｎｉｎｋｉ　ａｇａｒｅ　ｂａ～";
+const char text_bon_odori_ninki_agare_ba[] = ".0:0" "Ｉｆ　ｗｅ　ｐｅｒｆｏｒｍ　ｆｏｒ　ｍｏｒｅ　ｅｙｅｓ～";
 
-const char text_bon_odori_kyuryo_agaru[] = ".0:0" "Ｋｙｕｕｒｙｏｕ　ａｇａｒｕ～";
+const char text_bon_odori_kyuryo_agaru[] = ".0:0" "Ｏｕｒ　ｐｒｏｆｉｔｓ　ｌｉｋｅｌｙ　ｗｉｌｌ　ｒｉｓｅ～";
 
-const char text_bon_odori_matsuri_da_wasshoi[] = ".0:0" "Ｍａｔｓｕｒｉ　ｄａ　ｗａｓｓｈｏｉ！";
+const char text_bon_odori_matsuri_da_wasshoi[] = ".0:0" "Ｔｉｍｅ　ｆｏｒ　ｃｅｌｅｂｒａｔｉｏｎ！";
 
 const char text_bon_odori_dondo_panpa_dondo_panpa[] = ".1:0" "Ｄｏｎｄｏ　" ".2:0" "ｐａｎｐａ　" ".1:0" "ｄｏｎｄｏ　" ".2:0" "ｐａｎｐａ";
 
-const char text_bon_odori_nippon_chu_ga_wasshoi[] = ".0:0" "Ｎｉｐｐｏｎ　ｃｈｕｕ　ｇａ　ｗａｓｓｈｏｉ！";
+const char text_bon_odori_nippon_chu_ga_wasshoi[] = ".0:0" "Ａｌｌ　ｔｈｒｏｕｇｈｏｕｔ　ｔｈｅ　ｎａｔｉｏｎ！";
 
 const char text_bon_odori_don_don_pan[] = ".1:0" "Ｄｏ－ｎ　ｄｏ－ｎ　" ".2:0" "ｐａｎ";
 
-const char text_bon_odori_sore_hikkuri_kaette[] = ".0:0" "Ｓｏｒｅ　ｈｉｋｋｕｒｉ　ｋａｅｔｔｅ";
+const char text_bon_odori_sore_hikkuri_kaette[] = ".0:0" "Ｓｏ　ｌｅｔ’ｓ　ａｌｌ　ｔｕｒｎ　ａｒｏｕｎｄ　ａｎｄ";
 
 const char text_bon_odori_ha_bon_odori[] = ".0:0" "Ｈａａ～　Ｂｏｎ　Ｏｄｏｒｉ～";
 
@@ -53,15 +53,15 @@ const char text_bon_odori_dondo_panpa[] = ".1:0" "Ｄｏｎｄｏ　" ".2:0" "ｐａｎｐ
 
 const char text_bon_odori_don_pan_pan[] = ".1:0" "Ｄｏ－ｎ　" ".2:0" "ｐａ－ｎ　ｐａｎ";
 
-const char text_bon_odori_ame_ga_agare_ba[] = ".0:0" "Ａｍｅ　ｇａ　ａｇａｒｅ　ｂａ～";
+const char text_bon_odori_ame_ga_agare_ba[] = ".0:0" "Ｏｈ　ｗｈｅｎ　ｔｈｅ　ｒａｉｎ　ｃｌｅａｒｓ　ａｗａｙ～";
 
-const char text_bon_odori_yagura_ni_agaru[] = ".0:0" "Ｙａｇｕｒａ　ｎｉ　ａｇａｒｕ～";
+const char text_bon_odori_yagura_ni_agaru[] = ".0:0" "Ｗａｌｋ　ｕｐ　ｔｈｅ　ｔｏｗｅｒ　ａｎｄ　ｐｌａｙ～";
 
-const char text_bon_odori_hora_matsuri_da_wasshoi[] = ".0:0" "Ｈｏｒａ！　Ｍａｔｓｕｒｉ　ｄａ　ｗａｓｓｈｏｉ！";
+const char text_bon_odori_hora_matsuri_da_wasshoi[] = ".0:0" "Ｈｅｙ！　Ｔｉｍｅ　ｆｏｒ　ｃｅｌｅｂｒａｔｉｏｎ！";
 
-const char text_bon_odori_korezo[] = ".0:0" "Ｋｏｒｅｚｏ";
+const char text_bon_odori_korezo[] = ".0:0" "Ｔｈｅ　ｏｎｅ　ａｎｄ　ｏｎｌｙ，";
 
-const char text_bon_odori_meido_in_japan[] = ".0:0" "ｍａｄｅ　ｉｎ　Ｊａ" ".2" "ＰＡＮ";
+const char text_bon_odori_meido_in_japan[] = ".0:0" "ｔｈａｔ’ｓ　ｍａｄｅ　ｉｎ　Ｊａ" ".2" "ＰＡＮ";
 
 const char text_bon_odori_pan_pan[] = ".2:0" "Ｐａｎ　ｐａｎ";
 
@@ -76,4 +76,3 @@ const char D_08067ad0[] = ".6:0" "Ｎｉｃｅ　ｃｌａｐｐｉｎｇ！";
 const char D_08067adc[] = ".6:1" "Ｗｈｅｎ　ｗｅ　ｓａｙ　”Ｐａｎｐａ，”　ｃｌａｐ　ｔｗｉｃｅ！";
 
 const char D_08067b00[] = ".6:1" "Ｌｏｏｋｓ　ｌｉｋｅ　ｙｏｕ’ｖｅ　ｇｏｔ　ｉｔ！";
-

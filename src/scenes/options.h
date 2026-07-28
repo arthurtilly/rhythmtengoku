@@ -16,14 +16,7 @@ enum OptionsEventsEnum {
     /* 01 */ OPTIONS_EV_CURSOR_UP,
     /* 02 */ OPTIONS_EV_CURSOR_DOWN,
     /* 03 */ OPTIONS_EV_CONFIRM,
-    /* 04 */ OPTIONS_EV_CANCEL,
-
-    /* 05 */ OPTIONS_BITMAP_EV_NONE,
-    /* 06 */ OPTIONS_BITMAP_EV_SCROLL_UP,
-    /* 07 */ OPTIONS_BITMAP_EV_SCROLL_DOWN,
-    /* 08 */ OPTIONS_BITMAP_EV_CONFIRM,
-    /* 09 */ OPTIONS_BITMAP_EV_CANCEL,
-    /* 10 */ OPTIONS_BITMAP_EV_PAGE_PREV
+    /* 04 */ OPTIONS_EV_CANCEL
 };
 
 enum OptionsButtonsEnum {
@@ -45,24 +38,6 @@ enum OptionsWarningEnum {
 // MACROS
 #define gOptionsMenu ((struct OptionsSceneData *)gCurrentSceneData)
 
-#define OPTIONS_BITMAP_VISIBLE_ROWS 3
-#define OPTIONS_BITMAP_LINE_SPRITE_COUNT (OPTIONS_BITMAP_VISIBLE_ROWS + 2)
-#define OPTIONS_BITMAP_LINE_CENTER_INDEX 1
-#define OPTIONS_BITMAP_LINE_START_Y 40
-#define OPTIONS_BITMAP_LINE_SPACING_Y 20
-#define OPTIONS_BITMAP_TEXT_X 32
-#define OPTIONS_BITMAP_TEXT_Z 0x5100
-#define OPTIONS_BITMAP_FONT_BASE_TILE 384
-#define OPTIONS_BITMAP_FONT_TILE_ROWS 4
-#define OPTIONS_BITMAP_CURSOR_STEP 3
-#define OPTIONS_BITMAP_SCROLL_STEP 6
-#define OPTIONS_BITMAP_LINE_BUFFER_SIZE 96
-
-#define OPTIONS_CURSOR_CLASSIC_X 104
-#define OPTIONS_CURSOR_ADVANCE_X OPTIONS_BITMAP_TEXT_X
-#define OPTIONS_CURSOR_SOUND_MODE_Y 56
-#define OPTIONS_CURSOR_DATA_CLEAR_Y 84
-#define OPTIONS_WARNING_CURSOR_X OPTIONS_CURSOR_CLASSIC_X
 
 // TYPES
 struct OptionsSceneData {
@@ -79,18 +54,7 @@ struct OptionsSceneData {
     s16 uiWarningCursor;
     struct TextPrinter *warningText;
     u32 clearDataOnExit;
-    u32 canceledDataClear;
-    u8 activePage;
-    s16 uiRShoulder;
-    s16 uiLShoulder;
-    struct BitmapFontOBJ *bitmapFont;
-    s16 bitmapCursor;
-    s16 bitmapLineSprites[OPTIONS_BITMAP_LINE_SPRITE_COUNT];
-    u8 bitmapSelected;
-    u8 bitmapTopIndex;
-    s16 bitmapCursorY;
-    s16 bitmapCursorTargetY;
-    char bitmapLineBuffer[OPTIONS_BITMAP_LINE_SPRITE_COUNT][OPTIONS_BITMAP_LINE_BUFFER_SIZE];
+    u8 canceledDataClear; // useless
 };
 
 
@@ -99,8 +63,6 @@ extern struct GraphicsTable options_gfx_table[];
 extern struct CompressedData *options_buffered_textures[];
 extern const char options_data_clear_confirm_text[];
 extern const char *options_desc_text[];
-extern const char *advance_options_desc_text[];
-extern const char *advance_options_label_text[];
 extern struct Animation *options_sound_mode_anim[][2];
 
 

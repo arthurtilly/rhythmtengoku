@@ -7,7 +7,6 @@
 // MACROS
 #define gDebugMenu ((struct DebugMenuSceneData *)gCurrentSceneData)
 #define END_OF_DEBUG_ENTRIES { NULL, NULL }
-#define DEBUG_MENU_ENTRY_PER_PAGE 6
 
 
 // TYPES
@@ -26,7 +25,6 @@ struct DebugMenuSceneData {
 struct DebugMenuEntry {
     struct Scene *scene;
     const char *label;
-    u8 seeEpilogue;
 };
 
 
