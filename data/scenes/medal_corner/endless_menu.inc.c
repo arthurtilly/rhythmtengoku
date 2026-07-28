@@ -2,7 +2,7 @@
 struct MedalCornerLevel endless_menu_levels[] = {
     /* MR_UPBEAT */ {
         /* Scene  */ &scene_mr_upbeat,
-        /* Title  */ "Mr. Upbeat",
+        /* Title  */ "Mr Upbeat",
         /* Anim   */ anim_endless_menu_mr_upbeat,
         /* Medals */ 1
     },
