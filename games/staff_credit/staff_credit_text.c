@@ -85,43 +85,43 @@ const char D_08069c04[] = "N. Kitamura";
 
 const char D_08069c10[] = "M. Nomura";
 
-const char D_08069c1c[] = "North American Localization";
+const char D_08069c1c[] = "European Localisation";
 
-const char D_08069c24[] = "Localization Management";
+const char D_08069c24[] = "Localisation Management";
 
 const char D_08069c30[] = "";
 
-const char D_08069c3c[] = "J. Miller";
+const char D_08069c3c[] = "A. Fey";
 
-const char D_08069c48[] = "L. Swan";
+const char D_08069c48[] = "M. Weers";
 
-const char D_08069c54[] = "N. Bihldroff";
+const char D_08069c54[] = "";
 
-const char D_08069c5c[] = "B. Trinen";
+const char D_08069c5c[] = "Translation";
 
 const char D_08069c68[] = "";
 
-const char D_08069c74[] = "Localization";
+const char D_08069c74[] = "G. Howells";
 
-const char D_08069c80[] = "";
+const char D_08069c80[] = "T. Berthollet";
 
-const char D_08069c8c[] = "S. Ritchey";
+const char D_08069c8c[] = "S. Bretant";
 
-const char D_08069c98[] = "T. O'Leary";
+const char D_08069c98[] = "A. Jähn";
 
 const char D_08069ca0[] = "";
 
-const char D_08069ca8[] = "NOA Product Testing";
+const char D_08069ca8[] = "NOE Testing Team";
 
 const char D_08069cb4[] = "";
 
-const char D_08069cc0[] = "K. Hudson";
+const char D_08069cc0[] = "M. Mawer";
 
-const char D_08069cc8[] = "E. Bush";
+const char D_08069cc8[] = "M. Springinsfeld";
 
-const char D_08069cd0[] = "S. Egan";
+const char D_08069cd0[] = "A. Danieli";
 
-const char D_08069ce0[] = "T. Lillygren";
+const char D_08069ce0[] = "A. D. Benedetto";
 
 const char D_08069cec[] = "Special Thanks";
 

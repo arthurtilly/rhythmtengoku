@@ -2,12 +2,12 @@
 struct ReadingMaterial reading_material_table[] = {
     /* WELCOME ("Rhythm Tengoku Welcome") */ {
         /* TITLE ---------------------------------------------------------- */
-            "Welcome to Rhythm Heaven!",
+            "Welcome to Rhythm Paradise!",
         /* BODY ----------------------------------------------------------- */
             "Greetings!\n"
             "\n"
             "Thank you for buying\n"
-            "Rhythm Heaven.\n"
+            "Rhythm Paradise.\n"
             "Oh... you've borrowed it from a friend?\n"
             "Or is it... s-secondhand?\n"
             "Well, that's beside the point.\n"
@@ -296,9 +296,9 @@ struct ReadingMaterial reading_material_table[] = {
             "RM: Right!? It was enough to make me yell...\n"
             "DJ: You were like, \"Wait a sec, we LOST SOME!\"\n"
             "RM: Uh... Yeah! How do you know that?\n"
-            "DJ: I've been playing Rhythm Heaven!\n"
+            "DJ: I've been playing Rhythm Paradise!\n"
             "Roll the commercial!\n"
-            "AD: UP your flow with Rhythm Heaven!\n"
+            "AD: UP your flow with Rhythm Paradise!\n"
             "Available now! Game and system sold separately.\n"
             "\n"
             "End.",
@@ -478,7 +478,7 @@ struct ReadingMaterial reading_material_table[] = {
             "Such a feat certainly is impressive! ...is how I should\n"
             "be congratulating you, but I won't.\n"
             "You have performed outstandingly here in\n"
-            "Rhythm Heaven.\n"
+            "Rhythm Paradise.\n"
             "\n"
             "That much is undeniable, and we fully recognize it.\n"
             "You are the best! One of the greatest! ...is how I feel,\n"
@@ -614,7 +614,7 @@ struct ReadingMaterial reading_material_table[] = {
             "Voices of Joy",
         /* BODY ----------------------------------------------------------- */
             "We've received many letters from satisfied\n"
-            "players of Rhythm Heaven.\n"
+            "players of Rhythm Paradise.\n"
             "\n"
             "So, SO many in fact(!), that we can't show all of them,\n"
             "but here are just a few of our players' thoughts!\n"
@@ -626,7 +626,7 @@ struct ReadingMaterial reading_material_table[] = {
             "\n"
             "\0031" "\001m" "I've become... popular?\n"
             "\0030" "\001s" "\n"
-            "Before I found Rhythm Heaven,\n"
+            "Before I found Rhythm Paradise,\n"
             "I had no luck with women, but now I'm a real hot shot\n"
             "with a new lease on life!\n"
             "\n"
@@ -636,7 +636,7 @@ struct ReadingMaterial reading_material_table[] = {
             "\0031" "\001m" "I've become...\n"
             "\0031" "\001R" "a better singer?"
             "\0030" "\001s" "\n"
-            "\001L" "Before I found Rhythm Heaven,\n"
+            "\001L" "Before I found Rhythm Paradise,\n"
             "I was the textbook definition of tone-deaf,\n"
             "but lately people have told me my singing is much nicer!\n"
             "I'm still tone deaf, of course, but at least I'm happy!\n"

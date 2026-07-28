@@ -8,7 +8,7 @@
 const char D_0805df4c[] =
     "Welcome to the\n"
     "funky world of\n"
-    "Rhythm Heaven!";
+    "Rhythm Paradise!";
 
 const char D_0805df88[] =
     "I hope you enjoy your time\n"
