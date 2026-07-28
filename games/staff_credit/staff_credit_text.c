@@ -107,7 +107,7 @@ const char D_08069c80[] = "T. Berthollet";
 
 const char D_08069c8c[] = "S. Bretant";
 
-const char D_08069c98[] = "A. Jähn";
+const char D_08069c98[] = "A. Jahn";
 
 const char D_08069ca0[] = "";
 
