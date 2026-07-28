@@ -5,33 +5,6 @@
 
 #define SAVE_BUFFER_SIZE sizeof(struct SaveBuffer)
 
-<<<<<<< Updated upstream
-#define EXTRA_SAVE_DATA_MAGIC   "ENOT" // extra not original thing <3
-#define EXTRA_SAVE_DATA_VERSION 0x0001
-
-// helper functions
-#define SET_ADVANCE_FLAG(flags, flag)   ((flags) |= (flag))
-#define CLEAR_ADVANCE_FLAG(flags, flag) ((flags) &= ~(flag))
-#define CHECK_ADVANCE_FLAG(flags, flag) (((flags) & (flag)) != 0)
-#define TOGGLE_ADVANCE_FLAG(flags, flag) ((flags) ^= (flag))
-
-enum AdvanceFlagsEnum {
-    /* 01 */ ADVANCE_FLAG_SAVE_CONVERTED                = (1 << 0),
-    /* 02 */ ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC     = (1 << 1),
-    /* 04 */ ADVANCE_FLAG_SEEN_DISCLAIMER               = (1 << 2),
-    /* 08 */ ADVANCE_FLAG_SKIP_DISCLAIMER               = (1 << 3),
-    /* 10 */ ADVANCE_FLAG_DISABLE_RUMBLE                = (1 << 4),
-    /* 20 */ ADVANCE_FLAG_NON_JP_SFX                    = (1 << 5),
-    /* 40 */ ADVANCE_FLAG_NON_JP_MUSIC                  = (1 << 6),
-};
-
-enum AdvanceGameFlagsEnum {
-    /* 01 */ ADVANCE_GAME_FLAG_NON_JP_SOUNDEFFECTS      = (1 << 0),
-    /* 02 */ ADVANCE_GAME_FLAG_NON_JP_MUSIC             = (1 << 1),
-};
-
-=======
->>>>>>> Stashed changes
 extern struct SaveBuffer {
     /* [0x000] Header */
     struct SaveBufferHeader {

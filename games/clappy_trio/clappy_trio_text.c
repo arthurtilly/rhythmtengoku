@@ -45,11 +45,7 @@ const char D_0805af30[] = "Nobody claps like us!";
 
 const char D_0805af48[] = "You do the third clap, OK?";
 
-#ifdef PARADISE
-const char D_0805af60[] = "Let's practise!";
-#else
 const char D_0805af60[] = "Let's practice!";
-#endif
 
 const char D_0805af7c[] = "Press ‡M to clap.";
 

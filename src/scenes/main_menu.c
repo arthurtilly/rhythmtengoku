@@ -1,15 +1,8 @@
 #include "global.h"
 #include "main_menu.h"
-<<<<<<< Updated upstream
 #include "graphics/main_menu/main_menu_graphics.h"
 
 #include "src/scenes/gameplay.h"
-#include "src/code_080092cc.h"
-=======
-#include "graphics/main_menu/main_menu_graphics.h"
-
-#include "src/scenes/gameplay.h"
->>>>>>> Stashed changes
 
 
 /* MAIN MENU SCENE */
@@ -99,43 +92,13 @@ void main_menu_scene_paused(void *sVar, s32 dArg) {
 
 
 // Scene Update (Active)
-<<<<<<< Updated upstream
 void main_menu_scene_update(void *sVar, s32 dArg) {
     s32 prevButton;
-    s32 requestedButton;
-=======
-void main_menu_scene_update(void *sVar, s32 dArg) {
-    s32 prevButton;
->>>>>>> Stashed changes
 
     gMainMenu->bgX += 1;
     gMainMenu->bgY -= 1;
     scene_set_bg_layer_pos(BG_LAYER_1, gMainMenu->bgX >> 2, gMainMenu->bgY >> 2);
 
-<<<<<<< Updated upstream
-    if (main_menu_scene_inputs_enabled()) {
-        prevButton = sMainMenuButton;
-        requestedButton = sMainMenuButton;
-        if (D_030053b8 & DPAD_UP) {
-            requestedButton -= 1;
-        }
-        if (D_030053b8 & DPAD_DOWN) {
-            requestedButton += 1;
-        }
-        sMainMenuButton = requestedButton;
-        sMainMenuButton = clamp_int32(sMainMenuButton, GAME_SELECT, OPTIONS_MENU);
-
-        if (prevButton != sMainMenuButton) {
-            play_sound(&s_menu_cursor2_seqData);
-            sprite_set_anim(gSpriteHandler, gMainMenu->buttons[prevButton], main_menu_button_off_anim[prevButton], 0, 1, 0, 0);
-            sprite_set_anim(gSpriteHandler, gMainMenu->buttons[sMainMenuButton], main_menu_button_on_anim[sMainMenuButton], 0, 1, 0, 0);
-            rumble_play_menu_move();
-        } else if (requestedButton != prevButton) {
-            rumble_play_menu_limit();
-        }
-
-        else if (D_03004afc & (START_BUTTON | A_BUTTON)) {
-=======
     if (main_menu_scene_inputs_enabled()) {
         prevButton = sMainMenuButton;
         if (D_030053b8 & DPAD_UP) {
@@ -153,7 +116,6 @@ void main_menu_scene_update(void *sVar, s32 dArg) {
         }
 
         else if (D_03004afc & (START_BUTTON | A_BUTTON)) {
->>>>>>> Stashed changes
             switch (prevButton) {
                 case GAME_SELECT:
                     set_next_scene(&scene_game_select);
@@ -177,16 +139,6 @@ void main_menu_scene_update(void *sVar, s32 dArg) {
                     set_scene_trans_target(&scene_options_menu, &scene_main_menu);
                     gMainMenu->exitingToOptionsMenu = TRUE;
                     break;
-<<<<<<< Updated upstream
-            }
-            set_pause_beatscript_scene(FALSE);
-            gMainMenu->inputsEnabled = FALSE;
-            play_sound(&s_menu_kettei1_seqData);
-            rumble_play_menu_confirm();
-        }
-    }
-}
-=======
             }
             set_pause_beatscript_scene(FALSE);
             gMainMenu->inputsEnabled = FALSE;
@@ -194,7 +146,6 @@ void main_menu_scene_update(void *sVar, s32 dArg) {
         }
     }
 }
->>>>>>> Stashed changes
 
 
 // Check if Scene Can Receive Inputs

@@ -723,28 +723,3 @@ char s_f_marcher2_v_migi_seqName[] = "";
 char s_f_marcher2_v_hidarimukeL_seqName[] = "";
 char s_f_marcher2_v_hidarimukeS_seqName[] = "";
 char s_f_marcher2_v_hidari_seqName[] = "";
-<<<<<<< Updated upstream
-char s_guntai_v_muke_f_seqName[] = "";
-char s_f_marcher2_v_zentai_jp_seqName[] = "";
-char s_f_marcher2_v_susume_jp_seqName[] = "";
-char s_f_marcher2_v_tomare_jp_seqName[] = "";
-char s_f_marcher2_v_migimukeL_jp_seqName[] = "";
-char s_f_marcher2_v_migimukeS_jp_seqName[] = "";
-char s_f_marcher2_v_migi_jp_seqName[] = "";
-char s_f_marcher2_v_hidarimukeL_jp_seqName[] = "";
-char s_f_marcher2_v_hidarimukeS_jp_seqName[] = "";
-char s_f_marcher2_v_hidari_jp_seqName[] = "";
-char s_rat_paw_seqName[] = "";
-char s_rat_squeak_seqName[] = "";
-char s_f_boxing_hit_sfx_seqName[] = "";
-char s_f_boxing_three_sfx_seqName[] = "";
-char s_f_boxing_two_sfx_seqName[] = "";
-char s_f_boxing_four_sfx_seqName[] = "";
-char spaceball_tempo_seqName[] = "";
-char marching_orders_tempo_seqName[] = "";
-char spaceball_tempo_mpart_seqName[] = "";
-char spaceball_tempo_cymbal_seqName[] = "";
-char rhythmtweezers_tempo_seqName[] = "";
-char s_karate_extra_bgm_seqName[] = "";
-=======
->>>>>>> Stashed changes

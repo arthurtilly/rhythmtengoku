@@ -56,8 +56,4 @@ const char D_0805ad38[] =
 
 const char D_0805ad80[] =
     "\n"
-    #ifdef PARADISE
-    "Ready, steady, punch!";
-    #else
     "Ready, set, punch!";
-    #endif

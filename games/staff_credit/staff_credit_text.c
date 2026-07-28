@@ -9,11 +9,7 @@ const char D_08069a48[] = "Staff Credits";
 
 const char D_08069a58[] = "Producers";
 
-<<<<<<< Updated upstream
-const char D_08069a64[] = "TSUNKU‰";
-=======
 const char D_08069a64[] = "TSUNKU‰";
->>>>>>> Stashed changes
 
 const char D_08069a70[] = "Y. Sakamoto";
 
@@ -89,10 +85,9 @@ const char D_08069c04[] = "N. Kitamura";
 
 const char D_08069c10[] = "M. Nomura";
 
-<<<<<<< Updated upstream
-const char D_08069c1c[] = "\0023" "North American Localization";
+const char D_08069c1c[] = "North American Localization";
 
-const char D_08069c24[] = "\0023" "Localization Management";
+const char D_08069c24[] = "Localization Management";
 
 const char D_08069c30[] = "";
 
@@ -106,7 +101,7 @@ const char D_08069c5c[] = "B. Trinen";
 
 const char D_08069c68[] = "";
 
-const char D_08069c74[] = "\0023" "Localization";
+const char D_08069c74[] = "Localization";
 
 const char D_08069c80[] = "";
 
@@ -116,7 +111,7 @@ const char D_08069c98[] = "T. O'Leary";
 
 const char D_08069ca0[] = "";
 
-const char D_08069ca8[] = "\0023" "NOA Product Testing";
+const char D_08069ca8[] = "NOA Product Testing";
 
 const char D_08069cb4[] = "";
 
@@ -127,45 +122,6 @@ const char D_08069cc8[] = "E. Bush";
 const char D_08069cd0[] = "S. Egan";
 
 const char D_08069ce0[] = "T. Lillygren";
-=======
-const char D_08069c1c[] = "European Localisation";
-
-const char D_08069c24[] = "Localisation Management";
-
-const char D_08069c30[] = "";
-
-const char D_08069c3c[] = "A. Fey";
-
-const char D_08069c48[] = "M. Weers";
-
-const char D_08069c54[] = "";
-
-const char D_08069c5c[] = "Translation";
-
-const char D_08069c68[] = "";
-
-const char D_08069c74[] = "G. Howells";
-
-const char D_08069c80[] = "T. Berthollet";
-
-const char D_08069c8c[] = "S. Bretant";
-
-const char D_08069c98[] = "A. Jähn";
-
-const char D_08069ca0[] = "";
-
-const char D_08069ca8[] = "NOE Testing Team";
-
-const char D_08069cb4[] = "";
-
-const char D_08069cc0[] = "M. Mawer";
-
-const char D_08069cc8[] = "M. Springinsfeld";
-
-const char D_08069cd0[] = "A. Danieli";
-
-const char D_08069ce0[] = "A. D. Benedetto";
->>>>>>> Stashed changes
 
 const char D_08069cec[] = "Special Thanks";
 

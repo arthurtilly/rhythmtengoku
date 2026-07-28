@@ -53,7 +53,7 @@ enum DirectSoundModesEnum {
 enum InstrumentBanksEnum {
 	/* 000 */ INST_BANK_UNUSED_0,
 	/* 001 */ INST_BANK_UNUSED_1,
-	/* 002 */ INST_BANK_70,
+	/* 002 */ INST_BANK_UNUSED_2,
 	/* 003 */ INST_BANK_UNUSED_3,
 	/* 004 */ INST_BANK_UNUSED_4,
 	/* 005 */ INST_BANK_54,
@@ -86,11 +86,7 @@ enum InstrumentBanksEnum {
 	/* 032 */ INST_BANK_15,
 	/* 033 */ INST_BANK_16,
 	/* 034 */ INST_BANK_17,
-<<<<<<< Updated upstream
-	/* 035 */ INST_BANK_SPACE_DANCE_EN,
-=======
 	/* 035 */ INST_BANK_UNUSED_35,
->>>>>>> Stashed changes
 	/* 036 */ INST_BANK_UNUSED_36,
 	/* 037 */ INST_BANK_UNUSED_37,
 	/* 038 */ INST_BANK_UNUSED_38,
@@ -166,8 +162,7 @@ enum InstrumentBanksEnum {
 	/* 108 */ INST_BANK_UNUSED_108,
 	/* 109 */ INST_BANK_UNUSED_109,
 	/* 110 */ INST_BANK_62,
-	/* 111 */ INST_BANK_63,
-    /* 112 */ INST_BANK_69
+	/* 111 */ INST_BANK_63
 };
 
 

@@ -1,78 +1,3 @@
-<<<<<<< Updated upstream
-extern const u8 s_karate_extra_bgm_mid[];
-struct SongHeader s_karate_extra_bgm_seqData = {
-    /* MIDI Sequence */ s_karate_extra_bgm_mid,
-    /* Sound Player  */ MUSIC_PLAYER_0,
-    /* Bank Number   */ INST_BANK_1,
-    /* Volume        */ 90,
-    /* Priority      */ 50,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_karate_extra_bgm_seqName,
-    /* Song Number   */ 0
-};
-
-extern const u8 rhythmtweezers_tempo_mid[];
-struct SongHeader rhythmtweezers_tempo_seqData = {
-    /* MIDI Sequence */ rhythmtweezers_tempo_mid,
-    /* Sound Player  */ MUSIC_PLAYER_0,
-    /* Bank Number   */ INST_BANK_2,
-    /* Volume        */ 120,
-    /* Priority      */ 50,
-    /* unk8          */ 0xff,
-    /* Song Title    */ rhythmtweezers_tempo_seqName,
-    /* Song Number   */ 1
-};
-
-extern const u8 spaceball_tempo_mid[];
-struct SongHeader spaceball_tempo_seqData = {
-    /* MIDI Sequence */ spaceball_tempo_mid,
-    /* Sound Player  */ MUSIC_PLAYER_0,
-    /* Bank Number   */ INST_BANK_3,
-    /* Volume        */ 120,
-    /* Priority      */ 50,
-    /* unk8          */ 0xff,
-    /* Song Title    */ spaceball_tempo_seqName,
-    /* Song Number   */ 2
-};
-
-extern const u8 marching_orders_tempo_mid[];
-struct SongHeader marching_orders_tempo_seqData = {
-    /* MIDI Sequence */ marching_orders_tempo_mid,
-    /* Sound Player  */ MUSIC_PLAYER_0,
-    /* Bank Number   */ INST_BANK_69,
-    /* Volume        */ 120,
-    /* Priority      */ 50,
-    /* unk8          */ 0xff,
-    /* Song Title    */ marching_orders_tempo_seqName,
-    /* Song Number   */ 3
-};
-
-extern const u8 spaceball_tempo_mpart_mid[];
-struct SongHeader spaceball_tempo_mpart_seqData = {
-    /* MIDI Sequence */ spaceball_tempo_mpart_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_3,
-    /* Volume        */ 127,
-    /* Priority      */ 50,
-    /* unk8          */ 0xff,
-    /* Song Title    */ spaceball_tempo_mpart_seqName,
-    /* Song Number   */ 6
-};
-
-extern const u8 spaceball_tempo_cymbal_mid[];
-struct SongHeader spaceball_tempo_cymbal_seqData = {
-    /* MIDI Sequence */ spaceball_tempo_cymbal_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_3,
-    /* Volume        */ 127,
-    /* Priority      */ 50,
-    /* unk8          */ 0xff,
-    /* Song Title    */ spaceball_tempo_cymbal_seqName,
-    /* Song Number   */ 7
-};
-
-=======
->>>>>>> Stashed changes
 extern const u8 Lesson1_mid[];
 struct SongHeader Lesson1_seqData = {
     /* MIDI Sequence */ Lesson1_mid,
@@ -2197,419 +2122,6 @@ struct SongHeader s_toss_yelw_break_seqData = {
     /* Song Number   */ 1355
 };
 
-extern const u8 s_toss_red_blue1_mid[];
-struct SongHeader s_toss_red_blue1_seqData = {
-    /* MIDI Sequence */ s_toss_red_blue1_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 110,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_blue1_seqName,
-    /* Song Number   */ 1320
-};
-
-#ifdef SFX
-extern const u8 s_toss_red_blue2_en_mid[];
-struct SongHeader s_toss_red_blue2_seqData = {
-    /* MIDI Sequence */ s_toss_red_blue2_en_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 110,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_blue2_seqName,
-    /* Song Number   */ 1321
-};
-#else
-extern const u8 s_toss_red_blue2_mid[];
-struct SongHeader s_toss_red_blue2_seqData = {
-    /* MIDI Sequence */ s_toss_red_blue2_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 110,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_blue2_seqName,
-    /* Song Number   */ 1321
-};
-#endif
-
-extern const u8 s_toss_red_blue3_mid[];
-struct SongHeader s_toss_red_blue3_seqData = {
-    /* MIDI Sequence */ s_toss_red_blue3_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 110,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_blue3_seqName,
-    /* Song Number   */ 1322
-};
-
-#ifdef SFX
-extern const u8 s_toss_red_yelw1_en_mid[];
-struct SongHeader s_toss_red_yelw1_seqData = {
-    /* MIDI Sequence */ s_toss_red_yelw1_en_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_yelw1_seqName,
-    /* Song Number   */ 1323
-};
-#else
-extern const u8 s_toss_red_yelw1_mid[];
-struct SongHeader s_toss_red_yelw1_seqData = {
-    /* MIDI Sequence */ s_toss_red_yelw1_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_yelw1_seqName,
-    /* Song Number   */ 1323
-};
-#endif
-
-extern const u8 s_toss_red_yelw2_mid[];
-struct SongHeader s_toss_red_yelw2_seqData = {
-    /* MIDI Sequence */ s_toss_red_yelw2_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_yelw2_seqName,
-    /* Song Number   */ 1324
-};
-
-extern const u8 s_toss_red_yelw3_mid[];
-struct SongHeader s_toss_red_yelw3_seqData = {
-    /* MIDI Sequence */ s_toss_red_yelw3_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_yelw3_seqName,
-    /* Song Number   */ 1325
-};
-
-extern const u8 s_toss_red_red_mid[];
-struct SongHeader s_toss_red_red_seqData = {
-    /* MIDI Sequence */ s_toss_red_red_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 80,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_red_seqName,
-    /* Song Number   */ 1329
-};
-
-extern const u8 s_toss_red_before_en_mid[];
-extern const u8 s_toss_red_before_mid[];
-struct SongHeader s_toss_red_before_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_toss_red_before_en_mid,
-    #else
-    /* MIDI Sequence */ s_toss_red_before_mid,
-    #endif
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_before_seqName,
-    /* Song Number   */ 1330
-};
-
-extern const u8 s_toss_red_break_mid[];
-struct SongHeader s_toss_red_break_seqData = {
-    /* MIDI Sequence */ s_toss_red_break_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_red_break_seqName,
-    /* Song Number   */ 1331
-};
-
-extern const u8 s_toss_blue_red1_mid[];
-struct SongHeader s_toss_blue_red1_seqData = {
-    /* MIDI Sequence */ s_toss_blue_red1_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 110,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_red1_seqName,
-    /* Song Number   */ 1332
-};
-
-#ifdef SFX
-extern const u8 s_toss_blue_red2_en_mid[];
-struct SongHeader s_toss_blue_red2_seqData = {
-    /* MIDI Sequence */ s_toss_blue_red2_en_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 115,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_red2_seqName,
-    /* Song Number   */ 1333
-};
-#else
-extern const u8 s_toss_blue_red2_mid[];
-struct SongHeader s_toss_blue_red2_seqData = {
-    /* MIDI Sequence */ s_toss_blue_red2_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 115,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_red2_seqName,
-    /* Song Number   */ 1333
-};
-#endif
-
-extern const u8 s_toss_blue_red3_mid[];
-struct SongHeader s_toss_blue_red3_seqData = {
-    /* MIDI Sequence */ s_toss_blue_red3_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_red3_seqName,
-    /* Song Number   */ 1334
-};
-
-#ifdef SFX
-extern const u8 s_toss_blue_yelw1_en_mid[];
-struct SongHeader s_toss_blue_yelw1_seqData = {
-    /* MIDI Sequence */ s_toss_blue_yelw1_en_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 110,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_yelw1_seqName,
-    /* Song Number   */ 1335
-};
-#else
-extern const u8 s_toss_blue_yelw1_mid[];
-struct SongHeader s_toss_blue_yelw1_seqData = {
-    /* MIDI Sequence */ s_toss_blue_yelw1_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 110,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_yelw1_seqName,
-    /* Song Number   */ 1335
-};
-#endif
-
-extern const u8 s_toss_blue_yelw2_mid[];
-struct SongHeader s_toss_blue_yelw2_seqData = {
-    /* MIDI Sequence */ s_toss_blue_yelw2_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 110,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_yelw2_seqName,
-    /* Song Number   */ 1336
-};
-
-#ifdef SFX
-extern const u8 s_toss_blue_yelw3_en_mid[];
-struct SongHeader s_toss_blue_yelw3_seqData = {
-    /* MIDI Sequence */ s_toss_blue_yelw3_en_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 115,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_yelw3_seqName,
-    /* Song Number   */ 1337
-};
-#else
-extern const u8 s_toss_blue_yelw3_mid[];
-struct SongHeader s_toss_blue_yelw3_seqData = {
-    /* MIDI Sequence */ s_toss_blue_yelw3_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 115,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_yelw3_seqName,
-    /* Song Number   */ 1337
-};
-#endif
-
-extern const u8 s_toss_blue_blue_mid[];
-struct SongHeader s_toss_blue_blue_seqData = {
-    /* MIDI Sequence */ s_toss_blue_blue_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_blue_seqName,
-    /* Song Number   */ 1341
-};
-
-extern const u8 s_toss_blue_before_mid[];
-struct SongHeader s_toss_blue_before_seqData = {
-    /* MIDI Sequence */ s_toss_blue_before_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_before_seqName,
-    /* Song Number   */ 1342
-};
-
-extern const u8 s_toss_blue_break_mid[];
-struct SongHeader s_toss_blue_break_seqData = {
-    /* MIDI Sequence */ s_toss_blue_break_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_blue_break_seqName,
-    /* Song Number   */ 1343
-};
-
-#ifdef SFX
-extern const u8 s_toss_yelw_red1_en_mid[];
-struct SongHeader s_toss_yelw_red1_seqData = {
-    /* MIDI Sequence */ s_toss_yelw_red1_en_mid,
-    /* Sound Player  */ SFX_PLAYER_2,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_yelw_red1_seqName,
-    /* Song Number   */ 1344
-};
-#else
-extern const u8 s_toss_yelw_red1_mid[];
-struct SongHeader s_toss_yelw_red1_seqData = {
-    /* MIDI Sequence */ s_toss_yelw_red1_mid,
-    /* Sound Player  */ SFX_PLAYER_2,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_yelw_red1_seqName,
-    /* Song Number   */ 1344
-};
-#endif
-
-extern const u8 s_toss_yelw_red2_mid[];
-struct SongHeader s_toss_yelw_red2_seqData = {
-    /* MIDI Sequence */ s_toss_yelw_red2_mid,
-    /* Sound Player  */ SFX_PLAYER_2,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_yelw_red2_seqName,
-    /* Song Number   */ 1345
-};
-
-extern const u8 s_toss_yelw_red3_mid[];
-struct SongHeader s_toss_yelw_red3_seqData = {
-    /* MIDI Sequence */ s_toss_yelw_red3_mid,
-    /* Sound Player  */ SFX_PLAYER_2,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_yelw_red3_seqName,
-    /* Song Number   */ 1346
-};
-
-extern const u8 s_toss_yelw_blue1_mid[];
-struct SongHeader s_toss_yelw_blue1_seqData = {
-    /* MIDI Sequence */ s_toss_yelw_blue1_mid,
-    /* Sound Player  */ SFX_PLAYER_2,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_yelw_blue1_seqName,
-    /* Song Number   */ 1347
-};
-
-extern const u8 s_toss_yelw_blue2_mid[];
-struct SongHeader s_toss_yelw_blue2_seqData = {
-    /* MIDI Sequence */ s_toss_yelw_blue2_mid,
-    /* Sound Player  */ SFX_PLAYER_2,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_yelw_blue2_seqName,
-    /* Song Number   */ 1348
-};
-
-extern const u8 s_toss_yelw_blue3_mid[];
-struct SongHeader s_toss_yelw_blue3_seqData = {
-    /* MIDI Sequence */ s_toss_yelw_blue3_mid,
-    /* Sound Player  */ SFX_PLAYER_2,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_yelw_blue3_seqName,
-    /* Song Number   */ 1349
-};
-
-extern const u8 s_toss_yelw_yelw_mid[];
-struct SongHeader s_toss_yelw_yelw_seqData = {
-    /* MIDI Sequence */ s_toss_yelw_yelw_mid,
-    /* Sound Player  */ SFX_PLAYER_2,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_yelw_yelw_seqName,
-    /* Song Number   */ 1353
-};
-
-extern const u8 s_toss_yelw_before_mid[];
-struct SongHeader s_toss_yelw_before_seqData = {
-    /* MIDI Sequence */ s_toss_yelw_before_mid,
-    /* Sound Player  */ SFX_PLAYER_2,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_yelw_before_seqName,
-    /* Song Number   */ 1354
-};
-
-extern const u8 s_toss_yelw_break_mid[];
-struct SongHeader s_toss_yelw_break_seqData = {
-    /* MIDI Sequence */ s_toss_yelw_break_mid,
-    /* Sound Player  */ SFX_PLAYER_2,
-    /* Bank Number   */ INST_BANK_9,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_toss_yelw_break_seqName,
-    /* Song Number   */ 1355
-};
-
 extern const u8 s_toss_ball_red_mid[];
 struct SongHeader s_toss_ball_red_seqData = {
     /* MIDI Sequence */ s_toss_ball_red_mid,
@@ -3293,61 +2805,6 @@ struct SongHeader s_hanabi_bgm_seqData = {
     /* Song Title    */ s_hanabi_bgm_seqName,
     /* Song Number   */ 1468
 };
-#ifdef SFX
-extern const u8 s_hanabi_1_en_mid[];
-#else
-extern const u8 s_hanabi_1_mid[];
-#endif
-struct SongHeader s_hanabi_1_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_hanabi_1_en_mid,
-    #else
-    /* MIDI Sequence */ s_hanabi_1_mid,
-    #endif
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_7,
-    /* Volume        */ 80,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_hanabi_1_seqName,
-    /* Song Number   */ 1469
-};
-
-extern const u8 s_hanabi_2_mid[];
-struct SongHeader s_hanabi_2_seqData = {
-    /* MIDI Sequence */ s_hanabi_2_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_7,
-    /* Volume        */ 80,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_hanabi_2_seqName,
-    /* Song Number   */ 1470
-};
-
-extern const u8 s_hanabi_3_mid[];
-struct SongHeader s_hanabi_3_seqData = {
-    /* MIDI Sequence */ s_hanabi_3_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_7,
-    /* Volume        */ 80,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_hanabi_3_seqName,
-    /* Song Number   */ 1471
-};
-
-extern const u8 s_hanabi_hai_mid[];
-struct SongHeader s_hanabi_hai_seqData = {
-    /* MIDI Sequence */ s_hanabi_hai_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_7,
-    /* Volume        */ 90,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_hanabi_hai_seqName,
-    /* Song Number   */ 1472
-};
 
 extern const u8 s_hanabi_1_mid[];
 struct SongHeader s_hanabi_1_seqData = {
@@ -3517,20 +2974,9 @@ struct SongHeader s_intro_three_seqData = {
     /* Song Number   */ 1484
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_intro_go_mid[];
-extern const u8 s_intro_four_mid[];
-struct SongHeader s_intro_four_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_intro_go_mid,
-    #else
-    /* MIDI Sequence */ s_intro_four_mid,
-    #endif
-=======
 extern const u8 s_intro_four_mid[];
 struct SongHeader s_intro_four_seqData = {
     /* MIDI Sequence */ s_intro_four_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ MUSIC_PLAYER_1,
     /* Bank Number   */ INST_BANK_8,
     /* Volume        */ 127,
@@ -3696,8 +3142,6 @@ struct SongHeader s_space_ikeo_turn_seqData = {
     /* Song Number   */ 1520
 };
 
-<<<<<<< Updated upstream
-=======
 extern const u8 s_space_ikeo_right_mid[];
 struct SongHeader s_space_ikeo_right_seqData = {
     /* MIDI Sequence */ s_space_ikeo_right_mid,
@@ -3890,7 +3334,6 @@ struct SongHeader s_space_kou_turn_swing_seqData = {
     /* Song Number   */ 1536
 };
 
->>>>>>> Stashed changes
 extern const u8 s_guntai1_mid[];
 struct SongHeader s_guntai1_seqData = {
     /* MIDI Sequence */ s_guntai1_mid,
@@ -3939,57 +3382,6 @@ struct SongHeader s_guntai_foot2_seqData = {
     /* Song Number   */ 1543
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_guntai_v_zentai_a_mid[];
-struct SongHeader s_guntai_v_zentai_a_seqData = {
-    /* MIDI Sequence */ s_guntai_v_zentai_a_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_zentai_a_seqName,
-    /* Song Number   */ 1544
-};
-
-extern const u8 s_guntai_v_zentai_ten_mid[];
-struct SongHeader s_guntai_v_zentai_ten_seqData = {
-    /* MIDI Sequence */ s_guntai_v_zentai_ten_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_zentai_ten_seqName,
-    /* Song Number   */ 1924
-};
-
-extern const u8 s_guntai_v_zentai_ttion_mid[];
-struct SongHeader s_guntai_v_zentai_ttion_seqData = {
-    /* MIDI Sequence */ s_guntai_v_zentai_ttion_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_zentai_ttion_seqName,
-    /* Song Number   */ 1925
-};
-
-extern const u8 s_guntai_v_muke_f_mid[];
-struct SongHeader s_guntai_v_muke_f_seqData = {
-    /* MIDI Sequence */ s_guntai_v_muke_f_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 127,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_muke_f_seqName,
-    /* Song Number   */ 1932
-};
-
-=======
->>>>>>> Stashed changes
 extern const u8 s_guntai_v_zentai1_mid[];
 struct SongHeader s_guntai_v_zentai1_seqData = {
     /* MIDI Sequence */ s_guntai_v_zentai1_mid,
@@ -4074,57 +3466,6 @@ struct SongHeader s_guntai_v_hidari_muke1_seqData = {
     /* Song Number   */ 1550
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_guntai_v_hidari_muke1_face_mid[];
-struct SongHeader s_guntai_v_hidari_muke1_face_seqData = {
-    /* MIDI Sequence */ s_guntai_v_hidari_muke1_face_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 90,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_hidari_muke1_face_seqName,
-    /* Song Number   */ 1927
-};
-
-extern const u8 s_guntai_v_migi_muke1_jp_mid[];
-struct SongHeader s_guntai_v_migi_muke1_jp_seqData = {
-    /* MIDI Sequence */ s_guntai_v_migi_muke1_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 80,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_migi_muke1_jp_seqName,
-    /* Song Number   */ 1548
-};
-
-extern const u8 s_guntai_v_migi_muke2_jp_mid[];
-struct SongHeader s_guntai_v_migi_muke2_jp_seqData = {
-    /* MIDI Sequence */ s_guntai_v_migi_muke2_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 80,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_migi_muke2_jp_seqName,
-    /* Song Number   */ 1549
-};
-
-extern const u8 s_guntai_v_hidari_muke1_jp_mid[];
-struct SongHeader s_guntai_v_hidari_muke1_jp_seqData = {
-    /* MIDI Sequence */ s_guntai_v_hidari_muke1_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 90,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_hidari_muke1_jp_seqName,
-    /* Song Number   */ 1550
-};
-
-=======
->>>>>>> Stashed changes
 extern const u8 s_guntai_v_hidari_muke2_mid[];
 struct SongHeader s_guntai_v_hidari_muke2_seqData = {
     /* MIDI Sequence */ s_guntai_v_hidari_muke2_mid,
@@ -4158,30 +3499,6 @@ struct SongHeader s_guntai_v_hidari_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0x40,
     /* Song Title    */ s_guntai_v_hidari_seqName,
-    /* Song Number   */ 1553
-};
-
-extern const u8 s_guntai_v_migi_jp_mid[];
-struct SongHeader s_guntai_v_migi_jp_seqData = {
-    /* MIDI Sequence */ s_guntai_v_migi_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 80,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_migi_jp_seqName,
-    /* Song Number   */ 1552
-};
-
-extern const u8 s_guntai_v_hidari_jp_mid[];
-struct SongHeader s_guntai_v_hidari_jp_seqData = {
-    /* MIDI Sequence */ s_guntai_v_hidari_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 70,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_hidari_jp_seqName,
     /* Song Number   */ 1553
 };
 
@@ -5481,20 +4798,9 @@ struct SongHeader s_rap_jazz_bgm_seqData = {
     /* Song Number   */ 1751
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_rap_15ji_desuka_en_mid[];
-extern const u8 s_rap_15ji_desuka_mid[];
-struct SongHeader s_rap_15ji_desuka_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_rap_15ji_desuka_en_mid,
-    #else
-    /* MIDI Sequence */ s_rap_15ji_desuka_mid,
-    #endif
-=======
 extern const u8 s_rap_15ji_desuka_mid[];
 struct SongHeader s_rap_15ji_desuka_seqData = {
     /* MIDI Sequence */ s_rap_15ji_desuka_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_15,
     /* Volume        */ 100,
@@ -5504,20 +4810,9 @@ struct SongHeader s_rap_15ji_desuka_seqData = {
     /* Song Number   */ 1752
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_rap_oyatu_desuka_en_mid[];
-extern const u8 s_rap_oyatu_desuka_mid[];
-struct SongHeader s_rap_oyatu_desuka_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_rap_oyatu_desuka_en_mid,
-    #else
-    /* MIDI Sequence */ s_rap_oyatu_desuka_mid,
-    #endif
-=======
 extern const u8 s_rap_oyatu_desuka_mid[];
 struct SongHeader s_rap_oyatu_desuka_seqData = {
     /* MIDI Sequence */ s_rap_oyatu_desuka_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_15,
     /* Volume        */ 100,
@@ -5527,20 +4822,9 @@ struct SongHeader s_rap_oyatu_desuka_seqData = {
     /* Song Number   */ 1753
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_rap_honto_desuka_en_mid[];
-extern const u8 s_rap_honto_desuka_mid[];
-struct SongHeader s_rap_honto_desuka_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_rap_honto_desuka_en_mid,
-    #else
-    /* MIDI Sequence */ s_rap_honto_desuka_mid,
-    #endif
-=======
 extern const u8 s_rap_honto_desuka_mid[];
 struct SongHeader s_rap_honto_desuka_seqData = {
     /* MIDI Sequence */ s_rap_honto_desuka_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_15,
     /* Volume        */ 100,
@@ -5622,20 +4906,9 @@ struct SongHeader s_rap_tanosi_kamone_seqData = {
     /* Song Number   */ 1760
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_rap_oyatuha_saiko_en_mid[];
-extern const u8 s_rap_oyatuha_saiko_mid[];
-struct SongHeader s_rap_oyatuha_saiko_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_rap_oyatuha_saiko_en_mid,
-    #else
-    /* MIDI Sequence */ s_rap_oyatuha_saiko_mid,
-    #endif
-=======
 extern const u8 s_rap_oyatuha_saiko_mid[];
 struct SongHeader s_rap_oyatuha_saiko_seqData = {
     /* MIDI Sequence */ s_rap_oyatuha_saiko_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_15,
     /* Volume        */ 100,
@@ -5645,20 +4918,9 @@ struct SongHeader s_rap_oyatuha_saiko_seqData = {
     /* Song Number   */ 1761
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_rap_kibunha_saiko_en_mid[];
-extern const u8 s_rap_kibunha_saiko_mid[];
-struct SongHeader s_rap_kibunha_saiko_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_rap_kibunha_saiko_en_mid,
-    #else
-    /* MIDI Sequence */ s_rap_kibunha_saiko_mid,
-    #endif
-=======
 extern const u8 s_rap_kibunha_saiko_mid[];
 struct SongHeader s_rap_kibunha_saiko_seqData = {
     /* MIDI Sequence */ s_rap_kibunha_saiko_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_15,
     /* Volume        */ 100,
@@ -5668,20 +4930,9 @@ struct SongHeader s_rap_kibunha_saiko_seqData = {
     /* Song Number   */ 1762
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_rap_orette_saiko_en_mid[];
-extern const u8 s_rap_orette_saiko_mid[];
-struct SongHeader s_rap_orette_saiko_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_rap_orette_saiko_en_mid,
-    #else
-    /* MIDI Sequence */ s_rap_orette_saiko_mid,
-    #endif
-=======
 extern const u8 s_rap_orette_saiko_mid[];
 struct SongHeader s_rap_orette_saiko_seqData = {
     /* MIDI Sequence */ s_rap_orette_saiko_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_15,
     /* Volume        */ 100,
@@ -5691,20 +4942,9 @@ struct SongHeader s_rap_orette_saiko_seqData = {
     /* Song Number   */ 1763
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_rap_kimitte_saiko_en_mid[];
-extern const u8 s_rap_kimitte_saiko_mid[];
-struct SongHeader s_rap_kimitte_saiko_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_rap_kimitte_saiko_en_mid,
-    #else
-    /* MIDI Sequence */ s_rap_kimitte_saiko_mid,
-    #endif
-=======
 extern const u8 s_rap_kimitte_saiko_mid[];
 struct SongHeader s_rap_kimitte_saiko_seqData = {
     /* MIDI Sequence */ s_rap_kimitte_saiko_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_15,
     /* Volume        */ 100,
@@ -5714,44 +4954,9 @@ struct SongHeader s_rap_kimitte_saiko_seqData = {
     /* Song Number   */ 1764
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_rap_kimitte_saiko_slow_mid[];
-struct SongHeader s_rap_kimitte_saiko_slow_seqData = {
-    /* MIDI Sequence */ s_rap_kimitte_saiko_slow_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_15,
-    /* Volume        */ 100,
-    /* Priority      */ 90,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_rap_kimitte_saiko_slow_seqName,
-    /* Song Number   */ 1747
-};
-
-extern const u8 s_rap_honto_desuka_slow_mid[];
-struct SongHeader s_rap_honto_desuka_slow_seqData = {
-    /* MIDI Sequence */ s_rap_honto_desuka_slow_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_15,
-    /* Volume        */ 100,
-    /* Priority      */ 90,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_rap_honto_desuka_slow_seqName,
-    /* Song Number   */ 1746
-};
-
-extern const u8 s_rap_oyatuga_naiyo_en_mid[];
-extern const u8 s_rap_oyatuga_naiyo_mid[];
-struct SongHeader s_rap_oyatuga_naiyo_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_rap_oyatuga_naiyo_en_mid,
-    #else
-    /* MIDI Sequence */ s_rap_oyatuga_naiyo_mid,
-    #endif
-=======
 extern const u8 s_rap_oyatuga_naiyo_mid[];
 struct SongHeader s_rap_oyatuga_naiyo_seqData = {
     /* MIDI Sequence */ s_rap_oyatuga_naiyo_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_15,
     /* Volume        */ 100,
@@ -5761,20 +4966,9 @@ struct SongHeader s_rap_oyatuga_naiyo_seqData = {
     /* Song Number   */ 1765
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_rap_oresira_naiyo_en_mid[];
-extern const u8 s_rap_oresira_naiyo_mid[];
-struct SongHeader s_rap_oresira_naiyo_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_rap_oresira_naiyo_en_mid,
-    #else
-    /* MIDI Sequence */ s_rap_oresira_naiyo_mid,
-    #endif
-=======
 extern const u8 s_rap_oresira_naiyo_mid[];
 struct SongHeader s_rap_oresira_naiyo_seqData = {
     /* MIDI Sequence */ s_rap_oresira_naiyo_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_15,
     /* Volume        */ 100,
@@ -6073,13 +5267,8 @@ struct SongHeader s_check_result_bgm_seqData = {
 };
 
 extern const u8 s_lesson_sel_bgm_mid[];
-extern const u8 s_lesson_sel_bgm_english_mid[];
 struct SongHeader s_lesson_sel_bgm_seqData = {
-#ifdef SFX
-    /* MIDI Sequence */ s_lesson_sel_bgm_english_mid,
-#else
     /* MIDI Sequence */ s_lesson_sel_bgm_mid,
-#endif
     /* Sound Player  */ MUSIC_PLAYER_0,
     /* Bank Number   */ INST_BANK_46,
     /* Volume        */ 100,
@@ -8609,20 +7798,9 @@ struct SongHeader s_f_ninja_v_nanu_seqData = {
     /* Song Number   */ 592
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_f_rapW_v_YoOyatuDesuka_en_mid[];
-extern const u8 s_f_rapW_v_YoOyatuDesuka_mid[];
-struct SongHeader s_f_rapW_v_YoOyatuDesuka_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_f_rapW_v_YoOyatuDesuka_en_mid,
-    #else
-    /* MIDI Sequence */ s_f_rapW_v_YoOyatuDesuka_mid,
-    #endif
-=======
 extern const u8 s_f_rapW_v_YoOyatuDesuka_mid[];
 struct SongHeader s_f_rapW_v_YoOyatuDesuka_seqData = {
     /* MIDI Sequence */ s_f_rapW_v_YoOyatuDesuka_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_4,
     /* Bank Number   */ INST_BANK_56,
     /* Volume        */ 103,
@@ -8632,20 +7810,9 @@ struct SongHeader s_f_rapW_v_YoOyatuDesuka_seqData = {
     /* Song Number   */ 600
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_f_rapW_v_Yo10JiDesuka_en_mid[];
-extern const u8 s_f_rapW_v_Yo10JiDesuka_mid[];
-struct SongHeader s_f_rapW_v_Yo10JiDesuka_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_f_rapW_v_Yo10JiDesuka_en_mid,
-    #else
-    /* MIDI Sequence */ s_f_rapW_v_Yo10JiDesuka_mid,
-    #endif
-=======
 extern const u8 s_f_rapW_v_Yo10JiDesuka_mid[];
 struct SongHeader s_f_rapW_v_Yo10JiDesuka_seqData = {
     /* MIDI Sequence */ s_f_rapW_v_Yo10JiDesuka_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_4,
     /* Bank Number   */ INST_BANK_56,
     /* Volume        */ 103,
@@ -8703,20 +7870,9 @@ struct SongHeader s_f_rapW_v_AketeIikamone_seqData = {
     /* Song Number   */ 606
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_f_rapW_v_OyatuwaSaiko_en_mid[];
-extern const u8 s_f_rapW_v_OyatuwaSaiko_mid[];
-struct SongHeader s_f_rapW_v_OyatuwaSaiko_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_f_rapW_v_OyatuwaSaiko_en_mid,
-    #else
-    /* MIDI Sequence */ s_f_rapW_v_OyatuwaSaiko_mid,
-    #endif
-=======
 extern const u8 s_f_rapW_v_OyatuwaSaiko_mid[];
 struct SongHeader s_f_rapW_v_OyatuwaSaiko_seqData = {
     /* MIDI Sequence */ s_f_rapW_v_OyatuwaSaiko_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_4,
     /* Bank Number   */ INST_BANK_56,
     /* Volume        */ 103,
@@ -8774,20 +7930,9 @@ struct SongHeader s_f_rapW_v_KareniwaNaisho_seqData = {
     /* Song Number   */ 611
 };
 
-<<<<<<< Updated upstream
-extern const u8 s_f_rapW_v_DarenimoNaisho_en_mid[];
-extern const u8 s_f_rapW_v_DarenimoNaisho_mid[];
-struct SongHeader s_f_rapW_v_DarenimoNaisho_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_f_rapW_v_DarenimoNaisho_en_mid,
-    #else
-    /* MIDI Sequence */ s_f_rapW_v_DarenimoNaisho_mid,
-    #endif
-=======
 extern const u8 s_f_rapW_v_DarenimoNaisho_mid[];
 struct SongHeader s_f_rapW_v_DarenimoNaisho_seqData = {
     /* MIDI Sequence */ s_f_rapW_v_DarenimoNaisho_mid,
->>>>>>> Stashed changes
     /* Sound Player  */ SFX_PLAYER_4,
     /* Bank Number   */ INST_BANK_56,
     /* Volume        */ 103,
@@ -9516,197 +8661,3 @@ struct SongHeader s_f_marcher2_v_hidari_seqData = {
     /* Song Title    */ s_f_marcher2_v_hidari_seqName,
     /* Song Number   */ 709
 };
-<<<<<<< Updated upstream
-
-extern const u8 s_f_marcher2_v_zentai_jp_mid[];
-struct SongHeader s_f_marcher2_v_zentai_jp_seqData = {
-    /* MIDI Sequence */ s_f_marcher2_v_zentai_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_57,
-    /* Volume        */ 90,
-    /* Priority      */ 127,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_marcher2_v_zentai_jp_seqName,
-    /* Song Number   */ 701
-};
-extern const u8 s_f_marcher2_v_susume_jp_mid[];
-struct SongHeader s_f_marcher2_v_susume_jp_seqData = {
-    /* MIDI Sequence */ s_f_marcher2_v_susume_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_57,
-    /* Volume        */ 85,
-    /* Priority      */ 127,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_marcher2_v_susume_jp_seqName,
-    /* Song Number   */ 702
-};
-
-extern const u8 s_f_marcher2_v_tomare_jp_mid[];
-struct SongHeader s_f_marcher2_v_tomare_jp_seqData = {
-    /* MIDI Sequence */ s_f_marcher2_v_tomare_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_57,
-    /* Volume        */ 90,
-    /* Priority      */ 127,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_marcher2_v_tomare_jp_seqName,
-    /* Song Number   */ 703
-};
-
-extern const u8 s_f_marcher2_v_migimukeL_jp_mid[];
-struct SongHeader s_f_marcher2_v_migimukeL_jp_seqData = {
-    /* MIDI Sequence */ s_f_marcher2_v_migimukeL_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_57,
-    /* Volume        */ 90,
-    /* Priority      */ 127,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_marcher2_v_migimukeL_jp_seqName,
-    /* Song Number   */ 704
-};
-
-extern const u8 s_f_marcher2_v_migimukeS_jp_mid[];
-struct SongHeader s_f_marcher2_v_migimukeS_jp_seqData = {
-    /* MIDI Sequence */ s_f_marcher2_v_migimukeS_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_57,
-    /* Volume        */ 90,
-    /* Priority      */ 127,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_marcher2_v_migimukeS_jp_seqName,
-    /* Song Number   */ 705
-};
-
-extern const u8 s_f_marcher2_v_migi_jp_mid[];
-struct SongHeader s_f_marcher2_v_migi_jp_seqData = {
-    /* MIDI Sequence */ s_f_marcher2_v_migi_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_57,
-    /* Volume        */ 90,
-    /* Priority      */ 127,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_marcher2_v_migi_jp_seqName,
-    /* Song Number   */ 706
-};
-
-extern const u8 s_f_marcher2_v_hidarimukeL_jp_mid[];
-struct SongHeader s_f_marcher2_v_hidarimukeL_jp_seqData = {
-    /* MIDI Sequence */ s_f_marcher2_v_hidarimukeL_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_57,
-    /* Volume        */ 90,
-    /* Priority      */ 127,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_marcher2_v_hidarimukeL_jp_seqName,
-    /* Song Number   */ 707
-};
-
-extern const u8 s_f_marcher2_v_hidarimukeS_jp_mid[];
-struct SongHeader s_f_marcher2_v_hidarimukeS_jp_seqData = {
-    /* MIDI Sequence */ s_f_marcher2_v_hidarimukeS_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_57,
-    /* Volume        */ 90,
-    /* Priority      */ 127,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_marcher2_v_hidarimukeS_jp_seqName,
-    /* Song Number   */ 708
-};
-
-extern const u8 s_f_marcher2_v_hidari_jp_mid[];
-struct SongHeader s_f_marcher2_v_hidari_jp_seqData = {
-    /* MIDI Sequence */ s_f_marcher2_v_hidari_jp_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_57,
-    /* Volume        */ 90,
-    /* Priority      */ 127,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_marcher2_v_hidari_jp_seqName,
-    /* Song Number   */ 709
-};
-
-extern const u8 s_rat_paw_mid[];
-struct SongHeader s_rat_paw_seqData = {
-    /* MIDI Sequence */ s_rat_paw_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_6,
-    /* Volume        */ 100,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_rat_paw_seqName,
-    /* Song Number   */ 1935
-};
-
-extern const u8 s_f_boxing_hit_sfx_mid[];
-struct SongHeader s_f_boxing_hit_sfx_seqData = {
-    /* MIDI Sequence */ s_f_boxing_hit_sfx_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_56,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_boxing_hit_sfx_seqName,
-    /* Song Number   */ 1937
-};
-
-extern const u8 s_f_boxing_three_sfx_mid[];
-struct SongHeader s_f_boxing_three_sfx_seqData = {
-    /* MIDI Sequence */ s_f_boxing_three_sfx_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_56,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_boxing_three_sfx_seqName,
-    /* Song Number   */ 1938
-};
-
-extern const u8 s_f_boxing_two_sfx_mid[];
-struct SongHeader s_f_boxing_two_sfx_seqData = {
-    /* MIDI Sequence */ s_f_boxing_two_sfx_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_56,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_boxing_two_sfx_seqName,
-    /* Song Number   */ 1939
-};
-
-extern const u8 s_f_boxing_four_sfx_mid[];
-struct SongHeader s_f_boxing_four_sfx_seqData = {
-    /* MIDI Sequence */ s_f_boxing_four_sfx_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_56,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_boxing_four_sfx_seqName,
-    /* Song Number   */ 1940
-};
-
-extern const u8 s_guntai_v_susume_2_mid[];
-struct SongHeader s_guntai_v_susume_2_seqData = {
-    /* MIDI Sequence */ s_guntai_v_susume_2_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 100,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_susume_2_seqName,
-    /* Song Number   */ 1537
-};
-
-extern const u8 s_guntai_v_susume_3_mid[];
-struct SongHeader s_guntai_v_susume_3_seqData = {
-    /* MIDI Sequence */ s_guntai_v_susume_3_mid,
-    /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_4,
-    /* Volume        */ 100,
-    /* Priority      */ 90,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_guntai_v_susume_3_seqName,
-    /* Song Number   */ 1538
-};
-=======
->>>>>>> Stashed changes
