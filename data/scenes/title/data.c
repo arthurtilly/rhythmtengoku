@@ -30,7 +30,7 @@ struct TitleLogoCharData title_logo_char_data[TOTAL_TITLE_LOGO_BUBBLES] = {
         /* Angle */ -133
     },
     /* RAD */ {
-        /* Anim. */ anim_title_logo_rad,
+        /* Anim. */ anim_title_logo_av,
         /* X, Y  */ 129, 90,
         /* Angle */ 97
     },

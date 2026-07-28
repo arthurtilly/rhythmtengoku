@@ -106,7 +106,7 @@ struct Animation anim_title_logo_goku[] = {
 };
 
 // [D_0890d4e0] Logo - ?¿½?¿½
-struct Animation anim_title_logo_rad[] = {
+struct Animation anim_title_logo_av[] = {
     /* 000 */ { title_cel100, 4 },
     /* End */ END_ANIMATION
 };
