@@ -68,14 +68,7 @@ else
 endif
 
 # Preprocessor defines
-<<<<<<< Updated upstream
-
-# Features: SFX, PLUS, PLAYTEST, PARADISE, RUMBLE
-FEATURES ?= 
-DEFINES := REV=$(REV) $(FEATURES)
-=======
 DEFINES := REV=$(REV)
->>>>>>> Stashed changes
 C_DEFINES := $(foreach d,$(DEFINES),-D$(d))
 
 CFLAGS := -mthumb-interwork -Wparentheses -O2 -fhex-asm
