@@ -35,17 +35,10 @@ struct LevelData level_data_table[] = {
     /* CLAPPY_TRIO */ {
         /* Entry Scene   */ &scene_clappy_trio,
         /* Level Name    */ "The Clappy Trio",
-<<<<<<< Updated upstream
-        /* Level Desc.   */ "Clap your hands in\n"
-                            "order! You are the third\n"
-                            "clapper. Keep your eyes\n"
-							"on the other two!",
-=======
         /* Level Desc.   */ "This world-famous trio\n"
                             "never misses a beat.\n"
                             "You're the third, so\n"
 							"watch the other two!",
->>>>>>> Stashed changes
         /* Level Icon    */ 4,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_clappy_trio_gfx_tables,
@@ -68,11 +61,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "I spent everything I had on this outfit!",
             /* OK        */ "We were so close...",
-            #ifdef PARADISE
-            /* SUPERB    */ "Perfect sync! It must be the outfits, right?"
-            #else
             /* SUPERB    */ "Perfect sync! It's gotta be the outfits, right?"
-            #endif
         },
     },
     /* POLYRHYTHM */ {
@@ -253,17 +242,10 @@ struct LevelData level_data_table[] = {
     /* SNEAKY_SPIRITS */ {
         /* Entry Scene   */ &scene_sneaky_spirits,
         /* Level Name    */ "Sneaky Spirits",
-<<<<<<< Updated upstream
-        /* Level Desc.   */ "These spirits aren't evil,\n"
-                            "exactly, but they ARE\n"
-                            "kinda mean: they'll laugh\n"
-                            "at you if you miss.",
-=======
         /* Level Desc.   */ "Ghosts are trying to\n"
                             "escape their haunted\n"
                             "house! Don't let them\n"
                             "get past you!",
->>>>>>> Stashed changes
         /* Level Icon    */ 1,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_sneaky_spirits_gfx_tables,
@@ -348,25 +330,9 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_tap_trial_gfx_tables,
         /* Epilogue Text */ {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
             /* TRY_AGAIN */ "Disappointing...",
             /* OK        */ "Pretty good...for a human.",
             /* SUPERB    */ "It feels good to belong!"
-=======
-            #ifdef PARADISE
-            /* TRY_AGAIN */ "Better tap out.",
-            #else
-            /* TRY_AGAIN */ "Gotta tap out.",
-            #endif
-            /* OK        */ "You were ALMOST as good as a monkey...",
-            /* SUPERB    */ "Tap loves you too, Giraffe!"
->>>>>>> ca804658a2579ec61b004a7b581a62fa8dd31441
-=======
-            /* TRY_AGAIN */ "Disappointing...",
-            /* OK        */ "Pretty good...for a human.",
-            /* SUPERB    */ "It feels good to belong!"
->>>>>>> Stashed changes
         }
     },
     /* TAP_TRIAL_2 */ {
@@ -389,13 +355,8 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &scene_marching_orders,
         /* Level Name    */ "Marching Orders",
         /* Level Desc.   */ "Ready, march! Following\n"
-<<<<<<< Updated upstream
-                            "orders as a unit builds\n"
-                            "a sense of camaraderie.\n"
-=======
                             "unit orders builds a\n"
                             "sense of camaraderie.\n"
->>>>>>> Stashed changes
 							"Also, rhythm.",
         /* Level Icon    */ 21,
         /* Level Type    */ LEVEL_TYPE_GAME,
@@ -506,39 +467,23 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &scene_toss_boys,
         /* Level Name    */ "Toss Team",
         /* Level Desc.   */ "This trio of friends love\n"
-                            #ifdef PARADISE
-                            "practising volleyball.\n"
-                            #else
                             "practicing volleyball.\n"
-                            #endif
                             "Listen for their names\n"
                             "as they pass their ball!",
         /* Level Icon    */ 30,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_toss_boys_gfx_tables,
         /* Epilogue Text */ {
-            #ifdef PARADISE
-            /* TRY_AGAIN */ "We've been thrown out!",
-            #else
             /* TRY_AGAIN */ "We've been tossed out!",
-            #endif
             /* OK        */ "Next time, we'll toss better than the best!",
-            #ifdef PARADISE
-            /* SUPERB    */ "Chuck World Championship, here we come!"
-            #else
             /* SUPERB    */ "Toss World Championship, here we come!"
-            #endif
         }
     },
     /* TOSS_BOYS_2 */ {
         /* Entry Scene   */ &scene_toss_boys_2,
         /* Level Name    */ "Toss Team 2",
         /* Level Desc.   */ "This trio of friends love\n"
-                            #ifdef PARADISE
-                            "practising volleyball.\n"
-                            #else
                             "practicing volleyball.\n"
-                            #endif
                             "Today, they're training\n"
                             "harder than ever!",
         /* Level Icon    */ 29,
@@ -547,11 +492,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Our spirits have been deflated...",
             /* OK        */ "We still have a long way to go!",
-            #ifdef PARADISE
-            /* SUPERB    */ "Three cheers for our star thrower!"
-            #else
             /* SUPERB    */ "Three cheers for our star tosser!"
-            #endif
         },
     },
     /* RAT_RACE */ {
@@ -608,7 +549,7 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "You want a dancing\n"
                             "challenge? Try dancing\n"
                             "in zero gravity!\n"
-							"IN SPAAAAAAAAAAAAACE!",
+							"IN SPAAAAAAAAAACE!",
         /* Level Icon    */ 40,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_space_dance_gfx_tables,
@@ -678,11 +619,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_quiz_show_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "I can do better... I can do better...",
-            #ifdef PARADISE
-            /* OK        */ "Must study... for next time... Zzz...",
-            #else
             /* OK        */ "Gotta study... for next time... Zzz...",
-            #endif
             /* SUPERB    */ "I won the grand prize! A world tour!"
         }
     },
@@ -848,15 +785,7 @@ struct LevelData level_data_table[] = {
     },
     /* CAFE */ {
         /* Entry Scene   */ &scene_cafe,
-<<<<<<< Updated upstream
-        #ifdef PARADISE
-        /* Level Name    */ "Caf‡Q Counselling",
-        #else
         /* Level Name    */ "Caf‡Q Counseling",
-        #endif
-=======
-        /* Level Name    */ "Caf‡Q Counseling",
->>>>>>> Stashed changes
         /* Level Desc.   */ "How are you feeling?\n"
                             "If something's on your\n"
                             "mind, feel free to\n"
@@ -949,10 +878,5 @@ struct LevelData level_data_table[] = {
             /* OK        */ "The owner says... \"You've got great skills, you know!\"",
             /* SUPERB    */ "The producer says... \"You should play at our place, too!\""
         }
-<<<<<<< Updated upstream
-    },
-};
-=======
     }
 };
->>>>>>> Stashed changes

@@ -2,16 +2,12 @@
 struct ReadingMaterial reading_material_table[] = {
     /* WELCOME ("Rhythm Tengoku Welcome") */ {
         /* TITLE ---------------------------------------------------------- */
-            "Welcome to Rhythm Paradise!",
+            "Welcome to Rhythm Heaven!",
         /* BODY ----------------------------------------------------------- */
             "Greetings!\n"
             "\n"
             "Thank you for buying\n"
-<<<<<<< Updated upstream
-            "Rhythm Heaven Advance.\n"
-=======
-            "Rhythm Paradise.\n"
->>>>>>> Stashed changes
+            "Rhythm Heaven.\n"
             "Oh... you've borrowed it from a friend?\n"
             "Or is it... s-secondhand?\n"
             "Well, that's beside the point.\n"
@@ -109,15 +105,7 @@ struct ReadingMaterial reading_material_table[] = {
         /* TITLE ---------------------------------------------------------- */
             "Night Walk Information",
         /* BODY ----------------------------------------------------------- */
-<<<<<<< Updated upstream
-            #ifdef PARADISE
-	        "There's this strange fellow who you might recognise\n"
-            #else
 	        "There's this strange fellow who you might recognize\n"
-            #endif
-=======
-	        "There's this strange fellow who you might recognize\n"
->>>>>>> Stashed changes
             "from Night Walk.\n"
             "He seems to really love music.\n"
             "\n"
@@ -199,37 +187,6 @@ struct ReadingMaterial reading_material_table[] = {
         /* TITLE ---------------------------------------------------------- */
             "Horse Machine's Story",
         /* BODY ----------------------------------------------------------- */
-<<<<<<< Updated upstream
-            	    #ifdef PARADISE
-	    	"We were given the chance to interview M. F,\n"
-            "inventor of the Horse Machine in the Rhythm Toys\n"
-            "section, about its development.\n"
-            "\n"
-            "\n"
-            "Mr F: The idea came about because I just really\n"
-            "wanted to share the joys of riding a horse. So\n"
-            "development sort of revolved around that idea.\n"
-            "\n"
-            "Mr F's comments were as simple as they were\n"
-            "passionate.\n"
-            "\n"
-            "Mr F: But in trying to make a game out of it, I found\n"
-            "myself losing sight of that end goal. I considered\n"
-            "giving up many times.\n"
-            "\n"
-            "It was a struggle for Mr F, who found it difficult to\n"
-            "express his vision within a standard framework.\n"
-            "Mr F: But thinking about the kinds of people who\n"
-            "use the Horse Machine and get even a little joy\n"
-            "out of it...\n"
-            "Well, the hardships sort of just drift away.\n"
-            "\n"
-            "Mr F, you are truly devoted to your craft.\n"
-            "We look forward to seeing your next creations.\n"
-            "Thank you!",
-            #else
-=======
->>>>>>> Stashed changes
 	    	"We were given the chance to interview Mr. F,\n"
             "inventor of the Horse Machine in the Rhythm Toys\n"
             "section, about its development.\n"
@@ -256,7 +213,6 @@ struct ReadingMaterial reading_material_table[] = {
             "Mr. F, you are truly devoted to your craft.\n"
             "We look forward to seeing your next creations.\n"
             "Thank you!",
-            #endif
         /* STYLE ---------------------------------------------------------- */
             /* GFX */ reading_style_train_gfx_table,
             /* BGM */ &reading_style_train_bgm
@@ -340,15 +296,9 @@ struct ReadingMaterial reading_material_table[] = {
             "RM: Right!? It was enough to make me yell...\n"
             "DJ: You were like, \"Wait a sec, we LOST SOME!\"\n"
             "RM: Uh... Yeah! How do you know that?\n"
-<<<<<<< Updated upstream
-            "DJ: I've been playing Rhythm Heaven Advance!\n"
+            "DJ: I've been playing Rhythm Heaven!\n"
             "Roll the commercial!\n"
-            "AD: UP your flow with Rhythm Heaven Advance!\n"
-=======
-            "DJ: I've been playing Rhythm Paradise!\n"
-            "Roll the commercial!\n"
-            "AD: UP your flow with Rhythm Paradise!\n"
->>>>>>> Stashed changes
+            "AD: UP your flow with Rhythm Heaven!\n"
             "Available now! Game and system sold separately.\n"
             "\n"
             "End.",
@@ -365,21 +315,12 @@ struct ReadingMaterial reading_material_table[] = {
             "TheÅôBon Odori\n"
             "\n"
 			"\n"
-<<<<<<< Updated upstream
-            "Vocals: Ami Tokito\n"
-            "Song: TsunkuÅâ\n"
-            "Arrangement: Koichi Yuasa, Kaoru Okubo\n"
-            "\n"
-            "(This song appears in\n"
-            "TheÅôBon Odori.)\n"
-=======
             "Song: TsunkuÅâ\n"
             "Arrangement: Koichi Yuasa, Kaoru Okubo\n"
 			"\n"
             "(This song appears in\n"
             "TheÅôBon Odori.)\n"
 			"\n"
->>>>>>> Stashed changes
             "Haa~\n"
             "            Oh when the fireworks fly~\n"
             "Haa~ Ah~\n"
@@ -419,25 +360,12 @@ struct ReadingMaterial reading_material_table[] = {
             "Honey Sweet Angel of Love\n"
             "\n"
 			"\n"
-<<<<<<< Updated upstream
-            "Vocals: Bellajenna\n"
-            "Song: TsunkuÅâ\n"
-            "Arrangement: Hideyuki \"Daichi\" Suzuki\n"
-<<<<<<< HEAD
-=======
-            "Translation: castIeRook, Mizuka Lover\n"
->>>>>>> ca804658a2579ec61b004a7b581a62fa8dd31441
-            "\n"
-            "(This song appears in\n"
-            "Remix 3.)\n"
-=======
             "Song: TsunkuÅâ\n"
             "Arrangement: Hideyuki \"Daichi\" Suzuki\n"
             "\n"
             "(This song appears in\n"
             "Remix 3.)\n"
 			"\n"
->>>>>>> Stashed changes
             "Love has a charming flow\n"
             "Love has mysterious glow\n"
             "Love's many shapes and degrees\n"
@@ -484,25 +412,12 @@ struct ReadingMaterial reading_material_table[] = {
             "WISH - Can't Wait for You\n"
             "\n"
 			"\n"
-<<<<<<< Updated upstream
-            "Vocals: Roxby\n"
-            "Song: TsunkuÅâ\n"
-            "Arrangement: Koichi Yuasa\n"
-<<<<<<< HEAD
-=======
-            "Translation: castIeRook\n"
->>>>>>> ca804658a2579ec61b004a7b581a62fa8dd31441
-            "\n"
-            "(This song appears in\n"
-            "Remix 5.)\n"
-=======
             "Song: TsunkuÅâ\n"
             "Arrangement: Koichi Yuasa\n"
             "\n"
             "(This song appears in\n"
             "Remix 5.)\n"
 			"\n"
->>>>>>> Stashed changes
             "I can't keep waiting forever\n"
             "Tonight we'll say our goodbyes\n"
             "I wish I loved you more when you were by my side\n"
@@ -522,15 +437,7 @@ struct ReadingMaterial reading_material_table[] = {
             "Our hearts started to drift away\n"
             "\n"
             "Our kisses faded and I don't know how\n"
-<<<<<<< Updated upstream
-            #ifdef PARADISE
-	        "I didn't realise 'til now\n"
-            #else
 	        "I didn't realize 'til now\n"
-            #endif
-=======
-	        "I didn't realize 'til now\n"
->>>>>>> Stashed changes
             "\n"
             "My dreams are clouding up into a haze\n"
             "And you're clouding up into a haze\n"
@@ -571,22 +478,9 @@ struct ReadingMaterial reading_material_table[] = {
             "Such a feat certainly is impressive! ...is how I should\n"
             "be congratulating you, but I won't.\n"
             "You have performed outstandingly here in\n"
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-            #ifdef PARADISE
-            "Rhythm Paradise Advance.\n"
-            "\n"
-            "That much is undeniable, and we fully recognise it.\n"
-            #else
->>>>>>> ca804658a2579ec61b004a7b581a62fa8dd31441
-            "Rhythm Heaven Advance.\n"
-=======
-            "Rhythm Paradise.\n"
->>>>>>> Stashed changes
+            "Rhythm Heaven.\n"
             "\n"
             "That much is undeniable, and we fully recognize it.\n"
-            #endif
             "You are the best! One of the greatest! ...is how I feel,\n"
             "but that's enough praise.\n"
             "\n"
@@ -677,11 +571,7 @@ struct ReadingMaterial reading_material_table[] = {
             "Blue: Wha? You can't \"play\" rhythm, Yellow.\n"
             "It's not an instrument. Where did you hear that?\n"
             "Yellow: Well, I told my teacher I wanted to play\n"
-            #ifdef PARADISE
-            "drums, but he told me I should practise \"rhythm\" first!\n"
-            #else
             "drums, but he told me I should practice \"rhythm\" first!\n"
-            #endif
             "Blue: Yellow, I think he meant you need to\n"
             "improve your sense of rhythm.\n"
             "Yellow: Oh yeah, that's much closer! That's\n"
@@ -693,21 +583,9 @@ struct ReadingMaterial reading_material_table[] = {
             "Yellow: Oop! Blue, your fly is down!\n"
             "Blue: Huh!? Wait, really?\n"
             "Yellow: No, I lied.\n"
-<<<<<<< Updated upstream
-            #ifdef PARADISE
-	    	"Blue: Why you...!\n"
-            	"\n"
-            	"Yellow: \"Why you\"! Man, that's kind of a\n"
-            #else
-	    	"Blue: Why I oughta...!\n"
-            	"\n"
-            	"Yellow: \"Why I oughta-!\" Man, that's kind of a\n"
-            #endif
-=======
 	    	"Blue: Why I oughta...!\n"
             "\n"
             "Yellow: \"Why I oughta-!\" Man, that's kind of a\n"
->>>>>>> Stashed changes
             "cheesy line, don't you think?\n"
             "Blue: Shut it... I've had enough.\n"
             "Yellow: GRAAAGH!\n"
@@ -721,11 +599,7 @@ struct ReadingMaterial reading_material_table[] = {
             "Blue: Oh, that's rich! Anyway, what about your\n"
             "sense of rhythm?\n"
             "Yellow: Right! My classmates said that my\n"
-            #ifdef PARADISE
-            "\"scents of rhythm\" will improve with practise.\n"
-            #else
             "\"scents of rhythm\" will improve with practice.\n"
-            #endif
             "Blue: Your SENSE of rhythm! Idiot!\n"
             "\n"
             "Both: Thank you! You've been a wonderful audience!\n",
@@ -740,11 +614,7 @@ struct ReadingMaterial reading_material_table[] = {
             "Voices of Joy",
         /* BODY ----------------------------------------------------------- */
             "We've received many letters from satisfied\n"
-<<<<<<< Updated upstream
-            "players of Rhythm Heaven Advance.\n"
-=======
-            "players of Rhythm Paradise.\n"
->>>>>>> Stashed changes
+            "players of Rhythm Heaven.\n"
             "\n"
             "So, SO many in fact(!), that we can't show all of them,\n"
             "but here are just a few of our players' thoughts!\n"
@@ -756,11 +626,7 @@ struct ReadingMaterial reading_material_table[] = {
             "\n"
             "\0031" "\001m" "I've become... popular?\n"
             "\0030" "\001s" "\n"
-<<<<<<< Updated upstream
-            "Before I found Rhythm Heaven Advance,\n"
-=======
-            "Before I found Rhythm Paradise,\n"
->>>>>>> Stashed changes
+            "Before I found Rhythm Heaven,\n"
             "I had no luck with women, but now I'm a real hot shot\n"
             "with a new lease on life!\n"
             "\n"
@@ -770,11 +636,7 @@ struct ReadingMaterial reading_material_table[] = {
             "\0031" "\001m" "I've become...\n"
             "\0031" "\001R" "a better singer?"
             "\0030" "\001s" "\n"
-<<<<<<< Updated upstream
-            "\001L" "Before I found Rhythm Heaven Advance,\n"
-=======
-            "\001L" "Before I found Rhythm Paradise,\n"
->>>>>>> Stashed changes
+            "\001L" "Before I found Rhythm Heaven,\n"
             "I was the textbook definition of tone-deaf,\n"
             "but lately people have told me my singing is much nicer!\n"
             "I'm still tone deaf, of course, but at least I'm happy!\n"
@@ -1126,127 +988,5 @@ struct ReadingMaterial reading_material_table[] = {
             /* GFX */ reading_style_haiku_gfx_table,
             /* BGM */ &reading_style_haiku_bgm
         /* ---------------------------------------------------------------- */
-<<<<<<< Updated upstream
-    },
-<<<<<<< Updated upstream
-
-    /* READING_MATERIAL_CREDITS */ {
-        /* TITLE ---------------------------------------------------------- */
-            "Advance Credits",
-        /* BODY ----------------------------------------------------------- */
-            "Rhythm Heaven Advance is a fan translation project\n"
-            "made entirely by fans of the original series.\n"
-            "\n"
-            "This project wouldn't have been possible without the\n"
-            "help of all the incredible people that came together!\n"
-            "\n"
-            "Whether it was Graphics, Sound, Localization,\n"
-            "Translation, Playtesting or even just giving\n"
-            "your opinion, every input mattered.\n"
-            "So without further ado, here are all the incredible\n"
-            "people that helped make this project possible:\n"
-            "\n"
-			"Main Maintainers:\n"
-			"+ ShaffySwitcher\n"
-			"+ itaific\n"
-			"\n"
-			"Coding Contributions:\n"
-			"+ Deni_iguess\n"
-			"+ patataofcourse\n"
-			"+ Conhlee\n"
-			"+ Everyone who has worked on the decompilation.\n"
-			"\n"
-			"Assets & Graphics:\n"
-			"+ SkyeStage\n"
-			"+ Cash Banooka\n"
-			"+ geometricentric\n"
-			"+ somethingAccurate\n"
-			"+ TinyCastleGuy\n"
-			"+ The Eggo55\n"
-			"+ vincells\n"
-			"+ WindowsTiger\n"
-			"+ Kievit\n"
-			"+ NotWario\n"
-			"+ amdree\n"
-			"+ patataofcourse\n"
-			"+ Nate Candles\n"
-			"+ Borists\n"
-			"+ Tailx\n"
-			"\n"
-			#ifdef PARADISE
-            "Localisation / Translation:\n"
-            #else
-            "Localization / Translation:\n"
-            #endif
-			"+ Cash Banooka\n"
-			"+ SkyeStage\n"
-			"+ somethingAccurate\n"
-			"+ ShaffySwitcher\n"
-			"+ Mizuka Lover\n"
-			"+ castIeRook\n"
-			"+ patataofcourse\n"
-			"+ Various Rhythm Heaven games\n"
-			"+ Inspiration from Rhythm Heaven Silver\n"
-			"\n"
-			"Sound Effects:\n"
-			"+ Various Rhythm Heaven games\n"
-			"+ Cherryberryfaygo\n"
-			"+ Nabix (& his family)\n"
-			"+ itaific\n"
-			"+ SesuRescue\n"
-			"+ FireChatÅâ\n"
-			"+ saladplainzone\n"
-            "+ Bellajenna\n"
-            "+ Roxby\n"
-            "+ Kievit\n"
-			"\n"
-            "\n"
-            "Remix 3 English Song Credits:\n"
-            "Vocals: Bellajenna\n"
-            "Translation: castIeRook, Mizuka Lover\n"
-            "Mixing: FireChatÅâ, castIeRook\n"
-            "Remix 5 English Song Credits:\n"
-            "Vocals: Roxby\n"
-            "Translation: castIeRook\n"
-            "Revisions: Cash the Nondescript, saladplainzone\n"
-            "Mixing: FireChatÅâ, saladplainzone\n"
-			"Playtesting:\n"
-			"+ nwqol\n"
-			"+ pokedart9001\n"
-			"+ MacBass24\n"
-			"+ GamblingGambit\n"
-			"+ UriaOfFlames\n"
-			"+ FernandoLemon\n"
-			"+ KingDragoon24\n"
-			"+ IloGaming4\n"
-			"+ Feder-28\n"
-			"+ The Eggo55\n"
-			"+ Sammie the Moron\n"
-			"+ taylor\n"
-			"+ Bluefus\n"
-			"+ 0blivion\n"
-			"+ Funk\n"
-			"+ Borists\n"
-			"+ WilliamDavi\n"
-			"+ Spooky Jumpropes\n"
-			"+ Lilynell\n"
-			"+ acerbt\n"
-			"+ Lemonici\n"
-            "\n"
-			"Special Thanks:\n"
-			"+ The decomp folks again\n"
-			"+ Everyone in the Rhythm Heaven Advance Discord\n"
-			"  ... and you!\n"
-            "Thank you all for your hard work!\n"
-            "And thank YOU for playing this patch!\n",
-        /* STYLE ---------------------------------------------------------- */
-            /* GFX */ reading_style_mail_gfx_table,
-            /* BGM */ &reading_style_mail_bgm
-        /* ---------------------------------------------------------------- */
-=======
->>>>>>> Stashed changes
     }
 };
-=======
-};
->>>>>>> Stashed changes

@@ -1,12 +1,8 @@
 // [D_089dd548] Endless Games Menu - Levels
 struct MedalCornerLevel endless_menu_levels[] = {
     /* MR_UPBEAT */ {
-        /* Scene  */ &scene_mr_upbeat,	
-        #ifdef PARADISE
-        /* Title  */ "Mr Upbeat",
-        #else
+        /* Scene  */ &scene_mr_upbeat,
         /* Title  */ "Mr. Upbeat",
-        #endif
         /* Anim   */ anim_endless_menu_mr_upbeat,
         /* Medals */ 1
     },
