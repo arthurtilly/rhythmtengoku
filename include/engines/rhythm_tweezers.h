@@ -20,8 +20,8 @@ enum RhythmTweezersVegetableTypesEnum {
     VEGETABLE_TYPE_POTATO
 };
 
-#define RT_VEGETABLE_BG_MAP_L *(u32 *)(VRAMBase + 0xF000) // VRAM BG Map for vegetable textures (left).
-#define RT_VEGETABLE_BG_MAP_R *(u32 *)(VRAMBase + 0xF800) // VRAM BG Map for vegetable textures (right).
+#define RT_VEGETABLE_BG_MAP_L (u16 *)(VRAMBase + 0xF000) // VRAM BG Map for vegetable textures (left).
+#define RT_VEGETABLE_BG_MAP_R (u16 *)(VRAMBase + 0xF800) // VRAM BG Map for vegetable textures (right).
 
 
 // Engine Types:
@@ -56,10 +56,8 @@ struct RhythmTweezersEngineData {
         u32 scrollTarget;   // Value:   Screen Scroll Target
         u8  bgMapSide;      // Flag:    Destination Vegetable BG Map { 0 = D_0600f800 (Right); -1 = D_0600f000 (Left) }
     } vegetable;
-    struct {
-        u16 full; // Queued/Missed
-        u16 half; // Barely'd
-    } existingHairs;
+    u16 full; // Queued/Missed
+    u16 half; // Barely'd
     s16 tutorialSprite; // Sprite:  Tutorial Text (Unused)
     s16 screenHorizontalPosition; // Value:   Global Horizontal Position (for vegetable faces and hair)
     s16 maskPosition;  // Value:   Mask Vertical Position (-160 = Hidden; 0 = Fully Visible)
