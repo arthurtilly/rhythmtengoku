@@ -79,7 +79,7 @@ void rhythm_tweezers_update_scroll(void) {
 
         gRhythmTweezers->screenHorizontalPosition = x;
         D_03004b10.BG_OFS[BG_LAYER_1].x = x;
-        if (vegetable->bgMapSide) {
+        if (vegetable->bgMapSide != 0) {
             D_03004b10.BG_OFS[BG_LAYER_1].x = x + 0x100;
         }
     }
