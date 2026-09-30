@@ -1,0 +1,4 @@
+-I.
+-Iinclude
+-DREV=0
+-ffreestanding

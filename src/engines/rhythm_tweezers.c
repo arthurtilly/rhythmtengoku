@@ -1,11 +1,11 @@
 #include "engines/rhythm_tweezers.h"
 
+#include "src/scenes/gameplay.h"
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/text_printer.h"
 #include "src/affine_sprite.h"
 #include "src/lib_0804ca80.h"
-asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
 #define gRhythmTweezers ((struct RhythmTweezersEngineData *)gCurrentEngineData)
@@ -17,7 +17,7 @@ asm(".include \"include/gba.inc\""); // Temporary
 // [func_0802e750] Initialise Vegetable Face
 void rhythm_tweezers_init_veg(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezers->vegetable;
-    u8 type = (gRhythmTweezers->version % 3);
+    u8 type = gRhythmTweezers->version % 3;
 
     vegetable->spriteCurrent = sprite_create(gSpriteHandler, rhythm_tweezers_veg_face_anim[type], 0, 120, 16, 0x4800, -1, 0, 0);
     sprite_set_origin_x_y(gSpriteHandler, vegetable->spriteCurrent, &gRhythmTweezers->screenHorizontalPosition, &D_03004b10.BG_OFS[BG_LAYER_1].y);
@@ -35,17 +35,14 @@ void rhythm_tweezers_init_veg(void) {
 // [func_0802e828] Engine Event 02 (Scroll to New Vegetable)
 void rhythm_tweezers_scroll_to_next_veg(u32 time) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezers->vegetable;
-    u32 side;
-    u32 *bgMap;
+    u16 *bgMap;
 
     vegetable->isScrolling = TRUE;
     vegetable->scrollTime = 0;
     vegetable->scrollTarget = ticks_to_frames(time);
     sprite_set_anim(gSpriteHandler, vegetable->spriteNext, rhythm_tweezers_veg_face_anim[vegetable->typeNext], 0, 0, 0, 0);
 
-    side = vegetable->bgMapSide;
-    bgMap = &RT_VEGETABLE_BG_MAP_R;
-    if (side) bgMap = &RT_VEGETABLE_BG_MAP_L;
+    bgMap = vegetable->bgMapSide ? RT_VEGETABLE_BG_MAP_L : RT_VEGETABLE_BG_MAP_R;
     func_08003eb8(rhythm_tweezers_veg_bg_maps[vegetable->typeNext], bgMap);
 }
 
@@ -61,7 +58,7 @@ void rhythm_tweezers_update_scroll(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezers->vegetable;
     u32 x;
 
-    vegetable->scrollTime += 1;
+    vegetable->scrollTime++;
 
     // Vegetable has reached its destination.
     if (vegetable->scrollTime >= vegetable->scrollTarget) {
@@ -119,9 +116,9 @@ void rhythm_tweezers_init_falling_hairs(void) {
 
     for (i = 0; i < RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT; i++) {
         hair = &gRhythmTweezers->fallingHairs[i];
-        hair->sprite = create_affine_sprite(anim_rhythm_tweezers_falling_hair, 0, 120, 16, 0x4800, 0x100, -0x200, 0, 0, 0x8000, 0);
+        hair->sprite = create_affine_sprite(anim_rhythm_tweezers_falling_hair, 0, 120, 16, 0x4800, INT_TO_FIXED(1.0), -0x200, 0, 0, 0x8000, 0);
         affine_sprite_rotate_with_orbit(hair->sprite, TRUE);
-        affine_sprite_set_orbit_distance(hair->sprite, 0x4c);
+        affine_sprite_set_orbit_distance(hair->sprite, 76);
         hair->fallDistance = 0xc800;
         hair->fallSpeed = 0;
     }
@@ -132,12 +129,13 @@ void rhythm_tweezers_init_falling_hairs(void) {
 // [func_0802ea20] Update Falling Hairs
 void rhythm_tweezers_update_falling_hairs(void) {
     struct RhythmTweezersFallingHair *hair;
-    u32 i = 0;
+    u32 i;
 
-    for (i; i < RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT; i++) {
+    for (i = 0; i < RHYTHM_TWEEZERS_FALLING_HAIR_AMOUNT; i++) {
         hair = &gRhythmTweezers->fallingHairs[i];
         if (hair->fallDistance <= 0xc7ff) {
-            hair->fallDistance += hair->fallSpeed += 0x20;
+            hair->fallSpeed += 0x20;
+            hair->fallDistance += hair->fallSpeed;
             hair->rotation += hair->rotationSpeed;
             affine_sprite_set_y(hair->sprite, (s16) ((hair->fallDistance >> 8) + 0x10));
             affine_sprite_set_rotation(hair->sprite, hair->rotation);
@@ -174,14 +172,14 @@ void rhythm_tweezers_init_tweezers(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezers->tweezers;
 
     tweezers->rotation = -0x200;
-    tweezers->sprite = create_affine_sprite(anim_tweezers_pluck_hit, 0x7f, 120, 16, 0x4800, 0x100, -0x200, 1, 0x7f, 0, 0);
-    affine_sprite_set_orbit(tweezers->sprite, tweezers->rotation, 0x4c);
+    tweezers->sprite = create_affine_sprite(anim_tweezers_pluck_hit, 0x7f, 120, 16, 0x4800, INT_TO_FIXED(1.0), -0x200, 1, 0x7f, 0, 0);
+    affine_sprite_set_orbit(tweezers->sprite, tweezers->rotation, 76);
     affine_sprite_rotate_with_orbit(tweezers->sprite, TRUE);
 
     tweezers->isMoving = FALSE;
     tweezers->heldHair = TWEEZERS_HELD_HAIR_NONE;
     tweezers->isPulling = FALSE;
-    gRhythmTweezers->existingHairs.full = 0;
+    gRhythmTweezers->full = 0;
 }
 
 
@@ -203,7 +201,7 @@ void rhythm_tweezers_update_tweezers_cycle(void) {
     u32 b = 0x5d5 * tweezers->cycleTime / tweezers->cycleTarget;
 
     tweezers->rotation = a - b;
-    tweezers->cycleTime += 1;
+    tweezers->cycleTime++;
 
     if (tweezers->cycleTime >= tweezers->cycleTarget) {
         tweezers->isMoving = FALSE;
@@ -216,7 +214,7 @@ void rhythm_tweezers_update_tweezers_cycle(void) {
 void rhythm_tweezers_update_vertical_scroll(void) {
     // If the screen is not in the normal vertical position, scroll down.
     if (D_03004b10.BG_OFS[BG_LAYER_1].y != 0) {
-        D_03004b10.BG_OFS[BG_LAYER_1].y -= 1;
+        D_03004b10.BG_OFS[BG_LAYER_1].y--;
     }
 }
 
@@ -224,18 +222,18 @@ void rhythm_tweezers_update_vertical_scroll(void) {
 // [func_0802ebf8] Update Tweezers
 void rhythm_tweezers_update_tweezers(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezers->tweezers;
-    s8 temp;
 
     rhythm_tweezers_update_vertical_scroll();
-    if (tweezers->isMoving) {
-        if (tweezers->isMoving == TRUE) {
+    switch (tweezers->isMoving) {
+        case FALSE:
+            break;
+        case TRUE:
             rhythm_tweezers_update_tweezers_cycle();
-        }
+            break;
     }
 
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) {
-        temp = affine_sprite_get_anim_cel(tweezers->sprite);
-        if (temp == affine_sprite_get_total_cels(tweezers->sprite) - 2) {
+        if (affine_sprite_get_anim_cel(tweezers->sprite) == affine_sprite_get_total_cels(tweezers->sprite) - 2) {
             rhythm_tweezers_spawn_falling_hair(tweezers->heldHair - 1);
             tweezers->heldHair = TWEEZERS_HELD_HAIR_NONE;
         }
@@ -345,8 +343,8 @@ void rhythm_tweezers_engine_stop(void) {
 void rhythm_tweezers_start_hair_cycle(void) {
     gRhythmTweezers->hairCycleTime = 0;
     gRhythmTweezers->hairCycleTarget = ticks_to_frames(0x48);
-    gRhythmTweezers->existingHairs.full = 0;
-    gRhythmTweezers->existingHairs.half = 0;
+    gRhythmTweezers->full = 0;
+    gRhythmTweezers->half = 0;
 }
 
 
@@ -359,11 +357,10 @@ void rhythm_tweezers_update_hair_cycle(void) {
 
 // [func_0802ee7c] Cue - Spawn
 void rhythm_tweezers_cue_spawn(struct Cue *cue, struct RhythmTweezersCue *info, u32 isLongHair) {
-    struct RhythmTweezersEngineData *rhythmTweezers;
+    struct RhythmTweezersEngineData *rhythmTweezers = gRhythmTweezers;
     struct Animation *anim;
     u32 rotation;
 
-    rhythmTweezers = gRhythmTweezers;
     rotation = 0x340;
     rotation -= 640 * rhythmTweezers->hairCycleTime / rhythmTweezers->hairCycleTarget;
 
@@ -377,7 +374,7 @@ void rhythm_tweezers_cue_spawn(struct Cue *cue, struct RhythmTweezersCue *info, 
     info->isLongHair = isLongHair;
     info->finished = FALSE;
 
-    gRhythmTweezers->existingHairs.full++;
+    gRhythmTweezers->full++;
 
     if (!isLongHair) {
         play_sound_w_pitch_volume(&s_hanabi_pon_seqData, 0xd0, 0);
@@ -391,15 +388,86 @@ void rhythm_tweezers_cue_spawn(struct Cue *cue, struct RhythmTweezersCue *info, 
 u32 rhythm_tweezers_cue_update_short(struct Cue *cue, struct RhythmTweezersCue *info, u32 runningTime, u32 duration) {
     if (runningTime > (duration * 2)) {
         return TRUE;
-    } else {
-        return FALSE;
     }
+    return FALSE;
 }
 
 
-// !TODO - It's always with these cue functions, I swear: https://decomp.me/scratch/xtw97
 // [func_0802ef68] Cue - Update (Long Hair)
-#include "asm/engines/rhythm_tweezers/asm_0802ef68.s"
+u32 rhythm_tweezers_cue_update_long(struct Cue *cue, struct RhythmTweezersCue *info, u32 runningTime, u32 duration) {
+    struct RhythmTweezersTweezers *tweezers = &gRhythmTweezers->tweezers;
+    struct RhythmTweezersVegetable *vegetable = &gRhythmTweezers->vegetable;
+    u32 markingCriteria;
+    u32 frame;
+    u32 totalCels;
+    u32 pulledFully;
+    u32 releasedEarly;
+    u32 result = FALSE;
+
+    if (runningTime > (duration * 2)) {
+        result = TRUE;
+        return result;
+    } else if (!info->finished) {
+        return result;
+    }
+
+    affine_sprite_set_rotation(info->sprite, (tweezers->rotation - info->rotation) * 2 - 0x200);
+    totalCels = sprite_get_data(gSpriteHandler, affine_sprite_get_base_sprite(info->sprite), 2);
+    frame = (totalCels - 1) * info->pullTime / info->pullTarget;
+    affine_sprite_set_anim_cel(info->sprite, frame);
+    markingCriteria = gameplay_get_cue_marking_criteria(cue);
+
+    pulledFully = FALSE;
+    releasedEarly = FALSE;
+    info->pullTime++;
+    if (info->pullTime > info->pullTarget) pulledFully = TRUE;
+    if ((D_03004ac0 & (A_BUTTON | DPAD_ALL)) == 0) releasedEarly = TRUE;
+
+    if (pulledFully) {
+        releasedEarly = FALSE;
+
+        gameplay_add_cue_result(markingCriteria, 0, 0);
+        sprite_set_anim_cel(gSpriteHandler, vegetable->spriteCurrent, 1);
+        D_03004b10.BG_OFS[BG_LAYER_1].y = 2;
+        affine_sprite_set_anim(info->sprite, anim_rhythm_tweezers_hair_stubble, 0, 0, 0, 0);
+        affine_sprite_set_rotation(info->sprite, -0x200);
+        affine_sprite_set_anim(tweezers->sprite, anim_tweezers_pluck_hit, 0, 1, 0x7f, 0);
+        affine_sprite_set_visible(tweezers->sprite, 1);
+        tweezers->heldHair = TWEEZERS_HELD_HAIR_FULL;
+
+        info->finished = FALSE;
+
+        tweezers->isPulling = FALSE;
+        gameplay_set_input_buttons(A_BUTTON | DPAD_ALL, 0);
+        stop_sound(&s_f_hair_tuneru_seqData);
+        play_sound(&s_f_hair_nuki_long_seqData);
+
+        // Smiling Vegetable
+        gRhythmTweezers->full--;
+        if (!gRhythmTweezers->full && !gRhythmTweezers->half) {
+            sprite_set_playback(gSpriteHandler, vegetable->spriteCurrent, 0, 0, 0);
+            sprite_set_anim_cel(gSpriteHandler, vegetable->spriteCurrent, 2);
+        }
+    }
+
+    if (releasedEarly) {
+        gameplay_add_cue_result(markingCriteria, 1, 0);
+        affine_sprite_set_anim(info->sprite, anim_rhythm_tweezers_long_hair, 0, 1, 0x7f, 0);
+        affine_sprite_set_rotation(info->sprite, -0x200);
+        affine_sprite_set_visible(tweezers->sprite, 1);
+
+        info->finished = FALSE;
+
+        tweezers->isPulling = FALSE;
+        gameplay_set_input_buttons(A_BUTTON | DPAD_ALL, 0);
+        stop_sound(&s_f_hair_tuneru_seqData);
+        play_sound(&s_witch_donats_seqData);
+        beatscript_enable_loops();
+        gRhythmTweezers->half++;
+    }
+
+    return result;
+}
 
 
 // [func_0802f164] Cue - Despawn
@@ -412,7 +480,6 @@ void rhythm_tweezers_cue_despawn(struct Cue *cue, struct RhythmTweezersCue *info
 void rhythm_tweezers_cue_hit_short(struct Cue *cue, struct RhythmTweezersCue *info, u32 pressed, u32 released) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezers->tweezers;
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezers->vegetable;
-    u32 temp;
 
     affine_sprite_set_anim(info->sprite, anim_rhythm_tweezers_hair_stubble, 0, 0, 0, 0);
     affine_sprite_set_anim(tweezers->sprite, anim_tweezers_pluck_hit, 0, 1, 0x7f, 0);
@@ -422,10 +489,9 @@ void rhythm_tweezers_cue_hit_short(struct Cue *cue, struct RhythmTweezersCue *in
     tweezers->heldHair = TWEEZERS_HELD_HAIR_FULL;
 
     sprite_set_anim_cel(gSpriteHandler, vegetable->spriteCurrent, 1);
-    gRhythmTweezers->existingHairs.full -= 1;
+    gRhythmTweezers->full--;
 
-    temp = *(u32 *)(&gRhythmTweezers->existingHairs);
-    if (temp == 0) {
+    if (!gRhythmTweezers->full && !gRhythmTweezers->half) {
         sprite_set_playback(gSpriteHandler, vegetable->spriteCurrent, 0, 0, 0);
         sprite_set_anim_cel(gSpriteHandler, vegetable->spriteCurrent, 2);
     }
@@ -435,7 +501,6 @@ void rhythm_tweezers_cue_hit_short(struct Cue *cue, struct RhythmTweezersCue *in
 // [func_0802f21c] Cue - Hit/Barely (Long Hair)
 void rhythm_tweezers_cue_hit_long(struct Cue *cue, struct RhythmTweezersCue *info, u32 pressed, u32 released) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezers->tweezers;
-    u32 temp;
 
     gameplay_ignore_this_cue_result();
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) rhythm_tweezers_spawn_falling_hair(tweezers->heldHair - 1);
@@ -467,8 +532,8 @@ void rhythm_tweezers_cue_barely_short(struct Cue *cue, struct RhythmTweezersCue 
 
     sprite_set_anim_cel(gSpriteHandler, vegetable->spriteCurrent, 1);
 
-    gRhythmTweezers->existingHairs.full -= 1;
-    gRhythmTweezers->existingHairs.half += 1;
+    gRhythmTweezers->full--;
+    gRhythmTweezers->half++;
 }
 
 

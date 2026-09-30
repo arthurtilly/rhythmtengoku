@@ -5,6 +5,7 @@
 # General project-specific ignores
 build/*
 tools/agbcc/*
+tools/decomp-permuter/
 *.gba
 *.sav
 *.dump
