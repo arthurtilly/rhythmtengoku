@@ -24,14 +24,37 @@ enum QuizShowHostArmsEnum {
 
 
 // Engine Types:
+
+struct QuizShowCharacter {
+    s16 body; // 0x0
+    s16 head; // 0x2
+    s16 rightArm; // 0x4
+    s16 leftArm; // 0x6
+    s16 leftButton; // 0x8
+    s16 rightButton; // 0xa
+    s16 digit1; // 0xc
+    s16 digit2; // 0xe
+    s16 count; // 0x10
+};
+
 struct QuizShowEngineData {
-    u8 unk0;
-    u32 pad4[0x11];
-    u16 pad48;
+    u8 version;
+    struct TextPrinter *textPrinter;
+    struct QuizShowCharacter host;
+    struct QuizShowCharacter player;
+    s16 unk_30;
+    struct AffineSprite *unk_34;
+    u32 unk_38;
+    u32 unk_3c;
+    struct QuizShowScriptTable *unk_40;
+    u16 unk_44;
+    u16 unk_46;
+    u8 unk_48;
+    u8 unk_49;
     u16 unk4a;
     u16 unk4c;
-    s16 curScoreSprites[2];
-    s16 highScoreSprites[2];
+    s16 scoreSprites[2];
+    s16 highscoreSprites[2];
 };
 
 struct QuizShowCue {
@@ -46,6 +69,8 @@ struct QuizShowScriptTable {
 
 
 // Engine Definition Data:
+extern struct CompressedData *quiz_show_buffered_textures[];
+extern struct GraphicsTable quiz_show_gfx_table[];
 extern struct Animation *quiz_show_arm_r_anim[];
 extern struct Animation *quiz_show_arm_l_anim[];
 extern struct Animation *quiz_show_face_neutral_anim[];
@@ -78,13 +103,13 @@ extern void func_08037a64(); // Engine Event 01 (?)
 extern void func_08037be0(); // Engine Event 00 (?)
 extern void func_08037bf4(); // Engine Event 02 (?)
 extern void func_08037cb8(); // Engine Event 03 (?)
-extern void func_08037cd0(); // Engine Event 04 (?)
+extern s32 func_08037cd0(); // Engine Event 04 (?)
 extern void quiz_show_engine_update(void); // Game Engine Update
-extern void func_08037d00(); // Engine Event 07 (?)
-extern void func_08037d0c(); // Engine Event 08 (?)
-extern void func_08037d1c(); // Engine Event 09 (?)
-extern void func_08037d2c(); // Engine Event 0A (?)
-extern void func_08037d6c(); // Engine Event 0B (?)
+extern void func_08037d00(struct QuizShowScriptTable *arg0); // Engine Event 07 (?)
+extern struct Beatscript *func_08037d0c(void); // Engine Event 08 (?)
+extern struct Beatscript *func_08037d1c(void); // Engine Event 09 (?)
+extern void func_08037d2c(void); // Engine Event 0A (?)
+extern void func_08037d6c(u32 arg0); // Engine Event 0B (?)
 extern void func_08037d90(); // Engine Event 0C (?)
 extern void func_08037dc8(); // Engine Event 0D (?)
 extern void func_08037e24(); // Engine Event 0E (?)

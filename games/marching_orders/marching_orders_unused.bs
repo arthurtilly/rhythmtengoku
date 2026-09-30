@@ -137,7 +137,7 @@ script script_marching_orders_unused_main
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
     call marching_orders_sub_08a83998
-    marching_orders_event04 1
+    marching_orders_set_marchers_point TRUE
     set_marking_criteria 0
     call marching_orders_sub_08a84448
     set_marking_criteria 1
@@ -190,14 +190,14 @@ script script_marching_orders_unused_main
     print_text_f D_0805c818
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
-    marching_orders_event03
+    marching_orders_enable_conveyor
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
-    marching_orders_event00 8
+    marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
     play_sfx s_guntai_foot1_seqData
 return
 
@@ -206,7 +206,7 @@ script script_marching_orders_unused_practice
     rest 24
     enable_pause_menu
     stop_tracking_inputs
-    marching_orders_event02 0
+    marching_orders_set_tutorial_icon TUTORIAL_YOU
     set_tempo 135
     set_music_volume 256
     play_music s_guntai1_seqData
@@ -224,190 +224,190 @@ script script_marching_orders_unused_practice
     rest 24
     rest 24
     rest 24
-    marching_orders_event00 258
+    marching_orders_play_marcher_action MARCHER_BEAT, TRUE
     rest 24
     mod_music_volume 156, 96
-    marching_orders_event00 258
+    marching_orders_play_marcher_action MARCHER_BEAT, TRUE
     rest 24
-    marching_orders_event00 258
+    marching_orders_play_marcher_action MARCHER_BEAT, TRUE
     rest 24
-    marching_orders_event00 258
-    marching_orders_event02 -1
+    marching_orders_play_marcher_action MARCHER_BEAT, TRUE
+    marching_orders_set_tutorial_icon TUTORIAL_HIDE
     rest 24
-    marching_orders_event00 258
+    marching_orders_play_marcher_action MARCHER_BEAT, TRUE
     rest 24
-    marching_orders_event00 256
+    marching_orders_play_marcher_action MARCHER_IDLE, TRUE
     clear_text_f
     loop_start
         run beatscript_disable_loops
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_migi_muke1_seqData
         rest 24
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_migi_seqData
         spawn_cue CUE_TURN_RIGHT
         beat_anim
         rest 24
-        marching_orders_event00 4
+        marching_orders_play_marcher_action MARCHER_TURN_RIGHT, FALSE
         play_sfx s_guntai_v_ka_seqData
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_hidari_muke1_seqData
         rest 24
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_hidari_seqData
         spawn_cue CUE_TURN_LEFT
         beat_anim
         rest 24
-        marching_orders_event00 3
+        marching_orders_play_marcher_action MARCHER_TURN_LEFT, FALSE
         play_sfx s_guntai_v_ka_seqData
         rest 24
     loop_end
     loop_start
         run beatscript_disable_loops
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_migi_muke2_seqData
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_migi_seqData
         spawn_cue CUE_TURN_RIGHT
         beat_anim
         rest 24
-        marching_orders_event00 4
+        marching_orders_play_marcher_action MARCHER_TURN_RIGHT, FALSE
         play_sfx s_guntai_v_ka_seqData
         rest 24
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_hidari_muke2_seqData
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_hidari_seqData
         spawn_cue CUE_TURN_LEFT
         beat_anim
         rest 24
-        marching_orders_event00 3
+        marching_orders_play_marcher_action MARCHER_TURN_LEFT, FALSE
         play_sfx s_guntai_v_ka_seqData
         rest 24
         rest 24
     loop_end
     loop_start
         run beatscript_disable_loops
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_zentai1_seqData
         rest 24
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_susume_seqData
         rest 24
-        marching_orders_event02 1
+        marching_orders_set_tutorial_icon TUTORIAL_A
         play_sfx s_guntai_v_es_seqData
-        marching_orders_event00 263
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, TRUE
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 7
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 7
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 7
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 7
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event02 -1
-        marching_orders_event01
+        marching_orders_set_tutorial_icon TUTORIAL_HIDE
+        marching_orders_reset_commander
         play_sfx s_guntai_v_zentai1_seqData
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 7
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event02 2
-        marching_orders_event01
+        marching_orders_set_tutorial_icon TUTORIAL_B
+        marching_orders_reset_commander
         play_sfx s_guntai_v_tomare_seqData
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_HALT
         beat_anim
         rest 24
         play_sfx s_guntai_v_yoh_seqData
-        marching_orders_event00 1
+        marching_orders_play_marcher_action MARCHER_HALT, FALSE
         play_sfx s_guntai_foot2_seqData
         rest 24
         rest 24
         rest 24
         rest 24
         rest 24
-        marching_orders_event02 -1
+        marching_orders_set_tutorial_icon TUTORIAL_HIDE
     loop_end
     loop_start
         run beatscript_disable_loops
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_zentai1_seqData
         rest 24
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_susume_seqData
         rest 24
-        marching_orders_event02 1
+        marching_orders_set_tutorial_icon TUTORIAL_A
         play_sfx s_guntai_v_es_seqData
-        marching_orders_event00 263
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, TRUE
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_migi_muke1_seqData
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 7
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_migi_seqData
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
@@ -415,28 +415,28 @@ script script_marching_orders_unused_practice
         spawn_cue CUE_TURN_RIGHT
         beat_anim
         rest 24
-        marching_orders_event00 4
+        marching_orders_play_marcher_action MARCHER_TURN_RIGHT, FALSE
         play_sfx s_guntai_v_ka_seqData
-        marching_orders_event00 7
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_hidari_muke1_seqData
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 7
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event01
+        marching_orders_reset_commander
         play_sfx s_guntai_v_hidari_seqData
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
@@ -444,43 +444,43 @@ script script_marching_orders_unused_practice
         spawn_cue CUE_TURN_LEFT
         beat_anim
         rest 24
-        marching_orders_event00 3
+        marching_orders_play_marcher_action MARCHER_TURN_LEFT, FALSE
         play_sfx s_guntai_v_ka_seqData
-        marching_orders_event00 7
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event02 -1
-        marching_orders_event01
+        marching_orders_set_tutorial_icon TUTORIAL_HIDE
+        marching_orders_reset_commander
         play_sfx s_guntai_v_zentai1_seqData
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event00 7
+        marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
         rest 24
-        marching_orders_event02 2
-        marching_orders_event01
+        marching_orders_set_tutorial_icon TUTORIAL_B
+        marching_orders_reset_commander
         play_sfx s_guntai_v_tomare_seqData
-        marching_orders_event00 8
+        marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_HALT
         beat_anim
         rest 24
         play_sfx s_guntai_v_yoh_seqData
-        marching_orders_event00 1
+        marching_orders_play_marcher_action MARCHER_HALT, FALSE
         play_sfx s_guntai_foot2_seqData
         rest 24
         rest 24
         rest 24
         rest 24
         rest 24
-        marching_orders_event02 -1
+        marching_orders_set_tutorial_icon TUTORIAL_HIDE
     loop_end
     stop_tutorial
     mod_music_volume 0, 168

@@ -15,11 +15,20 @@ enum DrumLiveMenuPostersEnum {
 
 // Engine Types:
 struct DrumLiveMenuEngineData {
-    u8 pad[0x1c];
+    u8 version;
+    struct TextPrinter *printer;
+    u8 currentSelection;
+    u8 sceneFrozen;
+    u16 inputTimer;
+    s32 bgOffset;
+    u32 bgOffsetGoal;
+    u16 otherSpritesOffset;
+    s16 arrowUpSprite;
+    s16 arrowDownSprite; 
+    s16 startSprite;
 };
 
 struct DrumLiveMenuCue {
-    /* add fields here */
 };
 
 
@@ -35,13 +44,13 @@ extern void drum_live_menu_init_gfx2(void); // Graphics Init. 2
 extern void drum_live_menu_init_gfx1(void); // Graphics Init. 1
 extern void drum_live_menu_engine_start(u32 version); // Game Engine Start
 extern void drum_live_menu_engine_event_stub(void); // Engine Event 01 (STUB)
-// extern ? func_08036e10(?);
-// extern ? func_08036e28(?);
-// extern ? func_08036ec8(?);
-// extern ? func_08036f18(?);
-extern void func_08036f94(); // Engine Event 00 (?)
-// extern ? func_08036fac(?);
-// extern ? func_08036ff4(?);
+extern void drum_live_menu_set_description_text(u32 arg0); // Set Description Text
+extern void drum_live_menu_handle_navigation(void); // Handle Menu Navigation
+extern void drum_live_update_poster_position(void); // Update Poster Position
+extern void drum_live_menu_update_input_timer(void); // Update Input Timer
+extern void func_08036f94(void); // Engine Event 00 (Freeze Beatscript Scene)
+extern void drum_live_menu_handle_selection(void); // Handle Menu Selection
+extern void drum_live_menu_handle_exit(void); // Handle Menu Exit
 extern void drum_live_menu_engine_update(void); // Game Engine Update
 extern void drum_live_menu_engine_stop(void); // Game Engine Stop
 extern void drum_live_menu_cue_spawn(struct Cue *cue, struct DrumLiveMenuCue *); // Cue - Spawn

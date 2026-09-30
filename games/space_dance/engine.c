@@ -238,8 +238,8 @@ u8 space_dance_cue_anim_map[] = {
     /* 0x02 */ SPACE_DANCE_ANIM_DANCER_PUNCH
 };
 
-// [D_089e6ebc] ? (y values for a sprite)
-s16 D_089e6ebc[] = {
+// [D_089e6ebc] Hurt Effect Y Position for Dancer Actions
+s16 space_dance_hurt_effect_y_pos[] = {
     /* 0x00 */ 67,
     /* 0x01 */ 96,
     /* 0x02 */ 67
@@ -374,14 +374,14 @@ EngineEvent space_dance_common_events[] = {
 
 // [D_089e7008] Engine Events
 EngineEvent space_dance_engine_events[] = {
-    /* 0x00 */ func_0803d2c0,
-    /* 0x01 */ func_0803d460,
-    /* 0x02 */ func_0803d4bc,
-    /* 0x03 */ func_0803d4e0,
+    /* 0x00 */ space_dance_play_cue_animation,
+    /* 0x01 */ space_dance_set_bg_scroll_speed,
+    /* 0x02 */ space_dance_set_tutorial_icon,
+    /* 0x03 */ space_dance_spawn_shooting_star,
     /* 0x04 */ func_0803d588,
-    /* 0x05 */ func_0803d3fc,
-    /* 0x06 */ func_0803d408,
-    /* 0x07 */ func_0803d414,
+    /* 0x05 */ space_dance_enable_gramps_pose_anims,
+    /* 0x06 */ space_dance_enable_gramps_beat_anims,
+    /* 0x07 */ space_dance_play_gramps_animation,
     /* 0x08 */ space_dance_engine_event_stub
 };
 

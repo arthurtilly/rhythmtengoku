@@ -34,11 +34,11 @@ script script_mr_upbeat_game_over
     run scene_stop_music
     disable_pause_menu
     disable_play_inputs
-    mr_upbeat_event04
+    mr_upbeat_save_highscore
     rest 24
     rest 24
     rest 24
-    mr_upbeat_event05
+    mr_upbeat_play_game_over_jingle
     rest 24
     run gameplay_display_text_and_wait
     fade_music_out 48
@@ -48,55 +48,55 @@ script script_mr_upbeat_game_over
 stop
 
 
-script mr_upbeat_sub_08a56c60
+script mr_upbeat_sub_prepare
     play_sfx_vol s_intro_one_seqData, 384
     rest 12
-    mr_upbeat_event02
+    mr_upbeat_beep
     rest 12
     rest 12
-    mr_upbeat_event02
+    mr_upbeat_beep
     rest 12
     play_sfx_vol s_intro_two_seqData, 384
     rest 12
-    mr_upbeat_event02
+    mr_upbeat_beep
     rest 12
     rest 12
-    mr_upbeat_event02
+    mr_upbeat_beep
     play_sfx_vol s_intro_a_seqData, 256
     clear_text_s
     rest 12
     play_sfx_vol s_intro_one_seqData, 384
     rest 12
-    mr_upbeat_event02
+    mr_upbeat_beep
     rest 12
     play_sfx_vol s_intro_two_seqData, 384
     rest 12
-    mr_upbeat_event02
+    mr_upbeat_beep
     rest 12
     play_sfx_vol s_intro_three_seqData, 384
     rest 12
-    mr_upbeat_event02
+    mr_upbeat_beep
     play_sfx_synced s_intro_four_seqData, 150, 384
     rest 12
     rest 12
-    mr_upbeat_event02
+    mr_upbeat_beep
     rest 6
     play_music s_renshu_bgm1_seqData
     rest 6
 return
 
 
-script mr_upbeat_sub_08a56e64
-    mr_upbeat_event00 24
+script mr_upbeat_sub_4beats
+    mr_upbeat_swap_metronome_direction 24
     spawn_cue CUE_H_BEAT_TO_TEMPO
     rest 24
-    mr_upbeat_event00 24
+    mr_upbeat_swap_metronome_direction 24
     spawn_cue CUE_H_BEAT_TO_TEMPO
     rest 24
-    mr_upbeat_event00 24
+    mr_upbeat_swap_metronome_direction 24
     spawn_cue CUE_H_BEAT_TO_TEMPO
     rest 24
-    mr_upbeat_event00 24
+    mr_upbeat_swap_metronome_direction 24
     spawn_cue CUE_H_BEAT_TO_TEMPO
     rest 24
 return
@@ -106,151 +106,151 @@ script script_mr_upbeat_main
     set_tempo 70
     set_music_volume 200
     run gameplay_set_cue_hit_window, 3
-    mr_upbeat_event01 script_mr_upbeat_game_over
+    mr_upbeat_set_game_over_script script_mr_upbeat_game_over
     print_text_s D_08068170
     rest 24
     enable_pause_menu
     rest 24
     set_tempo 70
-    call mr_upbeat_sub_08a56c60
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
+    call mr_upbeat_sub_prepare
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
     run scene_stop_music
     play_sfx s_metro_tin_seqData
-    mr_upbeat_event03
+    mr_upbeat_increment_score
     print_text_s D_0806817c
     rest 24
     rest 24
     clear_text_s
     set_tempo 90
-    call mr_upbeat_sub_08a56c60
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
+    call mr_upbeat_sub_prepare
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
     run scene_stop_music
     play_sfx s_metro_tin_seqData
-    mr_upbeat_event03
+    mr_upbeat_increment_score
     print_text_s D_08068188
     rest 24
     rest 24
     clear_text_s
     set_tempo 100
-    call mr_upbeat_sub_08a56c60
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
+    call mr_upbeat_sub_prepare
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
     run scene_stop_music
     play_sfx s_metro_tin_seqData
-    mr_upbeat_event03
+    mr_upbeat_increment_score
     print_text_s D_08068194
     rest 24
     rest 24
     clear_text_s
     set_tempo 115
-    call mr_upbeat_sub_08a56c60
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
+    call mr_upbeat_sub_prepare
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
     run scene_stop_music
     play_sfx s_metro_tin_seqData
-    mr_upbeat_event03
+    mr_upbeat_increment_score
     print_text_s D_080681a0
     rest 24
     rest 24
     clear_text_s
     set_tempo 130
-    call mr_upbeat_sub_08a56c60
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
+    call mr_upbeat_sub_prepare
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
     run scene_stop_music
     play_sfx s_metro_tin_seqData
-    mr_upbeat_event03
+    mr_upbeat_increment_score
     print_text_s D_080681ac
     rest 24
     rest 24
     clear_text_s
     set_tempo 145
-    call mr_upbeat_sub_08a56c60
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
+    call mr_upbeat_sub_prepare
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
     run scene_stop_music
     play_sfx s_metro_tin_seqData
-    mr_upbeat_event03
+    mr_upbeat_increment_score
     print_text_s D_080681bc
     rest 24
     rest 24
     clear_text_s
     set_tempo 165
-    call mr_upbeat_sub_08a56c60
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
+    call mr_upbeat_sub_prepare
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
     run scene_stop_music
     play_sfx s_metro_tin_seqData
-    mr_upbeat_event03
+    mr_upbeat_increment_score
     print_text_s D_080681c8
     rest 24
     rest 24
     clear_text_s
     set_tempo 190
-    call mr_upbeat_sub_08a56c60
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
+    call mr_upbeat_sub_prepare
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
     run scene_stop_music
     play_sfx s_metro_tin_seqData
-    mr_upbeat_event03
+    mr_upbeat_increment_score
     print_text_s D_080681d8
     rest 24
     rest 24
     clear_text_s
     set_tempo 220
-    call mr_upbeat_sub_08a56c60
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
+    call mr_upbeat_sub_prepare
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
     run scene_stop_music
     play_sfx s_metro_tin_seqData
-    mr_upbeat_event03
+    mr_upbeat_increment_score
     print_text_s D_080681e8
     rest 24
     rest 24
     clear_text_s
     set_tempo 260
-    call mr_upbeat_sub_08a56c60
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
-    call mr_upbeat_sub_08a56e64
+    call mr_upbeat_sub_prepare
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
+    call mr_upbeat_sub_4beats
     run scene_stop_music
     play_sfx s_metro_tin_seqData
-    mr_upbeat_event03
+    mr_upbeat_increment_score
     print_text_s D_080681f0
     rest 24
     rest 24
     clear_text_s
     loop_start
         set_tempo 300
-        call mr_upbeat_sub_08a56c60
-        call mr_upbeat_sub_08a56e64
-        call mr_upbeat_sub_08a56e64
-        call mr_upbeat_sub_08a56e64
-        call mr_upbeat_sub_08a56e64
+        call mr_upbeat_sub_prepare
+        call mr_upbeat_sub_4beats
+        call mr_upbeat_sub_4beats
+        call mr_upbeat_sub_4beats
+        call mr_upbeat_sub_4beats
         run scene_stop_music
         play_sfx s_metro_tin_seqData
-        mr_upbeat_event03
+        mr_upbeat_increment_score
         switch_random 5
             case 0
                 print_text_s D_080681fc

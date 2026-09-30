@@ -154,7 +154,7 @@ script script_marching_orders_2_main
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
     call marching_orders_sub_08a83998
-    marching_orders_event04 1
+    marching_orders_set_marchers_point TRUE
     set_marking_criteria 0
     call marching_orders_sub_08a84448
     set_marking_criteria 1
@@ -206,28 +206,28 @@ script script_marching_orders_2_main
     call marching_orders_sub_08a83848
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
-    marching_orders_event03
+    marching_orders_enable_conveyor
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
-    marching_orders_event00 8
+    marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
     play_sfx s_guntai_foot1_seqData
     rest 12
     stop_tracking_inputs
     stop_tracking_perfect_campaign
     disable_play_inputs
     rest 12
-    marching_orders_event00 7
+    marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
     play_sfx s_guntai_foot2_seqData
     rest 24
-    marching_orders_event00 8
+    marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
     play_sfx s_guntai_foot1_seqData
     rest 24
-    marching_orders_event00 7
+    marching_orders_play_marcher_action MARCHER_STEP_RIGHT, FALSE
     play_sfx s_guntai_foot2_seqData
     rest 24
-    marching_orders_event00 8
+    marching_orders_play_marcher_action MARCHER_STEP_LEFT, FALSE
     play_sfx s_guntai_foot1_seqData
     disable_pause_menu
 return

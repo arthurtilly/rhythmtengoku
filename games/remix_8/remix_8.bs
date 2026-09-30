@@ -529,15 +529,15 @@ script script_remix_8_main
     rest 24
     rest 24
     clear_text_f
-    marching_orders_event01
+    marching_orders_reset_commander
     play_sfx s_guntai_v_migi_muke1_seqData
     rest 24
     rest 24
-    marching_orders_event01
+    marching_orders_reset_commander
     play_sfx s_guntai_v_migi_seqData
     spawn_cue CUE_TURN_RIGHT
     rest 24
-    marching_orders_event00 4
+    marching_orders_play_marcher_action MARCHER_TURN_RIGHT, FALSE
     marching_orders_play_voice_sfx SHOUT_TURN
     rest 12
 

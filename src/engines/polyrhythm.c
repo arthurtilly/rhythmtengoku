@@ -255,12 +255,69 @@ void polyrhythm_display_arrow(u32 lane, s32 blockID) {
 }
 
 
-// (https://decomp.me/scratch/1esDB)
-#include "asm/engines/polyrhythm/asm_080361c0.s"
+// Engine Event 00 (Spawn Piston)
+void polyrhythm_spawn_piston(u32 input) {
+    struct PolyrhythmBlock *block;
+    
+    s16 blockID = input & 0xf;
+    s16 lane = (input >> 4) & 1;
+    s32 blockType = input >> 5;
 
-#include "asm/engines/polyrhythm/asm_08036250.s"
+    s32 currentPistonID, nextPistonID;
+    
+    block = &gPolyrhythm->lanes[lane][blockID];
 
-#include "asm/engines/polyrhythm/asm_080362e4.s"
+    block->type = blockType;
+    block->state = 1;
+
+    sprite_set_anim(gSpriteHandler, block->sprite, polyrhythm_block_appear_anim[blockType], 1, 1, 0x7f, 0);
+    play_sound(polyrhythm_block_appear_sfx[blockType]);
+    polyrhythm_get_pistons(lane, &currentPistonID, &nextPistonID);
+    polyrhythm_display_arrow(lane, currentPistonID);
+}
+
+// Engine Event 01 (Despawn Lane)
+void polyrhythm_despawn_piston(s16 lane) {
+    u32 i;
+    struct PolyrhythmBlock *block = &gPolyrhythm->lanes[lane][0];
+    
+    for (i = 0; i < 16; i++) {
+        if (block->state != 0) {
+            sprite_set_anim(gSpriteHandler, block->sprite, polyrhythm_block_appear_anim[block->type], 3, -1, 0, 0);
+            block->state = 0;
+        }
+
+        block++;
+    }
+
+    gPolyrhythm->unk104[lane] = 0;
+
+    play_sound(&s_f_poly_withdraw_seqData);
+    polyrhythm_display_arrow(lane, -1);
+}
+
+// Engine Event 02 (Retract Lane)
+void polyrhythm_retract_pistons(u32 lane) {
+    u32 i;
+    s32 currentPistonID, nextPistonID;
+    struct PolyrhythmBlock *block = &gPolyrhythm->lanes[lane][0];
+    
+    for (i = 0; i < 16; i++) {
+        if (block->state == 2) {
+            sprite_set_anim(gSpriteHandler, block->sprite, polyrhythm_block_appear_anim[block->type], 0x7f, 0, 0x7f, 0);
+            block->state = 1;
+        }
+
+        block++;
+    }
+
+    gPolyrhythm->unk104[lane] = 0;
+    
+    play_sound(&s_f_poly_close_seqData);
+    
+    polyrhythm_get_pistons(lane, &currentPistonID, &nextPistonID);
+    polyrhythm_display_arrow(lane, currentPistonID);
+}
 
 
 // Piston Push
@@ -360,7 +417,9 @@ s32 func_080365c8(struct PolyrhythmRod *rod, s32 h) {
 }
 
 
-#include "asm/engines/polyrhythm/asm_080365f8.s"
+s32 func_080365f8(struct PolyrhythmRod *rod, s32 h) {
+    return func_080365c8(rod, h);
+}
 
 
 // Get Rod Next Horizontal
@@ -397,7 +456,7 @@ void func_08036630(struct PolyrhythmRod *rod) {
         rod->yOffset = prevYOffset;
         rod->unk28 = INT_TO_FIXED(prevYOffset);
         rod->unk2C = 0;
-        rod->unk0_b4 = 2;
+        rod->state = 2;
     } else if (rod->yOffset > prevYOffset) {
         rod->horizontal = prevHorizontal;
         rod->yOffset = prevYOffset;
@@ -421,10 +480,100 @@ void func_08036630(struct PolyrhythmRod *rod) {
     }
 }
 
+// Update Rod (State 1)
+void func_08036758(struct PolyrhythmRod *rod) {
+    s32 nextYOffset;
+    s32 nextLayer;
+    s32 unk;
+    s32 unk2;
+    s32 unk3;
 
-#include "asm/engines/polyrhythm/asm_08036758.s"
+    s32 x, y;
+    
+    rod->horizontal = func_08036604(rod);
+    nextYOffset = func_080365c8(rod, rod->horizontal);
+    nextLayer = func_0803661c(rod, rod->horizontal);
+    unk2 = rod->horizontal - rod->unk18;
+    unk3 = (rod->unk24 * unk2 * unk2) / (rod->unk20 * rod->unk20);
+    unk = rod->unk1C + (rod->unk24 - unk3);
+    
+    if (unk < nextYOffset) {
+        unk = nextYOffset;
 
-#include "asm/engines/polyrhythm/asm_08036848.s"
+        if (rod->horizontal > rod->unk18) {
+            rod->yOffset = nextYOffset;
+            rod->state = 0;
+            play_sound(&s_poly_rakka_seqData);
+        }
+    }
+
+    rod->x = rod->horizontal;
+    rod->y = -rod->horizontal / 2 - unk;
+
+    x = polyrhythm_get_lane_start_x(rod->lane) + rod->x;
+    y = polyrhythm_get_lane_start_y(rod->lane) + rod->y;
+    
+    sprite_set_x_y_z(gSpriteHandler, rod->sprite, x, y, nextLayer);
+    sprite_set_visible(gSpriteHandler, rod->sprite, TRUE);
+
+    rod->runningTime++;
+    
+    if (rod->runningTime > rod->maxDuration - ticks_to_frames(0x18)) {
+        rod->active = FALSE;
+    }
+}
+
+// Update Rod (State 2)
+void func_08036848(struct PolyrhythmRod *rod) {
+    s32 horizontal = rod->horizontal;
+    s32 nextYOffset;
+    s32 nextLayer;
+    s32 x, y;
+
+    s32 layer = sprite_get_data(gSpriteHandler, rod->sprite, SPRITE_DATA_Z_DEPTH);
+    
+    rod->horizontal = (!rod->stopped) ? func_08036604(rod) : horizontal;
+    nextYOffset = func_080365c8(rod, rod->horizontal);
+    nextLayer = func_0803661c(rod, rod->horizontal);
+
+    if (rod->yOffset < nextYOffset) {
+        rod->horizontal = horizontal;
+        nextLayer = layer;
+        nextYOffset = func_080365c8(rod, rod->horizontal);
+
+        if (rod->stopped == FALSE) {
+            play_sound(&s_poly_shototu_seqData);
+        }
+
+        rod->stopped = TRUE;
+        sprite_set_playback(gSpriteHandler, rod->sprite, 0, 0, 0);
+    }
+
+    rod->unk2C -= 0x30;
+    rod->unk28 += (rod->unk2C * (s32)get_beatscript_tempo()) / 0x8c;
+
+    rod->yOffset = FIXED_TO_INT(rod->unk28);
+
+    if (rod->yOffset < nextYOffset) {
+        rod->yOffset = nextYOffset;
+        rod->state = 0;
+    }
+
+    rod->x = rod->horizontal;
+    rod->y = -rod->horizontal / 2 - rod->yOffset;
+
+    x = polyrhythm_get_lane_start_x(rod->lane) + rod->x;
+    y = polyrhythm_get_lane_start_y(rod->lane) + rod->y;
+    
+    sprite_set_x_y_z(gSpriteHandler, rod->sprite, x, y, nextLayer);
+    sprite_set_visible(gSpriteHandler, rod->sprite, TRUE);
+
+    rod->runningTime++;
+    
+    if (rod->runningTime > rod->maxDuration - ticks_to_frames(0x18)) {
+        rod->active = FALSE;
+    }
+}
 
 
 // Stub
@@ -441,7 +590,7 @@ void polyrhythm_update_rods(void) {
 
     for (rod = gPolyrhythm->rods, i = 0; i < POLYRHYTHM_ROD_AMOUNT; rod++, i++) {
         if (rod->active) {
-            switch (rod->unk0_b4) {
+            switch (rod->state) {
                 case 0:
                     func_08036630(rod);
                     break;
@@ -494,7 +643,7 @@ void polyrhythm_spawn_rod(u32 lane) {
     rod->runningTime = 0;
     rod->maxDuration = ticks_to_frames(0x120);
     rod->lane = lane;
-    rod->unk0_b4 = 0;
+    rod->state = 0;
     rod->timeUntilExplosion = ticks_to_frames(0x18);
     sprite_set_playback(gSpriteHandler, rod->sprite, 1, 0, 0);
     sprite_set_anim_speed(gSpriteHandler, rod->sprite, INT_TO_FIXED(2.0));
@@ -507,8 +656,44 @@ void polyrhythm_event_spawn_rod(u32 lane) {
 }
 
 
-#include "asm/engines/polyrhythm/asm_08036b48.s"
+void func_08036b48(struct PolyrhythmRod *rod) {
+    s32 unk = func_08036604(rod);
+    s32 unk4 = (unk + 8) >> 4;
+    s32 unk2 = func_08036428(rod->lane, unk4) * 16;
+    s32 unk3;
+    
+    rod->unk18 = (unk + unk2) / 2;
+    rod->unk1C = rod->yOffset;
 
-#include "asm/engines/polyrhythm/asm_08036b94.s"
+    unk3 = (unk2 - unk) / 2;
+    rod->unk20 = unk3;
+    rod->unk24 = unk3 * 3;
 
-#include "asm/engines/polyrhythm/asm_08036be0.s"
+    rod->state = 1;
+}
+
+// Play Applause
+void polyrhythm_play_applause(void) {
+    struct PolyrhythmRod* rod;
+    u32 i = 0;
+
+    while (TRUE) {
+        rod = &gPolyrhythm->rods[i];
+        
+        if ((u8)rod->active && !rod->stopped && (u8)rod->state < 2) {
+            set_soundplayer_volume(play_sound(&s_kansei_seqData), 0x78);
+            return;
+        }
+
+        i++;
+        
+        if (7 < i) {
+            return;
+        }
+    }
+}
+
+// Engine Event 04 (Play Applause)
+void polyrhythm_event_play_applause(void) {
+    polyrhythm_play_applause();
+}

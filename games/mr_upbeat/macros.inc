@@ -5,12 +5,12 @@
 @ Load Data
 .macro load_mr_upbeat_labels
     @ Game Events
-    .set EVENT_00,      0x00
-    .set EVENT_01,      0x01
-    .set EVENT_02,      0x02
-    .set EVENT_03,      0x03
-    .set EVENT_04,      0x04
-    .set EVENT_05,      0x05
+    .set SWAP_METRONOME_DIRECTION, 0x00
+    .set SET_GAME_OVER_SCRIPT,     0x01
+    .set MR_UPBEAT_BEEP,           0x02
+    .set INCREMENT_SCORE,          0x03
+    .set SAVE_HIGHSCORE,           0x04
+    .set PLAY_GAME_OVER_JINGLE,    0x05
 
     @ Cues
     .set CUE_H_BEAT_REALTIME,   0x00
@@ -35,37 +35,37 @@
 .endm
 
 
-@ [Event 0x00] ?
-.macro mr_upbeat_event00 args
-    mr_upbeat_event EVENT_00, \args
+@ [Event 0x00] Swap Metronome Direction + Set Speed
+.macro mr_upbeat_swap_metronome_direction ticks
+    mr_upbeat_event SWAP_METRONOME_DIRECTION, \ticks
 .endm
 
 
-@ [Event 0x01] ?
-.macro mr_upbeat_event01 args
-    mr_upbeat_event EVENT_01, \args
+@ [Event 0x01] Set Game Over Script
+.macro mr_upbeat_set_game_over_script script
+    mr_upbeat_event SET_GAME_OVER_SCRIPT, \script
 .endm
 
 
-@ [Event 0x02] ?
-.macro mr_upbeat_event02
-    mr_upbeat_event EVENT_02, 0
+@ [Event 0x02] Mr. Upbeat Beep
+.macro mr_upbeat_beep
+    mr_upbeat_event MR_UPBEAT_BEEP, 0
 .endm
 
 
-@ [Event 0x03] ?
-.macro mr_upbeat_event03
-    mr_upbeat_event EVENT_03, 0
+@ [Event 0x03] Increment Score
+.macro mr_upbeat_increment_score
+    mr_upbeat_event INCREMENT_SCORE, 0
 .endm
 
 
-@ [Event 0x04] ?
-.macro mr_upbeat_event04
-    mr_upbeat_event EVENT_04, 0
+@ [Event 0x04] Save Highscore
+.macro mr_upbeat_save_highscore
+    mr_upbeat_event SAVE_HIGHSCORE, 0
 .endm
 
 
-@ [Event 0x05] ?
-.macro mr_upbeat_event05
-    mr_upbeat_event EVENT_05, 0
+@ [Event 0x05] Play Game Over Jingle
+.macro mr_upbeat_play_game_over_jingle
+    mr_upbeat_event PLAY_GAME_OVER_JINGLE, 0
 .endm

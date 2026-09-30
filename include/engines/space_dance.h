@@ -6,6 +6,9 @@
 #include "games/space_dance/graphics/space_dance_graphics.h"
 
 // Engine Macros/Enums:
+
+#define SPACE_DANCE_DANCER_AMOUNT 4
+
 enum SpaceDanceVersionsEnum {
     ENGINE_VER_SPACE_DANCE,
     ENGINE_VER_COSMIC_DANCE,
@@ -66,14 +69,34 @@ enum SpaceGrampsAnimationsEnum {
     SPACE_GRAMPS_ANIM_BLINK
 };
 
-
 // Engine Types:
 struct SpaceDanceEngineData {
-    u8 pad[0x38];
+    struct BitmapFontOBJ *font;
+    u8 version;
+    s16 dancers[SPACE_DANCE_DANCER_AMOUNT];
+    u16 dancerBeatTimer[SPACE_DANCE_DANCER_AMOUNT];
+    s16 grampsSprite;
+    u16 grampsBeatTimer;
+    u8 grampsPoseAnimEnabled;
+    u8 grampsBeatAnimEnabled;
+    u16 grampsEmoteTimer;
+    s16 textSprite;
+    s32 bgScrollX;
+    s32 bgScrollY;
+    s8 bgScrollSpeedX;
+    s8 bgScrollSpeedY;
+    u16 unused;
+    s16 tutorialIconSprite;
+    s16 blankSprite;
+    s16 sparkleX;
+    s16 sparkleY;
+    u8 spawnShootingStar;
+    u8 unk_35;
+    u16 unk_36;
 };
 
 struct SpaceDanceCue {
-    /* add fields here */
+    u32 pose;
 };
 
 
@@ -89,7 +112,7 @@ extern u8 space_dancer_anim_map[];
 extern u8 space_gramps_anim_map[];
 extern struct SongHeader *space_dancer_sounds[];
 extern u8 space_dance_cue_anim_map[];
-extern s16 D_089e6ebc[];
+extern s16 space_dance_hurt_effect_y_pos[];
 
 
 // Functions:
@@ -99,29 +122,29 @@ extern void space_dance_init_gfx2(void); // Graphics Init. 2
 extern void space_dance_init_gfx1(void); // Graphics Init. 1
 extern void space_dance_engine_start(u32 version); // Game Engine Start
 extern void space_dance_engine_event_stub(); // Engine Event 08 (STUB)
-extern void func_0803d2c0(); // Engine Event 00 (?)
-// extern ? func_0803d388(?);
-extern void func_0803d3fc(); // Engine Event 05 (?)
-extern void func_0803d408(); // Engine Event 06 (?)
-extern void func_0803d414(); // Engine Event 07 (?)
-extern void func_0803d460(); // Engine Event 01 (?)
-// extern ? func_0803d478(?);
-extern void func_0803d4bc(); // Engine Event 02 (?)
-extern void func_0803d4e0(); // Engine Event 03 (?)
-// extern ? func_0803d4f0(?);
+extern void space_dance_play_cue_animation(u32 cue); // Engine Event 00 (Play Cue)
+extern void space_dance_update_timers(void); // Update Timers
+extern void space_dance_enable_gramps_pose_anims(u32 enabled); // Engine Event 05 (Enable Space Gramps Pose Animations)
+extern void space_dance_enable_gramps_beat_anims(u32 enabled); // Engine Event 06 (Enable Space Gramps Beat Animations)
+extern void space_dance_play_gramps_animation(u32 animation); // Engine Event 07 (Play Gramps Animation)
+extern void space_dance_set_bg_scroll_speed(u32 speed); // Engine Event 01 (Set BG Scroll Speed)
+extern void space_dance_update_bg_scroll(void); // Update BG Scroll
+extern void space_dance_set_tutorial_icon(u32 icon); // Engine Event 02 (Set Tutorial Icon)
+extern void space_dance_spawn_shooting_star(void); // Engine Event 03 (Spawn Shooting Star)
+extern void space_dance_update_sparkles(void); // Updating Sparkles/Shooting Star
 extern void func_0803d588(); // Engine Event 04 (?)
 extern void space_dance_engine_update(void); // Game Engine Update
 extern void space_dance_engine_stop(void); // Game Engine Stop
 extern void space_dance_cue_spawn(struct Cue *, struct SpaceDanceCue *, u32 move); // Cue - Spawn
 extern u32  space_dance_cue_update(struct Cue *, struct SpaceDanceCue *, u32 runningTime, u32 duration); // Cue - Update
 extern void space_dance_cue_despawn(struct Cue *, struct SpaceDanceCue *); // Cue - Despawn
-// extern ? func_0803d5e4(?);
+extern void space_dance_reset_input_buttons(void); // Reset Input Buttons
 extern void space_dance_cue_hit(struct Cue *, struct SpaceDanceCue *, u32 pressed, u32 released); // Cue - Hit
-// extern ? func_0803d670(?);
-// extern ? func_0803d6c0(?);
+extern void space_dance_gramps_raise_brow(u32 arg0); // Space Gramps Raise Brow
+extern void space_dance_gramps_frown(u32 arg0); // Space Gramps Frown
 extern void space_dance_cue_barely(struct Cue *, struct SpaceDanceCue *, u32 pressed, u32 released); // Cue - Barely
 extern void space_dance_cue_miss(struct Cue *, struct SpaceDanceCue *); // Cue - Miss
-// extern ? func_0803d82c(?);
+extern void space_dance_reset_input_buttons_2(void); // Reset Input Buttons (declared twice?)
 extern void space_dance_input_event(u32 pressed, u32 released); // Input Event
 extern void space_dance_common_beat_animation(void); // Common Event 0 (Beat Animation)
 extern void space_dance_common_display_text(const char *); // Common Event 1 (Display Text)

@@ -149,7 +149,7 @@ script script_remix_1_main
 
     load_marching_orders
     rest 24
-    marching_orders_event00 263
+    marching_orders_play_marcher_action MARCHER_STEP_RIGHT, TRUE
     spawn_cue CUE_STEP
     beat_anim
     rest 24
@@ -184,7 +184,7 @@ script script_remix_1_main
 
     load_marching_orders
     rest 24
-    marching_orders_event00 263
+    marching_orders_play_marcher_action MARCHER_STEP_RIGHT, TRUE
     spawn_cue CUE_STEP
     beat_anim
     rest 24

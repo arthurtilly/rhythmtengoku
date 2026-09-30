@@ -5,11 +5,11 @@
 @ Load Data
 .macro load_marching_orders_labels
     @ Game Events
-    .set EVENT_00,          0x00
-    .set EVENT_01,          0x01
-    .set EVENT_02,          0x02
-    .set EVENT_03,          0x03
-    .set EVENT_04,          0x04
+    .set PLAY_MARCHER_ACTION,  0x00
+    .set PLAY_COMMANDER_ACTION,          0x01
+    .set SET_TUTORIAL_ICON,          0x02
+    .set ENABLE_CONVEYOR,          0x03
+    .set SET_MARCHERS_POINT,          0x04
     .set PLAY_VOICE_SFX,    0x05
 
     @ Cues
@@ -17,6 +17,34 @@
     .set CUE_TURN_LEFT,     0x01
     .set CUE_TURN_RIGHT,    0x02
     .set CUE_HALT,          0x03
+
+    @ [Event 0x00] Marcher Actions
+    .set MARCHER_IDLE, 0
+    .set MARCHER_HALT, 1
+    .set MARCHER_BEAT, 2
+    .set MARCHER_TURN_LEFT, 3
+    .set MARCHER_TURN_RIGHT, 4
+    .set MARCHER_POINT_LEFT, 5
+    .set MARCHER_POINT_RIGHT, 6
+    .set MARCHER_STEP_RIGHT, 7
+    .set MARCHER_STEP_LEFT, 8
+    .set MARCHER_CLAP, 9
+
+    @ [Event 0x01] Commander Actions
+    .set COMMANDER_IDLE,   0
+    .set COMMANDER_ANGRY,   1
+    .set COMMANDER_ANNOYED, 2
+
+
+    @ [Event 0x02] Tutorial Icons
+
+    .set TUTORIAL_HIDE,       -1
+    .set TUTORIAL_YOU,        0
+    .set TUTORIAL_A,          1
+    .set TUTORIAL_B,          2
+    .set TUTORIAL_DPAD_RIGHT, 3
+    .set TUTORIAL_DPAD_LEFT,  4
+
 
     @ [Event 0x05] Voice Sounds
     .set SHOUT_START,           0
@@ -68,33 +96,33 @@
 .endm
 
 
-@ [Event 0x00] ?
-.macro marching_orders_event00 args
-    marching_orders_event EVENT_00, \args
+@ [Event 0x00] Play Marcher Action
+.macro marching_orders_play_marcher_action action, includePlayer
+    marching_orders_event PLAY_MARCHER_ACTION, ((\action) | ((\includePlayer) << 8))
 .endm
 
 
-@ [Event 0x01] ?
-.macro marching_orders_event01
-    marching_orders_event EVENT_01, 0
+@ [Event 0x01] Commander Idle
+.macro marching_orders_reset_commander
+    marching_orders_event PLAY_COMMANDER_ACTION, COMMANDER_IDLE
 .endm
 
 
-@ [Event 0x02] ?
-.macro marching_orders_event02 args
-    marching_orders_event EVENT_02, \args
+@ [Event 0x02] Set Tutorial Icon
+.macro marching_orders_set_tutorial_icon icon
+    marching_orders_event SET_TUTORIAL_ICON, \icon
 .endm
 
 
-@ [Event 0x03] ?
-.macro marching_orders_event03
-    marching_orders_event EVENT_03, 0
+@ [Event 0x03] Enable Conveyor
+.macro marching_orders_enable_conveyor
+    marching_orders_event ENABLE_CONVEYOR, 0
 .endm
 
 
-@ [Event 0x04] ?
-.macro marching_orders_event04 args
-    marching_orders_event EVENT_04, \args
+@ [Event 0x04] Set Marchers Pointing
+.macro marching_orders_set_marchers_point enabled
+    marching_orders_event SET_MARCHERS_POINT, \enabled
 .endm
 
 

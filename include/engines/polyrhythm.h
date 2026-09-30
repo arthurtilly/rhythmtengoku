@@ -35,20 +35,19 @@ struct PolyrhythmEngineData {
     struct PolyrhythmRod {
         u32 active:1;
         u32 unk0_b1:3;
-        u32 unk0_b4:3;
+        u32 state:3;
         u32 lane:1;
         u32 stopped:1;
-        u32 unk1_b1:7;
         u16 unk2;
         s16 sprite;
         s32 x;
         s32 y;
         s32 yOffset;
         s32 horizontal;
-        u32 unk18;
+        s32 unk18;
         u32 unk1C;
-        u32 unk20;
-        u32 unk24;
+        s32 unk20;
+        s32 unk24;
         s32 unk28;
         s32 unk2C;
         s32 runningTime;
@@ -106,8 +105,8 @@ extern void polyrhythm_common_display_text(void); // Common Event 1 (Display Tex
 extern void polyrhythm_populate_world(void); // Populate World
 extern void polyrhythm_get_pistons(u32 lane, s32 *piston1ID, s32 *piston2ID); // Get Next Two Pistons
 extern void polyrhythm_display_arrow(u32 lane, s32 blockID); // Display Arrow Sprite
-extern void polyrhythm_spawn_piston(); // Engine Event 00 (Spawn Pattern)
-extern void polyrhythm_despawn_piston(); // Engine Event 01 (Despawn Pattern)
+extern void polyrhythm_spawn_piston(u32 input); // Engine Event 00 (Spawn Pattern)
+extern void polyrhythm_despawn_piston(s16 lane); // Engine Event 01 (Despawn Pattern)
 extern void polyrhythm_retract_pistons(); // Engine Event 02 (Retract Pistons)
 extern s32 polyrhythm_push_piston(u32 lane); // Piston Push
 // extern ? func_08036428(?);

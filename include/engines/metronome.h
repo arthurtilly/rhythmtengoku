@@ -7,7 +7,23 @@
 
 // Engine Types:
 struct MetronomeEngineData {
-    u8 pad[0x30];
+    u8 pad2[0xa];
+    u16 unk_a;
+    u8 unk_c;
+    u8 pad5[0x3];
+    s16 unk_10;
+    s16 unk_12;
+    s16 unk_14;
+    s16 unk_16[3];
+    u8 pad[0x6];
+    s16 unk_22;
+    s16 unk_24;
+    s16 unk_26;
+    u16 score; // 28
+    u8 unk_2a;
+    u8 unk_2b;
+    u16 unk_2c;
+    u8 pad4[0x2];
 };
 
 struct MetronomeCue {
@@ -57,5 +73,5 @@ extern void metronome_cue_barely(struct Cue *, struct MetronomeCue *, u32 presse
 extern void metronome_cue_miss(struct Cue *, struct MetronomeCue *); // Cue - Miss
 extern void metronome_input_event(u32 pressed, u32 released); // Input Event
 extern void metronome_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
-extern void metronome_common_display_text(u32); // Common Event 1 (Display Text)
+extern void metronome_common_display_text(s32 text); // Common Event 1 (Display Text)
 extern void metronome_common_init_tutorial(struct Scene *); // Common Event 2 (Init. Tutorial)
