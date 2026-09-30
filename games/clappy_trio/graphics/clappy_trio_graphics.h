@@ -27,6 +27,8 @@ extern struct CompressedData clappy_trio_obj; // OBJ Tiles - The Clappy Trio
 
 extern Palette clappy_trio_obj_pal[];
 extern Palette clappy_trio_bg_pal[];
+extern Palette clappy_trio_grayscale_obj_pal[];
+extern Palette clappy_trio_grayscale_bg_pal[];
 
 /* THE SNAPPY TRIO - ANIMATIONS */
 
