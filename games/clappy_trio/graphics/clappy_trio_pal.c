@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088e9f18] <description>
+// [D_088e9f18] The Clappy Trio - Normal OBJ
 Palette clappy_trio_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18B0F8),
@@ -59,7 +59,7 @@ Palette clappy_trio_obj_pal[] = {
     }
 };
 
-// [D_088e9f78] <description>
+// [D_088e9f78] The Clappy Trio - Normal BG
 Palette clappy_trio_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
@@ -78,8 +78,12 @@ Palette clappy_trio_bg_pal[] = {
         /* 13 */ TO_RGB555(0x383838),
         /* 14 */ TO_RGB555(0xF8F8F8),
         /* 15 */ TO_RGB555(0x000000)
-    },
-    /* PALETTE 01 */ {
+    }
+};
+
+// [D_088e9f98] The Clappy Trio - Grayscale OBJ
+Palette clappy_trio_grayscale_obj_pal[] = {
+    /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xB8B8B8),
         /* 01 */ TO_RGB555(0x000000),
         /* 02 */ TO_RGB555(0x000000),
@@ -97,7 +101,7 @@ Palette clappy_trio_bg_pal[] = {
         /* 14 */ TO_RGB555(0xA8B0A8),
         /* 15 */ TO_RGB555(0xF8F8F8)
     },
-    /* PALETTE 02 */ {
+    /* PALETTE 01 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),
         /* 02 */ TO_RGB555(0x000000),
@@ -115,7 +119,7 @@ Palette clappy_trio_bg_pal[] = {
         /* 14 */ TO_RGB555(0x000000),
         /* 15 */ TO_RGB555(0x000000)
     },
-    /* PALETTE 03 */ {
+    /* PALETTE 02 */ {
         /* 00 */ TO_RGB555(0x606860),
         /* 01 */ TO_RGB555(0x000000),
         /* 02 */ TO_RGB555(0x101010),
@@ -132,8 +136,12 @@ Palette clappy_trio_bg_pal[] = {
         /* 13 */ TO_RGB555(0x606860),
         /* 14 */ TO_RGB555(0xA8B0A8),
         /* 15 */ TO_RGB555(0xF8F8F8)
-    },
-    /* PALETTE 04 */ {
+    }
+};
+
+// [D_088e9ff8] The Clappy Trio - Grayscale BG
+Palette clappy_trio_grayscale_bg_pal[] = {
+    /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),
         /* 02 */ TO_RGB555(0x000000),
