@@ -12,7 +12,7 @@ When built in matching mode, it builds the following ROMs:
 
 ## Installation
 
-To install the decomp, you need access to a Linux terminal. If you are on Windows 10 or 11, you can access a Linux terminal easily by installing **WSL (Windows Subsystem for Linux)**. If you are already on Linux, you can skip to the **Installing Dependencies** section. Otherwise, follow this guide to install WSL:
+To install the decomp, you need access to a Linux terminal. If you are on Windows 10 or 11, you can access a Linux terminal easily by installing **WSL (Windows Subsystem for Linux)**. If you are already on Linux, you can skip to the **Installing Dependencies** section, or you could [build this project with docker](docker/INSTALL.md). Otherwise, follow this guide to install WSL:
 
 #### Installing WSL
 
