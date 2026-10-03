@@ -49,6 +49,15 @@ endef
 # Whether to build a byte-for-byte matching ROM
 NONMATCHING ?= 0
 
+# Whether to fail if the ROM doesn't match
+FAIL_ON_NONMATCH ?= 0
+
+ifeq ($(FAIL_ON_NONMATCH),1)
+FAIL := false;
+else
+FAIL := 
+endif
+
 # Revision to build
 REV ?= 0
 
@@ -154,7 +163,7 @@ default: $(OUTPUT).gba
 		if [ "$(shell sha1sum -t $(OUTPUT).gba)" = "$(TARGET_SHA1)  $(OUTPUT).gba" ]; then \
 			echo "$(TARGET).gba: OK"; \
 		else \
-			echo "The build succeeded, but did not match the official ROM."; \
+			echo "The build succeeded, but did not match the official ROM."; $(FAIL) \
 		fi; \
 	fi \
 

@@ -11,3 +11,4 @@ tools/decomp-permuter/
 *.dump
 .vscode/*
 ctx.c
+report*.json
